@@ -18,6 +18,19 @@ The raw data was anonymized the following ways:
 - open questions were removed
   (non-anonymized people got an answer)
 
+## Donations ##
+
+
+For 116 responses, we donated 3 € each, 348 € total:
+
+- SPI (General Donation) 27 votes = 81 €
+- GNOME (GNOME) 16 votes = 48 €
+- KDE (KDE) 19 votes = 57 €
+- Free Software Foundation Europe (FSFE) 31 votes = 93 €
+- LimeSurvey (Lime) 5 votes = 15 €
+- Mozilla (Firefox) 10 votes = 30 €
+- Wikimedia Foundation (Wikipedia) 8 votes = 24 €
+
 
 ## R ##
 
