@@ -3,6 +3,10 @@ research of the Elektra Initiative.
 
 See [Elektra](https://www.libelektra.org) for more information.
 
+Currently it contains the raw data of:
+
+- a [survey](/survey)
+
 
 ## License ##
 
