@@ -1,11 +1,11 @@
 This repository contains the anonymized raw data
 of the survey conducted from:
 
-- 24.05 Start preparation
-- 20.06 Survey is online
-- 11.07 Reminder of survey
-- 18.07 Official Deadline
-        (Anywhere on Earth)
+- 24.05.2016 Start preparation
+- 20.06.2016 Survey is online
+- 11.07.2016 Reminder of survey
+- 18.07.2016 Official Deadline
+             (Anywhere on Earth)
 
 
 ## Anonymization ##
