@@ -14,8 +14,8 @@
   * student
   * researcher
   * other
-* In which free and open source software (FLOSS) projects have you been or are you involved?If you are associated with multiple projects, please write them line-by-line.Within each line describe your involvement (position, tasks, ...) in the individual project."
-* Which configuration systems/libraries/APIs have you already used or would loke to use in one of your FLOSS project(s)?
+* In which free and open source software (FLOSS) projects have you been or are you involved?If you are associated with multiple projects, please write them line-by-line.Within each line describe your involvement (position, tasks, ...) in the individual project.
+* Which configuration systems/libraries/APIs have you already used or would like to use in one of your FLOSS project(s)?
   * getenv/environment variables (e.g. PATH)
     * have not used or don't know it
     * had contact with
@@ -166,7 +166,7 @@
     * moderately important
     * important
     * very important
-* Configuration specification (e.g. XSD/JSON schemas) allows you to describe possible values and their meaning.Why do/would you specify configuration?"
+* Configuration specification (e.g. XSD/JSON schemas) allows you to describe possible values and their meaning.Why do/would you specify configuration?
   * so that users avoid common errors
   * for rigorous validation
   * for documentation (looking up what the value does)
