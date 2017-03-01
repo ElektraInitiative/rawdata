@@ -8,6 +8,9 @@ of the survey conducted from:
              (Anywhere on Earth)
 
 
+The questions in full text can be found [here](questions.md)
+
+
 ## Anonymization ##
 
 The raw data was anonymized the following ways:
@@ -39,7 +42,7 @@ To see an summary of the raw data, use:
 	R --no-save < syntax.R
 
 It uses `rawdata.csv`.
-Names of columns/meanings of data are given in `syntax.R`.
+Names of columns/meanings (=questions) of data are given in `syntax.R`.
 
 ## Libreoffice ##
 
