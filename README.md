@@ -8,7 +8,7 @@ Currently it contains the raw data of:
 - a [survey](/survey)
 - the [Alteration Predictive Hybrid Search](/OPMPHM) thesis
 
-## License ##
+## License
 
 This work is licensed under a [Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
 
