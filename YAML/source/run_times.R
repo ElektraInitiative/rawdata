@@ -15,3 +15,6 @@ for (index in c(1:length(plugins))) {
   plugin_times <- add_row(plugin_times, plugin = plugins[[index]],
                           runtime = times[[index]])
 }
+
+ggplot(data = plugin_times) + 
+  geom_point(mapping = aes(x = plugin, y = runtime, color = plugin))
