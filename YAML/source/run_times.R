@@ -1,10 +1,22 @@
 #!/usr/bin/env Rscript
 
+# -- Imports -------------------------------------------------------------------
+
 library(jsonlite)
 library(tidyverse)
 
+# -- Main ----------------------------------------------------------------------
+
+# ========
+# = Read =
+# ========
+
 data <- read_json("YAML/results/generated.json", simplifyVector = TRUE)
 data <- data$results
+
+# ========
+# = Tidy =
+# ========
 
 plugins <- data$command %>%
   map_chr(~ sub(".* ([a-z]+) get$", "\\1", .))
@@ -16,5 +28,9 @@ for (index in c(1:length(plugins))) {
                           runtime = times[[index]])
 }
 
-ggplot(data = plugin_times) + 
+# =============
+# = Visualize =
+# =============
+
+ggplot(data = plugin_times) +
   geom_point(mapping = aes(x = plugin, y = runtime, color = plugin))
