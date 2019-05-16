@@ -52,4 +52,4 @@ for (filepath in files) {
 
 ggplot(data = plugin_times) +
   geom_point(mapping = aes(x = lines, y = runtime, color = plugin)) +
-  facet_wrap(~ os, nrow = 2)
+  facet_wrap(os ~ compiler, nrow = 3)
