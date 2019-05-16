@@ -12,7 +12,11 @@ library(tidyverse)
 # ========
 
 result_directory = "YAML/Results"
-plugin_times <- tibble(plugin = character(), runtime = double(), lines = numeric(), os = character())
+plugin_times <- tibble(plugin = character(), 
+                       runtime = double(), 
+                       lines = numeric(), 
+                       os = character(), 
+                       compiler = character())
 
 files <- list.files(result_directory, pattern="generated.*\\.json")
 for (filepath in files) {
@@ -22,6 +26,7 @@ for (filepath in files) {
   lines <- fields[2]
   os <- fields[3]
   compiler <- fields[4]
+  compiler <- sub("(.*)\\.json$", "\\1", compiler)
   
   data <- read_json(paste(result_directory, filepath, sep="/"), simplifyVector = TRUE)
   data <- data$results
@@ -31,8 +36,12 @@ for (filepath in files) {
   times <-data$times
   
   for (index in c(1:length(plugins))) {
-    plugin_times <- add_row(plugin_times, plugin = plugins[[index]],
-                            runtime = times[[index]], lines = lines, os = os)
+    plugin_times <- add_row(plugin_times, 
+                            plugin = plugins[[index]],
+                            runtime = times[[index]], 
+                            lines = lines, 
+                            os = os,
+                            compiler = compiler)
   }
 }
 
