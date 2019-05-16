@@ -12,7 +12,7 @@ library(tidyverse)
 # ========
 
 result_directory = "YAML/Results"
-plugin_times <- tibble(plugin = character(), runtime = double(), os = character())
+plugin_times <- tibble(plugin = character(), runtime = double(), lines = numeric(), os = character())
 
 files <- list.files(result_directory, pattern="generated.*\\.json")
 for (filepath in files) {
@@ -32,7 +32,7 @@ for (filepath in files) {
   
   for (index in c(1:length(plugins))) {
     plugin_times <- add_row(plugin_times, plugin = plugins[[index]],
-                            runtime = times[[index]], os = os)
+                            runtime = times[[index]], lines = lines, os = os)
   }
 }
 
