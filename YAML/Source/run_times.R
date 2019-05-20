@@ -23,7 +23,7 @@ for (filepath in files) {
   fields <- strsplit(filepath, "_")
   fields <- fields[[1]]
 
-  lines <- fields[2]
+  lines <- as.numeric(fields[2])
   os <- fields[3]
   compiler <- fields[4]
   compiler <- sub("(.*)\\.json$", "\\1", compiler)
@@ -52,6 +52,7 @@ for (filepath in files) {
 
 ggplot(data = plugin_times) +
   scale_x_discrete(name="Number of Lines/Scalars") +
+  scale_x_log10() +
   scale_y_discrete(name="Execution Time [s]") +
   geom_point(mapping = aes(x = lines, y = runtime, color = plugin)) +
   facet_wrap(os ~ compiler, nrow = 3)
