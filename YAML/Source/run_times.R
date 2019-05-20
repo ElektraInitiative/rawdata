@@ -4,6 +4,7 @@
 
 library(jsonlite)
 library(tidyverse)
+library(scales)
 
 # -- Main ----------------------------------------------------------------------
 
@@ -51,8 +52,9 @@ for (filepath in files) {
 # =============
 
 ggplot(data = plugin_times) +
-  scale_x_discrete(name="Number of Lines/Scalars") +
-  scale_x_log10() +
-  scale_y_discrete(name="Execution Time [s]") +
+  scale_x_continuous(name = "Number of Lines/Scalars", trans = 'log10',
+                     breaks = trans_breaks("log10", function(x) 10^x),
+                     labels = trans_format("log10", math_format(10^.x))) +
+  scale_y_continuous(name = "Execution Time [s]", trans = 'log10') +
   geom_point(mapping = aes(x = lines, y = runtime, color = plugin)) +
   facet_wrap(os ~ compiler, nrow = 3)
