@@ -51,5 +51,7 @@ for (filepath in files) {
 # =============
 
 ggplot(data = plugin_times) +
+  scale_x_discrete(name="Number of Lines/Scalars") +
+  scale_y_discrete(name="Execution Time [s]") +
   geom_point(mapping = aes(x = lines, y = runtime, color = plugin)) +
   facet_wrap(os ~ compiler, nrow = 3)
