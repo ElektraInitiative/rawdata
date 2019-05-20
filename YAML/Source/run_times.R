@@ -18,7 +18,7 @@ plugin_times <- tibble(plugin = character(),
                        os = character(),
                        compiler = character())
 
-files <- list.files(result_directory, pattern="generated.*\\.json")
+files <- list.files(result_directory, pattern = "generated.*\\.json")
 for (filepath in files) {
   fields <- strsplit(filepath, "_")
   fields <- fields[[1]]
@@ -28,7 +28,7 @@ for (filepath in files) {
   compiler <- fields[4]
   compiler <- sub("(.*)\\.json$", "\\1", compiler)
 
-  data <- read_json(paste(result_directory, filepath, sep="/"),
+  data <- read_json(paste(result_directory, filepath, sep = "/"),
                     simplifyVector = TRUE)
   data <- data$results
 
