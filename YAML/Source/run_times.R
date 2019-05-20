@@ -56,5 +56,6 @@ ggplot(data = plugin_times) +
                      breaks = trans_breaks("log10", function(x) 10^x),
                      labels = trans_format("log10", math_format(10^.x))) +
   scale_y_continuous(name = "Execution Time [s]", trans = 'log10') +
+  annotation_logticks() +
   geom_point(mapping = aes(x = lines, y = runtime, color = plugin)) +
   facet_wrap(os ~ compiler, nrow = 3)
