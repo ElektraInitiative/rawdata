@@ -25,16 +25,28 @@ for (filepath in files) {
   fields <- fields[[1]]
 
   lines <- as.numeric(fields[2])
+
   os <- fields[3]
+  os <- sub("linux", "Linux", os)
+  os <- sub("mac", "macOS", os)
+
   compiler <- fields[4]
   compiler <- sub("(.*)\\.json$", "\\1", compiler)
+  compiler <- sub("clang", "Clang ", compiler)
+  compiler <- sub("gcc", "GCC  ", compiler)
 
   data <- read_json(paste(result_directory, filepath, sep = "/"),
                     simplifyVector = TRUE)
   data <- data$results
 
   plugins <- data$command %>%
-    map_chr(~ sub(".* ([a-z]+) get$", "\\1", .))
+    map_chr(~ sub(".* ([a-z]+) get$", "\\1", .)) %>%
+    map_chr(~ sub("yambi", "YAMBi", .)) %>%
+    map_chr(~ sub("yamlcpp", "YAML CPP", .)) %>%
+    map_chr(~ sub("yanlr", "Yan LR", .)) %>%
+    map_chr(~ sub("yawn", "YAwn", .)) %>%
+    map_chr(~ sub("yaypeg", "YAy PEG", .))
+
   times <-data$times
 
   for (index in c(1:length(plugins))) {
@@ -56,6 +68,7 @@ ggplot(data = plugin_times, aes(x = lines, y = runtime, color = plugin)) +
                      breaks = trans_breaks("log10", function(x) 10^x),
                      labels = trans_format("log10", math_format(10^.x))) +
   scale_y_continuous(name = "Execution Time [s]", trans = 'log10') +
+  labs(color = "Plugin") +
   annotation_logticks() +
   geom_point() +
   stat_summary(fun.y = mean, geom = "line") +
