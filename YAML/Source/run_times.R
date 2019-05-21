@@ -71,5 +71,5 @@ ggplot(data = plugin_times, aes(x = lines, y = runtime, color = plugin)) +
   labs(color = "Plugin") +
   annotation_logticks() +
   geom_point() +
-  stat_summary(fun.y = mean, geom = "line") +
+  geom_smooth() +
   facet_wrap(os ~ compiler, nrow = 3)
