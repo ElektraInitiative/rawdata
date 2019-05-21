@@ -5,6 +5,7 @@
 library(jsonlite)
 library(tidyverse)
 library(scales)
+library(ggpubr)
 
 # -- Main ----------------------------------------------------------------------
 
@@ -72,4 +73,5 @@ ggplot(data = plugin_times, aes(x = lines, y = runtime, color = plugin)) +
   annotation_logticks() +
   geom_point() +
   geom_smooth() +
+  stat_cor(show.legend = FALSE) +
   facet_wrap(os ~ compiler, nrow = 3)
