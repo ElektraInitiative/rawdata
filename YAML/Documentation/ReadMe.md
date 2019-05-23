@@ -32,17 +32,10 @@ scripts/generate-yaml 1000 >filename.yaml
 - [`generated_1.yaml`](../Input/generated_1.yaml)
 - [`generated_0.yaml`](../Input/generated_0.yaml)
 
-were generated using the following [fish](https://www.fishshell.com) script in the root of the repository:
+were generated using the [fish](https://www.fishshell.com) script [`create_input`](../Scripts/cut_input) in the root of the repository:
 
-```fish
-set count 50000
-set input_directory "YAML/Input"
-while test "$count" -ge 1
-    head -n "$count" "$input_directory/generated_100000.yaml" >"$input_directory/generated_$count.yaml"
-    set first_digit (printf '%s' "$count" | head -c 1)
-    test "$first_digit" -eq 1 && set count (math "$count/2") || set count (math "$count/5")
-end
-printf '' >"$input_directory/generated_0.yaml"
+```sh
+YAML/Scripts/cut_input
 ```
 
 .
