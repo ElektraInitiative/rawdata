@@ -30,6 +30,7 @@ scripts/generate-yaml 1000 >filename.yaml
 - [`generated_10.yaml`](../Input/generated_10.yaml)
 - [`generated_5.yaml`](../Input/generated_5.yaml)
 - [`generated_1.yaml`](../Input/generated_1.yaml)
+- [`generated_0.yaml`](../Input/generated_0.yaml)
 
 were generated using the following [fish](https://www.fishshell.com) script in the root of the repository:
 
@@ -41,6 +42,7 @@ while test "$count" -ge 1
     set first_digit (printf '%s' "$count" | head -c 1)
     test "$first_digit" -eq 1 && set count (math "$count/2") || set count (math "$count/5")
 end
+printf '' >"$input_directory/generated_0.yaml"
 ```
 
 .
