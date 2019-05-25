@@ -1,0 +1,10 @@
+#!/usr/bin/env fish
+
+set count 50000
+set input_directory "YAML/Input"
+while test "$count" -ge 1
+    head -n "$count" "$input_directory/generated_100000.yaml" >"$input_directory/generated_$count.yaml"
+    set first_digit (printf '%s' "$count" | head -c 1)
+    test "$first_digit" -eq 1 && set count (math "$count/2") || set count (math "$count/5")
+end
+printf '' >"$input_directory/generated_0.yaml"
