@@ -20,7 +20,7 @@ plugin_times <- tibble(plugin = character(),
                        os = character(),
                        compiler = character())
 
-files <- list.files(result_directory, pattern = "generated.*\\.json")
+files <- list.files(result_directory, pattern = "generated_[1-9].*\\.json")
 for (filepath in files) {
   fields <- strsplit(filepath, "_")
   fields <- fields[[1]]
