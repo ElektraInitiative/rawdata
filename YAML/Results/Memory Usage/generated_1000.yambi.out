@@ -1,0 +1,1527 @@
+desc: --massif-out-file=results/generated_1000.yambi.out
+cmd: build/linux/bin/benchmark_plugingetset benchmarks/data/generated_1000 user yambi get
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=341479
+mem_heap_B=11414
+mem_heap_extra_B=546
+mem_stacks_B=0
+heap_tree=detailed
+n12: 11414 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5962 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 5962 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 5962 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 4766 0x400D290: openaux (dl-deps.c:64)
+     n1: 4766 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4766 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 4766 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 4766 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4766 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 4766 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 4766 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 4766 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 4766 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 4766 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 4766 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 4766 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 4766 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n1: 1196 0x4012FE9: dl_open_worker (dl-open.c:228)
+     n1: 1196 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 1196 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 1196 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 1196 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1196 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 1196 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 1196 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 1196 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 1196 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 1196 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2376 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2376 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2376 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2376 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2376 0x487D254: dlopen_doit (dlopen.c:66)
+      n1: 2376 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2376 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2376 0x487D973: _dlerror_run (dlerror.c:163)
+         n1: 2376 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2376 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2376 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2376 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 1024 0x485EBF6: elektraVFormat (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 1024 0x485ED2A: elektraFormat (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n0: 512 0x109162: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 512 0x109179: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 384 0x4863428: ksVNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n3: 384 0x486356A: ksNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n0: 128 0x10914B: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 128 0x1091A0: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 128 0x1091AF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 324 in 8 places, all below massif's threshold (1.00%)
+ n1: 256 0x400D46A: _dl_map_object_deps (dl-deps.c:438)
+  n1: 256 0x401304E: dl_open_worker (dl-open.c:271)
+   n1: 256 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 256 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 256 0x487D254: dlopen_doit (dlopen.c:66)
+      n1: 256 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 256 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 256 0x487D973: _dlerror_run (dlerror.c:163)
+         n1: 256 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 256 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 256 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 256 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 256 0x485F3A2: keyVNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n1: 256 0x485F460: keyNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n0: 256 in 4 places, all below massif's threshold (1.00%)
+ n1: 232 0x400B58E: _dl_new_object (dl-object.c:163)
+  n1: 232 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 232 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 172 0x400D290: openaux (dl-deps.c:64)
+     n1: 172 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 172 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 172 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 172 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 172 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 172 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 172 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 172 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 172 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 172 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 172 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 172 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 172 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 60 in 1 place, below massif's threshold (1.00%)
+ n1: 192 0x48633F2: ksVNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n1: 192 0x486356A: ksNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n0: 192 in 3 places, all below massif's threshold (1.00%)
+ n1: 152 0x400D904: _dl_map_object_deps (dl-deps.c:479)
+  n1: 152 0x401304E: dl_open_worker (dl-open.c:271)
+   n1: 152 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 152 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 152 0x487D254: dlopen_doit (dlopen.c:66)
+      n1: 152 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 152 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 152 0x487D973: _dlerror_run (dlerror.c:163)
+         n1: 152 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 152 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 152 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 152 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 133 0x40081A8: fillin_rpath (dl-load.c:509)
+  n1: 133 0x40083BA: decompose_rpath.isra.10 (dl-load.c:631)
+   n1: 133 0x4009105: _dl_map_object (dl-load.c:2297)
+    n1: 133 0x400D290: openaux (dl-deps.c:64)
+     n1: 133 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 133 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 133 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 133 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 133 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 133 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 133 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 133 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 133 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 133 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 133 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 133 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 133 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 123 0x4007798: open_path (dl-load.c:2112)
+  n1: 123 0x4008C16: _dl_map_object (dl-load.c:2297)
+   n0: 123 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=2
+#-----------
+time=861953
+mem_heap_B=12406
+mem_heap_extra_B=554
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=943384
+mem_heap_B=13366
+mem_heap_extra_B=554
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=3222035
+mem_heap_B=17430
+mem_heap_extra_B=562
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=3223666
+mem_heap_B=15478
+mem_heap_extra_B=554
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=5028909
+mem_heap_B=88182
+mem_heap_extra_B=562
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=5237246
+mem_heap_B=1107904
+mem_heap_extra_B=816
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=7439130
+mem_heap_B=1107904
+mem_heap_extra_B=816
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1107904 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 65537 0x4F922AB: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 65537 0x4F86723: std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 65537 0x4F908A9: std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+    n1: 65537 0x4F1F8B3: long std::__copy_streambufs_eof<char, std::char_traits<char> >(std::basic_streambuf<char, std::char_traits<char> >*, std::basic_streambuf<char, std::char_traits<char> >*, bool&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+     n1: 65537 0x4F81416: std::ostream::operator<<(std::basic_streambuf<char, std::char_traits<char> >*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 65537 0x4E575FD: ???
+       n1: 65537 0x4E51FF0: ???
+        n1: 65537 0x4E4E6DA: ???
+         n1: 65537 0x4E4A750: ???
+          n1: 65537 0x4E560E2: ???
+           n0: 65537 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 44933 0x4F91DC9: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 44933 0x4F92B79: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 44933 0x4E578DD: ???
+    n1: 44933 0x4E51FF0: ???
+     n1: 44933 0x4E4E6DA: ???
+      n1: 44933 0x4E4A750: ???
+       n1: 44933 0x4E560E2: ???
+        n0: 44933 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 26086 in 34 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=9
+#-----------
+time=7818460
+mem_heap_B=1022017
+mem_heap_extra_B=1263
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=8150108
+mem_heap_B=1022139
+mem_heap_extra_B=1301
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=8659814
+mem_heap_B=1031640
+mem_heap_extra_B=1728
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=8879278
+mem_heap_B=1038401
+mem_heap_extra_B=1887
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1038401 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 29769 in 54 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 18084 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 18038 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 17980 0x4E4CE93: ???
+    n1: 17980 0x4E5ABAC: ???
+     n1: 17980 0x4E4E701: ???
+      n1: 17980 0x4E4A750: ???
+       n1: 17980 0x4E560E2: ???
+        n0: 17980 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 46 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=13
+#-----------
+time=9271305
+mem_heap_B=1035120
+mem_heap_extra_B=1992
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=9570762
+mem_heap_B=1033848
+mem_heap_extra_B=2120
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=9997629
+mem_heap_B=1041538
+mem_heap_extra_B=2438
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=10512847
+mem_heap_B=1042016
+mem_heap_extra_B=2672
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1042016 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 31566 in 54 places, all below massif's threshold (1.00%)
+ n2: 19902 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 19344 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 19286 0x4E4CE93: ???
+    n1: 19286 0x4E5ABAC: ???
+     n1: 19286 0x4E4E701: ???
+      n1: 19286 0x4E4A750: ???
+       n1: 19286 0x4E560E2: ???
+        n0: 19286 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 558 in 2 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=17
+#-----------
+time=10921113
+mem_heap_B=1044001
+mem_heap_extra_B=2951
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1044001 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 31669 in 54 places, all below massif's threshold (1.00%)
+ n2: 21784 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 21226 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 21168 0x4E4CE93: ???
+    n1: 21168 0x4E5ABAC: ???
+     n1: 21168 0x4E4E701: ???
+      n1: 21168 0x4E4A750: ???
+       n1: 21168 0x4E560E2: ???
+        n0: 21168 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 558 in 2 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=18
+#-----------
+time=11257519
+mem_heap_B=1045804
+mem_heap_extra_B=3220
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=11761047
+mem_heap_B=1052218
+mem_heap_extra_B=3766
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1052218 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 33914 in 54 places, all below massif's threshold (1.00%)
+ n2: 27756 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 27198 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 27140 0x4E4CE93: ???
+    n1: 27140 0x4E5ABAC: ???
+     n1: 27140 0x4E4E701: ???
+      n1: 27140 0x4E4A750: ???
+       n1: 27140 0x4E560E2: ???
+        n0: 27140 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 558 in 2 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=20
+#-----------
+time=12050029
+mem_heap_B=1056486
+mem_heap_extra_B=4034
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1056486 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 34450 in 54 places, all below massif's threshold (1.00%)
+ n2: 31488 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 30930 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 30872 0x4E4CE93: ???
+    n1: 30872 0x4E5ABAC: ???
+     n1: 30872 0x4E4E701: ???
+      n1: 30872 0x4E4A750: ???
+       n1: 30872 0x4E560E2: ???
+        n0: 30872 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 558 in 2 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=21
+#-----------
+time=12467536
+mem_heap_B=1059597
+mem_heap_extra_B=4187
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1059597 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 34710 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 33640 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 33582 0x4E4CE93: ???
+    n1: 33582 0x4E5ABAC: ???
+     n1: 33582 0x4E4E701: ???
+      n1: 33582 0x4E4A750: ???
+       n1: 33582 0x4E560E2: ???
+        n0: 33582 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 1070 in 2 places, all below massif's threshold (1.00%)
+ n0: 34339 in 54 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=22
+#-----------
+time=13024734
+mem_heap_B=1059081
+mem_heap_extra_B=4383
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1059081 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 34637 in 54 places, all below massif's threshold (1.00%)
+ n2: 33896 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 32826 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 32768 0x4E4CE93: ???
+    n1: 32768 0x4E5ABAC: ???
+     n1: 32768 0x4E4E701: ???
+      n1: 32768 0x4E4A750: ???
+       n1: 32768 0x4E560E2: ???
+        n0: 32768 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 1070 in 2 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=23
+#-----------
+time=13574484
+mem_heap_B=1063987
+mem_heap_extra_B=4821
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1063987 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 37896 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 36826 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 36768 0x4E4CE93: ???
+    n1: 36768 0x4E5ABAC: ???
+     n1: 36768 0x4E4E701: ???
+      n1: 36768 0x4E4A750: ???
+       n1: 36768 0x4E560E2: ???
+        n0: 36768 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 1070 in 2 places, all below massif's threshold (1.00%)
+ n0: 35543 in 54 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=24
+#-----------
+time=13862496
+mem_heap_B=1064848
+mem_heap_extra_B=4888
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1064848 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 38518 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 37448 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 37390 0x4E4CE93: ???
+    n1: 37390 0x4E5ABAC: ???
+     n1: 37390 0x4E4E701: ???
+      n1: 37390 0x4E4A750: ???
+       n1: 37390 0x4E560E2: ???
+        n0: 37390 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 1070 in 2 places, all below massif's threshold (1.00%)
+ n0: 35782 in 54 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=25
+#-----------
+time=14417545
+mem_heap_B=1068548
+mem_heap_extra_B=5268
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1068548 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 41422 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 40352 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 40294 0x4E4CE93: ???
+    n1: 40294 0x4E5ABAC: ???
+     n1: 40294 0x4E4E701: ???
+      n1: 40294 0x4E4A750: ???
+       n1: 40294 0x4E560E2: ???
+        n0: 40294 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 1070 in 2 places, all below massif's threshold (1.00%)
+ n0: 36578 in 54 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=26
+#-----------
+time=14959985
+mem_heap_B=1072231
+mem_heap_extra_B=5657
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1072231 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 43956 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 42634 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 42576 0x4E4CE93: ???
+    n1: 42576 0x4E5ABAC: ???
+     n1: 42576 0x4E4E701: ???
+      n1: 42576 0x4E4A750: ???
+       n1: 42576 0x4E560E2: ???
+        n0: 42576 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 1322 in 2 places, all below massif's threshold (1.00%)
+ n0: 37727 in 54 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=27
+#-----------
+time=15547002
+mem_heap_B=1077438
+mem_heap_extra_B=6018
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1077438 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 48770 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 47226 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 47168 0x4E4CE93: ???
+    n1: 47168 0x4E5ABAC: ???
+     n1: 47168 0x4E4E701: ???
+      n1: 47168 0x4E4A750: ???
+       n1: 47168 0x4E560E2: ???
+        n0: 47168 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 1544 in 2 places, all below massif's threshold (1.00%)
+ n0: 38120 in 54 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=28
+#-----------
+time=16106033
+mem_heap_B=1083083
+mem_heap_extra_B=6437
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1083083 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 52562 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 51492 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 51434 0x4E4CE93: ???
+    n1: 51434 0x4E5ABAC: ???
+     n1: 51434 0x4E4E701: ???
+      n1: 51434 0x4E4A750: ???
+       n1: 51434 0x4E560E2: ???
+        n0: 51434 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 1070 in 2 places, all below massif's threshold (1.00%)
+ n0: 39973 in 54 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=29
+#-----------
+time=16522834
+mem_heap_B=1083788
+mem_heap_extra_B=6588
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1083788 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 53466 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 51996 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 51938 0x4E4CE93: ???
+    n1: 51938 0x4E5ABAC: ???
+     n1: 51938 0x4E4E701: ???
+      n1: 51938 0x4E4A750: ???
+       n1: 51938 0x4E560E2: ???
+        n0: 51938 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 1470 in 2 places, all below massif's threshold (1.00%)
+ n0: 39774 in 54 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=30
+#-----------
+time=16821888
+mem_heap_B=1085659
+mem_heap_extra_B=6757
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1085659 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 54962 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 53892 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 53834 0x4E4CE93: ???
+    n1: 53834 0x4E5ABAC: ???
+     n1: 53834 0x4E4E701: ???
+      n1: 53834 0x4E4A750: ???
+       n1: 53834 0x4E560E2: ???
+        n0: 53834 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 1070 in 2 places, all below massif's threshold (1.00%)
+ n0: 40149 in 54 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=31
+#-----------
+time=17376423
+mem_heap_B=1093610
+mem_heap_extra_B=7254
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1093610 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 62222 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 60128 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 60070 0x4E4CE93: ???
+    n1: 60070 0x4E5ABAC: ???
+     n1: 60070 0x4E4E701: ???
+      n1: 60070 0x4E4A750: ???
+       n1: 60070 0x4E560E2: ???
+        n0: 60070 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 2094 in 2 places, all below massif's threshold (1.00%)
+ n0: 40840 in 54 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=32
+#-----------
+time=17666306
+mem_heap_B=1093057
+mem_heap_extra_B=7279
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1093057 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 61718 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 59624 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 59566 0x4E4CE93: ???
+    n1: 59566 0x4E5ABAC: ???
+     n1: 59566 0x4E4E701: ???
+      n1: 59566 0x4E4A750: ???
+       n1: 59566 0x4E560E2: ???
+        n0: 59566 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 2094 in 2 places, all below massif's threshold (1.00%)
+ n0: 40791 in 54 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=33
+#-----------
+time=18217172
+mem_heap_B=1095744
+mem_heap_extra_B=7464
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1095744 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 64028 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 61934 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 61876 0x4E4CE93: ???
+    n1: 61876 0x4E5ABAC: ???
+     n1: 61876 0x4E4E701: ???
+      n1: 61876 0x4E4A750: ???
+       n1: 61876 0x4E560E2: ???
+        n0: 61876 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 2094 in 2 places, all below massif's threshold (1.00%)
+ n0: 41168 in 54 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=34
+#-----------
+time=18785294
+mem_heap_B=1100813
+mem_heap_extra_B=7867
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1100813 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 68206 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 66112 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 66054 0x4E4CE93: ???
+    n1: 66054 0x4E5ABAC: ???
+     n1: 66054 0x4E4E701: ???
+      n1: 66054 0x4E4A750: ???
+       n1: 66054 0x4E560E2: ???
+        n0: 66054 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 2094 in 2 places, all below massif's threshold (1.00%)
+ n0: 42059 in 54 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=35
+#-----------
+time=19077339
+mem_heap_B=1103527
+mem_heap_extra_B=8073
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1103527 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 69998 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 67904 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 67846 0x4E4CE93: ???
+    n1: 67846 0x4E5ABAC: ???
+     n1: 67846 0x4E4E701: ???
+      n1: 67846 0x4E4A750: ???
+       n1: 67846 0x4E560E2: ???
+        n0: 67846 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 2094 in 2 places, all below massif's threshold (1.00%)
+ n0: 42981 in 54 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=36
+#-----------
+time=19493527
+mem_heap_B=1105416
+mem_heap_extra_B=8368
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1105416 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 71376 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 69282 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 69224 0x4E4CE93: ???
+    n1: 69224 0x4E5ABAC: ???
+     n1: 69224 0x4E4E701: ???
+      n1: 69224 0x4E4A750: ???
+       n1: 69224 0x4E560E2: ???
+        n0: 69224 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 2094 in 2 places, all below massif's threshold (1.00%)
+ n0: 43492 in 54 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=37
+#-----------
+time=20083119
+mem_heap_B=1122793
+mem_heap_extra_B=8903
+mem_stacks_B=0
+heap_tree=detailed
+n6: 1122793 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 87220 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 83838 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 83780 0x4E4CE93: ???
+    n1: 83780 0x4E5ABAC: ???
+     n1: 83780 0x4E4E701: ???
+      n1: 83780 0x4E4A750: ???
+       n1: 83780 0x4E560E2: ???
+        n0: 83780 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 3382 in 2 places, all below massif's threshold (1.00%)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 33377 in 53 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 11648 0x485F3A2: keyVNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n1: 11456 0x4E4ECCF: ???
+   n1: 11456 0x4E4CE66: ???
+    n1: 11456 0x4E5ABAC: ???
+     n1: 11456 0x4E4E701: ???
+      n1: 11456 0x4E4A750: ???
+       n1: 11456 0x4E560E2: ???
+        n0: 11456 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+  n0: 192 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=38
+#-----------
+time=20547859
+mem_heap_B=1113251
+mem_heap_extra_B=8693
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=21078626
+mem_heap_B=1118827
+mem_heap_extra_B=9253
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=21422030
+mem_heap_B=1133719
+mem_heap_extra_B=9681
+mem_stacks_B=0
+heap_tree=detailed
+n6: 1133719 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 96224 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 94130 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 94072 0x4E4CE93: ???
+    n1: 94072 0x4E5ABAC: ???
+     n1: 94072 0x4E4E701: ???
+      n1: 94072 0x4E4A750: ???
+       n1: 94072 0x4E560E2: ???
+        n0: 94072 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 2094 in 2 places, all below massif's threshold (1.00%)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 34403 in 53 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 12544 0x485F3A2: keyVNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n1: 12352 0x4E4ECCF: ???
+   n1: 12352 0x4E4CE66: ???
+    n1: 12352 0x4E5ABAC: ???
+     n1: 12352 0x4E4E701: ???
+      n1: 12352 0x4E4A750: ???
+       n1: 12352 0x4E560E2: ???
+        n0: 12352 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+  n0: 192 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=41
+#-----------
+time=21964522
+mem_heap_B=1127547
+mem_heap_extra_B=9717
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=22518611
+mem_heap_B=1129658
+mem_heap_extra_B=10134
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=22952722
+mem_heap_B=1134527
+mem_heap_extra_B=10521
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=23377575
+mem_heap_B=1136035
+mem_heap_extra_B=10885
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=23928847
+mem_heap_B=1140774
+mem_heap_extra_B=11194
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=24025730
+mem_heap_B=1143856
+mem_heap_extra_B=11352
+mem_stacks_B=0
+heap_tree=peak
+n6: 1143856 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 898644 0x4E583B0: ???
+  n1: 898644 0x4E57988: ???
+   n1: 898644 0x4E51FF0: ???
+    n1: 898644 0x4E4E6DA: ???
+     n1: 898644 0x4E4A750: ???
+      n1: 898644 0x4E560E2: ???
+       n0: 898644 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 103740 0x485EAE2: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 101098 0x4860B6F: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 101040 0x4E4CE93: ???
+    n1: 101040 0x4E5ABAC: ???
+     n1: 101040 0x4E4E701: ???
+      n1: 101040 0x4E4A750: ???
+       n1: 101040 0x4E560E2: ???
+        n0: 101040 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 2642 in 2 places, all below massif's threshold (1.00%)
+ n1: 72704 0x4F03454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 35040 in 53 places, all below massif's threshold (1.00%)
+ n1: 19200 0x4E595F6: ???
+  n1: 19200 0x4E4E6ED: ???
+   n1: 19200 0x4E4A750: ???
+    n1: 19200 0x4E560E2: ???
+     n0: 19200 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 14528 0x485F3A2: keyVNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n1: 14336 0x4E4ECCF: ???
+   n1: 14336 0x4E4CE66: ???
+    n1: 14336 0x4E5ABAC: ???
+     n1: 14336 0x4E4E701: ???
+      n1: 14336 0x4E4A750: ???
+       n1: 14336 0x4E560E2: ???
+        n0: 14336 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+  n0: 192 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=47
+#-----------
+time=24484899
+mem_heap_B=1148130
+mem_heap_extra_B=11606
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=25054329
+mem_heap_B=1149788
+mem_heap_extra_B=11812
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=25264967
+mem_heap_B=100688
+mem_heap_extra_B=1456
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=25266668
+mem_heap_B=94921
+mem_heap_extra_B=975
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=25268369
+mem_heap_B=88414
+mem_heap_extra_B=594
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=25276319
+mem_heap_B=82897
+mem_heap_extra_B=255
+mem_stacks_B=0
+heap_tree=empty
