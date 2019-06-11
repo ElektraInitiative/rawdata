@@ -7,7 +7,7 @@ This folder contains two manually created files:
 - [`keyframes.yaml`](../Input/keyframes.yaml), and
 - [`combined.yaml`](../Input/combined.yaml)
 
-. The other files in the [`input`](../Input) directory:
+. The other files in the [`Input`](../Input) directory:
 
 - [`generated.yaml`](../Input/generated.yaml)
 - [`generated_100000.yaml`](../Input/generated_100000.yaml)
