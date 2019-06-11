@@ -40,3 +40,7 @@ YAML/Scripts/cut_input
 ```
 
 .
+
+## Flame Graphs
+
+The folder [`Flame Graphs`](../Flame Graphs) contains [flame graphs](http://www.brendangregg.com/flamegraphs.html) created with the LLVM extension [XRay](https://llvm.org/docs/XRay.html). We profiled the code with the [Docker image for Ubuntu Disco Dingo](https://github.com/ElektraInitiative/libelektra/blob/master/scripts/docker/ubuntu/disco/Dockerfile) as described [here](https://github.com/ElektraInitiative/libelektra/blob/master/doc/tutorials/profiling.md#xray).

@@ -1,0 +1,2289 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="1200" height="630" onload="init(evt)" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Flame graph stack visualization. See https://github.com/brendangregg/FlameGraph for latest version, and http://www.brendangregg.com/flamegraphs.html for examples. -->
+<!-- NOTES:  -->
+<defs>
+	<linearGradient id="background" y1="0" y2="1" x1="0" x2="0" >
+		<stop stop-color="#eeeeee" offset="5%" />
+		<stop stop-color="#eeeeb0" offset="95%" />
+	</linearGradient>
+</defs>
+<style type="text/css">
+	text { font-family:Verdana; font-size:12px; fill:rgb(0,0,0); }
+	#search { opacity:0.1; cursor:pointer; }
+	#search:hover, #search.show { opacity:1; }
+	#subtitle { text-anchor:middle; font-color:rgb(160,160,160); }
+	#title { text-anchor:middle; font-size:17px}
+	#unzoom { cursor:pointer; }
+	#frames > *:hover { stroke:black; stroke-width:0.5; cursor:pointer; }
+	.hide { display:none; }
+	.parent { opacity:0.5; }
+</style>
+<script type="text/ecmascript">
+<![CDATA[
+	"use strict";
+	var details, searchbtn, unzoombtn, matchedtxt, svg, searching;
+	function init(evt) {
+		details = document.getElementById("details").firstChild;
+		searchbtn = document.getElementById("search");
+		unzoombtn = document.getElementById("unzoom");
+		matchedtxt = document.getElementById("matched");
+		svg = document.getElementsByTagName("svg")[0];
+		searching = 0;
+	}
+
+	window.addEventListener("click", function(e) {
+		var target = find_group(e.target);
+		if (target) {
+			if (target.nodeName == "a") {
+				if (e.ctrlKey === false) return;
+				e.preventDefault();
+			}
+			if (target.classList.contains("parent")) unzoom();
+			zoom(target);
+		}
+		else if (e.target.id == "unzoom") unzoom();
+		else if (e.target.id == "search") search_prompt();
+	}, false)
+
+	// mouse-over for info
+	// show
+	window.addEventListener("mouseover", function(e) {
+		var target = find_group(e.target);
+		if (target) details.nodeValue = "Function: " + g_to_text(target);
+	}, false)
+
+	// clear
+	window.addEventListener("mouseout", function(e) {
+		var target = find_group(e.target);
+		if (target) details.nodeValue = ' ';
+	}, false)
+
+	// ctrl-F for search
+	window.addEventListener("keydown",function (e) {
+		if (e.keyCode === 114 || (e.ctrlKey && e.keyCode === 70)) {
+			e.preventDefault();
+			search_prompt();
+		}
+	}, false)
+
+	// functions
+	function find_child(node, selector) {
+		var children = node.querySelectorAll(selector);
+		if (children.length) return children[0];
+		return;
+	}
+	function find_group(node) {
+		var parent = node.parentElement;
+		if (!parent) return;
+		if (parent.id == "frames") return node;
+		return find_group(parent);
+	}
+	function orig_save(e, attr, val) {
+		if (e.attributes["_orig_" + attr] != undefined) return;
+		if (e.attributes[attr] == undefined) return;
+		if (val == undefined) val = e.attributes[attr].value;
+		e.setAttribute("_orig_" + attr, val);
+	}
+	function orig_load(e, attr) {
+		if (e.attributes["_orig_"+attr] == undefined) return;
+		e.attributes[attr].value = e.attributes["_orig_" + attr].value;
+		e.removeAttribute("_orig_"+attr);
+	}
+	function g_to_text(e) {
+		var text = find_child(e, "title").firstChild.nodeValue;
+		return (text)
+	}
+	function g_to_func(e) {
+		var func = g_to_text(e);
+		// if there's any manipulation we want to do to the function
+		// name before it's searched, do it here before returning.
+		return (func);
+	}
+	function update_text(e) {
+		var r = find_child(e, "rect");
+		var t = find_child(e, "text");
+		var w = parseFloat(r.attributes.width.value) -3;
+		var txt = find_child(e, "title").textContent.replace(/\([^(]*\)$/,"");
+		t.attributes.x.value = parseFloat(r.attributes.x.value) + 3;
+
+		// Smaller than this size won't fit anything
+		if (w < 2 * 12 * 0.59) {
+			t.textContent = "";
+			return;
+		}
+
+		t.textContent = txt;
+		// Fit in full text width
+		if (/^ *$/.test(txt) || t.getSubStringLength(0, txt.length) < w)
+			return;
+
+		for (var x = txt.length - 2; x > 0; x--) {
+			if (t.getSubStringLength(0, x + 2) <= w) {
+				t.textContent = txt.substring(0, x) + "..";
+				return;
+			}
+		}
+		t.textContent = "";
+	}
+
+	// zoom
+	function zoom_reset(e) {
+		if (e.attributes != undefined) {
+			orig_load(e, "x");
+			orig_load(e, "width");
+		}
+		if (e.childNodes == undefined) return;
+		for (var i = 0, c = e.childNodes; i < c.length; i++) {
+			zoom_reset(c[i]);
+		}
+	}
+	function zoom_child(e, x, ratio) {
+		if (e.attributes != undefined) {
+			if (e.attributes.x != undefined) {
+				orig_save(e, "x");
+				e.attributes.x.value = (parseFloat(e.attributes.x.value) - x - 10) * ratio + 10;
+				if (e.tagName == "text")
+					e.attributes.x.value = find_child(e.parentNode, "rect[x]").attributes.x.value + 3;
+			}
+			if (e.attributes.width != undefined) {
+				orig_save(e, "width");
+				e.attributes.width.value = parseFloat(e.attributes.width.value) * ratio;
+			}
+		}
+
+		if (e.childNodes == undefined) return;
+		for (var i = 0, c = e.childNodes; i < c.length; i++) {
+			zoom_child(c[i], x - 10, ratio);
+		}
+	}
+	function zoom_parent(e) {
+		if (e.attributes) {
+			if (e.attributes.x != undefined) {
+				orig_save(e, "x");
+				e.attributes.x.value = 10;
+			}
+			if (e.attributes.width != undefined) {
+				orig_save(e, "width");
+				e.attributes.width.value = parseInt(svg.width.baseVal.value) - (10 * 2);
+			}
+		}
+		if (e.childNodes == undefined) return;
+		for (var i = 0, c = e.childNodes; i < c.length; i++) {
+			zoom_parent(c[i]);
+		}
+	}
+	function zoom(node) {
+		var attr = find_child(node, "rect").attributes;
+		var width = parseFloat(attr.width.value);
+		var xmin = parseFloat(attr.x.value);
+		var xmax = parseFloat(xmin + width);
+		var ymin = parseFloat(attr.y.value);
+		var ratio = (svg.width.baseVal.value - 2 * 10) / width;
+
+		// XXX: Workaround for JavaScript float issues (fix me)
+		var fudge = 0.0001;
+
+		unzoombtn.classList.remove("hide");
+
+		var el = document.getElementById("frames").children;
+		for (var i = 0; i < el.length; i++) {
+			var e = el[i];
+			var a = find_child(e, "rect").attributes;
+			var ex = parseFloat(a.x.value);
+			var ew = parseFloat(a.width.value);
+			var upstack;
+			// Is it an ancestor
+			if (0 == 0) {
+				upstack = parseFloat(a.y.value) > ymin;
+			} else {
+				upstack = parseFloat(a.y.value) < ymin;
+			}
+			if (upstack) {
+				// Direct ancestor
+				if (ex <= xmin && (ex+ew+fudge) >= xmax) {
+					e.classList.add("parent");
+					zoom_parent(e);
+					update_text(e);
+				}
+				// not in current path
+				else
+					e.classList.add("hide");
+			}
+			// Children maybe
+			else {
+				// no common path
+				if (ex < xmin || ex + fudge >= xmax) {
+					e.classList.add("hide");
+				}
+				else {
+					zoom_child(e, xmin, ratio);
+					update_text(e);
+				}
+			}
+		}
+	}
+	function unzoom() {
+		unzoombtn.classList.add("hide");
+		var el = document.getElementById("frames").children;
+		for(var i = 0; i < el.length; i++) {
+			el[i].classList.remove("parent");
+			el[i].classList.remove("hide");
+			zoom_reset(el[i]);
+			update_text(el[i]);
+		}
+	}
+
+	// search
+	function reset_search() {
+		var el = document.querySelectorAll("#frames rect");
+		for (var i = 0; i < el.length; i++) {
+			orig_load(el[i], "fill")
+		}
+	}
+	function search_prompt() {
+		if (!searching) {
+			var term = prompt("Enter a search term (regexp " +
+			    "allowed, eg: ^ext4_)", "");
+			if (term != null) {
+				search(term)
+			}
+		} else {
+			reset_search();
+			searching = 0;
+			searchbtn.classList.remove("show");
+			searchbtn.firstChild.nodeValue = "Search"
+			matchedtxt.classList.add("hide");
+			matchedtxt.firstChild.nodeValue = ""
+		}
+	}
+	function search(term) {
+		var re = new RegExp(term);
+		var el = document.getElementById("frames").children;
+		var matches = new Object();
+		var maxwidth = 0;
+		for (var i = 0; i < el.length; i++) {
+			var e = el[i];
+			var func = g_to_func(e);
+			var rect = find_child(e, "rect");
+			if (func == null || rect == null)
+				continue;
+
+			// Save max width. Only works as we have a root frame
+			var w = parseFloat(rect.attributes.width.value);
+			if (w > maxwidth)
+				maxwidth = w;
+
+			if (func.match(re)) {
+				// highlight
+				var x = parseFloat(rect.attributes.x.value);
+				orig_save(rect, "fill");
+				rect.attributes.fill.value = "rgb(230,0,230)";
+
+				// remember matches
+				if (matches[x] == undefined) {
+					matches[x] = w;
+				} else {
+					if (w > matches[x]) {
+						// overwrite with parent
+						matches[x] = w;
+					}
+				}
+				searching = 1;
+			}
+		}
+		if (!searching)
+			return;
+
+		searchbtn.classList.add("show");
+		searchbtn.firstChild.nodeValue = "Reset Search";
+
+		// calculate percent matched, excluding vertical overlap
+		var count = 0;
+		var lastx = -1;
+		var lastw = 0;
+		var keys = Array();
+		for (k in matches) {
+			if (matches.hasOwnProperty(k))
+				keys.push(k);
+		}
+		// sort the matched frames by their x location
+		// ascending, then width descending
+		keys.sort(function(a, b){
+			return a - b;
+		});
+		// Step through frames saving only the biggest bottom-up frames
+		// thanks to the sort order. This relies on the tree property
+		// where children are always smaller than their parents.
+		var fudge = 0.0001;	// JavaScript floating point
+		for (var k in keys) {
+			var x = parseFloat(keys[k]);
+			var w = matches[keys[k]];
+			if (x >= lastx + lastw - fudge) {
+				count += w;
+				lastx = x;
+				lastw = w;
+			}
+		}
+		// display matched percent
+		matchedtxt.classList.remove("hide");
+		var pct = 100 * count / maxwidth;
+		if (pct != 100) pct = pct.toFixed(1)
+		matchedtxt.firstChild.nodeValue = "Matched: " + pct + "%";
+	}
+]]>
+</script>
+<rect x="0.0" y="0" width="1200.0" height="630.0" fill="url(#background)"  />
+<text id="title" x="600.00" y="24" >Flame Graph</text>
+<text id="details" x="10.00" y="613" > </text>
+<text id="unzoom" x="10.00" y="24" class="hide">Reset Zoom</text>
+<text id="search" x="1090.00" y="24" >Search</text>
+<text id="matched" x="1090.00" y="613" > </text>
+<g id="frames">
+<g >
+<title>keyDel (26,390,947 samples, 0.12%)</title><rect x="1188.6" y="501" width="1.4" height="15.0" fill="rgb(227,2,15)" rx="2" ry="2" />
+<text  x="1191.60" y="511.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (2,084,208 samples, 0.01%)</title><rect x="874.0" y="149" width="0.1" height="15.0" fill="rgb(206,88,15)" rx="2" ry="2" />
+<text  x="877.00" y="159.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (103,759,465 samples, 0.47%)</title><rect x="925.2" y="341" width="5.5" height="15.0" fill="rgb(238,36,13)" rx="2" ry="2" />
+<text  x="928.22" y="351.5" ></text>
+</g>
+<g >
+<title>keyVNew (170,839,941 samples, 0.77%)</title><rect x="955.0" y="357" width="9.0" height="15.0" fill="rgb(242,119,10)" rx="2" ry="2" />
+<text  x="957.98" y="367.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (126,443,623 samples, 0.57%)</title><rect x="1103.7" y="421" width="6.7" height="15.0" fill="rgb(215,33,50)" rx="2" ry="2" />
+<text  x="1106.66" y="431.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (15,576,774 samples, 0.07%)</title><rect x="888.7" y="229" width="0.8" height="15.0" fill="rgb(207,151,2)" rx="2" ry="2" />
+<text  x="891.69" y="239.5" ></text>
+</g>
+<g >
+<title>keyVInit (5,196,365 samples, 0.02%)</title><rect x="873.6" y="133" width="0.3" height="15.0" fill="rgb(242,102,33)" rx="2" ry="2" />
+<text  x="876.65" y="143.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (383,714,679 samples, 1.73%)</title><rect x="1079.0" y="437" width="20.4" height="15.0" fill="rgb(214,181,6)" rx="2" ry="2" />
+<text  x="1082.04" y="447.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (2,759,282 samples, 0.01%)</title><rect x="897.1" y="245" width="0.1" height="15.0" fill="rgb(254,200,2)" rx="2" ry="2" />
+<text  x="900.07" y="255.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (11,010,077,415 samples, 49.50%)</title><rect x="535.2" y="453" width="584.2" height="15.0" fill="rgb(221,33,23)" rx="2" ry="2" />
+<text  x="538.25" y="463.5" >(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb:..</text>
+</g>
+<g >
+<title>elektraKeySetName (2,562,985 samples, 0.01%)</title><rect x="912.4" y="261" width="0.1" height="15.0" fill="rgb(212,36,37)" rx="2" ry="2" />
+<text  x="915.40" y="271.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (8,206,197 samples, 0.04%)</title><rect x="890.5" y="245" width="0.4" height="15.0" fill="rgb(224,179,47)" rx="2" ry="2" />
+<text  x="893.51" y="255.5" ></text>
+</g>
+<g >
+<title>keyNew (6,052,572 samples, 0.03%)</title><rect x="1109.9" y="389" width="0.3" height="15.0" fill="rgb(222,166,24)" rx="2" ry="2" />
+<text  x="1112.89" y="399.5" ></text>
+</g>
+<g >
+<title>keyNew (2,769,481 samples, 0.01%)</title><rect x="929.1" y="293" width="0.1" height="15.0" fill="rgb(234,195,36)" rx="2" ry="2" />
+<text  x="932.08" y="303.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (3,791,689 samples, 0.02%)</title><rect x="880.0" y="197" width="0.2" height="15.0" fill="rgb(250,116,54)" rx="2" ry="2" />
+<text  x="882.98" y="207.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (45,190,622 samples, 0.20%)</title><rect x="922.2" y="293" width="2.4" height="15.0" fill="rgb(251,72,50)" rx="2" ry="2" />
+<text  x="925.17" y="303.5" ></text>
+</g>
+<g >
+<title>keyVInit (8,253,240 samples, 0.04%)</title><rect x="875.8" y="165" width="0.4" height="15.0" fill="rgb(238,92,23)" rx="2" ry="2" />
+<text  x="878.80" y="175.5" ></text>
+</g>
+<g >
+<title>keyDecRef (2,231,547 samples, 0.01%)</title><rect x="1113.7" y="437" width="0.1" height="15.0" fill="rgb(237,12,32)" rx="2" ry="2" />
+<text  x="1116.71" y="447.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (115,253,554 samples, 0.52%)</title><rect x="1091.3" y="389" width="6.1" height="15.0" fill="rgb(250,140,44)" rx="2" ry="2" />
+<text  x="1094.33" y="399.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (248,945,495 samples, 1.12%)</title><rect x="1061.5" y="421" width="13.2" height="15.0" fill="rgb(237,87,15)" rx="2" ry="2" />
+<text  x="1064.54" y="431.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (294,431,112 samples, 1.32%)</title><rect x="975.7" y="389" width="15.6" height="15.0" fill="rgb(227,93,30)" rx="2" ry="2" />
+<text  x="978.68" y="399.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (2,429,352 samples, 0.01%)</title><rect x="915.9" y="277" width="0.1" height="15.0" fill="rgb(238,154,37)" rx="2" ry="2" />
+<text  x="918.90" y="287.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (30,653,848 samples, 0.14%)</title><rect x="1073.1" y="389" width="1.6" height="15.0" fill="rgb(211,24,0)" rx="2" ry="2" />
+<text  x="1076.12" y="399.5" ></text>
+</g>
+<g >
+<title>keyVInit (47,258,654 samples, 0.21%)</title><rect x="900.6" y="277" width="2.5" height="15.0" fill="rgb(213,96,0)" rx="2" ry="2" />
+<text  x="903.56" y="287.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (68,714,795 samples, 0.31%)</title><rect x="939.0" y="309" width="3.6" height="15.0" fill="rgb(246,16,50)" rx="2" ry="2" />
+<text  x="942.00" y="319.5" ></text>
+</g>
+<g >
+<title>keyIncRef (2,981,774 samples, 0.01%)</title><rect x="1123.4" y="437" width="0.1" height="15.0" fill="rgb(217,8,37)" rx="2" ry="2" />
+<text  x="1126.37" y="447.5" ></text>
+</g>
+<g >
+<title>keySetMeta (4,615,785 samples, 0.02%)</title><rect x="894.7" y="213" width="0.3" height="15.0" fill="rgb(220,163,37)" rx="2" ry="2" />
+<text  x="897.74" y="223.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (13,974,293 samples, 0.06%)</title><rect x="890.2" y="261" width="0.7" height="15.0" fill="rgb(254,158,14)" rx="2" ry="2" />
+<text  x="893.20" y="271.5" ></text>
+</g>
+<g >
+<title>ksDel (5,414,461 samples, 0.02%)</title><rect x="1189.7" y="485" width="0.3" height="15.0" fill="rgb(237,41,53)" rx="2" ry="2" />
+<text  x="1192.71" y="495.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (3,328,996 samples, 0.01%)</title><rect x="925.0" y="277" width="0.2" height="15.0" fill="rgb(243,116,48)" rx="2" ry="2" />
+<text  x="928.02" y="287.5" ></text>
+</g>
+<g >
+<title>keySetOwner (36,507,880 samples, 0.16%)</title><rect x="940.7" y="293" width="1.9" height="15.0" fill="rgb(205,210,6)" rx="2" ry="2" />
+<text  x="943.71" y="303.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (5,172,647 samples, 0.02%)</title><rect x="1166.9" y="405" width="0.3" height="15.0" fill="rgb(239,95,30)" rx="2" ry="2" />
+<text  x="1169.91" y="415.5" ></text>
+</g>
+<g >
+<title>std::_Rb_tree&lt;std::shared_ptr&lt;YAML::detail::node&gt;, std::shared_ptr&lt;YAML::detail::node&gt;, std::_Identity&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::less&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::allocator&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt; &gt;::_M_erase(std::_Rb_tree_node&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;*) (3,396,440 samples, 0.02%)</title><rect x="1185.8" y="293" width="0.1" height="15.0" fill="rgb(243,186,52)" rx="2" ry="2" />
+<text  x="1188.76" y="303.5" ></text>
+</g>
+<g >
+<title>keySetMeta (36,846,828 samples, 0.17%)</title><rect x="1097.4" y="389" width="2.0" height="15.0" fill="rgb(233,72,54)" rx="2" ry="2" />
+<text  x="1100.44" y="399.5" ></text>
+</g>
+<g >
+<title>elektraLookupBinarySearch (1,888,360 samples, 0.01%)</title><rect x="1173.5" y="405" width="0.1" height="15.0" fill="rgb(206,141,50)" rx="2" ry="2" />
+<text  x="1176.47" y="415.5" ></text>
+</g>
+<g >
+<title>ksClose (50,584,419 samples, 0.23%)</title><rect x="1187.3" y="517" width="2.7" height="15.0" fill="rgb(243,133,30)" rx="2" ry="2" />
+<text  x="1190.31" y="527.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (40,140,943 samples, 0.18%)</title><rect x="870.6" y="149" width="2.1" height="15.0" fill="rgb(232,160,7)" rx="2" ry="2" />
+<text  x="873.56" y="159.5" ></text>
+</g>
+<g >
+<title>ksDel (7,807,048 samples, 0.04%)</title><rect x="950.4" y="341" width="0.4" height="15.0" fill="rgb(205,70,32)" rx="2" ry="2" />
+<text  x="953.40" y="351.5" ></text>
+</g>
+<g >
+<title>keyDel (26,480,822 samples, 0.12%)</title><rect x="1036.0" y="405" width="1.4" height="15.0" fill="rgb(212,176,42)" rx="2" ry="2" />
+<text  x="1039.01" y="415.5" ></text>
+</g>
+<g >
+<title>keyIncRef (1,947,770 samples, 0.01%)</title><rect x="978.9" y="373" width="0.1" height="15.0" fill="rgb(234,80,12)" rx="2" ry="2" />
+<text  x="981.93" y="383.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (8,803,095 samples, 0.04%)</title><rect x="1060.2" y="357" width="0.4" height="15.0" fill="rgb(248,92,50)" rx="2" ry="2" />
+<text  x="1063.18" y="367.5" ></text>
+</g>
+<g >
+<title>ksLookup (3,167,759 samples, 0.01%)</title><rect x="1148.1" y="405" width="0.2" height="15.0" fill="rgb(234,53,10)" rx="2" ry="2" />
+<text  x="1151.10" y="415.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (4,113,291 samples, 0.02%)</title><rect x="878.0" y="197" width="0.2" height="15.0" fill="rgb(221,24,29)" rx="2" ry="2" />
+<text  x="881.03" y="207.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (17,486,110 samples, 0.08%)</title><rect x="1070.6" y="373" width="0.9" height="15.0" fill="rgb(219,157,45)" rx="2" ry="2" />
+<text  x="1073.57" y="383.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (4,251,089 samples, 0.02%)</title><rect x="942.2" y="261" width="0.2" height="15.0" fill="rgb(229,64,50)" rx="2" ry="2" />
+<text  x="945.17" y="271.5" ></text>
+</g>
+<g >
+<title>keySetMeta (4,235,500 samples, 0.02%)</title><rect x="906.3" y="277" width="0.2" height="15.0" fill="rgb(224,126,12)" rx="2" ry="2" />
+<text  x="909.31" y="287.5" ></text>
+</g>
+<g >
+<title>keyVInit (125,274,379 samples, 0.56%)</title><rect x="957.4" y="341" width="6.6" height="15.0" fill="rgb(239,218,3)" rx="2" ry="2" />
+<text  x="960.40" y="351.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (71,880,082 samples, 0.32%)</title><rect x="1106.6" y="405" width="3.8" height="15.0" fill="rgb(208,18,33)" rx="2" ry="2" />
+<text  x="1109.56" y="415.5" ></text>
+</g>
+<g >
+<title>keyVNew (63,648,689 samples, 0.29%)</title><rect x="899.7" y="293" width="3.4" height="15.0" fill="rgb(205,138,25)" rx="2" ry="2" />
+<text  x="902.69" y="303.5" ></text>
+</g>
+<g >
+<title>keyGetFullNameSize (54,124,883 samples, 0.24%)</title><rect x="1071.9" y="405" width="2.8" height="15.0" fill="rgb(211,138,15)" rx="2" ry="2" />
+<text  x="1074.88" y="415.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (15,224,409,245 samples, 68.45%)</title><rect x="369.0" y="485" width="807.7" height="15.0" fill="rgb(208,8,20)" rx="2" ry="2" />
+<text  x="372.00" y="495.5" >(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;)</text>
+</g>
+<g >
+<title>keyVInit (1,898,099 samples, 0.01%)</title><rect x="872.1" y="85" width="0.1" height="15.0" fill="rgb(219,171,33)" rx="2" ry="2" />
+<text  x="875.07" y="95.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (45,004,941 samples, 0.20%)</title><rect x="968.1" y="341" width="2.4" height="15.0" fill="rgb(224,50,19)" rx="2" ry="2" />
+<text  x="971.12" y="351.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (248,471,424 samples, 1.12%)</title><rect x="1138.2" y="453" width="13.2" height="15.0" fill="rgb(254,181,28)" rx="2" ry="2" />
+<text  x="1141.21" y="463.5" ></text>
+</g>
+<g >
+<title>void kdb::Key::set&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;) (10,667,247 samples, 0.05%)</title><rect x="906.0" y="309" width="0.5" height="15.0" fill="rgb(229,39,42)" rx="2" ry="2" />
+<text  x="908.97" y="319.5" ></text>
+</g>
+<g >
+<title>ksClose (4,951,470 samples, 0.02%)</title><rect x="1002.7" y="357" width="0.2" height="15.0" fill="rgb(207,52,12)" rx="2" ry="2" />
+<text  x="1005.66" y="367.5" ></text>
+</g>
+<g >
+<title>keyVNew (26,739,462 samples, 0.12%)</title><rect x="883.6" y="245" width="1.5" height="15.0" fill="rgb(228,120,6)" rx="2" ry="2" />
+<text  x="886.64" y="255.5" ></text>
+</g>
+<g >
+<title>ksLookup (4,567,021 samples, 0.02%)</title><rect x="1005.2" y="341" width="0.3" height="15.0" fill="rgb(240,63,39)" rx="2" ry="2" />
+<text  x="1008.21" y="351.5" ></text>
+</g>
+<g >
+<title>keyVInit (3,753,259 samples, 0.02%)</title><rect x="872.8" y="117" width="0.2" height="15.0" fill="rgb(247,164,28)" rx="2" ry="2" />
+<text  x="875.83" y="127.5" ></text>
+</g>
+<g >
+<title>keySetMeta (9,189,543 samples, 0.04%)</title><rect x="932.2" y="309" width="0.5" height="15.0" fill="rgb(253,114,40)" rx="2" ry="2" />
+<text  x="935.21" y="319.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (410,142,654 samples, 1.84%)</title><rect x="1039.8" y="421" width="21.7" height="15.0" fill="rgb(248,207,30)" rx="2" ry="2" />
+<text  x="1042.78" y="431.5" >k..</text>
+</g>
+<g >
+<title>elektraKeySetName (18,044,895 samples, 0.08%)</title><rect x="894.0" y="245" width="1.0" height="15.0" fill="rgb(235,93,18)" rx="2" ry="2" />
+<text  x="897.03" y="255.5" ></text>
+</g>
+<g >
+<title>keySetString (6,043,382 samples, 0.03%)</title><rect x="891.6" y="261" width="0.3" height="15.0" fill="rgb(234,188,18)" rx="2" ry="2" />
+<text  x="894.62" y="271.5" ></text>
+</g>
+<g >
+<title>void kdb::Key::set&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;) (8,467,618 samples, 0.04%)</title><rect x="891.5" y="277" width="0.4" height="15.0" fill="rgb(235,225,9)" rx="2" ry="2" />
+<text  x="894.49" y="287.5" ></text>
+</g>
+<g >
+<title>keyNew (1,959,595 samples, 0.01%)</title><rect x="1071.5" y="373" width="0.1" height="15.0" fill="rgb(210,190,10)" rx="2" ry="2" />
+<text  x="1074.51" y="383.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (21,981,025 samples, 0.10%)</title><rect x="896.2" y="277" width="1.1" height="15.0" fill="rgb(214,199,48)" rx="2" ry="2" />
+<text  x="899.17" y="287.5" ></text>
+</g>
+<g >
+<title>ksLookup (2,361,008 samples, 0.01%)</title><rect x="970.4" y="325" width="0.1" height="15.0" fill="rgb(244,212,32)" rx="2" ry="2" />
+<text  x="973.38" y="335.5" ></text>
+</g>
+<g >
+<title>ksDel (17,238,694 samples, 0.08%)</title><rect x="1152.6" y="437" width="0.9" height="15.0" fill="rgb(215,169,23)" rx="2" ry="2" />
+<text  x="1155.60" y="447.5" ></text>
+</g>
+<g >
+<title>ksLookup (8,630,245 samples, 0.04%)</title><rect x="1032.4" y="357" width="0.4" height="15.0" fill="rgb(209,153,9)" rx="2" ry="2" />
+<text  x="1035.39" y="367.5" ></text>
+</g>
+<g >
+<title>keyGetFullNameSize (10,068,991 samples, 0.05%)</title><rect x="897.3" y="277" width="0.6" height="15.0" fill="rgb(234,218,23)" rx="2" ry="2" />
+<text  x="900.33" y="287.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (24,366,280 samples, 0.11%)</title><rect x="901.4" y="261" width="1.3" height="15.0" fill="rgb(226,59,49)" rx="2" ry="2" />
+<text  x="904.39" y="271.5" ></text>
+</g>
+<g >
+<title>ksDel (6,765,711 samples, 0.03%)</title><rect x="931.0" y="325" width="0.4" height="15.0" fill="rgb(239,60,7)" rx="2" ry="2" />
+<text  x="934.03" y="335.5" ></text>
+</g>
+<g >
+<title>keySetMeta (2,618,013 samples, 0.01%)</title><rect x="887.0" y="229" width="0.1" height="15.0" fill="rgb(242,19,35)" rx="2" ry="2" />
+<text  x="890.01" y="239.5" ></text>
+</g>
+<g >
+<title>keyAddBaseName (4,256,601 samples, 0.02%)</title><rect x="1151.4" y="453" width="0.2" height="15.0" fill="rgb(224,229,40)" rx="2" ry="2" />
+<text  x="1154.40" y="463.5" ></text>
+</g>
+<g >
+<title>void kdb::Key::set&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;) (58,555,285 samples, 0.26%)</title><rect x="1116.3" y="437" width="3.1" height="15.0" fill="rgb(250,216,46)" rx="2" ry="2" />
+<text  x="1119.26" y="447.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (26,367,138 samples, 0.12%)</title><rect x="870.9" y="133" width="1.4" height="15.0" fill="rgb(251,48,51)" rx="2" ry="2" />
+<text  x="873.90" y="143.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (1,919,744 samples, 0.01%)</title><rect x="882.8" y="213" width="0.1" height="15.0" fill="rgb(225,53,9)" rx="2" ry="2" />
+<text  x="885.81" y="223.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (15,636,565 samples, 0.07%)</title><rect x="949.2" y="325" width="0.8" height="15.0" fill="rgb(205,102,40)" rx="2" ry="2" />
+<text  x="952.16" y="335.5" ></text>
+</g>
+<g >
+<title>keySetString (7,339,143 samples, 0.03%)</title><rect x="906.1" y="293" width="0.4" height="15.0" fill="rgb(248,165,53)" rx="2" ry="2" />
+<text  x="909.15" y="303.5" ></text>
+</g>
+<g >
+<title>yamlcpp::yamlRead(kdb::KeySet&amp;, kdb::Key&amp;) (18,727,384,129 samples, 84.20%)</title><rect x="192.4" y="517" width="993.5" height="15.0" fill="rgb(217,131,42)" rx="2" ry="2" />
+<text  x="195.40" y="527.5" >yamlcpp::yamlRead(kdb::KeySet&amp;, kdb::Key&amp;)</text>
+</g>
+<g >
+<title>keyGetMeta (64,475,758 samples, 0.29%)</title><rect x="1144.8" y="421" width="3.5" height="15.0" fill="rgb(245,15,30)" rx="2" ry="2" />
+<text  x="1147.85" y="431.5" ></text>
+</g>
+<g >
+<title>keyVNew (38,037,770 samples, 0.17%)</title><rect x="887.7" y="261" width="2.0" height="15.0" fill="rgb(223,18,54)" rx="2" ry="2" />
+<text  x="890.69" y="271.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (4,016,437 samples, 0.02%)</title><rect x="874.7" y="133" width="0.2" height="15.0" fill="rgb(220,118,26)" rx="2" ry="2" />
+<text  x="877.68" y="143.5" ></text>
+</g>
+<g >
+<title>std::_Rb_tree&lt;std::shared_ptr&lt;YAML::detail::node&gt;, std::shared_ptr&lt;YAML::detail::node&gt;, std::_Identity&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::less&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::allocator&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt; &gt;::_M_erase(std::_Rb_tree_node&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;*) (35,042,757 samples, 0.16%)</title><rect x="1184.1" y="373" width="1.8" height="15.0" fill="rgb(232,210,42)" rx="2" ry="2" />
+<text  x="1187.08" y="383.5" ></text>
+</g>
+<g >
+<title>keyVInit (2,496,717 samples, 0.01%)</title><rect x="872.4" y="101" width="0.1" height="15.0" fill="rgb(211,63,36)" rx="2" ry="2" />
+<text  x="875.39" y="111.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (18,454,023 samples, 0.08%)</title><rect x="1108.9" y="389" width="1.0" height="15.0" fill="rgb(245,201,15)" rx="2" ry="2" />
+<text  x="1111.90" y="399.5" ></text>
+</g>
+<g >
+<title>keyDel (14,339,349 samples, 0.06%)</title><rect x="950.1" y="357" width="0.7" height="15.0" fill="rgb(241,107,54)" rx="2" ry="2" />
+<text  x="953.05" y="367.5" ></text>
+</g>
+<g >
+<title>keySetMeta (29,430,092 samples, 0.13%)</title><rect x="1019.9" y="325" width="1.6" height="15.0" fill="rgb(245,210,8)" rx="2" ry="2" />
+<text  x="1022.93" y="335.5" ></text>
+</g>
+<g >
+<title>keyDel (26,247,515 samples, 0.12%)</title><rect x="1074.8" y="421" width="1.4" height="15.0" fill="rgb(247,28,17)" rx="2" ry="2" />
+<text  x="1077.77" y="431.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (2,303,119 samples, 0.01%)</title><rect x="932.5" y="293" width="0.1" height="15.0" fill="rgb(239,64,28)" rx="2" ry="2" />
+<text  x="935.52" y="303.5" ></text>
+</g>
+<g >
+<title>ksDel (74,653,570 samples, 0.34%)</title><rect x="1186.0" y="533" width="4.0" height="15.0" fill="rgb(218,52,43)" rx="2" ry="2" />
+<text  x="1189.03" y="543.5" ></text>
+</g>
+<g >
+<title>ksClose (8,165,689 samples, 0.04%)</title><rect x="1037.0" y="373" width="0.4" height="15.0" fill="rgb(232,220,46)" rx="2" ry="2" />
+<text  x="1039.98" y="383.5" ></text>
+</g>
+<g >
+<title>ksDel (13,610,700 samples, 0.06%)</title><rect x="1176.0" y="453" width="0.7" height="15.0" fill="rgb(239,47,42)" rx="2" ry="2" />
+<text  x="1178.98" y="463.5" ></text>
+</g>
+<g >
+<title>ksClose (15,309,371 samples, 0.07%)</title><rect x="1115.2" y="405" width="0.9" height="15.0" fill="rgb(245,54,25)" rx="2" ry="2" />
+<text  x="1118.24" y="415.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (75,379,504 samples, 0.34%)</title><rect x="966.5" y="357" width="4.0" height="15.0" fill="rgb(214,134,30)" rx="2" ry="2" />
+<text  x="969.51" y="367.5" ></text>
+</g>
+<g >
+<title>keyDel (25,810,862 samples, 0.12%)</title><rect x="1001.6" y="389" width="1.3" height="15.0" fill="rgb(236,184,48)" rx="2" ry="2" />
+<text  x="1004.55" y="399.5" ></text>
+</g>
+<g >
+<title>keySetOwner (4,480,930 samples, 0.02%)</title><rect x="884.7" y="197" width="0.2" height="15.0" fill="rgb(246,96,14)" rx="2" ry="2" />
+<text  x="887.68" y="207.5" ></text>
+</g>
+<g >
+<title>keyVInit (121,589,975 samples, 0.55%)</title><rect x="937.1" y="325" width="6.4" height="15.0" fill="rgb(232,209,20)" rx="2" ry="2" />
+<text  x="940.06" y="335.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (72,447,738 samples, 0.33%)</title><rect x="1169.7" y="453" width="3.9" height="15.0" fill="rgb(245,46,2)" rx="2" ry="2" />
+<text  x="1172.73" y="463.5" ></text>
+</g>
+<g >
+<title>keyVNew (5,026,945 samples, 0.02%)</title><rect x="872.8" y="133" width="0.2" height="15.0" fill="rgb(233,179,48)" rx="2" ry="2" />
+<text  x="875.76" y="143.5" ></text>
+</g>
+<g >
+<title>elektraMalloc (2,388,533 samples, 0.01%)</title><rect x="989.8" y="277" width="0.1" height="15.0" fill="rgb(249,75,0)" rx="2" ry="2" />
+<text  x="992.82" y="287.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (49,348,145 samples, 0.22%)</title><rect x="903.1" y="309" width="2.6" height="15.0" fill="rgb(211,159,44)" rx="2" ry="2" />
+<text  x="906.07" y="319.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (617,276,843 samples, 2.78%)</title><rect x="854.4" y="277" width="32.7" height="15.0" fill="rgb(246,202,24)" rx="2" ry="2" />
+<text  x="857.40" y="287.5" >(a..</text>
+</g>
+<g >
+<title>keySetMeta (21,408,237 samples, 0.10%)</title><rect x="1166.2" y="421" width="1.1" height="15.0" fill="rgb(212,36,14)" rx="2" ry="2" />
+<text  x="1169.16" y="431.5" ></text>
+</g>
+<g >
+<title>keyGetFullNameSize (10,570,023 samples, 0.05%)</title><rect x="905.1" y="293" width="0.6" height="15.0" fill="rgb(235,194,10)" rx="2" ry="2" />
+<text  x="908.12" y="303.5" ></text>
+</g>
+<g >
+<title>keySetOwner (7,982,750 samples, 0.04%)</title><rect x="894.6" y="229" width="0.4" height="15.0" fill="rgb(225,141,24)" rx="2" ry="2" />
+<text  x="897.56" y="239.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (16,447,522 samples, 0.07%)</title><rect x="871.1" y="117" width="0.9" height="15.0" fill="rgb(228,169,15)" rx="2" ry="2" />
+<text  x="874.13" y="127.5" ></text>
+</g>
+<g >
+<title>keyNew (15,686,092 samples, 0.07%)</title><rect x="1060.6" y="357" width="0.9" height="15.0" fill="rgb(245,217,54)" rx="2" ry="2" />
+<text  x="1063.65" y="367.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (28,174,653 samples, 0.13%)</title><rect x="927.8" y="309" width="1.5" height="15.0" fill="rgb(248,106,35)" rx="2" ry="2" />
+<text  x="930.83" y="319.5" ></text>
+</g>
+<g >
+<title>keySetString (35,230,648 samples, 0.16%)</title><rect x="1077.1" y="405" width="1.9" height="15.0" fill="rgb(232,130,15)" rx="2" ry="2" />
+<text  x="1080.10" y="415.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (815,915,507 samples, 3.67%)</title><rect x="848.7" y="293" width="43.2" height="15.0" fill="rgb(241,226,36)" rx="2" ry="2" />
+<text  x="851.65" y="303.5" >(ano..</text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (12,432,909 samples, 0.06%)</title><rect x="874.3" y="181" width="0.6" height="15.0" fill="rgb(215,7,38)" rx="2" ry="2" />
+<text  x="877.28" y="191.5" ></text>
+</g>
+<g >
+<title>keySetOwner (15,950,880 samples, 0.07%)</title><rect x="911.2" y="261" width="0.9" height="15.0" fill="rgb(225,84,20)" rx="2" ry="2" />
+<text  x="914.22" y="271.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (29,491,960 samples, 0.13%)</title><rect x="880.5" y="245" width="1.6" height="15.0" fill="rgb(214,72,43)" rx="2" ry="2" />
+<text  x="883.53" y="255.5" ></text>
+</g>
+<g >
+<title>elektraFree (2,025,724 samples, 0.01%)</title><rect x="1152.4" y="437" width="0.1" height="15.0" fill="rgb(248,140,41)" rx="2" ry="2" />
+<text  x="1155.43" y="447.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (2,964,020 samples, 0.01%)</title><rect x="876.5" y="165" width="0.2" height="15.0" fill="rgb(253,188,6)" rx="2" ry="2" />
+<text  x="879.49" y="175.5" ></text>
+</g>
+<g >
+<title>keySetMeta (1,974,393 samples, 0.01%)</title><rect x="881.9" y="165" width="0.1" height="15.0" fill="rgb(247,151,33)" rx="2" ry="2" />
+<text  x="884.88" y="175.5" ></text>
+</g>
+<g >
+<title>keySetString (28,122,456 samples, 0.13%)</title><rect x="1154.3" y="437" width="1.5" height="15.0" fill="rgb(214,75,17)" rx="2" ry="2" />
+<text  x="1157.32" y="447.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (19,436,851 samples, 0.09%)</title><rect x="876.8" y="213" width="1.1" height="15.0" fill="rgb(244,161,17)" rx="2" ry="2" />
+<text  x="879.85" y="223.5" ></text>
+</g>
+<g >
+<title>keyDel (11,115,377 samples, 0.05%)</title><rect x="930.8" y="341" width="0.6" height="15.0" fill="rgb(220,171,23)" rx="2" ry="2" />
+<text  x="933.80" y="351.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (3,213,261 samples, 0.01%)</title><rect x="872.0" y="117" width="0.2" height="15.0" fill="rgb(237,10,24)" rx="2" ry="2" />
+<text  x="875.00" y="127.5" ></text>
+</g>
+<g >
+<title>keyDecRef (2,240,277 samples, 0.01%)</title><rect x="972.4" y="373" width="0.1" height="15.0" fill="rgb(254,51,26)" rx="2" ry="2" />
+<text  x="975.42" y="383.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (1,869,293,740 samples, 8.40%)</title><rect x="818.2" y="341" width="99.1" height="15.0" fill="rgb(237,124,26)" rx="2" ry="2" />
+<text  x="821.17" y="351.5" >(anonymous n..</text>
+</g>
+<g >
+<title>keySetString (21,629,757 samples, 0.10%)</title><rect x="951.4" y="341" width="1.1" height="15.0" fill="rgb(221,162,23)" rx="2" ry="2" />
+<text  x="954.37" y="351.5" ></text>
+</g>
+<g >
+<title>keyAddName (5,598,707 samples, 0.03%)</title><rect x="923.1" y="277" width="0.3" height="15.0" fill="rgb(212,11,19)" rx="2" ry="2" />
+<text  x="926.12" y="287.5" ></text>
+</g>
+<g >
+<title>ksAppendKey (3,141,167 samples, 0.01%)</title><rect x="1076.2" y="421" width="0.1" height="15.0" fill="rgb(229,36,10)" rx="2" ry="2" />
+<text  x="1079.16" y="431.5" ></text>
+</g>
+<g >
+<title>ksAppendKey (3,677,328 samples, 0.02%)</title><rect x="1153.5" y="453" width="0.2" height="15.0" fill="rgb(206,91,5)" rx="2" ry="2" />
+<text  x="1156.51" y="463.5" ></text>
+</g>
+<g >
+<title>keyGetFullNameSize (26,417,388 samples, 0.12%)</title><rect x="929.3" y="325" width="1.4" height="15.0" fill="rgb(214,181,12)" rx="2" ry="2" />
+<text  x="932.33" y="335.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (8,575,141 samples, 0.04%)</title><rect x="947.9" y="309" width="0.4" height="15.0" fill="rgb(212,95,8)" rx="2" ry="2" />
+<text  x="950.89" y="319.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (32,441,499 samples, 0.15%)</title><rect x="1149.7" y="421" width="1.7" height="15.0" fill="rgb(238,7,41)" rx="2" ry="2" />
+<text  x="1152.67" y="431.5" ></text>
+</g>
+<g >
+<title>ksDel (10,815,822 samples, 0.05%)</title><rect x="1002.3" y="373" width="0.6" height="15.0" fill="rgb(222,90,50)" rx="2" ry="2" />
+<text  x="1005.35" y="383.5" ></text>
+</g>
+<g >
+<title>ksLookup (2,298,594 samples, 0.01%)</title><rect x="1136.2" y="357" width="0.1" height="15.0" fill="rgb(239,175,29)" rx="2" ry="2" />
+<text  x="1139.17" y="367.5" ></text>
+</g>
+<g >
+<title>keyAddName (7,635,163 samples, 0.03%)</title><rect x="960.9" y="309" width="0.5" height="15.0" fill="rgb(249,190,40)" rx="2" ry="2" />
+<text  x="963.95" y="319.5" ></text>
+</g>
+<g >
+<title>keyNew (3,308,699 samples, 0.01%)</title><rect x="1035.7" y="357" width="0.2" height="15.0" fill="rgb(247,46,28)" rx="2" ry="2" />
+<text  x="1038.71" y="367.5" ></text>
+</g>
+<g >
+<title>keyVNew (15,621,589 samples, 0.07%)</title><rect x="877.0" y="197" width="0.9" height="15.0" fill="rgb(237,204,13)" rx="2" ry="2" />
+<text  x="880.05" y="207.5" ></text>
+</g>
+<g >
+<title>void kdb::Key::set&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;) (3,168,159 samples, 0.01%)</title><rect x="873.2" y="149" width="0.2" height="15.0" fill="rgb(224,34,20)" rx="2" ry="2" />
+<text  x="876.24" y="159.5" ></text>
+</g>
+<g >
+<title>void kdb::Key::set&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;) (45,003,829 samples, 0.20%)</title><rect x="1003.1" y="389" width="2.4" height="15.0" fill="rgb(241,172,24)" rx="2" ry="2" />
+<text  x="1006.07" y="399.5" ></text>
+</g>
+<g >
+<title>keySetMeta (34,833,596 samples, 0.16%)</title><rect x="1134.4" y="373" width="1.9" height="15.0" fill="rgb(239,219,26)" rx="2" ry="2" />
+<text  x="1137.44" y="383.5" ></text>
+</g>
+<g >
+<title>std::_Rb_tree&lt;std::shared_ptr&lt;YAML::detail::node&gt;, std::shared_ptr&lt;YAML::detail::node&gt;, std::_Identity&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::less&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::allocator&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt; &gt;::_M_erase(std::_Rb_tree_node&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;*) (65,401,442 samples, 0.29%)</title><rect x="1182.5" y="405" width="3.4" height="15.0" fill="rgb(248,80,12)" rx="2" ry="2" />
+<text  x="1185.47" y="415.5" ></text>
+</g>
+<g >
+<title>keyVInit (4,291,671 samples, 0.02%)</title><rect x="871.7" y="69" width="0.2" height="15.0" fill="rgb(249,211,51)" rx="2" ry="2" />
+<text  x="874.69" y="79.5" ></text>
+</g>
+<g >
+<title>thread_33 (22,241,832,737 samples, 100.00%)</title><rect x="10.0" y="565" width="1180.0" height="15.0" fill="rgb(206,27,26)" rx="2" ry="2" />
+<text  x="13.00" y="575.5" >thread_33</text>
+</g>
+<g >
+<title>keyVInit (85,388,813 samples, 0.38%)</title><rect x="920.7" y="309" width="4.5" height="15.0" fill="rgb(227,55,49)" rx="2" ry="2" />
+<text  x="923.69" y="319.5" ></text>
+</g>
+<g >
+<title>keySetOwner (31,168,135 samples, 0.14%)</title><rect x="961.4" y="309" width="1.6" height="15.0" fill="rgb(253,42,4)" rx="2" ry="2" />
+<text  x="964.35" y="319.5" ></text>
+</g>
+<g >
+<title>keyNew (1,971,832 samples, 0.01%)</title><rect x="1151.3" y="405" width="0.1" height="15.0" fill="rgb(254,41,7)" rx="2" ry="2" />
+<text  x="1154.26" y="415.5" ></text>
+</g>
+<g >
+<title>keySetMeta (17,983,738 samples, 0.08%)</title><rect x="962.1" y="293" width="0.9" height="15.0" fill="rgb(246,158,41)" rx="2" ry="2" />
+<text  x="965.05" y="303.5" ></text>
+</g>
+<g >
+<title>keyVInit (17,205,291 samples, 0.08%)</title><rect x="881.2" y="213" width="0.9" height="15.0" fill="rgb(239,44,47)" rx="2" ry="2" />
+<text  x="884.18" y="223.5" ></text>
+</g>
+<g >
+<title>keySetMeta (2,098,606 samples, 0.01%)</title><rect x="882.0" y="197" width="0.1" height="15.0" fill="rgb(239,66,13)" rx="2" ry="2" />
+<text  x="884.98" y="207.5" ></text>
+</g>
+<g >
+<title>keyDel (1,948,758 samples, 0.01%)</title><rect x="886.7" y="261" width="0.1" height="15.0" fill="rgb(232,131,28)" rx="2" ry="2" />
+<text  x="889.69" y="271.5" ></text>
+</g>
+<g >
+<title>keyGetFullNameSize (58,470,967 samples, 0.26%)</title><rect x="1032.8" y="389" width="3.1" height="15.0" fill="rgb(248,11,15)" rx="2" ry="2" />
+<text  x="1035.84" y="399.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (4,059,882 samples, 0.02%)</title><rect x="1039.5" y="357" width="0.2" height="15.0" fill="rgb(236,64,17)" rx="2" ry="2" />
+<text  x="1042.47" y="367.5" ></text>
+</g>
+<g >
+<title>keyGetFullNameSize (2,080,270 samples, 0.01%)</title><rect x="878.2" y="197" width="0.2" height="15.0" fill="rgb(252,205,38)" rx="2" ry="2" />
+<text  x="881.25" y="207.5" ></text>
+</g>
+<g >
+<title>elektraMalloc (7,792,200 samples, 0.04%)</title><rect x="1061.1" y="341" width="0.4" height="15.0" fill="rgb(244,42,22)" rx="2" ry="2" />
+<text  x="1064.06" y="351.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (4,052,717 samples, 0.02%)</title><rect x="882.5" y="213" width="0.2" height="15.0" fill="rgb(209,208,17)" rx="2" ry="2" />
+<text  x="885.52" y="223.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (56,720,330 samples, 0.26%)</title><rect x="945.5" y="341" width="3.0" height="15.0" fill="rgb(241,56,7)" rx="2" ry="2" />
+<text  x="948.50" y="351.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (6,793,945 samples, 0.03%)</title><rect x="874.9" y="181" width="0.4" height="15.0" fill="rgb(222,47,24)" rx="2" ry="2" />
+<text  x="877.94" y="191.5" ></text>
+</g>
+<g >
+<title>elektraYamlcppGet (20,433,467,453 samples, 91.87%)</title><rect x="101.9" y="533" width="1084.0" height="15.0" fill="rgb(210,59,26)" rx="2" ry="2" />
+<text  x="104.88" y="543.5" >elektraYamlcppGet</text>
+</g>
+<g >
+<title>keySetOwner (62,442,654 samples, 0.28%)</title><rect x="1094.1" y="373" width="3.3" height="15.0" fill="rgb(242,82,41)" rx="2" ry="2" />
+<text  x="1097.13" y="383.5" ></text>
+</g>
+<g >
+<title>keyAddBaseName (2,242,675 samples, 0.01%)</title><rect x="1113.6" y="437" width="0.1" height="15.0" fill="rgb(243,88,9)" rx="2" ry="2" />
+<text  x="1116.60" y="447.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (7,080,100 samples, 0.03%)</title><rect x="877.4" y="165" width="0.4" height="15.0" fill="rgb(220,222,53)" rx="2" ry="2" />
+<text  x="880.44" y="175.5" ></text>
+</g>
+<g >
+<title>keySetString (25,006,969 samples, 0.11%)</title><rect x="974.4" y="357" width="1.3" height="15.0" fill="rgb(237,226,44)" rx="2" ry="2" />
+<text  x="977.36" y="367.5" ></text>
+</g>
+<g >
+<title>keyVNew (276,743,776 samples, 1.24%)</title><rect x="1123.5" y="437" width="14.7" height="15.0" fill="rgb(211,222,49)" rx="2" ry="2" />
+<text  x="1126.53" y="447.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (3,156,678 samples, 0.01%)</title><rect x="975.4" y="325" width="0.2" height="15.0" fill="rgb(208,121,50)" rx="2" ry="2" />
+<text  x="978.39" y="335.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (16,477,760 samples, 0.07%)</title><rect x="914.3" y="293" width="0.9" height="15.0" fill="rgb(207,122,27)" rx="2" ry="2" />
+<text  x="917.33" y="303.5" ></text>
+</g>
+<g >
+<title>keySetMeta (2,135,878 samples, 0.01%)</title><rect x="877.7" y="133" width="0.1" height="15.0" fill="rgb(205,200,42)" rx="2" ry="2" />
+<text  x="880.70" y="143.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (68,945,170 samples, 0.31%)</title><rect x="1029.2" y="373" width="3.6" height="15.0" fill="rgb(251,11,21)" rx="2" ry="2" />
+<text  x="1032.19" y="383.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (34,812,413 samples, 0.16%)</title><rect x="910.2" y="277" width="1.9" height="15.0" fill="rgb(229,204,23)" rx="2" ry="2" />
+<text  x="913.22" y="287.5" ></text>
+</g>
+<g >
+<title>keySetMeta (36,282,565 samples, 0.16%)</title><rect x="1136.3" y="405" width="1.9" height="15.0" fill="rgb(229,209,10)" rx="2" ry="2" />
+<text  x="1139.29" y="415.5" ></text>
+</g>
+<g >
+<title>ksDel (26,881,018 samples, 0.12%)</title><rect x="1114.6" y="421" width="1.5" height="15.0" fill="rgb(249,103,7)" rx="2" ry="2" />
+<text  x="1117.63" y="431.5" ></text>
+</g>
+<g >
+<title>keyNew (2,360,001 samples, 0.01%)</title><rect x="999.0" y="341" width="0.1" height="15.0" fill="rgb(211,30,10)" rx="2" ry="2" />
+<text  x="1001.96" y="351.5" ></text>
+</g>
+<g >
+<title>keySetMeta (57,387,145 samples, 0.26%)</title><rect x="1058.5" y="373" width="3.0" height="15.0" fill="rgb(240,176,17)" rx="2" ry="2" />
+<text  x="1061.50" y="383.5" ></text>
+</g>
+<g >
+<title>keySetMeta (2,576,125 samples, 0.01%)</title><rect x="884.8" y="181" width="0.1" height="15.0" fill="rgb(235,148,31)" rx="2" ry="2" />
+<text  x="887.78" y="191.5" ></text>
+</g>
+<g >
+<title>ksLookup (3,157,583 samples, 0.01%)</title><rect x="1078.7" y="373" width="0.1" height="15.0" fill="rgb(222,18,51)" rx="2" ry="2" />
+<text  x="1081.65" y="383.5" ></text>
+</g>
+<g >
+<title>keyDel (2,625,316 samples, 0.01%)</title><rect x="973.5" y="325" width="0.2" height="15.0" fill="rgb(215,209,43)" rx="2" ry="2" />
+<text  x="976.52" y="335.5" ></text>
+</g>
+<g >
+<title>keyGetFullNameSize (60,760,702 samples, 0.27%)</title><rect x="1110.4" y="421" width="3.2" height="15.0" fill="rgb(251,68,47)" rx="2" ry="2" />
+<text  x="1113.37" y="431.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (9,028,693 samples, 0.04%)</title><rect x="877.9" y="213" width="0.5" height="15.0" fill="rgb(245,70,38)" rx="2" ry="2" />
+<text  x="880.88" y="223.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (42,580,938 samples, 0.19%)</title><rect x="1171.3" y="437" width="2.3" height="15.0" fill="rgb(254,190,32)" rx="2" ry="2" />
+<text  x="1174.31" y="447.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (2,365,150 samples, 0.01%)</title><rect x="952.2" y="309" width="0.1" height="15.0" fill="rgb(243,172,10)" rx="2" ry="2" />
+<text  x="955.18" y="319.5" ></text>
+</g>
+<g >
+<title>keyAddName (2,740,946 samples, 0.01%)</title><rect x="894.4" y="229" width="0.2" height="15.0" fill="rgb(254,214,41)" rx="2" ry="2" />
+<text  x="897.41" y="239.5" ></text>
+</g>
+<g >
+<title>keyGetFullNameSize (58,812,652 samples, 0.26%)</title><rect x="1148.3" y="437" width="3.1" height="15.0" fill="rgb(247,183,1)" rx="2" ry="2" />
+<text  x="1151.28" y="447.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (29,463,928 samples, 0.13%)</title><rect x="913.6" y="309" width="1.6" height="15.0" fill="rgb(245,141,27)" rx="2" ry="2" />
+<text  x="916.64" y="319.5" ></text>
+</g>
+<g >
+<title>keyVInit (206,654,144 samples, 0.93%)</title><rect x="1127.2" y="421" width="11.0" height="15.0" fill="rgb(254,86,7)" rx="2" ry="2" />
+<text  x="1130.25" y="431.5" ></text>
+</g>
+<g >
+<title>keyVInit (123,949,598 samples, 0.56%)</title><rect x="1160.7" y="437" width="6.6" height="15.0" fill="rgb(207,37,39)" rx="2" ry="2" />
+<text  x="1163.72" y="447.5" ></text>
+</g>
+<g >
+<title>void kdb::Key::set&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;) (6,133,821 samples, 0.03%)</title><rect x="886.8" y="261" width="0.3" height="15.0" fill="rgb(209,0,26)" rx="2" ry="2" />
+<text  x="889.82" y="271.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (6,834,268 samples, 0.03%)</title><rect x="989.3" y="293" width="0.4" height="15.0" fill="rgb(206,17,46)" rx="2" ry="2" />
+<text  x="992.32" y="303.5" ></text>
+</g>
+<g >
+<title>keyAddName (8,787,361 samples, 0.04%)</title><rect x="1093.6" y="373" width="0.5" height="15.0" fill="rgb(236,206,51)" rx="2" ry="2" />
+<text  x="1096.64" y="383.5" ></text>
+</g>
+<g >
+<title>std::_Rb_tree&lt;std::shared_ptr&lt;YAML::detail::node&gt;, std::shared_ptr&lt;YAML::detail::node&gt;, std::_Identity&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::less&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::allocator&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt; &gt;::_M_erase(std::_Rb_tree_node&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;*) (6,099,324 samples, 0.03%)</title><rect x="1185.6" y="309" width="0.3" height="15.0" fill="rgb(210,142,14)" rx="2" ry="2" />
+<text  x="1188.62" y="319.5" ></text>
+</g>
+<g >
+<title>keySetMeta (16,241,688 samples, 0.07%)</title><rect x="942.6" y="309" width="0.9" height="15.0" fill="rgb(244,57,47)" rx="2" ry="2" />
+<text  x="945.64" y="319.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (15,906,615 samples, 0.07%)</title><rect x="1031.3" y="357" width="0.9" height="15.0" fill="rgb(207,207,31)" rx="2" ry="2" />
+<text  x="1034.31" y="367.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (30,559,356 samples, 0.14%)</title><rect x="889.7" y="277" width="1.6" height="15.0" fill="rgb(209,3,13)" rx="2" ry="2" />
+<text  x="892.71" y="287.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (16,088,286 samples, 0.07%)</title><rect x="929.9" y="309" width="0.8" height="15.0" fill="rgb(236,100,30)" rx="2" ry="2" />
+<text  x="932.87" y="319.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (81,443,952 samples, 0.37%)</title><rect x="898.7" y="309" width="4.4" height="15.0" fill="rgb(223,181,22)" rx="2" ry="2" />
+<text  x="901.74" y="319.5" ></text>
+</g>
+<g >
+<title>keyAddBaseName (2,189,044 samples, 0.01%)</title><rect x="916.1" y="325" width="0.1" height="15.0" fill="rgb(245,215,13)" rx="2" ry="2" />
+<text  x="919.08" y="335.5" ></text>
+</g>
+<g >
+<title>keyNew (2,066,196 samples, 0.01%)</title><rect x="930.5" y="293" width="0.1" height="15.0" fill="rgb(222,91,39)" rx="2" ry="2" />
+<text  x="933.53" y="303.5" ></text>
+</g>
+<g >
+<title>keySetMeta (25,741,496 samples, 0.12%)</title><rect x="1118.0" y="405" width="1.4" height="15.0" fill="rgb(215,70,3)" rx="2" ry="2" />
+<text  x="1121.00" y="415.5" ></text>
+</g>
+<g >
+<title>std::_Rb_tree&lt;std::shared_ptr&lt;YAML::detail::node&gt;, std::shared_ptr&lt;YAML::detail::node&gt;, std::_Identity&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::less&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::allocator&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt; &gt;::_M_erase(std::_Rb_tree_node&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;*) (49,163,995 samples, 0.22%)</title><rect x="1183.3" y="389" width="2.6" height="15.0" fill="rgb(227,18,18)" rx="2" ry="2" />
+<text  x="1186.34" y="399.5" ></text>
+</g>
+<g >
+<title>keySetOwner (36,314,819 samples, 0.16%)</title><rect x="1164.2" y="405" width="2.0" height="15.0" fill="rgb(252,47,25)" rx="2" ry="2" />
+<text  x="1167.23" y="415.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (35,251,050 samples, 0.16%)</title><rect x="1111.7" y="405" width="1.9" height="15.0" fill="rgb(221,213,22)" rx="2" ry="2" />
+<text  x="1114.73" y="415.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (9,449,662 samples, 0.04%)</title><rect x="1035.2" y="357" width="0.5" height="15.0" fill="rgb(208,40,26)" rx="2" ry="2" />
+<text  x="1038.21" y="367.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (8,935,176,680 samples, 40.17%)</title><rect x="604.9" y="437" width="474.1" height="15.0" fill="rgb(221,8,3)" rx="2" ry="2" />
+<text  x="607.93" y="447.5" >(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kd..</text>
+</g>
+<g >
+<title>keyVInit (242,556,216 samples, 1.09%)</title><rect x="1048.7" y="389" width="12.8" height="15.0" fill="rgb(240,114,54)" rx="2" ry="2" />
+<text  x="1051.67" y="399.5" ></text>
+</g>
+<g >
+<title>keySetMeta (19,623,889 samples, 0.09%)</title><rect x="963.0" y="325" width="1.0" height="15.0" fill="rgb(228,141,7)" rx="2" ry="2" />
+<text  x="966.01" y="335.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (48,364,522 samples, 0.22%)</title><rect x="887.1" y="277" width="2.6" height="15.0" fill="rgb(215,39,2)" rx="2" ry="2" />
+<text  x="890.14" y="287.5" ></text>
+</g>
+<g >
+<title>keySetMeta (2,710,217 samples, 0.01%)</title><rect x="884.9" y="213" width="0.2" height="15.0" fill="rgb(233,144,3)" rx="2" ry="2" />
+<text  x="887.92" y="223.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (6,733,927 samples, 0.03%)</title><rect x="928.7" y="293" width="0.4" height="15.0" fill="rgb(245,226,35)" rx="2" ry="2" />
+<text  x="931.72" y="303.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (34,534,207 samples, 0.16%)</title><rect x="883.2" y="261" width="1.9" height="15.0" fill="rgb(219,152,3)" rx="2" ry="2" />
+<text  x="886.23" y="271.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (3,704,539 samples, 0.02%)</title><rect x="904.8" y="261" width="0.2" height="15.0" fill="rgb(237,162,5)" rx="2" ry="2" />
+<text  x="907.84" y="271.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (9,622,001 samples, 0.04%)</title><rect x="876.2" y="197" width="0.5" height="15.0" fill="rgb(214,4,27)" rx="2" ry="2" />
+<text  x="879.24" y="207.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (4,281,854,453 samples, 19.25%)</title><rect x="748.5" y="389" width="227.2" height="15.0" fill="rgb(238,84,48)" rx="2" ry="2" />
+<text  x="751.52" y="399.5" >(anonymous namespace)::convert..</text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (9,730,174 samples, 0.04%)</title><rect x="873.4" y="165" width="0.5" height="15.0" fill="rgb(250,99,52)" rx="2" ry="2" />
+<text  x="876.41" y="175.5" ></text>
+</g>
+<g >
+<title>keyAddName (3,435,186 samples, 0.02%)</title><rect x="901.9" y="245" width="0.2" height="15.0" fill="rgb(245,224,15)" rx="2" ry="2" />
+<text  x="904.92" y="255.5" ></text>
+</g>
+<g >
+<title>keyDel (2,061,472 samples, 0.01%)</title><rect x="1037.3" y="357" width="0.1" height="15.0" fill="rgb(211,81,15)" rx="2" ry="2" />
+<text  x="1040.31" y="367.5" ></text>
+</g>
+<g >
+<title>keyDel (20,986,179 samples, 0.09%)</title><rect x="972.5" y="373" width="1.2" height="15.0" fill="rgb(243,99,20)" rx="2" ry="2" />
+<text  x="975.54" y="383.5" ></text>
+</g>
+<g >
+<title>keySetMeta (31,977,534 samples, 0.14%)</title><rect x="988.3" y="309" width="1.7" height="15.0" fill="rgb(222,148,41)" rx="2" ry="2" />
+<text  x="991.29" y="319.5" ></text>
+</g>
+<g >
+<title>ksDel (2,503,887 samples, 0.01%)</title><rect x="905.8" y="293" width="0.1" height="15.0" fill="rgb(235,2,0)" rx="2" ry="2" />
+<text  x="908.79" y="303.5" ></text>
+</g>
+<g >
+<title>keyVInit (11,695,088 samples, 0.05%)</title><rect x="879.0" y="197" width="0.6" height="15.0" fill="rgb(242,79,17)" rx="2" ry="2" />
+<text  x="882.01" y="207.5" ></text>
+</g>
+<g >
+<title>keySetMeta (5,972,753 samples, 0.03%)</title><rect x="902.4" y="229" width="0.3" height="15.0" fill="rgb(230,25,51)" rx="2" ry="2" />
+<text  x="905.37" y="239.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (62,282,884 samples, 0.28%)</title><rect x="1162.9" y="421" width="3.3" height="15.0" fill="rgb(213,124,30)" rx="2" ry="2" />
+<text  x="1165.85" y="431.5" ></text>
+</g>
+<g >
+<title>keySetMeta (12,422,263 samples, 0.06%)</title><rect x="951.8" y="325" width="0.7" height="15.0" fill="rgb(227,205,7)" rx="2" ry="2" />
+<text  x="954.80" y="335.5" ></text>
+</g>
+<g >
+<title>keyAddName (7,440,867 samples, 0.03%)</title><rect x="940.3" y="293" width="0.4" height="15.0" fill="rgb(216,33,39)" rx="2" ry="2" />
+<text  x="943.31" y="303.5" ></text>
+</g>
+<g >
+<title>ksLookup (3,281,064 samples, 0.01%)</title><rect x="1155.6" y="405" width="0.2" height="15.0" fill="rgb(217,121,53)" rx="2" ry="2" />
+<text  x="1158.59" y="415.5" ></text>
+</g>
+<g >
+<title>keyGetFullNameSize (42,500,776 samples, 0.19%)</title><rect x="999.2" y="373" width="2.2" height="15.0" fill="rgb(243,207,35)" rx="2" ry="2" />
+<text  x="1002.19" y="383.5" ></text>
+</g>
+<g >
+<title>keySetMeta (8,745,086 samples, 0.04%)</title><rect x="895.0" y="245" width="0.4" height="15.0" fill="rgb(243,123,46)" rx="2" ry="2" />
+<text  x="897.98" y="255.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (8,800,212 samples, 0.04%)</title><rect x="1057.9" y="325" width="0.5" height="15.0" fill="rgb(236,10,37)" rx="2" ry="2" />
+<text  x="1060.92" y="335.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (5,322,891 samples, 0.02%)</title><rect x="1175.1" y="421" width="0.3" height="15.0" fill="rgb(207,165,10)" rx="2" ry="2" />
+<text  x="1178.08" y="431.5" ></text>
+</g>
+<g >
+<title>keySetString (4,323,009 samples, 0.02%)</title><rect x="886.9" y="245" width="0.2" height="15.0" fill="rgb(253,117,19)" rx="2" ry="2" />
+<text  x="889.91" y="255.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (13,208,254,183 samples, 59.38%)</title><rect x="455.1" y="469" width="700.7" height="15.0" fill="rgb(240,30,35)" rx="2" ry="2" />
+<text  x="458.07" y="479.5" >(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;)</text>
+</g>
+<g >
+<title>keySetMeta (28,395,338 samples, 0.13%)</title><rect x="1021.5" y="357" width="1.5" height="15.0" fill="rgb(232,193,17)" rx="2" ry="2" />
+<text  x="1024.49" y="367.5" ></text>
+</g>
+<g >
+<title>std::_Sp_counted_ptr&lt;YAML::detail::memory_holder*, (__gnu_cxx::_Lock_policy)2&gt;::_M_dispose() (172,694,180 samples, 0.78%)</title><rect x="1176.8" y="501" width="9.1" height="15.0" fill="rgb(240,190,31)" rx="2" ry="2" />
+<text  x="1179.78" y="511.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (45,627,591 samples, 0.21%)</title><rect x="895.4" y="293" width="2.5" height="15.0" fill="rgb(244,153,48)" rx="2" ry="2" />
+<text  x="898.45" y="303.5" ></text>
+</g>
+<g >
+<title>void kdb::Key::set&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;) (30,341,997 samples, 0.14%)</title><rect x="950.9" y="357" width="1.6" height="15.0" fill="rgb(210,73,16)" rx="2" ry="2" />
+<text  x="953.91" y="367.5" ></text>
+</g>
+<g >
+<title>ksAppendKey (2,697,369 samples, 0.01%)</title><rect x="1002.9" y="389" width="0.2" height="15.0" fill="rgb(217,102,3)" rx="2" ry="2" />
+<text  x="1005.92" y="399.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (63,478,242 samples, 0.29%)</title><rect x="870.0" y="165" width="3.4" height="15.0" fill="rgb(231,33,0)" rx="2" ry="2" />
+<text  x="873.04" y="175.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (7,838,020 samples, 0.04%)</title><rect x="1021.0" y="309" width="0.4" height="15.0" fill="rgb(217,106,25)" rx="2" ry="2" />
+<text  x="1023.97" y="319.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (4,392,672 samples, 0.02%)</title><rect x="1118.8" y="389" width="0.2" height="15.0" fill="rgb(205,194,45)" rx="2" ry="2" />
+<text  x="1121.78" y="399.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (109,826,599 samples, 0.49%)</title><rect x="1052.7" y="373" width="5.8" height="15.0" fill="rgb(252,18,15)" rx="2" ry="2" />
+<text  x="1055.67" y="383.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (2,485,584,353 samples, 11.18%)</title><rect x="800.8" y="357" width="131.9" height="15.0" fill="rgb(223,44,21)" rx="2" ry="2" />
+<text  x="803.83" y="367.5" >(anonymous names..</text>
+</g>
+<g >
+<title>keyAddName (5,461,692 samples, 0.02%)</title><rect x="910.9" y="261" width="0.3" height="15.0" fill="rgb(215,163,26)" rx="2" ry="2" />
+<text  x="913.93" y="271.5" ></text>
+</g>
+<g >
+<title>ksLookup (2,884,903 samples, 0.01%)</title><rect x="952.3" y="309" width="0.2" height="15.0" fill="rgb(217,31,5)" rx="2" ry="2" />
+<text  x="955.31" y="319.5" ></text>
+</g>
+<g >
+<title>void kdb::Key::set&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;) (35,890,055 samples, 0.16%)</title><rect x="973.8" y="373" width="1.9" height="15.0" fill="rgb(218,52,53)" rx="2" ry="2" />
+<text  x="976.78" y="383.5" ></text>
+</g>
+<g >
+<title>keySetString (32,086,211 samples, 0.14%)</title><rect x="1003.8" y="373" width="1.7" height="15.0" fill="rgb(210,162,23)" rx="2" ry="2" />
+<text  x="1006.75" y="383.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (347,164,676 samples, 1.56%)</title><rect x="862.1" y="245" width="18.4" height="15.0" fill="rgb(231,157,0)" rx="2" ry="2" />
+<text  x="865.11" y="255.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (112,760,854 samples, 0.51%)</title><rect x="1142.3" y="437" width="6.0" height="15.0" fill="rgb(239,229,25)" rx="2" ry="2" />
+<text  x="1145.29" y="447.5" ></text>
+</g>
+<g >
+<title>keyNew (4,262,133 samples, 0.02%)</title><rect x="1032.2" y="357" width="0.2" height="15.0" fill="rgb(226,41,43)" rx="2" ry="2" />
+<text  x="1035.16" y="367.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (2,145,383 samples, 0.01%)</title><rect x="890.8" y="229" width="0.1" height="15.0" fill="rgb(208,88,7)" rx="2" ry="2" />
+<text  x="893.78" y="239.5" ></text>
+</g>
+<g >
+<title>keySetOwner (20,696,253 samples, 0.09%)</title><rect x="923.5" y="277" width="1.1" height="15.0" fill="rgb(211,98,0)" rx="2" ry="2" />
+<text  x="926.47" y="287.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (13,945,593 samples, 0.06%)</title><rect x="904.4" y="277" width="0.7" height="15.0" fill="rgb(236,41,29)" rx="2" ry="2" />
+<text  x="907.38" y="287.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (4,220,046 samples, 0.02%)</title><rect x="949.7" y="309" width="0.2" height="15.0" fill="rgb(220,72,32)" rx="2" ry="2" />
+<text  x="952.70" y="319.5" ></text>
+</g>
+<g >
+<title>keySetOwner (3,454,815 samples, 0.02%)</title><rect x="881.8" y="181" width="0.2" height="15.0" fill="rgb(248,18,36)" rx="2" ry="2" />
+<text  x="884.80" y="191.5" ></text>
+</g>
+<g >
+<title>elektraMalloc (2,465,693 samples, 0.01%)</title><rect x="970.3" y="309" width="0.1" height="15.0" fill="rgb(250,124,14)" rx="2" ry="2" />
+<text  x="973.25" y="319.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (2,874,763 samples, 0.01%)</title><rect x="873.7" y="117" width="0.2" height="15.0" fill="rgb(222,126,3)" rx="2" ry="2" />
+<text  x="876.74" y="127.5" ></text>
+</g>
+<g >
+<title>keyAddName (1,892,822 samples, 0.01%)</title><rect x="884.6" y="197" width="0.1" height="15.0" fill="rgb(227,217,39)" rx="2" ry="2" />
+<text  x="887.58" y="207.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (5,335,622 samples, 0.02%)</title><rect x="962.7" y="277" width="0.3" height="15.0" fill="rgb(241,1,31)" rx="2" ry="2" />
+<text  x="965.70" y="287.5" ></text>
+</g>
+<g >
+<title>elektraMalloc (2,076,746 samples, 0.01%)</title><rect x="1032.3" y="341" width="0.1" height="15.0" fill="rgb(221,111,51)" rx="2" ry="2" />
+<text  x="1035.27" y="351.5" ></text>
+</g>
+<g >
+<title>keySetMeta (22,381,206 samples, 0.10%)</title><rect x="941.5" y="277" width="1.1" height="15.0" fill="rgb(213,166,0)" rx="2" ry="2" />
+<text  x="944.46" y="287.5" ></text>
+</g>
+<g >
+<title>keyNew (2,061,645 samples, 0.01%)</title><rect x="1138.0" y="389" width="0.1" height="15.0" fill="rgb(235,150,35)" rx="2" ry="2" />
+<text  x="1141.04" y="399.5" ></text>
+</g>
+<g >
+<title>keySetMeta (7,167,747 samples, 0.03%)</title><rect x="902.7" y="261" width="0.4" height="15.0" fill="rgb(251,29,41)" rx="2" ry="2" />
+<text  x="905.69" y="271.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (12,820,100 samples, 0.06%)</title><rect x="879.6" y="229" width="0.7" height="15.0" fill="rgb(230,211,8)" rx="2" ry="2" />
+<text  x="882.63" y="239.5" ></text>
+</g>
+<g >
+<title>keyGetFullNameSize (3,457,114 samples, 0.02%)</title><rect x="882.7" y="229" width="0.2" height="15.0" fill="rgb(250,180,3)" rx="2" ry="2" />
+<text  x="885.73" y="239.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (122,268,481 samples, 0.55%)</title><rect x="943.5" y="357" width="6.5" height="15.0" fill="rgb(207,224,39)" rx="2" ry="2" />
+<text  x="946.51" y="367.5" ></text>
+</g>
+<g >
+<title>keySetMeta (18,639,290 samples, 0.08%)</title><rect x="1077.8" y="389" width="1.0" height="15.0" fill="rgb(208,166,1)" rx="2" ry="2" />
+<text  x="1080.83" y="399.5" ></text>
+</g>
+<g >
+<title>keyGetFullNameSize (28,008,634 samples, 0.13%)</title><rect x="948.5" y="341" width="1.5" height="15.0" fill="rgb(248,90,13)" rx="2" ry="2" />
+<text  x="951.51" y="351.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (30,685,049 samples, 0.14%)</title><rect x="885.1" y="261" width="1.6" height="15.0" fill="rgb(238,67,0)" rx="2" ry="2" />
+<text  x="888.06" y="271.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (10,773,896 samples, 0.05%)</title><rect x="884.3" y="213" width="0.6" height="15.0" fill="rgb(220,9,18)" rx="2" ry="2" />
+<text  x="887.35" y="223.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (191,188,934 samples, 0.86%)</title><rect x="991.3" y="389" width="10.1" height="15.0" fill="rgb(206,84,47)" rx="2" ry="2" />
+<text  x="994.30" y="399.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (4,972,995 samples, 0.02%)</title><rect x="876.4" y="181" width="0.3" height="15.0" fill="rgb(230,188,36)" rx="2" ry="2" />
+<text  x="879.39" y="191.5" ></text>
+</g>
+<g >
+<title>keyVNew (3,346,849 samples, 0.02%)</title><rect x="872.3" y="117" width="0.2" height="15.0" fill="rgb(239,120,53)" rx="2" ry="2" />
+<text  x="875.35" y="127.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (4,019,888 samples, 0.02%)</title><rect x="1078.4" y="373" width="0.2" height="15.0" fill="rgb(227,29,4)" rx="2" ry="2" />
+<text  x="1081.43" y="383.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (4,886,631 samples, 0.02%)</title><rect x="914.9" y="277" width="0.3" height="15.0" fill="rgb(207,210,26)" rx="2" ry="2" />
+<text  x="917.91" y="287.5" ></text>
+</g>
+<g >
+<title>ksAppendKey (2,326,244 samples, 0.01%)</title><rect x="973.7" y="373" width="0.1" height="15.0" fill="rgb(248,131,14)" rx="2" ry="2" />
+<text  x="976.66" y="383.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (9,459,510 samples, 0.04%)</title><rect x="1112.9" y="389" width="0.5" height="15.0" fill="rgb(214,226,6)" rx="2" ry="2" />
+<text  x="1115.89" y="399.5" ></text>
+</g>
+<g >
+<title>keyVNew (161,248,929 samples, 0.72%)</title><rect x="935.0" y="341" width="8.5" height="15.0" fill="rgb(249,114,30)" rx="2" ry="2" />
+<text  x="937.95" y="351.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (21,404,247 samples, 0.10%)</title><rect x="878.5" y="229" width="1.1" height="15.0" fill="rgb(221,18,36)" rx="2" ry="2" />
+<text  x="881.50" y="239.5" ></text>
+</g>
+<g >
+<title>keyAddName (8,466,126 samples, 0.04%)</title><rect x="1132.8" y="389" width="0.4" height="15.0" fill="rgb(223,23,31)" rx="2" ry="2" />
+<text  x="1135.75" y="399.5" ></text>
+</g>
+<g >
+<title>ksLookup (4,915,937 samples, 0.02%)</title><rect x="1071.6" y="373" width="0.3" height="15.0" fill="rgb(213,126,48)" rx="2" ry="2" />
+<text  x="1074.62" y="383.5" ></text>
+</g>
+<g >
+<title>keyGetFullNameSize (35,036,255 samples, 0.16%)</title><rect x="1173.6" y="453" width="1.8" height="15.0" fill="rgb(242,81,50)" rx="2" ry="2" />
+<text  x="1176.58" y="463.5" ></text>
+</g>
+<g >
+<title>std::_Rb_tree&lt;std::shared_ptr&lt;YAML::detail::node&gt;, std::shared_ptr&lt;YAML::detail::node&gt;, std::_Identity&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::less&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::allocator&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt; &gt;::_M_erase(std::_Rb_tree_node&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;*) (1,943,110 samples, 0.01%)</title><rect x="1185.8" y="277" width="0.1" height="15.0" fill="rgb(242,28,22)" rx="2" ry="2" />
+<text  x="1188.84" y="287.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (66,679,609 samples, 0.30%)</title><rect x="912.5" y="325" width="3.6" height="15.0" fill="rgb(246,124,35)" rx="2" ry="2" />
+<text  x="915.55" y="335.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (329,604,322 samples, 1.48%)</title><rect x="1005.5" y="405" width="17.5" height="15.0" fill="rgb(223,182,16)" rx="2" ry="2" />
+<text  x="1008.51" y="415.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (3,361,488 samples, 0.02%)</title><rect x="930.4" y="293" width="0.1" height="15.0" fill="rgb(217,186,32)" rx="2" ry="2" />
+<text  x="933.35" y="303.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (6,666,961 samples, 0.03%)</title><rect x="990.9" y="325" width="0.3" height="15.0" fill="rgb(230,94,23)" rx="2" ry="2" />
+<text  x="993.89" y="335.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (64,189,815 samples, 0.29%)</title><rect x="959.6" y="325" width="3.4" height="15.0" fill="rgb(250,59,11)" rx="2" ry="2" />
+<text  x="962.60" y="335.5" ></text>
+</g>
+<g >
+<title>keySetOwner (3,499,547 samples, 0.02%)</title><rect x="877.6" y="149" width="0.2" height="15.0" fill="rgb(209,152,53)" rx="2" ry="2" />
+<text  x="880.63" y="159.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (460,418,099 samples, 2.07%)</title><rect x="858.8" y="261" width="24.4" height="15.0" fill="rgb(234,39,30)" rx="2" ry="2" />
+<text  x="861.80" y="271.5" >(..</text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (3,289,748,830 samples, 14.79%)</title><rect x="778.0" y="373" width="174.5" height="15.0" fill="rgb(237,104,31)" rx="2" ry="2" />
+<text  x="780.98" y="383.5" >(anonymous namespace):..</text>
+</g>
+<g >
+<title>elektraKeySetName (8,896,003 samples, 0.04%)</title><rect x="1074.2" y="373" width="0.5" height="15.0" fill="rgb(216,104,34)" rx="2" ry="2" />
+<text  x="1077.19" y="383.5" ></text>
+</g>
+<g >
+<title>keyVNew (259,372,557 samples, 1.17%)</title><rect x="1009.2" y="389" width="13.8" height="15.0" fill="rgb(241,33,18)" rx="2" ry="2" />
+<text  x="1012.24" y="399.5" ></text>
+</g>
+<g >
+<title>keyVInit (190,848,561 samples, 0.86%)</title><rect x="1012.9" y="373" width="10.1" height="15.0" fill="rgb(236,227,27)" rx="2" ry="2" />
+<text  x="1015.88" y="383.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (6,470,903 samples, 0.03%)</title><rect x="879.8" y="213" width="0.4" height="15.0" fill="rgb(226,115,43)" rx="2" ry="2" />
+<text  x="882.84" y="223.5" ></text>
+</g>
+<g >
+<title>keySetMeta (8,980,095 samples, 0.04%)</title><rect x="912.1" y="277" width="0.4" height="15.0" fill="rgb(248,189,13)" rx="2" ry="2" />
+<text  x="915.07" y="287.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (6,436,215 samples, 0.03%)</title><rect x="879.2" y="181" width="0.4" height="15.0" fill="rgb(212,132,41)" rx="2" ry="2" />
+<text  x="882.21" y="191.5" ></text>
+</g>
+<g >
+<title>ksDel (15,871,941 samples, 0.07%)</title><rect x="1036.6" y="389" width="0.8" height="15.0" fill="rgb(243,137,39)" rx="2" ry="2" />
+<text  x="1039.57" y="399.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (2,052,348 samples, 0.01%)</title><rect x="872.9" y="101" width="0.1" height="15.0" fill="rgb(241,14,40)" rx="2" ry="2" />
+<text  x="875.89" y="111.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (100,517,825 samples, 0.45%)</title><rect x="1016.2" y="357" width="5.3" height="15.0" fill="rgb(247,164,47)" rx="2" ry="2" />
+<text  x="1019.16" y="367.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (3,616,445 samples, 0.02%)</title><rect x="891.1" y="245" width="0.2" height="15.0" fill="rgb(212,56,52)" rx="2" ry="2" />
+<text  x="894.14" y="255.5" ></text>
+</g>
+<g >
+<title>keyVNew (5,249,185 samples, 0.02%)</title><rect x="871.6" y="85" width="0.3" height="15.0" fill="rgb(241,136,14)" rx="2" ry="2" />
+<text  x="874.64" y="95.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (19,780,819 samples, 0.09%)</title><rect x="971.3" y="341" width="1.0" height="15.0" fill="rgb(252,225,42)" rx="2" ry="2" />
+<text  x="974.28" y="351.5" ></text>
+</g>
+<g >
+<title>keyDel (2,532,862 samples, 0.01%)</title><rect x="891.3" y="277" width="0.2" height="15.0" fill="rgb(244,68,42)" rx="2" ry="2" />
+<text  x="894.33" y="287.5" ></text>
+</g>
+<g >
+<title>std::_Rb_tree&lt;std::shared_ptr&lt;YAML::detail::node&gt;, std::shared_ptr&lt;YAML::detail::node&gt;, std::_Identity&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::less&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::allocator&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt; &gt;::_M_erase(std::_Rb_tree_node&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;*) (136,669,404 samples, 0.61%)</title><rect x="1178.7" y="469" width="7.2" height="15.0" fill="rgb(215,48,14)" rx="2" ry="2" />
+<text  x="1181.69" y="479.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (5,852,190 samples, 0.03%)</title><rect x="897.6" y="261" width="0.3" height="15.0" fill="rgb(239,62,42)" rx="2" ry="2" />
+<text  x="900.56" y="271.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (6,337,314 samples, 0.03%)</title><rect x="872.7" y="149" width="0.3" height="15.0" fill="rgb(210,81,19)" rx="2" ry="2" />
+<text  x="875.69" y="159.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (10,704,770 samples, 0.05%)</title><rect x="969.5" y="325" width="0.6" height="15.0" fill="rgb(225,98,15)" rx="2" ry="2" />
+<text  x="972.54" y="335.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (10,794,113 samples, 0.05%)</title><rect x="1172.7" y="421" width="0.5" height="15.0" fill="rgb(233,74,43)" rx="2" ry="2" />
+<text  x="1175.66" y="431.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (5,215,387 samples, 0.02%)</title><rect x="1165.8" y="373" width="0.3" height="15.0" fill="rgb(224,207,10)" rx="2" ry="2" />
+<text  x="1168.78" y="383.5" ></text>
+</g>
+<g >
+<title>ksClose (3,812,631 samples, 0.02%)</title><rect x="950.6" y="325" width="0.2" height="15.0" fill="rgb(234,70,10)" rx="2" ry="2" />
+<text  x="953.61" y="335.5" ></text>
+</g>
+<g >
+<title>ksClose (3,481,699 samples, 0.02%)</title><rect x="931.2" y="309" width="0.2" height="15.0" fill="rgb(235,187,27)" rx="2" ry="2" />
+<text  x="934.20" y="319.5" ></text>
+</g>
+<g >
+<title>ksClose (7,419,724 samples, 0.03%)</title><rect x="973.3" y="341" width="0.4" height="15.0" fill="rgb(235,194,15)" rx="2" ry="2" />
+<text  x="976.26" y="351.5" ></text>
+</g>
+<g >
+<title>keyAddName (9,294,359 samples, 0.04%)</title><rect x="1018.2" y="341" width="0.5" height="15.0" fill="rgb(246,229,46)" rx="2" ry="2" />
+<text  x="1021.22" y="351.5" ></text>
+</g>
+<g >
+<title>keySetOwner (6,885,795 samples, 0.03%)</title><rect x="889.1" y="213" width="0.4" height="15.0" fill="rgb(233,25,4)" rx="2" ry="2" />
+<text  x="892.15" y="223.5" ></text>
+</g>
+<g >
+<title>keyVNew (23,049,157 samples, 0.10%)</title><rect x="880.9" y="229" width="1.2" height="15.0" fill="rgb(227,94,16)" rx="2" ry="2" />
+<text  x="883.87" y="239.5" ></text>
+</g>
+<g >
+<title>keyDel (5,883,348 samples, 0.03%)</title><rect x="916.2" y="325" width="0.3" height="15.0" fill="rgb(251,131,14)" rx="2" ry="2" />
+<text  x="919.20" y="335.5" ></text>
+</g>
+<g >
+<title>keyVInit (224,839,102 samples, 1.01%)</title><rect x="1087.5" y="405" width="11.9" height="15.0" fill="rgb(228,224,9)" rx="2" ry="2" />
+<text  x="1090.47" y="415.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (95,587,255 samples, 0.43%)</title><rect x="984.9" y="341" width="5.1" height="15.0" fill="rgb(229,115,10)" rx="2" ry="2" />
+<text  x="987.92" y="351.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (5,382,680 samples, 0.02%)</title><rect x="971.9" y="325" width="0.3" height="15.0" fill="rgb(220,71,22)" rx="2" ry="2" />
+<text  x="974.94" y="335.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (9,503,331 samples, 0.04%)</title><rect x="915.6" y="293" width="0.5" height="15.0" fill="rgb(207,16,12)" rx="2" ry="2" />
+<text  x="918.58" y="303.5" ></text>
+</g>
+<g >
+<title>keySetString (10,104,507 samples, 0.05%)</title><rect x="916.8" y="309" width="0.5" height="15.0" fill="rgb(243,198,24)" rx="2" ry="2" />
+<text  x="919.81" y="319.5" ></text>
+</g>
+<g >
+<title>keySetMeta (24,790,877 samples, 0.11%)</title><rect x="990.0" y="341" width="1.3" height="15.0" fill="rgb(208,7,51)" rx="2" ry="2" />
+<text  x="992.99" y="351.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (114,265,046 samples, 0.51%)</title><rect x="1026.8" y="389" width="6.0" height="15.0" fill="rgb(252,214,46)" rx="2" ry="2" />
+<text  x="1029.78" y="399.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (3,557,253 samples, 0.02%)</title><rect x="1005.0" y="341" width="0.2" height="15.0" fill="rgb(228,17,51)" rx="2" ry="2" />
+<text  x="1008.00" y="351.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (13,274,143 samples, 0.06%)</title><rect x="998.3" y="341" width="0.7" height="15.0" fill="rgb(247,161,25)" rx="2" ry="2" />
+<text  x="1001.25" y="351.5" ></text>
+</g>
+<g >
+<title>std::_Rb_tree&lt;std::shared_ptr&lt;YAML::detail::node&gt;, std::shared_ptr&lt;YAML::detail::node&gt;, std::_Identity&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::less&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::allocator&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt; &gt;::_M_erase(std::_Rb_tree_node&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;*) (15,652,160 samples, 0.07%)</title><rect x="1185.1" y="341" width="0.8" height="15.0" fill="rgb(240,174,47)" rx="2" ry="2" />
+<text  x="1188.11" y="351.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (2,506,045 samples, 0.01%)</title><rect x="872.5" y="133" width="0.2" height="15.0" fill="rgb(214,186,37)" rx="2" ry="2" />
+<text  x="875.52" y="143.5" ></text>
+</g>
+<g >
+<title>keyGetFullNameSize (2,456,596 samples, 0.01%)</title><rect x="880.2" y="213" width="0.1" height="15.0" fill="rgb(220,172,0)" rx="2" ry="2" />
+<text  x="883.18" y="223.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (118,719,713 samples, 0.53%)</title><rect x="1065.6" y="405" width="6.3" height="15.0" fill="rgb(230,96,40)" rx="2" ry="2" />
+<text  x="1068.58" y="415.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (1,420,609,718 samples, 6.39%)</title><rect x="831.2" y="325" width="75.3" height="15.0" fill="rgb(238,83,39)" rx="2" ry="2" />
+<text  x="834.17" y="335.5" >(anonymo..</text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (267,630,502 samples, 1.20%)</title><rect x="1099.4" y="437" width="14.2" height="15.0" fill="rgb(214,171,6)" rx="2" ry="2" />
+<text  x="1102.40" y="447.5" ></text>
+</g>
+<g >
+<title>keyNew (2,076,767 samples, 0.01%)</title><rect x="1173.3" y="421" width="0.1" height="15.0" fill="rgb(240,6,24)" rx="2" ry="2" />
+<text  x="1176.26" y="431.5" ></text>
+</g>
+<g >
+<title>void kdb::Key::set&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;) (4,220,099 samples, 0.02%)</title><rect x="883.0" y="245" width="0.2" height="15.0" fill="rgb(223,217,43)" rx="2" ry="2" />
+<text  x="886.00" y="255.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (23,922,696 samples, 0.11%)</title><rect x="1000.2" y="357" width="1.2" height="15.0" fill="rgb(219,220,43)" rx="2" ry="2" />
+<text  x="1003.18" y="367.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (32,723,749 samples, 0.15%)</title><rect x="946.8" y="325" width="1.7" height="15.0" fill="rgb(240,103,45)" rx="2" ry="2" />
+<text  x="949.77" y="335.5" ></text>
+</g>
+<g >
+<title>ksLookup (2,084,753 samples, 0.01%)</title><rect x="1113.5" y="389" width="0.1" height="15.0" fill="rgb(224,152,50)" rx="2" ry="2" />
+<text  x="1116.49" y="399.5" ></text>
+</g>
+<g >
+<title>keySetMeta (12,414,924 samples, 0.06%)</title><rect x="924.6" y="293" width="0.6" height="15.0" fill="rgb(249,81,33)" rx="2" ry="2" />
+<text  x="927.57" y="303.5" ></text>
+</g>
+<g >
+<title>keySetString (5,830,601 samples, 0.03%)</title><rect x="898.4" y="277" width="0.3" height="15.0" fill="rgb(241,67,54)" rx="2" ry="2" />
+<text  x="901.44" y="287.5" ></text>
+</g>
+<g >
+<title>keySetMeta (20,587,165 samples, 0.09%)</title><rect x="1165.1" y="389" width="1.1" height="15.0" fill="rgb(243,205,16)" rx="2" ry="2" />
+<text  x="1168.06" y="399.5" ></text>
+</g>
+<g >
+<title>keySetOwner (2,668,208 samples, 0.01%)</title><rect x="879.4" y="165" width="0.2" height="15.0" fill="rgb(211,72,2)" rx="2" ry="2" />
+<text  x="882.41" y="175.5" ></text>
+</g>
+<g >
+<title>keyDel (2,207,928 samples, 0.01%)</title><rect x="880.3" y="229" width="0.1" height="15.0" fill="rgb(233,172,18)" rx="2" ry="2" />
+<text  x="883.32" y="239.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (3,469,987 samples, 0.02%)</title><rect x="924.4" y="245" width="0.1" height="15.0" fill="rgb(218,208,14)" rx="2" ry="2" />
+<text  x="927.35" y="255.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (3,563,698 samples, 0.02%)</title><rect x="873.0" y="149" width="0.2" height="15.0" fill="rgb(231,19,13)" rx="2" ry="2" />
+<text  x="876.03" y="159.5" ></text>
+</g>
+<g >
+<title>ksClose (2,710,773 samples, 0.01%)</title><rect x="1189.9" y="469" width="0.1" height="15.0" fill="rgb(251,32,31)" rx="2" ry="2" />
+<text  x="1192.85" y="479.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (6,763,148 samples, 0.03%)</title><rect x="1001.0" y="341" width="0.4" height="15.0" fill="rgb(214,69,34)" rx="2" ry="2" />
+<text  x="1004.01" y="351.5" ></text>
+</g>
+<g >
+<title>ksDel (13,281,094 samples, 0.06%)</title><rect x="973.0" y="357" width="0.7" height="15.0" fill="rgb(241,172,4)" rx="2" ry="2" />
+<text  x="975.95" y="367.5" ></text>
+</g>
+<g >
+<title>ksDel (3,236,706 samples, 0.01%)</title><rect x="916.3" y="309" width="0.2" height="15.0" fill="rgb(209,132,46)" rx="2" ry="2" />
+<text  x="919.34" y="319.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (17,499,295 samples, 0.08%)</title><rect x="1147.1" y="405" width="0.9" height="15.0" fill="rgb(247,101,34)" rx="2" ry="2" />
+<text  x="1150.07" y="415.5" ></text>
+</g>
+<g >
+<title>keyAddName (12,139,532 samples, 0.05%)</title><rect x="1054.9" y="357" width="0.6" height="15.0" fill="rgb(230,160,9)" rx="2" ry="2" />
+<text  x="1057.87" y="367.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (15,415,521 samples, 0.07%)</title><rect x="885.5" y="245" width="0.9" height="15.0" fill="rgb(222,74,37)" rx="2" ry="2" />
+<text  x="888.54" y="255.5" ></text>
+</g>
+<g >
+<title>keyVNew (231,218,266 samples, 1.04%)</title><rect x="979.0" y="373" width="12.3" height="15.0" fill="rgb(254,175,9)" rx="2" ry="2" />
+<text  x="982.04" y="383.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (23,768,518 samples, 0.11%)</title><rect x="903.9" y="293" width="1.2" height="15.0" fill="rgb(228,126,37)" rx="2" ry="2" />
+<text  x="906.86" y="303.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (7,162,108 samples, 0.03%)</title><rect x="882.4" y="229" width="0.3" height="15.0" fill="rgb(251,83,51)" rx="2" ry="2" />
+<text  x="885.35" y="239.5" ></text>
+</g>
+<g >
+<title>keySetString (41,771,890 samples, 0.19%)</title><rect x="1117.2" y="421" width="2.2" height="15.0" fill="rgb(252,160,39)" rx="2" ry="2" />
+<text  x="1120.15" y="431.5" ></text>
+</g>
+<g >
+<title>keySetString (2,897,531 samples, 0.01%)</title><rect x="883.1" y="229" width="0.1" height="15.0" fill="rgb(214,159,15)" rx="2" ry="2" />
+<text  x="886.08" y="239.5" ></text>
+</g>
+<g >
+<title>keyDel (23,132,903 samples, 0.10%)</title><rect x="1175.5" y="469" width="1.2" height="15.0" fill="rgb(245,11,43)" rx="2" ry="2" />
+<text  x="1178.47" y="479.5" ></text>
+</g>
+<g >
+<title>elektraStrLen (2,076,503 samples, 0.01%)</title><rect x="1106.4" y="405" width="0.2" height="15.0" fill="rgb(241,51,26)" rx="2" ry="2" />
+<text  x="1109.45" y="415.5" ></text>
+</g>
+<g >
+<title>keyVNew (11,560,868 samples, 0.05%)</title><rect x="875.6" y="181" width="0.6" height="15.0" fill="rgb(228,9,52)" rx="2" ry="2" />
+<text  x="878.62" y="191.5" ></text>
+</g>
+<g >
+<title>void kdb::Key::set&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;) (49,802,747 samples, 0.22%)</title><rect x="1076.3" y="421" width="2.7" height="15.0" fill="rgb(247,30,31)" rx="2" ry="2" />
+<text  x="1079.33" y="431.5" ></text>
+</g>
+<g >
+<title>keyVInit (39,106,504 samples, 0.18%)</title><rect x="893.4" y="261" width="2.0" height="15.0" fill="rgb(219,60,9)" rx="2" ry="2" />
+<text  x="896.37" y="271.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (1,088,257,775 samples, 4.89%)</title><rect x="841.0" y="309" width="57.7" height="15.0" fill="rgb(213,6,19)" rx="2" ry="2" />
+<text  x="844.01" y="319.5" >(anony..</text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (14,951,285 samples, 0.07%)</title><rect x="875.4" y="197" width="0.8" height="15.0" fill="rgb(254,213,19)" rx="2" ry="2" />
+<text  x="878.44" y="207.5" ></text>
+</g>
+<g >
+<title>keyGetFullNameSize (6,187,660 samples, 0.03%)</title><rect x="886.4" y="245" width="0.3" height="15.0" fill="rgb(209,4,10)" rx="2" ry="2" />
+<text  x="889.36" y="255.5" ></text>
+</g>
+<g >
+<title>keySetString (28,734,381 samples, 0.13%)</title><rect x="1038.3" y="389" width="1.5" height="15.0" fill="rgb(230,66,22)" rx="2" ry="2" />
+<text  x="1041.26" y="399.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (50,153,485 samples, 0.23%)</title><rect x="996.5" y="357" width="2.7" height="15.0" fill="rgb(236,153,24)" rx="2" ry="2" />
+<text  x="999.53" y="367.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (216,837,673 samples, 0.97%)</title><rect x="952.5" y="373" width="11.5" height="15.0" fill="rgb(213,167,47)" rx="2" ry="2" />
+<text  x="955.54" y="383.5" ></text>
+</g>
+<g >
+<title>keyAddBaseName (1,984,699 samples, 0.01%)</title><rect x="1001.4" y="389" width="0.2" height="15.0" fill="rgb(232,130,47)" rx="2" ry="2" />
+<text  x="1004.45" y="399.5" ></text>
+</g>
+<g >
+<title>ksClose (6,510,594 samples, 0.03%)</title><rect x="1176.4" y="437" width="0.3" height="15.0" fill="rgb(224,142,38)" rx="2" ry="2" />
+<text  x="1179.36" y="447.5" ></text>
+</g>
+<g >
+<title>keyDel (41,906,980 samples, 0.19%)</title><rect x="1113.8" y="437" width="2.3" height="15.0" fill="rgb(242,9,8)" rx="2" ry="2" />
+<text  x="1116.83" y="447.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (147,542,886 samples, 0.66%)</title><rect x="917.4" y="341" width="7.8" height="15.0" fill="rgb(235,89,7)" rx="2" ry="2" />
+<text  x="920.40" y="351.5" ></text>
+</g>
+<g >
+<title>keyVNew (115,254,914 samples, 0.52%)</title><rect x="919.1" y="325" width="6.1" height="15.0" fill="rgb(232,142,39)" rx="2" ry="2" />
+<text  x="922.11" y="335.5" ></text>
+</g>
+<g >
+<title>std::_Rb_tree&lt;std::shared_ptr&lt;YAML::detail::node&gt;, std::shared_ptr&lt;YAML::detail::node&gt;, std::_Identity&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::less&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::allocator&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt; &gt;::_M_erase(std::_Rb_tree_node&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;*) (82,801,888 samples, 0.37%)</title><rect x="1181.6" y="421" width="4.3" height="15.0" fill="rgb(216,121,27)" rx="2" ry="2" />
+<text  x="1184.55" y="431.5" ></text>
+</g>
+<g >
+<title>keyVNew (9,855,541 samples, 0.04%)</title><rect x="874.4" y="165" width="0.5" height="15.0" fill="rgb(242,157,48)" rx="2" ry="2" />
+<text  x="877.42" y="175.5" ></text>
+</g>
+<g >
+<title>keyVNew (169,054,276 samples, 0.76%)</title><rect x="1158.3" y="453" width="9.0" height="15.0" fill="rgb(244,158,39)" rx="2" ry="2" />
+<text  x="1161.32" y="463.5" ></text>
+</g>
+<g >
+<title>keyVNew (52,398,412 samples, 0.24%)</title><rect x="892.7" y="277" width="2.7" height="15.0" fill="rgb(249,23,45)" rx="2" ry="2" />
+<text  x="895.67" y="287.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (2,512,472 samples, 0.01%)</title><rect x="911.9" y="229" width="0.1" height="15.0" fill="rgb(251,66,54)" rx="2" ry="2" />
+<text  x="914.88" y="239.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (66,067,621 samples, 0.30%)</title><rect x="891.9" y="293" width="3.5" height="15.0" fill="rgb(214,206,14)" rx="2" ry="2" />
+<text  x="894.94" y="303.5" ></text>
+</g>
+<g >
+<title>keyVNew (7,437,249 samples, 0.03%)</title><rect x="873.5" y="149" width="0.4" height="15.0" fill="rgb(213,130,42)" rx="2" ry="2" />
+<text  x="876.53" y="159.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (215,565,754 samples, 0.97%)</title><rect x="1155.9" y="469" width="11.4" height="15.0" fill="rgb(232,209,15)" rx="2" ry="2" />
+<text  x="1158.86" y="479.5" ></text>
+</g>
+<g >
+<title>keySetString (15,794,025 samples, 0.07%)</title><rect x="931.9" y="325" width="0.8" height="15.0" fill="rgb(208,103,34)" rx="2" ry="2" />
+<text  x="934.86" y="335.5" ></text>
+</g>
+<g >
+<title>all (22,241,832,737 samples, 100%)</title><rect x="10.0" y="581" width="1180.0" height="15.0" fill="rgb(210,85,19)" rx="2" ry="2" />
+<text  x="13.00" y="591.5" ></text>
+</g>
+<g >
+<title>keyDel (5,737,885 samples, 0.03%)</title><rect x="1115.8" y="389" width="0.3" height="15.0" fill="rgb(232,188,10)" rx="2" ry="2" />
+<text  x="1118.75" y="399.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (9,653,379 samples, 0.04%)</title><rect x="1096.8" y="341" width="0.5" height="15.0" fill="rgb(217,101,0)" rx="2" ry="2" />
+<text  x="1099.78" y="351.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (4,399,342 samples, 0.02%)</title><rect x="875.9" y="149" width="0.3" height="15.0" fill="rgb(209,108,42)" rx="2" ry="2" />
+<text  x="878.94" y="159.5" ></text>
+</g>
+<g >
+<title>keySetMeta (32,805,191 samples, 0.15%)</title><rect x="1056.8" y="341" width="1.7" height="15.0" fill="rgb(226,73,10)" rx="2" ry="2" />
+<text  x="1059.76" y="351.5" ></text>
+</g>
+<g >
+<title>keyVNew (323,897,168 samples, 1.46%)</title><rect x="1044.4" y="405" width="17.1" height="15.0" fill="rgb(242,93,46)" rx="2" ry="2" />
+<text  x="1047.36" y="415.5" ></text>
+</g>
+<g >
+<title>keySetMeta (16,676,237 samples, 0.07%)</title><rect x="1038.9" y="373" width="0.9" height="15.0" fill="rgb(209,224,52)" rx="2" ry="2" />
+<text  x="1041.89" y="383.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (9,308,028 samples, 0.04%)</title><rect x="1098.7" y="373" width="0.5" height="15.0" fill="rgb(233,180,22)" rx="2" ry="2" />
+<text  x="1101.75" y="383.5" ></text>
+</g>
+<g >
+<title>ksLookup (3,593,858 samples, 0.02%)</title><rect x="1119.2" y="389" width="0.2" height="15.0" fill="rgb(244,86,46)" rx="2" ry="2" />
+<text  x="1122.18" y="399.5" ></text>
+</g>
+<g >
+<title>elektraLookupBinarySearch (4,241,286 samples, 0.02%)</title><rect x="1032.6" y="341" width="0.2" height="15.0" fill="rgb(250,123,39)" rx="2" ry="2" />
+<text  x="1035.62" y="351.5" ></text>
+</g>
+<g >
+<title>keyVInit (19,967,825 samples, 0.09%)</title><rect x="884.0" y="229" width="1.1" height="15.0" fill="rgb(229,222,2)" rx="2" ry="2" />
+<text  x="887.00" y="239.5" ></text>
+</g>
+<g >
+<title>ksAppendKey (3,874,757 samples, 0.02%)</title><rect x="1116.1" y="437" width="0.2" height="15.0" fill="rgb(231,101,28)" rx="2" ry="2" />
+<text  x="1119.06" y="447.5" ></text>
+</g>
+<g >
+<title>keySetMeta (5,873,390 samples, 0.03%)</title><rect x="917.0" y="293" width="0.3" height="15.0" fill="rgb(229,45,6)" rx="2" ry="2" />
+<text  x="920.04" y="303.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (5,556,701,461 samples, 24.98%)</title><rect x="710.7" y="405" width="294.8" height="15.0" fill="rgb(238,47,48)" rx="2" ry="2" />
+<text  x="713.65" y="415.5" >(anonymous namespace)::convertNodeToKey..</text>
+</g>
+<g >
+<title>elektraMalloc (1,906,161 samples, 0.01%)</title><rect x="942.5" y="245" width="0.1" height="15.0" fill="rgb(208,196,29)" rx="2" ry="2" />
+<text  x="945.50" y="255.5" ></text>
+</g>
+<g >
+<title>keySetOwner (10,382,398 samples, 0.05%)</title><rect x="902.1" y="245" width="0.6" height="15.0" fill="rgb(235,138,8)" rx="2" ry="2" />
+<text  x="905.13" y="255.5" ></text>
+</g>
+<g >
+<title>keyGetFullNameSize (7,287,970 samples, 0.03%)</title><rect x="890.9" y="261" width="0.4" height="15.0" fill="rgb(225,186,23)" rx="2" ry="2" />
+<text  x="893.94" y="271.5" ></text>
+</g>
+<g >
+<title>keyGetFullNameSize (34,389,039 samples, 0.15%)</title><rect x="970.5" y="357" width="1.8" height="15.0" fill="rgb(207,2,9)" rx="2" ry="2" />
+<text  x="973.51" y="367.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (244,009,016 samples, 1.10%)</title><rect x="1023.0" y="405" width="12.9" height="15.0" fill="rgb(243,86,3)" rx="2" ry="2" />
+<text  x="1026.00" y="415.5" ></text>
+</g>
+<g >
+<title>ksClose (8,392,827 samples, 0.04%)</title><rect x="1153.1" y="421" width="0.4" height="15.0" fill="rgb(252,69,45)" rx="2" ry="2" />
+<text  x="1156.06" y="431.5" ></text>
+</g>
+<g >
+<title>keyVInit (11,904,135 samples, 0.05%)</title><rect x="877.2" y="181" width="0.7" height="15.0" fill="rgb(234,43,49)" rx="2" ry="2" />
+<text  x="880.25" y="191.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (18,462,167 samples, 0.08%)</title><rect x="1174.5" y="437" width="0.9" height="15.0" fill="rgb(249,159,36)" rx="2" ry="2" />
+<text  x="1177.45" y="447.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (3,066,136 samples, 0.01%)</title><rect x="875.1" y="165" width="0.1" height="15.0" fill="rgb(220,35,49)" rx="2" ry="2" />
+<text  x="878.05" y="175.5" ></text>
+</g>
+<g >
+<title>std::_Rb_tree&lt;std::shared_ptr&lt;YAML::detail::node&gt;, std::shared_ptr&lt;YAML::detail::node&gt;, std::_Identity&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::less&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::allocator&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt; &gt;::_M_erase(std::_Rb_tree_node&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;*) (100,670,133 samples, 0.45%)</title><rect x="1180.6" y="437" width="5.3" height="15.0" fill="rgb(207,169,1)" rx="2" ry="2" />
+<text  x="1183.60" y="447.5" ></text>
+</g>
+<g >
+<title>keyVNew (303,014,111 samples, 1.36%)</title><rect x="1083.3" y="421" width="16.1" height="15.0" fill="rgb(209,167,42)" rx="2" ry="2" />
+<text  x="1086.32" y="431.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (355,121,822 samples, 1.60%)</title><rect x="1119.4" y="453" width="18.8" height="15.0" fill="rgb(210,49,23)" rx="2" ry="2" />
+<text  x="1122.37" y="463.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (4,579,826 samples, 0.02%)</title><rect x="873.9" y="165" width="0.3" height="15.0" fill="rgb(206,138,2)" rx="2" ry="2" />
+<text  x="876.92" y="175.5" ></text>
+</g>
+<g >
+<title>keySetMeta (36,221,973 samples, 0.16%)</title><rect x="1095.5" y="357" width="1.9" height="15.0" fill="rgb(240,207,39)" rx="2" ry="2" />
+<text  x="1098.52" y="367.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (7,870,529 samples, 0.04%)</title><rect x="1022.5" y="341" width="0.4" height="15.0" fill="rgb(216,4,30)" rx="2" ry="2" />
+<text  x="1025.52" y="351.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (4,220,851 samples, 0.02%)</title><rect x="872.3" y="133" width="0.2" height="15.0" fill="rgb(223,16,31)" rx="2" ry="2" />
+<text  x="875.30" y="143.5" ></text>
+</g>
+<g >
+<title>keySetRaw (2,792,604 samples, 0.01%)</title><rect x="1078.8" y="389" width="0.2" height="15.0" fill="rgb(227,229,48)" rx="2" ry="2" />
+<text  x="1081.82" y="399.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (12,988,329 samples, 0.06%)</title><rect x="896.6" y="261" width="0.7" height="15.0" fill="rgb(228,129,12)" rx="2" ry="2" />
+<text  x="899.64" y="271.5" ></text>
+</g>
+<g >
+<title>keyVNew (86,772,750 samples, 0.39%)</title><rect x="907.9" y="309" width="4.6" height="15.0" fill="rgb(228,103,3)" rx="2" ry="2" />
+<text  x="910.94" y="319.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (203,805,955 samples, 0.92%)</title><rect x="932.7" y="357" width="10.8" height="15.0" fill="rgb(236,132,26)" rx="2" ry="2" />
+<text  x="935.69" y="367.5" ></text>
+</g>
+<g >
+<title>void kdb::Key::set&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;) (14,640,208 samples, 0.07%)</title><rect x="916.6" y="325" width="0.7" height="15.0" fill="rgb(241,200,20)" rx="2" ry="2" />
+<text  x="919.57" y="335.5" ></text>
+</g>
+<g >
+<title>keyVNew (2,546,471 samples, 0.01%)</title><rect x="872.0" y="101" width="0.2" height="15.0" fill="rgb(223,114,51)" rx="2" ry="2" />
+<text  x="875.04" y="111.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (3,188,822 samples, 0.01%)</title><rect x="871.7" y="53" width="0.2" height="15.0" fill="rgb(243,78,16)" rx="2" ry="2" />
+<text  x="874.74" y="63.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (113,308,285 samples, 0.51%)</title><rect x="906.5" y="325" width="6.0" height="15.0" fill="rgb(207,79,8)" rx="2" ry="2" />
+<text  x="909.53" y="335.5" ></text>
+</g>
+<g >
+<title>keySetMeta (12,058,349 samples, 0.05%)</title><rect x="923.9" y="261" width="0.7" height="15.0" fill="rgb(235,74,35)" rx="2" ry="2" />
+<text  x="926.93" y="271.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (5,486,009 samples, 0.02%)</title><rect x="963.7" y="309" width="0.3" height="15.0" fill="rgb(249,48,12)" rx="2" ry="2" />
+<text  x="966.72" y="319.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (15,437,646 samples, 0.07%)</title><rect x="882.1" y="245" width="0.8" height="15.0" fill="rgb(212,155,2)" rx="2" ry="2" />
+<text  x="885.10" y="255.5" ></text>
+</g>
+<g >
+<title>keySetOwner (56,149,881 samples, 0.25%)</title><rect x="1055.5" y="357" width="3.0" height="15.0" fill="rgb(211,227,39)" rx="2" ry="2" />
+<text  x="1058.52" y="367.5" ></text>
+</g>
+<g >
+<title>ksLookup (3,914,961 samples, 0.02%)</title><rect x="1173.4" y="421" width="0.2" height="15.0" fill="rgb(250,42,26)" rx="2" ry="2" />
+<text  x="1176.37" y="431.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (156,180,334 samples, 0.70%)</title><rect x="964.0" y="373" width="8.3" height="15.0" fill="rgb(232,6,31)" rx="2" ry="2" />
+<text  x="967.05" y="383.5" ></text>
+</g>
+<g >
+<title>keySetMeta (16,335,209 samples, 0.07%)</title><rect x="1154.9" y="421" width="0.9" height="15.0" fill="rgb(240,190,40)" rx="2" ry="2" />
+<text  x="1157.90" y="431.5" ></text>
+</g>
+<g >
+<title>keySetMeta (3,673,879 samples, 0.02%)</title><rect x="889.5" y="229" width="0.2" height="15.0" fill="rgb(207,104,46)" rx="2" ry="2" />
+<text  x="892.51" y="239.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (68,360,252 samples, 0.31%)</title><rect x="1068.2" y="389" width="3.7" height="15.0" fill="rgb(225,142,2)" rx="2" ry="2" />
+<text  x="1071.25" y="399.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (9,076,932 samples, 0.04%)</title><rect x="885.9" y="229" width="0.5" height="15.0" fill="rgb(236,50,0)" rx="2" ry="2" />
+<text  x="888.88" y="239.5" ></text>
+</g>
+<g >
+<title>keyAddName (8,542,426 samples, 0.04%)</title><rect x="986.8" y="325" width="0.4" height="15.0" fill="rgb(236,25,19)" rx="2" ry="2" />
+<text  x="989.75" y="335.5" ></text>
+</g>
+<g >
+<title>keyDel (6,260,841 samples, 0.03%)</title><rect x="897.9" y="293" width="0.3" height="15.0" fill="rgb(226,169,28)" rx="2" ry="2" />
+<text  x="900.92" y="303.5" ></text>
+</g>
+<g >
+<title>keyVInit (7,350,565 samples, 0.03%)</title><rect x="874.6" y="149" width="0.3" height="15.0" fill="rgb(222,20,22)" rx="2" ry="2" />
+<text  x="877.55" y="159.5" ></text>
+</g>
+<g >
+<title>std::_Rb_tree&lt;std::shared_ptr&lt;YAML::detail::node&gt;, std::shared_ptr&lt;YAML::detail::node&gt;, std::_Identity&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::less&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::allocator&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt; &gt;::_M_erase(std::_Rb_tree_node&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;*) (118,659,981 samples, 0.53%)</title><rect x="1179.6" y="453" width="6.3" height="15.0" fill="rgb(247,147,46)" rx="2" ry="2" />
+<text  x="1182.65" y="463.5" ></text>
+</g>
+<g >
+<title>void kdb::Key::set&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;) (8,757,097 samples, 0.04%)</title><rect x="898.3" y="293" width="0.4" height="15.0" fill="rgb(238,166,40)" rx="2" ry="2" />
+<text  x="901.28" y="303.5" ></text>
+</g>
+<g >
+<title>keyVInit (28,444,158 samples, 0.13%)</title><rect x="888.2" y="245" width="1.5" height="15.0" fill="rgb(253,206,47)" rx="2" ry="2" />
+<text  x="891.20" y="255.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (47,148,407 samples, 0.21%)</title><rect x="926.8" y="325" width="2.5" height="15.0" fill="rgb(209,145,51)" rx="2" ry="2" />
+<text  x="929.83" y="335.5" ></text>
+</g>
+<g >
+<title>ksClose (5,629,089 samples, 0.03%)</title><rect x="1075.9" y="389" width="0.3" height="15.0" fill="rgb(247,146,51)" rx="2" ry="2" />
+<text  x="1078.86" y="399.5" ></text>
+</g>
+<g >
+<title>keyDel (4,502,351 samples, 0.02%)</title><rect x="905.7" y="309" width="0.2" height="15.0" fill="rgb(206,159,22)" rx="2" ry="2" />
+<text  x="908.69" y="319.5" ></text>
+</g>
+<g >
+<title>keySetOwner (2,209,686 samples, 0.01%)</title><rect x="871.8" y="37" width="0.1" height="15.0" fill="rgb(225,152,6)" rx="2" ry="2" />
+<text  x="874.79" y="47.5" ></text>
+</g>
+<g >
+<title>elektraFree (2,834,000 samples, 0.01%)</title><rect x="1115.9" y="373" width="0.2" height="15.0" fill="rgb(205,148,52)" rx="2" ry="2" />
+<text  x="1118.91" y="383.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (3,222,178 samples, 0.01%)</title><rect x="1155.4" y="405" width="0.2" height="15.0" fill="rgb(229,140,33)" rx="2" ry="2" />
+<text  x="1158.41" y="415.5" ></text>
+</g>
+<g >
+<title>keyGetFullName (89,263,998 samples, 0.40%)</title><rect x="994.5" y="373" width="4.7" height="15.0" fill="rgb(251,6,4)" rx="2" ry="2" />
+<text  x="997.46" y="383.5" ></text>
+</g>
+<g >
+<title>ksAppendKey (2,996,201 samples, 0.01%)</title><rect x="1037.4" y="405" width="0.2" height="15.0" fill="rgb(233,141,5)" rx="2" ry="2" />
+<text  x="1040.42" y="415.5" ></text>
+</g>
+<g >
+<title>keySetMeta (3,708,768 samples, 0.02%)</title><rect x="889.3" y="197" width="0.2" height="15.0" fill="rgb(213,40,50)" rx="2" ry="2" />
+<text  x="892.32" y="207.5" ></text>
+</g>
+<g >
+<title>keyGetFullNameSize (16,562,780 samples, 0.07%)</title><rect x="915.2" y="309" width="0.9" height="15.0" fill="rgb(238,156,21)" rx="2" ry="2" />
+<text  x="918.20" y="319.5" ></text>
+</g>
+<g >
+<title>keyNew (4,982,322 samples, 0.02%)</title><rect x="970.1" y="325" width="0.3" height="15.0" fill="rgb(251,51,24)" rx="2" ry="2" />
+<text  x="973.12" y="335.5" ></text>
+</g>
+<g >
+<title>keySetMeta (14,757,012 samples, 0.07%)</title><rect x="974.9" y="341" width="0.8" height="15.0" fill="rgb(251,69,15)" rx="2" ry="2" />
+<text  x="977.90" y="351.5" ></text>
+</g>
+<g >
+<title>keyDel (35,590,076 samples, 0.16%)</title><rect x="1151.6" y="453" width="1.9" height="15.0" fill="rgb(218,71,40)" rx="2" ry="2" />
+<text  x="1154.62" y="463.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (192,765,877 samples, 0.87%)</title><rect x="866.6" y="213" width="10.2" height="15.0" fill="rgb(227,171,3)" rx="2" ry="2" />
+<text  x="869.62" y="223.5" ></text>
+</g>
+<g >
+<title>kdb::Key::getFullName[abi:cxx11]() const (153,455,329 samples, 0.69%)</title><rect x="1167.3" y="469" width="8.1" height="15.0" fill="rgb(220,213,18)" rx="2" ry="2" />
+<text  x="1170.29" y="479.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (8,871,433 samples, 0.04%)</title><rect x="1137.6" y="389" width="0.4" height="15.0" fill="rgb(252,130,38)" rx="2" ry="2" />
+<text  x="1140.57" y="399.5" ></text>
+</g>
+<g >
+<title>keySetOwner (58,156,791 samples, 0.26%)</title><rect x="1133.2" y="389" width="3.1" height="15.0" fill="rgb(249,223,13)" rx="2" ry="2" />
+<text  x="1136.20" y="399.5" ></text>
+</g>
+<g >
+<title>keySetString (2,422,440 samples, 0.01%)</title><rect x="873.3" y="133" width="0.1" height="15.0" fill="rgb(249,55,20)" rx="2" ry="2" />
+<text  x="876.28" y="143.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (137,624,270 samples, 0.62%)</title><rect x="868.1" y="197" width="7.3" height="15.0" fill="rgb(207,169,13)" rx="2" ry="2" />
+<text  x="871.14" y="207.5" ></text>
+</g>
+<g >
+<title>keyVNew (16,072,306 samples, 0.07%)</title><rect x="878.8" y="213" width="0.8" height="15.0" fill="rgb(216,71,3)" rx="2" ry="2" />
+<text  x="881.78" y="223.5" ></text>
+</g>
+<g >
+<title>elektraMalloc (2,940,449 samples, 0.01%)</title><rect x="1110.0" y="373" width="0.2" height="15.0" fill="rgb(215,13,16)" rx="2" ry="2" />
+<text  x="1113.05" y="383.5" ></text>
+</g>
+<g >
+<title>keyNew (3,844,452 samples, 0.02%)</title><rect x="942.4" y="261" width="0.2" height="15.0" fill="rgb(237,19,5)" rx="2" ry="2" />
+<text  x="945.40" y="271.5" ></text>
+</g>
+<g >
+<title>keySetMeta (3,777,498 samples, 0.02%)</title><rect x="891.7" y="245" width="0.2" height="15.0" fill="rgb(212,210,16)" rx="2" ry="2" />
+<text  x="894.74" y="255.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (8,737,378 samples, 0.04%)</title><rect x="1135.6" y="357" width="0.5" height="15.0" fill="rgb(207,55,52)" rx="2" ry="2" />
+<text  x="1138.60" y="367.5" ></text>
+</g>
+<g >
+<title>keySetMeta (19,775,566 samples, 0.09%)</title><rect x="1004.4" y="357" width="1.1" height="15.0" fill="rgb(230,100,37)" rx="2" ry="2" />
+<text  x="1007.40" y="367.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (4,276,366 samples, 0.02%)</title><rect x="943.2" y="293" width="0.2" height="15.0" fill="rgb(211,193,3)" rx="2" ry="2" />
+<text  x="946.22" y="303.5" ></text>
+</g>
+<g >
+<title>main (22,241,744,280 samples, 100.00%)</title><rect x="10.0" y="549" width="1180.0" height="15.0" fill="rgb(249,62,7)" rx="2" ry="2" />
+<text  x="13.00" y="559.5" >main</text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (7,098,113,283 samples, 31.91%)</title><rect x="663.2" y="421" width="376.6" height="15.0" fill="rgb(246,98,38)" rx="2" ry="2" />
+<text  x="666.20" y="431.5" >(anonymous namespace)::convertNodeToKeySet(YAML::No..</text>
+</g>
+<g >
+<title>keySetOwner (50,683,767 samples, 0.23%)</title><rect x="1018.8" y="341" width="2.7" height="15.0" fill="rgb(205,71,28)" rx="2" ry="2" />
+<text  x="1021.80" y="351.5" ></text>
+</g>
+<g >
+<title>void kdb::Key::set&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;) (41,568,909 samples, 0.19%)</title><rect x="1037.6" y="405" width="2.2" height="15.0" fill="rgb(242,180,20)" rx="2" ry="2" />
+<text  x="1040.58" y="415.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (33,733,310 samples, 0.15%)</title><rect x="1034.2" y="373" width="1.7" height="15.0" fill="rgb(252,100,41)" rx="2" ry="2" />
+<text  x="1037.16" y="383.5" ></text>
+</g>
+<g >
+<title>std::_Rb_tree&lt;std::shared_ptr&lt;YAML::detail::node&gt;, std::shared_ptr&lt;YAML::detail::node&gt;, std::_Identity&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::less&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::allocator&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt; &gt;::_M_erase(std::_Rb_tree_node&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;*) (9,801,272 samples, 0.04%)</title><rect x="1185.4" y="325" width="0.5" height="15.0" fill="rgb(243,185,48)" rx="2" ry="2" />
+<text  x="1188.42" y="335.5" ></text>
+</g>
+<g >
+<title>keyVInit (173,677,742 samples, 0.78%)</title><rect x="982.1" y="357" width="9.2" height="15.0" fill="rgb(222,174,6)" rx="2" ry="2" />
+<text  x="985.09" y="367.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (5,865,452 samples, 0.03%)</title><rect x="871.3" y="101" width="0.3" height="15.0" fill="rgb(219,2,14)" rx="2" ry="2" />
+<text  x="874.28" y="111.5" ></text>
+</g>
+<g >
+<title>keyVInit (64,111,366 samples, 0.29%)</title><rect x="909.1" y="293" width="3.4" height="15.0" fill="rgb(252,104,43)" rx="2" ry="2" />
+<text  x="912.14" y="303.5" ></text>
+</g>
+<g >
+<title>ksLookup (3,052,304 samples, 0.01%)</title><rect x="1110.2" y="389" width="0.2" height="15.0" fill="rgb(207,141,40)" rx="2" ry="2" />
+<text  x="1113.21" y="399.5" ></text>
+</g>
+<g >
+<title>keySetOwner (52,401,259 samples, 0.24%)</title><rect x="987.2" y="325" width="2.8" height="15.0" fill="rgb(212,40,36)" rx="2" ry="2" />
+<text  x="990.21" y="335.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (16,848,613,620 samples, 75.75%)</title><rect x="282.9" y="501" width="893.9" height="15.0" fill="rgb(236,3,23)" rx="2" ry="2" />
+<text  x="285.91" y="511.5" >(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;)</text>
+</g>
+<g >
+<title>keyNew (4,819,134 samples, 0.02%)</title><rect x="989.7" y="293" width="0.2" height="15.0" fill="rgb(242,180,1)" rx="2" ry="2" />
+<text  x="992.69" y="303.5" ></text>
+</g>
+<g >
+<title>kdb::Key::Key(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, ...) (6,219,578 samples, 0.03%)</title><rect x="871.6" y="101" width="0.3" height="15.0" fill="rgb(238,216,30)" rx="2" ry="2" />
+<text  x="874.59" y="111.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (8,748,013 samples, 0.04%)</title><rect x="1150.8" y="405" width="0.5" height="15.0" fill="rgb(222,179,32)" rx="2" ry="2" />
+<text  x="1153.79" y="415.5" ></text>
+</g>
+<g >
+<title>keySetMeta (3,078,574 samples, 0.01%)</title><rect x="898.6" y="261" width="0.1" height="15.0" fill="rgb(238,127,21)" rx="2" ry="2" />
+<text  x="901.58" y="271.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (105,351,142 samples, 0.47%)</title><rect x="1130.7" y="405" width="5.6" height="15.0" fill="rgb(221,98,22)" rx="2" ry="2" />
+<text  x="1133.70" y="415.5" ></text>
+</g>
+<g >
+<title>std::_Sp_counted_ptr&lt;YAML::detail::memory*, (__gnu_cxx::_Lock_policy)2&gt;::_M_dispose() (154,680,237 samples, 0.70%)</title><rect x="1177.7" y="485" width="8.2" height="15.0" fill="rgb(218,130,41)" rx="2" ry="2" />
+<text  x="1180.74" y="495.5" ></text>
+</g>
+<g >
+<title>ksDel (12,789,493 samples, 0.06%)</title><rect x="1075.5" y="405" width="0.7" height="15.0" fill="rgb(216,93,25)" rx="2" ry="2" />
+<text  x="1078.48" y="415.5" ></text>
+</g>
+<g >
+<title>std::_Rb_tree&lt;std::shared_ptr&lt;YAML::detail::node&gt;, std::shared_ptr&lt;YAML::detail::node&gt;, std::_Identity&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::less&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;, std::allocator&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt; &gt;::_M_erase(std::_Rb_tree_node&lt;std::shared_ptr&lt;YAML::detail::node&gt; &gt;*) (23,694,084 samples, 0.11%)</title><rect x="1184.7" y="357" width="1.2" height="15.0" fill="rgb(230,226,12)" rx="2" ry="2" />
+<text  x="1187.69" y="367.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (5,863,969 samples, 0.03%)</title><rect x="905.4" y="277" width="0.3" height="15.0" fill="rgb(250,16,10)" rx="2" ry="2" />
+<text  x="908.37" y="287.5" ></text>
+</g>
+<g >
+<title>ksDel (3,455,838 samples, 0.02%)</title><rect x="898.1" y="277" width="0.1" height="15.0" fill="rgb(229,148,13)" rx="2" ry="2" />
+<text  x="901.07" y="287.5" ></text>
+</g>
+<g >
+<title>void kdb::Key::set&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;) (22,886,833 samples, 0.10%)</title><rect x="931.5" y="341" width="1.2" height="15.0" fill="rgb(247,67,37)" rx="2" ry="2" />
+<text  x="934.48" y="351.5" ></text>
+</g>
+<g >
+<title>keyAddName (2,319,458 samples, 0.01%)</title><rect x="889.0" y="213" width="0.1" height="15.0" fill="rgb(224,166,20)" rx="2" ry="2" />
+<text  x="892.03" y="223.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (2,306,773 samples, 0.01%)</title><rect x="878.1" y="181" width="0.1" height="15.0" fill="rgb(214,76,14)" rx="2" ry="2" />
+<text  x="881.12" y="191.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (260,780,160 samples, 1.17%)</title><rect x="864.7" y="229" width="13.8" height="15.0" fill="rgb(249,211,1)" rx="2" ry="2" />
+<text  x="867.66" y="239.5" ></text>
+</g>
+<g >
+<title>ksLookup (1,974,931 samples, 0.01%)</title><rect x="999.1" y="341" width="0.1" height="15.0" fill="rgb(243,122,9)" rx="2" ry="2" />
+<text  x="1002.09" y="351.5" ></text>
+</g>
+<g >
+<title>(anonymous namespace)::convertNodeToKeySet(YAML::Node const&amp;, kdb::KeySet&amp;, kdb::Key&amp;) (94,035,141 samples, 0.42%)</title><rect x="869.3" y="181" width="5.0" height="15.0" fill="rgb(225,66,26)" rx="2" ry="2" />
+<text  x="872.26" y="191.5" ></text>
+</g>
+<g >
+<title>keyGetMeta (3,663,683 samples, 0.02%)</title><rect x="886.5" y="229" width="0.2" height="15.0" fill="rgb(233,35,49)" rx="2" ry="2" />
+<text  x="889.49" y="239.5" ></text>
+</g>
+<g >
+<title>void kdb::Key::set&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;) (39,629,189 samples, 0.18%)</title><rect x="1153.7" y="453" width="2.1" height="15.0" fill="rgb(209,80,46)" rx="2" ry="2" />
+<text  x="1156.71" y="463.5" ></text>
+</g>
+<g >
+<title>keySetMeta (9,523,023 samples, 0.04%)</title><rect x="911.6" y="245" width="0.5" height="15.0" fill="rgb(223,191,5)" rx="2" ry="2" />
+<text  x="914.56" y="255.5" ></text>
+</g>
+<g >
+<title>elektraKeySetName (9,488,404 samples, 0.04%)</title><rect x="881.5" y="197" width="0.5" height="15.0" fill="rgb(236,227,41)" rx="2" ry="2" />
+<text  x="884.48" y="207.5" ></text>
+</g>
+</g>
+</svg>
