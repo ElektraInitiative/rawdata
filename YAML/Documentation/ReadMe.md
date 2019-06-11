@@ -47,12 +47,12 @@ The folder [`Flame Graphs`](../Flame Graphs) contains [flame graphs](http://www.
 
 ## Results
 
-The folder [`Results`](../Results) contains the results of the execution time benchmark for some of [Elektra](https://www.libelektra.org)’s YAML plugins. All of the benchmarks data was created using the script [`benchmark`](../Scripts/benchmark). For this script to work, please copy all files you want to use as input from [`Input`](../Input) to the folder `data/benchmarks` inside a local copy of [Elektra’s repository](https://master.libelektra.org). The script assumes that you store the compiled version of Elektra for
+The folder [`Results`](../Results) contains the results of the execution time benchmark for some of [Elektra](https://www.libelektra.org)’s YAML plugins. All of the benchmarks data was created using the script [`benchmark-runtime`](../Scripts/benchmark-runtime). For this script to work, please copy all files you want to use as input from [`Input`](../Input) to the folder `data/benchmarks` inside a local copy of [Elektra’s repository](https://master.libelektra.org). The script assumes that you store the compiled version of Elektra for
 
 - macOS inside the folder `build/mac`, and
 - Linux inside the folder `build/linux`
 
-in the root of Elektra’s repository. After you built Elektra you can copy [`benchmark`](../Scripts/benchmark) to the root of Elektra’s repository and call it using
+in the root of Elektra’s repository. After you built Elektra you can copy [`benchmark-runtime`](../Scripts/benchmark-runtime) to the root of Elektra’s repository and call it using
 
 ```sh
 ./benchmark
