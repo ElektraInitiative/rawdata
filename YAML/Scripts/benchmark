@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+files=($(find benchmarks/data -type f))
+build_directory="build/$(test $(uname) = Darwin && echo mac || echo linux)"
+
+index=0
+
+while test "$index" -lt "${#files[@]}"; do
+	file=${files[$index]}
+	name="$(basename "$file" | cut -f1 -d'.')"
+	printf 'Benchmarking file %s\n' "$file"
+	"$build_directory/scripts/benchmark-yaml" "$name.yaml" \
+		> "$name.stdout.txt" 2> "$name.stderr.txt"
+
+	# Continue with same file on warning
+	if grep Warning "$name.stderr.txt" |
+		grep -vq 'Warning: Command took less than 5 ms to complete.'; then
+		sleep $((RANDOM % 250 + 50))
+		continue
+	fi
+	index=$((index + 1))
+done
