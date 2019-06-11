@@ -13,7 +13,7 @@ library(ggpubr)
 # = Read =
 # ========
 
-result_directory = "YAML/Results"
+result_directory = "YAML/Results/Run Time"
 plugin_times <- tibble(plugin = character(),
                        runtime = double(),
                        lines = numeric(),

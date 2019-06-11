@@ -47,7 +47,9 @@ The folder [`Flame Graphs`](../Flame Graphs) contains [flame graphs](http://www.
 
 ## Results
 
-The folder [`Results`](../Results) contains the results of the execution time benchmark for some of [Elektra](https://www.libelektra.org)’s YAML plugins. All of the benchmarks data was created using the script [`benchmark-runtime`](../Scripts/benchmark-runtime). For this script to work, please copy all files you want to use as input from [`Input`](../Input) to the folder `data/benchmarks` inside a local copy of [Elektra’s repository](https://master.libelektra.org). The script assumes that you store the compiled version of Elektra for
+### Run Time
+
+The folder [`Run Time`](../Results/Run Time) contains the results of the execution time benchmark for some of [Elektra](https://www.libelektra.org)’s YAML plugins. All of the benchmarks data was created using the script [`benchmark-runtime`](../Scripts/benchmark-runtime). For this script to work, please copy all files you want to use as input from [`Input`](../Input) to the folder `data/benchmarks` inside a local copy of [Elektra’s repository](https://master.libelektra.org). The script assumes that you store the compiled version of Elektra for
 
 - macOS inside the folder `build/mac`, and
 - Linux inside the folder `build/linux`
