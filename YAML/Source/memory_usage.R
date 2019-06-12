@@ -4,6 +4,7 @@
 
 library(tidyverse)
 library(scales)
+library(ggpubr)
 
 # -- Functions -----------------------------------------------------------------
 
@@ -67,11 +68,12 @@ for (row in 1:nrow(memory_usage)) {
 # = Filter =
 # ==========
 
-memory_noline <- filter(memory, is.na(lines))
 memory_all <- filter(memory, !is.na(lines) & lines >= 1)
+memory_large <- filter(memory, !is.na(lines) & lines >= 1000)
 
 # =============
 # = Visualize =
 # =============
 
 memory.graph(memory_all)
+memory.graph(memory_large)
