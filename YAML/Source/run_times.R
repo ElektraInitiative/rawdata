@@ -88,3 +88,4 @@ for (filepath in files) {
 # =============
 
 runtime.graph(plugin_times)
+runtime.graph(filter(plugin_times, lines >= 1000))
