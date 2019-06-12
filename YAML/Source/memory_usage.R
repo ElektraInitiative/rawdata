@@ -40,11 +40,26 @@ for (row in 1:nrow(memory_usage)) {
                     lines = lines)
 }
 
+# ==========
+# = Filter =
+# ==========
+
+memory_noline <- filter(memory, is.na(lines))
+memory_line <- filter(memory, !is.na(lines))
+
 # =============
 # = Visualize =
 # =============
 
-ggplot(data = memory, aes(x = plugin, y = bytes, color = plugin)) +
+ggplot(data = memory_noline, aes(x = file, y = bytes, color = plugin)) +
+  scale_color_manual(values = c("YAML CPP" = "#FD7D23",
+                                "Yan LR" = "#FFD300",
+                                "YAMBi" = "#20C5CC",
+                                "YAwn" = "#1992FB",
+                                "YAy PEG" = "#983BC9")) +
+  geom_point()
+
+ggplot(data = memory_line, aes(x = lines, y = bytes, color = plugin)) +
   scale_color_manual(values = c("YAML CPP" = "#FD7D23",
                                 "Yan LR" = "#FFD300",
                                 "YAMBi" = "#20C5CC",
