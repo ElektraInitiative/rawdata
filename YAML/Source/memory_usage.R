@@ -57,6 +57,9 @@ ggplot(data = memory_noline, aes(x = file, y = bytes, color = plugin)) +
                                 "YAMBi" = "#20C5CC",
                                 "YAwn" = "#1992FB",
                                 "YAy PEG" = "#983BC9")) +
+  labs(x = "File") +
+  labs(y = "Bytes") +
+  labs(color = "Plugin") +
   geom_point()
 
 ggplot(data = memory_line, aes(x = lines, y = bytes, color = plugin)) +
@@ -65,4 +68,7 @@ ggplot(data = memory_line, aes(x = lines, y = bytes, color = plugin)) +
                                 "YAMBi" = "#20C5CC",
                                 "YAwn" = "#1992FB",
                                 "YAy PEG" = "#983BC9")) +
+  labs(x = "Number of Lines/Scalars") +
+  labs(y = "Bytes") +
+  labs(color = "Plugin") +
   geom_point()
