@@ -23,13 +23,21 @@ memory_usage$Plugin <- memory_usage$Plugin %>%
 
 memory <- tibble(plugin = character(),
                  file = character(),
-                 bytes = numeric())
+                 bytes = numeric(),
+                 lines = numeric())
 
 for (row in 1:nrow(memory_usage)) {
+  filepath <- memory_usage$File[row]
+  fields <- strsplit(toString(filepath), "_")[[1]]
+  lines <- if (length(fields) >= 2)
+             as.numeric(sub("(.*)\\.yaml$", "\\1", fields[[2]]))
+           else NA
+
   memory <- add_row(memory,
                     plugin = memory_usage$Plugin[row],
-                    file = memory_usage$File[row],
-                    bytes = as.numeric(memory_usage$Bytes[row]))
+                    file = filepath,
+                    bytes = as.numeric(memory_usage$Bytes[row]),
+                    lines = lines)
 }
 
 # =============
