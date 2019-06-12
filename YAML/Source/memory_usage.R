@@ -15,11 +15,11 @@ memory.graph <- function(data) {
                                   "YAMBi" = "#20C5CC",
                                   "YAwn" = "#1992FB",
                                   "YAy PEG" = "#983BC9")) +
-    scale_x_continuous(name = "Number of Lines/Scalars", trans = 'log10',
+    scale_x_continuous(name = "Number of Lines/Scalars", trans = "log10",
                        breaks = trans_breaks("log10", function(x) 10^x),
                        labels = trans_format("log10", math_format(10^.x))) +
     scale_y_continuous(name = "Heap Usage [Bytes]",
-                       trans = 'log10',
+                       trans = "log10",
                        labels = number_bytes_format(symbol = "MB",
                                                     units = "si")) +
     labs(color = "Plugin") +

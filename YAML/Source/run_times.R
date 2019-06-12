@@ -70,10 +70,10 @@ ggplot(data = plugin_times, aes(x = lines, y = runtime, color = plugin)) +
                                 "YAMBi" = "#20C5CC",
                                 "YAwn" = "#1992FB",
                                 "YAy PEG" = "#983BC9")) +
-  scale_x_continuous(name = "Number of Lines/Scalars", trans = 'log10',
+  scale_x_continuous(name = "Number of Lines/Scalars", trans = "log10",
                      breaks = trans_breaks("log10", function(x) 10^x),
                      labels = trans_format("log10", math_format(10^.x))) +
-  scale_y_continuous(name = "Execution Time [s]", trans = 'log10') +
+  scale_y_continuous(name = "Execution Time [s]", trans = "log10") +
   labs(color = "Plugin") +
   annotation_logticks() +
   geom_point() +
