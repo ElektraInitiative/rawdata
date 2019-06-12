@@ -64,4 +64,5 @@ ggplot(data = memory_line, aes(x = lines, y = bytes, color = plugin)) +
   scale_y_continuous(name = "Bytes", trans = 'log10') +
   labs(color = "Plugin") +
   annotation_logticks() +
+  geom_smooth() +
   geom_point()
