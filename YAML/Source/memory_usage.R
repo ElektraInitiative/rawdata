@@ -24,6 +24,7 @@ memory.graph <- function(data) {
                                                     units = "si")) +
     labs(color = "Plugin") +
     annotation_logticks() +
+    stat_cor(show.legend = FALSE) +
     geom_smooth() +
     geom_point()
 }
