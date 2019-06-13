@@ -38,7 +38,9 @@ memory.graph <- function(data) {
 memory <- tibble(plugin = character(),
                  file = character(),
                  bytes = numeric(),
-                 lines = numeric())
+                 lines = numeric(),
+                 os = character(),
+                 compiler = character())
 
 result_directory = "YAML/Results/Memory Usage"
 files <- list.files(result_directory, pattern = ".*\\.csv")
@@ -54,6 +56,10 @@ for (filepath in files) {
     map_chr(~ sub("yawn", "YAwn", .)) %>%
     map_chr(~ sub("yaypeg", "YAy PEG", .))
 
+  memory_usage$OS <- memory_usage$OS %>%
+    map_chr(~ sub("linux", "Linux", .)) %>%
+    map_chr(~ sub("mac", "macOS", .))
+
   for (row in 1:nrow(memory_usage)) {
     filepath <- memory_usage$File[row]
     fields <- strsplit(toString(filepath), "_")[[1]]
@@ -65,7 +71,8 @@ for (filepath in files) {
                       plugin = memory_usage$Plugin[row],
                       file = filepath,
                       bytes = as.numeric(memory_usage$Bytes[row]),
-                      lines = lines)
+                      lines = lines,
+                      os = memory_usage$OS[row])
   }
 }
 
