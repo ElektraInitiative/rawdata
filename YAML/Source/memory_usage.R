@@ -60,6 +60,10 @@ for (filepath in files) {
     map_chr(~ sub("linux", "Linux", .)) %>%
     map_chr(~ sub("mac", "macOS", .))
 
+  memory_usage$Compiler <- memory_usage$Compiler %>%
+    map_chr(~ sub("gcc", "GCC ", .)) %>%
+    map_chr(~ sub("clang", "Clang ", .))
+
   for (row in 1:nrow(memory_usage)) {
     filepath <- memory_usage$File[row]
     fields <- strsplit(toString(filepath), "_")[[1]]
@@ -72,7 +76,8 @@ for (filepath in files) {
                       file = filepath,
                       bytes = as.numeric(memory_usage$Bytes[row]),
                       lines = lines,
-                      os = memory_usage$OS[row])
+                      os = memory_usage$OS[row],
+                      compiler = memory_usage$Compiler[row])
   }
 }
 
