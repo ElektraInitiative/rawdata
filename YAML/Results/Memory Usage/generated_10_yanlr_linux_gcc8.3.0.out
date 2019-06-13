@@ -1,0 +1,2531 @@
+desc: --massif-out-file=results/generated_10_yanlr_linux_gcc8.3.0.out
+cmd: build/linux/bin/benchmark_plugingetset benchmarks/data/generated_10 user yanlr get
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=209309
+mem_heap_B=64
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=249137
+mem_heap_B=1891
+mem_heap_extra_B=125
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=287300
+mem_heap_B=7471
+mem_heap_extra_B=369
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=317717
+mem_heap_B=11328
+mem_heap_extra_B=528
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=347129
+mem_heap_B=12851
+mem_heap_extra_B=637
+mem_stacks_B=0
+heap_tree=detailed
+n10: 12851 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 9551 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 9551 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 9551 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 8355 0x400D290: openaux (dl-deps.c:64)
+     n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 8355 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 8355 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 8355 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 8355 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 8355 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 8355 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 8355 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 8355 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 8355 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 8355 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n1: 1196 0x4012FE9: dl_open_worker (dl-open.c:228)
+     n1: 1196 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 1196 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 1196 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 1196 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1196 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 1196 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 1196 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 1196 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 1196 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 1196 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 1024 0x485EBF6: elektraVFormat (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 1024 0x485ED2A: elektraFormat (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n0: 512 0x109162: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 512 0x109179: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 384 0x4863428: ksVNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n1: 384 0x486356A: ksNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n0: 384 in 3 places, all below massif's threshold (1.00%)
+ n1: 381 0x400B58E: _dl_new_object (dl-object.c:163)
+  n1: 381 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 381 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 321 0x400D290: openaux (dl-deps.c:64)
+     n1: 321 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 321 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 321 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 321 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 321 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 321 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 321 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 321 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 321 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 321 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 321 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 321 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 321 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 60 in 1 place, below massif's threshold (1.00%)
+ n0: 346 in 8 places, all below massif's threshold (1.00%)
+ n1: 336 0x400D46A: _dl_map_object_deps (dl-deps.c:438)
+  n1: 336 0x401304E: dl_open_worker (dl-open.c:271)
+   n1: 336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 336 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 336 0x487D254: dlopen_doit (dlopen.c:66)
+      n1: 336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 336 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 336 0x487D973: _dlerror_run (dlerror.c:163)
+         n1: 336 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 336 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 336 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 336 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 256 0x485F3A2: keyVNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n1: 256 0x485F460: keyNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n0: 256 in 4 places, all below massif's threshold (1.00%)
+ n2: 197 0x401AAD8: strdup (strdup.c:42)
+  n1: 197 0x4016065: _dl_load_cache_lookup (dl-cache.c:317)
+   n1: 197 0x4008D09: _dl_map_object (dl-load.c:2332)
+    n1: 197 0x400D290: openaux (dl-deps.c:64)
+     n1: 197 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 197 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 197 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 197 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 197 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 197 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 197 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 197 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 197 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 197 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 197 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 197 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 197 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+  n0: 0 in 2 places, all below massif's threshold (1.00%)
+ n1: 192 0x48633F2: ksVNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n1: 192 0x486356A: ksNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n0: 192 in 3 places, all below massif's threshold (1.00%)
+ n1: 184 0x4007798: open_path (dl-load.c:2112)
+  n1: 184 0x4008C16: _dl_map_object (dl-load.c:2297)
+   n0: 184 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=6
+#-----------
+time=390398
+mem_heap_B=16539
+mem_heap_extra_B=789
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=1020565
+mem_heap_B=17531
+mem_heap_extra_B=797
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=1106419
+mem_heap_B=19483
+mem_heap_extra_B=805
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=1107302
+mem_heap_B=18491
+mem_heap_extra_B=797
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=3548847
+mem_heap_B=22555
+mem_heap_extra_B=805
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=3550478
+mem_heap_B=20603
+mem_heap_extra_B=797
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=10258304
+mem_heap_B=93307
+mem_heap_extra_B=805
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=10304510
+mem_heap_B=93339
+mem_heap_extra_B=813
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=10347847
+mem_heap_B=103624
+mem_heap_extra_B=1136
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=10379300
+mem_heap_B=109019
+mem_heap_extra_B=1925
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=10399290
+mem_heap_B=109155
+mem_heap_extra_B=1965
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=10432499
+mem_heap_B=111571
+mem_heap_extra_B=3517
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=10467450
+mem_heap_B=111627
+mem_heap_extra_B=3525
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=10565644
+mem_heap_B=111587
+mem_heap_extra_B=3533
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=10613434
+mem_heap_B=123049
+mem_heap_extra_B=4647
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=10654860
+mem_heap_B=128793
+mem_heap_extra_B=5399
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=10674296
+mem_heap_B=131057
+mem_heap_extra_B=7311
+mem_stacks_B=0
+heap_tree=detailed
+n14: 131057 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x502F454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 17082 in 72 places, all below massif's threshold (1.00%)
+ n1: 9551 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 9551 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 9551 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 8355 0x400D290: openaux (dl-deps.c:64)
+     n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 8355 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 8355 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 8355 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 8355 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 8355 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 8355 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 8355 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 8355 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 8355 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 8355 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1196 in 1 place, below massif's threshold (1.00%)
+ n1: 6240 0x48BB075: __new_exitfn (cxa_atexit.c:110)
+  n2: 6240 0x48BB116: __internal_atexit (cxa_atexit.c:40)
+   n1: 4160 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 4160 0x400F474: _dl_init (dl-init.c:118)
+     n1: 4160 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 4160 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 4160 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 4160 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 4160 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 4160 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 4160 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 4160 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 4160 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 2080 in 2 places, all below massif's threshold (1.00%)
+ n1: 5368 0x4F1B458: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n2: 5368 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 3520 0x4E5343B: ???
+    n1: 3520 0x4E4F9FE: ???
+     n1: 3520 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 3520 0x400F474: _dl_init (dl-init.c:118)
+       n1: 3520 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 3520 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 3520 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 3520 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 3520 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 3520 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 3520 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 3520 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 3520 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n1: 1848 0x4F6A0F6: XPathLexer::Initializer::Initializer() (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 1848 0x4EF008D: ??? (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 1848 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 1848 0x400F474: _dl_init (dl-init.c:118)
+       n1: 1848 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1848 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 1848 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 1848 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 1848 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 1848 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 1848 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 1848 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 1848 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 3336 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 3336 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 3336 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 3336 0x487D254: dlopen_doit (dlopen.c:66)
+      n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 3336 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 3336 0x487D973: _dlerror_run (dlerror.c:163)
+         n1: 3336 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 3336 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 3336 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 3336 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2184 0x4F1B490: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 2184 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 2184 in 2 places, all below massif's threshold (1.00%)
+ n1: 1968 0x4F1BDD0: antlr4::atn::ATNDeserializer::edgeFactory(antlr4::atn::ATN const&, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, std::vector<antlr4::misc::IntervalSet, std::allocator<antlr4::misc::IntervalSet> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 1968 0x4F1D180: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 1968 in 2 places, all below massif's threshold (1.00%)
+ n1: 1848 0x4F1B610: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 1848 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 1848 in 2 places, all below massif's threshold (1.00%)
+ n1: 1772 0x4E53788: ???
+  n1: 1772 0x4E4F9FE: ???
+   n1: 1772 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 1772 0x400F474: _dl_init (dl-init.c:118)
+     n1: 1772 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 1772 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 1772 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 1772 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 1772 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 1772 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 1772 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 1772 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 1772 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 1772 0x4F1C949: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 1772 0x4E5343B: ???
+   n1: 1772 0x4E4F9FE: ???
+    n1: 1772 0x400F378: call_init.part.0 (dl-init.c:72)
+     n1: 1772 0x400F474: _dl_init (dl-init.c:118)
+      n1: 1772 0x40132D1: dl_open_worker (dl-open.c:517)
+       n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+        n1: 1772 0x4012BB8: _dl_open (dl-open.c:599)
+         n1: 1772 0x487D254: dlopen_doit (dlopen.c:66)
+          n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+           n1: 1772 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+            n1: 1772 0x487D973: _dlerror_run (dlerror.c:163)
+             n1: 1772 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 1772 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+               n1: 1772 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                n0: 1772 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 1632 0x4F25437: std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::vector(std::initializer_list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n0: 1632 in 7 places, all below massif's threshold (1.00%)
+ n1: 1536 0x4F18048: void std::vector<antlr4::atn::ATNState*, std::allocator<antlr4::atn::ATNState*> >::_M_realloc_insert<antlr4::atn::ATNState* const&>(__gnu_cxx::__normal_iterator<antlr4::atn::ATNState**, std::vector<antlr4::atn::ATNState*, std::allocator<antlr4::atn::ATNState*> > >, antlr4::atn::ATNState* const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 1536 0x4F1727C: antlr4::atn::ATN::addState(antlr4::atn::ATNState*) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 1536 0x4F1CC2C: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n0: 1536 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=23
+#-----------
+time=10707489
+mem_heap_B=133049
+mem_heap_extra_B=8919
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=10773272
+mem_heap_B=133073
+mem_heap_extra_B=8935
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=10775882
+mem_heap_B=133257
+mem_heap_extra_B=8935
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=10988279
+mem_heap_B=133177
+mem_heap_extra_B=8903
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=11024061
+mem_heap_B=141477
+mem_heap_extra_B=8955
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=11043501
+mem_heap_B=149241
+mem_heap_extra_B=8975
+mem_stacks_B=0
+heap_tree=detailed
+n14: 149241 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x502F454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 22018 in 82 places, all below massif's threshold (1.00%)
+ n1: 9551 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 9551 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 9551 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 8355 0x400D290: openaux (dl-deps.c:64)
+     n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 8355 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 8355 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 8355 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 8355 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 8355 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 8355 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 8355 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 8355 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 8355 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 8355 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1196 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x508B8F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x508F790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E5E001: ???
+    n0: 8192 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 7764 0x4EF231A: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::_M_mutate(unsigned long, unsigned long, char32_t const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 7764 0x4EF24F0: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::resize(unsigned long, char32_t) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 7764 0x4EF28FE: bool std::__do_str_codecvt<std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >, char, std::codecvt<char32_t, char, __mbstate_t>, __mbstate_t, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const>(char const*, char const*, std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >&, std::codecvt<char32_t, char, __mbstate_t> const&, __mbstate_t&, unsigned long&, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 7764 0x4EF14F3: antlr4::ANTLRInputStream::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 7764 0x4EF0A99: antlr4::ANTLRInputStream::load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+      n1: 7764 0x4EF0B17: antlr4::ANTLRInputStream::ANTLRInputStream(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+       n1: 7764 0x4E5E065: ???
+        n0: 7764 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 6240 0x48BB075: __new_exitfn (cxa_atexit.c:110)
+  n2: 6240 0x48BB116: __internal_atexit (cxa_atexit.c:40)
+   n1: 4160 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 4160 0x400F474: _dl_init (dl-init.c:118)
+     n1: 4160 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 4160 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 4160 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 4160 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 4160 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 4160 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 4160 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 4160 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 4160 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 2080 in 2 places, all below massif's threshold (1.00%)
+ n1: 5368 0x4F1B458: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n2: 5368 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 3520 0x4E5343B: ???
+    n1: 3520 0x4E4F9FE: ???
+     n1: 3520 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 3520 0x400F474: _dl_init (dl-init.c:118)
+       n1: 3520 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 3520 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 3520 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 3520 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 3520 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 3520 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 3520 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 3520 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 3520 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n1: 1848 0x4F6A0F6: XPathLexer::Initializer::Initializer() (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 1848 0x4EF008D: ??? (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 1848 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 1848 0x400F474: _dl_init (dl-init.c:118)
+       n1: 1848 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1848 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 1848 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 1848 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 1848 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 1848 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 1848 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 1848 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 1848 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 3336 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 3336 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 3336 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 3336 0x487D254: dlopen_doit (dlopen.c:66)
+      n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 3336 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 3336 0x487D973: _dlerror_run (dlerror.c:163)
+         n1: 3336 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 3336 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 3336 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 3336 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2568 0x4F1BDD0: antlr4::atn::ATNDeserializer::edgeFactory(antlr4::atn::ATN const&, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, std::vector<antlr4::misc::IntervalSet, std::allocator<antlr4::misc::IntervalSet> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n2: 2568 0x4F1D180: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 1704 0x4E5343B: ???
+    n1: 1704 0x4E4F9FE: ???
+     n1: 1704 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 1704 0x400F474: _dl_init (dl-init.c:118)
+       n1: 1704 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 1704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1704 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 1704 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 1704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 1704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 1704 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 1704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 1704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 1704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 1704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 864 in 1 place, below massif's threshold (1.00%)
+ n1: 2184 0x4F1B490: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 2184 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 2184 in 2 places, all below massif's threshold (1.00%)
+ n1: 1848 0x4F1B610: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 1848 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 1848 in 2 places, all below massif's threshold (1.00%)
+ n1: 1772 0x4E53788: ???
+  n1: 1772 0x4E4F9FE: ???
+   n1: 1772 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 1772 0x400F474: _dl_init (dl-init.c:118)
+     n1: 1772 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 1772 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 1772 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 1772 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 1772 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 1772 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 1772 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 1772 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 1772 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 1632 0x4F25437: std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::vector(std::initializer_list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n0: 1632 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=29
+#-----------
+time=11076136
+mem_heap_B=155075
+mem_heap_extra_B=9613
+mem_stacks_B=0
+heap_tree=detailed
+n13: 155075 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x502F454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 29484 in 110 places, all below massif's threshold (1.00%)
+ n1: 9551 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 9551 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 9551 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 8355 0x400D290: openaux (dl-deps.c:64)
+     n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 8355 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 8355 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 8355 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 8355 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 8355 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 8355 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 8355 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 8355 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 8355 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 8355 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1196 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x508B8F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x508F790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E5E001: ???
+    n0: 8192 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 7764 0x4EF231A: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::_M_mutate(unsigned long, unsigned long, char32_t const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 7764 0x4EF24F0: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::resize(unsigned long, char32_t) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 7764 0x4EF28FE: bool std::__do_str_codecvt<std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >, char, std::codecvt<char32_t, char, __mbstate_t>, __mbstate_t, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const>(char const*, char const*, std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >&, std::codecvt<char32_t, char, __mbstate_t> const&, __mbstate_t&, unsigned long&, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 7764 0x4EF14F3: antlr4::ANTLRInputStream::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 7764 0x4EF0A99: antlr4::ANTLRInputStream::load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+      n1: 7764 0x4EF0B17: antlr4::ANTLRInputStream::ANTLRInputStream(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+       n1: 7764 0x4E5E065: ???
+        n0: 7764 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 6240 0x48BB075: __new_exitfn (cxa_atexit.c:110)
+  n2: 6240 0x48BB116: __internal_atexit (cxa_atexit.c:40)
+   n1: 4160 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 4160 0x400F474: _dl_init (dl-init.c:118)
+     n1: 4160 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 4160 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 4160 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 4160 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 4160 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 4160 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 4160 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 4160 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 4160 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 2080 in 2 places, all below massif's threshold (1.00%)
+ n1: 5368 0x4F1B458: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n2: 5368 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 3520 0x4E5343B: ???
+    n1: 3520 0x4E4F9FE: ???
+     n1: 3520 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 3520 0x400F474: _dl_init (dl-init.c:118)
+       n1: 3520 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 3520 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 3520 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 3520 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 3520 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 3520 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 3520 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 3520 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 3520 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n1: 1848 0x4F6A0F6: XPathLexer::Initializer::Initializer() (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 1848 0x4EF008D: ??? (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 1848 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 1848 0x400F474: _dl_init (dl-init.c:118)
+       n1: 1848 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1848 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 1848 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 1848 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 1848 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 1848 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 1848 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 1848 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 1848 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 3336 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 3336 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 3336 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 3336 0x487D254: dlopen_doit (dlopen.c:66)
+      n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 3336 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 3336 0x487D973: _dlerror_run (dlerror.c:163)
+         n1: 3336 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 3336 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 3336 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 3336 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2568 0x4F1BDD0: antlr4::atn::ATNDeserializer::edgeFactory(antlr4::atn::ATN const&, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, std::vector<antlr4::misc::IntervalSet, std::allocator<antlr4::misc::IntervalSet> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n2: 2568 0x4F1D180: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 1704 0x4E5343B: ???
+    n1: 1704 0x4E4F9FE: ???
+     n1: 1704 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 1704 0x400F474: _dl_init (dl-init.c:118)
+       n1: 1704 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 1704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1704 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 1704 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 1704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 1704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 1704 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 1704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 1704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 1704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 1704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 864 in 1 place, below massif's threshold (1.00%)
+ n1: 2184 0x4F1B490: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 2184 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 2184 in 2 places, all below massif's threshold (1.00%)
+ n1: 1848 0x4F1B610: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 1848 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 1848 in 2 places, all below massif's threshold (1.00%)
+ n1: 1772 0x4E53788: ???
+  n1: 1772 0x4E4F9FE: ???
+   n1: 1772 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 1772 0x400F474: _dl_init (dl-init.c:118)
+     n1: 1772 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 1772 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 1772 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 1772 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 1772 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 1772 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 1772 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 1772 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 1772 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=30
+#-----------
+time=11120109
+mem_heap_B=153787
+mem_heap_extra_B=9477
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=11161966
+mem_heap_B=155211
+mem_heap_extra_B=9701
+mem_stacks_B=0
+heap_tree=detailed
+n13: 155211 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x502F454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 29620 in 136 places, all below massif's threshold (1.00%)
+ n1: 9551 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 9551 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 9551 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 8355 0x400D290: openaux (dl-deps.c:64)
+     n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 8355 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 8355 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 8355 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 8355 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 8355 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 8355 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 8355 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 8355 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 8355 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 8355 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1196 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x508B8F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x508F790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E5E001: ???
+    n0: 8192 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 7764 0x4EF231A: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::_M_mutate(unsigned long, unsigned long, char32_t const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 7764 0x4EF24F0: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::resize(unsigned long, char32_t) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 7764 0x4EF28FE: bool std::__do_str_codecvt<std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >, char, std::codecvt<char32_t, char, __mbstate_t>, __mbstate_t, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const>(char const*, char const*, std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >&, std::codecvt<char32_t, char, __mbstate_t> const&, __mbstate_t&, unsigned long&, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 7764 0x4EF14F3: antlr4::ANTLRInputStream::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 7764 0x4EF0A99: antlr4::ANTLRInputStream::load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+      n1: 7764 0x4EF0B17: antlr4::ANTLRInputStream::ANTLRInputStream(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+       n1: 7764 0x4E5E065: ???
+        n0: 7764 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 6240 0x48BB075: __new_exitfn (cxa_atexit.c:110)
+  n2: 6240 0x48BB116: __internal_atexit (cxa_atexit.c:40)
+   n1: 4160 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 4160 0x400F474: _dl_init (dl-init.c:118)
+     n1: 4160 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 4160 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 4160 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 4160 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 4160 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 4160 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 4160 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 4160 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 4160 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 2080 in 2 places, all below massif's threshold (1.00%)
+ n1: 5368 0x4F1B458: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n2: 5368 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 3520 0x4E5343B: ???
+    n1: 3520 0x4E4F9FE: ???
+     n1: 3520 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 3520 0x400F474: _dl_init (dl-init.c:118)
+       n1: 3520 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 3520 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 3520 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 3520 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 3520 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 3520 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 3520 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 3520 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 3520 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n1: 1848 0x4F6A0F6: XPathLexer::Initializer::Initializer() (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 1848 0x4EF008D: ??? (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 1848 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 1848 0x400F474: _dl_init (dl-init.c:118)
+       n1: 1848 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1848 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 1848 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 1848 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 1848 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 1848 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 1848 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 1848 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 1848 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 3336 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 3336 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 3336 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 3336 0x487D254: dlopen_doit (dlopen.c:66)
+      n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 3336 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 3336 0x487D973: _dlerror_run (dlerror.c:163)
+         n1: 3336 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 3336 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 3336 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 3336 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2568 0x4F1BDD0: antlr4::atn::ATNDeserializer::edgeFactory(antlr4::atn::ATN const&, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, std::vector<antlr4::misc::IntervalSet, std::allocator<antlr4::misc::IntervalSet> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n2: 2568 0x4F1D180: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 1704 0x4E5343B: ???
+    n1: 1704 0x4E4F9FE: ???
+     n1: 1704 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 1704 0x400F474: _dl_init (dl-init.c:118)
+       n1: 1704 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 1704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1704 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 1704 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 1704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 1704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 1704 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 1704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 1704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 1704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 1704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 864 in 1 place, below massif's threshold (1.00%)
+ n1: 2184 0x4F1B490: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 2184 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 2184 in 2 places, all below massif's threshold (1.00%)
+ n1: 1848 0x4F1B610: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 1848 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 1848 in 2 places, all below massif's threshold (1.00%)
+ n1: 1772 0x4E53788: ???
+  n1: 1772 0x4E4F9FE: ???
+   n1: 1772 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 1772 0x400F474: _dl_init (dl-init.c:118)
+     n1: 1772 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 1772 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 1772 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 1772 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 1772 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 1772 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 1772 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 1772 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 1772 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=32
+#-----------
+time=11180935
+mem_heap_B=157291
+mem_heap_extra_B=9965
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=11216610
+mem_heap_B=155171
+mem_heap_extra_B=9733
+mem_stacks_B=0
+heap_tree=detailed
+n13: 155171 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x502F454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 29580 in 140 places, all below massif's threshold (1.00%)
+ n1: 9551 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 9551 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 9551 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 8355 0x400D290: openaux (dl-deps.c:64)
+     n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 8355 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 8355 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 8355 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 8355 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 8355 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 8355 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 8355 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 8355 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 8355 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 8355 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1196 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x508B8F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x508F790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E5E001: ???
+    n0: 8192 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 7764 0x4EF231A: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::_M_mutate(unsigned long, unsigned long, char32_t const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 7764 0x4EF24F0: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::resize(unsigned long, char32_t) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 7764 0x4EF28FE: bool std::__do_str_codecvt<std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >, char, std::codecvt<char32_t, char, __mbstate_t>, __mbstate_t, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const>(char const*, char const*, std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >&, std::codecvt<char32_t, char, __mbstate_t> const&, __mbstate_t&, unsigned long&, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 7764 0x4EF14F3: antlr4::ANTLRInputStream::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 7764 0x4EF0A99: antlr4::ANTLRInputStream::load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+      n1: 7764 0x4EF0B17: antlr4::ANTLRInputStream::ANTLRInputStream(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+       n1: 7764 0x4E5E065: ???
+        n0: 7764 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 6240 0x48BB075: __new_exitfn (cxa_atexit.c:110)
+  n2: 6240 0x48BB116: __internal_atexit (cxa_atexit.c:40)
+   n1: 4160 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 4160 0x400F474: _dl_init (dl-init.c:118)
+     n1: 4160 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 4160 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 4160 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 4160 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 4160 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 4160 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 4160 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 4160 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 4160 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 2080 in 2 places, all below massif's threshold (1.00%)
+ n1: 5368 0x4F1B458: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n2: 5368 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 3520 0x4E5343B: ???
+    n1: 3520 0x4E4F9FE: ???
+     n1: 3520 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 3520 0x400F474: _dl_init (dl-init.c:118)
+       n1: 3520 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 3520 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 3520 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 3520 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 3520 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 3520 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 3520 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 3520 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 3520 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n1: 1848 0x4F6A0F6: XPathLexer::Initializer::Initializer() (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 1848 0x4EF008D: ??? (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 1848 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 1848 0x400F474: _dl_init (dl-init.c:118)
+       n1: 1848 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1848 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 1848 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 1848 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 1848 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 1848 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 1848 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 1848 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 1848 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 3336 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 3336 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 3336 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 3336 0x487D254: dlopen_doit (dlopen.c:66)
+      n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 3336 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 3336 0x487D973: _dlerror_run (dlerror.c:163)
+         n1: 3336 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 3336 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 3336 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 3336 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2568 0x4F1BDD0: antlr4::atn::ATNDeserializer::edgeFactory(antlr4::atn::ATN const&, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, std::vector<antlr4::misc::IntervalSet, std::allocator<antlr4::misc::IntervalSet> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n2: 2568 0x4F1D180: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 1704 0x4E5343B: ???
+    n1: 1704 0x4E4F9FE: ???
+     n1: 1704 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 1704 0x400F474: _dl_init (dl-init.c:118)
+       n1: 1704 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 1704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1704 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 1704 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 1704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 1704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 1704 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 1704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 1704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 1704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 1704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 864 in 1 place, below massif's threshold (1.00%)
+ n1: 2184 0x4F1B490: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 2184 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 2184 in 2 places, all below massif's threshold (1.00%)
+ n1: 1848 0x4F1B610: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 1848 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 1848 in 2 places, all below massif's threshold (1.00%)
+ n1: 1772 0x4E53788: ???
+  n1: 1772 0x4E4F9FE: ???
+   n1: 1772 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 1772 0x400F474: _dl_init (dl-init.c:118)
+     n1: 1772 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 1772 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 1772 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 1772 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 1772 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 1772 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 1772 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 1772 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 1772 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=34
+#-----------
+time=11246055
+mem_heap_B=158179
+mem_heap_extra_B=10269
+mem_stacks_B=0
+heap_tree=detailed
+n13: 158179 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x502F454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 32588 in 142 places, all below massif's threshold (1.00%)
+ n1: 9551 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 9551 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 9551 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 8355 0x400D290: openaux (dl-deps.c:64)
+     n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 8355 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 8355 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 8355 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 8355 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 8355 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 8355 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 8355 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 8355 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 8355 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 8355 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1196 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x508B8F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x508F790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E5E001: ???
+    n0: 8192 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 7764 0x4EF231A: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::_M_mutate(unsigned long, unsigned long, char32_t const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 7764 0x4EF24F0: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::resize(unsigned long, char32_t) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 7764 0x4EF28FE: bool std::__do_str_codecvt<std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >, char, std::codecvt<char32_t, char, __mbstate_t>, __mbstate_t, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const>(char const*, char const*, std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >&, std::codecvt<char32_t, char, __mbstate_t> const&, __mbstate_t&, unsigned long&, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 7764 0x4EF14F3: antlr4::ANTLRInputStream::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 7764 0x4EF0A99: antlr4::ANTLRInputStream::load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+      n1: 7764 0x4EF0B17: antlr4::ANTLRInputStream::ANTLRInputStream(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+       n1: 7764 0x4E5E065: ???
+        n0: 7764 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 6240 0x48BB075: __new_exitfn (cxa_atexit.c:110)
+  n2: 6240 0x48BB116: __internal_atexit (cxa_atexit.c:40)
+   n1: 4160 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 4160 0x400F474: _dl_init (dl-init.c:118)
+     n1: 4160 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 4160 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 4160 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 4160 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 4160 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 4160 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 4160 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 4160 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 4160 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 2080 in 2 places, all below massif's threshold (1.00%)
+ n1: 5368 0x4F1B458: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n2: 5368 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 3520 0x4E5343B: ???
+    n1: 3520 0x4E4F9FE: ???
+     n1: 3520 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 3520 0x400F474: _dl_init (dl-init.c:118)
+       n1: 3520 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 3520 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 3520 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 3520 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 3520 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 3520 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 3520 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 3520 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 3520 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n1: 1848 0x4F6A0F6: XPathLexer::Initializer::Initializer() (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 1848 0x4EF008D: ??? (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 1848 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 1848 0x400F474: _dl_init (dl-init.c:118)
+       n1: 1848 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1848 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 1848 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 1848 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 1848 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 1848 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 1848 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 1848 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 1848 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 3336 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 3336 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 3336 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 3336 0x487D254: dlopen_doit (dlopen.c:66)
+      n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 3336 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 3336 0x487D973: _dlerror_run (dlerror.c:163)
+         n1: 3336 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 3336 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 3336 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 3336 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2568 0x4F1BDD0: antlr4::atn::ATNDeserializer::edgeFactory(antlr4::atn::ATN const&, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, std::vector<antlr4::misc::IntervalSet, std::allocator<antlr4::misc::IntervalSet> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n2: 2568 0x4F1D180: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 1704 0x4E5343B: ???
+    n1: 1704 0x4E4F9FE: ???
+     n1: 1704 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 1704 0x400F474: _dl_init (dl-init.c:118)
+       n1: 1704 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 1704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1704 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 1704 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 1704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 1704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 1704 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 1704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 1704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 1704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 1704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 864 in 1 place, below massif's threshold (1.00%)
+ n1: 2184 0x4F1B490: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 2184 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 2184 in 2 places, all below massif's threshold (1.00%)
+ n1: 1848 0x4F1B610: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 1848 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 1848 in 2 places, all below massif's threshold (1.00%)
+ n1: 1772 0x4E53788: ???
+  n1: 1772 0x4E4F9FE: ???
+   n1: 1772 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 1772 0x400F474: _dl_init (dl-init.c:118)
+     n1: 1772 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 1772 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 1772 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 1772 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 1772 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 1772 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 1772 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 1772 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 1772 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=35
+#-----------
+time=11286647
+mem_heap_B=157059
+mem_heap_extra_B=10029
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=11312108
+mem_heap_B=157955
+mem_heap_extra_B=10341
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=11338980
+mem_heap_B=158419
+mem_heap_extra_B=10485
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=11381112
+mem_heap_B=161595
+mem_heap_extra_B=11109
+mem_stacks_B=0
+heap_tree=detailed
+n14: 161595 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x502F454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 33204 in 142 places, all below massif's threshold (1.00%)
+ n1: 9551 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 9551 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 9551 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 8355 0x400D290: openaux (dl-deps.c:64)
+     n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 8355 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 8355 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 8355 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 8355 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 8355 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 8355 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 8355 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 8355 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 8355 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 8355 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1196 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x508B8F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x508F790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E5E001: ???
+    n0: 8192 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 7764 0x4EF231A: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::_M_mutate(unsigned long, unsigned long, char32_t const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 7764 0x4EF24F0: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::resize(unsigned long, char32_t) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 7764 0x4EF28FE: bool std::__do_str_codecvt<std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >, char, std::codecvt<char32_t, char, __mbstate_t>, __mbstate_t, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const>(char const*, char const*, std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >&, std::codecvt<char32_t, char, __mbstate_t> const&, __mbstate_t&, unsigned long&, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 7764 0x4EF14F3: antlr4::ANTLRInputStream::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 7764 0x4EF0A99: antlr4::ANTLRInputStream::load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+      n1: 7764 0x4EF0B17: antlr4::ANTLRInputStream::ANTLRInputStream(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+       n1: 7764 0x4E5E065: ???
+        n0: 7764 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 6240 0x48BB075: __new_exitfn (cxa_atexit.c:110)
+  n2: 6240 0x48BB116: __internal_atexit (cxa_atexit.c:40)
+   n1: 4160 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 4160 0x400F474: _dl_init (dl-init.c:118)
+     n1: 4160 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 4160 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 4160 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 4160 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 4160 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 4160 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 4160 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 4160 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 4160 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 2080 in 2 places, all below massif's threshold (1.00%)
+ n1: 5368 0x4F1B458: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n2: 5368 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 3520 0x4E5343B: ???
+    n1: 3520 0x4E4F9FE: ???
+     n1: 3520 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 3520 0x400F474: _dl_init (dl-init.c:118)
+       n1: 3520 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 3520 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 3520 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 3520 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 3520 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 3520 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 3520 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 3520 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 3520 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n1: 1848 0x4F6A0F6: XPathLexer::Initializer::Initializer() (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 1848 0x4EF008D: ??? (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 1848 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 1848 0x400F474: _dl_init (dl-init.c:118)
+       n1: 1848 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1848 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 1848 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 1848 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 1848 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 1848 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 1848 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 1848 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 1848 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 3336 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 3336 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 3336 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 3336 0x487D254: dlopen_doit (dlopen.c:66)
+      n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 3336 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 3336 0x487D973: _dlerror_run (dlerror.c:163)
+         n1: 3336 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 3336 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 3336 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 3336 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2800 0x4EF6CEC: antlr4::CommonTokenFactory::create(std::pair<antlr4::TokenSource*, antlr4::CharStream*>, unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 2800 0x4E597E7: ???
+   n0: 2800 in 7 places, all below massif's threshold (1.00%)
+ n1: 2568 0x4F1BDD0: antlr4::atn::ATNDeserializer::edgeFactory(antlr4::atn::ATN const&, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, std::vector<antlr4::misc::IntervalSet, std::allocator<antlr4::misc::IntervalSet> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 2568 0x4F1D180: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 2568 in 2 places, all below massif's threshold (1.00%)
+ n1: 2184 0x4F1B490: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 2184 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 2184 in 2 places, all below massif's threshold (1.00%)
+ n1: 1848 0x4F1B610: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 1848 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 1848 in 2 places, all below massif's threshold (1.00%)
+ n1: 1772 0x4E53788: ???
+  n1: 1772 0x4E4F9FE: ???
+   n1: 1772 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 1772 0x400F474: _dl_init (dl-init.c:118)
+     n1: 1772 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 1772 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 1772 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 1772 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 1772 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 1772 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 1772 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 1772 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 1772 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=39
+#-----------
+time=11409240
+mem_heap_B=162691
+mem_heap_extra_B=11357
+mem_stacks_B=0
+heap_tree=detailed
+n14: 162691 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x502F454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 33852 in 142 places, all below massif's threshold (1.00%)
+ n1: 9551 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 9551 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 9551 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 8355 0x400D290: openaux (dl-deps.c:64)
+     n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 8355 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 8355 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 8355 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 8355 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 8355 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 8355 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 8355 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 8355 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 8355 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 8355 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1196 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x508B8F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x508F790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E5E001: ???
+    n0: 8192 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 7764 0x4EF231A: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::_M_mutate(unsigned long, unsigned long, char32_t const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 7764 0x4EF24F0: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::resize(unsigned long, char32_t) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 7764 0x4EF28FE: bool std::__do_str_codecvt<std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >, char, std::codecvt<char32_t, char, __mbstate_t>, __mbstate_t, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const>(char const*, char const*, std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >&, std::codecvt<char32_t, char, __mbstate_t> const&, __mbstate_t&, unsigned long&, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 7764 0x4EF14F3: antlr4::ANTLRInputStream::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 7764 0x4EF0A99: antlr4::ANTLRInputStream::load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+      n1: 7764 0x4EF0B17: antlr4::ANTLRInputStream::ANTLRInputStream(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+       n1: 7764 0x4E5E065: ???
+        n0: 7764 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 6240 0x48BB075: __new_exitfn (cxa_atexit.c:110)
+  n2: 6240 0x48BB116: __internal_atexit (cxa_atexit.c:40)
+   n1: 4160 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 4160 0x400F474: _dl_init (dl-init.c:118)
+     n1: 4160 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 4160 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 4160 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 4160 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 4160 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 4160 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 4160 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 4160 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 4160 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 2080 in 2 places, all below massif's threshold (1.00%)
+ n1: 5368 0x4F1B458: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n2: 5368 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 3520 0x4E5343B: ???
+    n1: 3520 0x4E4F9FE: ???
+     n1: 3520 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 3520 0x400F474: _dl_init (dl-init.c:118)
+       n1: 3520 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 3520 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 3520 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 3520 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 3520 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 3520 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 3520 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 3520 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 3520 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n1: 1848 0x4F6A0F6: XPathLexer::Initializer::Initializer() (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 1848 0x4EF008D: ??? (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 1848 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 1848 0x400F474: _dl_init (dl-init.c:118)
+       n1: 1848 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1848 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 1848 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 1848 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 1848 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 1848 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 1848 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 1848 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 1848 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 3336 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 3336 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 3336 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 3336 0x487D254: dlopen_doit (dlopen.c:66)
+      n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 3336 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 3336 0x487D973: _dlerror_run (dlerror.c:163)
+         n1: 3336 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 3336 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 3336 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 3336 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 3248 0x4EF6CEC: antlr4::CommonTokenFactory::create(std::pair<antlr4::TokenSource*, antlr4::CharStream*>, unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 3248 0x4E597E7: ???
+   n0: 3248 in 8 places, all below massif's threshold (1.00%)
+ n1: 2568 0x4F1BDD0: antlr4::atn::ATNDeserializer::edgeFactory(antlr4::atn::ATN const&, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, std::vector<antlr4::misc::IntervalSet, std::allocator<antlr4::misc::IntervalSet> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 2568 0x4F1D180: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 2568 in 2 places, all below massif's threshold (1.00%)
+ n1: 2184 0x4F1B490: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 2184 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 2184 in 2 places, all below massif's threshold (1.00%)
+ n1: 1848 0x4F1B610: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 1848 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 1848 in 2 places, all below massif's threshold (1.00%)
+ n1: 1772 0x4E53788: ???
+  n1: 1772 0x4E4F9FE: ???
+   n1: 1772 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 1772 0x400F474: _dl_init (dl-init.c:118)
+     n1: 1772 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 1772 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 1772 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 1772 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 1772 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 1772 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 1772 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 1772 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 1772 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 1772 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=40
+#-----------
+time=11444616
+mem_heap_B=166435
+mem_heap_extra_B=11957
+mem_stacks_B=0
+heap_tree=detailed
+n14: 166435 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x502F454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 36120 in 142 places, all below massif's threshold (1.00%)
+ n1: 9551 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 9551 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 9551 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 8355 0x400D290: openaux (dl-deps.c:64)
+     n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 8355 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 8355 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 8355 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 8355 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 8355 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 8355 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 8355 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 8355 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 8355 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 8355 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1196 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x508B8F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x508F790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E5E001: ???
+    n0: 8192 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 7764 0x4EF231A: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::_M_mutate(unsigned long, unsigned long, char32_t const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 7764 0x4EF24F0: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::resize(unsigned long, char32_t) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 7764 0x4EF28FE: bool std::__do_str_codecvt<std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >, char, std::codecvt<char32_t, char, __mbstate_t>, __mbstate_t, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const>(char const*, char const*, std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >&, std::codecvt<char32_t, char, __mbstate_t> const&, __mbstate_t&, unsigned long&, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 7764 0x4EF14F3: antlr4::ANTLRInputStream::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 7764 0x4EF0A99: antlr4::ANTLRInputStream::load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+      n1: 7764 0x4EF0B17: antlr4::ANTLRInputStream::ANTLRInputStream(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+       n1: 7764 0x4E5E065: ???
+        n0: 7764 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 6240 0x48BB075: __new_exitfn (cxa_atexit.c:110)
+  n2: 6240 0x48BB116: __internal_atexit (cxa_atexit.c:40)
+   n1: 4160 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 4160 0x400F474: _dl_init (dl-init.c:118)
+     n1: 4160 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 4160 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 4160 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 4160 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 4160 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 4160 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 4160 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 4160 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 4160 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 2080 in 2 places, all below massif's threshold (1.00%)
+ n1: 5368 0x4F1B458: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n2: 5368 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 3520 0x4E5343B: ???
+    n1: 3520 0x4E4F9FE: ???
+     n1: 3520 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 3520 0x400F474: _dl_init (dl-init.c:118)
+       n1: 3520 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 3520 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 3520 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 3520 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 3520 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 3520 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 3520 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 3520 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 3520 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n1: 1848 0x4F6A0F6: XPathLexer::Initializer::Initializer() (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 1848 0x4EF008D: ??? (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 1848 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 1848 0x400F474: _dl_init (dl-init.c:118)
+       n1: 1848 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1848 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 1848 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 1848 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 1848 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 1848 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 1848 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 1848 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 1848 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 4592 0x4EF6CEC: antlr4::CommonTokenFactory::create(std::pair<antlr4::TokenSource*, antlr4::CharStream*>, unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 4592 0x4E597E7: ???
+   n0: 4592 in 10 places, all below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 3336 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 3336 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 3336 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 3336 0x487D254: dlopen_doit (dlopen.c:66)
+      n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 3336 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 3336 0x487D973: _dlerror_run (dlerror.c:163)
+         n1: 3336 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 3336 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 3336 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 3336 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2568 0x4F1BDD0: antlr4::atn::ATNDeserializer::edgeFactory(antlr4::atn::ATN const&, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, std::vector<antlr4::misc::IntervalSet, std::allocator<antlr4::misc::IntervalSet> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 2568 0x4F1D180: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 2568 in 2 places, all below massif's threshold (1.00%)
+ n1: 2184 0x4F1B490: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 2184 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 2184 in 2 places, all below massif's threshold (1.00%)
+ n1: 1904 0x4F02CA6: antlr4::Parser::createTerminalNode(antlr4::Token*) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 1904 0x4F02FBD: antlr4::Parser::consume() (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 1904 in 2 places, all below massif's threshold (1.00%)
+ n1: 1848 0x4F1B610: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 1848 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 1848 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=41
+#-----------
+time=11492442
+mem_heap_B=167065
+mem_heap_extra_B=12087
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=11538824
+mem_heap_B=168004
+mem_heap_extra_B=12188
+mem_stacks_B=0
+heap_tree=peak
+n14: 168004 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x502F454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 37297 in 147 places, all below massif's threshold (1.00%)
+ n1: 9551 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 9551 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 9551 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 8355 0x400D290: openaux (dl-deps.c:64)
+     n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 8355 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 8355 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 8355 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 8355 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 8355 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 8355 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 8355 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 8355 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 8355 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 8355 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1196 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x508B8F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x508F790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E5E001: ???
+    n0: 8192 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 7764 0x4EF231A: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::_M_mutate(unsigned long, unsigned long, char32_t const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 7764 0x4EF24F0: std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >::resize(unsigned long, char32_t) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 7764 0x4EF28FE: bool std::__do_str_codecvt<std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >, char, std::codecvt<char32_t, char, __mbstate_t>, __mbstate_t, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const>(char const*, char const*, std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t> >&, std::codecvt<char32_t, char, __mbstate_t> const&, __mbstate_t&, unsigned long&, std::codecvt_base::result (std::codecvt<char32_t, char, __mbstate_t>::*)(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 7764 0x4EF14F3: antlr4::ANTLRInputStream::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 7764 0x4EF0A99: antlr4::ANTLRInputStream::load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+      n1: 7764 0x4EF0B17: antlr4::ANTLRInputStream::ANTLRInputStream(std::istream&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+       n1: 7764 0x4E5E065: ???
+        n0: 7764 0x1091F8: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 6240 0x48BB075: __new_exitfn (cxa_atexit.c:110)
+  n2: 6240 0x48BB116: __internal_atexit (cxa_atexit.c:40)
+   n1: 4160 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 4160 0x400F474: _dl_init (dl-init.c:118)
+     n1: 4160 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 4160 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 4160 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 4160 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 4160 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 4160 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 4160 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 4160 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 4160 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 2080 in 2 places, all below massif's threshold (1.00%)
+ n1: 5368 0x4F1B458: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n2: 5368 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 3520 0x4E5343B: ???
+    n1: 3520 0x4E4F9FE: ???
+     n1: 3520 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 3520 0x400F474: _dl_init (dl-init.c:118)
+       n1: 3520 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 3520 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 3520 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 3520 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 3520 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 3520 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 3520 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 3520 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 3520 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 3520 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n1: 1848 0x4F6A0F6: XPathLexer::Initializer::Initializer() (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 1848 0x4EF008D: ??? (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 1848 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 1848 0x400F474: _dl_init (dl-init.c:118)
+       n1: 1848 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1848 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 1848 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 1848 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 1848 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 1848 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 1848 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 1848 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 1848 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 4592 0x4EF6CEC: antlr4::CommonTokenFactory::create(std::pair<antlr4::TokenSource*, antlr4::CharStream*>, unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 4592 0x4E597E7: ???
+   n0: 4592 in 10 places, all below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 3336 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 3336 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 3336 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 3336 0x487D254: dlopen_doit (dlopen.c:66)
+      n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 3336 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 3336 0x487D973: _dlerror_run (dlerror.c:163)
+         n1: 3336 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 3336 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 3336 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 3336 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2568 0x4F1BDD0: antlr4::atn::ATNDeserializer::edgeFactory(antlr4::atn::ATN const&, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, std::vector<antlr4::misc::IntervalSet, std::allocator<antlr4::misc::IntervalSet> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 2568 0x4F1D180: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 2568 in 2 places, all below massif's threshold (1.00%)
+ n1: 2296 0x4F02CA6: antlr4::Parser::createTerminalNode(antlr4::Token*) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 2296 0x4F02FBD: antlr4::Parser::consume() (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 2296 in 2 places, all below massif's threshold (1.00%)
+ n1: 2184 0x4F1B490: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 2184 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 2184 in 2 places, all below massif's threshold (1.00%)
+ n1: 1848 0x4F1B610: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 1848 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n0: 1848 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=43
+#-----------
+time=11579710
+mem_heap_B=167705
+mem_heap_extra_B=12207
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=11605739
+mem_heap_B=168058
+mem_heap_extra_B=12222
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=11637867
+mem_heap_B=168470
+mem_heap_extra_B=12258
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=11661365
+mem_heap_B=168507
+mem_heap_extra_B=12325
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=11692239
+mem_heap_B=169084
+mem_heap_extra_B=12348
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=11714545
+mem_heap_B=168264
+mem_heap_extra_B=12256
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=11755766
+mem_heap_B=120078
+mem_heap_extra_B=4946
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=11756691
+mem_heap_B=119182
+mem_heap_extra_B=4642
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=11757608
+mem_heap_B=118350
+mem_heap_extra_B=4354
+mem_stacks_B=0
+heap_tree=detailed
+n9: 118350 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x502F454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 16999 in 153 places, all below massif's threshold (1.00%)
+ n1: 9551 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 9551 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 9551 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 8355 0x400D290: openaux (dl-deps.c:64)
+     n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 8355 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 8355 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 8355 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 8355 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 8355 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 8355 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 8355 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 8355 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 8355 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 8355 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 8355 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1196 in 1 place, below massif's threshold (1.00%)
+ n1: 6240 0x48BB075: __new_exitfn (cxa_atexit.c:110)
+  n2: 6240 0x48BB116: __internal_atexit (cxa_atexit.c:40)
+   n1: 4160 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 4160 0x400F474: _dl_init (dl-init.c:118)
+     n1: 4160 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 4160 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 4160 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 4160 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 4160 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 4160 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 4160 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 4160 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 4160 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 2080 in 2 places, all below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 3336 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 3336 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 3336 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 3336 0x487D254: dlopen_doit (dlopen.c:66)
+      n1: 3336 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 3336 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 3336 0x487D973: _dlerror_run (dlerror.c:163)
+         n1: 3336 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 3336 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 3336 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 3336 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2288 0x4F1B458: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n2: 2288 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 1848 0x4F6A0F6: XPathLexer::Initializer::Initializer() (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 1848 0x4EF008D: ??? (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 1848 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 1848 0x400F474: _dl_init (dl-init.c:118)
+       n1: 1848 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1848 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 1848 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 1848 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 1848 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 1848 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 1848 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 1848 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 1848 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 440 in 1 place, below massif's threshold (1.00%)
+ n1: 1632 0x4F25437: std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::vector(std::initializer_list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n0: 1632 in 7 places, all below massif's threshold (1.00%)
+ n1: 1536 0x4F18048: void std::vector<antlr4::atn::ATNState*, std::allocator<antlr4::atn::ATNState*> >::_M_realloc_insert<antlr4::atn::ATNState* const&>(__gnu_cxx::__normal_iterator<antlr4::atn::ATNState**, std::vector<antlr4::atn::ATNState*, std::allocator<antlr4::atn::ATNState*> > >, antlr4::atn::ATNState* const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n1: 1536 0x4F1727C: antlr4::atn::ATN::addState(antlr4::atn::ATNState*) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 1536 0x4F1CC2C: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n0: 1536 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=52
+#-----------
+time=11758498
+mem_heap_B=117486
+mem_heap_extra_B=4050
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=11759385
+mem_heap_B=115694
+mem_heap_extra_B=3914
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=11760279
+mem_heap_B=114678
+mem_heap_extra_B=3786
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=11761417
+mem_heap_B=112846
+mem_heap_extra_B=3642
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=11766371
+mem_heap_B=112878
+mem_heap_extra_B=3650
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=11767266
+mem_heap_B=112718
+mem_heap_extra_B=3706
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=11768176
+mem_heap_B=108116
+mem_heap_extra_B=3484
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=11770038
+mem_heap_B=107735
+mem_heap_extra_B=3409
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=11772369
+mem_heap_B=106967
+mem_heap_extra_B=3377
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=11773278
+mem_heap_B=105162
+mem_heap_extra_B=3198
+mem_stacks_B=0
+heap_tree=detailed
+n8: 105162 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x502F454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 9859 in 155 places, all below massif's threshold (1.00%)
+ n1: 6240 0x48BB075: __new_exitfn (cxa_atexit.c:110)
+  n2: 6240 0x48BB116: __internal_atexit (cxa_atexit.c:40)
+   n1: 4160 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 4160 0x400F474: _dl_init (dl-init.c:118)
+     n1: 4160 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 4160 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 4160 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 4160 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 4160 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 4160 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 4160 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 4160 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 4160 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 2080 in 2 places, all below massif's threshold (1.00%)
+ n1: 5959 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 5959 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 5959 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 5959 0x400D290: openaux (dl-deps.c:64)
+     n1: 5959 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 5959 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 5959 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 5959 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 5959 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 5959 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 5959 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 5959 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 5959 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 5959 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 5959 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 5959 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 5959 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2856 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2856 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2856 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2856 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2856 0x487D254: dlopen_doit (dlopen.c:66)
+      n1: 2856 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2856 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2856 0x487D973: _dlerror_run (dlerror.c:163)
+         n1: 2856 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2856 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2856 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2856 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 1848 0x4F1B458: antlr4::atn::ATNDeserializer::stateFactory(unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n2: 1848 0x4F1CBA0: antlr4::atn::ATNDeserializer::deserialize(std::vector<unsigned short, std::allocator<unsigned short> > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+   n1: 1848 0x4F6A0F6: XPathLexer::Initializer::Initializer() (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 1848 0x4EF008D: ??? (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+     n1: 1848 0x400F378: call_init.part.0 (dl-init.c:72)
+      n1: 1848 0x400F474: _dl_init (dl-init.c:118)
+       n1: 1848 0x40132D1: dl_open_worker (dl-open.c:517)
+        n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1848 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 1848 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 1848 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 1848 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 1848 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 1848 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 1848 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 1848 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 1848 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 1632 0x4F25437: std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::vector(std::initializer_list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+  n0: 1632 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=62
+#-----------
+time=11774260
+mem_heap_B=103914
+mem_heap_extra_B=3166
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=11775194
+mem_heap_B=102180
+mem_heap_extra_B=3052
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=11776113
+mem_heap_B=100328
+mem_heap_extra_B=2824
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=11777058
+mem_heap_B=99296
+mem_heap_extra_B=2520
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=11777990
+mem_heap_B=98424
+mem_heap_extra_B=2208
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=11778880
+mem_heap_B=97608
+mem_heap_extra_B=1888
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=11779821
+mem_heap_B=96752
+mem_heap_extra_B=1592
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=11780724
+mem_heap_B=95856
+mem_heap_extra_B=1288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=11781621
+mem_heap_B=94888
+mem_heap_extra_B=992
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=11782510
+mem_heap_B=94072
+mem_heap_extra_B=688
+mem_stacks_B=0
+heap_tree=detailed
+n6: 94072 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x502F454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 5959 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 5959 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 5959 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 5959 0x400D290: openaux (dl-deps.c:64)
+     n1: 5959 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 5959 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 5959 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 5959 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 5959 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 5959 0x487D254: dlopen_doit (dlopen.c:66)
+           n1: 5959 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 5959 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 5959 0x487D973: _dlerror_run (dlerror.c:163)
+              n1: 5959 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 5959 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 5959 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 5959 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 5200 0x48BB075: __new_exitfn (cxa_atexit.c:110)
+  n3: 5200 0x48BB116: __internal_atexit (cxa_atexit.c:40)
+   n1: 4160 0x400F378: call_init.part.0 (dl-init.c:72)
+    n1: 4160 0x400F474: _dl_init (dl-init.c:118)
+     n1: 4160 0x40132D1: dl_open_worker (dl-open.c:517)
+      n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 4160 0x4012BB8: _dl_open (dl-open.c:599)
+        n1: 4160 0x487D254: dlopen_doit (dlopen.c:66)
+         n1: 4160 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+          n1: 4160 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+           n1: 4160 0x487D973: _dlerror_run (dlerror.c:163)
+            n1: 4160 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+             n1: 4160 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+              n1: 4160 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+               n0: 4160 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n1: 1040 0x4EEF237: ??? (in /usr/lib/x86_64-linux-gnu/libantlr4-runtime.so.4.7.2)
+    n1: 1040 0x400F378: call_init.part.0 (dl-init.c:72)
+     n1: 1040 0x400F474: _dl_init (dl-init.c:118)
+      n1: 1040 0x40132D1: dl_open_worker (dl-open.c:517)
+       n1: 1040 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+        n1: 1040 0x4012BB8: _dl_open (dl-open.c:599)
+         n1: 1040 0x487D254: dlopen_doit (dlopen.c:66)
+          n1: 1040 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+           n1: 1040 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+            n1: 1040 0x487D973: _dlerror_run (dlerror.c:163)
+             n1: 1040 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 1040 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+               n1: 1040 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                n0: 1040 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x487D254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x487D973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 3289 in 157 places, all below massif's threshold (1.00%)
+ n1: 2856 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2856 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2856 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2856 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2856 0x487D254: dlopen_doit (dlopen.c:66)
+      n1: 2856 0x49B5B2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2856 0x49B5BBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2856 0x487D973: _dlerror_run (dlerror.c:163)
+         n1: 2856 0x487D2E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2856 0x48666EB: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2856 0x484FD71: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2856 0x1091E1: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=72
+#-----------
+time=11783654
+mem_heap_B=91912
+mem_heap_extra_B=632
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=11784618
+mem_heap_B=91896
+mem_heap_extra_B=624
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=11785582
+mem_heap_B=90440
+mem_heap_extra_B=600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=11786777
+mem_heap_B=89336
+mem_heap_extra_B=584
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=11787959
+mem_heap_B=89319
+mem_heap_extra_B=561
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=11789955
+mem_heap_B=86646
+mem_heap_extra_B=506
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=11799469
+mem_heap_B=86481
+mem_heap_extra_B=479
+mem_stacks_B=0
+heap_tree=empty
