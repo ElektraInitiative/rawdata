@@ -1,0 +1,1721 @@
+desc: --massif-out-file=results/generated_50_yamlcpp_linux_clang6.0.1.out
+cmd: build/linux/bin/benchmark_plugingetset benchmarks/data/generated_50 user yamlcpp get
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=204382
+mem_heap_B=64
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=243207
+mem_heap_B=1893
+mem_heap_extra_B=123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=322061
+mem_heap_B=11480
+mem_heap_extra_B=520
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=368929
+mem_heap_B=14632
+mem_heap_extra_B=656
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=926090
+mem_heap_B=15624
+mem_heap_extra_B=664
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=1013218
+mem_heap_B=16584
+mem_heap_extra_B=664
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=3457652
+mem_heap_B=20648
+mem_heap_extra_B=672
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=3459283
+mem_heap_B=18696
+mem_heap_extra_B=664
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=6039868
+mem_heap_B=91400
+mem_heap_extra_B=672
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=6143296
+mem_heap_B=111113
+mem_heap_extra_B=1551
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=6215079
+mem_heap_B=115482
+mem_heap_extra_B=2110
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=6301475
+mem_heap_B=117251
+mem_heap_extra_B=2613
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=6366939
+mem_heap_B=118440
+mem_heap_extra_B=3024
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=6422793
+mem_heap_B=119317
+mem_heap_extra_B=3235
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=6475105
+mem_heap_B=119794
+mem_heap_extra_B=3270
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=6551484
+mem_heap_B=121236
+mem_heap_extra_B=3764
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=6656148
+mem_heap_B=122900
+mem_heap_extra_B=4204
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=6733720
+mem_heap_B=124562
+mem_heap_extra_B=4486
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=6799883
+mem_heap_B=125749
+mem_heap_extra_B=4923
+mem_stacks_B=0
+heap_tree=detailed
+n10: 125749 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4F6A454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 17041 in 71 places, all below massif's threshold (1.00%)
+ n1: 8356 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 8356 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 8356 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 7158 0x400D290: openaux (dl-deps.c:64)
+     n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 7158 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 7158 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 7158 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 7158 0x4876254: dlopen_doit (dlopen.c:66)
+           n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 7158 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 7158 0x4876973: _dlerror_run (dlerror.c:163)
+              n1: 7158 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 7158 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 7158 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 7158 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1198 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4FC68F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x4FCA790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E9B039: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 8192 0x4E43625: ???
+     n1: 8192 0x4E418FA: ???
+      n0: 8192 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 4576 0x4E95B41: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 4576 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 2992 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 2992 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2288 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 2288 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2112 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 2112 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 1584 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n1: 1584 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n0: 1584 in 2 places, all below massif's threshold (1.00%)
+         n0: 528 in 1 place, below massif's threshold (1.00%)
+       n0: 176 in 1 place, below massif's threshold (1.00%)
+     n0: 704 in 1 place, below massif's threshold (1.00%)
+   n1: 1584 0x4E98FED: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 1584 0x4EC074B: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 1408 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 1408 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n0: 1408 in 2 places, all below massif's threshold (1.00%)
+     n0: 176 in 1 place, below massif's threshold (1.00%)
+ n2: 4320 0x4E93DAA: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n3: 3168 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1632 0x4E9E20E: void std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::_M_realloc_insert<YAML::RegEx const&>(__gnu_cxx::__normal_iterator<YAML::RegEx*, std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > >, YAML::RegEx const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1632 in 5 places, all below massif's threshold (1.00%)
+   n1: 1408 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1408 in 3 places, all below massif's threshold (1.00%)
+   n0: 128 in 1 place, below massif's threshold (1.00%)
+  n0: 1152 in 2 places, all below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2784 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2784 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2784 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2784 0x4876254: dlopen_doit (dlopen.c:66)
+      n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2784 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2784 0x4876973: _dlerror_run (dlerror.c:163)
+         n1: 2784 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2784 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2784 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2784 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2048 0x4EC6A3A: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 2048 0x4EA14D0: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 2048 0x4E9CA90: YAML::Parser::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 2048 0x4E9CB29: YAML::Parser::Parser(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2048 0x4E9A82F: YAML::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 2048 0x4E9B06D: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2048 0x4E43625: ???
+        n1: 2048 0x4E418FA: ???
+         n0: 2048 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 1664 0x4E95B27: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1664 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n0: 1664 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=20
+#-----------
+time=6887301
+mem_heap_B=126194
+mem_heap_extra_B=5206
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=6942373
+mem_heap_B=127007
+mem_heap_extra_B=5433
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=6995967
+mem_heap_B=127948
+mem_heap_extra_B=5676
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=7070838
+mem_heap_B=130045
+mem_heap_extra_B=6139
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=7126712
+mem_heap_B=131370
+mem_heap_extra_B=6342
+mem_stacks_B=0
+heap_tree=detailed
+n11: 131370 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4F6A454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 17958 in 70 places, all below massif's threshold (1.00%)
+ n1: 8356 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 8356 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 8356 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 7158 0x400D290: openaux (dl-deps.c:64)
+     n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 7158 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 7158 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 7158 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 7158 0x4876254: dlopen_doit (dlopen.c:66)
+           n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 7158 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 7158 0x4876973: _dlerror_run (dlerror.c:163)
+              n1: 7158 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 7158 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 7158 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 7158 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1198 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4FC68F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x4FCA790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E9B039: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 8192 0x4E43625: ???
+     n1: 8192 0x4E418FA: ???
+      n0: 8192 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 6688 0x4E95B41: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 6688 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 4224 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 4224 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 3344 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 3344 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 3168 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 3168 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 2464 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n2: 2464 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n1: 1936 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+            n2: 1936 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+             n1: 1408 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+              n1: 1408 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+               n0: 1408 in 2 places, all below massif's threshold (1.00%)
+             n0: 528 in 1 place, below massif's threshold (1.00%)
+           n0: 528 in 1 place, below massif's threshold (1.00%)
+         n0: 704 in 1 place, below massif's threshold (1.00%)
+       n0: 176 in 1 place, below massif's threshold (1.00%)
+     n0: 880 in 1 place, below massif's threshold (1.00%)
+   n1: 2464 0x4E98FED: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 2464 0x4EC074B: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2288 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 2288 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2112 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 2112 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 1584 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n1: 1584 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n0: 1584 in 2 places, all below massif's threshold (1.00%)
+         n0: 528 in 1 place, below massif's threshold (1.00%)
+       n0: 176 in 1 place, below massif's threshold (1.00%)
+     n0: 176 in 1 place, below massif's threshold (1.00%)
+ n2: 4320 0x4E93DAA: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n3: 3168 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1632 0x4E9E20E: void std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::_M_realloc_insert<YAML::RegEx const&>(__gnu_cxx::__normal_iterator<YAML::RegEx*, std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > >, YAML::RegEx const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1632 in 5 places, all below massif's threshold (1.00%)
+   n1: 1408 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1408 in 3 places, all below massif's threshold (1.00%)
+   n0: 128 in 1 place, below massif's threshold (1.00%)
+  n0: 1152 in 2 places, all below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2784 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2784 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2784 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2784 0x4876254: dlopen_doit (dlopen.c:66)
+      n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2784 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2784 0x4876973: _dlerror_run (dlerror.c:163)
+         n1: 2784 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2784 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2784 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2784 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2432 0x4E95B27: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 2432 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1536 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 1536 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n0: 1536 in 2 places, all below massif's threshold (1.00%)
+   n0: 896 in 1 place, below massif's threshold (1.00%)
+ n1: 2048 0x4EC6A3A: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 2048 0x4EA14D0: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 2048 0x4E9CA90: YAML::Parser::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 2048 0x4E9CB29: YAML::Parser::Parser(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2048 0x4E9A82F: YAML::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 2048 0x4E9B06D: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2048 0x4E43625: ???
+        n1: 2048 0x4E418FA: ???
+         n0: 2048 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 1824 0x4E962BE: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1824 0x4E95C3A: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1824 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1824 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=25
+#-----------
+time=7199724
+mem_heap_B=131788
+mem_heap_extra_B=6636
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=7272914
+mem_heap_B=132662
+mem_heap_extra_B=6842
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=7317881
+mem_heap_B=134209
+mem_heap_extra_B=7247
+mem_stacks_B=0
+heap_tree=detailed
+n11: 134209 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4F6A454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 18493 in 70 places, all below massif's threshold (1.00%)
+ n1: 8356 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 8356 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 8356 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 7158 0x400D290: openaux (dl-deps.c:64)
+     n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 7158 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 7158 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 7158 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 7158 0x4876254: dlopen_doit (dlopen.c:66)
+           n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 7158 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 7158 0x4876973: _dlerror_run (dlerror.c:163)
+              n1: 7158 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 7158 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 7158 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 7158 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1198 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4FC68F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x4FCA790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E9B039: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 8192 0x4E43625: ???
+     n1: 8192 0x4E418FA: ???
+      n0: 8192 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 8096 0x4E95B41: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 8096 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 5104 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 5104 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 4048 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 4048 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 3872 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 3872 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 2992 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n2: 2992 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n1: 2288 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+            n2: 2288 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+             n1: 1584 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+              n1: 1584 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+               n0: 1584 in 2 places, all below massif's threshold (1.00%)
+             n0: 704 in 1 place, below massif's threshold (1.00%)
+           n0: 704 in 1 place, below massif's threshold (1.00%)
+         n0: 880 in 1 place, below massif's threshold (1.00%)
+       n0: 176 in 1 place, below massif's threshold (1.00%)
+     n0: 1056 in 1 place, below massif's threshold (1.00%)
+   n1: 2992 0x4E98FED: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 2992 0x4EC074B: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2816 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 2816 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2640 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 2640 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 1936 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n1: 1936 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n0: 1936 in 2 places, all below massif's threshold (1.00%)
+         n0: 704 in 1 place, below massif's threshold (1.00%)
+       n0: 176 in 1 place, below massif's threshold (1.00%)
+     n0: 176 in 1 place, below massif's threshold (1.00%)
+ n2: 4320 0x4E93DAA: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 3168 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1632 0x4E9E20E: void std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::_M_realloc_insert<YAML::RegEx const&>(__gnu_cxx::__normal_iterator<YAML::RegEx*, std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > >, YAML::RegEx const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1632 in 5 places, all below massif's threshold (1.00%)
+   n0: 1536 in 2 places, all below massif's threshold (1.00%)
+  n0: 1152 in 2 places, all below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2944 0x4E95B27: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 2944 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1856 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 1856 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 1472 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 1472 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n0: 1472 in 2 places, all below massif's threshold (1.00%)
+     n0: 384 in 1 place, below massif's threshold (1.00%)
+   n0: 1088 in 1 place, below massif's threshold (1.00%)
+ n1: 2784 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2784 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2784 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2784 0x4876254: dlopen_doit (dlopen.c:66)
+      n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2784 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2784 0x4876973: _dlerror_run (dlerror.c:163)
+         n1: 2784 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2784 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2784 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2784 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2208 0x4E962BE: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 2208 0x4E95C3A: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 2208 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 2208 in 2 places, all below massif's threshold (1.00%)
+ n1: 2048 0x4EC6A3A: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 2048 0x4EA14D0: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 2048 0x4E9CA90: YAML::Parser::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 2048 0x4E9CB29: YAML::Parser::Parser(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2048 0x4E9A82F: YAML::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 2048 0x4E9B06D: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2048 0x4E43625: ???
+        n1: 2048 0x4E418FA: ???
+         n0: 2048 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=28
+#-----------
+time=7408906
+mem_heap_B=135070
+mem_heap_extra_B=7506
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=7485510
+mem_heap_B=135938
+mem_heap_extra_B=7782
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=7541128
+mem_heap_B=136311
+mem_heap_extra_B=7961
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=7628736
+mem_heap_B=137410
+mem_heap_extra_B=8246
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=7685596
+mem_heap_B=138092
+mem_heap_extra_B=8460
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=7735787
+mem_heap_B=139358
+mem_heap_extra_B=8674
+mem_stacks_B=0
+heap_tree=detailed
+n11: 139358 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4F6A454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 20186 in 70 places, all below massif's threshold (1.00%)
+ n1: 10208 0x4E95B41: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 10208 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 6688 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 6688 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 5104 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 5104 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 4928 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 4928 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 3696 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n2: 3696 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n1: 2816 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+            n2: 2816 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+             n1: 1936 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+              n1: 1936 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+               n0: 1936 in 2 places, all below massif's threshold (1.00%)
+             n0: 880 in 1 place, below massif's threshold (1.00%)
+           n0: 880 in 1 place, below massif's threshold (1.00%)
+         n0: 1232 in 1 place, below massif's threshold (1.00%)
+       n0: 176 in 1 place, below massif's threshold (1.00%)
+     n1: 1584 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 1584 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 1584 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n1: 1584 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n0: 1584 in 2 places, all below massif's threshold (1.00%)
+   n1: 3520 0x4E98FED: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 3520 0x4EC074B: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 3344 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 3344 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 3168 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 3168 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 2288 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n2: 2288 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n1: 1760 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+            n1: 1760 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+             n0: 1760 in 2 places, all below massif's threshold (1.00%)
+           n0: 528 in 1 place, below massif's threshold (1.00%)
+         n0: 880 in 1 place, below massif's threshold (1.00%)
+       n0: 176 in 1 place, below massif's threshold (1.00%)
+     n0: 176 in 1 place, below massif's threshold (1.00%)
+ n1: 8356 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 8356 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 8356 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 7158 0x400D290: openaux (dl-deps.c:64)
+     n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 7158 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 7158 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 7158 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 7158 0x4876254: dlopen_doit (dlopen.c:66)
+           n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 7158 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 7158 0x4876973: _dlerror_run (dlerror.c:163)
+              n1: 7158 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 7158 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 7158 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 7158 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1198 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4FC68F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x4FCA790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E9B039: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 8192 0x4E43625: ???
+     n1: 8192 0x4E418FA: ???
+      n0: 8192 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 4320 0x4E93DAA: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 3168 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1632 0x4E9E20E: void std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::_M_realloc_insert<YAML::RegEx const&>(__gnu_cxx::__normal_iterator<YAML::RegEx*, std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > >, YAML::RegEx const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1632 in 5 places, all below massif's threshold (1.00%)
+   n0: 1536 in 2 places, all below massif's threshold (1.00%)
+  n0: 1152 in 2 places, all below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 3712 0x4E95B27: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 3712 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 2432 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 2432 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 1856 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 1856 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 1792 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n1: 1792 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n0: 1792 in 2 places, all below massif's threshold (1.00%)
+       n0: 64 in 1 place, below massif's threshold (1.00%)
+     n0: 576 in 1 place, below massif's threshold (1.00%)
+   n0: 1280 in 1 place, below massif's threshold (1.00%)
+ n1: 2784 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2784 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2784 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2784 0x4876254: dlopen_doit (dlopen.c:66)
+      n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2784 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2784 0x4876973: _dlerror_run (dlerror.c:163)
+         n1: 2784 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2784 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2784 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2784 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2784 0x4E962BE: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 2784 0x4E95C3A: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n2: 2784 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 1824 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 1824 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n0: 1824 in 2 places, all below massif's threshold (1.00%)
+    n0: 960 in 1 place, below massif's threshold (1.00%)
+ n1: 2048 0x4EC6A3A: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 2048 0x4EA14D0: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 2048 0x4E9CA90: YAML::Parser::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 2048 0x4E9CB29: YAML::Parser::Parser(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2048 0x4E9A82F: YAML::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 2048 0x4E9B06D: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2048 0x4E43625: ???
+        n1: 2048 0x4E418FA: ???
+         n0: 2048 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=34
+#-----------
+time=7828680
+mem_heap_B=140531
+mem_heap_extra_B=9045
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=7909836
+mem_heap_B=142709
+mem_heap_extra_B=9355
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=7966180
+mem_heap_B=143089
+mem_heap_extra_B=9599
+mem_stacks_B=0
+heap_tree=detailed
+n15: 143089 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4F6A454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 15270 in 66 places, all below massif's threshold (1.00%)
+ n1: 11616 0x4E95B41: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 11616 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 7568 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 7568 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 5808 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 5808 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 5632 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 5632 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 4224 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n2: 4224 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n1: 3344 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+            n2: 3344 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+             n1: 2288 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+              n1: 2288 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+               n0: 2288 in 2 places, all below massif's threshold (1.00%)
+             n0: 1056 in 1 place, below massif's threshold (1.00%)
+           n0: 880 in 1 place, below massif's threshold (1.00%)
+         n0: 1408 in 1 place, below massif's threshold (1.00%)
+       n0: 176 in 1 place, below massif's threshold (1.00%)
+     n1: 1760 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 1760 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 1760 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n1: 1760 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n0: 1760 in 2 places, all below massif's threshold (1.00%)
+   n1: 4048 0x4E98FED: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 4048 0x4EC074B: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 3872 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 3872 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 3696 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 3696 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 2816 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n2: 2816 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n1: 2112 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+            n1: 2112 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+             n0: 2112 in 2 places, all below massif's threshold (1.00%)
+           n0: 704 in 1 place, below massif's threshold (1.00%)
+         n0: 880 in 1 place, below massif's threshold (1.00%)
+       n0: 176 in 1 place, below massif's threshold (1.00%)
+     n0: 176 in 1 place, below massif's threshold (1.00%)
+ n1: 8356 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 8356 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 8356 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 7158 0x400D290: openaux (dl-deps.c:64)
+     n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 7158 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 7158 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 7158 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 7158 0x4876254: dlopen_doit (dlopen.c:66)
+           n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 7158 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 7158 0x4876973: _dlerror_run (dlerror.c:163)
+              n1: 7158 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 7158 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 7158 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 7158 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1198 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4FC68F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x4FCA790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E9B039: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 8192 0x4E43625: ???
+     n1: 8192 0x4E418FA: ???
+      n0: 8192 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 4320 0x4E93DAA: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 3168 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1632 0x4E9E20E: void std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::_M_realloc_insert<YAML::RegEx const&>(__gnu_cxx::__normal_iterator<YAML::RegEx*, std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > >, YAML::RegEx const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1632 in 5 places, all below massif's threshold (1.00%)
+   n0: 1536 in 2 places, all below massif's threshold (1.00%)
+  n0: 1152 in 2 places, all below massif's threshold (1.00%)
+ n1: 4224 0x4E95B27: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 4224 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 2752 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 2752 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2112 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 2112 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2048 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 2048 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 1536 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n1: 1536 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n0: 1536 in 2 places, all below massif's threshold (1.00%)
+         n0: 512 in 1 place, below massif's threshold (1.00%)
+       n0: 64 in 1 place, below massif's threshold (1.00%)
+     n0: 640 in 1 place, below massif's threshold (1.00%)
+   n0: 1472 in 1 place, below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 3168 0x4E962BE: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 3168 0x4E95C3A: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n2: 3168 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 2064 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n2: 2064 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 1584 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n2: 1584 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n1: 1536 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 1536 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n0: 1536 in 2 places, all below massif's threshold (1.00%)
+        n0: 48 in 1 place, below massif's threshold (1.00%)
+      n0: 480 in 1 place, below massif's threshold (1.00%)
+    n0: 1104 in 1 place, below massif's threshold (1.00%)
+ n1: 2784 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2784 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2784 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2784 0x4876254: dlopen_doit (dlopen.c:66)
+      n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2784 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2784 0x4876973: _dlerror_run (dlerror.c:163)
+         n1: 2784 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2784 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2784 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2784 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2048 0x4EC6A3A: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 2048 0x4EA14D0: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 2048 0x4E9CA90: YAML::Parser::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 2048 0x4E9CB29: YAML::Parser::Parser(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2048 0x4E9A82F: YAML::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 2048 0x4E9B06D: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2048 0x4E43625: ???
+        n1: 2048 0x4E418FA: ???
+         n0: 2048 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 1591 0x4FF8D1D: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 1554 0x4E98D43: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1554 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1554 in 2 places, all below massif's threshold (1.00%)
+  n0: 37 in 2 places, all below massif's threshold (1.00%)
+ n1: 1584 0x4E95B62: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1584 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n0: 1584 in 2 places, all below massif's threshold (1.00%)
+ n1: 1584 0x4E95B9B: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1584 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n0: 1584 in 2 places, all below massif's threshold (1.00%)
+ n1: 1584 0x4E95BEC: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1584 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n0: 1584 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=37
+#-----------
+time=8061100
+mem_heap_B=145121
+mem_heap_extra_B=10167
+mem_stacks_B=0
+heap_tree=detailed
+n15: 145121 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4F6A454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 15004 in 66 places, all below massif's threshold (1.00%)
+ n1: 12672 0x4E95B41: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 12672 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 8096 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 8096 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 6336 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 6336 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 6160 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 6160 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 4752 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n2: 4752 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n1: 3696 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+            n2: 3696 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+             n1: 2464 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+              n1: 2464 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+               n0: 2464 in 2 places, all below massif's threshold (1.00%)
+             n0: 1232 in 1 place, below massif's threshold (1.00%)
+           n0: 1056 in 1 place, below massif's threshold (1.00%)
+         n0: 1408 in 1 place, below massif's threshold (1.00%)
+       n0: 176 in 1 place, below massif's threshold (1.00%)
+     n1: 1760 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 1760 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 1760 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n1: 1760 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n0: 1760 in 2 places, all below massif's threshold (1.00%)
+   n1: 4576 0x4E98FED: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 4576 0x4EC074B: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 4400 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 4400 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 4224 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 4224 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 3168 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n2: 3168 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n1: 2288 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+            n1: 2288 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+             n0: 2288 in 2 places, all below massif's threshold (1.00%)
+           n0: 880 in 1 place, below massif's threshold (1.00%)
+         n0: 1056 in 1 place, below massif's threshold (1.00%)
+       n0: 176 in 1 place, below massif's threshold (1.00%)
+     n0: 176 in 1 place, below massif's threshold (1.00%)
+ n1: 8356 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 8356 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 8356 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 7158 0x400D290: openaux (dl-deps.c:64)
+     n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 7158 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 7158 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 7158 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 7158 0x4876254: dlopen_doit (dlopen.c:66)
+           n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 7158 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 7158 0x4876973: _dlerror_run (dlerror.c:163)
+              n1: 7158 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 7158 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 7158 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 7158 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1198 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4FC68F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x4FCA790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E9B039: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 8192 0x4E43625: ???
+     n1: 8192 0x4E418FA: ???
+      n0: 8192 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 4608 0x4E95B27: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 4608 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 2944 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 2944 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2304 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 2304 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2240 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 2240 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 1728 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n1: 1728 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n0: 1728 in 2 places, all below massif's threshold (1.00%)
+         n0: 512 in 1 place, below massif's threshold (1.00%)
+       n0: 64 in 1 place, below massif's threshold (1.00%)
+     n0: 640 in 1 place, below massif's threshold (1.00%)
+   n1: 1664 0x4E98FED: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 1664 0x4EC074B: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 1600 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 1600 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n0: 1600 in 2 places, all below massif's threshold (1.00%)
+     n0: 64 in 1 place, below massif's threshold (1.00%)
+ n2: 4384 0x4E93DAA: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 3168 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1632 0x4E9E20E: void std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::_M_realloc_insert<YAML::RegEx const&>(__gnu_cxx::__normal_iterator<YAML::RegEx*, std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > >, YAML::RegEx const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1632 in 5 places, all below massif's threshold (1.00%)
+   n0: 1536 in 2 places, all below massif's threshold (1.00%)
+  n0: 1216 in 2 places, all below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 3456 0x4E962BE: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 3456 0x4E95C3A: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n2: 3456 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 2208 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n2: 2208 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 1728 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n2: 1728 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n1: 1680 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 1680 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n0: 1680 in 2 places, all below massif's threshold (1.00%)
+        n0: 48 in 1 place, below massif's threshold (1.00%)
+      n0: 480 in 1 place, below massif's threshold (1.00%)
+    n0: 1248 in 1 place, below massif's threshold (1.00%)
+ n1: 2784 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2784 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2784 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2784 0x4876254: dlopen_doit (dlopen.c:66)
+      n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2784 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2784 0x4876973: _dlerror_run (dlerror.c:163)
+         n1: 2784 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2784 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2784 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2784 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2048 0x4EC6A3A: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 2048 0x4EA14D0: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 2048 0x4E9CA90: YAML::Parser::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 2048 0x4E9CB29: YAML::Parser::Parser(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2048 0x4E9A82F: YAML::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 2048 0x4E9B06D: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2048 0x4E43625: ???
+        n1: 2048 0x4E418FA: ???
+         n0: 2048 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 1728 0x4E95B62: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1728 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n0: 1728 in 2 places, all below massif's threshold (1.00%)
+ n1: 1728 0x4E95B9B: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1728 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n0: 1728 in 2 places, all below massif's threshold (1.00%)
+ n1: 1728 0x4E95BEC: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1728 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n0: 1728 in 2 places, all below massif's threshold (1.00%)
+ n2: 1665 0x4FF8D1D: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 1665 0x4E98D43: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1665 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1665 in 2 places, all below massif's threshold (1.00%)
+  n0: 0 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=38
+#-----------
+time=8124016
+mem_heap_B=146747
+mem_heap_extra_B=10589
+mem_stacks_B=0
+heap_tree=detailed
+n15: 146747 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4F6A454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 15116 in 66 places, all below massif's threshold (1.00%)
+ n1: 13376 0x4E95B41: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 13376 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 8448 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 8448 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 6688 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 6688 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 6512 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 6512 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 5104 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n2: 5104 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n1: 4048 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+            n2: 4048 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+             n1: 2816 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+              n2: 2816 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+               n1: 1584 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+                n1: 1584 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+                 n0: 1584 in 2 places, all below massif's threshold (1.00%)
+               n0: 1232 in 1 place, below massif's threshold (1.00%)
+             n0: 1232 in 1 place, below massif's threshold (1.00%)
+           n0: 1056 in 1 place, below massif's threshold (1.00%)
+         n0: 1408 in 1 place, below massif's threshold (1.00%)
+       n0: 176 in 1 place, below massif's threshold (1.00%)
+     n1: 1760 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 1760 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 1760 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n1: 1760 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n0: 1760 in 2 places, all below massif's threshold (1.00%)
+   n1: 4928 0x4E98FED: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 4928 0x4EC074B: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 4752 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 4752 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 4576 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 4576 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 3520 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n2: 3520 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n1: 2640 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+            n1: 2640 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+             n0: 2640 in 2 places, all below massif's threshold (1.00%)
+           n0: 880 in 1 place, below massif's threshold (1.00%)
+         n0: 1056 in 1 place, below massif's threshold (1.00%)
+       n0: 176 in 1 place, below massif's threshold (1.00%)
+     n0: 176 in 1 place, below massif's threshold (1.00%)
+ n1: 8356 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 8356 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 8356 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 7158 0x400D290: openaux (dl-deps.c:64)
+     n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 7158 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 7158 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 7158 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 7158 0x4876254: dlopen_doit (dlopen.c:66)
+           n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 7158 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 7158 0x4876973: _dlerror_run (dlerror.c:163)
+              n1: 7158 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 7158 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 7158 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 7158 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1198 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4FC68F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x4FCA790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E9B039: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 8192 0x4E43625: ???
+     n1: 8192 0x4E418FA: ???
+      n0: 8192 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 4864 0x4E95B27: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 4864 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 3072 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 3072 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2432 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 2432 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2368 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 2368 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 1856 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n1: 1856 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n0: 1856 in 2 places, all below massif's threshold (1.00%)
+         n0: 512 in 1 place, below massif's threshold (1.00%)
+       n0: 64 in 1 place, below massif's threshold (1.00%)
+     n0: 640 in 1 place, below massif's threshold (1.00%)
+   n1: 1792 0x4E98FED: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 1792 0x4EC074B: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 1728 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 1728 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 1664 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n1: 1664 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n0: 1664 in 2 places, all below massif's threshold (1.00%)
+       n0: 64 in 1 place, below massif's threshold (1.00%)
+     n0: 64 in 1 place, below massif's threshold (1.00%)
+ n2: 4384 0x4E93DAA: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 3168 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1632 0x4E9E20E: void std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::_M_realloc_insert<YAML::RegEx const&>(__gnu_cxx::__normal_iterator<YAML::RegEx*, std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > >, YAML::RegEx const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1632 in 5 places, all below massif's threshold (1.00%)
+   n0: 1536 in 2 places, all below massif's threshold (1.00%)
+  n0: 1216 in 2 places, all below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 3648 0x4E962BE: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 3648 0x4E95C3A: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n2: 3648 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 2304 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n2: 2304 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 1824 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n2: 1824 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n1: 1776 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 1776 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n0: 1776 in 2 places, all below massif's threshold (1.00%)
+        n0: 48 in 1 place, below massif's threshold (1.00%)
+      n0: 480 in 1 place, below massif's threshold (1.00%)
+    n0: 1344 in 1 place, below massif's threshold (1.00%)
+ n1: 2784 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2784 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2784 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2784 0x4876254: dlopen_doit (dlopen.c:66)
+      n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2784 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2784 0x4876973: _dlerror_run (dlerror.c:163)
+         n1: 2784 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2784 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2784 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2784 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2048 0x4EC6A3A: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 2048 0x4EA14D0: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 2048 0x4E9CA90: YAML::Parser::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 2048 0x4E9CB29: YAML::Parser::Parser(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2048 0x4E9A82F: YAML::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 2048 0x4E9B06D: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2048 0x4E43625: ???
+        n1: 2048 0x4E418FA: ???
+         n0: 2048 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 1824 0x4E95B62: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1824 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n0: 1824 in 2 places, all below massif's threshold (1.00%)
+ n1: 1824 0x4E95B9B: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1824 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n0: 1824 in 2 places, all below massif's threshold (1.00%)
+ n1: 1824 0x4E95BEC: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1824 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n0: 1824 in 2 places, all below massif's threshold (1.00%)
+ n2: 1739 0x4FF8D1D: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 1739 0x4E98D43: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1739 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1739 in 2 places, all below massif's threshold (1.00%)
+  n0: 0 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=39
+#-----------
+time=8207651
+mem_heap_B=148941
+mem_heap_extra_B=11035
+mem_stacks_B=0
+heap_tree=peak
+n15: 148941 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4F6A454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 15897 in 66 places, all below massif's threshold (1.00%)
+ n1: 14080 0x4E95B41: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 14080 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 8800 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 8800 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 7040 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 7040 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 6864 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 6864 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 5456 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n2: 5456 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n1: 4400 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+            n2: 4400 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+             n1: 3168 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+              n2: 3168 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+               n1: 1936 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+                n1: 1936 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+                 n0: 1936 in 2 places, all below massif's threshold (1.00%)
+               n0: 1232 in 1 place, below massif's threshold (1.00%)
+             n0: 1232 in 1 place, below massif's threshold (1.00%)
+           n0: 1056 in 1 place, below massif's threshold (1.00%)
+         n0: 1408 in 1 place, below massif's threshold (1.00%)
+       n0: 176 in 1 place, below massif's threshold (1.00%)
+     n1: 1760 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 1760 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 1760 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n1: 1760 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n0: 1760 in 2 places, all below massif's threshold (1.00%)
+   n1: 5280 0x4E98FED: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 5280 0x4EC074B: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 5104 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 5104 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 4928 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 4928 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 3872 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n2: 3872 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n1: 2992 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+            n2: 2992 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+             n1: 1760 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+              n1: 1760 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+               n0: 1760 in 2 places, all below massif's threshold (1.00%)
+             n0: 1232 in 1 place, below massif's threshold (1.00%)
+           n0: 880 in 1 place, below massif's threshold (1.00%)
+         n0: 1056 in 1 place, below massif's threshold (1.00%)
+       n0: 176 in 1 place, below massif's threshold (1.00%)
+     n0: 176 in 1 place, below massif's threshold (1.00%)
+ n1: 8356 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 8356 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 8356 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 7158 0x400D290: openaux (dl-deps.c:64)
+     n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 7158 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 7158 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 7158 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 7158 0x4876254: dlopen_doit (dlopen.c:66)
+           n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 7158 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 7158 0x4876973: _dlerror_run (dlerror.c:163)
+              n1: 7158 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 7158 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 7158 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 7158 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1198 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4FC68F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x4FCA790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E9B039: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 8192 0x4E43625: ???
+     n1: 8192 0x4E418FA: ???
+      n0: 8192 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 5120 0x4E95B27: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 5120 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 3200 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 3200 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2560 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 2560 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2496 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n2: 2496 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 1984 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n2: 1984 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n1: 1600 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+            n1: 1600 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+             n0: 1600 in 2 places, all below massif's threshold (1.00%)
+           n0: 384 in 1 place, below massif's threshold (1.00%)
+         n0: 512 in 1 place, below massif's threshold (1.00%)
+       n0: 64 in 1 place, below massif's threshold (1.00%)
+     n0: 640 in 1 place, below massif's threshold (1.00%)
+   n1: 1920 0x4E98FED: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n2: 1920 0x4EC074B: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 1856 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n2: 1856 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 1792 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n1: 1792 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n0: 1792 in 2 places, all below massif's threshold (1.00%)
+       n0: 64 in 1 place, below massif's threshold (1.00%)
+     n0: 64 in 1 place, below massif's threshold (1.00%)
+ n2: 4320 0x4E93DAA: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 3168 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1632 0x4E9E20E: void std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::_M_realloc_insert<YAML::RegEx const&>(__gnu_cxx::__normal_iterator<YAML::RegEx*, std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > >, YAML::RegEx const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1632 in 5 places, all below massif's threshold (1.00%)
+   n0: 1536 in 2 places, all below massif's threshold (1.00%)
+  n0: 1152 in 2 places, all below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 3840 0x4E962BE: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 3840 0x4E95C3A: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n2: 3840 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 2400 0x4E98D2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n2: 2400 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 1920 0x4EC3441: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n2: 1920 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n1: 1872 0x4EC3413: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 1872 0x4EC06A6: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n0: 1872 in 2 places, all below massif's threshold (1.00%)
+        n0: 48 in 1 place, below massif's threshold (1.00%)
+      n0: 480 in 1 place, below massif's threshold (1.00%)
+    n0: 1440 in 1 place, below massif's threshold (1.00%)
+ n1: 2784 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2784 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2784 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2784 0x4876254: dlopen_doit (dlopen.c:66)
+      n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2784 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2784 0x4876973: _dlerror_run (dlerror.c:163)
+         n1: 2784 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2784 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2784 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2784 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2048 0x4EC6A3A: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 2048 0x4EA14D0: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 2048 0x4E9CA90: YAML::Parser::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 2048 0x4E9CB29: YAML::Parser::Parser(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2048 0x4E9A82F: YAML::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 2048 0x4E9B06D: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2048 0x4E43625: ???
+        n1: 2048 0x4E418FA: ???
+         n0: 2048 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 1920 0x4E95B62: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1920 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n0: 1920 in 2 places, all below massif's threshold (1.00%)
+ n1: 1920 0x4E95B9B: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1920 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n0: 1920 in 2 places, all below massif's threshold (1.00%)
+ n1: 1920 0x4E95BEC: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1920 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n0: 1920 in 2 places, all below massif's threshold (1.00%)
+ n2: 1776 0x4FF8D1D: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 1776 0x4E98D43: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1776 0x4EC06E9: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1776 in 2 places, all below massif's threshold (1.00%)
+  n0: 0 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=40
+#-----------
+time=8280938
+mem_heap_B=134158
+mem_heap_extra_B=10474
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=8353651
+mem_heap_B=136455
+mem_heap_extra_B=10801
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=8426472
+mem_heap_B=135130
+mem_heap_extra_B=10358
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=8524149
+mem_heap_B=139005
+mem_heap_extra_B=11139
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=8565992
+mem_heap_B=136859
+mem_heap_extra_B=10645
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=8630265
+mem_heap_B=138026
+mem_heap_extra_B=10822
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=8728415
+mem_heap_B=139540
+mem_heap_extra_B=11004
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=8829861
+mem_heap_B=141629
+mem_heap_extra_B=11291
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=8908599
+mem_heap_B=120701
+mem_heap_extra_B=6083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=8939650
+mem_heap_B=98846
+mem_heap_extra_B=1938
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=8941332
+mem_heap_B=95258
+mem_heap_extra_B=1574
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=8943115
+mem_heap_B=92139
+mem_heap_extra_B=1213
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=8944748
+mem_heap_B=90731
+mem_heap_extra_B=1045
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=8946436
+mem_heap_B=89003
+mem_heap_extra_B=885
+mem_stacks_B=0
+heap_tree=detailed
+n7: 89003 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4F6A454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 4762 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 4762 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 4762 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 4762 0x400D290: openaux (dl-deps.c:64)
+     n1: 4762 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4762 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 4762 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 4762 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4762 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 4762 0x4876254: dlopen_doit (dlopen.c:66)
+           n1: 4762 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 4762 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 4762 0x4876973: _dlerror_run (dlerror.c:163)
+              n1: 4762 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 4762 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 4762 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 4762 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2352 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2352 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2352 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2352 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2352 0x4876254: dlopen_doit (dlopen.c:66)
+      n1: 2352 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2352 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2352 0x4876973: _dlerror_run (dlerror.c:163)
+         n1: 2352 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2352 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2352 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2352 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 2257 in 80 places, all below massif's threshold (1.00%)
+ n2: 1824 0x4E93DAA: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1248 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n0: 1248 in 3 places, all below massif's threshold (1.00%)
+  n0: 576 in 2 places, all below massif's threshold (1.00%)
+ n1: 1040 0x48B4075: __new_exitfn (cxa_atexit.c:110)
+  n1: 1040 0x48B4116: __internal_atexit (cxa_atexit.c:40)
+   n1: 1040 0x4E92528: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 1040 0x4EA4E77: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 1040 0x4EA5CA3: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 1040 0x4EA5D77: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 1040 0x4E9CF47: YAML::Parser::ParseDirectives() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n1: 1040 0x4E9CF87: YAML::Parser::HandleNextDocument(YAML::EventHandler&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 1040 0x4E9A842: YAML::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n1: 1040 0x4E9B06D: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n1: 1040 0x4E43625: ???
+            n1: 1040 0x4E418FA: ???
+             n0: 1040 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=54
+#-----------
+time=8948073
+mem_heap_B=87595
+mem_heap_extra_B=709
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=8949722
+mem_heap_B=86123
+mem_heap_extra_B=533
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=8951594
+mem_heap_B=84742
+mem_heap_extra_B=378
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=8959948
+mem_heap_B=84590
+mem_heap_extra_B=338
+mem_stacks_B=0
+heap_tree=empty
