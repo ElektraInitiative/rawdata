@@ -35,34 +35,38 @@ memory.graph <- function(data) {
 # = Read =
 # ========
 
-memory_usage <- read.csv(file="YAML/Results/Memory Usage/memory.csv",
-                         header=TRUE, sep=";")
-
-memory_usage$Plugin <- memory_usage$Plugin %>%
-  map_chr(~ sub(".* ([a-z]+) get$", "\\1", .)) %>%
-  map_chr(~ sub("yambi", "YAMBi", .)) %>%
-  map_chr(~ sub("yamlcpp", "YAML CPP", .)) %>%
-  map_chr(~ sub("yanlr", "Yan LR", .)) %>%
-  map_chr(~ sub("yawn", "YAwn", .)) %>%
-  map_chr(~ sub("yaypeg", "YAy PEG", .))
-
 memory <- tibble(plugin = character(),
                  file = character(),
                  bytes = numeric(),
                  lines = numeric())
 
-for (row in 1:nrow(memory_usage)) {
-  filepath <- memory_usage$File[row]
-  fields <- strsplit(toString(filepath), "_")[[1]]
-  lines <- if (length(fields) >= 2)
-             as.numeric(sub("(.*)\\.yaml$", "\\1", fields[[2]]))
-           else NA
+result_directory = "YAML/Results/Memory Usage"
+files <- list.files(result_directory, pattern = ".*\\.csv")
+for (filepath in files) {
+  memory_usage <- read.csv(file = paste(result_directory, filepath, sep = "/"),
+                           header = TRUE, sep = ";")
 
-  memory <- add_row(memory,
-                    plugin = memory_usage$Plugin[row],
-                    file = filepath,
-                    bytes = as.numeric(memory_usage$Bytes[row]),
-                    lines = lines)
+  memory_usage$Plugin <- memory_usage$Plugin %>%
+    map_chr(~ sub(".* ([a-z]+) get$", "\\1", .)) %>%
+    map_chr(~ sub("yambi", "YAMBi", .)) %>%
+    map_chr(~ sub("yamlcpp", "YAML CPP", .)) %>%
+    map_chr(~ sub("yanlr", "Yan LR", .)) %>%
+    map_chr(~ sub("yawn", "YAwn", .)) %>%
+    map_chr(~ sub("yaypeg", "YAy PEG", .))
+
+  for (row in 1:nrow(memory_usage)) {
+    filepath <- memory_usage$File[row]
+    fields <- strsplit(toString(filepath), "_")[[1]]
+    lines <- if (length(fields) >= 2)
+               as.numeric(sub("(.*)\\.yaml$", "\\1", fields[[2]]))
+             else NA
+
+    memory <- add_row(memory,
+                      plugin = memory_usage$Plugin[row],
+                      file = filepath,
+                      bytes = as.numeric(memory_usage$Bytes[row]),
+                      lines = lines)
+  }
 }
 
 # ==========
