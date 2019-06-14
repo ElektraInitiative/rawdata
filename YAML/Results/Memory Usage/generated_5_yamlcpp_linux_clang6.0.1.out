@@ -1,0 +1,1316 @@
+desc: --massif-out-file=results/generated_5_yamlcpp_linux_clang6.0.1.out
+cmd: build/linux/bin/benchmark_plugingetset benchmarks/data/generated_5 user yamlcpp get
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=204382
+mem_heap_B=64
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=217896
+mem_heap_B=1324
+mem_heap_extra_B=52
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=232296
+mem_heap_B=1398
+mem_heap_extra_B=74
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=243223
+mem_heap_B=1892
+mem_heap_extra_B=124
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=256557
+mem_heap_B=2044
+mem_heap_extra_B=180
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=267306
+mem_heap_B=3429
+mem_heap_extra_B=219
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=280667
+mem_heap_B=7462
+mem_heap_extra_B=330
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=288986
+mem_heap_B=7503
+mem_heap_extra_B=345
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=303420
+mem_heap_B=10021
+mem_heap_extra_B=435
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=314004
+mem_heap_B=11391
+mem_heap_extra_B=505
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=322102
+mem_heap_B=11479
+mem_heap_extra_B=521
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=334026
+mem_heap_B=11567
+mem_heap_extra_B=537
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=347809
+mem_heap_B=12087
+mem_heap_extra_B=593
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=356561
+mem_heap_B=12567
+mem_heap_extra_B=633
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=368970
+mem_heap_B=14631
+mem_heap_extra_B=657
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=926131
+mem_heap_B=15623
+mem_heap_extra_B=665
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=1012376
+mem_heap_B=17575
+mem_heap_extra_B=673
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=1013259
+mem_heap_B=16583
+mem_heap_extra_B=665
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=3457693
+mem_heap_B=20647
+mem_heap_extra_B=673
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=3459324
+mem_heap_B=18695
+mem_heap_extra_B=665
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=6039909
+mem_heap_B=91399
+mem_heap_extra_B=673
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=6086825
+mem_heap_B=91416
+mem_heap_extra_B=696
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=6096389
+mem_heap_B=91501
+mem_heap_extra_B=811
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=6103571
+mem_heap_B=91565
+mem_heap_extra_B=819
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=6112627
+mem_heap_B=92374
+mem_heap_extra_B=882
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=6125863
+mem_heap_B=108534
+mem_heap_extra_B=1282
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=6137173
+mem_heap_B=109654
+mem_heap_extra_B=1418
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=6143253
+mem_heap_B=111111
+mem_heap_extra_B=1553
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=6155944
+mem_heap_B=111670
+mem_heap_extra_B=1602
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=6163116
+mem_heap_B=112054
+mem_heap_extra_B=1658
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=6172073
+mem_heap_B=113590
+mem_heap_extra_B=1866
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=6186218
+mem_heap_B=113318
+mem_heap_extra_B=1826
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=6192979
+mem_heap_B=115030
+mem_heap_extra_B=2090
+mem_stacks_B=0
+heap_tree=detailed
+n8: 115030 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4F6A454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 12562 in 66 places, all below massif's threshold (1.00%)
+ n1: 8356 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 8356 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 8356 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 7158 0x400D290: openaux (dl-deps.c:64)
+     n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 7158 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 7158 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 7158 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 7158 0x4876254: dlopen_doit (dlopen.c:66)
+           n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 7158 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 7158 0x4876973: _dlerror_run (dlerror.c:163)
+              n1: 7158 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 7158 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 7158 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 7158 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n1: 1198 0x4012FE9: dl_open_worker (dl-open.c:228)
+     n1: 1198 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 1198 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 1198 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 1198 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1198 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 1198 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 1198 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 1198 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 1198 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 1198 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 8192 0x4FC68F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x4FCA790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E9B039: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 8192 0x4E43625: ???
+     n1: 8192 0x4E418FA: ???
+      n0: 8192 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 4320 0x4E93DAA: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n3: 3168 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1632 0x4E9E20E: void std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::_M_realloc_insert<YAML::RegEx const&>(__gnu_cxx::__normal_iterator<YAML::RegEx*, std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > >, YAML::RegEx const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1632 in 5 places, all below massif's threshold (1.00%)
+   n1: 1408 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1408 in 3 places, all below massif's threshold (1.00%)
+   n0: 128 in 1 place, below massif's threshold (1.00%)
+  n0: 1152 in 2 places, all below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2784 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2784 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2784 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2784 0x4876254: dlopen_doit (dlopen.c:66)
+      n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2784 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2784 0x4876973: _dlerror_run (dlerror.c:163)
+         n1: 2784 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2784 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2784 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2784 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2048 0x4EC6A3A: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 2048 0x4EA14D0: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 2048 0x4E9CA90: YAML::Parser::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 2048 0x4E9CB29: YAML::Parser::Parser(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2048 0x4E9A82F: YAML::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 2048 0x4E9B06D: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2048 0x4E43625: ???
+        n1: 2048 0x4E418FA: ???
+         n0: 2048 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=34
+#-----------
+time=6202789
+mem_heap_B=115413
+mem_heap_extra_B=2091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=6215036
+mem_heap_B=115480
+mem_heap_extra_B=2112
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=6223450
+mem_heap_B=115859
+mem_heap_extra_B=2309
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=6233106
+mem_heap_B=116258
+mem_heap_extra_B=2334
+mem_stacks_B=0
+heap_tree=detailed
+n8: 116258 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4F6A454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 13790 in 70 places, all below massif's threshold (1.00%)
+ n1: 8356 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 8356 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 8356 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 7158 0x400D290: openaux (dl-deps.c:64)
+     n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 7158 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 7158 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 7158 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 7158 0x4876254: dlopen_doit (dlopen.c:66)
+           n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 7158 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 7158 0x4876973: _dlerror_run (dlerror.c:163)
+              n1: 7158 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 7158 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 7158 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 7158 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n1: 1198 0x4012FE9: dl_open_worker (dl-open.c:228)
+     n1: 1198 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 1198 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 1198 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 1198 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1198 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 1198 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 1198 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 1198 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 1198 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 1198 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 8192 0x4FC68F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x4FCA790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E9B039: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 8192 0x4E43625: ???
+     n1: 8192 0x4E418FA: ???
+      n0: 8192 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 4320 0x4E93DAA: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n3: 3168 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1632 0x4E9E20E: void std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::_M_realloc_insert<YAML::RegEx const&>(__gnu_cxx::__normal_iterator<YAML::RegEx*, std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > >, YAML::RegEx const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1632 in 5 places, all below massif's threshold (1.00%)
+   n1: 1408 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1408 in 3 places, all below massif's threshold (1.00%)
+   n0: 128 in 1 place, below massif's threshold (1.00%)
+  n0: 1152 in 2 places, all below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2784 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2784 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2784 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2784 0x4876254: dlopen_doit (dlopen.c:66)
+      n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2784 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2784 0x4876973: _dlerror_run (dlerror.c:163)
+         n1: 2784 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2784 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2784 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2784 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2048 0x4EC6A3A: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 2048 0x4EA14D0: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 2048 0x4E9CA90: YAML::Parser::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 2048 0x4E9CB29: YAML::Parser::Parser(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2048 0x4E9A82F: YAML::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 2048 0x4E9B06D: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2048 0x4E43625: ???
+        n1: 2048 0x4E418FA: ???
+         n0: 2048 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=38
+#-----------
+time=6248783
+mem_heap_B=116136
+mem_heap_extra_B=2344
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=6259487
+mem_heap_B=116327
+mem_heap_extra_B=2369
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=6269242
+mem_heap_B=116388
+mem_heap_extra_B=2380
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=6280565
+mem_heap_B=116685
+mem_heap_extra_B=2579
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=6291677
+mem_heap_B=117188
+mem_heap_extra_B=2604
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=6301432
+mem_heap_B=117249
+mem_heap_extra_B=2615
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=6313648
+mem_heap_B=118402
+mem_heap_extra_B=2934
+mem_stacks_B=0
+heap_tree=peak
+n9: 118402 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4F6A454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 14350 in 70 places, all below massif's threshold (1.00%)
+ n1: 8356 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 8356 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 8356 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 7158 0x400D290: openaux (dl-deps.c:64)
+     n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 7158 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 7158 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 7158 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 7158 0x4876254: dlopen_doit (dlopen.c:66)
+           n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 7158 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 7158 0x4876973: _dlerror_run (dlerror.c:163)
+              n1: 7158 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 7158 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 7158 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 7158 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 1198 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4FC68F6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x4FCA790: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x4E9B039: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 8192 0x4E43625: ???
+     n1: 8192 0x4E418FA: ???
+      n0: 8192 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 4320 0x4E93DAA: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n3: 3168 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1632 0x4E9E20E: void std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::_M_realloc_insert<YAML::RegEx const&>(__gnu_cxx::__normal_iterator<YAML::RegEx*, std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > >, YAML::RegEx const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1632 in 5 places, all below massif's threshold (1.00%)
+   n1: 1408 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1408 in 3 places, all below massif's threshold (1.00%)
+   n0: 128 in 1 place, below massif's threshold (1.00%)
+  n0: 1152 in 2 places, all below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2784 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2784 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2784 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2784 0x4876254: dlopen_doit (dlopen.c:66)
+      n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2784 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2784 0x4876973: _dlerror_run (dlerror.c:163)
+         n1: 2784 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2784 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2784 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2784 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2048 0x4EC6A3A: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 2048 0x4EA14D0: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 2048 0x4E9CA90: YAML::Parser::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 2048 0x4E9CB29: YAML::Parser::Parser(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 2048 0x4E9A82F: YAML::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 2048 0x4E9B06D: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 2048 0x4E43625: ???
+        n1: 2048 0x4E418FA: ???
+         n0: 2048 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 1584 0x4E95B41: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1584 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n0: 1584 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=45
+#-----------
+time=6323022
+mem_heap_B=103328
+mem_heap_extra_B=2728
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=6335278
+mem_heap_B=103794
+mem_heap_extra_B=2854
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=6349239
+mem_heap_B=104845
+mem_heap_extra_B=3019
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=6356568
+mem_heap_B=103737
+mem_heap_extra_B=2783
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=6367410
+mem_heap_B=104294
+mem_heap_extra_B=2938
+mem_stacks_B=0
+heap_tree=detailed
+n7: 104294 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4F6A454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 10482 in 77 places, all below massif's threshold (1.00%)
+ n1: 8356 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 8356 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 8356 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 7158 0x400D290: openaux (dl-deps.c:64)
+     n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 7158 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 7158 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 7158 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 7158 0x4876254: dlopen_doit (dlopen.c:66)
+           n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 7158 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 7158 0x4876973: _dlerror_run (dlerror.c:163)
+              n1: 7158 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 7158 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 7158 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 7158 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n1: 1198 0x4012FE9: dl_open_worker (dl-open.c:228)
+     n1: 1198 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 1198 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 1198 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 1198 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1198 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 1198 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 1198 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 1198 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 1198 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 1198 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 4320 0x4E93DAA: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n3: 3168 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1632 0x4E9E20E: void std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::_M_realloc_insert<YAML::RegEx const&>(__gnu_cxx::__normal_iterator<YAML::RegEx*, std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > >, YAML::RegEx const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1632 in 5 places, all below massif's threshold (1.00%)
+   n1: 1408 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1408 in 3 places, all below massif's threshold (1.00%)
+   n0: 128 in 1 place, below massif's threshold (1.00%)
+  n0: 1152 in 2 places, all below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2784 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2784 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2784 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2784 0x4876254: dlopen_doit (dlopen.c:66)
+      n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2784 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2784 0x4876973: _dlerror_run (dlerror.c:163)
+         n1: 2784 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2784 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2784 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2784 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 1584 0x4E95B41: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1584 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n0: 1584 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=50
+#-----------
+time=6368705
+mem_heap_B=104563
+mem_heap_extra_B=3013
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=6369677
+mem_heap_B=104497
+mem_heap_extra_B=3007
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=6371126
+mem_heap_B=104539
+mem_heap_extra_B=2989
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=6372405
+mem_heap_B=104576
+mem_heap_extra_B=2976
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=6373295
+mem_heap_B=104652
+mem_heap_extra_B=2996
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=6374693
+mem_heap_B=104741
+mem_heap_extra_B=3011
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=6375960
+mem_heap_B=104741
+mem_heap_extra_B=3011
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=6376901
+mem_heap_B=104882
+mem_heap_extra_B=3022
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=6377860
+mem_heap_B=104961
+mem_heap_extra_B=3063
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=6378829
+mem_heap_B=105165
+mem_heap_extra_B=3091
+mem_stacks_B=0
+heap_tree=detailed
+n8: 105165 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4F6A454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 10201 in 76 places, all below massif's threshold (1.00%)
+ n1: 8356 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 8356 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 8356 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 7158 0x400D290: openaux (dl-deps.c:64)
+     n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 7158 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 7158 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 7158 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 7158 0x4876254: dlopen_doit (dlopen.c:66)
+           n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 7158 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 7158 0x4876973: _dlerror_run (dlerror.c:163)
+              n1: 7158 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 7158 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 7158 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 7158 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n1: 1198 0x4012FE9: dl_open_worker (dl-open.c:228)
+     n1: 1198 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 1198 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 1198 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 1198 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1198 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 1198 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 1198 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 1198 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 1198 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 1198 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 4320 0x4E93DAA: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n3: 3168 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1632 0x4E9E20E: void std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::_M_realloc_insert<YAML::RegEx const&>(__gnu_cxx::__normal_iterator<YAML::RegEx*, std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > >, YAML::RegEx const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1632 in 5 places, all below massif's threshold (1.00%)
+   n1: 1408 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1408 in 3 places, all below massif's threshold (1.00%)
+   n0: 128 in 1 place, below massif's threshold (1.00%)
+  n0: 1152 in 2 places, all below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2784 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2784 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2784 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2784 0x4876254: dlopen_doit (dlopen.c:66)
+      n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2784 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2784 0x4876973: _dlerror_run (dlerror.c:163)
+         n1: 2784 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2784 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2784 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2784 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 1584 0x4E95B41: YAML::detail::memory::create_node() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n1: 1584 0x4E98C2D: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n0: 1584 in 3 places, all below massif's threshold (1.00%)
+ n1: 1152 0x485B4E7: ksNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n0: 1152 in 4 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=60
+#-----------
+time=6379913
+mem_heap_B=105267
+mem_heap_extra_B=3093
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=6381863
+mem_heap_B=105178
+mem_heap_extra_B=3078
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=6384014
+mem_heap_B=104911
+mem_heap_extra_B=3041
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=6384984
+mem_heap_B=104107
+mem_heap_extra_B=2821
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=6385937
+mem_heap_B=103380
+mem_heap_extra_B=2604
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=6386841
+mem_heap_B=102250
+mem_heap_extra_B=2302
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=6387769
+mem_heap_B=101181
+mem_heap_extra_B=2035
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=6388669
+mem_heap_B=100224
+mem_heap_extra_B=1768
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=6390814
+mem_heap_B=99818
+mem_heap_extra_B=1670
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=6393837
+mem_heap_B=99688
+mem_heap_extra_B=1664
+mem_stacks_B=0
+heap_tree=detailed
+n8: 99688 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4F6A454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 8356 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 8356 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 8356 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 7158 0x400D290: openaux (dl-deps.c:64)
+     n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 7158 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 7158 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 7158 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 7158 0x4876254: dlopen_doit (dlopen.c:66)
+           n1: 7158 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 7158 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 7158 0x4876973: _dlerror_run (dlerror.c:163)
+              n1: 7158 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 7158 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 7158 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 7158 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n1: 1198 0x4012FE9: dl_open_worker (dl-open.c:228)
+     n1: 1198 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 1198 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 1198 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 1198 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 1198 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 1198 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 1198 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 1198 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 1198 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 1198 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 5396 in 76 places, all below massif's threshold (1.00%)
+ n2: 4320 0x4E93DAA: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n3: 3168 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1632 0x4E9E20E: void std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::_M_realloc_insert<YAML::RegEx const&>(__gnu_cxx::__normal_iterator<YAML::RegEx*, std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > >, YAML::RegEx const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1632 in 5 places, all below massif's threshold (1.00%)
+   n1: 1408 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1408 in 3 places, all below massif's threshold (1.00%)
+   n0: 128 in 1 place, below massif's threshold (1.00%)
+  n0: 1152 in 2 places, all below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 2784 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2784 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2784 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2784 0x4876254: dlopen_doit (dlopen.c:66)
+      n1: 2784 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2784 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2784 0x4876973: _dlerror_run (dlerror.c:163)
+         n1: 2784 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2784 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2784 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2784 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 1040 0x48B4075: __new_exitfn (cxa_atexit.c:110)
+  n1: 1040 0x48B4116: __internal_atexit (cxa_atexit.c:40)
+   n1: 1040 0x4E92528: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 1040 0x4EA4E77: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 1040 0x4EA5CA3: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 1040 0x4EA5D77: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 1040 0x4E9CF47: YAML::Parser::ParseDirectives() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n1: 1040 0x4E9CF87: YAML::Parser::HandleNextDocument(YAML::EventHandler&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 1040 0x4E9A842: YAML::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n1: 1040 0x4E9B06D: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n1: 1040 0x4E43625: ???
+            n1: 1040 0x4E418FA: ???
+             n0: 1040 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 1024 0x4858B77: elektraVFormat (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n1: 1024 0x4858B56: elektraFormat (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n0: 1024 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=70
+#-----------
+time=6395071
+mem_heap_B=99674
+mem_heap_extra_B=1654
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=6401079
+mem_heap_B=99706
+mem_heap_extra_B=1662
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=6401966
+mem_heap_B=99222
+mem_heap_extra_B=1634
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=6402880
+mem_heap_B=94887
+mem_heap_extra_B=1441
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=6404361
+mem_heap_B=94585
+mem_heap_extra_B=1407
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=6405255
+mem_heap_B=94329
+mem_heap_extra_B=1383
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=6406759
+mem_heap_B=93817
+mem_heap_extra_B=1375
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=6407836
+mem_heap_B=92139
+mem_heap_extra_B=1197
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=6408810
+mem_heap_B=91307
+mem_heap_extra_B=1101
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=6409709
+mem_heap_B=90475
+mem_heap_extra_B=997
+mem_stacks_B=0
+heap_tree=detailed
+n7: 90475 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4F6A454: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x400F378: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x400F474: _dl_init (dl-init.c:118)
+    n1: 72704 0x40132D1: dl_open_worker (dl-open.c:517)
+     n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 72704 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 72704 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 72704 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 72704 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 72704 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 72704 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 72704 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 72704 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 72704 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 4762 0x400B2AC: _dl_new_object (dl-object.c:73)
+  n1: 4762 0x4005E46: _dl_map_object_from_fd (dl-load.c:1001)
+   n2: 4762 0x4008A8B: _dl_map_object (dl-load.c:2466)
+    n1: 4762 0x400D290: openaux (dl-deps.c:64)
+     n1: 4762 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4762 0x400D604: _dl_map_object_deps (dl-deps.c:248)
+       n1: 4762 0x401304E: dl_open_worker (dl-open.c:271)
+        n1: 4762 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4762 0x4012BB8: _dl_open (dl-open.c:599)
+          n1: 4762 0x4876254: dlopen_doit (dlopen.c:66)
+           n1: 4762 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+            n1: 4762 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+             n1: 4762 0x4876973: _dlerror_run (dlerror.c:163)
+              n1: 4762 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 4762 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+                n1: 4762 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+                 n0: 4762 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 4064 0x400A095: do_lookup_x (dl-lookup.c:253)
+  n1: 4064 0x400A38D: _dl_lookup_symbol_x (dl-lookup.c:814)
+   n1: 4064 0x400BD5C: _dl_relocate_object (dl-machine.h:308)
+    n1: 4064 0x401319C: dl_open_worker (dl-open.c:377)
+     n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+      n1: 4064 0x4012BB8: _dl_open (dl-open.c:599)
+       n1: 4064 0x4876254: dlopen_doit (dlopen.c:66)
+        n1: 4064 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+         n1: 4064 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+          n1: 4064 0x4876973: _dlerror_run (dlerror.c:163)
+           n1: 4064 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 4064 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+             n1: 4064 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+              n0: 4064 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 3040 0x4E93DAA: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+  n2: 2336 0x4E93DEE: std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::vector(std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+   n1: 1504 0x4E9E20E: void std::vector<YAML::RegEx, std::allocator<YAML::RegEx> >::_M_realloc_insert<YAML::RegEx const&>(__gnu_cxx::__normal_iterator<YAML::RegEx*, std::vector<YAML::RegEx, std::allocator<YAML::RegEx> > >, YAML::RegEx const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n0: 1504 in 5 places, all below massif's threshold (1.00%)
+   n0: 832 in 2 places, all below massif's threshold (1.00%)
+  n0: 704 in 2 places, all below massif's threshold (1.00%)
+ n0: 2513 in 78 places, all below massif's threshold (1.00%)
+ n1: 2352 0x4010A1E: _dl_check_map_versions (dl-version.c:274)
+  n1: 2352 0x4013094: dl_open_worker (dl-open.c:277)
+   n1: 2352 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+    n1: 2352 0x4012BB8: _dl_open (dl-open.c:599)
+     n1: 2352 0x4876254: dlopen_doit (dlopen.c:66)
+      n1: 2352 0x49AEB2D: _dl_catch_exception (dl-error-skeleton.c:196)
+       n1: 2352 0x49AEBBD: _dl_catch_error (dl-error-skeleton.c:215)
+        n1: 2352 0x4876973: _dlerror_run (dlerror.c:163)
+         n1: 2352 0x48762E4: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 2352 0x4860341: elektraModulesLoad (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+           n1: 2352 0x4849B7D: elektraPluginOpen (in /home/jenkins/workspace/build/linux/lib/libelektra-kdb.so.0.8.26)
+            n0: 2352 0x4012D3: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 1040 0x48B4075: __new_exitfn (cxa_atexit.c:110)
+  n1: 1040 0x48B4116: __internal_atexit (cxa_atexit.c:40)
+   n1: 1040 0x4E92528: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+    n1: 1040 0x4EA4E77: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+     n1: 1040 0x4EA5CA3: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+      n1: 1040 0x4EA5D77: ??? (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+       n1: 1040 0x4E9CF47: YAML::Parser::ParseDirectives() (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+        n1: 1040 0x4E9CF87: YAML::Parser::HandleNextDocument(YAML::EventHandler&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+         n1: 1040 0x4E9A842: YAML::Load(std::istream&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+          n1: 1040 0x4E9B06D: YAML::LoadFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6.2)
+           n1: 1040 0x4E43625: ???
+            n1: 1040 0x4E418FA: ???
+             n0: 1040 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=80
+#-----------
+time=6410613
+mem_heap_B=89707
+mem_heap_extra_B=901
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=6411544
+mem_heap_B=88715
+mem_heap_extra_B=837
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=6412513
+mem_heap_B=87851
+mem_heap_extra_B=725
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=6413455
+mem_heap_B=87051
+mem_heap_extra_B=629
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=6414407
+mem_heap_B=86187
+mem_heap_extra_B=525
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=6415410
+mem_heap_B=84793
+mem_heap_extra_B=431
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=6416315
+mem_heap_B=84742
+mem_heap_extra_B=362
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=87
+#-----------
+time=6424669
+mem_heap_B=84590
+mem_heap_extra_B=322
+mem_stacks_B=0
+heap_tree=empty

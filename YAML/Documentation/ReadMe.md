@@ -7,7 +7,7 @@ This folder contains two manually created files:
 - [`keyframes.yaml`](../Input/keyframes.yaml), and
 - [`combined.yaml`](../Input/combined.yaml)
 
-. The other files in the [`input`](../Input) directory:
+. The other files in the [`Input`](../Input) directory:
 
 - [`generated.yaml`](../Input/generated.yaml)
 - [`generated_100000.yaml`](../Input/generated_100000.yaml)
@@ -40,3 +40,34 @@ YAML/Scripts/cut_input
 ```
 
 .
+
+## Flame Graphs
+
+The folder [`Flame Graphs`](../Flame Graphs) contains [flame graphs](http://www.brendangregg.com/flamegraphs.html) created with the LLVM extension [XRay](https://llvm.org/docs/XRay.html). We profiled the code with the [Docker image for Ubuntu Disco Dingo](https://github.com/ElektraInitiative/libelektra/blob/master/scripts/docker/ubuntu/disco/Dockerfile) as described [here](https://github.com/ElektraInitiative/libelektra/blob/master/doc/tutorials/profiling.md#xray).
+
+## Results
+
+### Run Time
+
+The folder [`Run Time`](../Results/Run Time) contains the results of the execution time benchmark for some of [Elektra](https://www.libelektra.org)’s YAML plugins.
+
+#### Setup
+
+All of the runtime benchmark data was created using the script [`benchmark-runtime`](../Scripts/benchmark-runtime). For this script to work, please copy all files you want to use as input from [`Input`](../Input) to the folder `data/benchmarks` inside a local copy of [Elektra’s repository](https://master.libelektra.org). The script assumes that you store the compiled version of Elektra for
+
+- macOS inside the folder `build/mac`, and
+- Linux inside the folder `build/linux`
+
+in the root of Elektra’s repository. After you built Elektra you can copy [`benchmark-runtime`](../Scripts/benchmark-runtime) to the root of Elektra’s repository and call it using
+
+```sh
+./benchmark
+```
+
+### Memory Usage
+
+The folder [`Memory Usage`](../Results/Memory Usage) contains the results of a heap memory analysis with the tool [Massif](http://valgrind.org/docs/manual/ms-manual.html).
+
+#### Setup
+
+All the data in this folder was generated with the script [`benchmark-memory`](../Scripts/benchmark-memory). For an description on how to use this script, please take a look at the “Setup” subsection of the section “Run Time”, and replace `benchmark-runtime` with the name `benchmark-memory`.

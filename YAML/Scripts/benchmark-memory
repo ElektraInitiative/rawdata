@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+
+data_directory=benchmarks/data
+build_directory=build/linux
+result_directory=results
+
+files=($(find "$data_directory" -type f))
+plugins=(yamlcpp yanlr yambi yawn yaypeg)
+
+cleanup() {
+	find "$data_directory" -mindepth 2 -delete
+	find "$data_directory" -mindepth 1 -type d -delete
+}
+
+get_system_information() {
+	compiler_path="$(
+		sed -En 's/^CMAKE_C_COMPILER:[^=]*=(.*)/\1/p' \
+			"$build_directory/CMakeCache.txt"
+	)"
+	version_string="$("$compiler_path" --version)"
+	if printf '%s' "$version_string" |
+		grep -q 'clang version'; then
+		compiler_version=$("$compiler_path" --version |
+			sed -En 's/clang version (([0-9]\.){2}[0-9]).*/\1/p')
+		compiler="clang$compiler_version"
+	else
+		compiler_version=$("$compiler_path" --version |
+			sed -En 's/gcc \([^\)]+\) (([0-9]\.){2}[0-9]).*/\1/p')
+		compiler="gcc$compiler_version"
+	fi
+
+	test $(uname) = Darwin && os=mac || os=linux
+}
+
+generate_input() {
+	input_file="$1"
+	directory="$data_directory/$(printf '%s' "$input_file" | cut -f1 -d'.')"
+	mkdir -p "$directory"
+	(
+		for plugin in "${plugins[@]}"; do
+			cp "$data_directory/$input_file" "$directory/test.$plugin.in"
+		done
+	)
+}
+
+benchmark() {
+	mkdir -p "$result_directory"
+	summary_output="$result_directory/memory_${os}_$compiler.csv"
+	ms_print_output="$result_directory/ms_print.txt"
+	printf '%s;%s;%s;%s;%s\n' File Plugin Bytes OS Compiler > "$summary_output"
+
+	for plugin in ${plugins[@]}; do
+		printf '\n——————————\n%s\n——————————\n\n' $plugin
+		for file in ${files[@]}; do
+			name="$(basename "$file" | cut -f1 -d'.')"
+			printf 'Check memory usage for file %s\n' "$file"
+			generate_input "$name.yaml"
+			massif_output="$result_directory/${name}_${plugin}_${os}_$compiler.out"
+			valgrind --tool=massif \
+				--massif-out-file="$massif_output" \
+				"$build_directory/bin/benchmark_plugingetset" \
+				"benchmarks/data/$name" user "$plugin" get
+			ms_print "$massif_output" > "$ms_print_output"
+			peak="$(grep 'Detailed snapshots: ' "$ms_print_output" |
+				sed -E 's/.*[ ,]([0-9]+) \(peak\).*/\1/')"
+			bytes="$(grep -E "^ $peak" "$ms_print_output" |
+				awk -F '  +' '{print $2}' | tr -d ',')"
+			rm "$ms_print_output"
+			printf '%s;%s;%s;%s;%s\n' \
+				"$name.yaml" "$plugin" "$bytes" "$os" "$compiler" >> "$summary_output"
+		done
+	done
+}
+
+trap cleanup EXIT INT QUIT TERM
+
+get_system_information
+benchmark

@@ -7,20 +7,43 @@ library(tidyverse)
 library(scales)
 library(ggpubr)
 
+# -- Functions -----------------------------------------------------------------
+
+runtime.graph <- function(data) {
+  ggplot(data = data, aes(x = lines, y = runtime, color = plugin)) +
+    scale_color_manual(values = c("YAML CPP" = "#FD7D23",
+                                  "Yan LR" = "#FFD300",
+                                  "YAMBi" = "#20C5CC",
+                                  "YAwn" = "#1992FB",
+                                  "YAy PEG" = "#983BC9")) +
+    scale_x_continuous(name = "Number of Lines/Scalars", trans = "log10",
+                       breaks = trans_breaks("log10", function(x) 10^x),
+                       labels = trans_format("log10", math_format(10^.x))) +
+    scale_y_continuous(name = "Execution Time [s]",
+                       trans = "log10",
+                       labels = math_format(paste(.x, "s"))) +
+    labs(color = "Plugin") +
+    annotation_logticks() +
+    geom_point() +
+    geom_smooth() +
+    stat_cor(show.legend = FALSE) +
+    facet_wrap(os ~ compiler, nrow = 3)
+}
+
 # -- Main ----------------------------------------------------------------------
 
 # ========
 # = Read =
 # ========
 
-result_directory = "YAML/Results"
+result_directory = "YAML/Results/Run Time"
 plugin_times <- tibble(plugin = character(),
                        runtime = double(),
                        lines = numeric(),
                        os = character(),
                        compiler = character())
 
-files <- list.files(result_directory, pattern = "generated.*\\.json")
+files <- list.files(result_directory, pattern = "generated_[1-9].*\\.json")
 for (filepath in files) {
   fields <- strsplit(filepath, "_")
   fields <- fields[[1]]
@@ -64,19 +87,5 @@ for (filepath in files) {
 # = Visualize =
 # =============
 
-ggplot(data = plugin_times, aes(x = lines, y = runtime, color = plugin)) +
-  scale_color_manual(values = c("YAML CPP" = "#FD7D23",
-                                "Yan LR" = "#FFD300",
-                                "YAMBi" = "#20C5CC",
-                                "YAwn" = "#1992FB",
-                                "YAy PEG" = "#983BC9")) +
-  scale_x_continuous(name = "Number of Lines/Scalars", trans = 'log10',
-                     breaks = trans_breaks("log10", function(x) 10^x),
-                     labels = trans_format("log10", math_format(10^.x))) +
-  scale_y_continuous(name = "Execution Time [s]", trans = 'log10') +
-  labs(color = "Plugin") +
-  annotation_logticks() +
-  geom_point() +
-  geom_smooth() +
-  stat_cor(show.legend = FALSE) +
-  facet_wrap(os ~ compiler, nrow = 3)
+runtime.graph(plugin_times)
+runtime.graph(filter(plugin_times, lines >= 1000))

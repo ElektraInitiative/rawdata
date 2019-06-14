@@ -1,0 +1,1014 @@
+desc: --massif-out-file=results/generated_yambi_linux_clang6.0.1.out
+cmd: build/linux/bin/benchmark_plugingetset benchmarks/data/generated user yambi get
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=3222150
+mem_heap_B=17425
+mem_heap_extra_B=567
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=6531008
+mem_heap_B=10038771
+mem_heap_extra_B=3645
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=28501207
+mem_heap_B=10038771
+mem_heap_extra_B=3645
+mem_stacks_B=0
+heap_tree=detailed
+n4: 10038771 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8967344 0x4E4EF0D: ???
+  n1: 8967344 0x4E4EB4A: ???
+   n1: 8967344 0x4E4E8D1: ???
+    n1: 8967344 0x4E4E0B4: ???
+     n1: 8967344 0x4E49854: ???
+      n1: 8967344 0x4E42560: ???
+       n1: 8967344 0x4E416E0: ???
+        n1: 8967344 0x4E4D39A: ???
+         n0: 8967344 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 524289 0x4F892AB: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 524289 0x4F7D723: std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 524289 0x4F878A9: std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+    n1: 524289 0x4F168B3: long std::__copy_streambufs_eof<char, std::char_traits<char> >(std::basic_streambuf<char, std::char_traits<char> >*, std::basic_streambuf<char, std::char_traits<char> >*, bool&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+     n1: 524289 0x4F78416: std::ostream::operator<<(std::basic_streambuf<char, std::char_traits<char> >*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 524289 0x4E4DFAA: ???
+       n1: 524289 0x4E49854: ???
+        n1: 524289 0x4E42560: ???
+         n1: 524289 0x4E416E0: ???
+          n1: 524289 0x4E4D39A: ???
+           n0: 524289 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n1: 448368 0x4F88DC9: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 448368 0x4F89B79: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 448368 0x4E4E070: ???
+    n1: 448368 0x4E49854: ???
+     n1: 448368 0x4E42560: ???
+      n1: 448368 0x4E416E0: ???
+       n1: 448368 0x4E4D39A: ???
+        n0: 448368 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n0: 98770 in 35 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=4
+#-----------
+time=31235645
+mem_heap_B=9113328
+mem_heap_extra_B=5624
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=33008213
+mem_heap_B=9124465
+mem_heap_extra_B=6231
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=35368565
+mem_heap_B=9144782
+mem_heap_extra_B=8546
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=37283805
+mem_heap_B=9160366
+mem_heap_extra_B=9466
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=39711445
+mem_heap_B=9176035
+mem_heap_extra_B=11045
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=41882303
+mem_heap_B=9200050
+mem_heap_extra_B=12718
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=44801215
+mem_heap_B=9219178
+mem_heap_extra_B=14758
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=47704962
+mem_heap_B=9241035
+mem_heap_extra_B=16509
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=49714430
+mem_heap_B=9255543
+mem_heap_extra_B=17665
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=52793931
+mem_heap_B=9281105
+mem_heap_extra_B=19951
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=56079384
+mem_heap_B=9310262
+mem_heap_extra_B=22386
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=58131882
+mem_heap_B=9322056
+mem_heap_extra_B=23392
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=60275376
+mem_heap_B=9338405
+mem_heap_extra_B=24755
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=62511923
+mem_heap_B=9353247
+mem_heap_extra_B=26137
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=64892531
+mem_heap_B=9375568
+mem_heap_extra_B=28128
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=67352046
+mem_heap_B=9392450
+mem_heap_extra_B=29670
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=69940804
+mem_heap_B=9413467
+mem_heap_extra_B=31437
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=72694087
+mem_heap_B=9434223
+mem_heap_extra_B=33481
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=75683923
+mem_heap_B=9459586
+mem_heap_extra_B=36062
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=78771736
+mem_heap_B=9480695
+mem_heap_extra_B=37641
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=80438441
+mem_heap_B=9494883
+mem_heap_extra_B=38581
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=83741513
+mem_heap_B=9532581
+mem_heap_extra_B=40979
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=85438989
+mem_heap_B=9546115
+mem_heap_extra_B=42261
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=88256455
+mem_heap_B=9553478
+mem_heap_extra_B=43354
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=90931820
+mem_heap_B=9576445
+mem_heap_extra_B=45611
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=92283363
+mem_heap_B=9587973
+mem_heap_extra_B=46315
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=94973763
+mem_heap_B=9601139
+mem_heap_extra_B=47637
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=96767865
+mem_heap_B=9613738
+mem_heap_extra_B=48902
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=98559714
+mem_heap_B=9627455
+mem_heap_extra_B=50177
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=100360024
+mem_heap_B=9640132
+mem_heap_extra_B=51492
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=102153846
+mem_heap_B=9663713
+mem_heap_extra_B=52919
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=104843828
+mem_heap_B=9683402
+mem_heap_extra_B=54582
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=106635638
+mem_heap_B=9697739
+mem_heap_extra_B=55837
+mem_stacks_B=0
+heap_tree=detailed
+n3: 9697739 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8967344 0x4E4EF0D: ???
+  n1: 8967344 0x4E4EB4A: ???
+   n1: 8967344 0x4E4E8D1: ???
+    n1: 8967344 0x4E4E0B4: ???
+     n1: 8967344 0x4E49854: ???
+      n1: 8967344 0x4E42560: ???
+       n1: 8967344 0x4E416E0: ???
+        n1: 8967344 0x4E4D39A: ???
+         n0: 8967344 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 499972 0x48589D0: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 483542 0x485B06A: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 483484 0x4E43B56: ???
+    n1: 483484 0x4E50EEF: ???
+     n1: 483484 0x4E4258B: ???
+      n1: 483484 0x4E416E0: ???
+       n1: 483484 0x4E4D39A: ???
+        n0: 483484 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 16430 in 2 places, all below massif's threshold (1.00%)
+ n0: 230423 in 65 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=37
+#-----------
+time=109323866
+mem_heap_B=9731312
+mem_heap_extra_B=57760
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=111122002
+mem_heap_B=9730962
+mem_heap_extra_B=58286
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=112912947
+mem_heap_B=9743461
+mem_heap_extra_B=59427
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=115599257
+mem_heap_B=9766078
+mem_heap_extra_B=61194
+mem_stacks_B=0
+heap_tree=detailed
+n3: 9766078 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8967344 0x4E4EF0D: ???
+  n1: 8967344 0x4E4EB4A: ???
+   n1: 8967344 0x4E4E8D1: ???
+    n1: 8967344 0x4E4E0B4: ???
+     n1: 8967344 0x4E49854: ???
+      n1: 8967344 0x4E42560: ???
+       n1: 8967344 0x4E416E0: ???
+        n1: 8967344 0x4E4D39A: ???
+         n0: 8967344 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 556568 0x48589D0: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 540138 0x485B06A: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 540080 0x4E43B56: ???
+    n1: 540080 0x4E50EEF: ???
+     n1: 540080 0x4E4258B: ???
+      n1: 540080 0x4E416E0: ???
+       n1: 540080 0x4E4D39A: ???
+        n0: 540080 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 16430 in 2 places, all below massif's threshold (1.00%)
+ n0: 242166 in 65 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=41
+#-----------
+time=118289329
+mem_heap_B=9784899
+mem_heap_extra_B=63469
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=120081806
+mem_heap_B=9800030
+mem_heap_extra_B=64690
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=122771762
+mem_heap_B=9820840
+mem_heap_extra_B=66800
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=124566578
+mem_heap_B=9837325
+mem_heap_extra_B=67955
+mem_stacks_B=0
+heap_tree=detailed
+n3: 9837325 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8967344 0x4E4EF0D: ???
+  n1: 8967344 0x4E4EB4A: ???
+   n1: 8967344 0x4E4E8D1: ???
+    n1: 8967344 0x4E4E0B4: ???
+     n1: 8967344 0x4E49854: ???
+      n1: 8967344 0x4E42560: ???
+       n1: 8967344 0x4E416E0: ???
+        n1: 8967344 0x4E4D39A: ???
+         n0: 8967344 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 614078 0x48589D0: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 597648 0x485B06A: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 597590 0x4E43B56: ???
+    n1: 597590 0x4E50EEF: ???
+     n1: 597590 0x4E4258B: ???
+      n1: 597590 0x4E416E0: ???
+       n1: 597590 0x4E4D39A: ???
+        n0: 597590 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 16430 in 2 places, all below massif's threshold (1.00%)
+ n0: 255903 in 65 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=45
+#-----------
+time=126357749
+mem_heap_B=9848494
+mem_heap_extra_B=68914
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=128152131
+mem_heap_B=9861967
+mem_heap_extra_B=70505
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=130843740
+mem_heap_B=9879021
+mem_heap_extra_B=72315
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=133532973
+mem_heap_B=9899664
+mem_heap_extra_B=74880
+mem_stacks_B=0
+heap_tree=detailed
+n3: 9899664 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8967344 0x4E4EF0D: ???
+  n1: 8967344 0x4E4EB4A: ???
+   n1: 8967344 0x4E4E8D1: ???
+    n1: 8967344 0x4E4E0B4: ???
+     n1: 8967344 0x4E49854: ???
+      n1: 8967344 0x4E42560: ???
+       n1: 8967344 0x4E416E0: ???
+        n1: 8967344 0x4E4D39A: ???
+         n0: 8967344 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 661836 0x48589D0: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 645154 0x485B06A: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 645096 0x4E43B56: ???
+    n1: 645096 0x4E50EEF: ???
+     n1: 645096 0x4E4258B: ???
+      n1: 645096 0x4E416E0: ???
+       n1: 645096 0x4E4D39A: ???
+        n0: 645096 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 16682 in 2 places, all below massif's threshold (1.00%)
+ n0: 270484 in 65 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=49
+#-----------
+time=137117858
+mem_heap_B=9925265
+mem_heap_extra_B=77047
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=138471266
+mem_heap_B=9932834
+mem_heap_extra_B=77654
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=139822950
+mem_heap_B=9943330
+mem_heap_extra_B=78550
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=141177062
+mem_heap_B=9952198
+mem_heap_extra_B=79658
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=142528672
+mem_heap_B=9964757
+mem_heap_extra_B=80707
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=143883509
+mem_heap_B=9982252
+mem_heap_extra_B=81524
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=145236285
+mem_heap_B=9984306
+mem_heap_extra_B=82094
+mem_stacks_B=0
+heap_tree=detailed
+n4: 9984306 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8967344 0x4E4EF0D: ???
+  n1: 8967344 0x4E4EB4A: ???
+   n1: 8967344 0x4E4E8D1: ???
+    n1: 8967344 0x4E4E0B4: ???
+     n1: 8967344 0x4E49854: ???
+      n1: 8967344 0x4E42560: ???
+       n1: 8967344 0x4E416E0: ???
+        n1: 8967344 0x4E4D39A: ???
+         n0: 8967344 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 731190 0x48589D0: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 714760 0x485B06A: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 714702 0x4E43B56: ???
+    n1: 714702 0x4E50EEF: ???
+     n1: 714702 0x4E4258B: ???
+      n1: 714702 0x4E416E0: ???
+       n1: 714702 0x4E4D39A: ???
+        n0: 714702 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 16430 in 2 places, all below massif's threshold (1.00%)
+ n0: 179980 in 64 places, all below massif's threshold (1.00%)
+ n1: 105792 0x4859433: keyVNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n1: 105792 0x4E44B48: ???
+   n1: 105792 0x4E43B27: ???
+    n1: 105792 0x4E50EEF: ???
+     n1: 105792 0x4E4258B: ???
+      n1: 105792 0x4E416E0: ???
+       n1: 105792 0x4E4D39A: ???
+        n0: 105792 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=56
+#-----------
+time=146594431
+mem_heap_B=9999265
+mem_heap_extra_B=83463
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=147946029
+mem_heap_B=10002221
+mem_heap_extra_B=83611
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=149297910
+mem_heap_B=10012919
+mem_heap_extra_B=84713
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=150652918
+mem_heap_B=10023077
+mem_heap_extra_B=85603
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=152004957
+mem_heap_B=10035707
+mem_heap_extra_B=86749
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=153362151
+mem_heap_B=10045617
+mem_heap_extra_B=87655
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=153978081
+mem_heap_B=10054548
+mem_heap_extra_B=88340
+mem_stacks_B=0
+heap_tree=detailed
+n4: 10054548 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8967344 0x4E4EF0D: ???
+  n1: 8967344 0x4E4EB4A: ???
+   n1: 8967344 0x4E4E8D1: ???
+    n1: 8967344 0x4E4E0B4: ???
+     n1: 8967344 0x4E49854: ???
+      n1: 8967344 0x4E42560: ???
+       n1: 8967344 0x4E416E0: ???
+        n1: 8967344 0x4E4D39A: ???
+         n0: 8967344 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 787706 0x48589D0: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 770580 0x485B06A: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 770522 0x4E43B56: ???
+    n1: 770522 0x4E50EEF: ???
+     n1: 770522 0x4E4258B: ???
+      n1: 770522 0x4E416E0: ???
+       n1: 770522 0x4E4D39A: ???
+        n0: 770522 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 17126 in 2 places, all below massif's threshold (1.00%)
+ n0: 185066 in 64 places, all below massif's threshold (1.00%)
+ n1: 114432 0x4859433: keyVNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n1: 114432 0x4E44B48: ???
+   n1: 114432 0x4E43B27: ???
+    n1: 114432 0x4E50EEF: ???
+     n1: 114432 0x4E4258B: ???
+      n1: 114432 0x4E416E0: ???
+       n1: 114432 0x4E4D39A: ???
+        n0: 114432 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=63
+#-----------
+time=155329639
+mem_heap_B=10061667
+mem_heap_extra_B=88797
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=156681326
+mem_heap_B=10070410
+mem_heap_extra_B=89446
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=158032884
+mem_heap_B=10080426
+mem_heap_extra_B=90038
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=159384542
+mem_heap_B=10090732
+mem_heap_extra_B=91284
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=160736295
+mem_heap_B=10100701
+mem_heap_extra_B=92211
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=162089885
+mem_heap_B=10111370
+mem_heap_extra_B=93254
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=163442743
+mem_heap_B=10120979
+mem_heap_extra_B=93877
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=164797294
+mem_heap_B=10133348
+mem_heap_extra_B=94940
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=166148860
+mem_heap_B=10146484
+mem_heap_extra_B=96092
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=166936471
+mem_heap_B=10147733
+mem_heap_extra_B=96723
+mem_stacks_B=0
+heap_tree=detailed
+n4: 10147733 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8967344 0x4E4EF0D: ???
+  n1: 8967344 0x4E4EB4A: ???
+   n1: 8967344 0x4E4E8D1: ???
+    n1: 8967344 0x4E4E0B4: ???
+     n1: 8967344 0x4E49854: ???
+      n1: 8967344 0x4E42560: ???
+       n1: 8967344 0x4E416E0: ???
+        n1: 8967344 0x4E4D39A: ???
+         n0: 8967344 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 863418 0x48589D0: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 846514 0x485B06A: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 846456 0x4E43B56: ???
+    n1: 846456 0x4E50EEF: ???
+     n1: 846456 0x4E4258B: ???
+      n1: 846456 0x4E416E0: ???
+       n1: 846456 0x4E4D39A: ???
+        n0: 846456 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 16904 in 2 places, all below massif's threshold (1.00%)
+ n0: 191467 in 64 places, all below massif's threshold (1.00%)
+ n1: 125504 0x4859433: keyVNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n1: 125504 0x4E44B48: ???
+   n1: 125504 0x4E43B27: ???
+    n1: 125504 0x4E50EEF: ???
+     n1: 125504 0x4E4258B: ???
+      n1: 125504 0x4E416E0: ???
+       n1: 125504 0x4E4D39A: ???
+        n0: 125504 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=73
+#-----------
+time=168288305
+mem_heap_B=10158401
+mem_heap_extra_B=97623
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=169643723
+mem_heap_B=10179064
+mem_heap_extra_B=98848
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=170995774
+mem_heap_B=10177025
+mem_heap_extra_B=99295
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=172347370
+mem_heap_B=10183814
+mem_heap_extra_B=99890
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=173703198
+mem_heap_B=10195244
+mem_heap_extra_B=100756
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=175056645
+mem_heap_B=10220053
+mem_heap_extra_B=101427
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=176410294
+mem_heap_B=10234094
+mem_heap_extra_B=102338
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=177095063
+mem_heap_B=10244292
+mem_heap_extra_B=102796
+mem_stacks_B=0
+heap_tree=detailed
+n4: 10244292 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8967344 0x4E4EF0D: ???
+  n1: 8967344 0x4E4EB4A: ???
+   n1: 8967344 0x4E4E8D1: ???
+    n1: 8967344 0x4E4E0B4: ???
+     n1: 8967344 0x4E49854: ???
+      n1: 8967344 0x4E42560: ???
+       n1: 8967344 0x4E416E0: ???
+        n1: 8967344 0x4E4D39A: ???
+         n0: 8967344 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 946544 0x48589D0: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 912664 0x485B06A: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 912606 0x4E43B56: ???
+    n1: 912606 0x4E50EEF: ???
+     n1: 912606 0x4E4258B: ???
+      n1: 912606 0x4E416E0: ???
+       n1: 912606 0x4E4D39A: ???
+        n0: 912606 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 33880 in 2 places, all below massif's threshold (1.00%)
+ n0: 196388 in 64 places, all below massif's threshold (1.00%)
+ n1: 134016 0x4859433: keyVNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n1: 134016 0x4E44B48: ???
+   n1: 134016 0x4E43B27: ???
+    n1: 134016 0x4E50EEF: ???
+     n1: 134016 0x4E4258B: ???
+      n1: 134016 0x4E416E0: ???
+       n1: 134016 0x4E4D39A: ???
+        n0: 134016 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=81
+#-----------
+time=178448233
+mem_heap_B=10249265
+mem_heap_extra_B=103303
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=179799915
+mem_heap_B=10256399
+mem_heap_extra_B=104225
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=181152933
+mem_heap_B=10267024
+mem_heap_extra_B=105184
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=182504686
+mem_heap_B=10277017
+mem_heap_extra_B=106119
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=183858679
+mem_heap_B=10286308
+mem_heap_extra_B=107060
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=185210795
+mem_heap_B=10297210
+mem_heap_extra_B=108038
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=87
+#-----------
+time=186562456
+mem_heap_B=10305212
+mem_heap_extra_B=109044
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=88
+#-----------
+time=187915754
+mem_heap_B=10330718
+mem_heap_extra_B=110146
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=89
+#-----------
+time=189271829
+mem_heap_B=10328844
+mem_heap_extra_B=110716
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=90
+#-----------
+time=190300160
+mem_heap_B=10339305
+mem_heap_extra_B=111327
+mem_stacks_B=0
+heap_tree=peak
+n4: 10339305 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8967344 0x4E4EF0D: ???
+  n1: 8967344 0x4E4EB4A: ???
+   n1: 8967344 0x4E4E8D1: ???
+    n1: 8967344 0x4E4E0B4: ???
+     n1: 8967344 0x4E49854: ???
+      n1: 8967344 0x4E42560: ???
+       n1: 8967344 0x4E416E0: ???
+        n1: 8967344 0x4E4D39A: ???
+         n0: 8967344 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+ n2: 1023574 0x48589D0: elektraRealloc (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n2: 990760 0x485B06A: keyAddBaseName (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+   n1: 990702 0x4E43B56: ???
+    n1: 990702 0x4E50EEF: ???
+     n1: 990702 0x4E4258B: ???
+      n1: 990702 0x4E416E0: ???
+       n1: 990702 0x4E4D39A: ???
+        n0: 990702 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+   n0: 58 in 1 place, below massif's threshold (1.00%)
+  n0: 32814 in 2 places, all below massif's threshold (1.00%)
+ n0: 203171 in 64 places, all below massif's threshold (1.00%)
+ n1: 145216 0x4859433: keyVNew (in /home/jenkins/workspace/build/linux/lib/libelektra-core.so.0.8.26)
+  n1: 145216 0x4E44B48: ???
+   n1: 145216 0x4E43B27: ???
+    n1: 145216 0x4E50EEF: ???
+     n1: 145216 0x4E4258B: ???
+      n1: 145216 0x4E416E0: ???
+       n1: 145216 0x4E4D39A: ???
+        n0: 145216 0x4012EF: main (in /home/jenkins/workspace/build/linux/bin/benchmark_plugingetset)
+#-----------
+snapshot=91
+#-----------
+time=191652009
+mem_heap_B=10344409
+mem_heap_extra_B=112127
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=92
+#-----------
+time=193003643
+mem_heap_B=10355824
+mem_heap_extra_B=113056
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=93
+#-----------
+time=194644829
+mem_heap_B=1430592
+mem_heap_extra_B=110432
+mem_stacks_B=0
+heap_tree=empty
