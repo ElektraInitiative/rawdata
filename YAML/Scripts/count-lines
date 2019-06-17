@@ -1,0 +1,184 @@
+#!/usr/bin/env bash
+
+# -- Global Variables ----------------------------------------------------------
+
+source_directory="$PWD"
+build_directory="$source_directory/build/mac"
+cloc_options=(-csv -q)
+
+# -- Functions -----------------------------------------------------------------
+
+check_environment() {
+	command -v cloc > /dev/null 2>&1 || {
+		printf >&2 'This script requires the command `cloc`\n'
+		exit 1
+	}
+
+	test -e "$build_directory" || {
+		printf >&2 'Build directory “%s” does not exist\n' "$build_directory"
+		exit 1
+	}
+}
+
+filter_code() {
+	grep SUM | cut -d, -f5
+}
+
+# ============
+# = YAML CPP =
+# ============
+
+print_lines_yamlcpp() {
+	cloc "${cloc_options[@]}" \
+		--exclude-lang='CMake,Markdown' \
+		--not-match-f='testmod' \
+		--exclude-dir='yamlcpp' \
+		"$source_directory/src/plugins/yamlcpp" | filter_code
+}
+
+# ==========
+# = Yan LR =
+# ==========
+
+print_lines_yanlr_written() {
+	cloc "${cloc_options[@]}" \
+		--exclude-lang='ANTLR Grammar,CMake,Markdown' \
+		--not-match-f='testmod' \
+		--exclude-dir='yanlr' \
+		"$source_directory/src/plugins/yanlr" | filter_code
+}
+
+print_lines_yanlr_grammar() {
+	cloc "${cloc_options[@]}" \
+		--include-lang='ANTLR Grammar' \
+		--exclude-dir='yanlr' \
+		"$source_directory/src/plugins/yanlr" | filter_code
+}
+
+print_lines_yanlr_generated() {
+	cloc "${cloc_options[@]}" \
+		--exclude-lang='CMake' \
+		--not-match-f='YAML\.cpp|readme' \
+		"$build_directory/src/plugins/yanlr" | filter_code
+}
+
+# =========
+# = YAMBi =
+# =========
+
+print_lines_yambi_written() {
+	cloc "${cloc_options[@]}" \
+		--exclude-lang='CMake,Markdown' \
+		--not-match-f='testmod' \
+		--exclude-dir='yambi' \
+		"$source_directory/src/plugins/yambi" | filter_code
+}
+
+replace_newline_return() {
+	awk '{if (NR>1) {printf("%s⏎", line);} line=$0;} END { printf("%s\n", line); }'
+}
+
+print_lines_yambi_grammar() {
+	only_code="$(
+		cat "$source_directory/src/plugins/yambi/parser.ypp" |
+			replace_newline_return |
+			sed -E 's~/\*([^*]|\*[^/])*\*/~~g' |
+			tr '⏎' '\n' |
+			sed '/^[[:space:]]*$/d'
+	)"
+	printf '%s' "$only_code" | wc -l | sed -E 's/[ ]*(.*)/\1/'
+}
+
+print_lines_yambi_generated() {
+	cloc "${cloc_options[@]}" \
+		--exclude-lang='CMake' \
+		--not-match-f='readme' \
+		"$build_directory/src/plugins/yambi" | filter_code
+}
+
+# ========
+# = YAwn =
+# ========
+
+print_lines_yawn_written() {
+	cloc "${cloc_options[@]}" \
+		--exclude-lang='CMake,Markdown' \
+		--not-match-f='testmod' \
+		--exclude-dir='yawn' \
+		"$source_directory/src/plugins/yawn" | filter_code
+}
+
+print_lines_yawn_grammar() {
+	cloc "${cloc_options[@]}" \
+		"$build_directory/src/plugins/yawn/yaml_grammar.h" | filter_code
+}
+
+# ===========
+# = YAy PEG =
+# ===========
+
+print_lines_yaypeg_written() {
+	cloc "${cloc_options[@]}" \
+		--exclude-lang='CMake,Markdown' \
+		--not-match-f='testmod' \
+		--exclude-dir='yaypeg' \
+		"$source_directory/src/plugins/yaypeg" | filter_code
+}
+
+# -- Main ----------------------------------------------------------------------
+
+check_environment
+
+printf -- '————————\n'
+printf -- 'YAML CPP\n'
+printf -- '————————\n\n'
+
+written="$(print_lines_yamlcpp)"
+printf 'Hand Written: %s\n\n' "$written"
+
+printf -- '——————\n'
+printf -- 'Yan LR\n'
+printf -- '——————\n\n'
+
+written="$(print_lines_yanlr_written)"
+grammar="$(print_lines_yanlr_grammar)"
+generated="$(print_lines_yanlr_generated)"
+sum=$((written + grammar + generated))
+printf 'Hand Written: %s\n' "$written"
+printf 'Grammar:      %s\n' "$grammar"
+printf 'Generated:    %s\n' "$generated"
+printf '——————————————————\n'
+printf 'Sum:          %s\n\n' "$sum"
+
+printf -- '—————\n'
+printf -- 'YAMBi\n'
+printf -- '—————\n\n'
+
+written="$(print_lines_yambi_written)"
+grammar="$(print_lines_yambi_grammar)"
+generated="$(print_lines_yambi_generated)"
+sum=$((written + grammar + generated))
+printf 'Hand Written: %s\n' "$written"
+printf 'Grammar:      %s\n' "$grammar"
+printf 'Generated:    %s\n' "$generated"
+printf '——————————————————\n'
+printf 'Sum:          %s\n\n' "$sum"
+
+printf -- '————\n'
+printf -- 'YAWn\n'
+printf -- '————\n\n'
+
+written="$(print_lines_yawn_written)"
+grammar="$(print_lines_yawn_grammar)"
+sum=$((written + grammar))
+printf 'Hand Written: %s\n' "$written"
+printf 'Grammar:      %s\n' "$grammar"
+printf '——————————————————\n'
+printf 'Sum:          %s\n\n' "$sum"
+
+printf -- '———————\n'
+printf -- 'YAy PEG\n'
+printf -- '———————\n\n'
+
+written="$(print_lines_yaypeg_written)"
+printf 'Hand Written: %s\n' "$written"
