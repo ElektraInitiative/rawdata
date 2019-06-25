@@ -1,0 +1,72 @@
+————————
+YAML CPP
+————————
+
+Hand Written: 609
+——————————————————
+Sum:          609
+
+——————
+Yan LR
+——————
+
+Hand Written: 717
+Grammar:      24
+Generated:    1108
+——————————————————
+Sum:          1849
+
+Lexer:        416
+——————————————————
+Sum:          416
+
+—————
+YAMBi
+—————
+
+Hand Written: 766
+Grammar:      86
+Generated:    2046
+——————————————————
+Sum:          2898
+
+Input:        63
+Symbol:       53
+Lexer:        352
+——————————————————
+Sum:          468
+
+————
+YAWn
+————
+
+Hand Written: 1096
+Grammar:      50
+——————————————————
+Sum:          1146
+
+Input:        69
+Token:        101
+Walk:         124
+Error:        94
+Listener:     126
+Position:     38
+Lexer:        363
+——————————————————
+Sum:          915
+
+———————
+YAy PEG
+———————
+
+Hand Written: 1187
+——————————————————
+Sum:          1187
+
+Parser:       752
+State:        70
+Walk:         128
+Listener:     122
+Other:        115
+——————————————————
+Sum:          1187
