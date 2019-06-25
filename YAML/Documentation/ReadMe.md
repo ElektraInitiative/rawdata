@@ -61,7 +61,7 @@ All of the runtime benchmark data was created using the script [`benchmark-runti
 in the root of Elektra’s repository. After you built Elektra you can copy [`benchmark-runtime`](../Scripts/benchmark-runtime) to the root of Elektra’s repository and call it using
 
 ```sh
-./benchmark
+./benchmark-runtime
 ```
 
 ### Memory Usage
