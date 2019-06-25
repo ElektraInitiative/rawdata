@@ -1,0 +1,2122 @@
+desc: (none)
+cmd: ./benchmark_crypto_comparison 10
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=3861785039
+mem_heap_B=1720828
+mem_heap_extra_B=274284
+mem_stacks_B=0
+heap_tree=peak
+n10: 1720828 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n7: 955509 0x5B52D9B: elektraMalloc (internal.c:241)
+  n3: 261312 0x5B540C2: elektraKeyMalloc (key.c:85)
+   n3: 119296 0x5B54055: keyNew (key.c:193)
+    n1: 65600 0x7889D3D: dump::unserialise(std::istream&, ckdb::_Key*, ckdb::_KeySet*) (dump.cpp:129)
+     n1: 65600 0x788B4C3: elektraDumpGet (dump.cpp:233)
+      n1: 65600 0x5131D5B: elektraGetDoUpdate (kdb.c:525)
+       n2: 65600 0x512D785: kdbGet (kdb.c:868)
+        n1: 65600 0x40EA17: kdb::KDB::get(kdb::KeySet&, kdb::Key&) (kdb.hpp:183)
+         n2: 65600 0x40FD0C: kdb::KDB::get(kdb::KeySet&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (kdb.hpp:166)
+          n1: 65600 0x4159EA: kdb::Key mountBackend<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:59)
+           n1: 65600 0x40B21E: void benchmark_crypto_set<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:89)
+            n0: 65600 0x40A0B8: main (benchmark_crypto_comparison.cpp:194)
+          n0: 0 in 3 places, all below massif's threshold (1.00%)
+        n0: 0 in 1 place, below massif's threshold (1.00%)
+    n2: 53696 0x5B55DC9: keySetMeta (keymeta.c:476)
+     n1: 51904 0x788A16A: dump::unserialise(std::istream&, ckdb::_Key*, ckdb::_KeySet*) (dump.cpp:159)
+      n1: 51904 0x788B4C3: elektraDumpGet (dump.cpp:233)
+       n1: 51904 0x5131D5B: elektraGetDoUpdate (kdb.c:525)
+        n2: 51904 0x512D785: kdbGet (kdb.c:868)
+         n1: 46272 0x40EA17: kdb::KDB::get(kdb::KeySet&, kdb::Key&) (kdb.hpp:183)
+          n2: 46272 0x40FD0C: kdb::KDB::get(kdb::KeySet&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (kdb.hpp:166)
+           n1: 46272 0x4159EA: kdb::Key mountBackend<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:59)
+            n1: 46272 0x40B21E: void benchmark_crypto_set<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:89)
+             n0: 46272 0x40A0B8: main (benchmark_crypto_comparison.cpp:194)
+           n0: 0 in 3 places, all below massif's threshold (1.00%)
+         n0: 5632 in 1 place, below massif's threshold (1.00%)
+     n0: 1792 in 11 places, all below massif's threshold (1.00%)
+    n0: 0 in 7 places, all below massif's threshold (1.00%)
+   n2: 87552 0x5B5418F: keyDup (key.c:273)
+    n1: 66880 0x5B57F97: ksDeepDup (keyset.c:269)
+     n1: 66880 0x51383DA: splitPrepare (split.c:789)
+      n1: 66880 0x5132234: kdbSet (kdb.c:1240)
+       n2: 66880 0x40F047: kdb::KDB::set(kdb::KeySet&, kdb::Key&) (kdb.hpp:227)
+        n2: 66880 0x41003C: kdb::KDB::set(kdb::KeySet&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (kdb.hpp:208)
+         n1: 66880 0x415E39: kdb::Key mountBackend<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:77)
+          n1: 66880 0x40B21E: void benchmark_crypto_set<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:89)
+           n0: 66880 0x40A0B8: main (benchmark_crypto_comparison.cpp:194)
+         n0: 0 in 3 places, all below massif's threshold (1.00%)
+        n0: 0 in 3 places, all below massif's threshold (1.00%)
+    n0: 20672 in 20 places, all below massif's threshold (1.00%)
+   n2: 54464 0x5B54113: keyVNew (key.c:215)
+    n2: 53184 0x5B54091: keyNew (key.c:199)
+     n1: 46464 0x78893E0: dump::serialise(std::ostream&, ckdb::_Key*, ckdb::_KeySet*) (dump.cpp:53)
+      n1: 46464 0x788B699: elektraDumpSet (dump.cpp:248)
+       n1: 46464 0x51331A3: elektraSetPrepare (kdb.c:951)
+        n1: 46464 0x5132259: kdbSet (kdb.c:1243)
+         n2: 46464 0x40F047: kdb::KDB::set(kdb::KeySet&, kdb::Key&) (kdb.hpp:227)
+          n2: 46464 0x41003C: kdb::KDB::set(kdb::KeySet&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (kdb.hpp:208)
+           n1: 46464 0x415E39: kdb::Key mountBackend<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:77)
+            n1: 46464 0x40B21E: void benchmark_crypto_set<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:89)
+             n0: 46464 0x40A0B8: main (benchmark_crypto_comparison.cpp:194)
+           n0: 0 in 3 places, all below massif's threshold (1.00%)
+          n0: 0 in 3 places, all below massif's threshold (1.00%)
+     n0: 6720 in 174 places, all below massif's threshold (1.00%)
+    n0: 1280 in 2 places, all below massif's threshold (1.00%)
+  n2: 259152 0x5B578E5: ksVNew (keyset.c:184)
+   n3: 259152 0x5B57833: ksNew (keyset.c:152)
+    n2: 113736 0x5B57DC0: ksDup (keyset.c:235)
+     n1: 112496 0x5B543B4: keyCopy (key.c:390)
+      n2: 112496 0x5B54209: keyDup (key.c:287)
+       n1: 100248 0x5B57F97: ksDeepDup (keyset.c:269)
+        n1: 100248 0x51383DA: splitPrepare (split.c:789)
+         n1: 100248 0x5132234: kdbSet (kdb.c:1240)
+          n2: 100248 0x40F047: kdb::KDB::set(kdb::KeySet&, kdb::Key&) (kdb.hpp:227)
+           n2: 100248 0x41003C: kdb::KDB::set(kdb::KeySet&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (kdb.hpp:208)
+            n1: 100248 0x415E39: kdb::Key mountBackend<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:77)
+             n1: 100248 0x40B21E: void benchmark_crypto_set<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:89)
+              n0: 100248 0x40A0B8: main (benchmark_crypto_comparison.cpp:194)
+            n0: 0 in 3 places, all below massif's threshold (1.00%)
+           n0: 0 in 3 places, all below massif's threshold (1.00%)
+       n0: 12248 in 7 places, all below massif's threshold (1.00%)
+     n0: 1240 in 12 places, all below massif's threshold (1.00%)
+    n2: 96000 0x5B55EFC: keySetMeta (keymeta.c:521)
+     n1: 92544 0x788A16A: dump::unserialise(std::istream&, ckdb::_Key*, ckdb::_KeySet*) (dump.cpp:159)
+      n1: 92544 0x788B4C3: elektraDumpGet (dump.cpp:233)
+       n1: 92544 0x5131D5B: elektraGetDoUpdate (kdb.c:525)
+        n2: 92544 0x512D785: kdbGet (kdb.c:868)
+         n1: 92544 0x40EA17: kdb::KDB::get(kdb::KeySet&, kdb::Key&) (kdb.hpp:183)
+          n2: 92544 0x40FD0C: kdb::KDB::get(kdb::KeySet&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (kdb.hpp:166)
+           n1: 92544 0x4159EA: kdb::Key mountBackend<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:59)
+            n1: 92544 0x40B21E: void benchmark_crypto_set<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:89)
+             n0: 92544 0x40A0B8: main (benchmark_crypto_comparison.cpp:194)
+           n0: 0 in 3 places, all below massif's threshold (1.00%)
+         n0: 0 in 1 place, below massif's threshold (1.00%)
+     n0: 3456 in 5 places, all below massif's threshold (1.00%)
+    n0: 49416 in 34 places, all below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n3: 219788 0x5B53067: elektraStrNDup (internal.c:325)
+   n1: 174935 0x5B5431F: keyCopy (key.c:370)
+    n2: 174935 0x5B54209: keyDup (key.c:287)
+     n1: 171031 0x5B57F97: ksDeepDup (keyset.c:269)
+      n1: 171031 0x51383DA: splitPrepare (split.c:789)
+       n1: 171031 0x5132234: kdbSet (kdb.c:1240)
+        n2: 171031 0x40F047: kdb::KDB::set(kdb::KeySet&, kdb::Key&) (kdb.hpp:227)
+         n2: 171031 0x41003C: kdb::KDB::set(kdb::KeySet&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (kdb.hpp:208)
+          n1: 171031 0x415E39: kdb::Key mountBackend<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:77)
+           n1: 171031 0x40B21E: void benchmark_crypto_set<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:89)
+            n0: 171031 0x40A0B8: main (benchmark_crypto_comparison.cpp:194)
+          n0: 0 in 3 places, all below massif's threshold (1.00%)
+         n0: 0 in 3 places, all below massif's threshold (1.00%)
+     n0: 3904 in 18 places, all below massif's threshold (1.00%)
+   n2: 23906 0x5B55E65: keySetMeta (keymeta.c:497)
+    n1: 23553 0x788A16A: dump::unserialise(std::istream&, ckdb::_Key*, ckdb::_KeySet*) (dump.cpp:159)
+     n1: 23553 0x788B4C3: elektraDumpGet (dump.cpp:233)
+      n1: 23553 0x5131D5B: elektraGetDoUpdate (kdb.c:525)
+       n1: 23553 0x512D785: kdbGet (kdb.c:868)
+        n0: 23553 in 2 places, all below massif's threshold (1.00%)
+    n0: 353 in 8 places, all below massif's threshold (1.00%)
+   n1: 20947 0x5B5436E: keyCopy (key.c:380)
+    n1: 20947 0x5B54209: keyDup (key.c:287)
+     n0: 20947 in 18 places, all below massif's threshold (1.00%)
+  n2: 88608 0x5B57875: ksVNew (keyset.c:170)
+   n3: 88608 0x5B57833: ksNew (keyset.c:152)
+    n2: 40080 0x5B57DC0: ksDup (keyset.c:235)
+     n1: 39696 0x5B543B4: keyCopy (key.c:390)
+      n2: 39696 0x5B54209: keyDup (key.c:287)
+       n1: 35376 0x5B57F97: ksDeepDup (keyset.c:269)
+        n1: 35376 0x51383DA: splitPrepare (split.c:789)
+         n1: 35376 0x5132234: kdbSet (kdb.c:1240)
+          n2: 35376 0x40F047: kdb::KDB::set(kdb::KeySet&, kdb::Key&) (kdb.hpp:227)
+           n2: 35376 0x41003C: kdb::KDB::set(kdb::KeySet&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (kdb.hpp:208)
+            n1: 35376 0x415E39: kdb::Key mountBackend<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:77)
+             n1: 35376 0x40B21E: void benchmark_crypto_set<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:89)
+              n0: 35376 0x40A0B8: main (benchmark_crypto_comparison.cpp:194)
+            n0: 0 in 3 places, all below massif's threshold (1.00%)
+           n0: 0 in 3 places, all below massif's threshold (1.00%)
+       n0: 4320 in 7 places, all below massif's threshold (1.00%)
+     n0: 384 in 12 places, all below massif's threshold (1.00%)
+    n2: 36000 0x5B55EFC: keySetMeta (keymeta.c:521)
+     n1: 34704 0x788A16A: dump::unserialise(std::istream&, ckdb::_Key*, ckdb::_KeySet*) (dump.cpp:159)
+      n1: 34704 0x788B4C3: elektraDumpGet (dump.cpp:233)
+       n1: 34704 0x5131D5B: elektraGetDoUpdate (kdb.c:525)
+        n2: 34704 0x512D785: kdbGet (kdb.c:868)
+         n1: 34704 0x40EA17: kdb::KDB::get(kdb::KeySet&, kdb::Key&) (kdb.hpp:183)
+          n2: 34704 0x40FD0C: kdb::KDB::get(kdb::KeySet&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (kdb.hpp:166)
+           n1: 34704 0x4159EA: kdb::Key mountBackend<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:59)
+            n1: 34704 0x40B21E: void benchmark_crypto_set<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:89)
+             n0: 34704 0x40A0B8: main (benchmark_crypto_comparison.cpp:194)
+           n0: 0 in 3 places, all below massif's threshold (1.00%)
+         n0: 0 in 1 place, below massif's threshold (1.00%)
+     n0: 1296 in 5 places, all below massif's threshold (1.00%)
+    n0: 12528 in 34 places, all below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n2: 82572 0x5B5C179: keySetRaw (keyvalue.c:542)
+   n1: 68040 0x7889781: dump::serialise(std::ostream&, ckdb::_Key*, ckdb::_KeySet*) (dump.cpp:71)
+    n1: 68040 0x788B699: elektraDumpSet (dump.cpp:248)
+     n1: 68040 0x51331A3: elektraSetPrepare (kdb.c:951)
+      n1: 68040 0x5132259: kdbSet (kdb.c:1243)
+       n2: 68040 0x40F047: kdb::KDB::set(kdb::KeySet&, kdb::Key&) (kdb.hpp:227)
+        n2: 68040 0x41003C: kdb::KDB::set(kdb::KeySet&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (kdb.hpp:208)
+         n1: 68040 0x415E39: kdb::Key mountBackend<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:77)
+          n1: 68040 0x40B21E: void benchmark_crypto_set<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:89)
+           n0: 68040 0x40A0B8: main (benchmark_crypto_comparison.cpp:194)
+         n0: 0 in 3 places, all below massif's threshold (1.00%)
+        n0: 0 in 3 places, all below massif's threshold (1.00%)
+   n0: 14532 in 3 places, all below massif's threshold (1.00%)
+  n0: 22189 in 37 places, all below massif's threshold (1.00%)
+  n1: 21888 0x703DC37: libelektra_resolver_fm_hpu_b_LTX_elektraPluginopen (resolver.c:416)
+   n2: 21888 0x513A440: elektraPluginOpen (plugin.c:292)
+    n1: 21120 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+     n1: 21120 0x512BB74: backendOpen (backend.c:197)
+      n1: 21120 0x51342A1: mountOpen (mount.c:65)
+       n1: 21120 0x512DDEC: kdbOpen (kdb.c:336)
+        n1: 21120 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 21120 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 21120 0x415985: kdb::Key mountBackend<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:57)
+           n1: 21120 0x40B21E: void benchmark_crypto_set<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:89)
+            n0: 21120 0x40A0B8: main (benchmark_crypto_comparison.cpp:194)
+          n0: 0 in 6 places, all below massif's threshold (1.00%)
+    n0: 768 in 2 places, all below massif's threshold (1.00%)
+ n3: 237842 0x5B52CD1: elektraRealloc (internal.c:204)
+  n2: 208064 0x5B56A5F: keyAddName (keyname.c:965)
+   n3: 197908 0x5B565AB: elektraKeySetName (keyname.c:571)
+    n2: 169606 0x5B562CD: keySetName (keyname.c:510)
+     n1: 168690 0x7889E60: dump::unserialise(std::istream&, ckdb::_Key*, ckdb::_KeySet*) (dump.cpp:137)
+      n1: 168690 0x788B4C3: elektraDumpGet (dump.cpp:233)
+       n1: 168690 0x5131D5B: elektraGetDoUpdate (kdb.c:525)
+        n2: 168690 0x512D785: kdbGet (kdb.c:868)
+         n1: 168690 0x40EA17: kdb::KDB::get(kdb::KeySet&, kdb::Key&) (kdb.hpp:183)
+          n2: 168690 0x40FD0C: kdb::KDB::get(kdb::KeySet&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (kdb.hpp:166)
+           n1: 168690 0x4159EA: kdb::Key mountBackend<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:59)
+            n1: 168690 0x40B21E: void benchmark_crypto_set<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:89)
+             n0: 168690 0x40A0B8: main (benchmark_crypto_comparison.cpp:194)
+           n0: 0 in 3 places, all below massif's threshold (1.00%)
+         n0: 0 in 1 place, below massif's threshold (1.00%)
+     n0: 916 in 13 places, all below massif's threshold (1.00%)
+    n1: 25080 0x5B5571C: keyVInit (keyhelpers.c:344)
+     n2: 25080 0x5B54140: keyVNew (key.c:217)
+      n2: 22564 0x5B54091: keyNew (key.c:199)
+       n1: 21780 0x78893E0: dump::serialise(std::ostream&, ckdb::_Key*, ckdb::_KeySet*) (dump.cpp:53)
+        n1: 21780 0x788B699: elektraDumpSet (dump.cpp:248)
+         n1: 21780 0x51331A3: elektraSetPrepare (kdb.c:951)
+          n1: 21780 0x5132259: kdbSet (kdb.c:1243)
+           n2: 21780 0x40F047: kdb::KDB::set(kdb::KeySet&, kdb::Key&) (kdb.hpp:227)
+            n2: 21780 0x41003C: kdb::KDB::set(kdb::KeySet&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (kdb.hpp:208)
+             n1: 21780 0x415E39: kdb::Key mountBackend<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:77)
+              n1: 21780 0x40B21E: void benchmark_crypto_set<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:89)
+               n0: 21780 0x40A0B8: main (benchmark_crypto_comparison.cpp:194)
+             n0: 0 in 3 places, all below massif's threshold (1.00%)
+            n0: 0 in 3 places, all below massif's threshold (1.00%)
+       n0: 784 in 158 places, all below massif's threshold (1.00%)
+      n0: 2516 in 2 places, all below massif's threshold (1.00%)
+    n0: 3222 in 5 places, all below massif's threshold (1.00%)
+   n0: 10156 in 3 places, all below massif's threshold (1.00%)
+  n1: 24576 0x5B586FC: ksResize (keyset.c:2304)
+   n0: 24576 in 3 places, all below massif's threshold (1.00%)
+  n0: 5202 in 7 places, all below massif's threshold (1.00%)
+ n2: 163084 0x5B52E42: elektraCalloc (internal.c:256)
+  n2: 131200 0x5138E28: trieInsert (trie.c:124)
+   n2: 114800 0x5138FFE: trieInsert (trie.c:169)
+    n2: 90200 0x5138F61: trieInsert (trie.c:153)
+     n2: 57400 0x513523A: mountBackend (mount.c:588)
+      n1: 41000 0x513433D: mountOpen (mount.c:82)
+       n1: 41000 0x512DDEC: kdbOpen (kdb.c:336)
+        n1: 41000 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 41000 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 41000 0x415985: kdb::Key mountBackend<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:57)
+           n1: 41000 0x40B21E: void benchmark_crypto_set<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:89)
+            n0: 41000 0x40A0B8: main (benchmark_crypto_comparison.cpp:194)
+          n0: 0 in 6 places, all below massif's threshold (1.00%)
+      n0: 16400 in 1 place, below massif's threshold (1.00%)
+     n1: 32800 0x5138F61: trieInsert (trie.c:153)
+      n1: 32800 0x513523A: mountBackend (mount.c:588)
+       n1: 32800 0x513433D: mountOpen (mount.c:82)
+        n1: 32800 0x512DDEC: kdbOpen (kdb.c:336)
+         n1: 32800 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+          n2: 32800 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+           n1: 32800 0x415985: kdb::Key mountBackend<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:57)
+            n1: 32800 0x40B21E: void benchmark_crypto_set<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:89)
+             n0: 32800 0x40A0B8: main (benchmark_crypto_comparison.cpp:194)
+           n0: 0 in 6 places, all below massif's threshold (1.00%)
+    n1: 24600 0x513523A: mountBackend (mount.c:588)
+     n1: 24600 0x513433D: mountOpen (mount.c:82)
+      n1: 24600 0x512DDEC: kdbOpen (kdb.c:336)
+       n1: 24600 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+        n2: 24600 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+         n1: 24600 0x415985: kdb::Key mountBackend<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:57)
+          n1: 24600 0x40B21E: void benchmark_crypto_set<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:89)
+           n0: 24600 0x40A0B8: main (benchmark_crypto_comparison.cpp:194)
+         n0: 0 in 6 places, all below massif's threshold (1.00%)
+   n0: 16400 in 2 places, all below massif's threshold (1.00%)
+  n0: 31884 in 13 places, all below massif's threshold (1.00%)
+ n1: 72704 0x5FF2294: ??? (in /usr/lib64/libstdc++.so.6.0.24)
+  n1: 72704 0x4010C11: _dl_init (in /usr/lib64/ld-2.26.so)
+   n1: 72704 0x4000F08: ??? (in /usr/lib64/ld-2.26.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF000839: ???
+      n0: 72704 0x1FFF000857: ???
+ n2: 71696 0x8608776: CRYPTO_malloc (in /usr/lib64/libcrypto.so.1.0.2m)
+  n2: 60600 0x86BEF04: lh_insert (in /usr/lib64/libcrypto.so.1.0.2m)
+   n2: 53664 0x86C17B8: ??? (in /usr/lib64/libcrypto.so.1.0.2m)
+    n1: 48816 0x86C1E69: ERR_load_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+     n0: 48816 in 55 places, all below massif's threshold (1.00%)
+    n0: 4848 in 4 places, all below massif's threshold (1.00%)
+   n0: 6936 in 3 places, all below massif's threshold (1.00%)
+  n0: 11096 in 14 places, all below massif's threshold (1.00%)
+ n1: 65536 0x7F3CA9F: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+  n1: 65536 0x7F3BCE6: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n1: 65536 0x7F3C0F5: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+    n1: 65536 0x7F2ABC2: Botan::OctetString::change(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libbotan-1.10.so.1.17)
+     n1: 65536 0x80CB208: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+      n1: 65536 0x80CE390: Botan::confirm_startup_self_tests(Botan::Algorithm_Factory&) (in /usr/lib64/libbotan-1.10.so.1.17)
+       n1: 65536 0x80358FF: Botan::Library_State::initialize(bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+        n1: 65536 0x8033E26: Botan::LibraryInitializer::initialize(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libbotan-1.10.so.1.17)
+         n1: 65536 0x7C98BE9: elektraCryptoBotanInit (botan_operations.cpp:149)
+          n1: 65536 0x7CA39A3: elektraCryptoInit (crypto.c:116)
+           n1: 65536 0x7CA3936: libelektra_crypto_botan_LTX_elektraPluginopen (crypto.c:389)
+            n1: 65536 0x513A440: elektraPluginOpen (plugin.c:292)
+             n1: 65536 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+              n1: 65536 0x512BC00: backendOpen (backend.c:206)
+               n1: 65536 0x51342A1: mountOpen (mount.c:65)
+                n1: 65536 0x512DDEC: kdbOpen (kdb.c:336)
+                 n1: 65536 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+                  n1: 65536 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                   n1: 65536 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                    n1: 65536 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                     n0: 65536 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+ n0: 63260 in 242 places, all below massif's threshold (1.00%)
+ n1: 34464 0x8035CFA: Botan::Library_State::set(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+  n0: 34464 in 53 places, all below massif's threshold (1.00%)
+ n2: 34188 0x608BA3D: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libstdc++.so.6.0.24)
+  n1: 34157 0x8035DD7: Botan::Library_State::set(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 34157 in 52 places, all below massif's threshold (1.00%)
+  n0: 31 in 11 places, all below massif's threshold (1.00%)
+ n1: 22545 0x400C22F: _dl_new_object (in /usr/lib64/ld-2.26.so)
+  n1: 22545 0x4006723: _dl_map_object_from_fd (in /usr/lib64/ld-2.26.so)
+   n1: 22545 0x4008F9A: _dl_map_object (in /usr/lib64/ld-2.26.so)
+    n0: 22545 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=2
+#-----------
+time=6698831632
+mem_heap_B=694328
+mem_heap_extra_B=103288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=9739914991
+mem_heap_B=694470
+mem_heap_extra_B=103314
+mem_stacks_B=0
+heap_tree=detailed
+n11: 694470 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 163084 0x5B52E42: elektraCalloc (internal.c:256)
+  n3: 131200 0x5138E28: trieInsert (trie.c:124)
+   n2: 114800 0x5138FFE: trieInsert (trie.c:169)
+    n2: 90200 0x5138F61: trieInsert (trie.c:153)
+     n2: 57400 0x513523A: mountBackend (mount.c:588)
+      n1: 41000 0x513433D: mountOpen (mount.c:82)
+       n1: 41000 0x512DDEC: kdbOpen (kdb.c:336)
+        n1: 41000 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 41000 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 41000 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+           n0: 41000 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+          n0: 0 in 9 places, all below massif's threshold (1.00%)
+      n1: 16400 0x5136916: mountModules (mount.c:445)
+       n1: 16400 0x512DF84: kdbOpen (kdb.c:359)
+        n1: 16400 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 16400 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 16400 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+           n0: 16400 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+          n0: 0 in 9 places, all below massif's threshold (1.00%)
+     n1: 32800 0x5138F61: trieInsert (trie.c:153)
+      n1: 32800 0x513523A: mountBackend (mount.c:588)
+       n1: 32800 0x513433D: mountOpen (mount.c:82)
+        n1: 32800 0x512DDEC: kdbOpen (kdb.c:336)
+         n1: 32800 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+          n2: 32800 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+           n1: 32800 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+            n0: 32800 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+           n0: 0 in 9 places, all below massif's threshold (1.00%)
+    n1: 24600 0x513523A: mountBackend (mount.c:588)
+     n1: 24600 0x513433D: mountOpen (mount.c:82)
+      n1: 24600 0x512DDEC: kdbOpen (kdb.c:336)
+       n1: 24600 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+        n2: 24600 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+         n1: 24600 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+          n0: 24600 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+         n0: 0 in 9 places, all below massif's threshold (1.00%)
+   n1: 8200 0x513523A: mountBackend (mount.c:588)
+    n1: 8200 0x513433D: mountOpen (mount.c:82)
+     n1: 8200 0x512DDEC: kdbOpen (kdb.c:336)
+      n1: 8200 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+       n2: 8200 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+        n1: 8200 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+         n0: 8200 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+        n0: 0 in 9 places, all below massif's threshold (1.00%)
+   n1: 8200 0x5138F61: trieInsert (trie.c:153)
+    n1: 8200 0x513523A: mountBackend (mount.c:588)
+     n1: 8200 0x5136CBC: mountVersion (mount.c:463)
+      n1: 8200 0x512DF52: kdbOpen (kdb.c:356)
+       n1: 8200 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+        n2: 8200 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+         n1: 8200 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+          n0: 8200 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+         n0: 0 in 9 places, all below massif's threshold (1.00%)
+  n2: 18720 0x512BDF2: elektraBackendAllocate (backend.c:47)
+   n1: 15840 0x512BA7F: backendOpen (backend.c:178)
+    n1: 15840 0x51342A1: mountOpen (mount.c:65)
+     n1: 15840 0x512DDEC: kdbOpen (kdb.c:336)
+      n1: 15840 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+       n2: 15840 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+        n1: 15840 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+         n0: 15840 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+        n0: 0 in 9 places, all below massif's threshold (1.00%)
+   n0: 2880 in 3 places, all below massif's threshold (1.00%)
+  n1: 12024 0x53427F3: elektraPluginExport (plugin.c:62)
+   n0: 12024 in 8 places, all below massif's threshold (1.00%)
+  n0: 1140 in 11 places, all below massif's threshold (1.00%)
+ n7: 156008 0x5B52D9B: elektraMalloc (internal.c:241)
+  n2: 49328 0x5B578E5: ksVNew (keyset.c:184)
+   n4: 49328 0x5B57833: ksNew (keyset.c:152)
+    n2: 19712 0x5B5C990: elektraRenameKeys (proposal.c:51)
+     n2: 19712 0x513A03F: elektraProcessPlugins (plugin.c:176)
+      n1: 12672 0x512BC00: backendOpen (backend.c:206)
+       n1: 12672 0x51342A1: mountOpen (mount.c:65)
+        n1: 12672 0x512DDEC: kdbOpen (kdb.c:336)
+         n1: 12672 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+          n2: 12672 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+           n1: 12672 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+            n0: 12672 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+           n0: 0 in 9 places, all below massif's threshold (1.00%)
+      n0: 7040 in 1 place, below massif's threshold (1.00%)
+     n0: 0 in 4 places, all below massif's threshold (1.00%)
+    n2: 13608 0x5B57DC0: ksDup (keyset.c:235)
+     n1: 13200 0x5B543B4: keyCopy (key.c:390)
+      n2: 13200 0x5B54209: keyDup (key.c:287)
+       n1: 11968 0x5B5C9D1: elektraRenameKeys (proposal.c:56)
+        n0: 11968 in 2 places, all below massif's threshold (1.00%)
+       n0: 1232 in 8 places, all below massif's threshold (1.00%)
+     n0: 408 in 12 places, all below massif's threshold (1.00%)
+    n2: 8704 0x5137086: splitAppend (split.c:166)
+     n1: 8064 0x5135282: mountBackend (mount.c:589)
+      n0: 8064 in 3 places, all below massif's threshold (1.00%)
+     n0: 640 in 8 places, all below massif's threshold (1.00%)
+    n0: 7304 in 34 places, all below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n2: 35584 0x5B540C2: elektraKeyMalloc (key.c:85)
+   n2: 21120 0x5B5418F: keyDup (key.c:273)
+    n1: 16064 0x5B5C9D1: elektraRenameKeys (proposal.c:56)
+     n0: 16064 in 4 places, all below massif's threshold (1.00%)
+    n0: 5056 in 21 places, all below massif's threshold (1.00%)
+   n0: 14464 in 2 places, all below massif's threshold (1.00%)
+  n1: 21888 0x703DC37: libelektra_resolver_fm_hpu_b_LTX_elektraPluginopen (resolver.c:416)
+   n2: 21888 0x513A440: elektraPluginOpen (plugin.c:292)
+    n1: 21120 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+     n1: 21120 0x512BB74: backendOpen (backend.c:197)
+      n1: 21120 0x51342A1: mountOpen (mount.c:65)
+       n1: 21120 0x512DDEC: kdbOpen (kdb.c:336)
+        n1: 21120 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 21120 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 21120 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+           n0: 21120 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+          n0: 0 in 9 places, all below massif's threshold (1.00%)
+    n0: 768 in 2 places, all below massif's threshold (1.00%)
+  n2: 18469 0x5B53067: elektraStrNDup (internal.c:325)
+   n0: 10105 in 2 places, all below massif's threshold (1.00%)
+   n1: 8364 0x5B5436E: keyCopy (key.c:380)
+    n1: 8364 0x5B54209: keyDup (key.c:287)
+     n0: 8364 in 19 places, all below massif's threshold (1.00%)
+  n2: 18336 0x5B57875: ksVNew (keyset.c:170)
+   n1: 18336 0x5B57833: ksNew (keyset.c:152)
+    n0: 18336 in 37 places, all below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 8244 0x5B52F50: elektraStrDup (internal.c:301)
+   n0: 8244 in 24 places, all below massif's threshold (1.00%)
+  n0: 4159 in 40 places, all below massif's threshold (1.00%)
+ n1: 72704 0x5FF2294: ??? (in /usr/lib64/libstdc++.so.6.0.24)
+  n1: 72704 0x4010C11: _dl_init (in /usr/lib64/ld-2.26.so)
+   n1: 72704 0x4000F08: ??? (in /usr/lib64/ld-2.26.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF000839: ???
+      n0: 72704 0x1FFF000857: ???
+ n2: 72008 0x8608776: CRYPTO_malloc (in /usr/lib64/libcrypto.so.1.0.2m)
+  n2: 60600 0x86BEF04: lh_insert (in /usr/lib64/libcrypto.so.1.0.2m)
+   n2: 53664 0x86C17B8: ??? (in /usr/lib64/libcrypto.so.1.0.2m)
+    n1: 48816 0x86C1E69: ERR_load_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+     n0: 48816 in 55 places, all below massif's threshold (1.00%)
+    n0: 4848 in 4 places, all below massif's threshold (1.00%)
+   n0: 6936 in 3 places, all below massif's threshold (1.00%)
+  n0: 11408 in 14 places, all below massif's threshold (1.00%)
+ n1: 65536 0x7F3CA9F: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+  n1: 65536 0x7F3BCE6: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n1: 65536 0x7F3C0F5: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+    n1: 65536 0x7F2ABC2: Botan::OctetString::change(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libbotan-1.10.so.1.17)
+     n1: 65536 0x80CB208: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+      n1: 65536 0x80CE390: Botan::confirm_startup_self_tests(Botan::Algorithm_Factory&) (in /usr/lib64/libbotan-1.10.so.1.17)
+       n1: 65536 0x80358FF: Botan::Library_State::initialize(bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+        n1: 65536 0x8033E26: Botan::LibraryInitializer::initialize(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libbotan-1.10.so.1.17)
+         n1: 65536 0x7C98BE9: elektraCryptoBotanInit (botan_operations.cpp:149)
+          n1: 65536 0x7CA39A3: elektraCryptoInit (crypto.c:116)
+           n1: 65536 0x7CA3936: libelektra_crypto_botan_LTX_elektraPluginopen (crypto.c:389)
+            n1: 65536 0x513A440: elektraPluginOpen (plugin.c:292)
+             n1: 65536 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+              n1: 65536 0x512BC00: backendOpen (backend.c:206)
+               n1: 65536 0x51342A1: mountOpen (mount.c:65)
+                n1: 65536 0x512DDEC: kdbOpen (kdb.c:336)
+                 n1: 65536 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+                  n1: 65536 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                   n1: 65536 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                    n1: 65536 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                     n0: 65536 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+ n0: 35013 in 250 places, all below massif's threshold (1.00%)
+ n3: 34464 0x8035CFA: Botan::Library_State::set(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+  n1: 13344 0x8037FA8: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 13344 in 139 places, all below massif's threshold (1.00%)
+  n1: 13344 0x8038070: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 13344 in 139 places, all below massif's threshold (1.00%)
+  n0: 7776 in 51 places, all below massif's threshold (1.00%)
+ n2: 34157 0x608BA3D: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libstdc++.so.6.0.24)
+  n1: 34157 0x8035DD7: Botan::Library_State::set(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 34157 in 52 places, all below massif's threshold (1.00%)
+  n0: 0 in 11 places, all below massif's threshold (1.00%)
+ n1: 22545 0x400C22F: _dl_new_object (in /usr/lib64/ld-2.26.so)
+  n1: 22545 0x4006723: _dl_map_object_from_fd (in /usr/lib64/ld-2.26.so)
+   n2: 22545 0x4008F9A: _dl_map_object (in /usr/lib64/ld-2.26.so)
+    n1: 11902 0x4015859: dl_open_worker (in /usr/lib64/ld-2.26.so)
+     n1: 11902 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+      n2: 11902 0x4015077: _dl_open (in /usr/lib64/ld-2.26.so)
+       n1: 9532 0x5D62F94: dlopen_doit (in /usr/lib64/libdl-2.26.so)
+        n1: 9532 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+         n1: 9532 0x5D63713: _dlerror_run (in /usr/lib64/libdl-2.26.so)
+          n1: 9532 0x5D6301F: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.26.so)
+           n1: 9532 0x5B5CF3F: elektraModulesLoad (dl.c:78)
+            n1: 9532 0x513A3B5: elektraPluginOpen (plugin.c:270)
+             n0: 9532 in 5 places, all below massif's threshold (1.00%)
+       n0: 2370 in 1 place, below massif's threshold (1.00%)
+    n1: 10643 0x400E440: openaux (in /usr/lib64/ld-2.26.so)
+     n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+      n1: 10643 0x400E78A: _dl_map_object_deps (in /usr/lib64/ld-2.26.so)
+       n1: 10643 0x40158BB: dl_open_worker (in /usr/lib64/ld-2.26.so)
+        n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+         n1: 10643 0x4015077: _dl_open (in /usr/lib64/ld-2.26.so)
+          n1: 10643 0x5D62F94: dlopen_doit (in /usr/lib64/libdl-2.26.so)
+           n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+            n1: 10643 0x5D63713: _dlerror_run (in /usr/lib64/libdl-2.26.so)
+             n1: 10643 0x5D6301F: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.26.so)
+              n1: 10643 0x5B5CF3F: elektraModulesLoad (dl.c:78)
+               n2: 10643 0x513A3B5: elektraPluginOpen (plugin.c:270)
+                n1: 9459 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+                 n1: 9459 0x512BC00: backendOpen (backend.c:206)
+                  n1: 9459 0x51342A1: mountOpen (mount.c:65)
+                   n1: 9459 0x512DDEC: kdbOpen (kdb.c:336)
+                    n1: 9459 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+                     n1: 9459 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                      n1: 9459 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                       n1: 9459 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                        n0: 9459 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+                n0: 1184 in 1 place, below massif's threshold (1.00%)
+ n2: 20519 0x5B52CD1: elektraRealloc (internal.c:204)
+  n2: 15134 0x5B56A5F: keyAddName (keyname.c:965)
+   n1: 10156 0x5B5CA0E: elektraRenameKeys (proposal.c:58)
+    n0: 10156 in 4 places, all below massif's threshold (1.00%)
+   n0: 4978 in 3 places, all below massif's threshold (1.00%)
+  n0: 5385 in 8 places, all below massif's threshold (1.00%)
+ n1: 18432 0x860886B: CRYPTO_realloc (in /usr/lib64/libcrypto.so.1.0.2m)
+  n2: 18432 0x86BEEA9: lh_insert (in /usr/lib64/libcrypto.so.1.0.2m)
+   n2: 16384 0x86C17B8: ??? (in /usr/lib64/libcrypto.so.1.0.2m)
+    n2: 16384 0x86C1E69: ERR_load_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+     n1: 16384 0x86C2E4E: ERR_load_crypto_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+      n1: 16384 0x9559C66: elektraCryptoOpenSSLInit (openssl_operations.c:148)
+       n1: 16384 0x9563483: elektraCryptoInit (crypto.c:114)
+        n1: 16384 0x9563416: libelektra_crypto_openssl_LTX_elektraPluginopen (crypto.c:389)
+         n1: 16384 0x513A440: elektraPluginOpen (plugin.c:292)
+          n1: 16384 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+           n1: 16384 0x512BC00: backendOpen (backend.c:206)
+            n1: 16384 0x51342A1: mountOpen (mount.c:65)
+             n1: 16384 0x512DDEC: kdbOpen (kdb.c:336)
+              n1: 16384 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+               n1: 16384 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                n1: 16384 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                 n1: 16384 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                  n0: 16384 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+     n0: 0 in 3 places, all below massif's threshold (1.00%)
+    n0: 0 in 2 places, all below massif's threshold (1.00%)
+   n0: 2048 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=4
+#-----------
+time=14948281319
+mem_heap_B=694321
+mem_heap_extra_B=102983
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=19353033476
+mem_heap_B=695351
+mem_heap_extra_B=103177
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=21235890220
+mem_heap_B=1106795
+mem_heap_extra_B=171749
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=25977867089
+mem_heap_B=694945
+mem_heap_extra_B=103423
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=30520405696
+mem_heap_B=693969
+mem_heap_extra_B=103063
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=33300532992
+mem_heap_B=694641
+mem_heap_extra_B=103319
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=36900348246
+mem_heap_B=695559
+mem_heap_extra_B=103377
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=39233101535
+mem_heap_B=694065
+mem_heap_extra_B=102727
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=42476687214
+mem_heap_B=694849
+mem_heap_extra_B=103087
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=45652111439
+mem_heap_B=695687
+mem_heap_extra_B=103761
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=48409241031
+mem_heap_B=694241
+mem_heap_extra_B=103135
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=52565817681
+mem_heap_B=1017547
+mem_heap_extra_B=155429
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=56163748369
+mem_heap_B=724032
+mem_heap_extra_B=122144
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=59902058058
+mem_heap_B=694913
+mem_heap_extra_B=103407
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=62627735374
+mem_heap_B=695351
+mem_heap_extra_B=103609
+mem_stacks_B=0
+heap_tree=detailed
+n11: 695351 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 163084 0x5B52E42: elektraCalloc (internal.c:256)
+  n3: 131200 0x5138E28: trieInsert (trie.c:124)
+   n2: 114800 0x5138FFE: trieInsert (trie.c:169)
+    n2: 90200 0x5138F61: trieInsert (trie.c:153)
+     n2: 57400 0x513523A: mountBackend (mount.c:588)
+      n1: 41000 0x513433D: mountOpen (mount.c:82)
+       n1: 41000 0x512DDEC: kdbOpen (kdb.c:336)
+        n1: 41000 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 41000 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 41000 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+           n0: 41000 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+          n0: 0 in 9 places, all below massif's threshold (1.00%)
+      n1: 16400 0x5136916: mountModules (mount.c:445)
+       n1: 16400 0x512DF84: kdbOpen (kdb.c:359)
+        n1: 16400 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 16400 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 16400 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+           n0: 16400 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+          n0: 0 in 9 places, all below massif's threshold (1.00%)
+     n1: 32800 0x5138F61: trieInsert (trie.c:153)
+      n1: 32800 0x513523A: mountBackend (mount.c:588)
+       n1: 32800 0x513433D: mountOpen (mount.c:82)
+        n1: 32800 0x512DDEC: kdbOpen (kdb.c:336)
+         n1: 32800 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+          n2: 32800 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+           n1: 32800 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+            n0: 32800 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+           n0: 0 in 9 places, all below massif's threshold (1.00%)
+    n1: 24600 0x513523A: mountBackend (mount.c:588)
+     n1: 24600 0x513433D: mountOpen (mount.c:82)
+      n1: 24600 0x512DDEC: kdbOpen (kdb.c:336)
+       n1: 24600 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+        n2: 24600 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+         n1: 24600 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+          n0: 24600 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+         n0: 0 in 9 places, all below massif's threshold (1.00%)
+   n1: 8200 0x513523A: mountBackend (mount.c:588)
+    n1: 8200 0x513433D: mountOpen (mount.c:82)
+     n1: 8200 0x512DDEC: kdbOpen (kdb.c:336)
+      n1: 8200 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+       n2: 8200 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+        n1: 8200 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+         n0: 8200 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+        n0: 0 in 9 places, all below massif's threshold (1.00%)
+   n1: 8200 0x5138F61: trieInsert (trie.c:153)
+    n1: 8200 0x513523A: mountBackend (mount.c:588)
+     n1: 8200 0x5136CBC: mountVersion (mount.c:463)
+      n1: 8200 0x512DF52: kdbOpen (kdb.c:356)
+       n1: 8200 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+        n2: 8200 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+         n1: 8200 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+          n0: 8200 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+         n0: 0 in 9 places, all below massif's threshold (1.00%)
+  n2: 18720 0x512BDF2: elektraBackendAllocate (backend.c:47)
+   n1: 15840 0x512BA7F: backendOpen (backend.c:178)
+    n1: 15840 0x51342A1: mountOpen (mount.c:65)
+     n1: 15840 0x512DDEC: kdbOpen (kdb.c:336)
+      n1: 15840 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+       n2: 15840 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+        n1: 15840 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+         n0: 15840 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+        n0: 0 in 9 places, all below massif's threshold (1.00%)
+   n0: 2880 in 3 places, all below massif's threshold (1.00%)
+  n1: 12024 0x53427F3: elektraPluginExport (plugin.c:62)
+   n0: 12024 in 8 places, all below massif's threshold (1.00%)
+  n0: 1140 in 11 places, all below massif's threshold (1.00%)
+ n7: 155882 0x5B52D9B: elektraMalloc (internal.c:241)
+  n2: 48920 0x5B578E5: ksVNew (keyset.c:184)
+   n4: 48920 0x5B57833: ksNew (keyset.c:152)
+    n2: 19712 0x5B5C990: elektraRenameKeys (proposal.c:51)
+     n2: 19712 0x513A03F: elektraProcessPlugins (plugin.c:176)
+      n1: 12672 0x512BC00: backendOpen (backend.c:206)
+       n1: 12672 0x51342A1: mountOpen (mount.c:65)
+        n1: 12672 0x512DDEC: kdbOpen (kdb.c:336)
+         n1: 12672 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+          n2: 12672 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+           n1: 12672 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+            n0: 12672 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+           n0: 0 in 9 places, all below massif's threshold (1.00%)
+      n0: 7040 in 1 place, below massif's threshold (1.00%)
+     n0: 0 in 4 places, all below massif's threshold (1.00%)
+    n2: 13200 0x5B57DC0: ksDup (keyset.c:235)
+     n1: 12792 0x5B543B4: keyCopy (key.c:390)
+      n2: 12792 0x5B54209: keyDup (key.c:287)
+       n1: 11968 0x5B5C9D1: elektraRenameKeys (proposal.c:56)
+        n0: 11968 in 2 places, all below massif's threshold (1.00%)
+       n0: 824 in 8 places, all below massif's threshold (1.00%)
+     n0: 408 in 12 places, all below massif's threshold (1.00%)
+    n2: 8704 0x5137086: splitAppend (split.c:166)
+     n1: 8064 0x5135282: mountBackend (mount.c:589)
+      n0: 8064 in 3 places, all below massif's threshold (1.00%)
+     n0: 640 in 8 places, all below massif's threshold (1.00%)
+    n0: 7304 in 34 places, all below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n2: 35776 0x5B540C2: elektraKeyMalloc (key.c:85)
+   n2: 21120 0x5B5418F: keyDup (key.c:273)
+    n1: 16064 0x5B5C9D1: elektraRenameKeys (proposal.c:56)
+     n0: 16064 in 4 places, all below massif's threshold (1.00%)
+    n0: 5056 in 21 places, all below massif's threshold (1.00%)
+   n0: 14656 in 2 places, all below massif's threshold (1.00%)
+  n1: 21888 0x703DC37: libelektra_resolver_fm_hpu_b_LTX_elektraPluginopen (resolver.c:416)
+   n2: 21888 0x513A440: elektraPluginOpen (plugin.c:292)
+    n1: 21120 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+     n1: 21120 0x512BB74: backendOpen (backend.c:197)
+      n1: 21120 0x51342A1: mountOpen (mount.c:65)
+       n1: 21120 0x512DDEC: kdbOpen (kdb.c:336)
+        n1: 21120 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 21120 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 21120 0x40AAA7: void benchmark_crypto_set<(PluginVariant)1>(int) (benchmark_crypto_comparison.cpp:92)
+           n0: 21120 0x40A0A8: main (benchmark_crypto_comparison.cpp:192)
+          n0: 0 in 9 places, all below massif's threshold (1.00%)
+    n0: 768 in 2 places, all below massif's threshold (1.00%)
+  n2: 18454 0x5B53067: elektraStrNDup (internal.c:325)
+   n0: 10108 in 2 places, all below massif's threshold (1.00%)
+   n1: 8346 0x5B5436E: keyCopy (key.c:380)
+    n1: 8346 0x5B54209: keyDup (key.c:287)
+     n0: 8346 in 19 places, all below massif's threshold (1.00%)
+  n2: 18336 0x5B57875: ksVNew (keyset.c:170)
+   n1: 18336 0x5B57833: ksNew (keyset.c:152)
+    n0: 18336 in 37 places, all below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 8307 0x5B52F50: elektraStrDup (internal.c:301)
+   n0: 8307 in 24 places, all below massif's threshold (1.00%)
+  n0: 4201 in 40 places, all below massif's threshold (1.00%)
+ n1: 72704 0x5FF2294: ??? (in /usr/lib64/libstdc++.so.6.0.24)
+  n1: 72704 0x4010C11: _dl_init (in /usr/lib64/ld-2.26.so)
+   n1: 72704 0x4000F08: ??? (in /usr/lib64/ld-2.26.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF000839: ???
+      n0: 72704 0x1FFF000857: ???
+ n2: 72216 0x8608776: CRYPTO_malloc (in /usr/lib64/libcrypto.so.1.0.2m)
+  n2: 60600 0x86BEF04: lh_insert (in /usr/lib64/libcrypto.so.1.0.2m)
+   n2: 53664 0x86C17B8: ??? (in /usr/lib64/libcrypto.so.1.0.2m)
+    n1: 48816 0x86C1E69: ERR_load_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+     n0: 48816 in 55 places, all below massif's threshold (1.00%)
+    n0: 4848 in 4 places, all below massif's threshold (1.00%)
+   n0: 6936 in 3 places, all below massif's threshold (1.00%)
+  n0: 11616 in 14 places, all below massif's threshold (1.00%)
+ n1: 65536 0x7F3CA9F: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+  n1: 65536 0x7F3BCE6: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n1: 65536 0x7F3C0F5: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+    n1: 65536 0x7F2ABC2: Botan::OctetString::change(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libbotan-1.10.so.1.17)
+     n1: 65536 0x80CB208: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+      n1: 65536 0x80CE390: Botan::confirm_startup_self_tests(Botan::Algorithm_Factory&) (in /usr/lib64/libbotan-1.10.so.1.17)
+       n1: 65536 0x80358FF: Botan::Library_State::initialize(bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+        n1: 65536 0x8033E26: Botan::LibraryInitializer::initialize(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libbotan-1.10.so.1.17)
+         n1: 65536 0x7C98BE9: elektraCryptoBotanInit (botan_operations.cpp:149)
+          n1: 65536 0x7CA39A3: elektraCryptoInit (crypto.c:116)
+           n1: 65536 0x7CA3936: libelektra_crypto_botan_LTX_elektraPluginopen (crypto.c:389)
+            n1: 65536 0x513A440: elektraPluginOpen (plugin.c:292)
+             n1: 65536 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+              n1: 65536 0x512BC00: backendOpen (backend.c:206)
+               n1: 65536 0x51342A1: mountOpen (mount.c:65)
+                n1: 65536 0x512DDEC: kdbOpen (kdb.c:336)
+                 n1: 65536 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+                  n1: 65536 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                   n1: 65536 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                    n1: 65536 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                     n0: 65536 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+ n0: 35285 in 250 places, all below massif's threshold (1.00%)
+ n3: 34464 0x8035CFA: Botan::Library_State::set(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+  n1: 13344 0x8037FA8: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 13344 in 139 places, all below massif's threshold (1.00%)
+  n1: 13344 0x8038070: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 13344 in 139 places, all below massif's threshold (1.00%)
+  n0: 7776 in 51 places, all below massif's threshold (1.00%)
+ n2: 34157 0x608BA3D: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libstdc++.so.6.0.24)
+  n1: 34157 0x8035DD7: Botan::Library_State::set(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 34157 in 52 places, all below massif's threshold (1.00%)
+  n0: 0 in 11 places, all below massif's threshold (1.00%)
+ n1: 22545 0x400C22F: _dl_new_object (in /usr/lib64/ld-2.26.so)
+  n1: 22545 0x4006723: _dl_map_object_from_fd (in /usr/lib64/ld-2.26.so)
+   n2: 22545 0x4008F9A: _dl_map_object (in /usr/lib64/ld-2.26.so)
+    n1: 11902 0x4015859: dl_open_worker (in /usr/lib64/ld-2.26.so)
+     n1: 11902 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+      n2: 11902 0x4015077: _dl_open (in /usr/lib64/ld-2.26.so)
+       n1: 9532 0x5D62F94: dlopen_doit (in /usr/lib64/libdl-2.26.so)
+        n1: 9532 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+         n1: 9532 0x5D63713: _dlerror_run (in /usr/lib64/libdl-2.26.so)
+          n1: 9532 0x5D6301F: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.26.so)
+           n1: 9532 0x5B5CF3F: elektraModulesLoad (dl.c:78)
+            n1: 9532 0x513A3B5: elektraPluginOpen (plugin.c:270)
+             n0: 9532 in 5 places, all below massif's threshold (1.00%)
+       n0: 2370 in 1 place, below massif's threshold (1.00%)
+    n1: 10643 0x400E440: openaux (in /usr/lib64/ld-2.26.so)
+     n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+      n1: 10643 0x400E78A: _dl_map_object_deps (in /usr/lib64/ld-2.26.so)
+       n1: 10643 0x40158BB: dl_open_worker (in /usr/lib64/ld-2.26.so)
+        n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+         n1: 10643 0x4015077: _dl_open (in /usr/lib64/ld-2.26.so)
+          n1: 10643 0x5D62F94: dlopen_doit (in /usr/lib64/libdl-2.26.so)
+           n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+            n1: 10643 0x5D63713: _dlerror_run (in /usr/lib64/libdl-2.26.so)
+             n1: 10643 0x5D6301F: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.26.so)
+              n1: 10643 0x5B5CF3F: elektraModulesLoad (dl.c:78)
+               n2: 10643 0x513A3B5: elektraPluginOpen (plugin.c:270)
+                n1: 9459 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+                 n1: 9459 0x512BC00: backendOpen (backend.c:206)
+                  n1: 9459 0x51342A1: mountOpen (mount.c:65)
+                   n1: 9459 0x512DDEC: kdbOpen (kdb.c:336)
+                    n1: 9459 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+                     n1: 9459 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                      n1: 9459 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                       n1: 9459 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                        n0: 9459 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+                n0: 1184 in 1 place, below massif's threshold (1.00%)
+ n2: 21046 0x5B52CD1: elektraRealloc (internal.c:204)
+  n2: 15134 0x5B56A5F: keyAddName (keyname.c:965)
+   n1: 10156 0x5B5CA0E: elektraRenameKeys (proposal.c:58)
+    n0: 10156 in 4 places, all below massif's threshold (1.00%)
+   n0: 4978 in 3 places, all below massif's threshold (1.00%)
+  n0: 5912 in 8 places, all below massif's threshold (1.00%)
+ n1: 18432 0x860886B: CRYPTO_realloc (in /usr/lib64/libcrypto.so.1.0.2m)
+  n2: 18432 0x86BEEA9: lh_insert (in /usr/lib64/libcrypto.so.1.0.2m)
+   n2: 16384 0x86C17B8: ??? (in /usr/lib64/libcrypto.so.1.0.2m)
+    n2: 16384 0x86C1E69: ERR_load_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+     n1: 16384 0x86C2E4E: ERR_load_crypto_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+      n1: 16384 0x9559C66: elektraCryptoOpenSSLInit (openssl_operations.c:148)
+       n1: 16384 0x9563483: elektraCryptoInit (crypto.c:114)
+        n1: 16384 0x9563416: libelektra_crypto_openssl_LTX_elektraPluginopen (crypto.c:389)
+         n1: 16384 0x513A440: elektraPluginOpen (plugin.c:292)
+          n1: 16384 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+           n1: 16384 0x512BC00: backendOpen (backend.c:206)
+            n1: 16384 0x51342A1: mountOpen (mount.c:65)
+             n1: 16384 0x512DDEC: kdbOpen (kdb.c:336)
+              n1: 16384 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+               n1: 16384 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                n1: 16384 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                 n1: 16384 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                  n0: 16384 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+     n0: 0 in 3 places, all below massif's threshold (1.00%)
+    n0: 0 in 2 places, all below massif's threshold (1.00%)
+   n0: 2048 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=19
+#-----------
+time=66298033224
+mem_heap_B=694288
+mem_heap_extra_B=103080
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=69977650793
+mem_heap_B=807001
+mem_heap_extra_B=119007
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=73575596500
+mem_heap_B=517013
+mem_heap_extra_B=86139
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=77327535568
+mem_heap_B=695105
+mem_heap_extra_B=102959
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=80053211830
+mem_heap_B=695671
+mem_heap_extra_B=103593
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=84650206531
+mem_heap_B=694897
+mem_heap_extra_B=103239
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=89202081297
+mem_heap_B=695850
+mem_heap_extra_B=103646
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=93826466546
+mem_heap_B=695012
+mem_heap_extra_B=103548
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=97478849263
+mem_heap_B=690806
+mem_heap_extra_B=102362
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=100615589253
+mem_heap_B=691034
+mem_heap_extra_B=102142
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=103395410677
+mem_heap_B=690314
+mem_heap_extra_B=102142
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=107733186905
+mem_heap_B=691314
+mem_heap_extra_B=102278
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=110513007441
+mem_heap_B=690594
+mem_heap_extra_B=102262
+mem_stacks_B=0
+heap_tree=detailed
+n11: 690594 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 163012 0x5B52E42: elektraCalloc (internal.c:256)
+  n3: 131200 0x5138E28: trieInsert (trie.c:124)
+   n2: 114800 0x5138FFE: trieInsert (trie.c:169)
+    n2: 90200 0x5138F61: trieInsert (trie.c:153)
+     n2: 57400 0x513523A: mountBackend (mount.c:588)
+      n1: 41000 0x513433D: mountOpen (mount.c:82)
+       n1: 41000 0x512DDEC: kdbOpen (kdb.c:336)
+        n1: 41000 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 41000 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 41000 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+           n0: 41000 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+          n0: 0 in 14 places, all below massif's threshold (1.00%)
+      n1: 16400 0x5136916: mountModules (mount.c:445)
+       n1: 16400 0x512DF84: kdbOpen (kdb.c:359)
+        n1: 16400 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 16400 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 16400 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+           n0: 16400 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+          n0: 0 in 14 places, all below massif's threshold (1.00%)
+     n1: 32800 0x5138F61: trieInsert (trie.c:153)
+      n1: 32800 0x513523A: mountBackend (mount.c:588)
+       n1: 32800 0x513433D: mountOpen (mount.c:82)
+        n1: 32800 0x512DDEC: kdbOpen (kdb.c:336)
+         n1: 32800 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+          n2: 32800 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+           n1: 32800 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+            n0: 32800 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+           n0: 0 in 14 places, all below massif's threshold (1.00%)
+    n1: 24600 0x513523A: mountBackend (mount.c:588)
+     n1: 24600 0x513433D: mountOpen (mount.c:82)
+      n1: 24600 0x512DDEC: kdbOpen (kdb.c:336)
+       n1: 24600 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+        n2: 24600 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+         n1: 24600 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+          n0: 24600 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+         n0: 0 in 14 places, all below massif's threshold (1.00%)
+   n1: 8200 0x513523A: mountBackend (mount.c:588)
+    n1: 8200 0x513433D: mountOpen (mount.c:82)
+     n1: 8200 0x512DDEC: kdbOpen (kdb.c:336)
+      n1: 8200 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+       n2: 8200 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+        n1: 8200 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+         n0: 8200 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+        n0: 0 in 14 places, all below massif's threshold (1.00%)
+   n1: 8200 0x5138F61: trieInsert (trie.c:153)
+    n1: 8200 0x513523A: mountBackend (mount.c:588)
+     n1: 8200 0x5136CBC: mountVersion (mount.c:463)
+      n1: 8200 0x512DF52: kdbOpen (kdb.c:356)
+       n1: 8200 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+        n2: 8200 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+         n1: 8200 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+          n0: 8200 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+         n0: 0 in 14 places, all below massif's threshold (1.00%)
+  n2: 18720 0x512BDF2: elektraBackendAllocate (backend.c:47)
+   n1: 15840 0x512BA7F: backendOpen (backend.c:178)
+    n1: 15840 0x51342A1: mountOpen (mount.c:65)
+     n1: 15840 0x512DDEC: kdbOpen (kdb.c:336)
+      n1: 15840 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+       n2: 15840 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+        n1: 15840 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+         n0: 15840 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+        n0: 0 in 14 places, all below massif's threshold (1.00%)
+   n0: 2880 in 3 places, all below massif's threshold (1.00%)
+  n1: 11952 0x53427F3: elektraPluginExport (plugin.c:62)
+   n0: 11952 in 8 places, all below massif's threshold (1.00%)
+  n0: 1140 in 11 places, all below massif's threshold (1.00%)
+ n7: 152316 0x5B52D9B: elektraMalloc (internal.c:241)
+  n2: 47832 0x5B578E5: ksVNew (keyset.c:184)
+   n4: 47832 0x5B57833: ksNew (keyset.c:152)
+    n2: 19712 0x5B5C990: elektraRenameKeys (proposal.c:51)
+     n2: 19712 0x513A03F: elektraProcessPlugins (plugin.c:176)
+      n1: 12672 0x512BC00: backendOpen (backend.c:206)
+       n1: 12672 0x51342A1: mountOpen (mount.c:65)
+        n1: 12672 0x512DDEC: kdbOpen (kdb.c:336)
+         n1: 12672 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+          n2: 12672 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+           n1: 12672 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+            n0: 12672 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+           n0: 0 in 14 places, all below massif's threshold (1.00%)
+      n0: 7040 in 1 place, below massif's threshold (1.00%)
+     n0: 0 in 4 places, all below massif's threshold (1.00%)
+    n2: 12248 0x5B57DC0: ksDup (keyset.c:235)
+     n1: 12112 0x5B543B4: keyCopy (key.c:390)
+      n2: 12112 0x5B54209: keyDup (key.c:287)
+       n1: 11968 0x5B5C9D1: elektraRenameKeys (proposal.c:56)
+        n0: 11968 in 2 places, all below massif's threshold (1.00%)
+       n0: 144 in 8 places, all below massif's threshold (1.00%)
+     n0: 136 in 12 places, all below massif's threshold (1.00%)
+    n2: 8832 0x5137086: splitAppend (split.c:166)
+     n1: 8064 0x5135282: mountBackend (mount.c:589)
+      n0: 8064 in 3 places, all below massif's threshold (1.00%)
+     n0: 768 in 8 places, all below massif's threshold (1.00%)
+    n0: 7040 in 34 places, all below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n2: 34560 0x5B540C2: elektraKeyMalloc (key.c:85)
+   n2: 20416 0x5B5418F: keyDup (key.c:273)
+    n1: 16064 0x5B5C9D1: elektraRenameKeys (proposal.c:56)
+     n0: 16064 in 4 places, all below massif's threshold (1.00%)
+    n0: 4352 in 21 places, all below massif's threshold (1.00%)
+   n0: 14144 in 2 places, all below massif's threshold (1.00%)
+  n1: 21888 0x703DC37: libelektra_resolver_fm_hpu_b_LTX_elektraPluginopen (resolver.c:416)
+   n2: 21888 0x513A440: elektraPluginOpen (plugin.c:292)
+    n1: 21120 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+     n1: 21120 0x512BB74: backendOpen (backend.c:197)
+      n1: 21120 0x51342A1: mountOpen (mount.c:65)
+       n1: 21120 0x512DDEC: kdbOpen (kdb.c:336)
+        n1: 21120 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 21120 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 21120 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+           n0: 21120 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+          n0: 0 in 14 places, all below massif's threshold (1.00%)
+    n0: 768 in 2 places, all below massif's threshold (1.00%)
+  n2: 17712 0x5B57875: ksVNew (keyset.c:170)
+   n1: 17712 0x5B57833: ksNew (keyset.c:152)
+    n0: 17712 in 37 places, all below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n2: 17648 0x5B53067: elektraStrNDup (internal.c:325)
+   n0: 9379 in 2 places, all below massif's threshold (1.00%)
+   n1: 8269 0x5B5436E: keyCopy (key.c:380)
+    n1: 8269 0x5B54209: keyDup (key.c:287)
+     n0: 8269 in 19 places, all below massif's threshold (1.00%)
+  n1: 8307 0x5B52F50: elektraStrDup (internal.c:301)
+   n0: 8307 in 24 places, all below massif's threshold (1.00%)
+  n0: 4369 in 41 places, all below massif's threshold (1.00%)
+ n1: 72704 0x5FF2294: ??? (in /usr/lib64/libstdc++.so.6.0.24)
+  n1: 72704 0x4010C11: _dl_init (in /usr/lib64/ld-2.26.so)
+   n1: 72704 0x4000F08: ??? (in /usr/lib64/ld-2.26.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF000839: ???
+      n0: 72704 0x1FFF000857: ???
+ n2: 71696 0x8608776: CRYPTO_malloc (in /usr/lib64/libcrypto.so.1.0.2m)
+  n2: 60600 0x86BEF04: lh_insert (in /usr/lib64/libcrypto.so.1.0.2m)
+   n2: 53664 0x86C17B8: ??? (in /usr/lib64/libcrypto.so.1.0.2m)
+    n1: 48816 0x86C1E69: ERR_load_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+     n0: 48816 in 55 places, all below massif's threshold (1.00%)
+    n0: 4848 in 4 places, all below massif's threshold (1.00%)
+   n0: 6936 in 3 places, all below massif's threshold (1.00%)
+  n0: 11096 in 14 places, all below massif's threshold (1.00%)
+ n1: 65536 0x7F3CA9F: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+  n1: 65536 0x7F3BCE6: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n1: 65536 0x7F3C0F5: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+    n1: 65536 0x7F2ABC2: Botan::OctetString::change(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libbotan-1.10.so.1.17)
+     n1: 65536 0x80CB208: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+      n1: 65536 0x80CE390: Botan::confirm_startup_self_tests(Botan::Algorithm_Factory&) (in /usr/lib64/libbotan-1.10.so.1.17)
+       n1: 65536 0x80358FF: Botan::Library_State::initialize(bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+        n1: 65536 0x8033E26: Botan::LibraryInitializer::initialize(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libbotan-1.10.so.1.17)
+         n1: 65536 0x7C98BE9: elektraCryptoBotanInit (botan_operations.cpp:149)
+          n1: 65536 0x7CA39A3: elektraCryptoInit (crypto.c:116)
+           n1: 65536 0x7CA3936: libelektra_crypto_botan_LTX_elektraPluginopen (crypto.c:389)
+            n1: 65536 0x513A440: elektraPluginOpen (plugin.c:292)
+             n1: 65536 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+              n1: 65536 0x512BC00: backendOpen (backend.c:206)
+               n1: 65536 0x51342A1: mountOpen (mount.c:65)
+                n1: 65536 0x512DDEC: kdbOpen (kdb.c:336)
+                 n1: 65536 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+                  n1: 65536 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                   n1: 65536 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                    n1: 65536 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                     n0: 65536 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+ n0: 35886 in 254 places, all below massif's threshold (1.00%)
+ n3: 34464 0x8035CFA: Botan::Library_State::set(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+  n1: 13344 0x8037FA8: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 13344 in 139 places, all below massif's threshold (1.00%)
+  n1: 13344 0x8038070: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 13344 in 139 places, all below massif's threshold (1.00%)
+  n0: 7776 in 51 places, all below massif's threshold (1.00%)
+ n2: 34157 0x608BA3D: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libstdc++.so.6.0.24)
+  n1: 34157 0x8035DD7: Botan::Library_State::set(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 34157 in 52 places, all below massif's threshold (1.00%)
+  n0: 0 in 11 places, all below massif's threshold (1.00%)
+ n1: 22545 0x400C22F: _dl_new_object (in /usr/lib64/ld-2.26.so)
+  n1: 22545 0x4006723: _dl_map_object_from_fd (in /usr/lib64/ld-2.26.so)
+   n2: 22545 0x4008F9A: _dl_map_object (in /usr/lib64/ld-2.26.so)
+    n1: 11902 0x4015859: dl_open_worker (in /usr/lib64/ld-2.26.so)
+     n1: 11902 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+      n2: 11902 0x4015077: _dl_open (in /usr/lib64/ld-2.26.so)
+       n1: 9532 0x5D62F94: dlopen_doit (in /usr/lib64/libdl-2.26.so)
+        n1: 9532 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+         n1: 9532 0x5D63713: _dlerror_run (in /usr/lib64/libdl-2.26.so)
+          n1: 9532 0x5D6301F: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.26.so)
+           n1: 9532 0x5B5CF3F: elektraModulesLoad (dl.c:78)
+            n1: 9532 0x513A3B5: elektraPluginOpen (plugin.c:270)
+             n0: 9532 in 5 places, all below massif's threshold (1.00%)
+       n0: 2370 in 1 place, below massif's threshold (1.00%)
+    n1: 10643 0x400E440: openaux (in /usr/lib64/ld-2.26.so)
+     n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+      n1: 10643 0x400E78A: _dl_map_object_deps (in /usr/lib64/ld-2.26.so)
+       n1: 10643 0x40158BB: dl_open_worker (in /usr/lib64/ld-2.26.so)
+        n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+         n1: 10643 0x4015077: _dl_open (in /usr/lib64/ld-2.26.so)
+          n1: 10643 0x5D62F94: dlopen_doit (in /usr/lib64/libdl-2.26.so)
+           n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+            n1: 10643 0x5D63713: _dlerror_run (in /usr/lib64/libdl-2.26.so)
+             n1: 10643 0x5D6301F: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.26.so)
+              n1: 10643 0x5B5CF3F: elektraModulesLoad (dl.c:78)
+               n2: 10643 0x513A3B5: elektraPluginOpen (plugin.c:270)
+                n1: 9459 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+                 n1: 9459 0x512BC00: backendOpen (backend.c:206)
+                  n1: 9459 0x51342A1: mountOpen (mount.c:65)
+                   n1: 9459 0x512DDEC: kdbOpen (kdb.c:336)
+                    n1: 9459 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+                     n1: 9459 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                      n1: 9459 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                       n1: 9459 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                        n0: 9459 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+                n0: 1184 in 1 place, below massif's threshold (1.00%)
+ n2: 19846 0x5B52CD1: elektraRealloc (internal.c:204)
+  n2: 15062 0x5B56A5F: keyAddName (keyname.c:965)
+   n1: 10156 0x5B5CA0E: elektraRenameKeys (proposal.c:58)
+    n0: 10156 in 4 places, all below massif's threshold (1.00%)
+   n0: 4906 in 3 places, all below massif's threshold (1.00%)
+  n0: 4784 in 8 places, all below massif's threshold (1.00%)
+ n1: 18432 0x860886B: CRYPTO_realloc (in /usr/lib64/libcrypto.so.1.0.2m)
+  n2: 18432 0x86BEEA9: lh_insert (in /usr/lib64/libcrypto.so.1.0.2m)
+   n2: 16384 0x86C17B8: ??? (in /usr/lib64/libcrypto.so.1.0.2m)
+    n2: 16384 0x86C1E69: ERR_load_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+     n1: 16384 0x86C2E4E: ERR_load_crypto_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+      n1: 16384 0x9559C66: elektraCryptoOpenSSLInit (openssl_operations.c:148)
+       n1: 16384 0x9563483: elektraCryptoInit (crypto.c:114)
+        n1: 16384 0x9563416: libelektra_crypto_openssl_LTX_elektraPluginopen (crypto.c:389)
+         n1: 16384 0x513A440: elektraPluginOpen (plugin.c:292)
+          n1: 16384 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+           n1: 16384 0x512BC00: backendOpen (backend.c:206)
+            n1: 16384 0x51342A1: mountOpen (mount.c:65)
+             n1: 16384 0x512DDEC: kdbOpen (kdb.c:336)
+              n1: 16384 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+               n1: 16384 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                n1: 16384 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                 n1: 16384 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                  n0: 16384 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+     n0: 0 in 3 places, all below massif's threshold (1.00%)
+    n0: 0 in 2 places, all below massif's threshold (1.00%)
+   n0: 2048 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=32
+#-----------
+time=114601364049
+mem_heap_B=692781
+mem_heap_extra_B=101979
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=119020526186
+mem_heap_B=690538
+mem_heap_extra_B=102086
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=121718971920
+mem_heap_B=690958
+mem_heap_extra_B=102194
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=124748220295
+mem_heap_B=691170
+mem_heap_extra_B=102454
+mem_stacks_B=0
+heap_tree=detailed
+n11: 691170 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 163012 0x5B52E42: elektraCalloc (internal.c:256)
+  n3: 131200 0x5138E28: trieInsert (trie.c:124)
+   n2: 114800 0x5138FFE: trieInsert (trie.c:169)
+    n2: 90200 0x5138F61: trieInsert (trie.c:153)
+     n2: 57400 0x513523A: mountBackend (mount.c:588)
+      n1: 41000 0x513433D: mountOpen (mount.c:82)
+       n1: 41000 0x512DDEC: kdbOpen (kdb.c:336)
+        n1: 41000 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 41000 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 41000 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+           n0: 41000 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+          n0: 0 in 14 places, all below massif's threshold (1.00%)
+      n1: 16400 0x5136916: mountModules (mount.c:445)
+       n1: 16400 0x512DF84: kdbOpen (kdb.c:359)
+        n1: 16400 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 16400 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 16400 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+           n0: 16400 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+          n0: 0 in 14 places, all below massif's threshold (1.00%)
+     n1: 32800 0x5138F61: trieInsert (trie.c:153)
+      n1: 32800 0x513523A: mountBackend (mount.c:588)
+       n1: 32800 0x513433D: mountOpen (mount.c:82)
+        n1: 32800 0x512DDEC: kdbOpen (kdb.c:336)
+         n1: 32800 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+          n2: 32800 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+           n1: 32800 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+            n0: 32800 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+           n0: 0 in 14 places, all below massif's threshold (1.00%)
+    n1: 24600 0x513523A: mountBackend (mount.c:588)
+     n1: 24600 0x513433D: mountOpen (mount.c:82)
+      n1: 24600 0x512DDEC: kdbOpen (kdb.c:336)
+       n1: 24600 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+        n2: 24600 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+         n1: 24600 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+          n0: 24600 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+         n0: 0 in 14 places, all below massif's threshold (1.00%)
+   n1: 8200 0x513523A: mountBackend (mount.c:588)
+    n1: 8200 0x513433D: mountOpen (mount.c:82)
+     n1: 8200 0x512DDEC: kdbOpen (kdb.c:336)
+      n1: 8200 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+       n2: 8200 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+        n1: 8200 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+         n0: 8200 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+        n0: 0 in 14 places, all below massif's threshold (1.00%)
+   n1: 8200 0x5138F61: trieInsert (trie.c:153)
+    n1: 8200 0x513523A: mountBackend (mount.c:588)
+     n1: 8200 0x5136CBC: mountVersion (mount.c:463)
+      n1: 8200 0x512DF52: kdbOpen (kdb.c:356)
+       n1: 8200 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+        n2: 8200 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+         n1: 8200 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+          n0: 8200 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+         n0: 0 in 14 places, all below massif's threshold (1.00%)
+  n2: 18720 0x512BDF2: elektraBackendAllocate (backend.c:47)
+   n1: 15840 0x512BA7F: backendOpen (backend.c:178)
+    n1: 15840 0x51342A1: mountOpen (mount.c:65)
+     n1: 15840 0x512DDEC: kdbOpen (kdb.c:336)
+      n1: 15840 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+       n2: 15840 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+        n1: 15840 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+         n0: 15840 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+        n0: 0 in 14 places, all below massif's threshold (1.00%)
+   n0: 2880 in 3 places, all below massif's threshold (1.00%)
+  n1: 11952 0x53427F3: elektraPluginExport (plugin.c:62)
+   n0: 11952 in 8 places, all below massif's threshold (1.00%)
+  n0: 1140 in 11 places, all below massif's threshold (1.00%)
+ n7: 152820 0x5B52D9B: elektraMalloc (internal.c:241)
+  n2: 47832 0x5B578E5: ksVNew (keyset.c:184)
+   n4: 47832 0x5B57833: ksNew (keyset.c:152)
+    n2: 19712 0x5B5C990: elektraRenameKeys (proposal.c:51)
+     n2: 19712 0x513A03F: elektraProcessPlugins (plugin.c:176)
+      n1: 12672 0x512BC00: backendOpen (backend.c:206)
+       n1: 12672 0x51342A1: mountOpen (mount.c:65)
+        n1: 12672 0x512DDEC: kdbOpen (kdb.c:336)
+         n1: 12672 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+          n2: 12672 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+           n1: 12672 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+            n0: 12672 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+           n0: 0 in 14 places, all below massif's threshold (1.00%)
+      n0: 7040 in 1 place, below massif's threshold (1.00%)
+     n0: 0 in 4 places, all below massif's threshold (1.00%)
+    n2: 12248 0x5B57DC0: ksDup (keyset.c:235)
+     n1: 12112 0x5B543B4: keyCopy (key.c:390)
+      n2: 12112 0x5B54209: keyDup (key.c:287)
+       n1: 11968 0x5B5C9D1: elektraRenameKeys (proposal.c:56)
+        n0: 11968 in 2 places, all below massif's threshold (1.00%)
+       n0: 144 in 8 places, all below massif's threshold (1.00%)
+     n0: 136 in 12 places, all below massif's threshold (1.00%)
+    n2: 8832 0x5137086: splitAppend (split.c:166)
+     n1: 8064 0x5135282: mountBackend (mount.c:589)
+      n0: 8064 in 3 places, all below massif's threshold (1.00%)
+     n0: 768 in 8 places, all below massif's threshold (1.00%)
+    n0: 7040 in 34 places, all below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n3: 34816 0x5B540C2: elektraKeyMalloc (key.c:85)
+   n2: 20416 0x5B5418F: keyDup (key.c:273)
+    n1: 16064 0x5B5C9D1: elektraRenameKeys (proposal.c:56)
+     n0: 16064 in 4 places, all below massif's threshold (1.00%)
+    n0: 4352 in 21 places, all below massif's threshold (1.00%)
+   n1: 8000 0x5B54055: keyNew (key.c:193)
+    n0: 8000 in 11 places, all below massif's threshold (1.00%)
+   n0: 6400 in 1 place, below massif's threshold (1.00%)
+  n1: 21888 0x703DC37: libelektra_resolver_fm_hpu_b_LTX_elektraPluginopen (resolver.c:416)
+   n2: 21888 0x513A440: elektraPluginOpen (plugin.c:292)
+    n1: 21120 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+     n1: 21120 0x512BB74: backendOpen (backend.c:197)
+      n1: 21120 0x51342A1: mountOpen (mount.c:65)
+       n1: 21120 0x512DDEC: kdbOpen (kdb.c:336)
+        n1: 21120 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 21120 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 21120 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+           n0: 21120 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+          n0: 0 in 14 places, all below massif's threshold (1.00%)
+    n0: 768 in 2 places, all below massif's threshold (1.00%)
+  n2: 17712 0x5B57875: ksVNew (keyset.c:170)
+   n1: 17712 0x5B57833: ksNew (keyset.c:152)
+    n0: 17712 in 37 places, all below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n2: 17652 0x5B53067: elektraStrNDup (internal.c:325)
+   n0: 9383 in 2 places, all below massif's threshold (1.00%)
+   n1: 8269 0x5B5436E: keyCopy (key.c:380)
+    n1: 8269 0x5B54209: keyDup (key.c:287)
+     n0: 8269 in 19 places, all below massif's threshold (1.00%)
+  n1: 8307 0x5B52F50: elektraStrDup (internal.c:301)
+   n0: 8307 in 24 places, all below massif's threshold (1.00%)
+  n0: 4613 in 41 places, all below massif's threshold (1.00%)
+ n1: 72704 0x5FF2294: ??? (in /usr/lib64/libstdc++.so.6.0.24)
+  n1: 72704 0x4010C11: _dl_init (in /usr/lib64/ld-2.26.so)
+   n1: 72704 0x4000F08: ??? (in /usr/lib64/ld-2.26.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF000839: ???
+      n0: 72704 0x1FFF000857: ???
+ n2: 71696 0x8608776: CRYPTO_malloc (in /usr/lib64/libcrypto.so.1.0.2m)
+  n2: 60600 0x86BEF04: lh_insert (in /usr/lib64/libcrypto.so.1.0.2m)
+   n2: 53664 0x86C17B8: ??? (in /usr/lib64/libcrypto.so.1.0.2m)
+    n1: 48816 0x86C1E69: ERR_load_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+     n0: 48816 in 55 places, all below massif's threshold (1.00%)
+    n0: 4848 in 4 places, all below massif's threshold (1.00%)
+   n0: 6936 in 3 places, all below massif's threshold (1.00%)
+  n0: 11096 in 14 places, all below massif's threshold (1.00%)
+ n1: 65536 0x7F3CA9F: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+  n1: 65536 0x7F3BCE6: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n1: 65536 0x7F3C0F5: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+    n1: 65536 0x7F2ABC2: Botan::OctetString::change(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libbotan-1.10.so.1.17)
+     n1: 65536 0x80CB208: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+      n1: 65536 0x80CE390: Botan::confirm_startup_self_tests(Botan::Algorithm_Factory&) (in /usr/lib64/libbotan-1.10.so.1.17)
+       n1: 65536 0x80358FF: Botan::Library_State::initialize(bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+        n1: 65536 0x8033E26: Botan::LibraryInitializer::initialize(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libbotan-1.10.so.1.17)
+         n1: 65536 0x7C98BE9: elektraCryptoBotanInit (botan_operations.cpp:149)
+          n1: 65536 0x7CA39A3: elektraCryptoInit (crypto.c:116)
+           n1: 65536 0x7CA3936: libelektra_crypto_botan_LTX_elektraPluginopen (crypto.c:389)
+            n1: 65536 0x513A440: elektraPluginOpen (plugin.c:292)
+             n1: 65536 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+              n1: 65536 0x512BC00: backendOpen (backend.c:206)
+               n1: 65536 0x51342A1: mountOpen (mount.c:65)
+                n1: 65536 0x512DDEC: kdbOpen (kdb.c:336)
+                 n1: 65536 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+                  n1: 65536 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                   n1: 65536 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                    n1: 65536 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                     n0: 65536 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+ n0: 35982 in 254 places, all below massif's threshold (1.00%)
+ n3: 34464 0x8035CFA: Botan::Library_State::set(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+  n1: 13344 0x8037FA8: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 13344 in 139 places, all below massif's threshold (1.00%)
+  n1: 13344 0x8038070: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 13344 in 139 places, all below massif's threshold (1.00%)
+  n0: 7776 in 51 places, all below massif's threshold (1.00%)
+ n2: 34157 0x608BA3D: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libstdc++.so.6.0.24)
+  n1: 34157 0x8035DD7: Botan::Library_State::set(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 34157 in 52 places, all below massif's threshold (1.00%)
+  n0: 0 in 11 places, all below massif's threshold (1.00%)
+ n1: 22545 0x400C22F: _dl_new_object (in /usr/lib64/ld-2.26.so)
+  n1: 22545 0x4006723: _dl_map_object_from_fd (in /usr/lib64/ld-2.26.so)
+   n2: 22545 0x4008F9A: _dl_map_object (in /usr/lib64/ld-2.26.so)
+    n1: 11902 0x4015859: dl_open_worker (in /usr/lib64/ld-2.26.so)
+     n1: 11902 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+      n2: 11902 0x4015077: _dl_open (in /usr/lib64/ld-2.26.so)
+       n1: 9532 0x5D62F94: dlopen_doit (in /usr/lib64/libdl-2.26.so)
+        n1: 9532 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+         n1: 9532 0x5D63713: _dlerror_run (in /usr/lib64/libdl-2.26.so)
+          n1: 9532 0x5D6301F: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.26.so)
+           n1: 9532 0x5B5CF3F: elektraModulesLoad (dl.c:78)
+            n1: 9532 0x513A3B5: elektraPluginOpen (plugin.c:270)
+             n0: 9532 in 5 places, all below massif's threshold (1.00%)
+       n0: 2370 in 1 place, below massif's threshold (1.00%)
+    n1: 10643 0x400E440: openaux (in /usr/lib64/ld-2.26.so)
+     n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+      n1: 10643 0x400E78A: _dl_map_object_deps (in /usr/lib64/ld-2.26.so)
+       n1: 10643 0x40158BB: dl_open_worker (in /usr/lib64/ld-2.26.so)
+        n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+         n1: 10643 0x4015077: _dl_open (in /usr/lib64/ld-2.26.so)
+          n1: 10643 0x5D62F94: dlopen_doit (in /usr/lib64/libdl-2.26.so)
+           n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+            n1: 10643 0x5D63713: _dlerror_run (in /usr/lib64/libdl-2.26.so)
+             n1: 10643 0x5D6301F: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.26.so)
+              n1: 10643 0x5B5CF3F: elektraModulesLoad (dl.c:78)
+               n2: 10643 0x513A3B5: elektraPluginOpen (plugin.c:270)
+                n1: 9459 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+                 n1: 9459 0x512BC00: backendOpen (backend.c:206)
+                  n1: 9459 0x51342A1: mountOpen (mount.c:65)
+                   n1: 9459 0x512DDEC: kdbOpen (kdb.c:336)
+                    n1: 9459 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+                     n1: 9459 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                      n1: 9459 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                       n1: 9459 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                        n0: 9459 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+                n0: 1184 in 1 place, below massif's threshold (1.00%)
+ n2: 19822 0x5B52CD1: elektraRealloc (internal.c:204)
+  n2: 15062 0x5B56A5F: keyAddName (keyname.c:965)
+   n1: 10156 0x5B5CA0E: elektraRenameKeys (proposal.c:58)
+    n0: 10156 in 4 places, all below massif's threshold (1.00%)
+   n0: 4906 in 3 places, all below massif's threshold (1.00%)
+  n0: 4760 in 8 places, all below massif's threshold (1.00%)
+ n1: 18432 0x860886B: CRYPTO_realloc (in /usr/lib64/libcrypto.so.1.0.2m)
+  n2: 18432 0x86BEEA9: lh_insert (in /usr/lib64/libcrypto.so.1.0.2m)
+   n2: 16384 0x86C17B8: ??? (in /usr/lib64/libcrypto.so.1.0.2m)
+    n2: 16384 0x86C1E69: ERR_load_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+     n1: 16384 0x86C2E4E: ERR_load_crypto_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+      n1: 16384 0x9559C66: elektraCryptoOpenSSLInit (openssl_operations.c:148)
+       n1: 16384 0x9563483: elektraCryptoInit (crypto.c:114)
+        n1: 16384 0x9563416: libelektra_crypto_openssl_LTX_elektraPluginopen (crypto.c:389)
+         n1: 16384 0x513A440: elektraPluginOpen (plugin.c:292)
+          n1: 16384 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+           n1: 16384 0x512BC00: backendOpen (backend.c:206)
+            n1: 16384 0x51342A1: mountOpen (mount.c:65)
+             n1: 16384 0x512DDEC: kdbOpen (kdb.c:336)
+              n1: 16384 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+               n1: 16384 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                n1: 16384 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                 n1: 16384 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                  n0: 16384 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+     n0: 0 in 3 places, all below massif's threshold (1.00%)
+    n0: 0 in 2 places, all below massif's threshold (1.00%)
+   n0: 2048 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=36
+#-----------
+time=130226489376
+mem_heap_B=693501
+mem_heap_extra_B=102659
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=133255721660
+mem_heap_B=691146
+mem_heap_extra_B=102310
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=136035542328
+mem_heap_B=690426
+mem_heap_extra_B=102310
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=140373337323
+mem_heap_B=691450
+mem_heap_extra_B=102262
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=145851603793
+mem_heap_B=691118
+mem_heap_extra_B=102434
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=148880812895
+mem_heap_B=691275
+mem_heap_extra_B=102253
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=151660634023
+mem_heap_B=690555
+mem_heap_extra_B=102253
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=155998440143
+mem_heap_B=691553
+mem_heap_extra_B=102167
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=158778261099
+mem_heap_B=690833
+mem_heap_extra_B=102167
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=162866619622
+mem_heap_B=693117
+mem_heap_extra_B=102907
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=167285791922
+mem_heap_B=690922
+mem_heap_extra_B=101974
+mem_stacks_B=0
+heap_tree=detailed
+n11: 690922 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 163012 0x5B52E42: elektraCalloc (internal.c:256)
+  n3: 131200 0x5138E28: trieInsert (trie.c:124)
+   n2: 114800 0x5138FFE: trieInsert (trie.c:169)
+    n2: 90200 0x5138F61: trieInsert (trie.c:153)
+     n2: 57400 0x513523A: mountBackend (mount.c:588)
+      n1: 41000 0x513433D: mountOpen (mount.c:82)
+       n1: 41000 0x512DDEC: kdbOpen (kdb.c:336)
+        n1: 41000 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 41000 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 41000 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+           n0: 41000 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+          n0: 0 in 14 places, all below massif's threshold (1.00%)
+      n1: 16400 0x5136916: mountModules (mount.c:445)
+       n1: 16400 0x512DF84: kdbOpen (kdb.c:359)
+        n1: 16400 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 16400 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 16400 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+           n0: 16400 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+          n0: 0 in 14 places, all below massif's threshold (1.00%)
+     n1: 32800 0x5138F61: trieInsert (trie.c:153)
+      n1: 32800 0x513523A: mountBackend (mount.c:588)
+       n1: 32800 0x513433D: mountOpen (mount.c:82)
+        n1: 32800 0x512DDEC: kdbOpen (kdb.c:336)
+         n1: 32800 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+          n2: 32800 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+           n1: 32800 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+            n0: 32800 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+           n0: 0 in 14 places, all below massif's threshold (1.00%)
+    n1: 24600 0x513523A: mountBackend (mount.c:588)
+     n1: 24600 0x513433D: mountOpen (mount.c:82)
+      n1: 24600 0x512DDEC: kdbOpen (kdb.c:336)
+       n1: 24600 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+        n2: 24600 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+         n1: 24600 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+          n0: 24600 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+         n0: 0 in 14 places, all below massif's threshold (1.00%)
+   n1: 8200 0x513523A: mountBackend (mount.c:588)
+    n1: 8200 0x513433D: mountOpen (mount.c:82)
+     n1: 8200 0x512DDEC: kdbOpen (kdb.c:336)
+      n1: 8200 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+       n2: 8200 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+        n1: 8200 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+         n0: 8200 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+        n0: 0 in 14 places, all below massif's threshold (1.00%)
+   n1: 8200 0x5138F61: trieInsert (trie.c:153)
+    n1: 8200 0x513523A: mountBackend (mount.c:588)
+     n1: 8200 0x5136CBC: mountVersion (mount.c:463)
+      n1: 8200 0x512DF52: kdbOpen (kdb.c:356)
+       n1: 8200 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+        n2: 8200 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+         n1: 8200 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+          n0: 8200 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+         n0: 0 in 14 places, all below massif's threshold (1.00%)
+  n2: 18720 0x512BDF2: elektraBackendAllocate (backend.c:47)
+   n1: 15840 0x512BA7F: backendOpen (backend.c:178)
+    n1: 15840 0x51342A1: mountOpen (mount.c:65)
+     n1: 15840 0x512DDEC: kdbOpen (kdb.c:336)
+      n1: 15840 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+       n2: 15840 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+        n1: 15840 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+         n0: 15840 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+        n0: 0 in 14 places, all below massif's threshold (1.00%)
+   n0: 2880 in 3 places, all below massif's threshold (1.00%)
+  n1: 11952 0x53427F3: elektraPluginExport (plugin.c:62)
+   n0: 11952 in 8 places, all below massif's threshold (1.00%)
+  n0: 1140 in 11 places, all below massif's threshold (1.00%)
+ n7: 152190 0x5B52D9B: elektraMalloc (internal.c:241)
+  n2: 47832 0x5B578E5: ksVNew (keyset.c:184)
+   n4: 47832 0x5B57833: ksNew (keyset.c:152)
+    n2: 19712 0x5B5C990: elektraRenameKeys (proposal.c:51)
+     n2: 19712 0x513A03F: elektraProcessPlugins (plugin.c:176)
+      n1: 12672 0x512BC00: backendOpen (backend.c:206)
+       n1: 12672 0x51342A1: mountOpen (mount.c:65)
+        n1: 12672 0x512DDEC: kdbOpen (kdb.c:336)
+         n1: 12672 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+          n2: 12672 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+           n1: 12672 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+            n0: 12672 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+           n0: 0 in 14 places, all below massif's threshold (1.00%)
+      n0: 7040 in 1 place, below massif's threshold (1.00%)
+     n0: 0 in 4 places, all below massif's threshold (1.00%)
+    n2: 12248 0x5B57DC0: ksDup (keyset.c:235)
+     n1: 12112 0x5B543B4: keyCopy (key.c:390)
+      n2: 12112 0x5B54209: keyDup (key.c:287)
+       n1: 11968 0x5B5C9D1: elektraRenameKeys (proposal.c:56)
+        n0: 11968 in 2 places, all below massif's threshold (1.00%)
+       n0: 144 in 8 places, all below massif's threshold (1.00%)
+     n0: 136 in 12 places, all below massif's threshold (1.00%)
+    n2: 8832 0x5137086: splitAppend (split.c:166)
+     n1: 8064 0x5135282: mountBackend (mount.c:589)
+      n0: 8064 in 3 places, all below massif's threshold (1.00%)
+     n0: 768 in 8 places, all below massif's threshold (1.00%)
+    n0: 7040 in 34 places, all below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n2: 34496 0x5B540C2: elektraKeyMalloc (key.c:85)
+   n2: 20416 0x5B5418F: keyDup (key.c:273)
+    n1: 16064 0x5B5C9D1: elektraRenameKeys (proposal.c:56)
+     n0: 16064 in 4 places, all below massif's threshold (1.00%)
+    n0: 4352 in 21 places, all below massif's threshold (1.00%)
+   n0: 14080 in 2 places, all below massif's threshold (1.00%)
+  n1: 21888 0x703DC37: libelektra_resolver_fm_hpu_b_LTX_elektraPluginopen (resolver.c:416)
+   n2: 21888 0x513A440: elektraPluginOpen (plugin.c:292)
+    n1: 21120 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+     n1: 21120 0x512BB74: backendOpen (backend.c:197)
+      n1: 21120 0x51342A1: mountOpen (mount.c:65)
+       n1: 21120 0x512DDEC: kdbOpen (kdb.c:336)
+        n1: 21120 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 21120 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 21120 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+           n0: 21120 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+          n0: 0 in 14 places, all below massif's threshold (1.00%)
+    n0: 768 in 2 places, all below massif's threshold (1.00%)
+  n2: 17712 0x5B57875: ksVNew (keyset.c:170)
+   n1: 17712 0x5B57833: ksNew (keyset.c:152)
+    n0: 17712 in 37 places, all below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n2: 17647 0x5B53067: elektraStrNDup (internal.c:325)
+   n0: 9378 in 2 places, all below massif's threshold (1.00%)
+   n1: 8269 0x5B5436E: keyCopy (key.c:380)
+    n1: 8269 0x5B54209: keyDup (key.c:287)
+     n0: 8269 in 19 places, all below massif's threshold (1.00%)
+  n1: 8307 0x5B52F50: elektraStrDup (internal.c:301)
+   n0: 8307 in 24 places, all below massif's threshold (1.00%)
+  n0: 4308 in 41 places, all below massif's threshold (1.00%)
+ n1: 72704 0x5FF2294: ??? (in /usr/lib64/libstdc++.so.6.0.24)
+  n1: 72704 0x4010C11: _dl_init (in /usr/lib64/ld-2.26.so)
+   n1: 72704 0x4000F08: ??? (in /usr/lib64/ld-2.26.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF000839: ???
+      n0: 72704 0x1FFF000857: ???
+ n2: 71696 0x8608776: CRYPTO_malloc (in /usr/lib64/libcrypto.so.1.0.2m)
+  n2: 60600 0x86BEF04: lh_insert (in /usr/lib64/libcrypto.so.1.0.2m)
+   n2: 53664 0x86C17B8: ??? (in /usr/lib64/libcrypto.so.1.0.2m)
+    n1: 48816 0x86C1E69: ERR_load_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+     n0: 48816 in 55 places, all below massif's threshold (1.00%)
+    n0: 4848 in 4 places, all below massif's threshold (1.00%)
+   n0: 6936 in 3 places, all below massif's threshold (1.00%)
+  n0: 11096 in 14 places, all below massif's threshold (1.00%)
+ n1: 65536 0x7F3CA9F: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+  n1: 65536 0x7F3BCE6: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n1: 65536 0x7F3C0F5: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+    n1: 65536 0x7F2ABC2: Botan::OctetString::change(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libbotan-1.10.so.1.17)
+     n1: 65536 0x80CB208: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+      n1: 65536 0x80CE390: Botan::confirm_startup_self_tests(Botan::Algorithm_Factory&) (in /usr/lib64/libbotan-1.10.so.1.17)
+       n1: 65536 0x80358FF: Botan::Library_State::initialize(bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+        n1: 65536 0x8033E26: Botan::LibraryInitializer::initialize(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libbotan-1.10.so.1.17)
+         n1: 65536 0x7C98BE9: elektraCryptoBotanInit (botan_operations.cpp:149)
+          n1: 65536 0x7CA39A3: elektraCryptoInit (crypto.c:116)
+           n1: 65536 0x7CA3936: libelektra_crypto_botan_LTX_elektraPluginopen (crypto.c:389)
+            n1: 65536 0x513A440: elektraPluginOpen (plugin.c:292)
+             n1: 65536 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+              n1: 65536 0x512BC00: backendOpen (backend.c:206)
+               n1: 65536 0x51342A1: mountOpen (mount.c:65)
+                n1: 65536 0x512DDEC: kdbOpen (kdb.c:336)
+                 n1: 65536 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+                  n1: 65536 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                   n1: 65536 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                    n1: 65536 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                     n0: 65536 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+ n0: 36334 in 254 places, all below massif's threshold (1.00%)
+ n3: 34464 0x8035CFA: Botan::Library_State::set(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+  n1: 13344 0x8037FA8: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 13344 in 139 places, all below massif's threshold (1.00%)
+  n1: 13344 0x8038070: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 13344 in 139 places, all below massif's threshold (1.00%)
+  n0: 7776 in 51 places, all below massif's threshold (1.00%)
+ n2: 34157 0x608BA3D: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libstdc++.so.6.0.24)
+  n1: 34157 0x8035DD7: Botan::Library_State::set(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 34157 in 52 places, all below massif's threshold (1.00%)
+  n0: 0 in 11 places, all below massif's threshold (1.00%)
+ n1: 22545 0x400C22F: _dl_new_object (in /usr/lib64/ld-2.26.so)
+  n1: 22545 0x4006723: _dl_map_object_from_fd (in /usr/lib64/ld-2.26.so)
+   n2: 22545 0x4008F9A: _dl_map_object (in /usr/lib64/ld-2.26.so)
+    n1: 11902 0x4015859: dl_open_worker (in /usr/lib64/ld-2.26.so)
+     n1: 11902 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+      n2: 11902 0x4015077: _dl_open (in /usr/lib64/ld-2.26.so)
+       n1: 9532 0x5D62F94: dlopen_doit (in /usr/lib64/libdl-2.26.so)
+        n1: 9532 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+         n1: 9532 0x5D63713: _dlerror_run (in /usr/lib64/libdl-2.26.so)
+          n1: 9532 0x5D6301F: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.26.so)
+           n1: 9532 0x5B5CF3F: elektraModulesLoad (dl.c:78)
+            n1: 9532 0x513A3B5: elektraPluginOpen (plugin.c:270)
+             n0: 9532 in 5 places, all below massif's threshold (1.00%)
+       n0: 2370 in 1 place, below massif's threshold (1.00%)
+    n1: 10643 0x400E440: openaux (in /usr/lib64/ld-2.26.so)
+     n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+      n1: 10643 0x400E78A: _dl_map_object_deps (in /usr/lib64/ld-2.26.so)
+       n1: 10643 0x40158BB: dl_open_worker (in /usr/lib64/ld-2.26.so)
+        n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+         n1: 10643 0x4015077: _dl_open (in /usr/lib64/ld-2.26.so)
+          n1: 10643 0x5D62F94: dlopen_doit (in /usr/lib64/libdl-2.26.so)
+           n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+            n1: 10643 0x5D63713: _dlerror_run (in /usr/lib64/libdl-2.26.so)
+             n1: 10643 0x5D6301F: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.26.so)
+              n1: 10643 0x5B5CF3F: elektraModulesLoad (dl.c:78)
+               n2: 10643 0x513A3B5: elektraPluginOpen (plugin.c:270)
+                n1: 9459 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+                 n1: 9459 0x512BC00: backendOpen (backend.c:206)
+                  n1: 9459 0x51342A1: mountOpen (mount.c:65)
+                   n1: 9459 0x512DDEC: kdbOpen (kdb.c:336)
+                    n1: 9459 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+                     n1: 9459 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                      n1: 9459 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                       n1: 9459 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                        n0: 9459 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+                n0: 1184 in 1 place, below massif's threshold (1.00%)
+ n2: 19852 0x5B52CD1: elektraRealloc (internal.c:204)
+  n2: 15062 0x5B56A5F: keyAddName (keyname.c:965)
+   n1: 10156 0x5B5CA0E: elektraRenameKeys (proposal.c:58)
+    n0: 10156 in 4 places, all below massif's threshold (1.00%)
+   n0: 4906 in 3 places, all below massif's threshold (1.00%)
+  n0: 4790 in 8 places, all below massif's threshold (1.00%)
+ n1: 18432 0x860886B: CRYPTO_realloc (in /usr/lib64/libcrypto.so.1.0.2m)
+  n2: 18432 0x86BEEA9: lh_insert (in /usr/lib64/libcrypto.so.1.0.2m)
+   n2: 16384 0x86C17B8: ??? (in /usr/lib64/libcrypto.so.1.0.2m)
+    n2: 16384 0x86C1E69: ERR_load_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+     n1: 16384 0x86C2E4E: ERR_load_crypto_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+      n1: 16384 0x9559C66: elektraCryptoOpenSSLInit (openssl_operations.c:148)
+       n1: 16384 0x9563483: elektraCryptoInit (crypto.c:114)
+        n1: 16384 0x9563416: libelektra_crypto_openssl_LTX_elektraPluginopen (crypto.c:389)
+         n1: 16384 0x513A440: elektraPluginOpen (plugin.c:292)
+          n1: 16384 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+           n1: 16384 0x512BC00: backendOpen (backend.c:206)
+            n1: 16384 0x51342A1: mountOpen (mount.c:65)
+             n1: 16384 0x512DDEC: kdbOpen (kdb.c:336)
+              n1: 16384 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+               n1: 16384 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                n1: 16384 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                 n1: 16384 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                  n0: 16384 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+     n0: 0 in 3 places, all below massif's threshold (1.00%)
+    n0: 0 in 2 places, all below massif's threshold (1.00%)
+   n0: 2048 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=47
+#-----------
+time=169984237536
+mem_heap_B=691438
+mem_heap_extra_B=102178
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=173013508404
+mem_heap_B=691650
+mem_heap_extra_B=101894
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=177142552536
+mem_heap_B=692068
+mem_heap_extra_B=102212
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=179025413092
+mem_heap_B=693370
+mem_heap_extra_B=102326
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=181057757445
+mem_heap_B=691680
+mem_heap_extra_B=102040
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=183374274724
+mem_heap_B=691080
+mem_heap_extra_B=102024
+mem_stacks_B=0
+heap_tree=detailed
+n11: 691080 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 163012 0x5B52E42: elektraCalloc (internal.c:256)
+  n3: 131200 0x5138E28: trieInsert (trie.c:124)
+   n2: 114800 0x5138FFE: trieInsert (trie.c:169)
+    n2: 90200 0x5138F61: trieInsert (trie.c:153)
+     n2: 57400 0x513523A: mountBackend (mount.c:588)
+      n1: 41000 0x513433D: mountOpen (mount.c:82)
+       n1: 41000 0x512DDEC: kdbOpen (kdb.c:336)
+        n1: 41000 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 41000 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 41000 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+           n0: 41000 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+          n0: 0 in 14 places, all below massif's threshold (1.00%)
+      n1: 16400 0x5136916: mountModules (mount.c:445)
+       n1: 16400 0x512DF84: kdbOpen (kdb.c:359)
+        n1: 16400 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 16400 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 16400 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+           n0: 16400 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+          n0: 0 in 14 places, all below massif's threshold (1.00%)
+     n1: 32800 0x5138F61: trieInsert (trie.c:153)
+      n1: 32800 0x513523A: mountBackend (mount.c:588)
+       n1: 32800 0x513433D: mountOpen (mount.c:82)
+        n1: 32800 0x512DDEC: kdbOpen (kdb.c:336)
+         n1: 32800 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+          n2: 32800 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+           n1: 32800 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+            n0: 32800 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+           n0: 0 in 14 places, all below massif's threshold (1.00%)
+    n1: 24600 0x513523A: mountBackend (mount.c:588)
+     n1: 24600 0x513433D: mountOpen (mount.c:82)
+      n1: 24600 0x512DDEC: kdbOpen (kdb.c:336)
+       n1: 24600 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+        n2: 24600 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+         n1: 24600 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+          n0: 24600 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+         n0: 0 in 14 places, all below massif's threshold (1.00%)
+   n1: 8200 0x513523A: mountBackend (mount.c:588)
+    n1: 8200 0x513433D: mountOpen (mount.c:82)
+     n1: 8200 0x512DDEC: kdbOpen (kdb.c:336)
+      n1: 8200 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+       n2: 8200 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+        n1: 8200 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+         n0: 8200 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+        n0: 0 in 14 places, all below massif's threshold (1.00%)
+   n1: 8200 0x5138F61: trieInsert (trie.c:153)
+    n1: 8200 0x513523A: mountBackend (mount.c:588)
+     n1: 8200 0x5136CBC: mountVersion (mount.c:463)
+      n1: 8200 0x512DF52: kdbOpen (kdb.c:356)
+       n1: 8200 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+        n2: 8200 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+         n1: 8200 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+          n0: 8200 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+         n0: 0 in 14 places, all below massif's threshold (1.00%)
+  n2: 18720 0x512BDF2: elektraBackendAllocate (backend.c:47)
+   n1: 15840 0x512BA7F: backendOpen (backend.c:178)
+    n1: 15840 0x51342A1: mountOpen (mount.c:65)
+     n1: 15840 0x512DDEC: kdbOpen (kdb.c:336)
+      n1: 15840 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+       n2: 15840 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+        n1: 15840 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+         n0: 15840 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+        n0: 0 in 14 places, all below massif's threshold (1.00%)
+   n0: 2880 in 3 places, all below massif's threshold (1.00%)
+  n1: 11952 0x53427F3: elektraPluginExport (plugin.c:62)
+   n0: 11952 in 8 places, all below massif's threshold (1.00%)
+  n0: 1140 in 11 places, all below massif's threshold (1.00%)
+ n7: 152194 0x5B52D9B: elektraMalloc (internal.c:241)
+  n2: 47832 0x5B578E5: ksVNew (keyset.c:184)
+   n4: 47832 0x5B57833: ksNew (keyset.c:152)
+    n2: 19712 0x5B5C990: elektraRenameKeys (proposal.c:51)
+     n2: 19712 0x513A03F: elektraProcessPlugins (plugin.c:176)
+      n1: 12672 0x512BC00: backendOpen (backend.c:206)
+       n1: 12672 0x51342A1: mountOpen (mount.c:65)
+        n1: 12672 0x512DDEC: kdbOpen (kdb.c:336)
+         n1: 12672 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+          n2: 12672 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+           n1: 12672 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+            n0: 12672 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+           n0: 0 in 14 places, all below massif's threshold (1.00%)
+      n0: 7040 in 1 place, below massif's threshold (1.00%)
+     n0: 0 in 4 places, all below massif's threshold (1.00%)
+    n2: 12248 0x5B57DC0: ksDup (keyset.c:235)
+     n1: 12112 0x5B543B4: keyCopy (key.c:390)
+      n2: 12112 0x5B54209: keyDup (key.c:287)
+       n1: 11968 0x5B5C9D1: elektraRenameKeys (proposal.c:56)
+        n0: 11968 in 2 places, all below massif's threshold (1.00%)
+       n0: 144 in 8 places, all below massif's threshold (1.00%)
+     n0: 136 in 12 places, all below massif's threshold (1.00%)
+    n2: 8832 0x5137086: splitAppend (split.c:166)
+     n1: 8064 0x5135282: mountBackend (mount.c:589)
+      n0: 8064 in 3 places, all below massif's threshold (1.00%)
+     n0: 768 in 8 places, all below massif's threshold (1.00%)
+    n0: 7040 in 34 places, all below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n2: 34496 0x5B540C2: elektraKeyMalloc (key.c:85)
+   n2: 20416 0x5B5418F: keyDup (key.c:273)
+    n1: 16064 0x5B5C9D1: elektraRenameKeys (proposal.c:56)
+     n0: 16064 in 4 places, all below massif's threshold (1.00%)
+    n0: 4352 in 21 places, all below massif's threshold (1.00%)
+   n0: 14080 in 2 places, all below massif's threshold (1.00%)
+  n1: 21888 0x703DC37: libelektra_resolver_fm_hpu_b_LTX_elektraPluginopen (resolver.c:416)
+   n2: 21888 0x513A440: elektraPluginOpen (plugin.c:292)
+    n1: 21120 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+     n1: 21120 0x512BB74: backendOpen (backend.c:197)
+      n1: 21120 0x51342A1: mountOpen (mount.c:65)
+       n1: 21120 0x512DDEC: kdbOpen (kdb.c:336)
+        n1: 21120 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+         n2: 21120 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+          n1: 21120 0x40BF05: void benchmark_crypto_get<(PluginVariant)3>(int) (benchmark_crypto_comparison.cpp:129)
+           n0: 21120 0x40A156: main (benchmark_crypto_comparison.cpp:206)
+          n0: 0 in 14 places, all below massif's threshold (1.00%)
+    n0: 768 in 2 places, all below massif's threshold (1.00%)
+  n2: 17712 0x5B57875: ksVNew (keyset.c:170)
+   n1: 17712 0x5B57833: ksNew (keyset.c:152)
+    n0: 17712 in 37 places, all below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n2: 17651 0x5B53067: elektraStrNDup (internal.c:325)
+   n0: 9382 in 2 places, all below massif's threshold (1.00%)
+   n1: 8269 0x5B5436E: keyCopy (key.c:380)
+    n1: 8269 0x5B54209: keyDup (key.c:287)
+     n0: 8269 in 19 places, all below massif's threshold (1.00%)
+  n1: 8307 0x5B52F50: elektraStrDup (internal.c:301)
+   n0: 8307 in 24 places, all below massif's threshold (1.00%)
+  n0: 4308 in 41 places, all below massif's threshold (1.00%)
+ n1: 72704 0x5FF2294: ??? (in /usr/lib64/libstdc++.so.6.0.24)
+  n1: 72704 0x4010C11: _dl_init (in /usr/lib64/ld-2.26.so)
+   n1: 72704 0x4000F08: ??? (in /usr/lib64/ld-2.26.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF000839: ???
+      n0: 72704 0x1FFF000857: ???
+ n2: 71696 0x8608776: CRYPTO_malloc (in /usr/lib64/libcrypto.so.1.0.2m)
+  n2: 60600 0x86BEF04: lh_insert (in /usr/lib64/libcrypto.so.1.0.2m)
+   n2: 53664 0x86C17B8: ??? (in /usr/lib64/libcrypto.so.1.0.2m)
+    n1: 48816 0x86C1E69: ERR_load_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+     n0: 48816 in 55 places, all below massif's threshold (1.00%)
+    n0: 4848 in 4 places, all below massif's threshold (1.00%)
+   n0: 6936 in 3 places, all below massif's threshold (1.00%)
+  n0: 11096 in 14 places, all below massif's threshold (1.00%)
+ n1: 65536 0x7F3CA9F: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+  n1: 65536 0x7F3BCE6: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n1: 65536 0x7F3C0F5: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+    n1: 65536 0x7F2ABC2: Botan::OctetString::change(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libbotan-1.10.so.1.17)
+     n1: 65536 0x80CB208: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+      n1: 65536 0x80CE390: Botan::confirm_startup_self_tests(Botan::Algorithm_Factory&) (in /usr/lib64/libbotan-1.10.so.1.17)
+       n1: 65536 0x80358FF: Botan::Library_State::initialize(bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+        n1: 65536 0x8033E26: Botan::LibraryInitializer::initialize(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libbotan-1.10.so.1.17)
+         n1: 65536 0x7C98BE9: elektraCryptoBotanInit (botan_operations.cpp:149)
+          n1: 65536 0x7CA39A3: elektraCryptoInit (crypto.c:116)
+           n1: 65536 0x7CA3936: libelektra_crypto_botan_LTX_elektraPluginopen (crypto.c:389)
+            n1: 65536 0x513A440: elektraPluginOpen (plugin.c:292)
+             n1: 65536 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+              n1: 65536 0x512BC00: backendOpen (backend.c:206)
+               n1: 65536 0x51342A1: mountOpen (mount.c:65)
+                n1: 65536 0x512DDEC: kdbOpen (kdb.c:336)
+                 n1: 65536 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+                  n1: 65536 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                   n1: 65536 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                    n1: 65536 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                     n0: 65536 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+ n0: 36462 in 254 places, all below massif's threshold (1.00%)
+ n3: 34464 0x8035CFA: Botan::Library_State::set(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+  n1: 13344 0x8037FA8: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 13344 in 139 places, all below massif's threshold (1.00%)
+  n1: 13344 0x8038070: ??? (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 13344 in 139 places, all below massif's threshold (1.00%)
+  n0: 7776 in 51 places, all below massif's threshold (1.00%)
+ n2: 34157 0x608BA3D: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib64/libstdc++.so.6.0.24)
+  n1: 34157 0x8035DD7: Botan::Library_State::set(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) (in /usr/lib64/libbotan-1.10.so.1.17)
+   n0: 34157 in 52 places, all below massif's threshold (1.00%)
+  n0: 0 in 11 places, all below massif's threshold (1.00%)
+ n1: 22545 0x400C22F: _dl_new_object (in /usr/lib64/ld-2.26.so)
+  n1: 22545 0x4006723: _dl_map_object_from_fd (in /usr/lib64/ld-2.26.so)
+   n2: 22545 0x4008F9A: _dl_map_object (in /usr/lib64/ld-2.26.so)
+    n1: 11902 0x4015859: dl_open_worker (in /usr/lib64/ld-2.26.so)
+     n1: 11902 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+      n2: 11902 0x4015077: _dl_open (in /usr/lib64/ld-2.26.so)
+       n1: 9532 0x5D62F94: dlopen_doit (in /usr/lib64/libdl-2.26.so)
+        n1: 9532 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+         n1: 9532 0x5D63713: _dlerror_run (in /usr/lib64/libdl-2.26.so)
+          n1: 9532 0x5D6301F: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.26.so)
+           n1: 9532 0x5B5CF3F: elektraModulesLoad (dl.c:78)
+            n1: 9532 0x513A3B5: elektraPluginOpen (plugin.c:270)
+             n0: 9532 in 5 places, all below massif's threshold (1.00%)
+       n0: 2370 in 1 place, below massif's threshold (1.00%)
+    n1: 10643 0x400E440: openaux (in /usr/lib64/ld-2.26.so)
+     n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+      n1: 10643 0x400E78A: _dl_map_object_deps (in /usr/lib64/ld-2.26.so)
+       n1: 10643 0x40158BB: dl_open_worker (in /usr/lib64/ld-2.26.so)
+        n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+         n1: 10643 0x4015077: _dl_open (in /usr/lib64/ld-2.26.so)
+          n1: 10643 0x5D62F94: dlopen_doit (in /usr/lib64/libdl-2.26.so)
+           n1: 10643 0x69B4FFD: _dl_catch_error (in /usr/lib64/libc-2.26.so)
+            n1: 10643 0x5D63713: _dlerror_run (in /usr/lib64/libdl-2.26.so)
+             n1: 10643 0x5D6301F: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.26.so)
+              n1: 10643 0x5B5CF3F: elektraModulesLoad (dl.c:78)
+               n2: 10643 0x513A3B5: elektraPluginOpen (plugin.c:270)
+                n1: 9459 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+                 n1: 9459 0x512BC00: backendOpen (backend.c:206)
+                  n1: 9459 0x51342A1: mountOpen (mount.c:65)
+                   n1: 9459 0x512DDEC: kdbOpen (kdb.c:336)
+                    n1: 9459 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+                     n1: 9459 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                      n1: 9459 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                       n1: 9459 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                        n0: 9459 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+                n0: 1184 in 1 place, below massif's threshold (1.00%)
+ n2: 19878 0x5B52CD1: elektraRealloc (internal.c:204)
+  n2: 15086 0x5B56A5F: keyAddName (keyname.c:965)
+   n1: 10156 0x5B5CA0E: elektraRenameKeys (proposal.c:58)
+    n0: 10156 in 4 places, all below massif's threshold (1.00%)
+   n0: 4930 in 3 places, all below massif's threshold (1.00%)
+  n0: 4792 in 8 places, all below massif's threshold (1.00%)
+ n1: 18432 0x860886B: CRYPTO_realloc (in /usr/lib64/libcrypto.so.1.0.2m)
+  n2: 18432 0x86BEEA9: lh_insert (in /usr/lib64/libcrypto.so.1.0.2m)
+   n2: 16384 0x86C17B8: ??? (in /usr/lib64/libcrypto.so.1.0.2m)
+    n2: 16384 0x86C1E69: ERR_load_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+     n1: 16384 0x86C2E4E: ERR_load_crypto_strings (in /usr/lib64/libcrypto.so.1.0.2m)
+      n1: 16384 0x9559C66: elektraCryptoOpenSSLInit (openssl_operations.c:148)
+       n1: 16384 0x9563483: elektraCryptoInit (crypto.c:114)
+        n1: 16384 0x9563416: libelektra_crypto_openssl_LTX_elektraPluginopen (crypto.c:389)
+         n1: 16384 0x513A440: elektraPluginOpen (plugin.c:292)
+          n1: 16384 0x513A0A1: elektraProcessPlugins (plugin.c:185)
+           n1: 16384 0x512BC00: backendOpen (backend.c:206)
+            n1: 16384 0x51342A1: mountOpen (mount.c:65)
+             n1: 16384 0x512DDEC: kdbOpen (kdb.c:336)
+              n1: 16384 0x4105F7: kdb::KDB::open(kdb::Key&) (kdb.hpp:101)
+               n1: 16384 0x40E995: kdb::KDB::KDB() (kdb.hpp:73)
+                n1: 16384 0x40E255: kdb::Key mountBackend<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:57)
+                 n1: 16384 0x40A6DE: void benchmark_crypto_set<(PluginVariant)0>(int) (benchmark_crypto_comparison.cpp:89)
+                  n0: 16384 0x40A0A0: main (benchmark_crypto_comparison.cpp:191)
+     n0: 0 in 3 places, all below massif's threshold (1.00%)
+    n0: 0 in 2 places, all below massif's threshold (1.00%)
+   n0: 2048 in 1 place, below massif's threshold (1.00%)

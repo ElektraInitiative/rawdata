@@ -1,0 +1,37 @@
+# Boxplot
+# 
+# gnuplot commands to create the boxplot
+set terminal pdf monochrome linewidth 1.0 solid size 7.0cm,20.0cm
+set output "boxplot_500_set.pdf"
+
+set multiplot layout 5,1
+
+set border 31 lt black linewidth 1.000 dashtype solid
+set boxwidth 0.5 absolute
+set style fill solid 0.5 border lt -1
+unset key
+set pointsize 0.5
+set style data boxplot
+
+set ytics border in scale 0.25,0.25 nomirror norotate autojustify
+set ylabel "time in s"
+
+unset xtics
+
+#
+# generate box plots
+#
+set title "No Crypto Plugin (n=500)"
+plot '500_set_no_crypto_plugin.dat' using 1.0:1
+
+set title "Fcrypt (n=500)"
+plot '500_set_fcrypt.dat' using 1.0:1
+
+set title "Crypto (libgcrypt) (n=500)"
+plot '500_set_crypto_gcrypt.dat' using 1.0:1
+
+set title "Crypto (OpenSSL) (n=500)"
+plot '500_set_crypto_openssl.dat' using 1.0:1
+
+set title "Crypto (Botan) (n=500)"
+plot '500_set_crypto_botan.dat' using 1.0:1

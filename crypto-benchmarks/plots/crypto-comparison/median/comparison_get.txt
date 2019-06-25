@@ -1,0 +1,39 @@
+reset
+set terminal pdf monochrome linewidth 1.0 solid size 20.0cm,20.0cm
+set output "comp_median_get.pdf"
+set title "Runtime Comparison (median values)"
+
+set multiplot layout 2,2
+
+set border 31 lt black linewidth 1.000 dashtype solid
+set pointsize 0.75
+set grid
+
+set ylabel "time in s"
+set ytics border in scale 0.25,0.25 nomirror norotate autojustify
+
+set xlabel "number of decrypted configuration settings"
+set xtics border nomirror norotate autojustify
+
+set xrange [1:50]
+plot 'get_no_crypto_plugin.dat' title "no crypto plugin" with points pt 1, \
+    'get_fcrypt.dat' title "fcrypt" with points pt 6, \
+    'get_crypto_gcrypt.dat' title "crypto (libgcrypt)" with points pt 7, \
+    'get_crypto_openssl.dat' title "crypto (OpenSSL)" with points pt 8, \
+    'get_crypto_botan.dat' title "crypto (Botan)" with points pt 9
+
+set xrange [1:500]
+plot 'get_no_crypto_plugin.dat' title "no crypto plugin" with points pt 1, \
+    'get_fcrypt.dat' title "fcrypt" with points pt 6, \
+    'get_crypto_gcrypt.dat' title "crypto (libgcrypt)" with points pt 7, \
+    'get_crypto_openssl.dat' title "crypto (OpenSSL)" with points pt 8, \
+    'get_crypto_botan.dat' title "crypto (Botan)" with points pt 9
+
+set yrange [0:0.01]
+set xrange [1:50]
+plot 'get_no_crypto_plugin.dat' title "no crypto plugin" with points pt 1, \
+    'get_fcrypt.dat' title "fcrypt" with points pt 6
+
+set xrange [1:500]
+plot 'get_no_crypto_plugin.dat' title "no crypto plugin" with points pt 1, \
+    'get_fcrypt.dat' title "fcrypt" with points pt 6

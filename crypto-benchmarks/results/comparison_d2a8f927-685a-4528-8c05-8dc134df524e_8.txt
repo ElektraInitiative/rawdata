@@ -1,0 +1,144 @@
+
+
+hostname 6a647deae629
+gcc: 4
+clang: 1
+sizeof(int) 4
+sizeof(long) 8
+sizeof(long long) 8
+number of keys 8
+
+----- KDB SET -----
+0
+              no_crypto_plugin	0.007619 sec	 Sum: 0.007619 sec	Avg: 0.007619 sec	Min: 0.007619 sec	Max: 0.007619 sec	Median: 0.007619 sec
+                crypto_openssl	0.137446 sec	 Sum: 0.137446 sec	Avg: 0.137446 sec	Min: 0.137446 sec	Max: 0.137446 sec	Median: 0.137446 sec
+                 crypto_gcrypt	0.091167 sec	 Sum: 0.091167 sec	Avg: 0.091167 sec	Min: 0.091167 sec	Max: 0.091167 sec	Median: 0.091167 sec
+                  crypto_botan	0.307899 sec	 Sum: 0.307899 sec	Avg: 0.307899 sec	Min: 0.307899 sec	Max: 0.307899 sec	Median: 0.307899 sec
+                        fcrypt	0.014003 sec	 Sum: 0.014003 sec	Avg: 0.014003 sec	Min: 0.014003 sec	Max: 0.014003 sec	Median: 0.014003 sec
+1
+              no_crypto_plugin	0.003443 sec	 Sum: 0.011062 sec	Avg: 0.005531 sec	Min: 0.003443 sec	Max: 0.007619 sec	Median: 0.007619 sec
+                crypto_openssl	0.141192 sec	 Sum: 0.278638 sec	Avg: 0.139319 sec	Min: 0.137446 sec	Max: 0.141192 sec	Median: 0.141192 sec
+                 crypto_gcrypt	0.090576 sec	 Sum: 0.181743 sec	Avg: 0.090871 sec	Min: 0.090576 sec	Max: 0.091167 sec	Median: 0.091167 sec
+                  crypto_botan	0.310904 sec	 Sum: 0.618803 sec	Avg: 0.309401 sec	Min: 0.307899 sec	Max: 0.310904 sec	Median: 0.310904 sec
+                        fcrypt	0.012974 sec	 Sum: 0.026977 sec	Avg: 0.013488 sec	Min: 0.012974 sec	Max: 0.014003 sec	Median: 0.014003 sec
+2
+              no_crypto_plugin	0.007597 sec	 Sum: 0.018659 sec	Avg: 0.006219 sec	Min: 0.003443 sec	Max: 0.007619 sec	Median: 0.007597 sec
+                crypto_openssl	0.137867 sec	 Sum: 0.416505 sec	Avg: 0.138835 sec	Min: 0.137446 sec	Max: 0.141192 sec	Median: 0.137867 sec
+                 crypto_gcrypt	0.091271 sec	 Sum: 0.273014 sec	Avg: 0.091004 sec	Min: 0.090576 sec	Max: 0.091271 sec	Median: 0.091167 sec
+                  crypto_botan	0.310438 sec	 Sum: 0.929241 sec	Avg: 0.309747 sec	Min: 0.307899 sec	Max: 0.310904 sec	Median: 0.310438 sec
+                        fcrypt	0.009316 sec	 Sum: 0.036293 sec	Avg: 0.012097 sec	Min: 0.009316 sec	Max: 0.014003 sec	Median: 0.012974 sec
+3
+              no_crypto_plugin	0.003521 sec	 Sum: 0.022180 sec	Avg: 0.005545 sec	Min: 0.003443 sec	Max: 0.007619 sec	Median: 0.007597 sec
+                crypto_openssl	0.141811 sec	 Sum: 0.558316 sec	Avg: 0.139579 sec	Min: 0.137446 sec	Max: 0.141811 sec	Median: 0.141192 sec
+                 crypto_gcrypt	0.090805 sec	 Sum: 0.363819 sec	Avg: 0.090954 sec	Min: 0.090576 sec	Max: 0.091271 sec	Median: 0.091167 sec
+                  crypto_botan	0.307950 sec	 Sum: 1.237191 sec	Avg: 0.309297 sec	Min: 0.307899 sec	Max: 0.310904 sec	Median: 0.310438 sec
+                        fcrypt	0.012746 sec	 Sum: 0.049039 sec	Avg: 0.012259 sec	Min: 0.009316 sec	Max: 0.014003 sec	Median: 0.012974 sec
+4
+              no_crypto_plugin	0.003562 sec	 Sum: 0.025742 sec	Avg: 0.005148 sec	Min: 0.003443 sec	Max: 0.007619 sec	Median: 0.003562 sec
+                crypto_openssl	0.137851 sec	 Sum: 0.696167 sec	Avg: 0.139233 sec	Min: 0.137446 sec	Max: 0.141811 sec	Median: 0.137867 sec
+                 crypto_gcrypt	0.095239 sec	 Sum: 0.459058 sec	Avg: 0.091811 sec	Min: 0.090576 sec	Max: 0.095239 sec	Median: 0.091167 sec
+                  crypto_botan	0.308386 sec	 Sum: 1.545577 sec	Avg: 0.309115 sec	Min: 0.307899 sec	Max: 0.310904 sec	Median: 0.308386 sec
+                        fcrypt	0.016824 sec	 Sum: 0.065863 sec	Avg: 0.013172 sec	Min: 0.009316 sec	Max: 0.016824 sec	Median: 0.012974 sec
+5
+              no_crypto_plugin	0.007576 sec	 Sum: 0.033318 sec	Avg: 0.005553 sec	Min: 0.003443 sec	Max: 0.007619 sec	Median: 0.007576 sec
+                crypto_openssl	0.137613 sec	 Sum: 0.833780 sec	Avg: 0.138963 sec	Min: 0.137446 sec	Max: 0.141811 sec	Median: 0.137867 sec
+                 crypto_gcrypt	0.091083 sec	 Sum: 0.550141 sec	Avg: 0.091690 sec	Min: 0.090576 sec	Max: 0.095239 sec	Median: 0.091167 sec
+                  crypto_botan	0.307953 sec	 Sum: 1.853530 sec	Avg: 0.308921 sec	Min: 0.307899 sec	Max: 0.310904 sec	Median: 0.308386 sec
+                        fcrypt	0.009434 sec	 Sum: 0.075297 sec	Avg: 0.012549 sec	Min: 0.009316 sec	Max: 0.016824 sec	Median: 0.012974 sec
+6
+              no_crypto_plugin	0.003552 sec	 Sum: 0.036870 sec	Avg: 0.005267 sec	Min: 0.003443 sec	Max: 0.007619 sec	Median: 0.003562 sec
+                crypto_openssl	0.141383 sec	 Sum: 0.975163 sec	Avg: 0.139309 sec	Min: 0.137446 sec	Max: 0.141811 sec	Median: 0.137867 sec
+                 crypto_gcrypt	0.091099 sec	 Sum: 0.641240 sec	Avg: 0.091605 sec	Min: 0.090576 sec	Max: 0.095239 sec	Median: 0.091099 sec
+                  crypto_botan	0.308380 sec	 Sum: 2.161910 sec	Avg: 0.308844 sec	Min: 0.307899 sec	Max: 0.310904 sec	Median: 0.308380 sec
+                        fcrypt	0.009427 sec	 Sum: 0.084724 sec	Avg: 0.012103 sec	Min: 0.009316 sec	Max: 0.016824 sec	Median: 0.012746 sec
+7
+              no_crypto_plugin	0.007670 sec	 Sum: 0.044540 sec	Avg: 0.005567 sec	Min: 0.003443 sec	Max: 0.007670 sec	Median: 0.007576 sec
+                crypto_openssl	0.141126 sec	 Sum: 1.116289 sec	Avg: 0.139536 sec	Min: 0.137446 sec	Max: 0.141811 sec	Median: 0.141126 sec
+                 crypto_gcrypt	0.092087 sec	 Sum: 0.733327 sec	Avg: 0.091665 sec	Min: 0.090576 sec	Max: 0.095239 sec	Median: 0.091167 sec
+                  crypto_botan	0.308173 sec	 Sum: 2.470083 sec	Avg: 0.308760 sec	Min: 0.307899 sec	Max: 0.310904 sec	Median: 0.308380 sec
+                        fcrypt	0.013415 sec	 Sum: 0.098139 sec	Avg: 0.012267 sec	Min: 0.009316 sec	Max: 0.016824 sec	Median: 0.012974 sec
+8
+              no_crypto_plugin	0.006652 sec	 Sum: 0.051192 sec	Avg: 0.005688 sec	Min: 0.003443 sec	Max: 0.007670 sec	Median: 0.006652 sec
+                crypto_openssl	0.138419 sec	 Sum: 1.254708 sec	Avg: 0.139412 sec	Min: 0.137446 sec	Max: 0.141811 sec	Median: 0.138419 sec
+                 crypto_gcrypt	0.092558 sec	 Sum: 0.825885 sec	Avg: 0.091765 sec	Min: 0.090576 sec	Max: 0.095239 sec	Median: 0.091167 sec
+                  crypto_botan	0.308883 sec	 Sum: 2.778966 sec	Avg: 0.308774 sec	Min: 0.307899 sec	Max: 0.310904 sec	Median: 0.308380 sec
+                        fcrypt	0.013038 sec	 Sum: 0.111177 sec	Avg: 0.012353 sec	Min: 0.009316 sec	Max: 0.016824 sec	Median: 0.012974 sec
+9
+              no_crypto_plugin	0.003567 sec	 Sum: 0.054759 sec	Avg: 0.005475 sec	Min: 0.003443 sec	Max: 0.007670 sec	Median: 0.006652 sec
+                crypto_openssl	0.140679 sec	 Sum: 1.395387 sec	Avg: 0.139538 sec	Min: 0.137446 sec	Max: 0.141811 sec	Median: 0.140679 sec
+                 crypto_gcrypt	0.091256 sec	 Sum: 0.917141 sec	Avg: 0.091714 sec	Min: 0.090576 sec	Max: 0.095239 sec	Median: 0.091256 sec
+                  crypto_botan	0.312240 sec	 Sum: 3.091206 sec	Avg: 0.309120 sec	Min: 0.307899 sec	Max: 0.312240 sec	Median: 0.308386 sec
+                        fcrypt	0.009647 sec	 Sum: 0.120824 sec	Avg: 0.012082 sec	Min: 0.009316 sec	Max: 0.016824 sec	Median: 0.012974 sec
+10
+              no_crypto_plugin	0.003407 sec	 Sum: 0.058166 sec	Avg: 0.005287 sec	Min: 0.003407 sec	Max: 0.007670 sec	Median: 0.003567 sec
+                crypto_openssl	0.144366 sec	 Sum: 1.539753 sec	Avg: 0.139977 sec	Min: 0.137446 sec	Max: 0.144366 sec	Median: 0.140679 sec
+                 crypto_gcrypt	0.091961 sec	 Sum: 1.009102 sec	Avg: 0.091736 sec	Min: 0.090576 sec	Max: 0.095239 sec	Median: 0.091256 sec
+                  crypto_botan	0.308645 sec	 Sum: 3.399851 sec	Avg: 0.309077 sec	Min: 0.307899 sec	Max: 0.312240 sec	Median: 0.308386 sec
+                        fcrypt	0.009883 sec	 Sum: 0.130707 sec	Avg: 0.011882 sec	Min: 0.009316 sec	Max: 0.016824 sec	Median: 0.012746 sec
+----- KDB GET -----
+0
+              no_crypto_plugin	0.000126 sec	 Sum: 0.000126 sec	Avg: 0.000126 sec	Min: 0.000126 sec	Max: 0.000126 sec	Median: 0.000126 sec
+                crypto_openssl	0.133952 sec	 Sum: 0.133952 sec	Avg: 0.133952 sec	Min: 0.133952 sec	Max: 0.133952 sec	Median: 0.133952 sec
+                 crypto_gcrypt	0.087530 sec	 Sum: 0.087530 sec	Avg: 0.087530 sec	Min: 0.087530 sec	Max: 0.087530 sec	Median: 0.087530 sec
+                  crypto_botan	0.308108 sec	 Sum: 0.308108 sec	Avg: 0.308108 sec	Min: 0.308108 sec	Max: 0.308108 sec	Median: 0.308108 sec
+                        fcrypt	0.005187 sec	 Sum: 0.005187 sec	Avg: 0.005187 sec	Min: 0.005187 sec	Max: 0.005187 sec	Median: 0.005187 sec
+1
+              no_crypto_plugin	0.000127 sec	 Sum: 0.000253 sec	Avg: 0.000126 sec	Min: 0.000126 sec	Max: 0.000127 sec	Median: 0.000127 sec
+                crypto_openssl	0.133147 sec	 Sum: 0.267099 sec	Avg: 0.133549 sec	Min: 0.133147 sec	Max: 0.133952 sec	Median: 0.133952 sec
+                 crypto_gcrypt	0.087337 sec	 Sum: 0.174867 sec	Avg: 0.087433 sec	Min: 0.087337 sec	Max: 0.087530 sec	Median: 0.087530 sec
+                  crypto_botan	0.304468 sec	 Sum: 0.612576 sec	Avg: 0.306288 sec	Min: 0.304468 sec	Max: 0.308108 sec	Median: 0.308108 sec
+                        fcrypt	0.005242 sec	 Sum: 0.010429 sec	Avg: 0.005214 sec	Min: 0.005187 sec	Max: 0.005242 sec	Median: 0.005242 sec
+2
+              no_crypto_plugin	0.000127 sec	 Sum: 0.000380 sec	Avg: 0.000126 sec	Min: 0.000126 sec	Max: 0.000127 sec	Median: 0.000127 sec
+                crypto_openssl	0.140413 sec	 Sum: 0.407512 sec	Avg: 0.135837 sec	Min: 0.133147 sec	Max: 0.140413 sec	Median: 0.133952 sec
+                 crypto_gcrypt	0.088155 sec	 Sum: 0.263022 sec	Avg: 0.087674 sec	Min: 0.087337 sec	Max: 0.088155 sec	Median: 0.087530 sec
+                  crypto_botan	0.306537 sec	 Sum: 0.919113 sec	Avg: 0.306371 sec	Min: 0.304468 sec	Max: 0.308108 sec	Median: 0.306537 sec
+                        fcrypt	0.005659 sec	 Sum: 0.016088 sec	Avg: 0.005362 sec	Min: 0.005187 sec	Max: 0.005659 sec	Median: 0.005242 sec
+3
+              no_crypto_plugin	0.000138 sec	 Sum: 0.000518 sec	Avg: 0.000129 sec	Min: 0.000126 sec	Max: 0.000138 sec	Median: 0.000127 sec
+                crypto_openssl	0.134206 sec	 Sum: 0.541718 sec	Avg: 0.135429 sec	Min: 0.133147 sec	Max: 0.140413 sec	Median: 0.134206 sec
+                 crypto_gcrypt	0.087230 sec	 Sum: 0.350252 sec	Avg: 0.087563 sec	Min: 0.087230 sec	Max: 0.088155 sec	Median: 0.087530 sec
+                  crypto_botan	0.304448 sec	 Sum: 1.223561 sec	Avg: 0.305890 sec	Min: 0.304448 sec	Max: 0.308108 sec	Median: 0.306537 sec
+                        fcrypt	0.005305 sec	 Sum: 0.021393 sec	Avg: 0.005348 sec	Min: 0.005187 sec	Max: 0.005659 sec	Median: 0.005305 sec
+4
+              no_crypto_plugin	0.000135 sec	 Sum: 0.000653 sec	Avg: 0.000130 sec	Min: 0.000126 sec	Max: 0.000138 sec	Median: 0.000127 sec
+                crypto_openssl	0.134669 sec	 Sum: 0.676387 sec	Avg: 0.135277 sec	Min: 0.133147 sec	Max: 0.140413 sec	Median: 0.134206 sec
+                 crypto_gcrypt	0.088599 sec	 Sum: 0.438851 sec	Avg: 0.087770 sec	Min: 0.087230 sec	Max: 0.088599 sec	Median: 0.087530 sec
+                  crypto_botan	0.303908 sec	 Sum: 1.527469 sec	Avg: 0.305493 sec	Min: 0.303908 sec	Max: 0.308108 sec	Median: 0.304468 sec
+                        fcrypt	0.005209 sec	 Sum: 0.026602 sec	Avg: 0.005320 sec	Min: 0.005187 sec	Max: 0.005659 sec	Median: 0.005242 sec
+5
+              no_crypto_plugin	0.000126 sec	 Sum: 0.000779 sec	Avg: 0.000129 sec	Min: 0.000126 sec	Max: 0.000138 sec	Median: 0.000127 sec
+                crypto_openssl	0.134158 sec	 Sum: 0.810545 sec	Avg: 0.135090 sec	Min: 0.133147 sec	Max: 0.140413 sec	Median: 0.134206 sec
+                 crypto_gcrypt	0.087910 sec	 Sum: 0.526761 sec	Avg: 0.087793 sec	Min: 0.087230 sec	Max: 0.088599 sec	Median: 0.087910 sec
+                  crypto_botan	0.304672 sec	 Sum: 1.832141 sec	Avg: 0.305356 sec	Min: 0.303908 sec	Max: 0.308108 sec	Median: 0.304672 sec
+                        fcrypt	0.005107 sec	 Sum: 0.031709 sec	Avg: 0.005284 sec	Min: 0.005107 sec	Max: 0.005659 sec	Median: 0.005242 sec
+6
+              no_crypto_plugin	0.000126 sec	 Sum: 0.000905 sec	Avg: 0.000129 sec	Min: 0.000126 sec	Max: 0.000138 sec	Median: 0.000127 sec
+                crypto_openssl	0.134187 sec	 Sum: 0.944732 sec	Avg: 0.134961 sec	Min: 0.133147 sec	Max: 0.140413 sec	Median: 0.134187 sec
+                 crypto_gcrypt	0.087949 sec	 Sum: 0.614710 sec	Avg: 0.087815 sec	Min: 0.087230 sec	Max: 0.088599 sec	Median: 0.087910 sec
+                  crypto_botan	0.305212 sec	 Sum: 2.137353 sec	Avg: 0.305336 sec	Min: 0.303908 sec	Max: 0.308108 sec	Median: 0.304672 sec
+                        fcrypt	0.005175 sec	 Sum: 0.036884 sec	Avg: 0.005269 sec	Min: 0.005107 sec	Max: 0.005659 sec	Median: 0.005209 sec
+7
+              no_crypto_plugin	0.000125 sec	 Sum: 0.001030 sec	Avg: 0.000128 sec	Min: 0.000125 sec	Max: 0.000138 sec	Median: 0.000127 sec
+                crypto_openssl	0.134948 sec	 Sum: 1.079680 sec	Avg: 0.134960 sec	Min: 0.133147 sec	Max: 0.140413 sec	Median: 0.134206 sec
+                 crypto_gcrypt	0.087380 sec	 Sum: 0.702090 sec	Avg: 0.087761 sec	Min: 0.087230 sec	Max: 0.088599 sec	Median: 0.087910 sec
+                  crypto_botan	0.306102 sec	 Sum: 2.443455 sec	Avg: 0.305431 sec	Min: 0.303908 sec	Max: 0.308108 sec	Median: 0.305212 sec
+                        fcrypt	0.005300 sec	 Sum: 0.042184 sec	Avg: 0.005273 sec	Min: 0.005107 sec	Max: 0.005659 sec	Median: 0.005242 sec
+8
+              no_crypto_plugin	0.000126 sec	 Sum: 0.001156 sec	Avg: 0.000128 sec	Min: 0.000125 sec	Max: 0.000138 sec	Median: 0.000126 sec
+                crypto_openssl	0.134566 sec	 Sum: 1.214246 sec	Avg: 0.134916 sec	Min: 0.133147 sec	Max: 0.140413 sec	Median: 0.134206 sec
+                 crypto_gcrypt	0.087932 sec	 Sum: 0.790022 sec	Avg: 0.087780 sec	Min: 0.087230 sec	Max: 0.088599 sec	Median: 0.087910 sec
+                  crypto_botan	0.303871 sec	 Sum: 2.747326 sec	Avg: 0.305258 sec	Min: 0.303871 sec	Max: 0.308108 sec	Median: 0.304672 sec
+                        fcrypt	0.005268 sec	 Sum: 0.047452 sec	Avg: 0.005272 sec	Min: 0.005107 sec	Max: 0.005659 sec	Median: 0.005242 sec
+9
+              no_crypto_plugin	0.000129 sec	 Sum: 0.001285 sec	Avg: 0.000128 sec	Min: 0.000125 sec	Max: 0.000138 sec	Median: 0.000127 sec
+                crypto_openssl	0.134245 sec	 Sum: 1.348491 sec	Avg: 0.134849 sec	Min: 0.133147 sec	Max: 0.140413 sec	Median: 0.134245 sec
+                 crypto_gcrypt	0.087596 sec	 Sum: 0.877618 sec	Avg: 0.087761 sec	Min: 0.087230 sec	Max: 0.088599 sec	Median: 0.087910 sec
+                  crypto_botan	0.304607 sec	 Sum: 3.051933 sec	Avg: 0.305193 sec	Min: 0.303871 sec	Max: 0.308108 sec	Median: 0.304672 sec
+                        fcrypt	0.005282 sec	 Sum: 0.052734 sec	Avg: 0.005273 sec	Min: 0.005107 sec	Max: 0.005659 sec	Median: 0.005268 sec
+10
+              no_crypto_plugin	0.000126 sec	 Sum: 0.001411 sec	Avg: 0.000128 sec	Min: 0.000125 sec	Max: 0.000138 sec	Median: 0.000126 sec
+                crypto_openssl	0.134310 sec	 Sum: 1.482801 sec	Avg: 0.134800 sec	Min: 0.133147 sec	Max: 0.140413 sec	Median: 0.134245 sec
+                 crypto_gcrypt	0.087406 sec	 Sum: 0.965024 sec	Avg: 0.087729 sec	Min: 0.087230 sec	Max: 0.088599 sec	Median: 0.087596 sec
+                  crypto_botan	0.304225 sec	 Sum: 3.356158 sec	Avg: 0.305105 sec	Min: 0.303871 sec	Max: 0.308108 sec	Median: 0.304607 sec
+                        fcrypt	0.005487 sec	 Sum: 0.058221 sec	Avg: 0.005292 sec	Min: 0.005107 sec	Max: 0.005659 sec	Median: 0.005268 sec
