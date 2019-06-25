@@ -71,3 +71,17 @@ The folder [`Memory Usage`](../Results/Memory Usage) contains the results of a h
 #### Setup
 
 All the data in the folder [`Memory Usage`](../Results/Memory Usage) was generated with the script [`benchmark-memory`](../Scripts/benchmark-memory). For an description on how to use this script, please take a look at the “Setup” subsection of the section “Run Time”, and replace `benchmark-runtime` with the name `benchmark-memory`.
+
+### Line Count
+
+The file [`lines.txt`](../Results/Lines/lines.txt) contains the result of a line count of YAML plugins with the script [`count-lines`](../Scripts/count-lines).
+
+#### Setup
+
+Before you call the script [`count-lines`](../Scripts/count-lines) you need to build Elektra and use `build/mac` inside the root of Elektra’s repository as build folder. Afterwards please copy the script [`count-lines`](../Scripts/count-lines) into the root of Elektra’s repository and call it using the command:
+
+```sh
+./count-lines
+```
+
+.
