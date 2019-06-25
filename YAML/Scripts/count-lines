@@ -62,6 +62,12 @@ print_lines_yanlr_generated() {
 		"$build_directory/src/plugins/yanlr" | filter_code
 }
 
+print_lines_yanlr_lexer() {
+	cloc "${cloc_options[@]}" \
+		"$source_directory/src/plugins/yanlr/yaml_lexer.hpp" \
+		"$source_directory/src/plugins/yanlr/yaml_lexer.cpp" | filter_code
+}
+
 # =========
 # = YAMBi =
 # =========
@@ -96,6 +102,23 @@ print_lines_yambi_generated() {
 		"$build_directory/src/plugins/yambi" | filter_code
 }
 
+print_lines_yambi_input() {
+	cloc "${cloc_options[@]}" \
+		"$source_directory/src/plugins/yambi/input.cpp" \
+		"$source_directory/src/plugins/yambi/input.hpp" | filter_code
+}
+
+print_lines_yambi_symbol() {
+	cloc "${cloc_options[@]}" \
+		"$source_directory/src/plugins/yambi/symbol.hpp" | filter_code
+}
+
+print_lines_yambi_lexer() {
+	cloc "${cloc_options[@]}" \
+		"$source_directory/src/plugins/yambi/lexer.hpp" \
+		"$source_directory/src/plugins/yambi/lexer.cpp" | filter_code
+}
+
 # ========
 # = YAwn =
 # ========
@@ -113,6 +136,48 @@ print_lines_yawn_grammar() {
 		"$build_directory/src/plugins/yawn/yaml_grammar.h" | filter_code
 }
 
+print_lines_yawn_input() {
+	cloc "${cloc_options[@]}" \
+		"$source_directory/src/plugins/yawn/input.hpp" \
+		"$source_directory/src/plugins/yawn/input.cpp" | filter_code
+}
+
+print_lines_yawn_token() {
+	cloc "${cloc_options[@]}" \
+		"$source_directory/src/plugins/yawn/token.hpp" \
+		"$source_directory/src/plugins/yawn/token.cpp" | filter_code
+}
+
+print_lines_yawn_tree_walk() {
+	cloc "${cloc_options[@]}" \
+		"$source_directory/src/plugins/yawn/walk.hpp" \
+		"$source_directory/src/plugins/yawn/walk.cpp" | filter_code
+}
+
+print_lines_yawn_error_listener() {
+	cloc "${cloc_options[@]}" \
+		"$source_directory/src/plugins/yawn/error_listener.hpp" \
+		"$source_directory/src/plugins/yawn/error_listener.cpp" | filter_code
+}
+
+print_lines_yawn_listener() {
+	cloc "${cloc_options[@]}" \
+		"$source_directory/src/plugins/yawn/listener.hpp" \
+		"$source_directory/src/plugins/yawn/listener.cpp" | filter_code
+}
+
+print_lines_yawn_position() {
+	cloc "${cloc_options[@]}" \
+		"$source_directory/src/plugins/yawn/location.hpp" \
+		"$source_directory/src/plugins/yawn/position.hpp" | filter_code
+}
+
+print_lines_yawn_lexer() {
+	cloc "${cloc_options[@]}" \
+		"$source_directory/src/plugins/yawn/lexer.hpp" \
+		"$source_directory/src/plugins/yawn/lexer.cpp" | filter_code
+}
+
 # ===========
 # = YAy PEG =
 # ===========
@@ -125,6 +190,37 @@ print_lines_yaypeg_written() {
 		"$source_directory/src/plugins/yaypeg" | filter_code
 }
 
+print_lines_yaypeg_parser() {
+	cloc "${cloc_options[@]}" \
+		"$source_directory/src/plugins/yaypeg/parser.in.hpp" | filter_code
+}
+
+print_lines_yaypeg_state() {
+	cloc "${cloc_options[@]}" \
+		"$source_directory/src/plugins/yaypeg/state.hpp" \
+		"$source_directory/src/plugins/yaypeg/state.cpp" | filter_code
+}
+
+print_lines_yaypeg_tree_walk() {
+	cloc "${cloc_options[@]}" \
+		"$source_directory/src/plugins/yaypeg/walk.hpp" \
+		"$source_directory/src/plugins/yaypeg/walk.cpp" | filter_code
+}
+
+print_lines_yaypeg_listener() {
+	cloc "${cloc_options[@]}" \
+		"$source_directory/src/plugins/yaypeg/listener.hpp" \
+		"$source_directory/src/plugins/yaypeg/listener.cpp" | filter_code
+}
+
+print_lines_yaypeg_other() {
+	cloc "${cloc_options[@]}" \
+		"$source_directory/src/plugins/yaypeg/convert.hpp" \
+		"$source_directory/src/plugins/yaypeg/convert.cpp" \
+		"$source_directory/src/plugins/yaypeg/yaypeg.hpp" \
+		"$source_directory/src/plugins/yaypeg/yaypeg.cpp" | filter_code
+}
+
 # -- Main ----------------------------------------------------------------------
 
 check_environment
@@ -134,7 +230,10 @@ printf -- 'YAML CPP\n'
 printf -- '————————\n\n'
 
 written="$(print_lines_yamlcpp)"
-printf 'Hand Written: %s\n\n' "$written"
+sum=$((written))
+printf 'Hand Written: %s\n' "$written"
+printf '——————————————————\n'
+printf 'Sum:          %s\n\n' "$sum"
 
 printf -- '——————\n'
 printf -- 'Yan LR\n'
@@ -147,6 +246,12 @@ sum=$((written + grammar + generated))
 printf 'Hand Written: %s\n' "$written"
 printf 'Grammar:      %s\n' "$grammar"
 printf 'Generated:    %s\n' "$generated"
+printf '——————————————————\n'
+printf 'Sum:          %s\n\n' "$sum"
+
+lexer="$(print_lines_yanlr_lexer)"
+sum=$((lexer))
+printf 'Lexer:        %s\n' "$lexer"
 printf '——————————————————\n'
 printf 'Sum:          %s\n\n' "$sum"
 
@@ -164,6 +269,16 @@ printf 'Generated:    %s\n' "$generated"
 printf '——————————————————\n'
 printf 'Sum:          %s\n\n' "$sum"
 
+input="$(print_lines_yambi_input)"
+symbol="$(print_lines_yambi_symbol)"
+lexer="$(print_lines_yambi_lexer)"
+sum=$((input + symbol + lexer))
+printf 'Input:        %s\n' "$input"
+printf 'Symbol:       %s\n' "$symbol"
+printf 'Lexer:        %s\n' "$lexer"
+printf '——————————————————\n'
+printf 'Sum:          %s\n\n' "$sum"
+
 printf -- '————\n'
 printf -- 'YAWn\n'
 printf -- '————\n\n'
@@ -176,9 +291,44 @@ printf 'Grammar:      %s\n' "$grammar"
 printf '——————————————————\n'
 printf 'Sum:          %s\n\n' "$sum"
 
+input="$(print_lines_yawn_input)"
+token="$(print_lines_yawn_token)"
+walk="$(print_lines_yawn_tree_walk)"
+error="$(print_lines_yawn_error_listener)"
+listener="$(print_lines_yawn_listener)"
+position="$(print_lines_yawn_position)"
+lexer="$(print_lines_yawn_lexer)"
+sum=$((input + token + walk + error + listener + position + lexer))
+printf 'Input:        %s\n' "$input"
+printf 'Token:        %s\n' "$token"
+printf 'Walk:         %s\n' "$walk"
+printf 'Error:        %s\n' "$error"
+printf 'Listener:     %s\n' "$listener"
+printf 'Position:     %s\n' "$position"
+printf 'Lexer:        %s\n' "$lexer"
+printf '——————————————————\n'
+printf 'Sum:          %s\n\n' "$sum"
+
 printf -- '———————\n'
 printf -- 'YAy PEG\n'
 printf -- '———————\n\n'
 
 written="$(print_lines_yaypeg_written)"
+sum=$((written))
 printf 'Hand Written: %s\n' "$written"
+printf '——————————————————\n'
+printf 'Sum:          %s\n\n' "$sum"
+
+parser="$(print_lines_yaypeg_parser)"
+state="$(print_lines_yaypeg_state)"
+walk="$(print_lines_yaypeg_tree_walk)"
+listener="$(print_lines_yaypeg_listener)"
+other="$(print_lines_yaypeg_other)"
+sum=$((parser + state + walk + listener + other))
+printf 'Parser:       %s\n' "$parser"
+printf 'State:        %s\n' "$state"
+printf 'Walk:         %s\n' "$walk"
+printf 'Listener:     %s\n' "$listener"
+printf 'Other:        %s\n' "$other"
+printf '——————————————————\n'
+printf 'Sum:          %s\n' "$sum"
