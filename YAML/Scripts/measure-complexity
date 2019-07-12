@@ -1,0 +1,185 @@
+#!/usr/bin/env bash
+
+# -- Global Variables ----------------------------------------------------------------------------------------------------------------------
+
+source_directory="$PWD"
+build_directory="$source_directory/build/mac"
+download_directory="/tmp"
+source_directory_yaml_cpp="$download_directory/yaml-cpp"
+source_directory_antlr="$download_directory/antlr"
+source_directory_bison="$download_directory/bison"
+source_directory_yaep="$download_directory/yaep"
+source_directory_pegtl="$download_directory/pegtl"
+
+# -- Functions -----------------------------------------------------------------------------------------------------------------------------
+
+check_environment() {
+	command -v lizard > /dev/null 2>&1 || {
+		printf >&2 'This script requires the command `lizard`\n'
+		exit 1
+	}
+	command -v git > /dev/null 2>&1 || {
+		printf >&2 'This script requires the command `git`\n'
+		exit 1
+	}
+
+	test -e "$build_directory" || {
+		printf >&2 'Build directory “%s” does not exist\n' "$build_directory"
+		exit 1
+	}
+}
+
+cut_detailed_analysis() {
+	sed -n '/==============================================================/,/^$/p'
+}
+
+download_yaml_cpp() {
+	test -e "$source_directory_yaml_cpp" && {
+		printf '  → Source of yaml-cpp already downloaded\n'
+		return
+	}
+	printf '  → Download yaml-cpp\n'
+	git clone --branch yaml-cpp-0.6.2 --depth 1 https://github.com/jbeder/yaml-cpp.git "$source_directory_yaml_cpp"
+}
+
+download_antlr() {
+	test -e "$source_directory_antlr" && {
+		printf '  → Source of ANTLR already downloaded\n'
+		return
+	}
+	printf '  → Download ANTLR\n'
+	git clone --branch 4.7.2 --depth 1 https://github.com/antlr/antlr4.git "$source_directory_antlr"
+}
+
+download_bison() {
+	test -e "$source_directory_bison" && {
+		printf '  → Source of Bison already downloaded\n'
+		return
+	}
+	printf '  → Download Bison\n'
+	git clone --branch v3.4.1 --depth 1 https://git.savannah.gnu.org/git/bison.git "$source_directory_bison"
+}
+
+download_yaep() {
+	test -e "$source_directory_yaep" && {
+		printf '  → Source of YAEP already downloaded\n'
+		return
+	}
+	printf '  → Download YAEP\n'
+	git clone https://github.com/vnmakarov/yaep "$source_directory_yaep"
+	pushd "$PWD" > /dev/null
+	cd "$source_directory_yaep"
+	git checkout 550de4cc5600d5f6109c7ebcfbacec51bf80d8d3
+	popd > /dev/null
+}
+
+download_pegtl() {
+	test -e "$source_directory_pegtl" && {
+		printf '  → Source of PEGTL already downloaded\n'
+		return
+	}
+	printf '  → Download PEGTL\n'
+	git clone --branch 2.8.0 --depth 1 https://github.com/taocpp/PEGTL.git "$source_directory_pegtl"
+}
+
+check_complexity_yaml_cpp() {
+	lizard -l cpp "$source_directory_yaml_cpp/src" "$source_directory_yaml_cpp/include" | cut_detailed_analysis
+}
+
+check_complexity_antlr() {
+	lizard -l cpp "$source_directory_antlr/runtime/Cpp/runtime/src" | cut_detailed_analysis
+}
+
+check_complexity_bison() {
+	lizard -l cpp "$source_directory_bison/src" | cut_detailed_analysis
+}
+
+check_complexity_yaep() {
+	lizard -l cpp "$source_directory_yaep/src" | cut_detailed_analysis
+}
+
+check_complexity_pegtl() {
+	lizard -l cpp "$source_directory_pegtl/include" | cut_detailed_analysis
+}
+
+check_complexity_plugin_yaml_cpp() {
+	lizard "src/plugins/yamlcpp/read"* "src/plugins/yamlcpp/write"* "src/plugins/yamlcpp/yamlcpp"*.{cpp,hpp} | cut_detailed_analysis
+}
+
+check_complexity_plugin_yan_lr() {
+	lizard -l cpp "src/plugins/yanlr" -x'*testmod*.cpp' -x'*yanlr/yanlr*' | cut_detailed_analysis
+}
+
+check_complexity_plugin_yambi() {
+	lizard -l cpp "src/plugins/yambi" -x'*testmod*.cpp' -x'*yambi/yambi*' | cut_detailed_analysis
+}
+
+check_complexity_plugin_yawn() {
+	lizard -l cpp "src/plugins/yawn" -x'*testmod*.cpp' -x'*yawn/yawn*' | cut_detailed_analysis
+}
+
+check_complexity_plugin_yay_peg() {
+	lizard -l cpp "src/plugins/yaypeg" "$build_directory/src/plugins/yaypeg/parser.hpp" -x'*testmod*.cpp' -x'*parser.in.hpp' -x'*yaypeg/yaypeg*' | cut_detailed_analysis
+}
+
+check_complexity_generated_yanlr() {
+	lizard "$build_directory/src/plugins/yanlr/"*.h "$build_directory/src/plugins/yanlr/YAML"?*.cpp | cut_detailed_analysis
+}
+
+check_complexity_generated_yambi() {
+	lizard "$build_directory/src/plugins/yambi/parser"*.{hpp,cpp} | cut_detailed_analysis
+}
+
+# -- Main ----------------------------------------------------------------------------------------------------------------------------------
+
+printf '→ Check Environment\n'
+check_environment
+
+printf '→ Download\n'
+download_yaml_cpp
+download_antlr
+download_bison
+download_yaep
+download_pegtl
+
+printf -- '\n'
+printf -- '————————\n'
+printf -- 'YAML CPP\n'
+printf -- '————————\n\n'
+
+check_complexity_yaml_cpp
+check_complexity_plugin_yaml_cpp
+
+printf -- '\n'
+printf -- '——————\n'
+printf -- 'Yan LR\n'
+printf -- '——————\n\n'
+
+check_complexity_antlr
+check_complexity_plugin_yan_lr
+check_complexity_generated_yanlr
+
+printf -- '\n'
+printf -- '—————\n'
+printf -- 'YAMBi\n'
+printf -- '—————\n\n'
+
+check_complexity_bison
+check_complexity_plugin_yambi
+check_complexity_generated_yambi
+
+printf -- '\n'
+printf -- '————\n'
+printf -- 'YAWn\n'
+printf -- '————\n\n'
+
+check_complexity_yaep
+check_complexity_plugin_yawn
+
+printf -- '\n'
+printf -- '———————\n'
+printf -- 'YAy PEG\n'
+printf -- '———————\n\n'
+
+check_complexity_pegtl
+check_complexity_plugin_yay_peg
