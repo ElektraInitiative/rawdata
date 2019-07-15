@@ -85,3 +85,17 @@ Before you call the script [`count-lines`](../Scripts/count-lines) you need to b
 ```
 
 .
+
+### Cyclomatic Complexity
+
+We determined the cyclomatic complexity with the script [`measure-complexity`](../Scripts/measure-complexity). The file [complexity.txt](../Results/Cyclomatic Complexity/complexity.txt) contains the result of this analysis.
+
+#### Setup
+
+To run the complexity analysis you need to copy the script [`measure-complexity`](../Scripts/measure-complexity) into the root of Elektra’s repository. Afterwards build Elektra using `build/mac` as build folder and call the script using the command
+
+```sh
+./measure-complexity
+```
+
+.
