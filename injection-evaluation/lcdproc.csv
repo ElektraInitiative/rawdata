@@ -1,0 +1,951 @@
+ErrorType,InjectionType,Key,Old Value,New Value,Error Message,SpecMessage,SpecCaught,SpecPlugin,Log Message,Reaction App,Reaction Spec,Pinpoint Spec,Vocab Spec,Pinpoint App,Vocab App,Personify App,LeakInt App,Comment
+Typo Error,inject/typo/deletion,system/lyrebird/serialPOS/Size,16x2,16x,serialPOS: cannot read Size: 16x; using default 16x2,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,serialPOS: cannot read Size: 16x; using default 16x2,GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/deletion,system/lyrebird/lirc/prog,lcdd,lcd,lirc: Could not connect to lircd,,,,"lirc: Could not connect to lircd
+Driver [lirc] init failed, return code -1
+Could not load driver lirc
+There is no output driver
+Critical error while initializing, abort.",NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,config is checked before connect (does not check lircrc)
+Typo Error,inject/typo/space,system/lyrebird/imonlcd/Device,/tmp/fakeDriver,'     /tmp/fakeDriver  ',imonlcd: ERROR opening      /tmp/fakeDriver   (No such file or directory).,Given path '     /tmp/fakeDriver  ' is not absolute,X,path,"imonlcd: ERROR opening      /tmp/fakeDriver   (No such file or directory).
+imonlcd: Did you load the iMON kernel module?
+Driver [imonlcd] init failed, return code -1
+Could not load driver imonlcd
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/remove,system/lyrebird/CFontzPacket/Brightness,system/lyrebird/CFontzPacket/Brightness,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Limit Error,inject/limit/max,system/lyrebird/NoritakeVFD/OffBrightness,50,1000,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/server/NextScreenKey,system/lyrebird/server/NextScreenKey,system/lyrebird/glcdlib,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/SureElec/OffBrightness,system/lyrebird/SureElec/OffBrightness,system/lyrebird/bayrad,SureElec: failed to configure port (Inappropriate ioctl for device),,,range,"SureElec: failed to configure port (Inappropriate ioctl for device)
+Driver [SureElec] init failed, return code -1
+Could not load driver SureElec
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/case/toggle,system/lyrebird/hd44780/Keypad,no,nO,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,No reaction of spec? Yes
+Structure Error,inject/structure/section/remove,system/lyrebird/serialVFD/Device,system/lyrebird/serialVFD/Device,null,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,,,path,"serialVFD: The number of Custom-Characters must be between 0 and 99. Using default
+serialVFD_init_serial: open() of /dev/lcd failed (No such file or directory)
+serialVFD: unable to initialize io-port
+Driver [serialVFD] init failed, return code -1
+Could not load driver serialVFD
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"Reaction ok, takes default"
+Structure Error,inject/structure/section/duplicate,system/lyrebird/SureElec/Brightness,system/lyrebird/SureElec/Brightness,system/lyrebird/CFontzPacket,SureElec: failed to configure port (Inappropriate ioctl for device),,,range,"SureElec: failed to configure port (Inappropriate ioctl for device)
+Driver [SureElec] init failed, return code -1
+Could not load driver SureElec
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Typo Error,inject/typo/case/toggle,system/lyrebird/xosd/Font,-*-terminus-*-r-*-*-*-320-*-*-*-*-*,-*-termInus-*-r-*-*-*-320-*-*-*-*-*,xosd: xosd_set_font() failed,,,,"xosd: xosd_set_font() failed
+Driver [xosd] init failed, return code -1
+Could not load driver xosd
+There is no output driver
+Critical error while initializing, abort.",GOOD,NONE,NONE,NONE,BAD,GOOD,BAD,BAD,Reaction correct. font is initialized last but not available
+Typo Error,inject/typo/change/char,system/lyrebird/CwLnx/KeyMap_E,Enter,Ente0,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/icp_a106/Size,system/lyrebird/icp_a106/Size,system/lyrebird/pyramid/Device,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/space,system/lyrebird/server/FrameInterval,125000,'  125000     ',Error opening terminal: unknown.,The type 'unsigned_long' failed to match for 'system/lyrebird/server/system\/temporarySpec' with string '  125000     ',X,type,Error opening terminal: unknown.,DEFAULT,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/insertion,system/lyrebird/glcd/CellSize,6x8,6xM8,,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/deletion,system/lyrebird/server/driver,curses,curse,"Could not open driver module /usr/lib/x86_64-linux-gnu/lcdproc/curse.: /usr/lib/x86_64-linux-gnu/lcdproc/curse.so: cannot open shared object file: No such file or directory
+Driver [curse] binding failed",,,,"Could not open driver module /usr/lib/x86_64-linux-gnu/lcdproc/curse.: /usr/lib/x86_64-linux-gnu/lcdproc/curse.so: cannot open shared object file: No such file or directory
+Driver [curse] binding failed",GOOD,NONE,NONE,NONE,PARTLY,BAD,BAD,GOOD,Why not catched by spec? Because drivers can be self implemented -> no enum
+Semantic Error,inject/semantic,system/lyrebird/picolcd/Key0Light,on,true,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Domain Error,inject/domain,system/lyrebird/MD8800/Device,/tmp/fakeDriver,eth0,MD8800: open() of eth0 failed (No such file or directory),Given path 'eth0' is not absolute,X,path,"MD8800: open() of eth0 failed (No such file or directory)
+Driver [MD8800] init failed, return code -1
+Could not load driver MD8800
+There is no output driver
+Critical error while initializing, abort.",BAD,BAD,NONE,NONE,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/transposition,system/lyrebird/MtxOrb/hasAdjustableBacklight,no,on,MtxOrb: failed to configure port (Inappropriate ioctl for device),,,,"MtxOrb: failed to configure port (Inappropriate ioctl for device)
+Driver [MtxOrb] init failed, return code -1
+Could not load driver MtxOrb
+There is no output driver
+Critical error while initializing, abort.",NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,"Reacion ok, port open is checked last"
+Limit Error,inject/limit/max,system/lyrebird/picolcd/KeyTimeout,500,1000,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/curses/DrawBorder,system/lyrebird/curses/DrawBorder,system/lyrebird/glk/Contrast,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Typo Error,inject/typo/deletion,system/lyrebird/glcd/serdisp_options,INVERT=1,INVET=1,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/vlsys_m428/Device,system/lyrebird/vlsys_m428/Device,system/lyrebird,vlsys_m428: could not open /dev/ttyUSB0 (No such file or directory),,,,"vlsys_m428: could not open /dev/ttyUSB0 (No such file or directory)
+Driver [vlsys_m428] init failed, return code -1
+Could not load driver vlsys_m428
+There is no output driver
+Critical error while initializing, abort.",BAD,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,"BUG! (self written parser bug) []
+Device=/tmp/fakeDriver
+serialVFD/Device=/tmp/fakeDriver"
+Semantic Error,inject/semantic,system/lyrebird/lis/Lastline,(null),off,lis: cannot open USB device 403:6001,,,,"lis: cannot open USB device 403:6001
+Driver [lis] init failed, return code -1
+Could not load driver lis
+There is no output driver
+Critical error while initializing, abort.",NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/picolcd/Key4Light,system/lyrebird/picolcd/Key4Light,system/lyrebird,picolcd: no device found,,,type,"picolcd: no device found
+Driver [picolcd] init failed, return code -1
+Could not load driver picolcd
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/NoritakeVFD/Size,20x4,2V0x4,NoritakeVFD: cannot parse Size: 2V0x4; using default 20x4,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,NoritakeVFD: cannot parse Size: 2V0x4; using default 20x4,GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/transposition,system/lyrebird/curses/Size,20x4,x024,curses: cannot read Size: x024; using default 20x4,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"curses: cannot read Size: x024; using default 20x4
+Error opening terminal: unknown.",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/change/char,system/lyrebird/glcd/ConnectionType,t6963,t6966,glcd: unknown ConnectionType: t6966,"The type 'enum' failed to match for 'system/lyrebird/glcd/system\/temporarySpec' with string: 't6966'
+Allowed values: 't6963' 'png' 'serdisplib' 'glcd2usb' 'x11' 'picolcdgfx' 'xyz'",X,type,"glcd: unknown ConnectionType: t6966
+Driver [glcd] init failed, return code -1
+Could not load driver glcd
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/remove,system/lyrebird/picolcd/KeyRepeatInterval,system/lyrebird/picolcd/KeyRepeatInterval,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/remove,system/lyrebird/CFontzPacket/Model,system/lyrebird/CFontzPacket/Model,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Semantic Error,inject/semantic,system/lyrebird/MtxOrb/KeyMap_E,(null),Alt+F,MtxOrb: failed to configure port (Inappropriate ioctl for device),,,,"MtxOrb: failed to configure port (Inappropriate ioctl for device)
+Driver [MtxOrb] init failed, return code -1
+Could not load driver MtxOrb
+There is no output driver
+Critical error while initializing, abort.",NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Limit Error,inject/limit/min,system/lyrebird/hd44780/RefreshDisplay,(null),0,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/deletion,system/lyrebird/CwLnx/KeyMap_E,Enter,Entr,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Limit Error,inject/limit/max,system/lyrebird/mtc_s16209x/Brightness,255,255,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Domain Error,inject/domain,system/lyrebird/CwLnx/Device,/tmp/fakeDriver,eth0,CwLnx: open(eth0) failed (No such file or directory),Given path 'eth0' is not absolute,X,path,"CwLnx: open(eth0) failed (No such file or directory)
+Driver [CwLnx] init failed, return code -1
+Could not load driver CwLnx
+There is no output driver
+Critical error while initializing, abort.",BAD,BAD,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/serialVFD/Brightness,system/lyrebird/serialVFD/Brightness,system/lyrebird/vlsys_m428/Device,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,,,,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Typo Error,inject/typo/deletion,system/lyrebird/icp_a106/Size,20x2,2x2,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/server/hello,system/lyrebird/server/hello,system/lyrebird/xosd,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Semantic Error,inject/semantic,system/lyrebird/hd44780/Lastline,(null),on,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,BUG
+Semantic Error,inject/semantic,system/lyrebird/MtxOrb/hasAdjustableBacklight,no,1,MtxOrb: failed to configure port (Inappropriate ioctl for device),,,,"MtxOrb: failed to configure port (Inappropriate ioctl for device)
+Driver [MtxOrb] init failed, return code -1
+Could not load driver MtxOrb
+There is no output driver
+Critical error while initializing, abort.",NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,Elektra normalization
+Typo Error,inject/typo/insertion,system/lyrebird/hd44780/Speed,0,0i,,The type 'unsigned_long' failed to match for 'system/lyrebird/hd44780/system\/temporarySpec' with string '0i',X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,BUG
+Structure Error,inject/structure/section/reallocate,system/lyrebird/menu/LeftKey,system/lyrebird/menu/LeftKey,system/lyrebird/joy,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/CFontzPacket/OffBrightness,50,550,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/imon/CharMap,system/lyrebird/imon/CharMap,system/lyrebird/CFontz,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/server/goodbye,builtin,buKiltin,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/curses/Size,system/lyrebird/curses/Size,system/lyrebird/MtxOrb,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/CFontz/OffBrightness,1000,g1000,,The type 'unsigned_short' failed to match for 'system/lyrebird/CFontz/system\/temporarySpec' with string 'g1000',X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/ula200/Size,20x4,20 / 4,Invalid character '/' on line 1398 of /tmp/lcdd-tmp.conf,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"Invalid character '/' on line 1398 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,
+Typo Error,inject/typo/deletion,system/lyrebird/NoritakeVFD/Speed,9600,960,"NoritakeVFD: Speed must be 1200, 2400, 9600, 19200 or 115200; using default 9600","Value '960' not within range 1200, 2400, 9600, 19200, 115200",X,range,"NoritakeVFD: Speed must be 1200, 2400, 9600, 19200 or 115200; using default 9600",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/server/goodbye,system/lyrebird/server/goodbye,system/lyrebird,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/case/toggle,system/lyrebird/ula200/KeyMap_D,Right,RiGht,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/menu/MenuKey,system/lyrebird/menu/MenuKey,system/lyrebird/hd44780/KeyMatrix_4_4,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/deletion,system/lyrebird/CwLnx/Speed,19200,9200,CwLnx: Speed must be 9600 or 19200. Using default 19200,"Value '9200' not within range 9600, 19200",X,range,CwLnx: Speed must be 9600 or 19200. Using default 19200,GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/case/toggle,system/lyrebird/curses/Backlight,red,rEd,Error opening terminal: unknown.,"The type 'enum' failed to match for 'system/lyrebird/curses/system\/temporarySpec' with string: 'rEd'
+Allowed values: 'red' 'black' 'green' 'yellow' 'blue' 'magenta' 'cyan' 'white'",X,type,Error opening terminal: unknown.,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,BUG
+Structure Error,inject/structure/section/duplicate,system/lyrebird/NoritakeVFD/Device,system/lyrebird/NoritakeVFD/Device,system/lyrebird/glcdlib,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Typo Error,inject/typo/case/toggle,system/lyrebird/mtc_s16209x/Reboot,no,No,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,Elektra normalization 
+Structure Error,inject/structure/section/duplicate,system/lyrebird/server/Bind,system/lyrebird/server/Bind,system/lyrebird,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Structure Error,inject/structure/section/reallocate,system/lyrebird/EyeboxOne/Cursor,system/lyrebird/EyeboxOne/Cursor,system/lyrebird/glcdlib,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/picolcd/Key2Light,system/lyrebird/picolcd/Key2Light,system/lyrebird/CFontz/OffBrightness,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Semantic Error,inject/semantic,system/lyrebird/IOWarrior/ExtendedMode,(null),true,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/deletion,system/lyrebird/server/ReportToSyslog,no,n,Error opening terminal: unknown.,The value 'n' of key 'system/lyrebird/server/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,Error opening terminal: unknown.,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/SureElec/Size,system/lyrebird/SureElec/Size,system/lyrebird/rawserial/Speed,SureElec: failed to configure port (Inappropriate ioctl for device),,,type,"SureElec: failed to configure port (Inappropriate ioctl for device)
+Driver [SureElec] init failed, return code -1
+Could not load driver SureElec
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/transposition,system/lyrebird/MtxOrb/Contrast,480,084,MtxOrb: failed to configure port (Inappropriate ioctl for device),The type 'unsigned_short' failed to match for 'system/lyrebird/MtxOrb/system\/temporarySpec' with string '084',X,type,"MtxOrb: failed to configure port (Inappropriate ioctl for device)
+Driver [MtxOrb] init failed, return code -1
+Could not load driver MtxOrb
+There is no output driver
+Critical error while initializing, abort.",NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/picolcd/Backlight,system/lyrebird/picolcd/Backlight,system/lyrebird/EyeboxOne,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Semantic Error,inject/semantic,system/lyrebird/icp_a106/Size,20x2,20 x 4,Invalid character 'x' on line 690 of /tmp/lcdd-tmp.conf,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"Invalid character 'x' on line 690 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/remove,system/lyrebird/menu/PermissiveGoto,system/lyrebird/menu/PermissiveGoto,null,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/change/char,system/lyrebird/CwLnx/Speed,19200,192Z0,,"Value '192Z0' not within range 9600, 19200",X,range,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/NoritakeVFD/Speed,system/lyrebird/NoritakeVFD/Speed,null,,,,range,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/transposition,system/lyrebird/ms6931/Size,16x2,12x6,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/lcdm001/ForwardKey,system/lyrebird/lcdm001/ForwardKey,system/lyrebird/EyeboxOne/Size,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/change/char,system/lyrebird/curses/Background,cyan,cOan,Error opening terminal: unknown.,"The type 'enum' failed to match for 'system/lyrebird/curses/system\/temporarySpec' with string: 'cOan'
+Allowed values: 'red' 'black' 'green' 'yellow' 'blue' 'magenta' 'cyan' 'white'",X,type,Error opening terminal: unknown.,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,BUG
+Structure Error,inject/structure/section/duplicate,system/lyrebird/joy/Map_Button1,system/lyrebird/joy/Map_Button1,system/lyrebird/mdm166a/OffDimming,There is no output driver,,,,"There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Typo Error,inject/typo/insertion,system/lyrebird/server/ServerScreen,on,Ton,Error opening terminal: unknown.,"The type 'enum' failed to match for 'system/lyrebird/server/system\/temporarySpec' with string: 'Ton'
+Allowed values: 'off' 'on' 'blank'",X,type,Error opening terminal: unknown.,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/deletion,system/lyrebird/hd44780/Keypad,no,o,,The value 'o' of key 'system/lyrebird/hd44780/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,BUG
+Domain Error,inject/domain,system/lyrebird/sli/Device,/tmp/fakeDriver,eth0,sli: open(eth0) failed (No such file or directory),Given path 'eth0' is not absolute,X,path,"sli: open(eth0) failed (No such file or directory)
+Driver [sli] init failed, return code -1
+Could not load driver sli
+There is no output driver
+Critical error while initializing, abort.",BAD,BAD,NONE,NONE,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/deletion,system/lyrebird/NoritakeVFD/Size,20x4,2x4,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/deletion,system/lyrebird/menu/EnterKey,Enter,Eter,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/curses/Backlight,red,#FF0000,Error opening terminal: unknown.,"The type 'enum' failed to match for 'system/lyrebird/curses/system\/temporarySpec' with string: '#FF0000'
+Allowed values: 'red' 'black' 'green' 'yellow' 'blue' 'magenta' 'cyan' 'white'",X,type,Error opening terminal: unknown.,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,BUG
+Structure Error,inject/structure/section/duplicate,system/lyrebird/serialVFD/Device,system/lyrebird/serialVFD/Device,system/lyrebird,"serialVFD: The number of Custom-Characters must be between 0 and 99. Using default
+serialVFD_init_serial: open() of /dev/lcd failed (No such file or directory)
+serialVFD: unable to initialize io-port",,,,"serialVFD: The number of Custom-Characters must be between 0 and 99. Using default
+serialVFD_init_serial: open() of /dev/lcd failed (No such file or directory)
+serialVFD: unable to initialize io-port
+Driver [serialVFD] init failed, return code -1
+Could not load driver serialVFD
+There is no output driver
+Critical error while initializing, abort.",BAD,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Structure Error,inject/structure/section/reallocate,system/lyrebird/lcdm001/Device,system/lyrebird/lcdm001/Device,system/lyrebird/hd44780,lcdm001: open(8980896) failed (No such file or directory),,,path,"lcdm001: open(8980896) failed (No such file or directory)
+Driver [lcdm001] init failed, return code -1
+Could not load driver lcdm001
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/server/ReportLevel,2,72,Error opening terminal: unknown.,Value '72' not within range 0-5,X,range,Error opening terminal: unknown.,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Domain Error,inject/domain,system/lyrebird/hd44780/BacklightCmdOn,(null),on,,"Key value failed to validate. Reason: 4 bytes can be encoded, as integer number in big-endian order (0x0000-0xFFFF)",X,validation,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,BUG
+Structure Error,inject/structure/section/reallocate,system/lyrebird/glcd/Brightness,system/lyrebird/glcd/Brightness,system/lyrebird/server,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/mtc_s16209x/Device,/tmp/fakeDriver,/tmp/fakeDrivter,mtc_s16209x: open(/tmp/fakeDrivter) failed (No such file or directory),"Could not stat file, message: Unknown error from key: system/lyrebird/mtc_s16209x/system\/temporarySpec with path: /tmp/fakeDrivter",X,path,"mtc_s16209x: open(/tmp/fakeDrivter) failed (No such file or directory)
+Driver [mtc_s16209x] init failed, return code -1
+Could not load driver mtc_s16209x
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,GOOD,BAD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/change/char,system/lyrebird/curses/Size,20x4,20xZ,curses: cannot read Size: 20xZ; using default 20x4,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"curses: cannot read Size: 20xZ; using default 20x4
+Error opening terminal: unknown.",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Domain Error,inject/domain,system/lyrebird/CFontz/Device,/tmp/fakeDriver,eth0,CFontz: open(eth0) failed (No such file or directory),Given path 'eth0' is not absolute,X,path,"CFontz: open(eth0) failed (No such file or directory)
+Driver [CFontz] init failed, return code -1
+Could not load driver CFontz
+There is no output driver
+Critical error while initializing, abort.",BAD,BAD,NONE,NONE,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/sed1330/CellSize,6x10,20 x 4,Invalid character 'x' on line 1174 of /tmp/lcdd-tmp.conf,Key value failed to validate. Reason: Width x Height of a character cell in pixels [legal: 6x7 - 8x16],X,validation,"Invalid character 'x' on line 1174 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/imonlcd/Size,system/lyrebird/imonlcd/Size,system/lyrebird/lis,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Semantic Error,inject/semantic,system/lyrebird/picolcd/LircHost,(null),local,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/hd44780/OutputPort,system/lyrebird/hd44780/OutputPort,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/transposition,system/lyrebird/glcd/Port,0x378,x0378,,Key value failed to validate. Reason: Not a valid port declaration. legal: 0x200 - 0x400,X,validation,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/change/char,system/lyrebird/glcd/ConnectionType,t6963,t696D,glcd: unknown ConnectionType: t696D,"The type 'enum' failed to match for 'system/lyrebird/glcd/system\/temporarySpec' with string: 't696D'
+Allowed values: 't6963' 'png' 'serdisplib' 'glcd2usb' 'x11' 'picolcdgfx' 'xyz'",X,type,"glcd: unknown ConnectionType: t696D
+Driver [glcd] init failed, return code -1
+Could not load driver glcd
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,GOOD,GOOD,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/serialVFD/Port,system/lyrebird/serialVFD/Port,system/lyrebird/glcdlib/Backlight,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,,,,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Structure Error,inject/structure/section/reallocate,system/lyrebird/glcd/Size,system/lyrebird/glcd/Size,system/lyrebird,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Semantic Error,inject/semantic,system/lyrebird/IOWarrior/Lastline,(null),true,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/CFontz/Size,system/lyrebird/CFontz/Size,system/lyrebird/EyeboxOne/DownKey,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Structure Error,inject/structure/section/remove,system/lyrebird/EyeboxOne/EscapeKey,system/lyrebird/EyeboxOne/EscapeKey,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Domain Error,inject/domain,system/lyrebird/pyramid/Device,/tmp/fakeDriver,eth0,pyramid: open(eth0) failed: No such file or directory,Given path 'eth0' is not absolute,X,path,"pyramid: open(eth0) failed: No such file or directory
+Driver [pyramid] init failed, return code -1
+Could not load driver pyramid
+There is no output driver
+Critical error while initializing, abort.",BAD,BAD,NONE,NONE,NONE,NONE,NONE,NONE,
+Domain Error,inject/domain,system/lyrebird/lcdm001/Device,/tmp/fakeDriver,eth0,lcdm001: open(37353984) failed (No such file or directory),Given path 'eth0' is not absolute,X,path,"lcdm001: open(37353984) failed (No such file or directory)
+Driver [lcdm001] init failed, return code -1
+Could not load driver lcdm001
+There is no output driver
+Critical error while initializing, abort.",BAD,BAD,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/sed1330/CellSize,system/lyrebird/sed1330/CellSize,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/transposition,system/lyrebird/curses/Backlight,red,rde,Error opening terminal: unknown.,"The type 'enum' failed to match for 'system/lyrebird/curses/system\/temporarySpec' with string: 'rde'
+Allowed values: 'red' 'black' 'green' 'yellow' 'blue' 'magenta' 'cyan' 'white'",X,type,Error opening terminal: unknown.,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,BUG
+Domain Error,inject/domain,system/lyrebird/imonlcd/Device,/tmp/fakeDriver,eth0,imonlcd: ERROR opening eth0 (No such file or directory).,Given path 'eth0' is not absolute,X,path,"imonlcd: ERROR opening eth0 (No such file or directory).
+imonlcd: Did you load the iMON kernel module?
+Driver [imonlcd] init failed, return code -1
+Could not load driver imonlcd
+There is no output driver
+Critical error while initializing, abort.",BAD,BAD,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/server/ScrollDownKey,system/lyrebird/server/ScrollDownKey,system/lyrebird/hd44780,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Typo Error,inject/typo/space,system/lyrebird/server/port,13666,'    13666  ',Error opening terminal: unknown.,The type 'unsigned_short' failed to match for 'system/lyrebird/server/system\/temporarySpec' with string '    13666  ',X,type,Error opening terminal: unknown.,DEFAULT,GOOD,GOOD,GOOD,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/glcd/KeyMap_A,Up,mUp,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Limit Error,inject/limit/min,system/lyrebird/picolcd/KeyTimeout,500,0,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Semantic Error,inject/semantic,system/lyrebird/curses/Size,20x4,20 x 4,Invalid character 'x' on line 235 of /tmp/lcdd-tmp.conf,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"Invalid character 'x' on line 235 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,Different reaction compared to other typos
+Typo Error,inject/typo/deletion,system/lyrebird/glcd/serdisp_name,t6963,t693,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/IOWarrior/ExtendedMode,(null),0,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/hd44780/Lastline,system/lyrebird/hd44780/Lastline,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/menu/LeftKey,system/lyrebird/menu/LeftKey,system/lyrebird,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Semantic Error,inject/semantic,system/lyrebird/imonlcd/Size,(null),20 * 4,Invalid character '*' on line 750 of /tmp/lcdd-tmp.conf,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"Invalid character '*' on line 750 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/menu/LeftKey,system/lyrebird/menu/LeftKey,system/lyrebird,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/space,system/lyrebird/MD8800/Device,/tmp/fakeDriver,'     /tmp/fakeDriver    ',MD8800: open() of      /tmp/fakeDriver     failed (No such file or directory),Given path '     /tmp/fakeDriver    ' is not absolute,X,path,"MD8800: open() of      /tmp/fakeDriver     failed (No such file or directory)
+Driver [MD8800] init failed, return code -1
+Could not load driver MD8800
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Domain Error,inject/domain,system/lyrebird/hd44780/LineAddress,(null),40,,"Key value failed to validate. Reason: Not a line Address. eg. 0x20, 0x10",X,validation,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,BUG
+Typo Error,inject/typo/change/char,system/lyrebird/glcd/picolcdgfx_Inverted,no,go,,The value 'go' of key 'system/lyrebird/glcd/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/bayrad/Device,system/lyrebird/bayrad/Device,system/lyrebird/picolcd,bayrad: Read error in BayRAD getchar,,,,"bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Typo Error,inject/typo/case/toggle,system/lyrebird/CwLnx/KeyMap_F,Escape,EscApe,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/MtxOrb/Speed,system/lyrebird/MtxOrb/Speed,system/lyrebird,MtxOrb: failed to configure port (Inappropriate ioctl for device),,,range,"MtxOrb: failed to configure port (Inappropriate ioctl for device)
+Driver [MtxOrb] init failed, return code -1
+Could not load driver MtxOrb
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/lb216/Speed,9600,9K600,,"Value '9K600' not within range 2400, 9600",X,range,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/sed1520/HaveInverter,no,off,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,Elektra normalization
+Limit Error,inject/limit/min,system/lyrebird/glcd/Brightness,(null),0,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/hd44780/Contrast,system/lyrebird/hd44780/Contrast,system/lyrebird,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Structure Error,inject/structure/section/duplicate,system/lyrebird/server/hello,system/lyrebird/server/hello,system/lyrebird/glcdlib/Backlight,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Typo Error,inject/typo/insertion,system/lyrebird/picolcd/Key4Light,on,ono,,The value 'ono' of key 'system/lyrebird/picolcd/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/space,system/lyrebird/glcd/useFT2,yes,'  yes   ',,The value '  yes   ' of key 'system/lyrebird/glcd/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,DEFAULT,GOOD,GOOD,BAD,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Semantic Error,inject/semantic,system/lyrebird/ula200/KeyMap_A,(null),,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/lb216/Device,system/lyrebird/lb216/Device,system/lyrebird/hd44780/Device,lb216: open(/dev/lcd) failed (No such file or directory),,,path,"lb216: open(/dev/lcd) failed (No such file or directory)
+Driver [lb216] init failed, return code -1
+Could not load driver lb216
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/remove,system/lyrebird/t6963/Port,system/lyrebird/t6963/Port,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/remove,system/lyrebird/hd44780/LineAddress,system/lyrebird/hd44780/LineAddress,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/menu/LeftKey,system/lyrebird/menu/LeftKey,system/lyrebird/MtxOrb/Device,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/sed1330/Type,system/lyrebird/sed1330/Type,system/lyrebird,sed1330: you need to specify the display type,,,,"sed1330: you need to specify the display type
+Driver [sed1330] init failed, return code -1
+Could not load driver sed1330
+There is no output driver
+Critical error while initializing, abort.",BAD,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,"BUG: No display type default, elektra provides one!"
+Typo Error,inject/typo/deletion,system/lyrebird/sed1330/ConnectionType,classic,lassic,sed1330: Unknown ConnectionType lassic,"The type 'enum' failed to match for 'system/lyrebird/sed1330/system\/temporarySpec' with string: 'lassic'
+Allowed values: 'classic' 'bitshaker'",X,type,"sed1330: Unknown ConnectionType lassic
+Driver [sed1330] init failed, return code -1
+Could not load driver sed1330
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,GOOD,GOOD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/deletion,system/lyrebird/picolcd/OffBrightness,0,,,The type 'unsigned_short' failed to match for 'system/lyrebird/picolcd/system\/temporarySpec' with string '',X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/IOWarrior/Size,system/lyrebird/IOWarrior/Size,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/remove,system/lyrebird/bayrad/Device,system/lyrebird/bayrad/Device,null,bayrad: open(/dev/lcd) failed (No such file or directory),,,path,"bayrad: open(/dev/lcd) failed (No such file or directory)
+Driver [bayrad] init failed, return code -1
+Could not load driver bayrad
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/space,system/lyrebird/IOWarrior/ExtendedMode,no,'   no ',,The value '   no ' of key 'system/lyrebird/IOWarrior/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,DEFAULT,GOOD,GOOD,BAD,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/ula200/Size,20x4,s20x4,ula200: cannot read Size s20x4,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"ula200: cannot read Size s20x4
+Driver [ula200] init failed, return code -1
+Could not load driver ula200
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Semantic Error,inject/semantic,system/lyrebird/lcdm001/ForwardKey,DownKey,Alt+F,lcdm001: invalid config setting for ForwardKey; using default RightKey,,,,lcdm001: invalid config setting for ForwardKey; using default RightKey,GOOD,NONE,NONE,NONE,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/remove,system/lyrebird/serialPOS/Type,system/lyrebird/serialPOS/Type,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/menu/RightKey,Right,Righ6t,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/lcdm001/MainMenuKey,system/lyrebird/lcdm001/MainMenuKey,system/lyrebird,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Structure Error,inject/structure/section/reallocate,system/lyrebird/joy/Map_Button2,system/lyrebird/joy/Map_Button2,system/lyrebird/pyramid,There is no output driver,,,type,"There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/hd44780/Speed,system/lyrebird/hd44780/Speed,system/lyrebird,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/deletion,system/lyrebird/curses/Size,20x4,204,curses: cannot read Size: 204; using default 20x4,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"curses: cannot read Size: 204; using default 20x4
+Error opening terminal: unknown.",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/icp_a106/Device,system/lyrebird/icp_a106/Device,system/lyrebird/serialVFD/Speed,icp_a106: init() failed (No such file or directory),,,path,"icp_a106: init() failed (No such file or directory)
+Driver [icp_a106] init failed, return code -1
+Could not load driver icp_a106
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/remove,system/lyrebird/xosd/offset,system/lyrebird/xosd/offset,null,xosd: xosd_set_font() failed,,,type,"xosd: xosd_set_font() failed
+Driver [xosd] init failed, return code -1
+Could not load driver xosd
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/hd44780/Backlight,system/lyrebird/hd44780/Backlight,system/lyrebird,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Structure Error,inject/structure/section/reallocate,system/lyrebird/picolcd/Key3Light,system/lyrebird/picolcd/Key3Light,system/lyrebird/glk,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Domain Error,inject/domain,system/lyrebird/glcd/x11_BacklightColor,(null),#FF0000,,"Key value failed to validate. Reason: Colors are in RRGGBB format prefixed with ""0x""",X,validation,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/EyeboxOne/Speed,system/lyrebird/EyeboxOne/Speed,null,,,,range,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/space,system/lyrebird/hd44780/KeyMatrix_4_3,Down,'     Down  ',,,,,,DEFAULT,NONE,NONE,NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,BUG
+Structure Error,inject/structure/section/remove,system/lyrebird/glk/Speed,system/lyrebird/glk/Speed,null,glk: unable to open device /tmp/fakeDriver,,,range,"glk: unable to open device /tmp/fakeDriver
+Driver [glk] init failed, return code -1
+Could not load driver glk
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/lis/Brightness,1000,10K00,lis: cannot open USB device 403:6001,The type 'unsigned_short' failed to match for 'system/lyrebird/lis/system\/temporarySpec' with string '10K00',X,type,"lis: cannot open USB device 403:6001
+Driver [lis] init failed, return code -1
+Could not load driver lis
+There is no output driver
+Critical error while initializing, abort.",NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/deletion,system/lyrebird/glcd/KeyMap_C,Enter,Entr,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/case/toggle,system/lyrebird/glcd/Port,0x378,0X378,,Key value failed to validate. Reason: Not a valid port declaration. legal: 0x200 - 0x400,X,validation,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/deletion,system/lyrebird/vlsys_m428/Device,/tmp/fakeDriver,/tmpfakeDriver,vlsys_m428: could not open /tmpfakeDriver (No such file or directory),"Could not stat file, message: Unknown error from key: system/lyrebird/vlsys_m428/system\/temporarySpec with path: /tmpfakeDriver",X,path,"vlsys_m428: could not open /tmpfakeDriver (No such file or directory)
+Driver [vlsys_m428] init failed, return code -1
+Could not load driver vlsys_m428
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,GOOD,BAD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/transposition,system/lyrebird/server/ScrollDownKey,Down,nowD,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/rawserial/Updaterate,system/lyrebird/rawserial/Updaterate,system/lyrebird,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/case/toggle,system/lyrebird/MtxOrb/KeyMap_C,Up,UP,MtxOrb: failed to configure port (Inappropriate ioctl for device),,,,"MtxOrb: failed to configure port (Inappropriate ioctl for device)
+Driver [MtxOrb] init failed, return code -1
+Could not load driver MtxOrb
+There is no output driver
+Critical error while initializing, abort.",NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/server/ToggleRotateKey,system/lyrebird/server/ToggleRotateKey,system/lyrebird/serialPOS,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Domain Error,inject/domain,system/lyrebird/hd44780/Device,/tmp/fakeDriver,eth0,,Given path 'eth0' is not absolute,X,path,,NONE,BAD,NONE,NONE,NONE,NONE,NONE,NONE,BUG
+Typo Error,inject/typo/case/toggle,system/lyrebird/server/hello,builtin,builtiN,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/glcd/KeyMap_F,system/lyrebird/glcd/KeyMap_F,system/lyrebird,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/remove,system/lyrebird/joy/Map_Axis1neg,system/lyrebird/joy/Map_Axis1neg,null,There is no output driver,,,type,"There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/curses/Size,20x4,2k0x4,curses: cannot read Size: 2k0x4; using default 20x4,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"curses: cannot read Size: 2k0x4; using default 20x4
+Error opening terminal: unknown.",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Limit Error,inject/limit/min,system/lyrebird/picolcd/LircFlushThreshold,10000,1000,,,,validation,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Domain Error,inject/domain,system/lyrebird/CFontzPacket/Device,/tmp/fakeDriver,eth0,CFontzPacket: open(eth0) failed (No such file or directory),Given path 'eth0' is not absolute,X,path,"CFontzPacket: open(eth0) failed (No such file or directory)
+Driver [CFontzPacket] init failed, return code -1
+Could not load driver CFontzPacket
+There is no output driver
+Critical error while initializing, abort.",BAD,BAD,NONE,NONE,NONE,NONE,NONE,NONE,
+Limit Error,inject/limit/min,system/lyrebird/CFontz/Brightness,1000,0,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/remove,system/lyrebird/picolcd/LircFlushThreshold,system/lyrebird/picolcd/LircFlushThreshold,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Limit Error,inject/limit/max,system/lyrebird/CFontz/OffBrightness,0,1000,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/transposition,system/lyrebird/CFontz/NewFirmware,no,on,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/transposition,system/lyrebird/CwLnx/KeyMap_A,Up,pU,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/imonlcd/OnExit,system/lyrebird/imonlcd/OnExit,system/lyrebird,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Semantic Error,inject/semantic,system/lyrebird/EyeboxOne/Size,20x4,20 * 4,Invalid character '*' on line 333 of /tmp/lcdd-tmp.conf,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"Invalid character '*' on line 333 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,
+Typo Error,inject/typo/change/char,system/lyrebird/MtxOrb/KeyMap_E,Enter,EnVer,MtxOrb: failed to configure port (Inappropriate ioctl for device),,,,"MtxOrb: failed to configure port (Inappropriate ioctl for device)
+Driver [MtxOrb] init failed, return code -1
+Could not load driver MtxOrb
+There is no output driver
+Critical error while initializing, abort.",NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/glcd/KeyMap_E,(null),Alt+F,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/deletion,system/lyrebird/sed1520/UseHardReset,no,n,,The value 'n' of key 'system/lyrebird/sed1520/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/picolcd/KeyTimeout,system/lyrebird/picolcd/KeyTimeout,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/change/char,system/lyrebird/hd44780/Backlight,yes,Nes,,"The type 'enum' failed to match for 'system/lyrebird/hd44780/system\/temporarySpec' with string: 'Nes'
+Allowed values: 'none' 'external' 'internal' 'internalCmds'",X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,BUG
+Semantic Error,inject/semantic,system/lyrebird/EyeboxOne/UpKey,A,	,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/NoritakeVFD/Reboot,system/lyrebird/NoritakeVFD/Reboot,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/hd44780/KeyMatrix_4_3,system/lyrebird/hd44780/KeyMatrix_4_3,system/lyrebird/imon,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Structure Error,inject/structure/section/remove,system/lyrebird/lirc/lircrc,system/lyrebird/lirc/lircrc,null,lirc: Could not connect to lircd,,,path,"lirc: Could not connect to lircd
+Driver [lirc] init failed, return code -1
+Could not load driver lirc
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Semantic Error,inject/semantic,system/lyrebird/imonlcd/Size,(null),20 / 4,Invalid character '/' on line 750 of /tmp/lcdd-tmp.conf,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"Invalid character '/' on line 750 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,
+Typo Error,inject/typo/deletion,system/lyrebird/NoritakeVFD/Parity,0,,,The type 'unsigned_long' failed to match for 'system/lyrebird/NoritakeVFD/system\/temporarySpec' with string '',X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/CwLnx/KeyMap_F,system/lyrebird/CwLnx/KeyMap_F,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/remove,system/lyrebird/server/goodbye,system/lyrebird/server/goodbye,null,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Semantic Error,inject/semantic,system/lyrebird/IOWarrior/Size,20x4,20 / 4,Invalid character '/' on line 697 of /tmp/lcdd-tmp.conf,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"Invalid character '/' on line 697 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,
+Typo Error,inject/typo/insertion,system/lyrebird/ea65/Brightness,500,50v0,,The type 'unsigned_short' failed to match for 'system/lyrebird/ea65/system\/temporarySpec' with string '50v0',X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,double checked (indeed nothing happens despite code is there!)
+Structure Error,inject/structure/section/remove,system/lyrebird/EyeboxOne/Backlight,system/lyrebird/EyeboxOne/Backlight,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Limit Error,inject/limit/min,system/lyrebird/CFontzPacket/OffBrightness,50,0,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Domain Error,inject/domain,system/lyrebird/glcd/x11_BacklightColor,(null),"0,100,500",,"Key value failed to validate. Reason: Colors are in RRGGBB format prefixed with ""0x""",X,validation,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/text/Size,20x4,20 * 4,Invalid character '*' on line 1356 of /tmp/lcdd-tmp.conf,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"Invalid character '*' on line 1356 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/picolcd/LircTime_us,system/lyrebird/picolcd/LircTime_us,system/lyrebird,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/ula200/KeyMap_C,system/lyrebird/ula200/KeyMap_C,system/lyrebird,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Structure Error,inject/structure/section/remove,system/lyrebird/menu/DownKey,system/lyrebird/menu/DownKey,null,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Semantic Error,inject/semantic,system/lyrebird/picolcd/Keylights,on,true,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,Elektra normalization
+Typo Error,inject/typo/deletion,system/lyrebird/server/Heartbeat,open,pen,Error opening terminal: unknown.,"The type 'enum' failed to match for 'system/lyrebird/server/system\/temporarySpec' with string: 'pen'
+Allowed values: 'off' 'on' 'open'",X,type,Error opening terminal: unknown.,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/insertion,system/lyrebird/picolcd/Key5Light,on,ony,,The value 'ony' of key 'system/lyrebird/picolcd/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/glcd/KeyMap_D,system/lyrebird/glcd/KeyMap_D,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/transposition,system/lyrebird/lcdm001/PauseKey,LeftKey,LefteKy,lcdm001: invalid config setting for PauseKey; using default DownKey,,,,lcdm001: invalid config setting for PauseKey; using default DownKey,GOOD,NONE,NONE,NONE,PARTLY,GOOD,BAD,GOOD,
+Domain Error,inject/domain,system/lyrebird/vlsys_m428/Device,/tmp/fakeDriver,eth0,vlsys_m428: could not open eth0 (No such file or directory),Given path 'eth0' is not absolute,X,path,"vlsys_m428: could not open eth0 (No such file or directory)
+Driver [vlsys_m428] init failed, return code -1
+Could not load driver vlsys_m428
+There is no output driver
+Critical error while initializing, abort.",BAD,BAD,NONE,NONE,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/change/char,system/lyrebird/hd44780/Device,/tmp/fakeDriver,/tmV/fakeDriver,,"Could not stat file, message: Unknown error from key: system/lyrebird/hd44780/system\/temporarySpec with path: /tmV/fakeDriver",X,path,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,BUG
+Structure Error,inject/structure/section/reallocate,system/lyrebird/hd44780/ConnectionType,system/lyrebird/hd44780/ConnectionType,system/lyrebird/lcdm001/BackKey,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Limit Error,inject/limit/min,system/lyrebird/glcd/Size,(null),1x1,Driver [glcd] has invalid display size,,,,Driver [glcd] has invalid display size,BAD,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG
+Structure Error,inject/structure/section/reallocate,system/lyrebird/serialVFD/ISO_8859_1,system/lyrebird/serialVFD/ISO_8859_1,system/lyrebird/bayrad/Device,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,,,type,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/transposition,system/lyrebird/CFontzPacket/Size,20x4,02x4,,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Limit Error,inject/limit/max,system/lyrebird/MtxOrb/Brightness,1000,1000,MtxOrb: failed to configure port (Inappropriate ioctl for device),,,,"MtxOrb: failed to configure port (Inappropriate ioctl for device)
+Driver [MtxOrb] init failed, return code -1
+Could not load driver MtxOrb
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/server/ReportToSyslog,system/lyrebird/server/ReportToSyslog,system/lyrebird,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Typo Error,inject/typo/case/toggle,system/lyrebird/picolcd/LinkLights,off,Off,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/glcd/x11_BacklightColor,(null),0x80ff80,,"Key value failed to validate. Reason: Colors are in RRGGBB format prefixed with ""0x""",X,validation,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/menu/MenuKey,system/lyrebird/menu/MenuKey,system/lyrebird/CFontz,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Typo Error,inject/typo/insertion,system/lyrebird/CFontz/NewFirmware,no,noa,,The value 'noa' of key 'system/lyrebird/CFontz/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/space,system/lyrebird/IOWarrior/Size,20x4,' 20x4 ',,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,,DEFAULT,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/transposition,system/lyrebird/CFontz/Brightness,1000,0010,,The type 'unsigned_short' failed to match for 'system/lyrebird/CFontz/system\/temporarySpec' with string '0010',X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/glcd/fontHasIcons,(null),off,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,Elektra normalization
+Structure Error,inject/structure/section/duplicate,system/lyrebird/server/DriverPath,system/lyrebird/server/DriverPath,system/lyrebird/imon,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Resource Error,inject/resource,system/lyrebird/CFontzPacket/Device,/tmp/fakeDriver,/tmp/badPermissions,"CFontzPacket: open(/tmp/badPermissions) failed (Permission denied)
+",Validation Semantic: User wespe does not have required permission (rw) on /tmp/badPermissions,X,path,"CFontzPacket: open(/tmp/badPermissions) failed (Permission denied)
+Driver [CFontzPacket] init failed, return code -1
+Could not load driver CFontzPacket
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/CwLnx/Device,system/lyrebird/CwLnx/Device,system/lyrebird,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Limit Error,inject/limit/max,system/lyrebird/hd44780/Contrast,(null),1000,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Domain Error,inject/domain,system/lyrebird/stv5730/Port,0x378,8080,stv5730: no STV5730 hardware found at 0x1F90 ,"Key value failed to validate. Reason: Not a valid port declaration. It should start with 0x, followed by 3 HEX values. eg. 0x3BC",X,validation,"stv5730: no STV5730 hardware found at 0x1F90 
+Driver [stv5730] init failed, return code -1
+Could not load driver stv5730
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,Multiple forms allowed
+Structure Error,inject/structure/section/remove,system/lyrebird/tyan/Size,system/lyrebird/tyan/Size,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/vlsys_m428/Device,system/lyrebird/vlsys_m428/Device,system/lyrebird/NoritakeVFD/Reboot,vlsys_m428: could not configure /tmp/fakeDriver (Inappropriate ioctl for device),,,,"vlsys_m428: could not configure /tmp/fakeDriver (Inappropriate ioctl for device)
+Driver [vlsys_m428] init failed, return code -1
+Could not load driver vlsys_m428
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Limit Error,inject/limit/max,system/lyrebird/NoritakeVFD/Brightness,1000,1000,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Resource Error,inject/resource,system/lyrebird/sli/Device,/tmp/fakeDriver,/tmp/badPermissions,sli: open(/tmp/badPermissions) failed (Permission denied),"Validation Semantic: User wespe does not have required permission (rw) on /tmp/badPermissions
+",X,path,"sli: open(/tmp/badPermissions) failed (Permission denied)
+Driver [sli] init failed, return code -1
+Could not load driver sli
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/insertion,system/lyrebird/hd44780/FontBank,0,60,,"The type 'enum' failed to match for 'system/lyrebird/hd44780/system\/temporarySpec' with string: '60'
+Allowed values: '0' '1' '2' '3'",X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,BUG
+Typo Error,inject/typo/change/char,system/lyrebird/CFontzPacket/Model,633,63s,,"The type 'enum' failed to match for 'system/lyrebird/CFontzPacket/system\/temporarySpec' with string: '63s'
+Allowed values: '533' '631' '633' '635'",X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/t6963/Size,system/lyrebird/t6963/Size,system/lyrebird/sed1520,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Semantic Error,inject/semantic,system/lyrebird/lcdm001/MainMenuKey,RightKey,tab,lcdm001: invalid config setting for MainMenuKey; using default UpKey,,,,lcdm001: invalid config setting for MainMenuKey; using default UpKey,GOOD,NONE,NONE,NONE,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/remove,system/lyrebird/SureElec/Brightness,system/lyrebird/SureElec/Brightness,null,SureElec: failed to configure port (Inappropriate ioctl for device),,,range,"SureElec: failed to configure port (Inappropriate ioctl for device)
+Driver [SureElec] init failed, return code -1
+Could not load driver SureElec
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/space,system/lyrebird/CwLnx/KeyMap_D,Right,' Right    ',,,,,,DEFAULT,NONE,NONE,NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/transposition,system/lyrebird/tyan/Size,16x2,26x1,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/server/ReportToSyslog,no,nHo,Error opening terminal: unknown.,The value 'nHo' of key 'system/lyrebird/server/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,Error opening terminal: unknown.,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/server/FrameInterval,system/lyrebird/server/FrameInterval,system/lyrebird/rawserial,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Structure Error,inject/structure/section/remove,system/lyrebird/hd44780/DelayMult,system/lyrebird/hd44780/DelayMult,null,,,,range,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/glcd/x11_Border,system/lyrebird/glcd/x11_Border,system/lyrebird,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Typo Error,inject/typo/case/toggle,system/lyrebird/CwLnx/KeyMap_E,Enter,EntEr,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/picolcd/Key1Light,on,1,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,Elektra normalization shit
+Semantic Error,inject/semantic,system/lyrebird/MtxOrb/KeyMap_E,(null),	,MtxOrb: failed to configure port (Inappropriate ioctl for device),,,,"MtxOrb: failed to configure port (Inappropriate ioctl for device)
+Driver [MtxOrb] init failed, return code -1
+Could not load driver MtxOrb
+There is no output driver
+Critical error while initializing, abort.",NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Limit Error,inject/limit/max,system/lyrebird/serialVFD/OffBrightness,0,1000,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,,,,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/MD8800/Brightness,system/lyrebird/MD8800/Brightness,system/lyrebird/glcdlib,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/transposition,system/lyrebird/hd44780/DelayBus,true,treu,,The value 'treu' of key 'system/lyrebird/hd44780/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,BUG
+Semantic Error,inject/semantic,system/lyrebird/glcd/CellSize,(null),20 * 4,Invalid character '*' on line 424 of /tmp/lcdd-tmp.conf,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"Invalid character '*' on line 424 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,
+Typo Error,inject/typo/deletion,system/lyrebird/serialPOS/Device,/tmp/fakeDriver,/tmpfakeDriver,serialPOS: open(/tmpfakeDriver) failed (No such file or directory),"Could not stat file, message: Unknown error from key: system/lyrebird/serialPOS/system\/temporarySpec with path: /tmpfakeDriver",X,path,"serialPOS: open(/tmpfakeDriver) failed (No such file or directory)
+Driver [serialPOS] init failed, return code -1
+Could not load driver serialPOS
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,GOOD,BAD,PARTLY,GOOD,BAD,GOOD,
+Semantic Error,inject/semantic,system/lyrebird/NoritakeVFD/Reboot,no,1,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,Elektra normalization
+Typo Error,inject/typo/insertion,system/lyrebird/lb216/Speed,9600,960v0,,"Value '960v0' not within range 2400, 9600",X,range,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/imonlcd/Size,system/lyrebird/imonlcd/Size,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/CFontzPacket/Brightness,1000,J1000,,The type 'unsigned_short' failed to match for 'system/lyrebird/CFontzPacket/system\/temporarySpec' with string 'J1000',X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/curses/Background,cyan,"0,100,500",Error opening terminal: unknown.,"The type 'enum' failed to match for 'system/lyrebird/curses/system\/temporarySpec' with string: '0,100,500'
+Allowed values: 'red' 'black' 'green' 'yellow' 'blue' 'magenta' 'cyan' 'white'",X,type,Error opening terminal: unknown.,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,BUG
+Structure Error,inject/structure/section/reallocate,system/lyrebird/lis/Lastline,system/lyrebird/lis/Lastline,system/lyrebird/CwLnx/Model,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/space,system/lyrebird/server/DriverPath,/usr/lib/x86_64-linux-gnu/lcdproc/,'   /usr/lib/x86_64-linux-gnu/lcdproc/  ',Could not open driver module    /usr/lib/x86_64-linux-gnu/lcdproc/  c:    /usr/lib/x86_64-linux-gnu/lcdproc/  curses.so: cannot open shared object file: No such file or directory,Key value failed to validate. Reason: The path has to contain a backslack (/) at the end,X,validation,"Could not open driver module    /usr/lib/x86_64-linux-gnu/lcdproc/  c:    /usr/lib/x86_64-linux-gnu/lcdproc/  curses.so: cannot open shared object file: No such file or directory
+Driver [curses] binding failed
+Could not load driver curses
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/deletion,system/lyrebird/hd44780/Lastline,yes,es,,The value 'es' of key 'system/lyrebird/hd44780/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,BUG
+Semantic Error,inject/semantic,system/lyrebird/t6963/delayBus,(null),0,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,Elektra normalization
+Structure Error,inject/structure/section/reallocate,system/lyrebird/vlsys_m428/Device,system/lyrebird/vlsys_m428/Device,system/lyrebird,vlsys_m428: could not open /dev/ttyUSB0 (No such file or directory),,,path,"vlsys_m428: could not open /dev/ttyUSB0 (No such file or directory)
+Driver [vlsys_m428] init failed, return code -1
+Could not load driver vlsys_m428
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/CwLnx/KeyMap_A,system/lyrebird/CwLnx/KeyMap_A,system/lyrebird,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Domain Error,inject/domain,system/lyrebird/hd44780/BacklightCmdOff,(null),on,,"Key value failed to validate. Reason: 4 bytes can be encoded, as integer number in big-endian order (0x0000-0xFFFF)",X,validation,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,BUG
+Typo Error,inject/typo/transposition,system/lyrebird/server/AutoRotate,on,no,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,Elektra normalization
+Domain Error,inject/domain,system/lyrebird/glk/Device,/tmp/fakeDriver,eth0,glk: unable to open device eth0,Given path 'eth0' is not absolute,X,path,"glk: unable to open device eth0
+Driver [glk] init failed, return code -1
+Could not load driver glk
+There is no output driver
+Critical error while initializing, abort.",BAD,BAD,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/bayrad/Device,system/lyrebird/bayrad/Device,system/lyrebird/MD8800,bayrad: open(/dev/lcd) failed (No such file or directory),,,path,"bayrad: open(/dev/lcd) failed (No such file or directory)
+Driver [bayrad] init failed, return code -1
+Could not load driver bayrad
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/deletion,system/lyrebird/glcd/picolcdgfx_Inverted,no,n,,The value 'n' of key 'system/lyrebird/glcd/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/case/toggle,system/lyrebird/lcdm001/PauseKey,LeftKey,LEftKey,lcdm001: invalid config setting for PauseKey; using default DownKey,,,,lcdm001: invalid config setting for PauseKey; using default DownKey,GOOD,NONE,NONE,NONE,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/CwLnx/Reboot,system/lyrebird/CwLnx/Reboot,system/lyrebird,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Semantic Error,inject/semantic,system/lyrebird/ula200/KeyMap_C,(null),tab,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/joy/Device,system/lyrebird/joy/Device,null,joy: open(/dev/js0) failed (No such file or directory),,,path,"joy: open(/dev/js0) failed (No such file or directory)
+Driver [joy] init failed, return code -1
+Could not load driver joy
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/case/toggle,system/lyrebird/glcd/x11_BacklightColor,0x80FF80,0X80FF80,,"Key value failed to validate. Reason: Colors are in RRGGBB format prefixed with ""0x""",X,validation,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/joy/Map_Axis1neg,system/lyrebird/joy/Map_Axis1neg,system/lyrebird,There is no output driver,,,type,"There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/serialVFD/Type,system/lyrebird/serialVFD/Type,system/lyrebird/rawserial,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,,,,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Typo Error,inject/typo/insertion,system/lyrebird/imonlcd/Contrast,200,w200,,The type 'unsigned_short' failed to match for 'system/lyrebird/imonlcd/system\/temporarySpec' with string 'w200',X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/insertion,system/lyrebird/lcdm001/ForwardKey,DownKey,DownKeey,lcdm001: invalid config setting for ForwardKey; using default RightKey,,,,lcdm001: invalid config setting for ForwardKey; using default RightKey,GOOD,NONE,NONE,NONE,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/menu/UpKey,system/lyrebird/menu/UpKey,system/lyrebird/lcterm/Device,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/remove,system/lyrebird/curses/TopLeftY,system/lyrebird/curses/TopLeftY,null,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/picolcd/Key0Light,on,onW,,The value 'onW' of key 'system/lyrebird/picolcd/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/glcd/useFT2,system/lyrebird/glcd/useFT2,system/lyrebird/sed1520/Port,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/CwLnx/KeyMap_E,Enter,Enteor,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/space,system/lyrebird/glcd/Contrast,600,'   600   ',,The type 'unsigned_short' failed to match for 'system/lyrebird/glcd/system\/temporarySpec' with string '   600   ',X,type,,DEFAULT,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/hd44780/Brightness,system/lyrebird/hd44780/Brightness,system/lyrebird/hd44780/KeyMatrix_4_2,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/server/AutoRotate,system/lyrebird/server/AutoRotate,system/lyrebird,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Semantic Error,inject/semantic,system/lyrebird/sed1520/DelayMult,0,on,,The type 'unsigned_short' failed to match for 'system/lyrebird/sed1520/system\/temporarySpec' with string 'on',X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/transposition,system/lyrebird/glcd/ConnectionType,t6963,96t63,glcd: unknown ConnectionType: 96t63,"The type 'enum' failed to match for 'system/lyrebird/glcd/system\/temporarySpec' with string: '96t63'
+Allowed values: 't6963' 'png' 'serdisplib' 'glcd2usb' 'x11' 'picolcdgfx' 'xyz'",X,type,"glcd: unknown ConnectionType: 96t63
+Driver [glcd] init failed, return code -1
+Could not load driver glcd
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,GOOD,GOOD,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/tyan/Speed,system/lyrebird/tyan/Speed,system/lyrebird/rawserial,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Structure Error,inject/structure/section/reallocate,system/lyrebird/pyramid/Device,system/lyrebird/pyramid/Device,system/lyrebird/MtxOrb/keypad_test_mode,pyramid: open(/dev/lcd) failed: No such file or directory,,,path,"pyramid: open(/dev/lcd) failed: No such file or directory
+Driver [pyramid] init failed, return code -1
+Could not load driver pyramid
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Resource Error,inject/resource,system/lyrebird/lcdm001/Device,/tmp/fakeDriver,/tmp/badPermissions,"lcdm001: open(11340080) failed (Permission denied)
+lcdm001: make sure you have rw access to /tmp/badPermissions!",Validation Semantic: User wespe does not have required permission (rw) on /tmp/badPermissions,X,path,"lcdm001: open(11340080) failed (Permission denied)
+lcdm001: make sure you have rw access to /tmp/badPermissions!
+Driver [lcdm001] init failed, return code -1
+Could not load driver lcdm001
+There is no output driver
+Critical error while initializing, abort.",BAD,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/server/Heartbeat,(null),available,Error opening terminal: unknown.,"The type 'enum' failed to match for 'system/lyrebird/server/system\/temporarySpec' with string: 'available'
+Allowed values: 'off' 'on' 'open'",X,type,Error opening terminal: unknown.,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/deletion,system/lyrebird/sed1520/InterfaceType,80,0,"sed1520: Invalid interface configured, using type 80","Value '0' not within range 68, 80",X,range,"sed1520: Invalid interface configured, using type 80",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/case/toggle,system/lyrebird/menu/RightKey,Right,RIght,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/MtxOrb/KeyMap_E,system/lyrebird/MtxOrb/KeyMap_E,null,MtxOrb: failed to configure port (Inappropriate ioctl for device),,,type,"MtxOrb: failed to configure port (Inappropriate ioctl for device)
+Driver [MtxOrb] init failed, return code -1
+Could not load driver MtxOrb
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Resource Error,inject/resource,system/lyrebird/CwLnx/Device,/tmp/fakeDriver,/devvv/not_existing,CwLnx: open(/devvv/not_existing) failed (No such file or directory),"Could not stat file, message: Unknown error from key: system/lyrebird/CwLnx/system\/temporarySpec with path: /devvv/not_existing",X,path,"CwLnx: open(/devvv/not_existing) failed (No such file or directory)
+Driver [CwLnx] init failed, return code -1
+Could not load driver CwLnx
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,GOOD,BAD,PARTLY,GOOD,BAD,GOOD,
+Semantic Error,inject/semantic,system/lyrebird/NoritakeVFD/Size,20x4,20 x 4,Invalid character 'x' on line 1038 of /tmp/lcdd-tmp.conf,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"Invalid character 'x' on line 1038 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,
+Typo Error,inject/typo/transposition,system/lyrebird/glcd/bidirectional,yes,eys,,The value 'eys' of key 'system/lyrebird/glcd/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/text/Size,system/lyrebird/text/Size,system/lyrebird/serialPOS,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Semantic Error,inject/semantic,system/lyrebird/bayrad/Speed,9600,1201,"bayrad: illegal Speed 1201; must be one of 1200, 2400, 9600 or 19200; using default 9600","Value '1201' not within range 1200, 2400, 9600, 19200",X,range,"bayrad: illegal Speed 1201; must be one of 1200, 2400, 9600 or 19200; using default 9600
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Limit Error,inject/limit/min,system/lyrebird/t6963/Port,0x378,0x200,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/case/toggle,system/lyrebird/lirc/prog,lcdd,Lcdd,lirc: Could not connect to lircd,,,,"lirc: Could not connect to lircd
+Driver [lirc] init failed, return code -1
+Could not load driver lirc
+There is no output driver
+Critical error while initializing, abort.",NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Domain Error,inject/domain,system/lyrebird/glcd/x11_BacklightColor,(null),0,,"Key value failed to validate. Reason: Colors are in RRGGBB format prefixed with ""0x""",X,validation,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/serialVFD/Size,system/lyrebird/serialVFD/Size,null,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,,,type,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/change/char,system/lyrebird/serialPOS/Cellsize,5x8,3x8,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/space,system/lyrebird/serialPOS/Custom_chars,0,'  0    ',,The type 'unsigned_long' failed to match for 'system/lyrebird/serialPOS/system\/temporarySpec' with string '  0    ',X,type,,DEFAULT,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/space,system/lyrebird/serialVFD/Speed,9600,'     9600    ',serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,The type 'unsigned_short' failed to match for 'system/lyrebird/serialVFD/system\/temporarySpec' with string '     9600    ',X,type,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,BAD,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Limit Error,inject/limit/min,system/lyrebird/serialVFD/Port,0x378,0x000,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,,,,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/remove,system/lyrebird/glcd/delayBus,system/lyrebird/glcd/delayBus,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/deletion,system/lyrebird/CwLnx/Speed,19200,1920,CwLnx: Speed must be 9600 or 19200. Using default 19200,"Value '1920' not within range 9600, 19200",X,range,CwLnx: Speed must be 9600 or 19200. Using default 19200,GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/deletion,system/lyrebird/tyan/Speed,9600,600,tyan: Speed must be 4800 or 9600; using default 9600,"Value '600' not within range 4800, 9600",X,range,tyan: Speed must be 4800 or 9600; using default 9600,GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/transposition,system/lyrebird/sed1520/HaveInverter,no,on,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,Elektra normalization
+Structure Error,inject/structure/section/remove,system/lyrebird/hd44780/FontBank,system/lyrebird/hd44780/FontBank,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Resource Error,inject/resource,system/lyrebird/glcd/normal_font,(null),/devvv/not_existing,,"Could not stat file, message: Unknown error from key: system/lyrebird/glcd/system\/temporarySpec with path: /devvv/not_existing",X,path,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/insertion,system/lyrebird/picolcd/Key1Light,on,onq,,The value 'onq' of key 'system/lyrebird/picolcd/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/CwLnx/KeyMap_B,system/lyrebird/CwLnx/KeyMap_B,system/lyrebird/irtrans/Size,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/deletion,system/lyrebird/EyeboxOne/DownKey,B,,,The type 'string' failed to match for 'system/lyrebird/EyeboxOne/system\/temporarySpec' with string '',X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Limit Error,inject/limit/max,system/lyrebird/MD8800/OffBrightness,50,1000,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/xosd/Font,system/lyrebird/xosd/Font,system/lyrebird/serialVFD,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/remove,system/lyrebird/picolcd/Key0Light,system/lyrebird/picolcd/Key0Light,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/hd44780/Speed,0,0B,,The type 'unsigned_long' failed to match for 'system/lyrebird/hd44780/system\/temporarySpec' with string '0B',X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,BUG
+Semantic Error,inject/semantic,system/lyrebird/glcd/picolcdgfx_KeyTimeout,(null),+7,,Key value failed to validate. Reason: Number must be any positive integer >0,X,validation,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/server/ToggleRotateKey,system/lyrebird/server/ToggleRotateKey,system/lyrebird,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Structure Error,inject/structure/section/reallocate,system/lyrebird/serialVFD/OffBrightness,system/lyrebird/serialVFD/OffBrightness,system/lyrebird,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,,,type,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Resource Error,inject/resource,system/lyrebird/lb216/Device,/tmp/fakeDriver,/devvv/not_existing,lb216: open(/devvv/not_existing) failed (No such file or directory),"Could not stat file, message: Unknown error from key: system/lyrebird/lb216/system\/temporarySpec with path: /devvv/not_existing",X,path,"lb216: open(/devvv/not_existing) failed (No such file or directory)
+Driver [lb216] init failed, return code -1
+Could not load driver lb216
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,GOOD,BAD,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/remove,system/lyrebird/menu/LeftKey,system/lyrebird/menu/LeftKey,null,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/rawserial/Updaterate,system/lyrebird/rawserial/Updaterate,system/lyrebird/glcdlib,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/deletion,system/lyrebird/imon/CharMap,hd44780_euro,hd44780_eur,imon: unable to load charmap: hd44780_eur,"The type 'enum' failed to match for 'system/lyrebird/imon/system\/temporarySpec' with string: 'hd44780_eur'
+Allowed values: 'hd44780_euro' 'upd16314' 'hd44780_koi8_r' 'hd44780_cp1251' 'hd44780_8859_5' 'upd16314' 'hd44780_koi8_r' 'hd44780_cp1251' 'hd44780_8859_5' 'none'",X,type,"imon: unable to load charmap: hd44780_eur
+Driver [imon] init failed, return code -1
+Could not load driver imon
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,GOOD,GOOD,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/lirc/prog,system/lyrebird/lirc/prog,system/lyrebird/NoritakeVFD,lirc: Could not connect to lircd,,,type,"lirc: Could not connect to lircd
+Driver [lirc] init failed, return code -1
+Could not load driver lirc
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Structure Error,inject/structure/section/remove,system/lyrebird/menu/MenuKey,system/lyrebird/menu/MenuKey,null,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/change/char,system/lyrebird/CFontzPacket/Reboot,yes,3es,,The value '3es' of key 'system/lyrebird/CFontzPacket/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/space,system/lyrebird/sed1520/InterfaceType,80,'     80    ',,The type 'unsigned_short' failed to match for 'system/lyrebird/sed1520/system\/temporarySpec' with string '     80    ',X,type,,DEFAULT,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/glcd/KeyRepeatInterval,system/lyrebird/glcd/KeyRepeatInterval,system/lyrebird/mx5000,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Structure Error,inject/structure/section/remove,system/lyrebird/curses/Background,system/lyrebird/curses/Background,null,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/CFontzPacket/Brightness,system/lyrebird/CFontzPacket/Brightness,system/lyrebird/mx5000,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Typo Error,inject/typo/space,system/lyrebird/imonlcd/Size,96x16,' 96x16   ',,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,,DEFAULT,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/ula200/KeyMap_B,system/lyrebird/ula200/KeyMap_B,system/lyrebird/bayrad/Device,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/hd44780/Keypad,system/lyrebird/hd44780/Keypad,system/lyrebird,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Limit Error,inject/limit/max,system/lyrebird/server/TitleSpeed,(null),10,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/CwLnx/Speed,19200,192i00,,"Value '192i00' not within range 9600, 19200",X,range,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/deletion,system/lyrebird/hd44780/KeyMatrix_4_1,Enter,Eter,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,BUG
+Structure Error,inject/structure/section/remove,system/lyrebird/sed1520/Port,system/lyrebird/sed1520/Port,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/transposition,system/lyrebird/lcdm001/Device,/tmp/fakeDriver,/tmp/fakeirDver,lcdm001: open(14723584) failed (No such file or directory),"Could not stat file, message: Unknown error from key: system/lyrebird/lcdm001/system\/temporarySpec with path: /tmp/fakeirDver",X,path,"lcdm001: open(14723584) failed (No such file or directory)
+Driver [lcdm001] init failed, return code -1
+Could not load driver lcdm001
+There is no output driver
+Critical error while initializing, abort.",BAD,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/mtc_s16209x/Brightness,system/lyrebird/mtc_s16209x/Brightness,system/lyrebird,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Typo Error,inject/typo/space,system/lyrebird/CwLnx/Model,12232,'   12232    ',,"The type 'enum' failed to match for 'system/lyrebird/CwLnx/system\/temporarySpec' with string: '   12232    '
+Allowed values: '12232' '12832' '1602'",X,type,,DEFAULT,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/sed1520/InvertedMapping,(null),off,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,Elektra normalization shit
+Typo Error,inject/typo/transposition,system/lyrebird/curses/Size,20x4,2x04,Error opening terminal: unknown.,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,Error opening terminal: unknown.,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,BUG?
+Structure Error,inject/structure/section/duplicate,system/lyrebird/glcd/serdisp_device,system/lyrebird/glcd/serdisp_device,system/lyrebird,,,,path,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Typo Error,inject/typo/transposition,system/lyrebird/glk/Speed,19200,12900,"glk: illegal Speed: 12900; must be one of 9600, 19200, 57600 or 115200; using default 19200","Value '12900' not within range 9600, 19200, 38400, 57600, 115200",X,range,"glk: illegal Speed: 12900; must be one of 9600, 19200, 57600 or 115200; using default 19200
+glk: unable to open device /tmp/fakeDriver
+Driver [glk] init failed, return code -1
+Could not load driver glk
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Resource Error,inject/resource,system/lyrebird/EyeboxOne/Device,/tmp/fakeDriver,/tmp/badPermissions,"EyeboxOne: open(/tmp/badPermissions) failed (Permission denied)
+EyeboxOne: /tmp/badPermissions device could not be opened...",Validation Semantic: User wespe does not have required permission (rw) on /tmp/badPermissions,X,path,"EyeboxOne: open(/tmp/badPermissions) failed (Permission denied)
+EyeboxOne: /tmp/badPermissions device could not be opened...
+Driver [EyeboxOne] init failed, return code -1
+Could not load driver EyeboxOne
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/MtxOrb/KeyMap_D,system/lyrebird/MtxOrb/KeyMap_D,system/lyrebird/lcdm001/Device,MtxOrb: failed to configure port (Inappropriate ioctl for device),,,type,"MtxOrb: failed to configure port (Inappropriate ioctl for device)
+Driver [MtxOrb] init failed, return code -1
+Could not load driver MtxOrb
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Typo Error,inject/typo/space,system/lyrebird/ea65/Brightness,500,'    500   ',,The type 'unsigned_short' failed to match for 'system/lyrebird/ea65/system\/temporarySpec' with string '    500   ',X,type,,DEFAULT,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/serialPOS/Custom_chars,0,on,,The type 'unsigned_long' failed to match for 'system/lyrebird/serialPOS/system\/temporarySpec' with string 'on',X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/serialVFD/use_parallel,no,0,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,,,,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,Elektra normalization
+Typo Error,inject/typo/transposition,system/lyrebird/t6963/Size,128x64,128x46,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Limit Error,inject/limit/min,system/lyrebird/MtxOrb/OffBrightness,0,0,MtxOrb: failed to configure port (Inappropriate ioctl for device),,,,"MtxOrb: failed to configure port (Inappropriate ioctl for device)
+Driver [MtxOrb] init failed, return code -1
+Could not load driver MtxOrb
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/case/toggle,system/lyrebird/tyan/Size,16x2,16X2,tyan: cannot read Size: 16X2; using default 16x2,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,tyan: cannot read Size: 16X2; using default 16x2,GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/CwLnx/Keypad,system/lyrebird/CwLnx/Keypad,system/lyrebird,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Structure Error,inject/structure/section/duplicate,system/lyrebird/sli/Speed,system/lyrebird/sli/Speed,system/lyrebird,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Structure Error,inject/structure/section/duplicate,system/lyrebird/picolcd/OffBrightness,system/lyrebird/picolcd/OffBrightness,system/lyrebird/tyan,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Structure Error,inject/structure/section/remove,system/lyrebird/server/TitleSpeed,system/lyrebird/server/TitleSpeed,null,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/lb216/Speed,9600,9g600,,"Value '9g600' not within range 2400, 9600",X,range,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/CFontz/Size,20x4,20 x 4,Invalid character 'x' on line 167 of /tmp/lcdd-tmp.conf,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"Invalid character 'x' on line 167 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,
+Semantic Error,inject/semantic,system/lyrebird/glcd/CellSize,(null),20 x 4,Invalid character 'x' on line 424 of /tmp/lcdd-tmp.conf,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"Invalid character 'x' on line 424 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/remove,system/lyrebird/glcd/fontHasIcons,system/lyrebird/glcd/fontHasIcons,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/remove,system/lyrebird/CwLnx/Keypad,system/lyrebird/CwLnx/Keypad,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/deletion,system/lyrebird/serialVFD/Brightness,1000,100,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,,,,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/remove,system/lyrebird/server/Heartbeat,system/lyrebird/server/Heartbeat,null,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Semantic Error,inject/semantic,system/lyrebird/MtxOrb/Size,20x4,20 * 4,Invalid character '*' on line 1004 of /tmp/lcdd-tmp.conf,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"Invalid character '*' on line 1004 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,
+Typo Error,inject/typo/change/char,system/lyrebird/hd44780/KeyMatrix_4_1,Enter,EntXr,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,BUG
+Typo Error,inject/typo/deletion,system/lyrebird/menu/LeftKey,Left,Lft,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Resource Error,inject/resource,system/lyrebird/CFontz/Device,/tmp/fakeDriver,/devvv/not_existing,CFontz: open(/devvv/not_existing) failed (No such file or directory),"Could not stat file, message: Unknown error from key: system/lyrebird/CFontz/system\/temporarySpec with path: /devvv/not_existing",X,path,"CFontz: open(/devvv/not_existing) failed (No such file or directory)
+Driver [CFontz] init failed, return code -1
+Could not load driver CFontz
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,GOOD,BAD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/change/char,system/lyrebird/hd44780/Backlight,yes,3es,,"The type 'enum' failed to match for 'system/lyrebird/hd44780/system\/temporarySpec' with string: '3es'
+Allowed values: 'none' 'external' 'internal' 'internalCmds'",X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,BUG
+Structure Error,inject/structure/section/reallocate,system/lyrebird/hd44780/Contrast,system/lyrebird/hd44780/Contrast,system/lyrebird,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Semantic Error,inject/semantic,system/lyrebird/ula200/KeyMap_B,(null),Alt+F,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/case/toggle,system/lyrebird/server/Backlight,open,oPen,Error opening terminal: unknown.,"The type 'enum' failed to match for 'system/lyrebird/server/system\/temporarySpec' with string: 'oPen'
+Allowed values: 'off' 'on' 'open'",X,type,Error opening terminal: unknown.,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/transposition,system/lyrebird/ea65/Brightness,500,005,,The type 'unsigned_short' failed to match for 'system/lyrebird/ea65/system\/temporarySpec' with string '005',X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/hd44780/Size,20x4,20 / 4,Invalid character '/' on line 669 of /tmp/lcdd-tmp.conf,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"Invalid character '/' on line 669 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,BUG
+Typo Error,inject/typo/space,system/lyrebird/hd44780/Brightness,800,'   800  ',,The type 'unsigned_short' failed to match for 'system/lyrebird/hd44780/system\/temporarySpec' with string '   800  ',X,type,,DEFAULT,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,BUG
+Structure Error,inject/structure/section/remove,system/lyrebird/lis/Brightness,system/lyrebird/lis/Brightness,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Semantic Error,inject/semantic,system/lyrebird/CFontzPacket/Size,(null),20 * 4,Invalid character '*' on line 194 of /tmp/lcdd-tmp.conf,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"Invalid character '*' on line 194 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/lirc/lircrc,system/lyrebird/lirc/lircrc,system/lyrebird,lirc: Could not connect to lircd,,,path,"lirc: Could not connect to lircd
+Driver [lirc] init failed, return code -1
+Could not load driver lirc
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/space,system/lyrebird/curses/TopLeftX,7,'     7    ',Error opening terminal: unknown.,The type 'unsigned_short' failed to match for 'system/lyrebird/curses/system\/temporarySpec' with string '     7    ',X,type,Error opening terminal: unknown.,DEFAULT,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,Parser ignores spaces!
+Typo Error,inject/typo/transposition,system/lyrebird/glcd/serdisp_name,t6963,t6369,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/IOWarrior/ExtendedMode,(null),off,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/deletion,system/lyrebird/rawserial/Speed,9600,960,"rawserial: Speed must be 1200, 2400, 9600, 19200 or 115200; using default 13",,,,"rawserial: Speed must be 1200, 2400, 9600, 19200 or 115200; using default 13",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,BUG in text
+Typo Error,inject/typo/change/char,system/lyrebird/picolcd/LinkLights,off,ojf,,The value 'ojf' of key 'system/lyrebird/picolcd/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/CFontzPacket/Reboot,yes,on,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,Elektra normalization
+Typo Error,inject/typo/case/toggle,system/lyrebird/joy/Map_Axis1neg,Left,LefT,There is no output driver,,,,"There is no output driver
+Critical error while initializing, abort.",NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/serialVFD/Size,20x2,20 * 4,Invalid character '*' on line 1284 of /tmp/lcdd-tmp.conf,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"Invalid character '*' on line 1284 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,
+Limit Error,inject/limit/max,system/lyrebird/MD8800/Brightness,1000,1000,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/change/char,system/lyrebird/server/PrevScreenKey,Left,Lpft,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/MtxOrb/Contrast,system/lyrebird/MtxOrb/Contrast,null,MtxOrb: failed to configure port (Inappropriate ioctl for device),,,type,"MtxOrb: failed to configure port (Inappropriate ioctl for device)
+Driver [MtxOrb] init failed, return code -1
+Could not load driver MtxOrb
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/t6963/bidirectional,yes,yeXs,,The value 'yeXs' of key 'system/lyrebird/t6963/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/space,system/lyrebird/glcd/picolcdgfx_Inverted,no,'  no     ',,The value '  no     ' of key 'system/lyrebird/glcd/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,DEFAULT,GOOD,GOOD,BAD,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/case/toggle,system/lyrebird/ms6931/Size,16x2,16X2,ms6931: cannot read Size: 16X2; using default 16x2,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,ms6931: cannot read Size: 16X2; using default 16x2,GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/space,system/lyrebird/glcd/Brightness,800,' 800   ',,The type 'unsigned_short' failed to match for 'system/lyrebird/glcd/system\/temporarySpec' with string ' 800   ',X,type,,DEFAULT,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Semantic Error,inject/semantic,system/lyrebird/server/driver,(null),none,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,"(reaction of app correct?) check: yes, cannot enum on driver"
+Typo Error,inject/typo/transposition,system/lyrebird/IOWarrior/SerialNumber,00000674,70000604,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/case/toggle,system/lyrebird/MtxOrb/KeyMap_F,Escape,EsCape,MtxOrb: failed to configure port (Inappropriate ioctl for device),,,,"MtxOrb: failed to configure port (Inappropriate ioctl for device)
+Driver [MtxOrb] init failed, return code -1
+Could not load driver MtxOrb
+There is no output driver
+Critical error while initializing, abort.",NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/curses/TopLeftX,system/lyrebird/curses/TopLeftX,null,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Semantic Error,inject/semantic,system/lyrebird/server/ServerScreen,(null),false,Error opening terminal: unknown.,"The type 'enum' failed to match for 'system/lyrebird/server/system\/temporarySpec' with string: 'false'
+Allowed values: 'off' 'on' 'blank'",X,type,Error opening terminal: unknown.,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/lis/ProductID,system/lyrebird/lis/ProductID,system/lyrebird/picolcd,lis: cannot open USB device 403:6001,,,type,"lis: cannot open USB device 403:6001
+Driver [lis] init failed, return code -1
+Could not load driver lis
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Semantic Error,inject/semantic,system/lyrebird/lcterm/Size,16x2,20 / 4,Invalid character '/' on line 851 of /tmp/lcdd-tmp.conf,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"Invalid character '/' on line 851 of /tmp/lcdd-tmp.conf
+Could not read config file: /tmp/lcdd-tmp.conf
+Critical error while processing settings, abort.",GOOD,GOOD,PARTLY,GOOD,GOOD,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/CFontzPacket/Contrast,system/lyrebird/CFontzPacket/Contrast,system/lyrebird/glk/Device,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/deletion,system/lyrebird/picolcd/Key0Light,on,n,,The value 'n' of key 'system/lyrebird/picolcd/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/transposition,system/lyrebird/hd44780/ExtendedMode,no,on,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,BUG
+Semantic Error,inject/semantic,system/lyrebird/EyeboxOne/keypad_test_mode,no,true,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,Elektra normalization
+Typo Error,inject/typo/deletion,system/lyrebird/hd44780/Model,standard,sandard,,"The type 'enum' failed to match for 'system/lyrebird/hd44780/system\/temporarySpec' with string: 'sandard'
+Allowed values: 'standard' 'extended' 'winstar_oled' 'pt6314_vfd' 'hd66712' 'ks0073' 'weh00xxyya'",X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,BUG
+Semantic Error,inject/semantic,system/lyrebird/bayrad/Speed,9600,125000,"bayrad: illegal Speed 125000; must be one of 1200, 2400, 9600 or 19200; using default 9600","Value '125000' not within range 1200, 2400, 9600, 19200",X,range,"bayrad: illegal Speed 125000; must be one of 1200, 2400, 9600 or 19200; using default 9600
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar
+bayrad: Read error in BayRAD getchar",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/hd44780/Lastline,system/lyrebird/hd44780/Lastline,system/lyrebird/lb216,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/remove,system/lyrebird/hd44780/ConnectionType,system/lyrebird/hd44780/ConnectionType,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/change/char,system/lyrebird/picolcd/Brightness,1000,10R0,,The type 'unsigned_short' failed to match for 'system/lyrebird/picolcd/system\/temporarySpec' with string '10R0',X,type,,NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/deletion,system/lyrebird/MtxOrb/KeyMap_B,Right,Riht,MtxOrb: failed to configure port (Inappropriate ioctl for device),,,,"MtxOrb: failed to configure port (Inappropriate ioctl for device)
+Driver [MtxOrb] init failed, return code -1
+Could not load driver MtxOrb
+There is no output driver
+Critical error while initializing, abort.",NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/server/PrevScreenKey,system/lyrebird/server/PrevScreenKey,system/lyrebird/serialPOS/Type,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Structure Error,inject/structure/section/reallocate,system/lyrebird/glcd/KeyMap_C,system/lyrebird/glcd/KeyMap_C,system/lyrebird/picolcd,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/case/toggle,system/lyrebird/MtxOrb/Size,20x4,20X4,MtxOrb: cannot read Size: 20X4; using default 20x4,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"MtxOrb: cannot read Size: 20X4; using default 20x4
+MtxOrb: failed to configure port (Inappropriate ioctl for device)
+Driver [MtxOrb] init failed, return code -1
+Could not load driver MtxOrb
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/deletion,system/lyrebird/lcdm001/MainMenuKey,RightKey,Rightey,lcdm001: invalid config setting for MainMenuKey; using default UpKey,,,,lcdm001: invalid config setting for MainMenuKey; using default UpKey,GOOD,NONE,NONE,NONE,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/serialVFD/ISO_8859_1,system/lyrebird/serialVFD/ISO_8859_1,system/lyrebird/menu/UpKey,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,,,type,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/EyeboxOne/LeftKey,system/lyrebird/EyeboxOne/LeftKey,system/lyrebird/picolcd,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/deletion,system/lyrebird/lcdm001/ForwardKey,DownKey,ownKey,lcdm001: invalid config setting for ForwardKey; using default RightKey,,,,lcdm001: invalid config setting for ForwardKey; using default RightKey,GOOD,NONE,NONE,NONE,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/insertion,system/lyrebird/CFontz/Reboot,no,nWo,,The value 'nWo' of key 'system/lyrebird/CFontz/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/CwLnx/KeyMap_A,system/lyrebird/CwLnx/KeyMap_A,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/lcterm/Device,system/lyrebird/lcterm/Device,system/lyrebird,lcterm: open(%) failed (/dev/lcd),,,,"lcterm: open(%) failed (/dev/lcd)
+Driver [lcterm] init failed, return code -1
+Could not load driver lcterm
+There is no output driver
+Critical error while initializing, abort.",BAD,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Typo Error,inject/typo/deletion,system/lyrebird/imon/Size,16x2,162,imon: cannot read Size: 162; using default 16x2,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,imon: cannot read Size: 162; using default 16x2,GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/hd44780/vspan,system/lyrebird/hd44780/vspan,system/lyrebird,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG (eigtl bad reaction weil default genommen)
+Typo Error,inject/typo/space,system/lyrebird/lirc/prog,lcdd,'  lcdd    ',lirc: Could not connect to lircd,,,,"lirc: Could not connect to lircd
+Driver [lirc] init failed, return code -1
+Could not load driver lirc
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/space,system/lyrebird/tyan/Size,16x2,'  16x2  ',,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,,DEFAULT,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/CwLnx/Speed,system/lyrebird/CwLnx/Speed,system/lyrebird/imon,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Structure Error,inject/structure/section/duplicate,system/lyrebird/joy/Map_Axis2neg,system/lyrebird/joy/Map_Axis2neg,system/lyrebird/sed1520/Port,There is no output driver,,,,"There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Limit Error,inject/limit/min,system/lyrebird/picolcd/KeyRepeatInterval,200,0,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/CwLnx/Speed,system/lyrebird/CwLnx/Speed,system/lyrebird,,,,range,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/remove,system/lyrebird/server/ReportToSyslog,system/lyrebird/server/ReportToSyslog,null,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Limit Error,inject/limit/min,system/lyrebird/stv5730/Port,0x378,0x000,stv5730: no STV5730 hardware found at 0x000 ,,,,"stv5730: no STV5730 hardware found at 0x000 
+Driver [stv5730] init failed, return code -1
+Could not load driver stv5730
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,port parsed before
+Resource Error,inject/resource,system/lyrebird/MD8800/Device,/tmp/fakeDriver,/tmp/badPermissions,MD8800: open() of /tmp/badPermissions failed (Permission denied),Validation Semantic: User wespe does not have required permission (rw) on /tmp/badPermissions,X,path,"MD8800: open() of /tmp/badPermissions failed (Permission denied)
+Driver [MD8800] init failed, return code -1
+Could not load driver MD8800
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/MD8800/OffBrightness,system/lyrebird/MD8800/OffBrightness,system/lyrebird/server,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Semantic Error,inject/semantic,system/lyrebird/curses/DrawBorder,yes,off,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,Elektra normalization shit
+Structure Error,inject/structure/section/reallocate,system/lyrebird/EyeboxOne/keypad_test_mode,system/lyrebird/EyeboxOne/keypad_test_mode,system/lyrebird/lcterm,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/remove,system/lyrebird/pyramid/Device,system/lyrebird/pyramid/Device,null,pyramid: open(/dev/lcd) failed: No such file or directory,,,path,"pyramid: open(/dev/lcd) failed: No such file or directory
+Driver [pyramid] init failed, return code -1
+Could not load driver pyramid
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/imon/Size,system/lyrebird/imon/Size,system/lyrebird/glcd,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/change/char,system/lyrebird/joy/Map_Axis1neg,Left,Zeft,There is no output driver,,,,"There is no output driver
+Critical error while initializing, abort.",NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/EyeboxOne/UpKey,system/lyrebird/EyeboxOne/UpKey,system/lyrebird,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/deletion,system/lyrebird/server/ToggleRotateKey,Enter,Entr,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Limit Error,inject/limit/min,system/lyrebird/picolcd/OffBrightness,(null),0,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Semantic Error,inject/semantic,system/lyrebird/joy/Map_Axis1neg,Left,,There is no output driver,The type 'string' failed to match for 'system/lyrebird/joy/system\/temporarySpec' with string '',X,type,"There is no output driver
+Critical error while initializing, abort.",NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/deletion,system/lyrebird/glcd/picolcdgfx_KeyTimeout,125,25,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Resource Error,inject/resource,system/lyrebird/CFontzPacket/Device,/tmp/fakeDriver,/devvv/not_existing,CFontzPacket: open(/devvv/not_existing) failed (No such file or directory),"Could not stat file, message: Unknown error from key: system/lyrebird/CFontzPacket/system\/temporarySpec with path: /devvv/not_existing",X,path,"CFontzPacket: open(/devvv/not_existing) failed (No such file or directory)
+Driver [CFontzPacket] init failed, return code -1
+Could not load driver CFontzPacket
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,GOOD,BAD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/space,system/lyrebird/picolcd/LinkLights,off,'  off   ',,The value '  off   ' of key 'system/lyrebird/picolcd/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,DEFAULT,GOOD,GOOD,BAD,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Domain Error,inject/domain,system/lyrebird/joy/Device,/tmp/fakeDriver,eth0,joy: open(eth0) failed (No such file or directory),Given path 'eth0' is not absolute,X,path,"joy: open(eth0) failed (No such file or directory)
+Driver [joy] init failed, return code -1
+Could not load driver joy
+There is no output driver
+Critical error while initializing, abort.",BAD,BAD,NONE,NONE,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/insertion,system/lyrebird/EyeboxOne/Device,/tmp/fakeDriver,/tmp/fakeDr7iver,EyeboxOne: open(/tmp/fakeDr7iver) failed (No such file or directory),"Could not stat file, message: Unknown error from key: system/lyrebird/EyeboxOne/system\/temporarySpec with path: /tmp/fakeDr7iver",X,path,"EyeboxOne: open(/tmp/fakeDr7iver) failed (No such file or directory)
+Driver [EyeboxOne] init failed, return code -1
+Could not load driver EyeboxOne
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,GOOD,BAD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/deletion,system/lyrebird/CwLnx/KeyMap_B,Down,own,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/icp_a106/Size,system/lyrebird/icp_a106/Size,system/lyrebird,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/change/char,system/lyrebird/menu/UpKey,Up,Ud,Error opening terminal: unknown.,,,,Error opening terminal: unknown.,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/picolcd/OffBrightness,system/lyrebird/picolcd/OffBrightness,system/lyrebird/EyeboxOne,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Structure Error,inject/structure/section/remove,system/lyrebird/server/ToggleRotateKey,system/lyrebird/server/ToggleRotateKey,null,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/transposition,system/lyrebird/text/Size,20x4,24x0,text: cannot read Size: 24x0; using default 20x4,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,text: cannot read Size: 24x0; using default 20x4,GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/remove,system/lyrebird/MD8800/Device,system/lyrebird/MD8800/Device,null,,,,path,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/EyeboxOne/UpKey,system/lyrebird/EyeboxOne/UpKey,system/lyrebird/CFontzPacket,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Structure Error,inject/structure/section/remove,system/lyrebird/ea65/Brightness,system/lyrebird/ea65/Brightness,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/lcdm001/ForwardKey,system/lyrebird/lcdm001/ForwardKey,system/lyrebird,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Limit Error,inject/limit/max,system/lyrebird/server/ReportLevel,(null),5,Server running in foreground,,,,"Server running in foreground
+Listening for queries on 127.0.0.1:13666
+screenlist_init()
+driver_load(name=""curses"", filename=""/usr/lib/x86_64-linux-gnu/lcdproc/curses.so"")
+Error opening terminal: unknown.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/EyeboxOne/Device,system/lyrebird/EyeboxOne/Device,system/lyrebird,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Structure Error,inject/structure/section/duplicate,system/lyrebird/hd44780/KeyMatrix_4_1,system/lyrebird/hd44780/KeyMatrix_4_1,system/lyrebird/CFontz,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Typo Error,inject/typo/change/char,system/lyrebird/serialPOS/Speed,9600,9W00,"serialPOS: Speed must be 1200, 2400, 4800 or 9600; using default 9800","Value '9W00' not within range 1200, 2400, 4800, 9600, 19200, 115200",X,range,"serialPOS: Speed must be 1200, 2400, 4800 or 9600; using default 9800",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/deletion,system/lyrebird/ula200/Size,20x4,0x4,ula200: cannot read Size 0x4,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,"ula200: cannot read Size 0x4
+Driver [ula200] init failed, return code -1
+Could not load driver ula200
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Limit Error,inject/limit/max,system/lyrebird/lis/VendorID,(null),0xFFFF,,,,,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/space,system/lyrebird/EyeboxOne/Backlight,yes,'  yes    ',,The value '  yes    ' of key 'system/lyrebird/EyeboxOne/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,DEFAULT,GOOD,GOOD,BAD,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/insertion,system/lyrebird/serialVFD/Custom-Characters,0,k0,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,The type 'unsigned_long' failed to match for 'system/lyrebird/serialVFD/system\/temporarySpec' with string 'k0',X,type,serialVFD: The number of Custom-Characters must be between 0 and 99. Using default,BAD,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/remove,system/lyrebird/ula200/KeyMap_A,system/lyrebird/ula200/KeyMap_A,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Typo Error,inject/typo/change/char,system/lyrebird/CFontz/Size,20x4,S0x4,CFontz: cannot read Size: S0x4; using default 20x4,"Key value failed to validate. Reason: Not a valid size declaration. Examples: 20x4, 19x3, 40x150",X,validation,CFontz: cannot read Size: S0x4; using default 20x4,GOOD,GOOD,PARTLY,GOOD,PARTLY,GOOD,BAD,GOOD,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/vlsys_m428/Device,system/lyrebird/vlsys_m428/Device,system/lyrebird/menu/DownKey,vlsys_m428: could not configure /tmp/fakeDriver (Inappropriate ioctl for device),,,,"vlsys_m428: could not configure /tmp/fakeDriver (Inappropriate ioctl for device)
+Driver [vlsys_m428] init failed, return code -1
+Could not load driver vlsys_m428
+There is no output driver
+Critical error while initializing, abort.",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NO-BUG! (self written parser bug)
+Typo Error,inject/typo/transposition,system/lyrebird/t6963/Port,0x378,03x78,,Key value failed to validate. Reason: Not a valid port declaration. legal: 0x200 - 0x400,X,validation,,NONE,GOOD,PARTLY,GOOD,NONE,NONE,NONE,NONE,
+Typo Error,inject/typo/transposition,system/lyrebird/vlsys_m428/Device,/tmp/fakeDriver,/tmp/fakeDirver,vlsys_m428: could not open /tmp/fakeDirver (No such file or directory),"Could not stat file, message: Unknown error from key: system/lyrebird/vlsys_m428/system\/temporarySpec with path: /tmp/fakeDirver",X,path,"vlsys_m428: could not open /tmp/fakeDirver (No such file or directory)
+Driver [vlsys_m428] init failed, return code -1
+Could not load driver vlsys_m428
+There is no output driver
+Critical error while initializing, abort.",GOOD,GOOD,GOOD,BAD,PARTLY,GOOD,BAD,GOOD,
+Typo Error,inject/typo/case/toggle,system/lyrebird/picolcd/Key3Light,on,On,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,Elektra normalization shit
+Typo Error,inject/typo/transposition,system/lyrebird/ula200/KeyMap_C,Left,eLft,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/server/FrameInterval,system/lyrebird/server/FrameInterval,system/lyrebird,Error opening terminal: unknown.,,,type,Error opening terminal: unknown.,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/remove,system/lyrebird/imonlcd/Contrast,system/lyrebird/imonlcd/Contrast,null,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Structure Error,inject/structure/section/reallocate,system/lyrebird/CFontzPacket/Model,system/lyrebird/CFontzPacket/Model,system/lyrebird/hd44780,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
+Domain Error,inject/domain,system/lyrebird/server/Bind,127.0.0.1,192.168.0.1,sock_create_inet_socket: cannot bind to port 13666 at address 192.168.0.1 - Cannot assign requested address,,,,"sock_create_inet_socket: cannot bind to port 13666 at address 192.168.0.1 - Cannot assign requested address
+sock_init: error creating socket - Cannot assign requested address
+Critical error while initializing, abort.",GOOD,NONE,NONE,NONE,PARTLY,BAD,BAD,BAD,
+Structure Error,inject/structure/section/duplicate,system/lyrebird/picolcd/LinkLights,system/lyrebird/picolcd/LinkLights,system/lyrebird,,,,type,,DEFAULT,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,NONE,NONE,BUG! (self written parser bug)
+Typo Error,inject/typo/insertion,system/lyrebird/hd44780/Keypad,no,kno,,The value 'kno' of key 'system/lyrebird/hd44780/system\/temporarySpec' could not be normalized (type is 'boolean'),X,type,,NONE,GOOD,GOOD,BAD,NONE,NONE,NONE,NONE,BUG
+Structure Error,inject/structure/section/duplicate,system/lyrebird/server/Device,duplicated-same-level,duplicated-same-level,,,,,,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,MANUAL INJECTION (Werid behavior for LCDproc)
