@@ -1,0 +1,1283 @@
+LCDd_minconf_master=$(
+	cat <<-'EOF'
+		[server]
+		DriverPath=/usr/local/lib/lcdproc/
+		Driver=text
+	EOF
+)
+
+LCDd_minconf_lowlevel=$(
+	cat <<-'EOF'
+		kdb set 'user/sw/lcdproc/lcdd/#0/current/server/driverpath' '/usr/local/lib/lcdproc/'
+		kdb set 'user/sw/lcdproc/lcdd/#0/current/server/driver/#0' '@/text'
+		kdb setmeta 'user/sw/lcdproc/lcdd/#0/current/server/driver' array '#0'
+	EOF
+)
+
+LCDd_minconf_highlevel=$(
+	cat <<-'EOF'
+		kdb set 'user/sw/lcdproc/lcdd/#0/current/server/drivers/#0' '@/text/#0'
+	EOF
+)
+
+LCDd_smallconf_master=$(
+	cat <<-'EOF'
+		[server]
+		DriverPath=/usr/local/lib/lcdproc/
+		Driver=curses
+		Port=9123
+		
+		[menu]
+		MenuKey=Escape
+		EnterKey=Enter
+		UpKey=Up
+		DownKey=Down
+		
+		[curses]
+		Foreground=green
+		Background=red
+		Backlight=black
+		Size=40x10
+		TopLeftX=3
+		TopLeftY=3
+	EOF
+)
+
+LCDd_smallconf_lowlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdd/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" "$2"
+			kdb rmmeta "$1" origvalue
+			kdb lsmeta "$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1"
+		}
+		
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/driverpath' '/usr/local/lib/lcdproc/'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/driver/#0' '@/curses'
+		kdb setmeta 'user/sw/lcdproc/lcdd/#0/current/server/driver' array '#0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/port' '9123'
+		
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/menukey' 'Escape'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/enterkey' 'Enter'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/upkey' 'Up'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/downkey' 'Down'
+		
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/foreground' 'green'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/background' 'red'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/backlight' 'black'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/size' '40x10'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/topleftx' '3'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/toplefty' '3'
+	EOF
+)
+
+LCDd_smallconf_highlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdd/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" "$2"
+			kdb rmmeta "$1" origvalue
+			kdb lsmeta "$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1"
+		}
+		
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/driverpath' '/usr/local/lib/lcdproc/'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/drivers/#0' '@/curses/#0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/port' '9123'
+		
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/menukey' 'Escape'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/enterkey' 'Enter'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/upkey' 'Up'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/downkey' 'Down'
+		
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/foreground' 'green'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/background' 'red'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/backlight' 'black'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/size' '40x10'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/topleftx' '3'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/toplefty' '3'
+	EOF
+)
+
+LCDd_bigconf_master=$(
+	cat <<-'EOF'
+		[server]
+		DriverPath=/usr/local/lib/lcdproc/
+		Driver=curses
+		Driver=text
+		Driver=xosd
+		Bind=127.0.0.1
+		Port=13666
+		ReportLevel=3
+		ReportToSyslog=yes
+		User=nobody
+		Foreground=yes
+		Hello="  Welcome to"
+		Hello="   LCDproc!"
+		GoodBye="Thanks for using"
+		GoodBye="   LCDproc!"
+		FrameInterval=125000
+		WaitTime=5
+		AutoRotate=off
+		ServerScreen=no
+		Backlight=open
+		Heartbeat=open
+		TitleSpeed=10
+		ToggleRotateKey=Enter
+		PrevScreenKey=Left
+		NextScreenKey=Right
+		ScrollUpKey=Up
+		ScrollDownKey=Down
+		
+		[menu]
+		PermissiveGoto=false
+		MenuKey=Escape
+		EnterKey=Enter
+		UpKey=Up
+		DownKey=Down
+		LeftKey=Left
+		RightKey=Right
+		
+		[bayrad]
+		Device=/dev/lcd
+		Speed=9600
+		
+		[CFontz]
+		Device=/dev/ttyS0
+		Size=20x4
+		Contrast=350
+		Brightness=1000
+		OffBrightness=0
+		Speed=9600
+		NewFirmware=no
+		Reboot=no
+		
+		[CFontzPacket]
+		Model=633
+		Device=/dev/ttyUSB0
+		Contrast=350
+		Brightness=1000
+		OffBrightness=50
+		Reboot=yes
+		USB=yes
+		OldFirmware=yes
+		Size=20x4
+		Speed=115200
+		
+		[curses]
+		Foreground=blue
+		Background=cyan
+		Backlight=red
+		Size=20x4
+		TopLeftX=7
+		TopLeftY=7
+		UseACS=no
+		DrawBorder=yes
+		
+		[CwLnx]
+		Model=12232
+		Device=/dev/ttyUSB0
+		Size=20x4
+		Speed=19200
+		Reboot=no
+		Keypad=yes
+		keypad_test_mode=yes
+		
+		[glk]
+		Device=/dev/lcd
+		Contrast=500
+		Speed=19200
+		
+		[hd44780]
+		ConnectionType=4bit
+		Model = standard
+		Port=0x378
+		Device=/dev/ttyS0
+		Speed=0
+		Keypad=no
+		Contrast=0
+		Brightness=1000
+		OffBrightness=0
+		Backlight = none
+		BacklightCmdOn=0x1223
+		BacklightCmdOff=0x1234
+		OutputPort=no
+		Lastline=yes
+		Size=20x4
+		vspan=2,2
+		ExtendedMode=yes
+		LineAddress=0x10
+		CharMap=hd44780_default
+		FontBank=0
+		DelayMult=2
+		KeepAliveDisplay=0
+		RefreshDisplay=5
+		DelayBus=true
+		KeyMatrix_4_1=Enter
+		KeyMatrix_4_2=Up
+		KeyMatrix_4_3=Down
+		KeyMatrix_4_4=Escape
+		
+		[lb216]
+		Device=/dev/lcd
+		Brightness=255
+		Speed=9600
+		Reboot=no
+		
+		[lcdm001]
+		Device=/dev/ttyS1
+		PauseKey=LeftKey
+		BackKey=UpKey
+		ForwardKey=DownKey
+		MainMenuKey=RightKey
+		
+		[linux_input]
+		key=1,Escape
+		key=28,Enter
+		key=96,Enter
+		key=105,Left
+		key=106,Right
+		key=103,Up
+		key=108,Down
+		
+		[MtxOrb]
+		Device=/dev/ttyS0
+		Size=20x4
+		Type=lkd
+		Contrast=480
+		hasAdjustableBacklight=no
+		Brightness=1000
+		OffBrightness=0
+		Speed=19200
+		KeyMap_A=Left
+		KeyMap_B=Right
+		KeyMap_C=Up
+		KeyMap_D=Down
+		KeyMap_E=Enter
+		KeyMap_F=Escape
+		keypad_test_mode=no
+		
+		[pyramid]
+		Device=/dev/ttyUSB0
+		
+		[text]
+		Size=20x4
+		
+		[xosd]
+		Size=20x4
+		Offset=200x200
+		Font=-*-clean-*-r-*-*-*-160-*-*-*-*-*
+	EOF
+)
+
+LCDd_bigconf_lowlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdd/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" "$2"
+			kdb rmmeta "$1" origvalue
+			kdb lsmeta "$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1"
+		}
+		
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/autorotate' 'off'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/backlight' 'open'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/bind' '127.0.0.1'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/driver/#0' '@/curses'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/driver/#1' '@/text'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/driver/#2' '@/xosd'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/driverpath' '/usr/local/lib/lcdproc/'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/foreground' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/frameinterval' '125000'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/goodbye/#0' 'Thanks for using'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/goodbye/#1' '"   LCDproc!"'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/heartbeat' 'open'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/hello/#0' '"  Welcome to"'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/hello/#1' '"   LCDproc!"'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/nextscreenkey' 'Right'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/port' '13666'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/prevscreenkey' 'Left'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/reportlevel' '3'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/reporttosyslog' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/scrolldownkey' 'Down'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/scrollupkey' 'Up'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/serverscreen' 'off'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/titlespeed' '10'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/togglerotatekey' 'Enter'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/user' 'nobody'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/waittime' '5'
+		
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/downkey' 'Down'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/enterkey' 'Enter'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/leftkey' 'Left'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/menukey' 'Escape'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/permissivegoto' 'false'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/rightkey' 'Right'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/upkey' 'Up'
+		
+		kdb_set '/sw/lcdproc/lcdd/#0/current/bayrad/#0/device' '/dev/lcd'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/bayrad/#0/speed' '9600'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontz/#0/brightness' '1000'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontz/#0/contrast' '350'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontz/#0/device' '/dev/ttyS0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontz/#0/newfirmware' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontz/#0/offbrightness' '0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/brightness' '1000'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/contrast' '350'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/device' '/dev/ttyUSB0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/model' '633'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/offbrightness' '50'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/oldfirmware' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/reboot' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/size' '20x4'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/speed' '115200'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/usb' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontz/#0/reboot' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontz/#0/size' '20x4'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontz/#0/speed' '9600'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/background' 'cyan'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/backlight' 'red'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/drawborder' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/foreground' 'blue'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/size' '20x4'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/topleftx' '7'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/toplefty' '7'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/useacs' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cwlnx/#0/device' '/dev/ttyUSB0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cwlnx/#0/keypad_test_mode' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cwlnx/#0/keypad' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cwlnx/#0/model' '12232'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cwlnx/#0/reboot' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cwlnx/#0/size' '20x4'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cwlnx/#0/speed' '19200'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/glk/#0/contrast' '500'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/glk/#0/device' '/dev/lcd'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/glk/#0/speed' '19200'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/backlight/#0' 'none'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/backlightcmdoff' '0x1234'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/backlightcmdon' '0x1223'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/brightness' '1000'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/charmap' 'hd44780_default'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/connectiontype' '4bit'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/contrast' '0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/delaybus' 'true'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/delaymult' '2'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/device' '/dev/ttyS0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/extendedmode' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/fontbank' '0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/keepalivedisplay' '0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/keymatrix_4_1' 'Enter'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/keymatrix_4_2' 'Up'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/keymatrix_4_3' 'Down'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/keymatrix_4_4' 'Escape'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/keypad' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/lastline' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/lineaddress' '0x10'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/model' 'standard'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/offbrightness' '0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/outputport' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/port' '0x378'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/refreshdisplay' '5'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/size' '20x4'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/speed' '0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/vspan' '2,2'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lb216/#0/brightness' '255'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lb216/#0/device' '/dev/lcd'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lb216/#0/reboot' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lb216/#0/speed' '9600'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lcdm001/#0/backkey' 'UpKey'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lcdm001/#0/device' '/dev/ttyS1'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lcdm001/#0/forwardkey' 'DownKey'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lcdm001/#0/mainmenukey' 'RightKey'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lcdm001/#0/pausekey' 'LeftKey'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#0/code' '1'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#0/button' 'Escape'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#1/code' '28'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#1/button' 'Enter'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#2/code' '96'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#2/button' 'Enter'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#3/code' '105'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#3/button' 'Left'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#4/code' '106'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#4/button' 'Right'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#5/code' '103'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#5/button' 'Up'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#6/code' '108'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#6/button' 'Down'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/brightness' '1000'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/contrast' '480'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/device' '/dev/ttyS0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/hasadjustablebacklight' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/keymap_a' 'Left'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/keymap_b' 'Right'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/keymap_c' 'Up'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/keymap_d' 'Down'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/keymap_e' 'Enter'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/keymap_f' 'Escape'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/keypad_test_mode' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/offbrightness' '0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/size' '20x4'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/speed' '19200'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/type' 'lkd'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/pyramid/#0/device' '/dev/ttyUSB0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/text/#0/size' '20x4'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/xosd/#0/font' '-*-clean-*-r-*-*-*-160-*-*-*-*-*'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/xosd/#0/offset' '200x200'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/xosd/#0/size' '20x4'
+		
+		kdb setmeta 'user/sw/lcdproc/lcdd/#0/current/server/driver' array '#2'
+		kdb setmeta 'user/sw/lcdproc/lcdd/#0/current/server/goodbye' array '#1'
+		kdb setmeta 'user/sw/lcdproc/lcdd/#0/current/server/hello' array '#1'
+		
+		kdb setmeta '/sw/lcdproc/lcdd/#0/current/hd44780/#0/backlight' array '#0'
+		
+		kdb setmeta '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys' array '#6'
+	EOF
+)
+
+LCDd_bigconf_highlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdd/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" -- "$2"
+			kdb rmmeta "user$1" origvalue
+			kdb lsmeta "user$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1"
+		}
+		
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/autorotate' 'off'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/backlight' 'open'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/bind' '127.0.0.1'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/drivers/#0' '@/curses/#0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/drivers/#1' '@/text/#0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/drivers/#2' '@/xosd/#0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/driverpath' '/usr/local/lib/lcdproc/'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/foreground' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/frameinterval' '125000'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/goodbye/#0' 'Thanks for using'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/goodbye/#1' '"   LCDproc!"'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/heartbeat' 'open'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/hello/#0' '"  Welcome to"'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/hello/#1' '"   LCDproc!"'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/nextscreenkey' 'Right'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/port' '13666'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/prevscreenkey' 'Left'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/reportlevel' '3'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/reporttosyslog' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/scrolldownkey' 'Down'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/scrollupkey' 'Up'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/serverscreen' 'off'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/titlespeed' '10'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/togglerotatekey' 'Enter'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/user' 'nobody'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/server/waittime' '5'
+		
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/downkey' 'Down'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/enterkey' 'Enter'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/leftkey' 'Left'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/menukey' 'Escape'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/permissivegoto' 'false'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/rightkey' 'Right'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/menu/upkey' 'Up'
+		
+		kdb_set '/sw/lcdproc/lcdd/#0/current/bayrad/#0/device' '/dev/lcd'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/bayrad/#0/speed' '9600'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontz/#0/brightness' '1000'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontz/#0/contrast' '350'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontz/#0/device' '/dev/ttyS0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontz/#0/newfirmware' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontz/#0/offbrightness' '0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/brightness' '1000'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/contrast' '350'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/device' '/dev/ttyUSB0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/model' '633'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/offbrightness' '50'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/oldfirmware' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/reboot' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/size' '20x4'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/speed' '115200'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontzpacket/#0/usb' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontz/#0/reboot' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontz/#0/size' '20x4'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cfontz/#0/speed' '9600'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/background' 'cyan'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/backlight' 'red'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/drawborder' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/foreground' 'blue'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/size' '20x4'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/topleftx' '7'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/toplefty' '7'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/curses/#0/useacs' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cwlnx/#0/device' '/dev/ttyUSB0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cwlnx/#0/keypad_test_mode' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cwlnx/#0/keypad' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cwlnx/#0/model' '12232'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cwlnx/#0/reboot' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cwlnx/#0/size' '20x4'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/cwlnx/#0/speed' '19200'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/glk/#0/contrast' '500'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/glk/#0/device' '/dev/lcd'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/glk/#0/speed' '19200'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/backlight/#0' 'none'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/backlightcmdoff' '0x1234'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/backlightcmdon' '0x1223'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/brightness' '1000'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/charmap' 'hd44780_default'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/connectiontype' '4bit'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/contrast' '0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/delaybus' 'true'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/delaymult' '2'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/device' '/dev/ttyS0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/extendedmode' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/fontbank' '0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/keepalivedisplay' '0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/keymatrix/#4/#1' 'Enter'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/keymatrix/#4/#2' 'Up'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/keymatrix/#4/#3' 'Down'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/keymatrix/#4/#4' 'Escape'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/keypad' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/lastline' 'yes'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/lineaddress' '0x10'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/model' 'standard'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/offbrightness' '0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/outputport' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/port' '0x378'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/refreshdisplay' '5'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/size' '20x4'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/speed' '0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/hd44780/#0/vspan' '2,2'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lb216/#0/brightness' '255'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lb216/#0/device' '/dev/lcd'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lb216/#0/reboot' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lb216/#0/speed' '9600'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lcdm001/#0/backkey' 'UpKey'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lcdm001/#0/device' '/dev/ttyS1'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lcdm001/#0/forwardkey' 'DownKey'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lcdm001/#0/mainmenukey' 'RightKey'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/lcdm001/#0/pausekey' 'LeftKey'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#0/code' '1'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#0/button' 'Escape'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#1/code' '28'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#1/button' 'Enter'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#2/code' '96'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#2/button' 'Enter'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#3/code' '105'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#3/button' 'Left'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#4/code' '106'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#4/button' 'Right'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#5/code' '103'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#5/button' 'Up'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#6/code' '108'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys/#6/button' 'Down'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/brightness' '1000'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/contrast' '480'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/device' '/dev/ttyS0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/hasadjustablebacklight' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/keymap_a' 'Left'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/keymap_b' 'Right'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/keymap_c' 'Up'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/keymap_d' 'Down'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/keymap_e' 'Enter'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/keymap_f' 'Escape'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/keypad_test_mode' 'no'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/offbrightness' '0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/size' '20x4'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/speed' '19200'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/mtxorb/#0/type' 'lkd'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/pyramid/#0/device' '/dev/ttyUSB0'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/text/#0/size' '20x4'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/xosd/#0/font' '-*-clean-*-r-*-*-*-160-*-*-*-*-*'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/xosd/#0/offset' '200x200'
+		kdb_set '/sw/lcdproc/lcdd/#0/current/xosd/#0/size' '20x4'
+		
+		kdb setmeta 'user/sw/lcdproc/lcdd/#0/current/server/drivers' array '#2'
+		kdb setmeta 'user/sw/lcdproc/lcdd/#0/current/server/goodbye' array '#1'
+		kdb setmeta 'user/sw/lcdproc/lcdd/#0/current/server/hello' array '#1'
+		
+		kdb setmeta '/sw/lcdproc/lcdd/#0/current/hd44780/#0/backlight' array '#0'
+		
+		kdb setmeta '/sw/lcdproc/lcdd/#0/current/linux_input/#0/keys' array '#6'
+	EOF
+)
+
+lcdproc_smallconf_master=$(
+	cat <<-'EOF'
+		[CPUGraph]
+		Active=true
+		
+		[ProcSize]
+		Active=true
+		
+		[Disk]
+		Active=true
+	EOF
+)
+
+lcdproc_smallconf_lowlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdproc/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" -- "$2"
+			kdb rmmeta "user$1" origvalue
+			kdb lsmeta "user$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1"
+		}
+		
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/cpugraph/active' 'true'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/procsize/active' 'true'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/disk/active' 'true'
+	EOF
+)
+
+lcdproc_smallconf_highlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdproc/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" -- "$2"
+			kdb rmmeta "user$1" origvalue
+			kdb lsmeta "user$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1"
+		}
+		
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/cpugraph/active' 'true'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/procsize/active' 'true'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/disk/active' 'true'
+	EOF
+)
+
+lcdproc_bigconf_master=$(
+	cat <<-'EOF'
+		[lcdproc]
+		Server=localhost
+		Port=13666
+		ReportLevel=2
+		ReportToSyslog=false
+		Foreground=true
+		PidFile=/var/run/lcdproc.pid
+		delay=2
+		DisplayName=lcdproc
+		
+		[CPU]
+		Active=True
+		OnTime=1
+		OffTime=2
+		ShowInvisible=false
+		
+		[Iface]
+		Active=False
+		Interface0=eth0
+		Alias0=LAN
+		Interface1=eth1
+		Alias1=WAN
+		Interface2=eth2
+		Alias2=MGMT
+		unit=bit
+		transfer=TRUE
+		
+		[Memory]
+		Active=True
+		
+		[Load]
+		Active=True
+		LowLoad=0.05
+		HighLoad=1.3
+		
+		[TimeDate]
+		Active=True
+		TimeFormat="%H:%M:%S"
+		DateFormat="%x"
+		
+		[About]
+		Active=false
+		
+		[SMP-CPU]
+		Active=false
+		
+		[OldTime]
+		Active=false
+		TimeFormat="%H:%M:%S"
+		DateFormat="%x"
+		ShowTitle=false
+		
+		[BigClock]
+		Active=false
+		showSecs=true
+		
+		[Uptime]
+		Active=false
+		
+		[Battery]
+		Active=false
+		
+		[CPUGraph]
+		Active=false
+		
+		[ProcSize]
+		Active=false
+		
+		[Disk]
+		Active=false
+		
+		[MiniClock]
+		Active=True
+		TimeFormat="%H:%M"
+	EOF
+)
+
+lcdproc_bigconf_lowlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdproc/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" -- "$2"
+			kdb rmmeta "user$1" origvalue
+			kdb lsmeta "user$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1"
+		}
+		
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/lcdproc/delay' '2'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/lcdproc/displayname' 'lcdproc'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/lcdproc/foreground' 'true'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/lcdproc/pidfile' '/var/run/lcdproc.pid'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/lcdproc/port' '13666'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/lcdproc/reportlevel' '2'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/lcdproc/reporttosyslog' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/lcdproc/server' 'localhost'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/about/active' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/battery/active' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/bigclock/active' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/bigclock/showsecs' 'true'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/cpu/active' 'True'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/cpugraph/active' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/cpu/offtime' '2'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/cpu/ontime' '1'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/cpu/showinvisible' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/disk/active' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/active' 'False'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/alias0' 'LAN'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/alias1' 'WAN'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/alias2' 'MGMT'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/interface0' 'eth0'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/interface1' 'eth1'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/interface2' 'eth2'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/transfer' 'TRUE'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/unit' 'bit'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/load/active' 'True'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/load/highload' '1.3'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/load/lowload' '0.05'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/memory/active' 'True'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/miniclock/active' 'True'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/miniclock/timeformat' '%H:%M'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/oldtime/active' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/oldtime/dateformat' '%x'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/oldtime/showtitle' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/oldtime/timeformat' '%H:%M:%S'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/procsize/active' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/smp-cpu/active' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/timedate/active' 'True'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/timedate/dateformat' '%x'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/timedate/timeformat' '%H:%M:%S'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/uptime/active' 'false'
+	EOF
+)
+
+lcdproc_bigconf_highlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdproc/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" -- "$2"
+			kdb rmmeta "user$1" origvalue
+			kdb lsmeta "user$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1"
+		}
+		
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/lcdproc/delay' '2'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/lcdproc/displayname' 'lcdproc'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/lcdproc/foreground' 'true'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/lcdproc/pidfile' '/var/run/lcdproc.pid'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/lcdproc/port' '13666'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/lcdproc/reportlevel' '2'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/lcdproc/reporttosyslog' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/lcdproc/server' 'localhost'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/about/active' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/battery/active' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/bigclock/active' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/bigclock/showsecs' 'true'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/cpu/active' 'True'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/cpugraph/active' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/cpu/offtime' '2'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/cpu/ontime' '1'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/cpu/showinvisible' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/disk/active' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/active' 'False'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/alias0' 'LAN'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/alias1' 'WAN'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/alias2' 'MGMT'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/interface0' 'eth0'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/interface1' 'eth1'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/interface2' 'eth2'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/transfer' 'TRUE'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/iface/unit' 'bit'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/load/active' 'True'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/load/highload' '1.3'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/load/lowload' '0.05'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/memory/active' 'True'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/miniclock/active' 'True'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/miniclock/timeformat' '%H:%M'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/oldtime/active' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/oldtime/dateformat' '%x'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/oldtime/showtitle' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/oldtime/timeformat' '%H:%M:%S'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/procsize/active' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/smp-cpu/active' 'false'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/timedate/active' 'True'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/timedate/dateformat' '%x'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/timedate/timeformat' '%H:%M:%S'
+		kdb_set '/sw/lcdproc/lcdproc/#0/current/uptime/active' 'false'
+	EOF
+)
+
+lcdexec_minconf_master=$(
+	cat <<-'EOF'
+		[MainMenu]
+		Entry=Cmd
+		
+		[Cmd]
+		Exec=echo
+	EOF
+)
+
+lcdexec_minconf_lowlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdexec/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" -- "$2"
+			kdb rmmeta "user$1" origvalue
+			kdb lsmeta "user$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1"
+		}
+		
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/menu/main/entry/#0' 'user/sw/lcdproc/lcdexec/#0/current/menu/command/cmd'
+		kdb setmeta user/sw/lcdproc/lcdexec/#0/current/menu/menu/main/entry array '#0'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmd/exec' 'echo'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/main' 'user/sw/lcdproc/lcdexec/#0/current/menu/menu/main'
+	EOF
+)
+
+lcdexec_minconf_highlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdexec/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" -- "$2"
+			kdb rmmeta "user$1" origvalue
+			kdb lsmeta "user$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1"
+		}
+		
+		lcdexec-setup menu main
+		kdb set 'user/sw/lcdproc/lcdexec/#0/current/menu/main' '@/menu/menu/#0'
+	EOF
+)
+
+lcdexec_smallconf_master=$(
+	cat <<-'EOF'
+		[MainMenu]
+		Entry=CmdA
+		Entry=CmdB
+
+		[CmdA]
+		DisplayName="You can say A"
+		Exec="echo a"
+
+		[CmdB]
+		DisplayName="Or you can say B"
+		Exec="echo b"
+	EOF
+)
+
+lcdexec_smallconf_lowlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdexec/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" -- "$2"
+			kdb rmmeta "user$1" origvalue
+			kdb lsmeta "user$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1"
+		}
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmda/displayname' 'You can say A'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmda/exec' 'echo a'
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdb/displayname' 'Or you can say B'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdb/exec' 'echo b'
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/menu/main/entry/#0' '/sw/lcdproc/lcdexec/#0/current/menu/command/cmda'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/menu/main/entry/#1' '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdb'
+		kdb setmeta '/sw/lcdproc/lcdexec/#0/current/menu/menu/main/entry' array '#1'
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/main' 'user/sw/lcdproc/lcdexec/#0/current/menu/menu/main'
+	EOF
+)
+
+lcdexec_smallconf_highlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdexec/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" -- "$2"
+			kdb rmmeta "user$1" origvalue
+			kdb lsmeta "user$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1"
+		}
+
+		lcdexec-setup command 'echo a' -d 'You can say A'
+		lcdexec-setup command 'echo b' -d 'Or you can say B'
+
+		lcdexec-setup menu 'main' command/#0 command/#1
+
+		kdb set 'user/sw/lcdproc/lcdexec/#0/current/menu/main' '@/menu/menu/#0'
+	EOF
+)
+
+lcdexec_bigconf_master=$(
+	cat <<-'EOF'
+		[lcdexec]
+		Address=localhost
+		Port=13666
+		ReportLevel=2
+		ReportToSyslog=false
+		Foreground=false
+		PidFile=/var/run/lcdexec.pid
+		Shell=/bin/sh
+		DisplayName=lcdexec
+
+		[MainMenu]
+		Entry=CmdA
+		Entry=CmdB
+		Entry=MenuC
+
+		[CmdA]
+		DisplayName="You can say A"
+		Exec="echo a"
+		Feedback= yes
+
+		[CmdB]
+		DisplayName="Or you can say B"
+		Exec="echo b"
+
+		[MenuC]
+		DisplayName="A menu"
+		Entry=CmdP
+		Entry=CmdQ
+
+		[CmdP]
+		DisplayName=P
+		Exec="echo P"
+
+		[CmdQ]
+		DisplayName="Show environment"
+		Exec="env"
+		Parameter=SLIDER_ARG
+		Parameter=RING_ARG
+		Parameter=NUMERIC_ARG
+		Parameter=ALPHA_ARG
+		Parameter=CHECKBOX_ARG
+		Parameter=IP_ARG
+
+		[SLIDER_ARG]
+		DisplayName="Slider"
+		Type=Slider
+		Value=5
+		MinValue=0
+		MaxValue=10
+
+		[CHECKBOX_ARG]
+		DisplayName="Checkbox"
+		Type=Checkbox
+		Value=on
+		AllowGray=yes
+		OffText="off"
+		OnText="on"
+		GrayText="gray"
+
+		[RING_ARG]
+		DisplayName="Ring"
+		Type=Ring
+		Value=0
+		String=Eins
+		String=Zwei
+		String=Drei
+
+		[NUMERIC_ARG]
+		DisplayName="Numeric"
+		Type=Numeric
+		Value=5
+		MinValue=0
+		MaxValue=10
+
+		[ALPHA_ARG]
+		DisplayName="Alpha"
+		Type=Alpha
+		AllowedChars = "+-0123456789ABCDEF"
+		Value=5
+		MinLength=0
+		MaxLength=10
+
+		[IP_ARG]
+		DisplayName="IP"
+		Type=IP
+		Value=10.230.2.2
+		v6=no
+	EOF
+)
+
+lcdexec_bigconf_lowlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdexec/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" -- "$2"
+			kdb rmmeta "user$1" origvalue
+			kdb lsmeta "user$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1"
+		}
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/general/address' 'localhost'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/general/displayname' 'lcdexec'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/general/foreground' 'false'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/general/pidfile' '/var/run/lcdexec.pid'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/general/port' '13666'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/general/reportlevel' '2'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/general/reporttosyslog' 'false'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/general/shell' '/bin/sh'
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/ip/ip_arg/envname' 'IP_ARG'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/ip/ip_arg/displayname' 'IP'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/ip/ip_arg/type' 'IP'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/ip/ip_arg/v6' 'no'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/ip/ip_arg/value' '10.230.2.2'
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/alpha/alpha_arg/envname' 'ALPHA_ARG'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/alpha/alpha_arg/allowedchars' '+-0123456789ABCDEF'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/alpha/alpha_arg/displayname' 'Alpha'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/alpha/alpha_arg/maxlength' '10'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/alpha/alpha_arg/minlength' '0'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/alpha/alpha_arg/type' 'Alpha'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/alpha/alpha_arg/value' '5'
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/numeric/numeric_arg/envname' 'NUMERIC_ARG'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/numeric/numeric_arg/displayname' 'Numeric'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/numeric/numeric_arg/maxvalue' '10'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/numeric/numeric_arg/minvalue' '0'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/numeric/numeric_arg/type' 'Numeric'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/numeric/numeric_arg/value' '5'
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/ring/ring_arg/envname' 'RING_ARG'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/ring/ring_arg/displayname' 'Ring'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/ring/ring_arg/string' "Eins\nZwei\nDrei"
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/ring/ring_arg/type' 'Ring'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/ring/ring_arg/value' '0'
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/checkbox/checkbox_arg/envname' 'CHECKBOX_ARG'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/checkbox/checkbox_arg/allowgray' 'yes'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/checkbox/checkbox_arg/displayname' 'Checkbox'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/checkbox/checkbox_arg/graytext' 'gray'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/checkbox/checkbox_arg/offtext' 'off'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/checkbox/checkbox_arg/ontext' 'on'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/checkbox/checkbox_arg/type' 'Checkbox'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/checkbox/checkbox_arg/value' 'on'
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/slider/slider_arg/envname' 'SLIDER_ARG'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/slider/slider_arg/displayname' 'Slider'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/slider/slider_arg/maxvalue' '10'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/slider/slider_arg/minvalue' '0'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/slider/slider_arg/type' 'Slider'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/param/slider/slider_arg/value' '5'
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdq/displayname' 'Show environment'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdq/exec' 'env'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdq/param/#0' '/sw/lcdproc/lcdexec/#0/current/menu/param/slider/slider_arg'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdq/param/#1' '/sw/lcdproc/lcdexec/#0/current/menu/param/ring/ring_arg'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdq/param/#2' '/sw/lcdproc/lcdexec/#0/current/menu/param/numeric/numeric_arg'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdq/param/#3' '/sw/lcdproc/lcdexec/#0/current/menu/param/alpha/alpha_arg'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdq/param/#4' '/sw/lcdproc/lcdexec/#0/current/menu/param/checkbox/checkbox_arg'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdq/param/#5' '/sw/lcdproc/lcdexec/#0/current/menu/param/ip/ip_arg'
+		kdb setmeta '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdq/param' array '#5'
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdp/displayname' 'P'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdp/exec' 'echo P'
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdb/displayname' 'Or you can say B'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdb/exec' 'echo b'
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmda/displayname' 'You can say A'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmda/exec' 'echo a'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/command/cmda/feedback' 'yes'
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/menu/menuc/displayname' 'A menu'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/menu/menuc/entry/#0' '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdp'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/menu/menuc/entry/#1' '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdq'
+		kdb setmeta '/sw/lcdproc/lcdexec/#0/current/menu/menu/menuc/entry' array '#1'
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/menu/main/entry/#0' '/sw/lcdproc/lcdexec/#0/current/menu/command/cmda'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/menu/main/entry/#1' '/sw/lcdproc/lcdexec/#0/current/menu/command/cmdb'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/menu/main/entry/#2' '/sw/lcdproc/lcdexec/#0/current/menu/menu/menuc'
+		kdb setmeta '/sw/lcdproc/lcdexec/#0/current/menu/menu/main/entry' array '#2'
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/menu/main' 'user/sw/lcdproc/lcdexec/#0/current/menu/menu/main'
+	EOF
+)
+
+lcdexec_bigconf_highlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdexec/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" -- "$2"
+			kdb rmmeta "user$1" origvalue
+			kdb lsmeta "user$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1" 
+		}
+
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/lcdexec/address' 'localhost'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/lcdexec/displayname' 'lcdexec'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/lcdexec/foreground' 'false'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/lcdexec/pidfile' '/var/run/lcdexec.pid'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/lcdexec/port' '13666'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/lcdexec/reportlevel' '2'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/lcdexec/reporttosyslog' 'false'
+		kdb_set '/sw/lcdproc/lcdexec/#0/current/lcdexec/shell' '/bin/sh'
+
+		lcdexec-setup param ip IP_ARG -d IP -i '10.230.2.2'
+		lcdexec-setup param alpha ALPHA_ARG -d Alpha -i 5 -m 0 -M 10 -a '+-0123456789ABCDEF'
+		lcdexec-setup param numeric NUMERIC_ARG -d Numeric -i 5 -m 0 -M 10
+		lcdexec-setup param ring RING_ARG -d Ring -i 0 Eins Zwei Drei
+		lcdexec-setup param checkbox CHECKBOX_ARG -d Checkbox -i on -y on -n off -g gray
+		lcdexec-setup param slider SLIDER_ARG -d Slider -i 5 -m 0 -M 10
+
+		lcdexec-setup command 'env' -d 'Show environment' slider/#0 ring/#0 numeric/#0 alpha/#0 checkbox/#0 ip/#0
+		lcdexec-setup command 'echo P' -d P
+		lcdexec-setup command 'echo b' -d 'Or you can say B'
+		lcdexec-setup command 'echo a' -d 'You can say A' -f
+
+		lcdexec-setup menu 'A menu' command/#1 command/#0
+		lcdexec-setup menu 'main' command/#3 command/#2 menu/#0
+
+		kdb set 'user/sw/lcdproc/lcdexec/#0/current/menu/main' '@/menu/menu/#1'
+	EOF
+)
+
+lcdvc_smallconf_master=$(
+	cat <<-'EOF'
+		[lcdvc]
+		Port=13666
+		ReportToSyslog=false
+		ReportLevel=5
+		Foreground=true
+	EOF
+)
+
+lcdvc_smallconf_lowlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdvc/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" -- "$2"
+			kdb rmmeta "user$1" origvalue
+			kdb lsmeta "user$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1"
+		}
+		
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/port' '13666'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/reporttosyslog' 'false'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/reportlevel' '5'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/foreground' 'true'
+	EOF
+)
+
+lcdvc_smallconf_highlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdvc/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" -- "$2"
+			kdb rmmeta "user$1" origvalue
+			kdb lsmeta "user$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1"
+		}
+		
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/port' '13666'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/reporttosyslog' 'false'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/reportlevel' '5'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/foreground' 'true'
+	EOF
+)
+
+lcdvc_bigconf_master=$(
+	cat <<-'EOF'
+		[lcdvc]
+		Address=127.0.0.1
+		Port=13666
+		ReportToSyslog=true
+		ReportLevel=4
+		Foreground=false
+		PidFile=/var/run/lcdvc.pid
+		
+		UpKey=Up
+		DownKey=Down
+		LeftKey=Left
+		RightKey=Right
+		
+		vcsDevice=/dev/vcs
+		vcsaDevice=/dev/vcsa
+	EOF
+)
+
+lcdvc_bigconf_lowlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdvc/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" -- "$2"
+			kdb rmmeta "user$1" origvalue
+			kdb lsmeta "user$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1"
+		}
+		
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/address' '127.0.0.1'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/port' '13666'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/reporttosyslog' 'true'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/reportlevel' '4'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/foreground' 'false'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/pidfile' '/var/run/lcdvc.pid'
+		
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/upkey' 'Up'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/downkey' 'Down'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/leftkey' 'Left'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/rightkey' 'Right'
+		
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/vcsdevice' '/dev/vcs'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/vcsadevice' '/dev/vcsa'
+	EOF
+)
+
+lcdvc_bigconf_highlevel=$(
+	cat <<-'EOF'
+		kdb rm -r user/sw/lcdproc/lcdvc/#0/current
+		
+		kdb_set() {
+			kdb set -N user "$1" -- "$2"
+			kdb rmmeta "user$1" origvalue
+			kdb lsmeta "user$1" | grep '^internal/' | xargs -L1 kdb rmmeta "user$1"
+		}
+		
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/address' '127.0.0.1'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/port' '13666'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/reporttosyslog' 'true'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/reportlevel' '4'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/foreground' 'false'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/pidfile' '/var/run/lcdvc.pid'
+		
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/upkey' 'Up'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/downkey' 'Down'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/leftkey' 'Left'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/rightkey' 'Right'
+		
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/vcsdevice' '/dev/vcs'
+		kdb_set '/sw/lcdproc/lcdvc/#0/current/lcdvc/vcsadevice' '/dev/vcsa'
+	EOF
+)

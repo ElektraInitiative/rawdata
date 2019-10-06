@@ -1,0 +1,19 @@
+
+server/LCDd: 170976
+server/drivers/bayrad.so: 18272
+server/drivers/CFontz.so: 29576
+server/drivers/CFontzPacket.so: 39704
+server/drivers/curses.so: 19024
+server/drivers/CwLnx.so: 29656
+server/drivers/glk.so: 29736
+server/drivers/lb216.so: 18248
+server/drivers/lcdm001.so: 13672
+server/drivers/MtxOrb.so: 34392
+server/drivers/pyramid.so: 34200
+server/drivers/text.so: 13168
+server/drivers/hd44780.so: 84944
+server/drivers/xosd.so: 35448
+server/drivers/linux_input.so: 13560
+clients/lcdproc/lcdproc: 102112
+clients/lcdexec/lcdexec: 45928
+clients/lcdvc/lcdvc: 42088

@@ -1,0 +1,3 @@
+start of main: main: Cur: 1085440, Peak: 1085440
+start of process_kdb: process_kdb: Cur: 1085440, Peak: 1085440
+start of do_mainloop: main_loop: Cur: 4435968, Peak: 4870144

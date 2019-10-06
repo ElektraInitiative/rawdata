@@ -1,0 +1,27 @@
+set pagination off
+
+source mem_gdb.py
+
+break main
+commands
+    silent
+    python outfile.write("start of main: ")
+    meminfo
+    continue
+end
+
+break process_config
+commands
+    silent
+    python outfile.write("start of process_config: ")
+    meminfo
+    continue
+end
+
+break main_loop
+commands
+    silent
+    python outfile.write("start of do_mainloop: ")
+    meminfo
+    continue
+end

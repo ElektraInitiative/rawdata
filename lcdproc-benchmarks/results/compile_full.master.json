@@ -1,0 +1,26 @@
+{
+  "results": [
+    {
+      "command": "sh autogen.sh && ./configure --enable-drivers=bayrad,CFontz,CFontzPacket,curses,CwLnx,glk,lb216,lcdm001,MtxOrb,pyramid,text,hd44780,xosd,linux_input && make",
+      "mean": 9.617136403465,
+      "stddev": 0.04032272945845471,
+      "median": 9.626680259465001,
+      "user": 8.538311844999999,
+      "system": 1.24548337,
+      "min": 9.504830934965,
+      "max": 9.643655292965,
+      "times": [
+        9.617191810965,
+        9.643655292965,
+        9.639610346965,
+        9.627491793965,
+        9.635795931965,
+        9.631680813965,
+        9.620483276965,
+        9.504830934965,
+        9.625868724965,
+        9.624755106964999
+      ]
+    }
+  ]
+}

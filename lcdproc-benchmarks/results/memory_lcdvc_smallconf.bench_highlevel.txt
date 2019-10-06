@@ -1,0 +1,3 @@
+start of main: main: Cur: 1339392, Peak: 1339392
+start of process_config: process_config: Cur: 1339392, Peak: 1339392
+start of do_mainloop: main_loop: Cur: 5132288, Peak: 5795840
