@@ -108,12 +108,41 @@ INFO  [StorageServiceShutdownHook] 2019-09-06 10:35:45,531 StorageService.java:2
 INFO  [StorageServiceShutdownHook] 2019-09-06 10:35:47,531 MessagingService.java:981 - Waiting for messaging service to quiesce
 INFO  [ACCEPT-/127.0.0.1] 2019-09-06 10:35:47,532 MessagingService.java:1336 - MessagingService has terminated the accept() thread
 INFO  [StorageServiceShutdownHook] 2019-09-06 10:35:48,245 HintsService.java:209 - Paused hints dispatch",NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
-Resource Error,inject/resource,system/lyrebird/native_transport_port_ssl,(null),8080,"ERROR [main] 2019-09-06 10:35:50,158 CassandraDaemon.java:749 - Exception encountered during startup: Encryption must be enabled in client_encryption_options for native_transport_port_ssl",,,,"INFO  [main] 2019-09-06 10:35:49,907 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
-INFO  [main] 2019-09-06 10:35:50,093 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
-INFO  [main] 2019-09-06 10:35:50,093 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
-INFO  [main] 2019-09-06 10:35:50,093 DatabaseDescriptor.java:435 - Global memtable off-heap threshold is enabled at 123MB
-WARN  [main] 2019-09-06 10:35:50,157 DatabaseDescriptor.java:556 - Only 9.461GiB free across all data volumes. Consider adding more capacity to your cluster or removing obsolete snapshots
-ERROR [main] 2019-09-06 10:35:50,158 CassandraDaemon.java:749 - Exception encountered during startup: Encryption must be enabled in client_encryption_options for native_transport_port_ssl",GOOD,NONE,NONE,NONE,GOOD,GOOD,BAD,GOOD,
+Resource Error,inject/resource,system/lyrebird/native_transport_port_ssl,(null),8080,"ERROR [main] 2019-09-28 13:57:23,378 CassandraDaemon.java:749 - Exception encountered during startup
+java.lang.IllegalStateException: Failed to bind port 8080 on 127.0.0.1.","Sorry, module network issued the error C03200:
+Validation Semantic: Port 8080 is already in use which was specified on key user/tests/native_transport_port_ssl",x,network,"INFO  [GossipStage:1] 2019-09-28 13:57:23,209 TokenMetadata.java:497 - Updating topology for /127.0.0.2
+INFO  [GossipStage:1] 2019-09-28 13:57:23,210 Gossiper.java:1045 - Node /127.0.0.3 has restarted, now UP
+INFO  [RequestResponseStage-5] 2019-09-28 13:57:23,210 Gossiper.java:1011 - InetAddress /127.0.0.2 is now UP
+INFO  [RequestResponseStage-10] 2019-09-28 13:57:23,215 Gossiper.java:1011 - InetAddress /127.0.0.3 is now UP
+INFO  [GossipStage:1] 2019-09-28 13:57:23,220 StorageService.java:2327 - Node /127.0.0.3 state jump to NORMAL
+INFO  [GossipStage:1] 2019-09-28 13:57:23,221 TokenMetadata.java:497 - Updating topology for /127.0.0.3
+INFO  [GossipStage:1] 2019-09-28 13:57:23,221 TokenMetadata.java:497 - Updating topology for /127.0.0.3
+INFO  [main] 2019-09-28 13:57:23,298 NativeTransportService.java:70 - Netty using native Epoll event loop
+INFO  [HANDSHAKE-/127.0.0.3] 2019-09-28 13:57:23,300 OutboundTcpConnection.java:561 - Handshaking version with /127.0.0.3
+INFO  [main] 2019-09-28 13:57:23,334 Server.java:155 - Using Netty Version: [netty-buffer=netty-buffer-4.0.44.Final.452812a, netty-codec=netty-codec-4.0.44.Final.452812a, netty-codec-haproxy=netty-codec-haproxy-4.0.44.Final.452812a, netty-codec-http=netty-codec-http-4.0.44.Final.452812a, netty-codec-socks=netty-codec-socks-4.0.44.Final.452812a, netty-common=netty-common-4.0.44.Final.452812a, netty-handler=netty-handler-4.0.44.Final.452812a, netty-tcnative=netty-tcnative-1.1.33.Fork26.142ecbb, netty-transport=netty-transport-4.0.44.Final.452812a, netty-transport-native-epoll=netty-transport-native-epoll-4.0.44.Final.452812a, netty-transport-rxtx=netty-transport-rxtx-4.0.44.Final.452812a, netty-transport-sctp=netty-transport-sctp-4.0.44.Final.452812a, netty-transport-udt=netty-transport-udt-4.0.44.Final.452812a]
+INFO  [main] 2019-09-28 13:57:23,334 Server.java:156 - Starting listening for CQL clients on /127.0.0.1:9042 (unencrypted)...
+INFO  [main] 2019-09-28 13:57:23,358 Server.java:145 - Enabling encrypted CQL connections between client and server
+WARN  [main] 2019-09-28 13:57:23,367 SSLFactory.java:189 - Certificate for utnuserfirstobjectca [jdk] expired on Tue Jul 09 20:40:36 CEST 2019
+INFO  [main] 2019-09-28 13:57:23,374 Server.java:155 - Using Netty Version: [netty-buffer=netty-buffer-4.0.44.Final.452812a, netty-codec=netty-codec-4.0.44.Final.452812a, netty-codec-haproxy=netty-codec-haproxy-4.0.44.Final.452812a, netty-codec-http=netty-codec-http-4.0.44.Final.452812a, netty-codec-socks=netty-codec-socks-4.0.44.Final.452812a, netty-common=netty-common-4.0.44.Final.452812a, netty-handler=netty-handler-4.0.44.Final.452812a, netty-tcnative=netty-tcnative-1.1.33.Fork26.142ecbb, netty-transport=netty-transport-4.0.44.Final.452812a, netty-transport-native-epoll=netty-transport-native-epoll-4.0.44.Final.452812a, netty-transport-rxtx=netty-transport-rxtx-4.0.44.Final.452812a, netty-transport-sctp=netty-transport-sctp-4.0.44.Final.452812a, netty-transport-udt=netty-transport-udt-4.0.44.Final.452812a]
+INFO  [main] 2019-09-28 13:57:23,375 Server.java:156 - Starting listening for CQL clients on /127.0.0.1:8080 (encrypted)...
+ERROR [main] 2019-09-28 13:57:23,378 CassandraDaemon.java:749 - Exception encountered during startup
+java.lang.IllegalStateException: Failed to bind port 8080 on 127.0.0.1.
+        at org.apache.cassandra.transport.Server.start(Server.java:160) ~[apache-cassandra-3.11.4.jar:3.11.4]
+        at java.util.Arrays$ArrayList.forEach(Arrays.java:3880) ~[na:1.8.0_222]
+        at java.util.Collections$UnmodifiableCollection.forEach(Collections.java:1082) ~[na:1.8.0_222]
+        at org.apache.cassandra.service.NativeTransportService.start(NativeTransportService.java:130) ~[apache-cassandra-3.11.4.jar:3.11.4]
+        at org.apache.cassandra.service.CassandraDaemon.startNativeTransport(CassandraDaemon.java:696) [apache-cassandra-3.11.4.jar:3.11.4]
+        at org.apache.cassandra.service.CassandraDaemon.start(CassandraDaemon.java:546) [apache-cassandra-3.11.4.jar:3.11.4]
+        at org.apache.cassandra.service.CassandraDaemon.activate(CassandraDaemon.java:635) [apache-cassandra-3.11.4.jar:3.11.4]
+        at org.apache.cassandra.service.CassandraDaemon.main(CassandraDaemon.java:732) [apache-cassandra-3.11.4.jar:3.11.4]
+INFO  [StorageServiceShutdownHook] 2019-09-28 13:57:23,383 HintsService.java:209 - Paused hints dispatch
+INFO  [StorageServiceShutdownHook] 2019-09-28 13:57:23,390 Server.java:176 - Stop listening for CQL clients
+INFO  [StorageServiceShutdownHook] 2019-09-28 13:57:23,390 Gossiper.java:1551 - Announcing shutdown
+INFO  [StorageServiceShutdownHook] 2019-09-28 13:57:23,390 StorageService.java:2327 - Node /127.0.0.1 state jump to shutdown
+WARN  [GossipTasks:1] 2019-09-28 13:57:23,924 FailureDetector.java:278 - Not marking nodes down due to local pause of 7347177526 > 5000000000
+INFO  [StorageServiceShutdownHook] 2019-09-28 13:57:25,391 MessagingService.java:981 - Waiting for messaging service to quiesce
+INFO  [ACCEPT-/127.0.0.1] 2019-09-28 13:57:25,393 MessagingService.java:1336 - MessagingService has terminated the accept() thread
+INFO  [StorageServiceShutdownHook] 2019-09-28 13:57:26,254 HintsService.java:209 - Paused hints dispatch",GOOD,GOOD,GOOD,GOOD,GOOD,GOOD,BAD,BAD,
 Typo Error,inject/typo/space,system/lyrebird/ssl_storage_port,7001,    7001  ',"ERROR [main] 2019-09-06 10:36:10,389 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=ssl_storage_port for JavaBean=org.apache.cassandra.config.Config@58134517; For input string: "" "";  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
@@ -131,7 +160,7 @@ ERROR [main] 2019-09-06 10:36:30,772 CassandraDaemon.java:749 - Exception encoun
     authenticator: AllowAllAuthenticator
     ^",GOOD,GOOD,GOOD,GOOD,GOOD,BAD,BAD,BAD,
 Structure Error,inject/structure/section/reallocate,system/lyrebird/enable_user_defined_functions,system/lyrebird/enable_user_defined_functions,system/lyrebird/server_encryption_options,"ERROR [main] 2019-09-06 10:36:51,135 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml. Please remove properties [enable_user_defined_functions] from your cassandra.yaml",,,,"INFO  [main] 2019-09-06 10:36:50,986 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
-ERROR [main] 2019-09-06 10:36:51,135 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml. Please remove properties [enable_user_defined_functions] from your cassandra.yaml",GOOD,NONE,NONE,NONE,GOOD,GOOD,BAD,GOOD,Yaml Structure Validation!
+ERROR [main] 2019-09-06 10:36:51,135 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml. Please remove properties [enable_user_defined_functions] from your cassandra.yaml",GOOD,DEFAULT,DEFAULT,DEFAULT,GOOD,GOOD,BAD,GOOD,Yaml Structure Validation!
 Typo Error,inject/typo/case/toggle,system/lyrebird/data_file_directories/_,$CASSANDRA_HOME/data/data,$CASsANDRA_HOME/data/data,"ERROR [main] 2019-09-06 10:37:11,488 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=data_file_directories for JavaBean=org.apache.cassandra.config.Config@d6da883; java.lang.NoSuchMethodException: [Ljava.lang.String;.<init>();  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
@@ -936,7 +965,7 @@ Structure Error,inject/structure/section/duplicate,system/lyrebird/server_encryp
 ERROR [main] 2019-09-06 10:42:42,560 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=seed_provider for JavaBean=org.apache.cassandra.config.Config@3d36e4cd; java.lang.NoSuchMethodException: org.apache.cassandra.config.ParameterizedClass.<init>();  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",BAD,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+    ^",BAD,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,BAD,NONE,
 Structure Error,inject/structure/section/reallocate,system/lyrebird/client_encryption_options/protocol,system/lyrebird/client_encryption_options/protocol,system/lyrebird/transparent_data_encryption_options,,,,,"INFO  [main] 2019-09-06 10:43:02,762 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 INFO  [main] 2019-09-06 10:43:02,932 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
 INFO  [main] 2019-09-06 10:43:02,932 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
@@ -1622,7 +1651,7 @@ INFO  [StorageServiceShutdownHook] 2019-09-06 10:47:50,730 MessagingService.java
 INFO  [ACCEPT-/127.0.0.1] 2019-09-06 10:47:50,732 MessagingService.java:1336 - MessagingService has terminated the accept() thread
 INFO  [StorageServiceShutdownHook] 2019-09-06 10:47:51,624 HintsService.java:209 - Paused hints dispatch",NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
 Structure Error,inject/structure/section/duplicate,system/lyrebird/back_pressure_enabled,system/lyrebird/back_pressure_enabled,system/lyrebird/saved_caches_directory,"ERROR [main] 2019-09-06 10:47:57,173 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml. Please remove properties [___dirdata, back_pressure_enabled] from your cassandra.yaml",,,,"INFO  [main] 2019-09-06 10:47:57,000 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
-ERROR [main] 2019-09-06 10:47:57,173 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml. Please remove properties [___dirdata, back_pressure_enabled] from your cassandra.yaml",GOOD,NONE,NONE,NONE,GOOD,GOOD,BAD,GOOD,Yaml Structure Validation!
+ERROR [main] 2019-09-06 10:47:57,173 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml. Please remove properties [___dirdata, back_pressure_enabled] from your cassandra.yaml",GOOD,DEFAULT,DEFAULT,DEFAULT,GOOD,GOOD,BAD,GOOD,Yaml Structure Validation!
 Typo Error,inject/typo/space,system/lyrebird/listen_interface,eth0,     eth0     ',"ERROR [main] 2019-09-06 10:48:45,040 CassandraDaemon.java:749 - Exception encountered during startup: Set listen_address OR listen_interface, not both",,,,"INFO  [main] 2019-09-06 10:48:44,802 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 INFO  [main] 2019-09-06 10:48:44,960 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
 INFO  [main] 2019-09-06 10:48:44,960 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
@@ -1785,7 +1814,7 @@ INFO  [StorageServiceShutdownHook] 2019-09-06 10:51:20,448 Gossiper.java:1551 - 
 INFO  [StorageServiceShutdownHook] 2019-09-06 10:51:20,448 StorageService.java:2327 - Node /127.0.0.1 state jump to shutdown
 INFO  [StorageServiceShutdownHook] 2019-09-06 10:51:22,449 MessagingService.java:981 - Waiting for messaging service to quiesce
 INFO  [ACCEPT-/127.0.0.1] 2019-09-06 10:51:22,449 MessagingService.java:1336 - MessagingService has terminated the accept() thread
-INFO  [StorageServiceShutdownHook] 2019-09-06 10:51:23,330 HintsService.java:209 - Paused hints dispatch",NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
+INFO  [StorageServiceShutdownHook] 2019-09-06 10:51:23,330 HintsService.java:209 - Paused hints dispatch",NONE,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,latent error
 Typo Error,inject/typo/change/char,system/lyrebird/client_encryption_options/optional,FALSE,1alse,"ERROR [main] 2019-09-06 10:51:28,970 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=client_encryption_options for JavaBean=org.apache.cassandra.config.Config@dbd940d; Cannot create property=optional for JavaBean=org.apache.cassandra.config.EncryptionOptions$ClientEncryptionOptions@3439f68d; Can not set boolean field org.apache.cassandra.config.EncryptionOptions$ClientEncryptionOptions.optional to null value;  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
@@ -1795,7 +1824,7 @@ ERROR [main] 2019-09-06 10:51:28,970 CassandraDaemon.java:749 - Exception encoun
     authenticator: AllowAllAuthenticator
     ^",GOOD,GOOD,GOOD,BAD,PARTLY,BAD,BAD,BAD,
 Structure Error,inject/structure/section/reallocate,system/lyrebird/commitlog_sync,system/lyrebird/commitlog_sync,system/lyrebird/back_pressure_strategy/#0,"ERROR [main] 2019-09-06 10:51:49,347 CassandraDaemon.java:749 - Exception encountered during startup: Missing required directive CommitLogSync",,,,"INFO  [main] 2019-09-06 10:51:49,182 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
-ERROR [main] 2019-09-06 10:51:49,347 CassandraDaemon.java:749 - Exception encountered during startup: Missing required directive CommitLogSync",GOOD,NONE,NONE,NONE,BAD,GOOD,BAD,GOOD,No default?!
+ERROR [main] 2019-09-06 10:51:49,347 CassandraDaemon.java:749 - Exception encountered during startup: Missing required directive CommitLogSync",GOOD,DEFAULT,DEFAULT,DEFAULT,BAD,GOOD,BAD,GOOD,No default?!
 Resource Error,inject/resource,system/lyrebird/back_pressure_strategy/#0/parameters/#0/high_ratio,0.9,9.22E+34,"ERROR [main] 2019-09-06 10:52:09,767 CassandraDaemon.java:749 - Exception encountered during startup
 org.apache.cassandra.exceptions.ConfigurationException: Error configuring back-pressure strategy: org.apache.cassandra.net.RateBasedBackPressure{high_ratio=922337203685477580800, factor=5, flow=FAST}
 Caused by: java.lang.reflect.InvocationTargetException: null
@@ -2044,7 +2073,7 @@ Structure Error,inject/structure/section/reallocate,system/lyrebird/native_trans
 ERROR [main] 2019-09-06 10:53:52,547 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=seed_provider for JavaBean=org.apache.cassandra.config.Config@5d20e46; java.lang.NoSuchMethodException: org.apache.cassandra.config.ParameterizedClass.<init>();  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",BAD,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+    ^",BAD,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,BAD,NONE,
 Semantic Error,inject/semantic,system/lyrebird/commit_failure_policy,stop,nothing,"ERROR [main] 2019-09-06 10:54:12,927 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=commit_failure_policy for JavaBean=org.apache.cassandra.config.Config@2df32bf7; Unable to find enum value 'nothing' for enum class: org.apache.cassandra.config.Config$CommitFailurePolicy;  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
@@ -2154,7 +2183,7 @@ INFO  [StorageServiceShutdownHook] 2019-09-06 10:55:14,717 MessagingService.java
 INFO  [ACCEPT-/127.0.0.1] 2019-09-06 10:55:14,719 MessagingService.java:1336 - MessagingService has terminated the accept() thread
 INFO  [StorageServiceShutdownHook] 2019-09-06 10:55:15,447 HintsService.java:209 - Paused hints dispatch",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
 Structure Error,inject/structure/section/reallocate,system/lyrebird/commitlog_sync,system/lyrebird/commitlog_sync,system/lyrebird/request_scheduler,"ERROR [main] 2019-09-06 10:55:37,525 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml. Please remove properties [commitlog_sync_period_in_ms, commitlog_sync, ___dirdata] from your cassandra.yaml",,,,"INFO  [main] 2019-09-06 10:55:37,374 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
-ERROR [main] 2019-09-06 10:55:37,525 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml. Please remove properties [commitlog_sync_period_in_ms, commitlog_sync, ___dirdata] from your cassandra.yaml",GOOD,NONE,NONE,NONE,GOOD,GOOD,BAD,GOOD,Yaml Structure Validation!
+ERROR [main] 2019-09-06 10:55:37,525 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml. Please remove properties [commitlog_sync_period_in_ms, commitlog_sync, ___dirdata] from your cassandra.yaml",GOOD,DEFAULT,DEFAULT,DEFAULT,GOOD,GOOD,BAD,GOOD,Yaml Structure Validation!
 Structure Error,inject/structure/section/remove,system/lyrebird/saved_caches_directory,system/lyrebird/saved_caches_directory,null,,,,,"INFO  [main] 2019-09-06 10:56:25,199 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 INFO  [main] 2019-09-06 10:56:25,357 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
 INFO  [main] 2019-09-06 10:56:25,357 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
@@ -2462,7 +2491,7 @@ INFO  [main] 2019-09-06 10:58:04,265 SigarLibrary.java:44 - Initializing SIGAR l
 WARN  [main] 2019-09-06 10:58:04,270 SigarLibrary.java:174 - Cassandra server running in degraded mode. Is swap disabled? : false,  Address space adequate? : true,  nofile limit adequate? : true, nproc limit adequate? : true 
 WARN  [main] 2019-09-06 10:58:04,272 StartupChecks.java:311 - Maximum number of memory map areas per process (vm.max_map_count) 65530 is too low, recommended value: 1048575, you can change it with sysctl.
 WARN  [main] 2019-09-06 10:58:04,281 StartupChecks.java:332 - Directory /devvv/not_existing doesn't exist
-ERROR [main] 2019-09-06 10:58:04,281 CassandraDaemon.java:749 - Has no permission to create directory /devvv/not_existing",GOOD,GOOD,PARTLY,PARTLY,PARTLY,GOOD,BAD,GOOD,
+ERROR [main] 2019-09-06 10:58:04,281 CassandraDaemon.java:749 - Has no permission to create directory /devvv/not_existing",GOOD,GOOD,GOOD,BAD,PARTLY,GOOD,BAD,GOOD,
 Typo Error,inject/typo/space,system/lyrebird/transparent_data_encryption_options/key_provider/#0/parameters/#0/keystore,/home/wespe/.sdkman/candidates/java/current/jre/lib/security/cacerts,   /home/wespe/.sdkman/candidates/java/current/jre/lib/security/cacerts   ',"org.apache.cassandra.exceptions.ConfigurationException: Unable to create ssl socket
 Caused by: java.io.IOException: Error creating the initializing the SSL Context
 Caused by: java.io.FileNotFoundException:    /home/wespe/.sdkman/candidates/java/current/jre/lib/security/cacerts    (No such file or directory)",,,,,GOOD,NONE,NONE,NONE,PARTLY,BAD,BAD,BAD,relative path possible => no spec check
@@ -2786,11 +2815,12 @@ ERROR [main] 2019-09-06 11:03:54,791 CassandraDaemon.java:749 - Exception encoun
 Resource Error,inject/resource,system/lyrebird/max_value_size_in_mb,(null),9.22E+34,"ERROR [main] 2019-09-06 11:04:15,267 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=max_value_size_in_mb for JavaBean=org.apache.cassandra.config.Config@442675e1; For input string: ""922337203685477580800"";  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",,,,"INFO  [main] 2019-09-06 11:04:15,073 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
+    ^","Sorry, module type issued the error C03200:
+Validation Semantic: The type 'unsigned_long' failed to match for 'user/tests/max_value_size_in_mb' with string '922337203685477580800'",x,type,"INFO  [main] 2019-09-06 11:04:15,073 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 ERROR [main] 2019-09-06 11:04:15,267 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=max_value_size_in_mb for JavaBean=org.apache.cassandra.config.Config@442675e1; For input string: ""922337203685477580800"";  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",GOOD,NONE,NONE,NONE,GOOD,BAD,BAD,BAD,long vs unsigned long
+    ^",GOOD,GOOD,GOOD,GOOD,GOOD,BAD,BAD,BAD,
 Structure Error,inject/structure/section/remove,system/lyrebird/range_request_timeout_in_ms,system/lyrebird/range_request_timeout_in_ms,null,,,,,"INFO  [main] 2019-09-06 11:04:35,429 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 INFO  [main] 2019-09-06 11:04:35,611 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
 INFO  [main] 2019-09-06 11:04:35,611 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
@@ -2889,7 +2919,7 @@ Semantic Error,inject/semantic,system/lyrebird/inter_dc_tcp_nodelay,FALSE,1,"ERR
 ERROR [main] 2019-09-06 11:05:03,066 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=inter_dc_tcp_nodelay for JavaBean=org.apache.cassandra.config.Config@1372ed45; Can not set boolean field org.apache.cassandra.config.Config.inter_dc_tcp_nodelay to null value;  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",GOOD,NONE,NONE,NONE,PARTLY,BAD,BAD,BAD,
+    ^",GOOD,DEFAULT,DEFAULT,DEFAULT,PARTLY,BAD,BAD,BAD,
 Semantic Error,inject/semantic,system/lyrebird/row_cache_class_name,(null),java.lang.String,,,,,"INFO  [main] 2019-09-06 11:05:23,302 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 INFO  [main] 2019-09-06 11:05:23,479 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
 INFO  [main] 2019-09-06 11:05:23,479 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
@@ -3082,97 +3112,6 @@ ERROR [main] 2019-09-06 11:06:18,490 CassandraDaemon.java:749 - Exception encoun
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=key_cache_save_period for JavaBean=org.apache.cassandra.config.Config@5606c0b; For input string: ""9223372036854775808"";  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
     ^",GOOD,GOOD,GOOD,GOOD,GOOD,BAD,BAD,BAD,
-Resource Error,inject/resource,system/lyrebird/dynamic_snitch_badness_threshold,0.1,9.22E+34,,,,,"INFO  [main] 2019-09-06 11:06:38,790 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
-INFO  [main] 2019-09-06 11:06:38,969 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
-INFO  [main] 2019-09-06 11:06:38,969 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
-INFO  [main] 2019-09-06 11:06:38,969 DatabaseDescriptor.java:435 - Global memtable off-heap threshold is enabled at 123MB
-WARN  [main] 2019-09-06 11:06:39,035 DatabaseDescriptor.java:556 - Only 9.469GiB free across all data volumes. Consider adding more capacity to your cluster or removing obsolete snapshots
-INFO  [main] 2019-09-06 11:06:39,049 RateBasedBackPressure.java:123 - Initialized back-pressure with high ratio: 0.9, factor: 5, flow: FAST, window size: 2000.
-INFO  [main] 2019-09-06 11:06:39,049 DatabaseDescriptor.java:735 - Back-pressure is disabled with strategy org.apache.cassandra.net.RateBasedBackPressure{high_ratio=0.9, factor=5, flow=FAST}.
-INFO  [main] 2019-09-06 11:06:39,100 JMXServerUtils.java:246 - Configured JMX server at: service:jmx:rmi://127.0.0.1/jndi/rmi://127.0.0.1:7100/jmxrmi
-INFO  [main] 2019-09-06 11:06:39,103 CassandraDaemon.java:476 - Hostname: wespe-Serval-WS
-INFO  [main] 2019-09-06 11:06:39,103 CassandraDaemon.java:483 - JVM vendor/version: OpenJDK 64-Bit Server VM/1.8.0_222
-INFO  [main] 2019-09-06 11:06:39,103 CassandraDaemon.java:484 - Heap size: 495.000MiB/495.000MiB
-INFO  [main] 2019-09-06 11:06:39,103 CassandraDaemon.java:489 - Code Cache Non-heap memory: init = 2555904(2496K) used = 4383104(4280K) committed = 4456448(4352K) max = 251658240(245760K)
-INFO  [main] 2019-09-06 11:06:39,104 CassandraDaemon.java:489 - Metaspace Non-heap memory: init = 0(0K) used = 17042160(16642K) committed = 17694720(17280K) max = -1(-1K)
-INFO  [main] 2019-09-06 11:06:39,104 CassandraDaemon.java:489 - Compressed Class Space Non-heap memory: init = 0(0K) used = 2047176(1999K) committed = 2228224(2176K) max = 1073741824(1048576K)
-INFO  [main] 2019-09-06 11:06:39,104 CassandraDaemon.java:489 - Par Eden Space Heap memory: init = 41943040(40960K) used = 41943040(40960K) committed = 41943040(40960K) max = 41943040(40960K)
-INFO  [main] 2019-09-06 11:06:39,104 CassandraDaemon.java:489 - Par Survivor Space Heap memory: init = 5242880(5120K) used = 5242872(5119K) committed = 5242880(5120K) max = 5242880(5120K)
-INFO  [main] 2019-09-06 11:06:39,104 CassandraDaemon.java:489 - CMS Old Gen Heap memory: init = 471859200(460800K) used = 760768(742K) committed = 471859200(460800K) max = 471859200(460800K)
-WARN  [main] 2019-09-06 11:06:39,138 NativeLibrary.java:187 - Unable to lock JVM memory (ENOMEM). This can result in part of the JVM being swapped out, especially with mmapped I/O enabled. Increase RLIMIT_MEMLOCK or run Cassandra as root.
-WARN  [main] 2019-09-06 11:06:39,138 StartupChecks.java:136 - jemalloc shared library could not be preloaded to speed up memory allocations
-WARN  [main] 2019-09-06 11:06:39,138 StartupChecks.java:169 - JMX is not enabled to receive remote connections. Please see cassandra-env.sh for more info.
-INFO  [main] 2019-09-06 11:06:39,139 SigarLibrary.java:44 - Initializing SIGAR library
-WARN  [main] 2019-09-06 11:06:39,145 SigarLibrary.java:174 - Cassandra server running in degraded mode. Is swap disabled? : false,  Address space adequate? : true,  nofile limit adequate? : true, nproc limit adequate? : true 
-WARN  [main] 2019-09-06 11:06:39,147 StartupChecks.java:311 - Maximum number of memory map areas per process (vm.max_map_count) 65530 is too low, recommended value: 1048575, you can change it with sysctl.
-INFO  [main] 2019-09-06 11:06:39,267 QueryProcessor.java:116 - Initialized prepared statement caches with 10 MB (native) and 10 MB (Thrift)
-INFO  [SSTableBatchOpen:1] 2019-09-06 11:06:40,051 BufferPool.java:230 - Global buffer pool is enabled, when pool is exhausted (max is 123.000MiB) it will allocate on heap
-INFO  [main] 2019-09-06 11:06:40,197 CacheService.java:100 - Initializing key cache with capacity of 24 MBs.
-INFO  [main] 2019-09-06 11:06:40,202 CacheService.java:122 - Initializing row cache with capacity of 0 MBs
-INFO  [main] 2019-09-06 11:06:40,203 CacheService.java:151 - Initializing counter cache with capacity of 12 MBs
-INFO  [main] 2019-09-06 11:06:40,204 CacheService.java:162 - Scheduling counter cache save to every 7200 seconds (going to save all keys).
-INFO  [main] 2019-09-06 11:06:40,329 ViewManager.java:137 - Not submitting build tasks for views in keyspace system as storage service is not initialized
-INFO  [main] 2019-09-06 11:06:40,410 ApproximateTime.java:44 - Scheduling approximate time-check task with a precision of 10 milliseconds
-INFO  [main] 2019-09-06 11:06:40,570 ViewManager.java:137 - Not submitting build tasks for views in keyspace system_schema as storage service is not initialized
-INFO  [main] 2019-09-06 11:06:41,517 StorageService.java:619 - Populating token metadata from system tables
-INFO  [main] 2019-09-06 11:06:41,523 StorageService.java:626 - Token metadata: Normal Tokens:
-/127.0.0.1:[-9223372036854775808]
-/127.0.0.2:[-3074457345618258603]
-/127.0.0.3:[3074457345618258602]
-
-INFO  [main] 2019-09-06 11:06:41,617 ViewManager.java:137 - Not submitting build tasks for views in keyspace system_distributed as storage service is not initialized
-INFO  [main] 2019-09-06 11:06:41,636 ViewManager.java:137 - Not submitting build tasks for views in keyspace system_auth as storage service is not initialized
-INFO  [main] 2019-09-06 11:06:41,642 ViewManager.java:137 - Not submitting build tasks for views in keyspace system_traces as storage service is not initialized
-INFO  [main] 2019-09-06 11:06:41,643 AutoSavingCache.java:174 - Completed loading (0 ms; 11 keys) KeyCache cache
-INFO  [main] 2019-09-06 11:06:41,654 CommitLog.java:147 - Replaying /home/wespe/.ccm/LyreBirdCluster/node1/commitlogs/CommitLog-6-1567760751935.log
-INFO  [main] 2019-09-06 11:06:41,675 CommitLog.java:149 - Log replay complete, 0 replayed mutations
-INFO  [main] 2019-09-06 11:06:41,675 StorageService.java:619 - Populating token metadata from system tables
-INFO  [main] 2019-09-06 11:06:41,680 StorageService.java:626 - Token metadata: Normal Tokens:
-/127.0.0.1:[-9223372036854775808]
-/127.0.0.2:[-3074457345618258603]
-/127.0.0.3:[3074457345618258602]
-
-INFO  [main] 2019-09-06 11:06:41,726 QueryProcessor.java:163 - Preloaded 0 prepared statements
-INFO  [main] 2019-09-06 11:06:41,726 StorageService.java:637 - Cassandra version: 3.11.4
-INFO  [main] 2019-09-06 11:06:41,726 StorageService.java:638 - Thrift API version: 20.1.0
-INFO  [main] 2019-09-06 11:06:41,726 StorageService.java:639 - CQL supported versions: 3.4.4 (default: 3.4.4)
-INFO  [main] 2019-09-06 11:06:41,727 StorageService.java:641 - Native protocol supported versions: 3/v3, 4/v4, 5/v5-beta (default: 4/v4)
-INFO  [main] 2019-09-06 11:06:41,748 IndexSummaryManager.java:80 - Initializing index summary manager with a memory pool size of 24 MB and a resize interval of 60 minutes
-INFO  [main] 2019-09-06 11:06:41,753 MessagingService.java:750 - Starting Messaging Service on /127.0.0.1:7000 (lo)
-INFO  [main] 2019-09-06 11:06:46,782 OutboundTcpConnection.java:108 - OutboundTcpConnection using coalescing strategy DISABLED
-INFO  [HANDSHAKE-/127.0.0.2] 2019-09-06 11:06:46,789 OutboundTcpConnection.java:561 - Handshaking version with /127.0.0.2
-INFO  [HANDSHAKE-/127.0.0.3] 2019-09-06 11:06:46,790 OutboundTcpConnection.java:561 - Handshaking version with /127.0.0.3
-WARN  [GossipStage:1] 2019-09-06 11:06:46,792 Gossiper.java:1581 - Received an ack from /127.0.0.3, who isn't a seed. Ensure your seed list includes a live node. Exiting shadow round
-INFO  [main] 2019-09-06 11:06:47,792 StorageService.java:723 - Loading persisted ring state
-INFO  [main] 2019-09-06 11:06:47,797 StorageService.java:841 - Starting up server gossip
-INFO  [main] 2019-09-06 11:06:47,900 TokenMetadata.java:497 - Updating topology for /127.0.0.1
-INFO  [main] 2019-09-06 11:06:47,901 TokenMetadata.java:497 - Updating topology for /127.0.0.1
-INFO  [main] 2019-09-06 11:06:47,931 StorageService.java:1007 - Using saved tokens [-9223372036854775808]
-INFO  [main] 2019-09-06 11:06:47,936 StorageService.java:1483 - JOINING: Finish joining ring
-INFO  [main] 2019-09-06 11:06:48,131 StorageService.java:2327 - Node /127.0.0.1 state jump to NORMAL
-INFO  [main] 2019-09-06 11:06:48,205 NativeTransportService.java:70 - Netty using native Epoll event loop
-INFO  [main] 2019-09-06 11:06:48,245 Server.java:156 - Starting listening for CQL clients on /127.0.0.1:9042 (unencrypted)...
-INFO  [main] 2019-09-06 11:06:48,278 CassandraDaemon.java:556 - Not starting RPC server as requested. Use JMX (StorageService->startRPCServer()) or nodetool (enablethrift) to start it
-INFO  [HANDSHAKE-/127.0.0.2] 2019-09-06 11:06:48,339 OutboundTcpConnection.java:561 - Handshaking version with /127.0.0.2
-INFO  [GossipStage:1] 2019-09-06 11:06:48,341 Gossiper.java:1045 - Node /127.0.0.2 has restarted, now UP
-INFO  [GossipStage:1] 2019-09-06 11:06:48,342 StorageService.java:2327 - Node /127.0.0.2 state jump to NORMAL
-INFO  [GossipStage:1] 2019-09-06 11:06:48,345 TokenMetadata.java:497 - Updating topology for /127.0.0.2
-INFO  [GossipStage:1] 2019-09-06 11:06:48,346 TokenMetadata.java:497 - Updating topology for /127.0.0.2
-INFO  [GossipStage:1] 2019-09-06 11:06:48,346 Gossiper.java:1045 - Node /127.0.0.3 has restarted, now UP
-INFO  [RequestResponseStage-3] 2019-09-06 11:06:48,346 Gossiper.java:1011 - InetAddress /127.0.0.2 is now UP
-INFO  [GossipStage:1] 2019-09-06 11:06:48,346 StorageService.java:2327 - Node /127.0.0.3 state jump to NORMAL
-INFO  [GossipStage:1] 2019-09-06 11:06:48,349 TokenMetadata.java:497 - Updating topology for /127.0.0.3
-INFO  [GossipStage:1] 2019-09-06 11:06:48,349 TokenMetadata.java:497 - Updating topology for /127.0.0.3
-INFO  [HANDSHAKE-/127.0.0.3] 2019-09-06 11:06:48,382 OutboundTcpConnection.java:561 - Handshaking version with /127.0.0.3
-INFO  [RequestResponseStage-1] 2019-09-06 11:06:48,387 Gossiper.java:1011 - InetAddress /127.0.0.3 is now UP
-WARN  [GossipTasks:1] 2019-09-06 11:06:48,900 FailureDetector.java:278 - Not marking nodes down due to local pause of 7307423451 > 5000000000
-INFO  [StorageServiceShutdownHook] 2019-09-06 11:06:57,942 HintsService.java:209 - Paused hints dispatch
-INFO  [StorageServiceShutdownHook] 2019-09-06 11:06:57,944 Server.java:176 - Stop listening for CQL clients
-INFO  [StorageServiceShutdownHook] 2019-09-06 11:06:57,945 Gossiper.java:1551 - Announcing shutdown
-INFO  [StorageServiceShutdownHook] 2019-09-06 11:06:57,945 StorageService.java:2327 - Node /127.0.0.1 state jump to shutdown
-INFO  [StorageServiceShutdownHook] 2019-09-06 11:06:59,946 MessagingService.java:981 - Waiting for messaging service to quiesce
-INFO  [ACCEPT-/127.0.0.1] 2019-09-06 11:06:59,946 MessagingService.java:1336 - MessagingService has terminated the accept() thread
-INFO  [StorageServiceShutdownHook] 2019-09-06 11:07:00,921 HintsService.java:209 - Paused hints dispatch",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,Double accepts more
 Structure Error,inject/structure/section/remove,system/lyrebird/rpc_server_type,system/lyrebird/rpc_server_type,null,,,,,"INFO  [main] 2019-09-06 11:07:06,440 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 INFO  [main] 2019-09-06 11:07:06,711 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
 INFO  [main] 2019-09-06 11:07:06,712 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
@@ -3264,7 +3203,7 @@ INFO  [StorageServiceShutdownHook] 2019-09-06 11:07:25,500 Gossiper.java:1551 - 
 INFO  [StorageServiceShutdownHook] 2019-09-06 11:07:25,500 StorageService.java:2327 - Node /127.0.0.1 state jump to shutdown
 INFO  [StorageServiceShutdownHook] 2019-09-06 11:07:27,501 MessagingService.java:981 - Waiting for messaging service to quiesce
 INFO  [ACCEPT-/127.0.0.1] 2019-09-06 11:07:27,502 MessagingService.java:1336 - MessagingService has terminated the accept() thread
-INFO  [StorageServiceShutdownHook] 2019-09-06 11:07:28,513 HintsService.java:209 - Paused hints dispatch",NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+INFO  [StorageServiceShutdownHook] 2019-09-06 11:07:28,513 HintsService.java:209 - Paused hints dispatch",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
 Semantic Error,inject/semantic,system/lyrebird/memtable_heap_space_in_mb,(null),-1,"ERROR [main] 2019-09-06 11:07:34,024 CassandraDaemon.java:749 - Exception encountered during startup: memtable_heap_space_in_mb must be positive, but was -1",The type 'unsigned_long' failed to match for 'system/lyrebird/system\/temporarySpec' with string '-1',X,type,"INFO  [main] 2019-09-06 11:07:33,840 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 INFO  [main] 2019-09-06 11:07:34,022 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
 ERROR [main] 2019-09-06 11:07:34,024 CassandraDaemon.java:749 - Exception encountered during startup: memtable_heap_space_in_mb must be positive, but was -1",GOOD,GOOD,GOOD,GOOD,GOOD,GOOD,BAD,GOOD,
@@ -3627,7 +3566,7 @@ INFO  [main] 2019-09-06 11:11:22,376 SigarLibrary.java:44 - Initializing SIGAR l
 WARN  [main] 2019-09-06 11:11:22,381 SigarLibrary.java:174 - Cassandra server running in degraded mode. Is swap disabled? : false,  Address space adequate? : true,  nofile limit adequate? : true, nproc limit adequate? : true 
 WARN  [main] 2019-09-06 11:11:22,383 StartupChecks.java:311 - Maximum number of memory map areas per process (vm.max_map_count) 65530 is too low, recommended value: 1048575, you can change it with sysctl.
 WARN  [main] 2019-09-06 11:11:22,391 StartupChecks.java:332 - Directory /home/w/spe/.ccm/LyreBirdClusterenode1/saved_caches doesn't exist
-ERROR [main] 2019-09-06 11:11:22,391 CassandraDaemon.java:749 - Has no permission to create directory /home/w/spe/.ccm/LyreBirdClusterenode1/saved_caches",GOOD,GOOD,PARTLY,PARTLY,PARTLY,GOOD,BAD,GOOD,
+ERROR [main] 2019-09-06 11:11:22,391 CassandraDaemon.java:749 - Has no permission to create directory /home/w/spe/.ccm/LyreBirdClusterenode1/saved_caches",GOOD,GOOD,GOOD,BAD,PARTLY,GOOD,BAD,GOOD,
 Domain Error,inject/domain,system/lyrebird/rpc_port,9160,ssl,"ERROR [main] 2019-09-06 11:12:10,095 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=rpc_port for JavaBean=org.apache.cassandra.config.Config@7bc1a03d; For input string: ""ssl"";  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
@@ -3635,9 +3574,9 @@ Domain Error,inject/domain,system/lyrebird/rpc_port,9160,ssl,"ERROR [main] 2019-
 ERROR [main] 2019-09-06 11:12:10,095 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=rpc_port for JavaBean=org.apache.cassandra.config.Config@7bc1a03d; For input string: ""ssl"";  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",GOOD,GOOD,PARTLY,GOOD,GOOD,BAD,BAD,BAD,
+    ^",GOOD,GOOD,PARTLY,GOOD,GOOD,BAD,BAD,BAD,"indeed no ""ssl"" in my service file"
 Structure Error,inject/structure/section/reallocate,system/lyrebird/server_encryption_options/truststore_password,system/lyrebird/server_encryption_options/truststore_password,system/lyrebird/cluster_name,"ERROR [main] 2019-09-06 11:12:30,716 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml. Please remove properties [truststore_password, ___dirdata] from your cassandra.yaml",,,,"INFO  [main] 2019-09-06 11:12:30,520 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
-ERROR [main] 2019-09-06 11:12:30,716 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml. Please remove properties [truststore_password, ___dirdata] from your cassandra.yaml",GOOD,NONE,NONE,NONE,GOOD,GOOD,BAD,GOOD,Yaml Structure Validation!
+ERROR [main] 2019-09-06 11:12:30,716 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml. Please remove properties [truststore_password, ___dirdata] from your cassandra.yaml",GOOD,DEFAULT,DEFAULT,DEFAULT,GOOD,GOOD,BAD,GOOD,Yaml Structure Validation!
 Structure Error,inject/structure/section/remove,system/lyrebird/trickle_fsync,system/lyrebird/trickle_fsync,null,,,,,"INFO  [main] 2019-09-06 11:12:50,979 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 INFO  [main] 2019-09-06 11:12:51,166 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
 INFO  [main] 2019-09-06 11:12:51,166 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
@@ -3762,7 +3701,7 @@ Structure Error,inject/structure/section/duplicate,system/lyrebird/authenticator
 ERROR [main] 2019-09-06 11:14:19,696 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=data_file_directories for JavaBean=org.apache.cassandra.config.Config@d6da883; java.lang.NoSuchMethodException: [Ljava.lang.String;.<init>();  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",BAD,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+    ^",BAD,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,BAD,NONE,
 Structure Error,inject/structure/section/reallocate,system/lyrebird/server_encryption_options/cipher_suites,system/lyrebird/server_encryption_options/cipher_suites,system/lyrebird/index_summary_resize_interval_in_minutes,,,,,"INFO  [main] 2019-09-06 11:14:39,829 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 INFO  [main] 2019-09-06 11:14:40,017 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
 INFO  [main] 2019-09-06 11:14:40,018 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
@@ -3872,7 +3811,7 @@ ERROR [main] 2019-09-06 11:15:27,863 CassandraDaemon.java:749 - Exception encoun
     authenticator: AllowAllAuthenticator
     ^",GOOD,GOOD,GOOD,GOOD,GOOD,BAD,BAD,BAD,
 Resource Error,inject/resource,system/lyrebird/commitlog_sync_batch_window_in_ms,(null),9.22E+32,"ERROR [main] 2019-09-06 11:15:48,261 CassandraDaemon.java:749 - Exception encountered during startup: commitlog_sync_period_in_ms specified, but commitlog_sync_batch_window_in_ms found.  Only specify commitlog_sync_period_in_ms when using periodic sync.",The type 'unsigned_long' failed to match for 'system/lyrebird/system\/temporarySpec' with string '9223372036854775808',X,type,"INFO  [main] 2019-09-06 11:15:48,087 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
-ERROR [main] 2019-09-06 11:15:48,261 CassandraDaemon.java:749 - Exception encountered during startup: commitlog_sync_period_in_ms specified, but commitlog_sync_batch_window_in_ms found.  Only specify commitlog_sync_period_in_ms when using periodic sync.",GOOD,BAD,NONE,NONE,GOOD,GOOD,BAD,GOOD,
+ERROR [main] 2019-09-06 11:15:48,261 CassandraDaemon.java:749 - Exception encountered during startup: commitlog_sync_period_in_ms specified, but commitlog_sync_batch_window_in_ms found.  Only specify commitlog_sync_period_in_ms when using periodic sync.",GOOD,GOOD,GOOD,GOOD,GOOD,GOOD,BAD,GOOD,
 Typo Error,inject/typo/change/char,system/lyrebird/client_encryption_options/truststore_password,cassandra,nassandra,"ERROR [main] 2019-09-19 18:36:43,651 CassandraDaemon.java:749 - Fatal configuration error
 org.apache.cassandra.exceptions.ConfigurationException: Unable to create ssl socket
 Caused by: java.io.IOException: Error creating the initializing the SSL Context
@@ -4005,7 +3944,7 @@ Semantic Error,inject/semantic,system/lyrebird/incremental_backups,FALSE,0,"ERRO
 ERROR [main] 2019-09-06 11:18:00,747 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=incremental_backups for JavaBean=org.apache.cassandra.config.Config@31206beb; Can not set boolean field org.apache.cassandra.config.Config.incremental_backups to null value;  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",GOOD,NONE,NONE,NONE,PARTLY,BAD,BAD,BAD,
+    ^",GOOD,DEFAULT,DEFAULT,DEFAULT,PARTLY,BAD,BAD,BAD,
 Typo Error,inject/typo/case/toggle,system/lyrebird/internode_authenticator,org.apache.cassandra.auth.AllowAllInternodeAuthenticator,org.aPache.cassandra.auth.AllowAllInternodeAuthenticator,"ERROR [main] 2019-09-06 11:18:21,291 CassandraDaemon.java:749 - Exception encountered during startup
 org.apache.cassandra.exceptions.ConfigurationException: Unable to find internode_authenticator class 'org.aPache.cassandra.auth.AllowAllInternodeAuthenticator'
 Caused by: java.lang.ClassNotFoundException: org.aPache.cassandra.auth.AllowAllInternodeAuthenticator",,,,"INFO  [main] 2019-09-06 11:18:21,004 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
@@ -4242,7 +4181,7 @@ Semantic Error,inject/semantic,system/lyrebird/client_encryption_options/enabled
 ERROR [main] 2019-09-06 11:20:37,570 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=client_encryption_options for JavaBean=org.apache.cassandra.config.Config@5e955596; Cannot create property=enabled for JavaBean=org.apache.cassandra.config.EncryptionOptions$ClientEncryptionOptions@1cab0bfb; Can not set boolean field org.apache.cassandra.config.EncryptionOptions$ClientEncryptionOptions.enabled to null value;  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",GOOD,NONE,NONE,NONE,PARTLY,BAD,BAD,BAD,
+    ^",GOOD,DEFAULT,DEFAULT,DEFAULT,PARTLY,BAD,BAD,BAD,
 Structure Error,inject/structure/section/remove,system/lyrebird/transparent_data_encryption_options/key_provider/#0/class_name,system/lyrebird/transparent_data_encryption_options/key_provider/#0/class_name,null,,,,,"INFO  [main] 2019-09-06 11:20:57,816 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 INFO  [main] 2019-09-06 11:20:57,972 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
 INFO  [main] 2019-09-06 11:20:57,972 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
@@ -4689,7 +4628,7 @@ Structure Error,inject/structure/section/reallocate,system/lyrebird/authorizer,s
 ERROR [main] 2019-09-06 11:25:23,752 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=back_pressure_strategy for JavaBean=org.apache.cassandra.config.Config@14ec4505; java.lang.reflect.InvocationTargetException;  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",GOOD,NONE,NONE,NONE,BAD,BAD,BAD,BAD,
+    ^",GOOD,DEFAULT,DEFAULT,DEFAULT,BAD,BAD,BAD,BAD,
 Structure Error,inject/structure/section/duplicate,system/lyrebird/rpc_send_buff_size_in_bytes,system/lyrebird/rpc_send_buff_size_in_bytes,system/lyrebird/saved_caches_directory,,,,,"INFO  [main] 2019-09-06 11:25:43,941 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 INFO  [main] 2019-09-06 11:25:44,103 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
 INFO  [main] 2019-09-06 11:25:44,103 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
@@ -4995,7 +4934,7 @@ Semantic Error,inject/semantic,system/lyrebird/cross_node_timeout,FALSE,1,"ERROR
 ERROR [main] 2019-09-06 11:28:07,772 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=cross_node_timeout for JavaBean=org.apache.cassandra.config.Config@5cdd8682; Can not set boolean field org.apache.cassandra.config.Config.cross_node_timeout to null value;  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",GOOD,NONE,NONE,NONE,PARTLY,BAD,BAD,BAD,
+    ^",GOOD,DEFAULT,DEFAULT,DEFAULT,PARTLY,BAD,BAD,BAD,
 Typo Error,inject/typo/insertion,system/lyrebird/row_cache_keys_to_save,0,60,,,,,"INFO  [main] 2019-09-06 11:28:27,985 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 INFO  [main] 2019-09-06 11:28:28,141 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
 INFO  [main] 2019-09-06 11:28:28,141 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
@@ -5119,7 +5058,7 @@ Semantic Error,inject/semantic,system/lyrebird/snapshot_before_compaction,FALSE,
 ERROR [main] 2019-09-06 11:29:56,730 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=snapshot_before_compaction for JavaBean=org.apache.cassandra.config.Config@4d49af10; Can not set boolean field org.apache.cassandra.config.Config.snapshot_before_compaction to null value;  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",GOOD,NONE,NONE,NONE,PARTLY,BAD,BAD,BAD,
+    ^",GOOD,DEFAULT,DEFAULT,DEFAULT,PARTLY,BAD,BAD,BAD,
 Typo Error,inject/typo/case/toggle,system/lyrebird/internode_authenticator,org.apache.cassandra.auth.AllowAllInternodeAuthenticator,org.apache.cassandra.auth.AllowAllInternodeAuthentiCator,"ERROR [main] 2019-09-06 11:30:17,266 CassandraDaemon.java:749 - Exception encountered during startup
 org.apache.cassandra.exceptions.ConfigurationException: Unable to find internode_authenticator class 'org.apache.cassandra.auth.AllowAllInternodeAuthentiCator'
 Caused by: java.lang.ClassNotFoundException: org.apache.cassandra.auth.AllowAllInternodeAuthentiCator",,,,"INFO  [main] 2019-09-06 11:30:16,982 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
@@ -5459,7 +5398,7 @@ INFO  [StorageServiceShutdownHook] 2019-09-06 11:32:55,761 Gossiper.java:1551 - 
 INFO  [StorageServiceShutdownHook] 2019-09-06 11:32:55,762 StorageService.java:2327 - Node /127.0.0.1 state jump to shutdown
 INFO  [StorageServiceShutdownHook] 2019-09-06 11:32:57,762 MessagingService.java:981 - Waiting for messaging service to quiesce
 INFO  [ACCEPT-/127.0.0.1] 2019-09-06 11:32:57,763 MessagingService.java:1336 - MessagingService has terminated the accept() thread
-INFO  [StorageServiceShutdownHook] 2019-09-06 11:32:58,509 HintsService.java:209 - Paused hints dispatch",NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+INFO  [StorageServiceShutdownHook] 2019-09-06 11:32:58,509 HintsService.java:209 - Paused hints dispatch",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
 Typo Error,inject/typo/space,system/lyrebird/start_rpc,FALSE,     false  ',"ERROR [main] 2019-09-06 11:33:04,182 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=start_rpc for JavaBean=org.apache.cassandra.config.Config@7fe8ea47; Can not set boolean field org.apache.cassandra.config.Config.start_rpc to null value;  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
@@ -5499,7 +5438,7 @@ Structure Error,inject/structure/section/duplicate,system/lyrebird/back_pressure
 ERROR [main] 2019-09-06 11:35:09,561 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=commitlog_sync for JavaBean=org.apache.cassandra.config.Config@74294adb; java.lang.NoSuchMethodException: org.apache.cassandra.config.Config$CommitLogSync.<init>();  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",BAD,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+    ^",BAD,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,BAD,NONE,
 Semantic Error,inject/semantic,system/lyrebird/phi_convict_threshold,(null),-1,"ERROR [main] 2019-09-06 11:35:30,057 CassandraDaemon.java:749 - Exception encountered during startup: phi_convict_threshold must be between 5 and 16, but was -1.0",The type 'unsigned_long' failed to match for 'system/lyrebird/system\/temporarySpec' with string '-1',X,type,"INFO  [main] 2019-09-06 11:35:29,882 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 INFO  [main] 2019-09-06 11:35:30,056 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
 ERROR [main] 2019-09-06 11:35:30,057 CassandraDaemon.java:749 - Exception encountered during startup: phi_convict_threshold must be between 5 and 16, but was -1.0",GOOD,GOOD,GOOD,GOOD,GOOD,GOOD,BAD,GOOD,
@@ -6104,7 +6043,7 @@ INFO  [StorageServiceShutdownHook] 2019-09-06 11:40:04,731 Gossiper.java:1551 - 
 INFO  [StorageServiceShutdownHook] 2019-09-06 11:40:04,731 StorageService.java:2327 - Node /127.0.0.1 state jump to shutdown
 INFO  [StorageServiceShutdownHook] 2019-09-06 11:40:06,732 MessagingService.java:981 - Waiting for messaging service to quiesce
 INFO  [ACCEPT-/127.0.0.1] 2019-09-06 11:40:06,733 MessagingService.java:1336 - MessagingService has terminated the accept() thread
-INFO  [StorageServiceShutdownHook] 2019-09-06 11:40:07,446 HintsService.java:209 - Paused hints dispatch",NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+INFO  [StorageServiceShutdownHook] 2019-09-06 11:40:07,446 HintsService.java:209 - Paused hints dispatch",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
 Typo Error,inject/typo/transposition,system/lyrebird/server_encryption_options/cipher_suites,"[TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_DHE_RSA_WITH_AES_128_CBC_SHA,TLS_DHE_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA]","[TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_DHE_RSA_WITH_AES_128_CBC_SHA,TLS_DHE_RSASWITH_AES_256_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_CBC__HA,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA]","ERROR [main] 2019-09-06 11:40:09,140 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=server_encryption_options for JavaBean=org.apache.cassandra.config.Config@525b461a; Cannot create property=cipher_suites for JavaBean=org.apache.cassandra.config.EncryptionOptions$ServerEncryptionOptions@7ff2a664; No single argument constructor found for class [Ljava.lang.String;;  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
@@ -6302,7 +6241,7 @@ Semantic Error,inject/semantic,system/lyrebird/enable_materialized_views,TRUE,1,
 ERROR [main] 2019-09-06 11:41:24,451 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=enable_materialized_views for JavaBean=org.apache.cassandra.config.Config@11c20519; Can not set boolean field org.apache.cassandra.config.Config.enable_materialized_views to null value;  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",GOOD,NONE,NONE,NONE,PARTLY,BAD,BAD,BAD,
+    ^",GOOD,DEFAULT,DEFAULT,DEFAULT,PARTLY,BAD,BAD,BAD,
 Resource Error,inject/resource,system/lyrebird/sstable_preemptive_open_interval_in_mb,50,9.22E+32,"ERROR [main] 2019-09-06 11:41:44,802 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=sstable_preemptive_open_interval_in_mb for JavaBean=org.apache.cassandra.config.Config@4461c7e3; For input string: ""9223372036854775808"";  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
@@ -6318,7 +6257,7 @@ Structure Error,inject/structure/section/duplicate,system/lyrebird/compaction_th
 ERROR [main] 2019-09-06 11:42:32,654 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=commit_failure_policy for JavaBean=org.apache.cassandra.config.Config@3d8314f0; java.lang.NoSuchMethodException: org.apache.cassandra.config.Config$CommitFailurePolicy.<init>();  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",BAD,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+    ^",BAD,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,BAD,NONE,
 Structure Error,inject/structure/section/reallocate,system/lyrebird/commitlog_compression/#0/class_name,system/lyrebird/commitlog_compression/#0/class_name,system/lyrebird,,,,,"INFO  [main] 2019-09-06 11:42:52,859 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 INFO  [main] 2019-09-06 11:42:53,037 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
 INFO  [main] 2019-09-06 11:42:53,037 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
@@ -6958,7 +6897,7 @@ Domain Error,inject/domain,system/lyrebird/storage_port,7000,ssl,"ERROR [main] 2
 ERROR [main] 2019-09-06 11:50:12,497 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=storage_port for JavaBean=org.apache.cassandra.config.Config@731f8236; For input string: ""ssl"";  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",GOOD,GOOD,PARTLY,GOOD,GOOD,BAD,BAD,BAD,
+    ^",GOOD,GOOD,PARTLY,GOOD,GOOD,BAD,BAD,BAD,"indeed no ""ssl"" in my service file"
 Semantic Error,inject/semantic,system/lyrebird/counter_cache_save_period,7200,-1,,The type 'unsigned_long' failed to match for 'system/lyrebird/system\/temporarySpec' with string '-1',X,type,"INFO  [main] 2019-09-06 11:50:32,709 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 INFO  [main] 2019-09-06 11:50:32,876 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
 INFO  [main] 2019-09-06 11:50:32,876 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
@@ -8020,7 +7959,7 @@ Structure Error,inject/structure/section/reallocate,system/lyrebird/commitlog_sy
 ERROR [main] 2019-09-06 11:57:54,740 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=counter_cache_save_period for JavaBean=org.apache.cassandra.config.Config@7181ae3f; java.lang.NoSuchMethodException: int.<init>();  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",BAD,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+    ^",BAD,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,BAD,NONE,
 Resource Error,inject/resource,system/lyrebird/hints_flush_period_in_ms,10000,9.22E+32,"ERROR [main] 2019-09-06 11:58:15,241 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=hints_flush_period_in_ms for JavaBean=org.apache.cassandra.config.Config@11e21d0e; For input string: ""9223372036854775808"";  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
@@ -8334,7 +8273,7 @@ Structure Error,inject/structure/section/reallocate,system/lyrebird/counter_cach
 ERROR [main] 2019-09-06 12:00:59,705 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=counter_cache_size_in_mb for JavaBean=org.apache.cassandra.config.Config@1ee807c6; For input string: ""QklOQVJ"";  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",GOOD,NONE,NONE,NONE,BAD,BAD,BAD,BAD,Very confusing message (where does the input string come from...)
+    ^",GOOD,DEFAULT,DEFAULT,DEFAULT,BAD,BAD,BAD,BAD,Very confusing message (where does the input string come from...)
 Resource Error,inject/resource,system/lyrebird/prepared_statements_cache_size_mb,~,9.22E+32,"ERROR [main] 2019-09-06 12:01:20,142 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=prepared_statements_cache_size_mb for JavaBean=org.apache.cassandra.config.Config@6385cb26; For input string: ""9223372036854775808"";  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
@@ -8748,7 +8687,7 @@ Structure Error,inject/structure/section/reallocate,system/lyrebird/sstable_pree
 ERROR [main] 2019-09-06 12:05:36,601 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=transparent_data_encryption_options for JavaBean=org.apache.cassandra.config.Config@18a70f16; Cannot create property=chunk_length_kb for JavaBean=org.apache.cassandra.config.TransparentDataEncryptionOptions@51b7e5df; java.lang.NoSuchMethodException: int.<init>();  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",BAD,NONE,NONE,NONE,NONE,NONE,NONE,NONE,
+    ^",BAD,DEFAULT,DEFAULT,DEFAULT,NONE,NONE,BAD,NONE,
 Resource Error,inject/resource,system/lyrebird/unlogged_batch_across_partitions_warn_threshold,10,9.22E+34,"ERROR [main] 2019-09-06 12:05:57,072 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=unlogged_batch_across_partitions_warn_threshold for JavaBean=org.apache.cassandra.config.Config@548a102f; For input string: ""922337203685477580800"";  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
@@ -9426,7 +9365,7 @@ Domain Error,inject/domain,system/lyrebird/native_transport_port_ssl,(null),ssl,
 ERROR [main] 2019-09-06 12:10:52,051 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=native_transport_port_ssl for JavaBean=org.apache.cassandra.config.Config@3d3fcdb0; For input string: ""ssl"";  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",GOOD,GOOD,PARTLY,GOOD,GOOD,BAD,BAD,BAD,
+    ^",GOOD,GOOD,PARTLY,GOOD,GOOD,BAD,BAD,BAD,"indeed no ""ssl"" in my service file"
 Structure Error,inject/structure/section/remove,system/lyrebird/column_index_cache_size_in_kb,system/lyrebird/column_index_cache_size_in_kb,null,,,,,"INFO  [main] 2019-09-06 12:11:12,321 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 INFO  [main] 2019-09-06 12:11:12,532 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
 INFO  [main] 2019-09-06 12:11:12,532 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
@@ -9682,7 +9621,7 @@ java.lang.IllegalArgumentException: Invalid token for Murmur3Partitioner. Got 92
 	at org.apache.cassandra.config.DatabaseDescriptor.daemonInitialization(DatabaseDescriptor.java:132) ~[apache-cassandra-3.11.4.jar:3.11.4]
 	at org.apache.cassandra.service.CassandraDaemon.applyConfig(CassandraDaemon.java:665) [apache-cassandra-3.11.4.jar:3.11.4]
 	at org.apache.cassandra.service.CassandraDaemon.activate(CassandraDaemon.java:609) [apache-cassandra-3.11.4.jar:3.11.4]
-	at org.apache.cassandra.service.CassandraDaemon.main(CassandraDaemon.java:732) [apache-cassandra-3.11.4.jar:3.11.4]",GOOD,GOOD,GOOD,GOOD,BAD,GOOD,BAD,BAD,
+	at org.apache.cassandra.service.CassandraDaemon.main(CassandraDaemon.java:732) [apache-cassandra-3.11.4.jar:3.11.4]",BAD,GOOD,GOOD,GOOD,NONE,NONE,NONE,NONE,
 Semantic Error,inject/semantic,system/lyrebird/cdc_total_space_in_mb,(null),-1,,The type 'unsigned_long' failed to match for 'system/lyrebird/system\/temporarySpec' with string '-1',X,type,"INFO  [main] 2019-09-06 12:14:33,488 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
 INFO  [main] 2019-09-06 12:14:33,690 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
 INFO  [main] 2019-09-06 12:14:33,690 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
@@ -9781,7 +9720,7 @@ Domain Error,inject/domain,system/lyrebird/ssl_storage_port,7001,ssl,"ERROR [mai
 ERROR [main] 2019-09-06 12:15:01,229 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=ssl_storage_port for JavaBean=org.apache.cassandra.config.Config@58134517; For input string: ""ssl"";  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
-    ^",GOOD,GOOD,PARTLY,GOOD,GOOD,BAD,BAD,BAD,
+    ^",GOOD,GOOD,PARTLY,GOOD,GOOD,BAD,BAD,BAD,"indeed no ""ssl"" in my service file"
 Semantic Error,inject/semantic,system/lyrebird/read_request_timeout_in_ms,5000,-1,"ERROR [ScheduledTasks:1] 2019-09-06 12:15:22,037 DebuggableThreadPoolExecutor.java:239 - Error in ThreadPoolExecutor
 java.lang.ExceptionInInitializerError: null
 Caused by: java.lang.IllegalArgumentException: Argument specified must be a positive number
@@ -10402,7 +10341,7 @@ ERROR [main] 2019-09-06 12:22:25,627 CassandraDaemon.java:749 - Exception encoun
     authenticator: AllowAllAuthenticator
     ^",GOOD,GOOD,GOOD,GOOD,GOOD,BAD,BAD,BAD,
 Structure Error,inject/structure/section/duplicate,system/lyrebird/server_encryption_options/truststore_password,system/lyrebird/server_encryption_options/truststore_password,system/lyrebird/rpc_server_type,"ERROR [main] 2019-09-06 12:22:46,078 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml. Please remove properties [truststore_password, ___dirdata] from your cassandra.yaml",,,,"INFO  [main] 2019-09-06 12:22:45,875 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
-ERROR [main] 2019-09-06 12:22:46,078 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml. Please remove properties [truststore_password, ___dirdata] from your cassandra.yaml",GOOD,NONE,NONE,NONE,GOOD,GOOD,BAD,GOOD,Yaml Structure Validation!
+ERROR [main] 2019-09-06 12:22:46,078 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml. Please remove properties [truststore_password, ___dirdata] from your cassandra.yaml",GOOD,DEFAULT,DEFAULT,DEFAULT,GOOD,GOOD,BAD,GOOD,Yaml Structure Validation!
 Resource Error,inject/resource,system/lyrebird/column_index_cache_size_in_kb,2,9.22E+32,"ERROR [main] 2019-09-06 12:23:06,249 CassandraDaemon.java:749 - Exception encountered during startup: Invalid yaml: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
  Error: null; Can't construct a java object for tag:yaml.org,2002:org.apache.cassandra.config.Config; exception=Cannot create property=column_index_cache_size_in_kb for JavaBean=org.apache.cassandra.config.Config@6c9f5c0d; For input string: ""9223372036854775808"";  in 'reader', line 1, column 1:
     authenticator: AllowAllAuthenticator
@@ -10746,97 +10685,6 @@ INFO  [StorageServiceShutdownHook] 2019-09-06 12:27:30,835 StorageService.java:2
 INFO  [StorageServiceShutdownHook] 2019-09-06 12:27:32,835 MessagingService.java:981 - Waiting for messaging service to quiesce
 INFO  [ACCEPT-/127.0.0.1] 2019-09-06 12:27:32,837 MessagingService.java:1336 - MessagingService has terminated the accept() thread
 INFO  [StorageServiceShutdownHook] 2019-09-06 12:27:33,518 HintsService.java:209 - Paused hints dispatch",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
-Domain Error,inject/domain,system/lyrebird/transparent_data_encryption_options/key_alias,testing:1,TRUE,,,,,"INFO  [main] 2019-09-06 12:27:35,263 YamlConfigurationLoader.java:89 - Configuration location: file:/home/wespe/.ccm/LyreBirdCluster/node1/conf/cassandra.yaml
-INFO  [main] 2019-09-06 12:27:35,447 DatabaseDescriptor.java:373 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
-INFO  [main] 2019-09-06 12:27:35,447 DatabaseDescriptor.java:431 - Global memtable on-heap threshold is enabled at 123MB
-INFO  [main] 2019-09-06 12:27:35,447 DatabaseDescriptor.java:435 - Global memtable off-heap threshold is enabled at 123MB
-WARN  [main] 2019-09-06 12:27:35,515 DatabaseDescriptor.java:556 - Only 9.452GiB free across all data volumes. Consider adding more capacity to your cluster or removing obsolete snapshots
-INFO  [main] 2019-09-06 12:27:35,530 RateBasedBackPressure.java:123 - Initialized back-pressure with high ratio: 0.9, factor: 5, flow: FAST, window size: 2000.
-INFO  [main] 2019-09-06 12:27:35,530 DatabaseDescriptor.java:735 - Back-pressure is disabled with strategy org.apache.cassandra.net.RateBasedBackPressure{high_ratio=0.9, factor=5, flow=FAST}.
-INFO  [main] 2019-09-06 12:27:35,581 JMXServerUtils.java:246 - Configured JMX server at: service:jmx:rmi://127.0.0.1/jndi/rmi://127.0.0.1:7100/jmxrmi
-INFO  [main] 2019-09-06 12:27:35,586 CassandraDaemon.java:476 - Hostname: wespe-Serval-WS
-INFO  [main] 2019-09-06 12:27:35,586 CassandraDaemon.java:483 - JVM vendor/version: OpenJDK 64-Bit Server VM/1.8.0_222
-INFO  [main] 2019-09-06 12:27:35,586 CassandraDaemon.java:484 - Heap size: 495.000MiB/495.000MiB
-INFO  [main] 2019-09-06 12:27:35,587 CassandraDaemon.java:489 - Code Cache Non-heap memory: init = 2555904(2496K) used = 4429888(4326K) committed = 4456448(4352K) max = 251658240(245760K)
-INFO  [main] 2019-09-06 12:27:35,587 CassandraDaemon.java:489 - Metaspace Non-heap memory: init = 0(0K) used = 17050784(16651K) committed = 17694720(17280K) max = -1(-1K)
-INFO  [main] 2019-09-06 12:27:35,589 CassandraDaemon.java:489 - Compressed Class Space Non-heap memory: init = 0(0K) used = 2047176(1999K) committed = 2228224(2176K) max = 1073741824(1048576K)
-INFO  [main] 2019-09-06 12:27:35,590 CassandraDaemon.java:489 - Par Eden Space Heap memory: init = 41943040(40960K) used = 41943040(40960K) committed = 41943040(40960K) max = 41943040(40960K)
-INFO  [main] 2019-09-06 12:27:35,590 CassandraDaemon.java:489 - Par Survivor Space Heap memory: init = 5242880(5120K) used = 5242872(5119K) committed = 5242880(5120K) max = 5242880(5120K)
-INFO  [main] 2019-09-06 12:27:35,590 CassandraDaemon.java:489 - CMS Old Gen Heap memory: init = 471859200(460800K) used = 751984(734K) committed = 471859200(460800K) max = 471859200(460800K)
-WARN  [main] 2019-09-06 12:27:35,624 NativeLibrary.java:187 - Unable to lock JVM memory (ENOMEM). This can result in part of the JVM being swapped out, especially with mmapped I/O enabled. Increase RLIMIT_MEMLOCK or run Cassandra as root.
-WARN  [main] 2019-09-06 12:27:35,624 StartupChecks.java:136 - jemalloc shared library could not be preloaded to speed up memory allocations
-WARN  [main] 2019-09-06 12:27:35,624 StartupChecks.java:169 - JMX is not enabled to receive remote connections. Please see cassandra-env.sh for more info.
-INFO  [main] 2019-09-06 12:27:35,626 SigarLibrary.java:44 - Initializing SIGAR library
-WARN  [main] 2019-09-06 12:27:35,633 SigarLibrary.java:174 - Cassandra server running in degraded mode. Is swap disabled? : false,  Address space adequate? : true,  nofile limit adequate? : true, nproc limit adequate? : true 
-WARN  [main] 2019-09-06 12:27:35,635 StartupChecks.java:311 - Maximum number of memory map areas per process (vm.max_map_count) 65530 is too low, recommended value: 1048575, you can change it with sysctl.
-INFO  [main] 2019-09-06 12:27:35,741 QueryProcessor.java:116 - Initialized prepared statement caches with 10 MB (native) and 10 MB (Thrift)
-INFO  [SSTableBatchOpen:1] 2019-09-06 12:27:36,492 BufferPool.java:230 - Global buffer pool is enabled, when pool is exhausted (max is 123.000MiB) it will allocate on heap
-INFO  [main] 2019-09-06 12:27:36,623 CacheService.java:100 - Initializing key cache with capacity of 24 MBs.
-INFO  [main] 2019-09-06 12:27:36,630 CacheService.java:122 - Initializing row cache with capacity of 0 MBs
-INFO  [main] 2019-09-06 12:27:36,631 CacheService.java:151 - Initializing counter cache with capacity of 12 MBs
-INFO  [main] 2019-09-06 12:27:36,632 CacheService.java:162 - Scheduling counter cache save to every 7200 seconds (going to save all keys).
-INFO  [main] 2019-09-06 12:27:36,740 ViewManager.java:137 - Not submitting build tasks for views in keyspace system as storage service is not initialized
-INFO  [main] 2019-09-06 12:27:36,812 ApproximateTime.java:44 - Scheduling approximate time-check task with a precision of 10 milliseconds
-INFO  [main] 2019-09-06 12:27:37,055 ViewManager.java:137 - Not submitting build tasks for views in keyspace system_schema as storage service is not initialized
-INFO  [main] 2019-09-06 12:27:38,126 StorageService.java:619 - Populating token metadata from system tables
-INFO  [main] 2019-09-06 12:27:38,134 StorageService.java:626 - Token metadata: Normal Tokens:
-/127.0.0.1:[-9223372036854775808]
-/127.0.0.2:[-3074457345618258603]
-/127.0.0.3:[3074457345618258602]
-
-INFO  [main] 2019-09-06 12:27:38,225 ViewManager.java:137 - Not submitting build tasks for views in keyspace system_distributed as storage service is not initialized
-INFO  [main] 2019-09-06 12:27:38,241 ViewManager.java:137 - Not submitting build tasks for views in keyspace system_auth as storage service is not initialized
-INFO  [main] 2019-09-06 12:27:38,250 ViewManager.java:137 - Not submitting build tasks for views in keyspace system_traces as storage service is not initialized
-INFO  [main] 2019-09-06 12:27:38,251 AutoSavingCache.java:174 - Completed loading (0 ms; 11 keys) KeyCache cache
-INFO  [main] 2019-09-06 12:27:38,260 CommitLog.java:147 - Replaying /home/wespe/.ccm/LyreBirdCluster/node1/commitlogs/CommitLog-6-1567765632913.log
-INFO  [main] 2019-09-06 12:27:38,292 CommitLog.java:149 - Log replay complete, 0 replayed mutations
-INFO  [main] 2019-09-06 12:27:38,292 StorageService.java:619 - Populating token metadata from system tables
-INFO  [main] 2019-09-06 12:27:38,300 StorageService.java:626 - Token metadata: Normal Tokens:
-/127.0.0.1:[-9223372036854775808]
-/127.0.0.2:[-3074457345618258603]
-/127.0.0.3:[3074457345618258602]
-
-INFO  [main] 2019-09-06 12:27:38,351 QueryProcessor.java:163 - Preloaded 0 prepared statements
-INFO  [main] 2019-09-06 12:27:38,351 StorageService.java:637 - Cassandra version: 3.11.4
-INFO  [main] 2019-09-06 12:27:38,351 StorageService.java:638 - Thrift API version: 20.1.0
-INFO  [main] 2019-09-06 12:27:38,352 StorageService.java:639 - CQL supported versions: 3.4.4 (default: 3.4.4)
-INFO  [main] 2019-09-06 12:27:38,352 StorageService.java:641 - Native protocol supported versions: 3/v3, 4/v4, 5/v5-beta (default: 4/v4)
-INFO  [main] 2019-09-06 12:27:38,375 IndexSummaryManager.java:80 - Initializing index summary manager with a memory pool size of 24 MB and a resize interval of 60 minutes
-INFO  [main] 2019-09-06 12:27:38,382 MessagingService.java:750 - Starting Messaging Service on /127.0.0.1:7000 (lo)
-INFO  [main] 2019-09-06 12:27:43,407 OutboundTcpConnection.java:108 - OutboundTcpConnection using coalescing strategy DISABLED
-INFO  [HANDSHAKE-/127.0.0.2] 2019-09-06 12:27:43,412 OutboundTcpConnection.java:561 - Handshaking version with /127.0.0.2
-INFO  [HANDSHAKE-/127.0.0.3] 2019-09-06 12:27:43,415 OutboundTcpConnection.java:561 - Handshaking version with /127.0.0.3
-WARN  [GossipStage:1] 2019-09-06 12:27:43,416 Gossiper.java:1581 - Received an ack from /127.0.0.3, who isn't a seed. Ensure your seed list includes a live node. Exiting shadow round
-INFO  [main] 2019-09-06 12:27:44,416 StorageService.java:723 - Loading persisted ring state
-INFO  [main] 2019-09-06 12:27:44,420 StorageService.java:841 - Starting up server gossip
-INFO  [main] 2019-09-06 12:27:44,526 TokenMetadata.java:497 - Updating topology for /127.0.0.1
-INFO  [main] 2019-09-06 12:27:44,528 TokenMetadata.java:497 - Updating topology for /127.0.0.1
-INFO  [main] 2019-09-06 12:27:44,551 StorageService.java:1007 - Using saved tokens [-9223372036854775808]
-INFO  [main] 2019-09-06 12:27:44,556 StorageService.java:1483 - JOINING: Finish joining ring
-INFO  [main] 2019-09-06 12:27:44,745 StorageService.java:2327 - Node /127.0.0.1 state jump to NORMAL
-INFO  [main] 2019-09-06 12:27:44,872 NativeTransportService.java:70 - Netty using native Epoll event loop
-INFO  [main] 2019-09-06 12:27:44,910 Server.java:156 - Starting listening for CQL clients on /127.0.0.1:9042 (unencrypted)...
-INFO  [main] 2019-09-06 12:27:44,942 CassandraDaemon.java:556 - Not starting RPC server as requested. Use JMX (StorageService->startRPCServer()) or nodetool (enablethrift) to start it
-INFO  [GossipStage:1] 2019-09-06 12:27:45,304 Gossiper.java:1045 - Node /127.0.0.2 has restarted, now UP
-INFO  [GossipStage:1] 2019-09-06 12:27:45,306 StorageService.java:2327 - Node /127.0.0.2 state jump to NORMAL
-INFO  [HANDSHAKE-/127.0.0.3] 2019-09-06 12:27:45,312 OutboundTcpConnection.java:561 - Handshaking version with /127.0.0.3
-INFO  [GossipStage:1] 2019-09-06 12:27:45,318 TokenMetadata.java:497 - Updating topology for /127.0.0.2
-INFO  [RequestResponseStage-7] 2019-09-06 12:27:45,318 Gossiper.java:1011 - InetAddress /127.0.0.2 is now UP
-INFO  [GossipStage:1] 2019-09-06 12:27:45,323 TokenMetadata.java:497 - Updating topology for /127.0.0.2
-INFO  [GossipStage:1] 2019-09-06 12:27:45,324 Gossiper.java:1045 - Node /127.0.0.3 has restarted, now UP
-INFO  [GossipStage:1] 2019-09-06 12:27:45,324 StorageService.java:2327 - Node /127.0.0.3 state jump to NORMAL
-INFO  [GossipStage:1] 2019-09-06 12:27:45,325 TokenMetadata.java:497 - Updating topology for /127.0.0.3
-INFO  [GossipStage:1] 2019-09-06 12:27:45,325 TokenMetadata.java:497 - Updating topology for /127.0.0.3
-INFO  [HANDSHAKE-/127.0.0.2] 2019-09-06 12:27:45,391 OutboundTcpConnection.java:561 - Handshaking version with /127.0.0.2
-WARN  [GossipTasks:1] 2019-09-06 12:27:45,526 FailureDetector.java:278 - Not marking nodes down due to local pause of 7326207730 > 5000000000
-INFO  [RequestResponseStage-1] 2019-09-06 12:27:46,394 Gossiper.java:1011 - InetAddress /127.0.0.3 is now UP
-INFO  [StorageServiceShutdownHook] 2019-09-06 12:27:54,399 HintsService.java:209 - Paused hints dispatch
-INFO  [StorageServiceShutdownHook] 2019-09-06 12:27:54,401 Server.java:176 - Stop listening for CQL clients
-INFO  [StorageServiceShutdownHook] 2019-09-06 12:27:54,401 Gossiper.java:1551 - Announcing shutdown
-INFO  [StorageServiceShutdownHook] 2019-09-06 12:27:54,401 StorageService.java:2327 - Node /127.0.0.1 state jump to shutdown
-INFO  [StorageServiceShutdownHook] 2019-09-06 12:27:56,402 MessagingService.java:981 - Waiting for messaging service to quiesce
-INFO  [ACCEPT-/127.0.0.1] 2019-09-06 12:27:56,403 MessagingService.java:1336 - MessagingService has terminated the accept() thread
-INFO  [StorageServiceShutdownHook] 2019-09-06 12:27:57,380 HintsService.java:209 - Paused hints dispatch",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,
 Semantic Error,inject/semantic,system/lyrebird/back_pressure_strategy/#0/parameters/#0/factor,5,-1,"ERROR [main] 2019-09-06 12:28:03,014 CassandraDaemon.java:749 - Exception encountered during startup
 org.apache.cassandra.exceptions.ConfigurationException: Error configuring back-pressure strategy: org.apache.cassandra.net.RateBasedBackPressure{high_ratio=0.9, factor=-1, flow=FAST}
 Caused by: java.lang.reflect.InvocationTargetException: null
