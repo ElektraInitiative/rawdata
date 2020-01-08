@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+plugins=(yamlcpp yanlr yambi yawn yaypeg)
+compilers=(clang6.0.1 gcc8.3.0)
+os=linux
+data_directory='Results/Memory Usage'
+ms_print_output="$data_directory/ms_print.txt"
+
+print_input_files() {
+	script_path="$(readlink -f "$0")"
+	parent_directory="$(dirname $(dirname "$script_path"))"
+	inputs=()
+	for file in $(find "$parent_directory/Input" -type f); do
+		printf '%s\n' "$file" | sed -E 's~.+/([^\]+)\.yaml$~\1~'
+	done
+}
+
+summarize_memory_data() {
+	inputs=$(print_input_files)
+	for compiler in ${compilers[@]}; do
+		summary_output="$data_directory/memory_${os}_${compiler}.csv"
+		printf 'File;Plugin;Bytes;OS;Compiler\n' > "$summary_output"
+		for plugin in ${plugins[@]}; do
+			for input in ${inputs[@]}; do
+				massif_output="$data_directory/${input}_${plugin}_${os}_${compiler}.out"
+				printf '%s\n' "$massif_output"
+				ms_print "$massif_output" > "$ms_print_output"
+				peak="$(grep 'Detailed snapshots: ' "$ms_print_output" |
+					sed -E 's/.*[ ,]([0-9]+) \(peak\).*/\1/')"
+				bytes="$(grep -E "^ $peak" "$ms_print_output" |
+					awk -F '  +' '{print $3}' | tr -d ',')"
+				rm "$ms_print_output"
+				printf '%s;%s;%s;%s;%s\n' \
+					"$input.yaml" "$plugin" "$bytes" "$os" "$compiler" >> "$summary_output"
+			done
+		done
+	done
+}
+
+summarize_memory_data
