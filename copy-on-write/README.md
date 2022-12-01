@@ -9,7 +9,12 @@ The build was performed via
 - `cmake -DCMAKE_BUILD_TYPE=Release ..`
 - `cmake --build . -- -j4`
 
+The file name schema is `<benchmark name>.<build type>.<branch name>.<tool>.out`.
+The branch name `master` is the master branch and `fbcow` the branch with the copy-on-write implememtation.
+The tool is the benchmarking tool, e.g. `massif` or `perf`.
+
 The massif benchmarks found within the `massif` directory were performed using `valgrind --tool=massif --time-unit=B --max-snapshots=200 --threshold=0.1`. 
-The file name schema is `<benchmark name>.<build type>.<branch name>.massif.out`, where the branch name `master` is the master branch and `fbcow` the branch with the copy-on-write implememtation.
+
+The perf benchmarks found within the `perf` directory were performed using `perf stat --repeat 13`.
 
 The `benchmark_createkeys` application was executed using the command line parameters `200 200`.

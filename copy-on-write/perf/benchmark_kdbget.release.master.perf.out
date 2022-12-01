@@ -1,0 +1,19 @@
+# started on Thu Dec  1 18:02:33 2022
+
+
+ Performance counter stats for 'src/libelektra-master/cmake-build-release/bin/benchmark_kdbget' (13 runs):
+
+            144,86 msec task-clock                #    0,994 CPUs utilized            ( +-  0,16% )
+                 1      context-switches          #    0,004 K/sec                    ( +- 22,82% )
+                 0      cpu-migrations            #    0,000 K/sec                  
+             4.607      page-faults               #    0,032 M/sec                    ( +-  0,01% )
+       132.930.545      cycles                    #    0,918 GHz                      ( +- 35,94% )
+       163.095.579      stalled-cycles-frontend   #  122,69% frontend cycles idle     ( +-  0,31% )
+        99.871.411      stalled-cycles-backend    #   75,13% backend cycles idle      ( +-  2,16% )
+       708.644.589      instructions              #    5,33  insn per cycle         
+                                                  #    0,23  stalled cycles per insn  ( +-  0,00% )
+       166.283.268      branches                  # 1147,899 M/sec                    ( +-  0,00% )
+           669.001      branch-misses             #    0,40% of all branches          ( +- 13,63% )
+
+          0,145663 +- 0,000253 seconds time elapsed  ( +-  0,17% )
+
