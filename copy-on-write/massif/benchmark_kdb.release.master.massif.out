@@ -1,0 +1,2644 @@
+desc: --time-unit=B --max-snapshots=200 --threshold=0.1 --massif-out-file=benchmark_kdb.release.master.massif.out
+cmd: src/libelektra-master/cmake-build-release/bin/benchmark_kdb
+time_unit: B
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=7360272
+mem_heap_B=5229393
+mem_heap_extra_B=2130879
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=12479792
+mem_heap_B=7138071
+mem_heap_extra_B=2697449
+mem_stacks_B=0
+heap_tree=detailed
+n6: 7138071 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 3507677 0x4851663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1466351 0x4853069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n2: 1465753 0x485348E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 1465753 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n3: 1465753 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 1156000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+       n0: 1156000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n1: 303383 0x564B376: ???
+       n1: 303383 0x564C4F8: ???
+        n1: 303383 0x564D000: ???
+         n1: 303383 0x59B3CCF: ???
+          n1: 303383 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n1: 303383 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+            n0: 303383 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 6370 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 1263012 0x485349B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1263012 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 1263012 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 996000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 996000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 261891 0x564B376: ???
+      n1: 261891 0x564C4F8: ???
+       n1: 261891 0x564D000: ???
+        n1: 261891 0x59B3CCF: ???
+         n1: 261891 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n1: 261891 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n0: 261891 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 5121 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 777360 0x4854DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n3: 777360 0x4854F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x10B37B: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 640016 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n1: 131072 0x564B3BD: ???
+     n1: 131072 0x564C4F8: ???
+      n1: 131072 0x564D000: ???
+       n1: 131072 0x59B3CCF: ???
+        n1: 131072 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+         n1: 131072 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n0: 131072 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 6272 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 954 in 9 places, all below massif's threshold (0.10%)
+ n1: 3246080 0x485211D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n4: 3246080 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2560000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 2560000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 663936 0x564B376: ???
+    n1: 663936 0x564C4F8: ???
+     n1: 663936 0x564D000: ???
+      n1: 663936 0x59B3CCF: ???
+       n1: 663936 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+        n1: 663936 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+         n0: 663936 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 12800 0x10B30A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 12800 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 9344 in 68 places, all below massif's threshold (0.10%)
+ n2: 254253 0x4856F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 253220 0x4856FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 253220 0x4852402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 253220 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 200000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 200000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 51870 0x564B376: ???
+      n1: 51870 0x564C4F8: ???
+       n1: 51870 0x564D000: ???
+        n1: 51870 0x59B3CCF: ???
+         n1: 51870 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n1: 51870 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n0: 51870 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 1350 in 23 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 1033 in 8 places, all below massif's threshold (0.10%)
+ n1: 72704 0x56FA545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x499AAEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A3C257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x499AB4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A3CA64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A3C2E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x48581D9: elektraModulesLoad (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+               n1: 72704 0x4845B71: elektraPluginOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                n1: 72704 0x4841B19: addElektraMountpoint (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                 n1: 72704 0x48447C2: kdbOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                  n0: 72704 0x10A460: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+ n0: 40500 in 37 places, all below massif's threshold (0.10%)
+ n1: 16857 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 16857 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n1: 16857 0x4009274: _dl_map_object (dl-load.c:2236)
+    n0: 16857 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=3
+#-----------
+time=19006288
+mem_heap_B=9163996
+mem_heap_extra_B=3509300
+mem_stacks_B=0
+heap_tree=detailed
+n6: 9163996 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 4472589 0x4851663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1914025 0x4853069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n2: 1913427 0x485348E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 1913427 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n3: 1913427 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 1156000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+       n0: 1156000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n1: 751057 0x564B376: ???
+       n1: 751057 0x564C4F8: ???
+        n1: 751057 0x564D000: ???
+         n1: 751057 0x59B3CCF: ???
+          n1: 751057 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n1: 751057 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+            n0: 751057 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 6370 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 1649178 0x485349B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1649178 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 1649178 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 996000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 996000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 648057 0x564B376: ???
+      n1: 648057 0x564C4F8: ???
+       n1: 648057 0x564D000: ???
+        n1: 648057 0x59B3CCF: ???
+         n1: 648057 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n1: 648057 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n0: 648057 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 5121 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 908432 0x4854DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n3: 908432 0x4854F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x10B37B: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 640016 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n1: 262144 0x564B3BD: ???
+     n1: 262144 0x564C4F8: ???
+      n1: 262144 0x564D000: ???
+       n1: 262144 0x59B3CCF: ???
+        n1: 262144 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+         n1: 262144 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n0: 262144 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 6272 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 954 in 9 places, all below massif's threshold (0.10%)
+ n1: 4230208 0x485211D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n4: 4230208 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2560000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 2560000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 1648064 0x564B376: ???
+    n1: 1648064 0x564C4F8: ???
+     n1: 1648064 0x564D000: ???
+      n1: 1648064 0x59B3CCF: ???
+       n1: 1648064 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+        n1: 1648064 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+         n0: 1648064 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 12800 0x10B30A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 12800 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 9344 in 68 places, all below massif's threshold (0.10%)
+ n2: 331138 0x4856F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 330105 0x4856FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 330105 0x4852402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 330105 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 200000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 200000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 128755 0x564B376: ???
+      n1: 128755 0x564C4F8: ???
+       n1: 128755 0x564D000: ???
+        n1: 128755 0x59B3CCF: ???
+         n1: 128755 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n1: 128755 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n0: 128755 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 1350 in 23 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 1033 in 8 places, all below massif's threshold (0.10%)
+ n1: 72704 0x56FA545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x499AAEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A3C257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x499AB4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A3CA64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A3C2E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x48581D9: elektraModulesLoad (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+               n1: 72704 0x4845B71: elektraPluginOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                n1: 72704 0x4841B19: addElektraMountpoint (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                 n1: 72704 0x48447C2: kdbOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                  n0: 72704 0x10A460: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+ n0: 40500 in 37 places, all below massif's threshold (0.10%)
+ n1: 16857 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 16857 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n1: 16857 0x4009274: _dl_map_object (dl-load.c:2236)
+    n0: 16857 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=4
+#-----------
+time=25283072
+mem_heap_B=11175863
+mem_heap_extra_B=4295417
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=30350152
+mem_heap_B=12021719
+mem_heap_extra_B=4295489
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=35941192
+mem_heap_B=12021719
+mem_heap_extra_B=4295489
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=41532232
+mem_heap_B=12021719
+mem_heap_extra_B=4295489
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=48737992
+mem_heap_B=12318092
+mem_heap_extra_B=4726140
+mem_stacks_B=0
+heap_tree=detailed
+n6: 12318092 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5679360 0x485211D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n4: 5679360 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2572800 0x564B376: ???
+    n1: 2572800 0x564C4F8: ???
+     n1: 2572800 0x564D000: ???
+      n1: 2572800 0x59B3CCF: ???
+       n1: 2572800 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+        n1: 2572800 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+         n0: 2572800 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 2560000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 2560000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 524352 0x4840683: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n1: 524352 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 524352 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 524352 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 22208 in 73 places, all below massif's threshold (0.10%)
+ n4: 5626866 0x4851663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 2323470 0x4853069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n2: 2322872 0x485348E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 2322872 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n3: 2322872 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 1160490 0x564B376: ???
+       n1: 1160490 0x564C4F8: ???
+        n1: 1160490 0x564D000: ???
+         n1: 1160490 0x59B3CCF: ???
+          n1: 1160490 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n1: 1160490 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+            n0: 1160490 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n1: 1156000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+       n0: 1156000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 6382 in 74 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 2000817 0x485349B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2000817 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 2000817 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 999690 0x564B376: ???
+      n1: 999690 0x564C4F8: ???
+       n1: 999690 0x564D000: ???
+        n1: 999690 0x59B3CCF: ???
+         n1: 999690 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n1: 999690 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n0: 999690 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 996000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 996000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 5127 in 74 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 1301648 0x4854DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n3: 777360 0x4854F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x10B37B: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 640016 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n1: 131072 0x48406B7: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 131072 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n1: 131072 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+       n0: 131072 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 6272 in 4 places, all below massif's threshold (0.10%)
+   n2: 524288 0x4855B25: ksAppend (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 524288 0x4840AA6: backendsMerge (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 524288 0x48441C1: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 524288 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 931 in 12 places, all below massif's threshold (0.10%)
+ n4: 487618 0x48516D4: elektraMemDup (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 239673 0x4851AF3: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 239437 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n1: 239437 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 239437 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 239437 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 236 in 11 places, all below massif's threshold (0.10%)
+  n2: 206858 0x4851B15: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 206665 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n1: 206665 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 206665 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 206665 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 193 in 11 places, all below massif's threshold (0.10%)
+  n2: 40965 0x4851B92: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 40965 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n1: 40965 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 40965 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 40965 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 122 in 2 places, all below massif's threshold (0.10%)
+ n2: 403383 0x4856F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 402350 0x4856FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 402350 0x4852402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 402350 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 201000 0x564B376: ???
+      n1: 201000 0x564C4F8: ???
+       n1: 201000 0x564D000: ???
+        n1: 201000 0x59B3CCF: ???
+         n1: 201000 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n1: 201000 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n0: 201000 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 200000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 200000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 1350 in 23 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 1033 in 8 places, all below massif's threshold (0.10%)
+ n1: 72704 0x56FA545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x499AAEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A3C257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x499AB4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A3CA64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A3C2E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x48581D9: elektraModulesLoad (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+               n1: 72704 0x4845B71: elektraPluginOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                n1: 72704 0x4841B19: addElektraMountpoint (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                 n1: 72704 0x48447C2: kdbOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                  n0: 72704 0x10A460: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+ n0: 48161 in 39 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=9
+#-----------
+time=53523816
+mem_heap_B=14559533
+mem_heap_extra_B=5627675
+mem_stacks_B=0
+heap_tree=detailed
+n6: 14559533 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 6774592 0x485211D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n4: 6774592 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2572800 0x564B376: ???
+    n1: 2572800 0x564C4F8: ???
+     n1: 2572800 0x564D000: ???
+      n1: 2572800 0x59B3CCF: ???
+       n1: 2572800 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+        n1: 2572800 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+         n0: 2572800 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 2560000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 2560000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 1619584 0x4840683: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n1: 1619584 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 1619584 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 1619584 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 22208 in 73 places, all below massif's threshold (0.10%)
+ n4: 5757938 0x4851663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 2323470 0x4853069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n2: 2322872 0x485348E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 2322872 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n3: 2322872 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 1160490 0x564B376: ???
+       n1: 1160490 0x564C4F8: ???
+        n1: 1160490 0x564D000: ???
+         n1: 1160490 0x59B3CCF: ???
+          n1: 1160490 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n1: 1160490 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+            n0: 1160490 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n1: 1156000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+       n0: 1156000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 6382 in 74 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 2000817 0x485349B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2000817 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 2000817 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 999690 0x564B376: ???
+      n1: 999690 0x564C4F8: ???
+       n1: 999690 0x564D000: ???
+        n1: 999690 0x59B3CCF: ???
+         n1: 999690 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n1: 999690 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n0: 999690 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 996000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 996000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 5127 in 74 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 1432720 0x4854DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n3: 908432 0x4854F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x10B37B: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 640016 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n1: 262144 0x48406B7: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 262144 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n1: 262144 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+       n0: 262144 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 6272 in 4 places, all below massif's threshold (0.10%)
+   n2: 524288 0x4855B25: ksAppend (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 524288 0x4840AA6: backendsMerge (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 524288 0x48441C1: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 524288 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 931 in 12 places, all below massif's threshold (0.10%)
+ n4: 1502755 0x48516D4: elektraMemDup (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 738685 0x4851AF3: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 738449 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n1: 738449 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 738449 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 738449 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 236 in 11 places, all below massif's threshold (0.10%)
+  n2: 637418 0x4851B15: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 637225 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n1: 637225 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 637225 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 637225 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 193 in 11 places, all below massif's threshold (0.10%)
+  n2: 126530 0x4851B92: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 126530 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n1: 126530 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 126530 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 126530 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 122 in 2 places, all below massif's threshold (0.10%)
+ n2: 403383 0x4856F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 402350 0x4856FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 402350 0x4852402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 402350 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 201000 0x564B376: ???
+      n1: 201000 0x564C4F8: ???
+       n1: 201000 0x564D000: ???
+        n1: 201000 0x59B3CCF: ???
+         n1: 201000 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n1: 201000 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n0: 201000 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 200000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 200000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 1350 in 23 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 1033 in 8 places, all below massif's threshold (0.10%)
+ n1: 72704 0x56FA545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x499AAEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A3C257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x499AB4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A3CA64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A3C2E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x48581D9: elektraModulesLoad (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+               n1: 72704 0x4845B71: elektraPluginOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                n1: 72704 0x4841B19: addElektraMountpoint (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                 n1: 72704 0x48447C2: kdbOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                  n0: 72704 0x10A460: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+ n0: 48161 in 39 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=10
+#-----------
+time=60131008
+mem_heap_B=15920776
+mem_heap_extra_B=5910504
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=64552800
+mem_heap_B=12839955
+mem_heap_extra_B=4569533
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=67911744
+mem_heap_B=12021556
+mem_heap_extra_B=4293980
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=72573184
+mem_heap_B=12021556
+mem_heap_extra_B=4293980
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=77234624
+mem_heap_B=12021556
+mem_heap_extra_B=4293980
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=83449856
+mem_heap_B=12021615
+mem_heap_extra_B=4294049
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=87211464
+mem_heap_B=13224245
+mem_heap_extra_B=4669475
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=91872872
+mem_heap_B=15339901
+mem_heap_extra_B=5570027
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=97895680
+mem_heap_B=16633560
+mem_heap_extra_B=6435240
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=102331560
+mem_heap_B=18720093
+mem_heap_extra_B=7265291
+mem_stacks_B=0
+heap_tree=detailed
+n6: 18720093 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8740608 0x485211D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n4: 8740608 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 3585664 0x4840683: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n2: 3585664 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 2572800 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 2572800 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 1012864 0x48452D4: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 1012864 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 2572800 0x4856072: ksDeepDup (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 2572800 0x4845294: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n0: 2572800 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 2560000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 2560000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 22144 in 76 places, all below massif's threshold (0.10%)
+ n4: 5665547 0x48516D4: elektraMemDup (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n3: 2784606 0x4851AF3: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1623873 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n2: 1623873 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 1160490 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 1160490 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 463383 0x48452D4: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 463383 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 1160490 0x4856082: ksDeepDup (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 1160490 0x4845294: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n0: 1160490 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 243 in 13 places, all below massif's threshold (0.10%)
+  n3: 2399652 0x4851B15: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1399769 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n2: 1399769 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 999690 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 999690 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 400079 0x48452D4: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 400079 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 999690 0x4856082: ksDeepDup (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 999690 0x4845294: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n0: 999690 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 193 in 13 places, all below massif's threshold (0.10%)
+  n3: 481167 0x4851B92: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 280130 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n2: 280130 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 201000 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 201000 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 79130 0x48452D4: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 79130 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 201000 0x4856082: ksDeepDup (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 201000 0x4845294: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n0: 201000 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 37 in 2 places, all below massif's threshold (0.10%)
+  n0: 122 in 2 places, all below massif's threshold (0.10%)
+ n4: 3990954 0x4851663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1825936 0x4854DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n3: 1048576 0x4855B25: ksAppend (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 524288 0x4840AA6: backendsMerge (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 524288 0x4844323: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 524288 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n1: 524288 0x48452A2: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n0: 524288 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n3: 777360 0x4854F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x10B37B: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 640016 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n1: 131072 0x48406B7: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n2: 131072 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n1: 131072 0x48452D4: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+       n0: 131072 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 6272 in 4 places, all below massif's threshold (0.10%)
+  n2: 1162970 0x4853069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n2: 1162372 0x485348E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 1162372 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 1162372 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 1156000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+       n0: 1156000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 6372 in 78 places, all below massif's threshold (0.10%)
+    n0: 0 in 8 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 1001124 0x485349B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1001124 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 1001124 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 996000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 996000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 5124 in 78 places, all below massif's threshold (0.10%)
+   n0: 0 in 8 places, all below massif's threshold (0.10%)
+  n0: 924 in 12 places, all below massif's threshold (0.10%)
+ n2: 202383 0x4856F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 201350 0x4856FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 201350 0x4852402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 201350 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 200000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 200000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 1350 in 24 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 1033 in 8 places, all below massif's threshold (0.10%)
+ n1: 72704 0x56FA545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x499AAEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A3C257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x499AB4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A3CA64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A3C2E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x48581D9: elektraModulesLoad (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+               n1: 72704 0x4845B71: elektraPluginOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                n1: 72704 0x4841B19: addElektraMountpoint (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                 n1: 72704 0x48447C2: kdbOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                  n0: 72704 0x10A460: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+ n0: 47897 in 39 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=20
+#-----------
+time=109774480
+mem_heap_B=21806476
+mem_heap_extra_B=8453460
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=113364896
+mem_heap_B=19284763
+mem_heap_extra_B=7384757
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=119211864
+mem_heap_B=17131428
+mem_heap_extra_B=6634516
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=121605520
+mem_heap_B=18163543
+mem_heap_extra_B=7029529
+mem_stacks_B=0
+heap_tree=detailed
+n6: 18163543 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8452480 0x485211D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n3: 8452480 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 5870336 0x4840683: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n3: 5870336 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 2572800 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 2572800 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 2572800 0x48452D4: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 2572800 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 724736 0x4845853: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 724736 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 2560000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 2560000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 22144 in 82 places, all below massif's threshold (0.10%)
+ n4: 5396954 0x48516D4: elektraMemDup (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 2652535 0x4851AF3: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2652292 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n3: 2652292 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 1160490 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 1160490 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 1160490 0x48452D4: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 1160490 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 331312 0x4845853: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 331312 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 243 in 16 places, all below massif's threshold (0.10%)
+  n2: 2285593 0x4851B15: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2285400 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n3: 2285400 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 999690 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 999690 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 999690 0x48452D4: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 999690 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 286020 0x4845853: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 286020 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 193 in 16 places, all below massif's threshold (0.10%)
+  n2: 458652 0x4851B92: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 458615 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n3: 458615 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 201000 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 201000 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 201000 0x48452D4: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 201000 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 56615 0x4845853: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 56615 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 37 in 3 places, all below massif's threshold (0.10%)
+  n0: 174 in 2 places, all below massif's threshold (0.10%)
+ n4: 3990949 0x4851663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1825936 0x4854DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n2: 1048576 0x4855B25: ksAppend (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 1048576 0x4840AA6: backendsMerge (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 524288 0x4844323: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 524288 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 524288 0x4845824: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 524288 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n3: 777360 0x4854F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x10B37B: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 640016 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n1: 131072 0x48406B7: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n2: 131072 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n1: 131072 0x4845853: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+       n0: 131072 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 6272 in 4 places, all below massif's threshold (0.10%)
+  n2: 1162968 0x4853069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n2: 1162370 0x485348E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 1162370 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 1162370 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 1156000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+       n0: 1156000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 6370 in 83 places, all below massif's threshold (0.10%)
+    n0: 0 in 9 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 1001121 0x485349B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1001121 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 1001121 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 996000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 996000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 5121 in 83 places, all below massif's threshold (0.10%)
+   n0: 0 in 9 places, all below massif's threshold (0.10%)
+  n0: 924 in 12 places, all below massif's threshold (0.10%)
+ n2: 202383 0x4856F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 201350 0x4856FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 201350 0x4852402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 201350 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 200000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 200000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 1350 in 24 places, all below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 1033 in 8 places, all below massif's threshold (0.10%)
+ n1: 72704 0x56FA545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x499AAEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A3C257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x499AB4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A3CA64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A3C2E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x48581D9: elektraModulesLoad (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+               n1: 72704 0x4845B71: elektraPluginOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                n1: 72704 0x4841B19: addElektraMountpoint (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                 n1: 72704 0x48447C2: kdbOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                  n0: 72704 0x10A460: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+ n0: 48073 in 39 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=24
+#-----------
+time=126991232
+mem_heap_B=20419708
+mem_heap_extra_B=7946596
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=133480992
+mem_heap_B=24673584
+mem_heap_extra_B=8898128
+mem_stacks_B=0
+heap_tree=peak
+n7: 24673584 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 10300544 0x485211D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n3: 10300544 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 7718400 0x4840683: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n3: 7718400 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 2572800 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 2572800 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 2572800 0x48452D4: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 2572800 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 2572800 0x4845853: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 2572800 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 2560000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 2560000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 22144 in 82 places, all below massif's threshold (0.10%)
+ n4: 7084187 0x48516D4: elektraMemDup (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 3481713 0x4851AF3: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 3481470 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n3: 3481470 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 1160490 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 1160490 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 1160490 0x48452D4: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 1160490 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 1160490 0x4845853: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 1160490 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 243 in 16 places, all below massif's threshold (0.10%)
+  n2: 2999263 0x4851B15: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2999070 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n3: 2999070 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 999690 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 999690 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 999690 0x48452D4: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 999690 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 999690 0x4845853: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 999690 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 193 in 16 places, all below massif's threshold (0.10%)
+  n2: 603037 0x4851B92: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 603000 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n3: 603000 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 201000 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 201000 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 201000 0x48452D4: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 201000 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 201000 0x4845853: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 201000 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 37 in 3 places, all below massif's threshold (0.10%)
+  n0: 174 in 2 places, all below massif's threshold (0.10%)
+ n4: 4384165 0x4851663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 2219152 0x4854DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n3: 1170576 0x4854F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x10B37B: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 640016 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n1: 524288 0x48406B7: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n2: 524288 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n1: 524288 0x4845853: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+       n0: 524288 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 6272 in 4 places, all below massif's threshold (0.10%)
+   n2: 1048576 0x4855B25: ksAppend (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 1048576 0x4840AA6: backendsMerge (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 524288 0x4844323: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 524288 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 524288 0x4845824: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 524288 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n2: 1162968 0x4853069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n2: 1162370 0x485348E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 1162370 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 1162370 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 1156000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+       n0: 1156000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 6370 in 83 places, all below massif's threshold (0.10%)
+    n0: 0 in 9 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 1001121 0x485349B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1001121 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 1001121 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 996000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 996000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 5121 in 83 places, all below massif's threshold (0.10%)
+   n0: 0 in 9 places, all below massif's threshold (0.10%)
+  n0: 924 in 12 places, all below massif's threshold (0.10%)
+ n1: 2581504 0x4855C83: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 2581504 0x4855DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n2: 2572864 0x4852990: keyMeta (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 2572800 0x5648271: ???
+     n1: 2572800 0x564D392: ???
+      n1: 2572800 0x59B36E7: ???
+       n1: 2572800 0x4842BFA: runSetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+        n1: 2572800 0x4845870: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+         n0: 2572800 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 64 in 2 places, all below massif's threshold (0.10%)
+   n0: 8640 in 52 places, all below massif's threshold (0.10%)
+ n2: 202383 0x4856F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 201350 0x4856FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 201350 0x4852402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 201350 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 200000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 200000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 1350 in 24 places, all below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 1033 in 8 places, all below massif's threshold (0.10%)
+ n1: 72704 0x56FA545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x499AAEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A3C257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x499AB4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A3CA64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A3C2E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x48581D9: elektraModulesLoad (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+               n1: 72704 0x4845B71: elektraPluginOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                n1: 72704 0x4841B19: addElektraMountpoint (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                 n1: 72704 0x48447C2: kdbOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                  n0: 72704 0x10A460: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+ n0: 48097 in 38 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=26
+#-----------
+time=137669808
+mem_heap_B=21790815
+mem_heap_extra_B=7676785
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=141174448
+mem_heap_B=19206251
+mem_heap_extra_B=6756709
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=145961840
+mem_heap_B=15585675
+mem_heap_extra_B=5590821
+mem_stacks_B=0
+heap_tree=detailed
+n7: 15585675 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 6493504 0x485211D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n3: 6493504 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 3913728 0x4840683: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n3: 3913728 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 2572800 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 2572800 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 1340928 0x4845853: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 1340928 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n1: 2560000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 2560000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 19776 in 83 places, all below massif's threshold (0.10%)
+ n4: 3857417 0x4851663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1693840 0x4854DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n3: 1169552 0x4854F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x10B37B: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 640016 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n1: 524288 0x48406B7: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n2: 524288 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n1: 524288 0x4845853: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+       n0: 524288 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 5248 in 4 places, all below massif's threshold (0.10%)
+   n2: 524288 0x4855B25: ksAppend (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 524288 0x4840AA6: backendsMerge (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 524288 0x4844323: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 524288 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n2: 1162147 0x4853069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n2: 1161653 0x485348E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 1161653 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 1161653 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 1156000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+       n0: 1156000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 5653 in 84 places, all below massif's threshold (0.10%)
+    n0: 0 in 9 places, all below massif's threshold (0.10%)
+   n0: 494 in 1 place, below massif's threshold (0.10%)
+  n2: 1000578 0x485349B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1000578 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 1000578 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 996000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 996000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 4578 in 84 places, all below massif's threshold (0.10%)
+   n0: 0 in 9 places, all below massif's threshold (0.10%)
+  n0: 852 in 12 places, all below massif's threshold (0.10%)
+ n4: 3576431 0x48516D4: elektraMemDup (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1757576 0x4851AF3: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1757333 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n3: 1757333 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 1160490 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 1160490 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 596843 0x4845853: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 596843 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 243 in 18 places, all below massif's threshold (0.10%)
+  n2: 1512918 0x4851B15: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1512725 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n3: 1512725 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 999690 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 999690 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 513035 0x4845853: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 513035 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 193 in 18 places, all below massif's threshold (0.10%)
+  n2: 305834 0x4851B92: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 305760 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n3: 305760 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n1: 201000 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 201000 0x10A49C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 104760 0x4845853: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 104760 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 74 in 5 places, all below massif's threshold (0.10%)
+  n0: 103 in 2 places, all below massif's threshold (0.10%)
+ n1: 1347520 0x4855C83: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1347520 0x4855DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n2: 1340992 0x4852990: keyMeta (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 1340928 0x5648271: ???
+     n1: 1340928 0x564D392: ???
+      n1: 1340928 0x59B36E7: ???
+       n1: 1340928 0x4842BFA: runSetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+        n1: 1340928 0x4845870: kdbSet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+         n0: 1340928 0x10A4D9: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 64 in 2 places, all below massif's threshold (0.10%)
+   n0: 6528 in 52 places, all below massif's threshold (0.10%)
+ n2: 202127 0x4856F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 201158 0x4856FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 201158 0x4852402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 201158 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 200000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 200000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 1158 in 24 places, all below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 969 in 8 places, all below massif's threshold (0.10%)
+ n1: 72704 0x56FA545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x499AAEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A3C257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x499AB4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A3CA64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A3C2E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x48581D9: elektraModulesLoad (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+               n1: 72704 0x4845B71: elektraPluginOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                n1: 72704 0x4841B19: addElektraMountpoint (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                 n1: 72704 0x48447C2: kdbOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                  n0: 72704 0x10A460: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+ n0: 35972 in 39 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=29
+#-----------
+time=150749248
+mem_heap_B=11995399
+mem_heap_extra_B=4393689
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=155871096
+mem_heap_B=8218794
+mem_heap_extra_B=3050094
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=159338208
+mem_heap_B=5660193
+mem_heap_extra_B=2141583
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=164436512
+mem_heap_B=7266915
+mem_heap_extra_B=2751789
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=168565400
+mem_heap_B=8586225
+mem_heap_extra_B=3255207
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=176186592
+mem_heap_B=11004880
+mem_heap_extra_B=4215584
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=180635960
+mem_heap_B=12021864
+mem_heap_extra_B=4295552
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=185590520
+mem_heap_B=12021864
+mem_heap_extra_B=4295552
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=193022360
+mem_heap_B=12021864
+mem_heap_extra_B=4295552
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=198099136
+mem_heap_B=11307323
+mem_heap_extra_B=4350469
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=204705336
+mem_heap_B=14445612
+mem_heap_extra_B=5576396
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=208904264
+mem_heap_B=16468332
+mem_heap_extra_B=6363196
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=214758080
+mem_heap_B=13691301
+mem_heap_extra_B=4950267
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=219058168
+mem_heap_B=10377196
+mem_heap_extra_B=3966572
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=225664336
+mem_heap_B=5692924
+mem_heap_extra_B=2144932
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=231444696
+mem_heap_B=7486497
+mem_heap_extra_B=2844887
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=234747784
+mem_heap_B=8560318
+mem_heap_extra_B=3244314
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=239702408
+mem_heap_B=10013678
+mem_heap_extra_B=3889338
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=244750424
+mem_heap_B=12021667
+mem_heap_extra_B=4295525
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=251855984
+mem_heap_B=12021736
+mem_heap_extra_B=4295576
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=257946472
+mem_heap_B=12021736
+mem_heap_extra_B=4295568
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=263021864
+mem_heap_B=12021793
+mem_heap_extra_B=4295639
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=266097736
+mem_heap_B=12031712
+mem_heap_extra_B=4632552
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=273203312
+mem_heap_B=15025397
+mem_heap_extra_B=5835387
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=277359048
+mem_heap_B=17158146
+mem_heap_extra_B=6436902
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=283449536
+mem_heap_B=12906428
+mem_heap_extra_B=4599108
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=290037560
+mem_heap_B=7977821
+mem_heap_extra_B=2942363
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=295185720
+mem_heap_B=6306492
+mem_heap_extra_B=2373068
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=299246072
+mem_heap_B=7559603
+mem_heap_extra_B=2875989
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=305336600
+mem_heap_B=9451350
+mem_heap_extra_B=3637810
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=307534024
+mem_heap_B=10279952
+mem_heap_extra_B=3891272
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=313624536
+mem_heap_B=12021864
+mem_heap_extra_B=4295616
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=317684856
+mem_heap_B=12021864
+mem_heap_extra_B=4295616
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=321745176
+mem_heap_B=12021864
+mem_heap_extra_B=4295616
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=325805496
+mem_heap_B=12021864
+mem_heap_extra_B=4295616
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=329865816
+mem_heap_B=12021864
+mem_heap_extra_B=4295616
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=336173488
+mem_heap_B=13095580
+mem_heap_extra_B=5055476
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=340233840
+mem_heap_B=14815124
+mem_heap_extra_B=5741884
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=344294200
+mem_heap_B=16597532
+mem_heap_extra_B=6420604
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=350929984
+mem_heap_B=12958563
+mem_heap_extra_B=4622365
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=354850720
+mem_heap_B=9898736
+mem_heap_extra_B=3763840
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=360711296
+mem_heap_B=5660386
+mem_heap_extra_B=2141614
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=368015288
+mem_heap_B=8012176
+mem_heap_extra_B=3012280
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=375196232
+mem_heap_B=10311028
+mem_heap_extra_B=3905012
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=379035976
+mem_heap_B=12021491
+mem_heap_extra_B=4295493
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=386216912
+mem_heap_B=12021731
+mem_heap_extra_B=4295533
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=389807456
+mem_heap_B=12021731
+mem_heap_extra_B=4295533
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=396988384
+mem_heap_B=12021788
+mem_heap_extra_B=4295604
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=400974208
+mem_heap_B=11935978
+mem_heap_extra_B=4592342
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=408155144
+mem_heap_B=14961528
+mem_heap_extra_B=5806928
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=415336024
+mem_heap_B=15147407
+mem_heap_extra_B=5583001
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=418926512
+mem_heap_B=12653780
+mem_heap_extra_B=4486140
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=424312256
+mem_heap_B=8559881
+mem_heap_extra_B=3196967
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=428266928
+mem_heap_B=5660514
+mem_heap_extra_B=2141662
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=433652632
+mem_heap_B=7349840
+mem_heap_extra_B=2787432
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=440956696
+mem_heap_B=9600113
+mem_heap_extra_B=3704663
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=446591672
+mem_heap_B=12021619
+mem_heap_extra_B=4295573
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=453772608
+mem_heap_B=12021859
+mem_heap_extra_B=4295613
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=87
+#-----------
+time=457363152
+mem_heap_B=12021859
+mem_heap_extra_B=4295613
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=88
+#-----------
+time=464544080
+mem_heap_B=12021916
+mem_heap_extra_B=4295684
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=89
+#-----------
+time=472120360
+mem_heap_B=13513282
+mem_heap_extra_B=5176710
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=90
+#-----------
+time=479301280
+mem_heap_B=16555679
+mem_heap_extra_B=6402081
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=91
+#-----------
+time=484686992
+mem_heap_B=13894061
+mem_heap_extra_B=5041283
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=92
+#-----------
+time=490072672
+mem_heap_B=9820942
+mem_heap_extra_B=3731106
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=93
+#-----------
+time=495822720
+mem_heap_B=5660386
+mem_heap_extra_B=2141614
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=94
+#-----------
+time=503126712
+mem_heap_B=8012176
+mem_heap_extra_B=3012280
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=95
+#-----------
+time=510307656
+mem_heap_B=10311028
+mem_heap_extra_B=3905012
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=96
+#-----------
+time=514147400
+mem_heap_B=12021491
+mem_heap_extra_B=4295493
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=97
+#-----------
+time=521328336
+mem_heap_B=12021731
+mem_heap_extra_B=4295533
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=98
+#-----------
+time=524918880
+mem_heap_B=12021731
+mem_heap_extra_B=4295533
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=99
+#-----------
+time=530304568
+mem_heap_B=12021764
+mem_heap_extra_B=4295588
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=100
+#-----------
+time=532502008
+mem_heap_B=12021765
+mem_heap_extra_B=4295587
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=101
+#-----------
+time=534699448
+mem_heap_B=11342994
+mem_heap_extra_B=4362086
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=102
+#-----------
+time=536928944
+mem_heap_B=12317976
+mem_heap_extra_B=4726104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=103
+#-----------
+time=539126368
+mem_heap_B=13211930
+mem_heap_extra_B=5104390
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=104
+#-----------
+time=541323808
+mem_heap_B=14183566
+mem_heap_extra_B=5460178
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=105
+#-----------
+time=543521248
+mem_heap_B=15063194
+mem_heap_extra_B=5852678
+mem_stacks_B=0
+heap_tree=detailed
+n6: 15063194 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 7039552 0x485211D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n4: 7039552 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2572800 0x564B376: ???
+    n1: 2572800 0x564C4F8: ???
+     n1: 2572800 0x564D000: ???
+      n1: 2572800 0x59B3CCF: ???
+       n1: 2572800 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+        n2: 2572800 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+         n0: 2572800 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+         n0: 0 in 1 place, below massif's threshold (0.10%)
+   n1: 2560000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 2560000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 1884544 0x4840683: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n2: 1884544 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n2: 1884544 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 1884544 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 22208 in 83 places, all below massif's threshold (0.10%)
+ n4: 5758070 0x4851663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 2323468 0x4853069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n2: 2322870 0x485348E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 2322870 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n3: 2322870 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 1160490 0x564B376: ???
+       n1: 1160490 0x564C4F8: ???
+        n1: 1160490 0x564D000: ???
+         n1: 1160490 0x59B3CCF: ???
+          n1: 1160490 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n2: 1160490 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+            n0: 1160490 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+            n0: 0 in 1 place, below massif's threshold (0.10%)
+      n1: 1156000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+       n0: 1156000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 6380 in 84 places, all below massif's threshold (0.10%)
+    n0: 0 in 9 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 2000814 0x485349B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2000814 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 2000814 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 999690 0x564B376: ???
+      n1: 999690 0x564C4F8: ???
+       n1: 999690 0x564D000: ???
+        n1: 999690 0x59B3CCF: ???
+         n1: 999690 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n2: 999690 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n0: 999690 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+           n0: 0 in 1 place, below massif's threshold (0.10%)
+     n1: 996000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 996000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 5124 in 84 places, all below massif's threshold (0.10%)
+   n0: 0 in 9 places, all below massif's threshold (0.10%)
+  n2: 1432848 0x4854DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n3: 908560 0x4854F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x10B37B: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 640016 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n1: 262144 0x48406B7: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n2: 262144 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n2: 262144 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+       n0: 262144 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+       n0: 0 in 1 place, below massif's threshold (0.10%)
+      n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 6400 in 5 places, all below massif's threshold (0.10%)
+   n2: 524288 0x4855B25: ksAppend (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 524288 0x4840AA6: backendsMerge (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n2: 524288 0x48441C1: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 524288 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 940 in 12 places, all below massif's threshold (0.10%)
+ n4: 1741476 0x48516D4: elektraMemDup (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 855971 0x4851AF3: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 855726 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n2: 855726 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n2: 855726 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 855726 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 245 in 19 places, all below massif's threshold (0.10%)
+  n2: 738153 0x4851B15: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 737942 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n2: 737942 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n2: 737942 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 737942 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 211 in 19 places, all below massif's threshold (0.10%)
+  n2: 147230 0x4851B92: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 147230 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n2: 147230 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n2: 147230 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 147230 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 0 in 6 places, all below massif's threshold (0.10%)
+  n0: 122 in 2 places, all below massif's threshold (0.10%)
+ n2: 403383 0x4856F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 402350 0x4856FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 402350 0x4852402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 402350 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 201000 0x564B376: ???
+      n1: 201000 0x564C4F8: ???
+       n1: 201000 0x564D000: ???
+        n1: 201000 0x59B3CCF: ???
+         n1: 201000 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n2: 201000 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n0: 201000 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+           n0: 0 in 1 place, below massif's threshold (0.10%)
+     n1: 200000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 200000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 1350 in 23 places, all below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 1033 in 8 places, all below massif's threshold (0.10%)
+ n1: 72704 0x56FA545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x499AAEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A3C257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x499AB4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A3CA64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A3C2E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x48581D9: elektraModulesLoad (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+               n1: 72704 0x4845B71: elektraPluginOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                n1: 72704 0x4841B19: addElektraMountpoint (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                 n1: 72704 0x48447C2: kdbOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                  n0: 72704 0x10A460: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+ n0: 48009 in 41 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=106
+#-----------
+time=545718728
+mem_heap_B=16100072
+mem_heap_extra_B=6198432
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=107
+#-----------
+time=547916184
+mem_heap_B=16925461
+mem_heap_extra_B=6336211
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=108
+#-----------
+time=550113632
+mem_heap_B=15381790
+mem_heap_extra_B=5682434
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=109
+#-----------
+time=552311080
+mem_heap_B=13846617
+mem_heap_extra_B=5020159
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=110
+#-----------
+time=554508512
+mem_heap_B=12328565
+mem_heap_extra_B=4340779
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=111
+#-----------
+time=556705992
+mem_heap_B=10469210
+mem_heap_extra_B=4005326
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=112
+#-----------
+time=558903424
+mem_heap_B=8925077
+mem_heap_extra_B=3352027
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=113
+#-----------
+time=561100848
+mem_heap_B=7396799
+mem_heap_extra_B=2682881
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=114
+#-----------
+time=563378352
+mem_heap_B=5660514
+mem_heap_extra_B=2141662
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=115
+#-----------
+time=565575808
+mem_heap_B=6356291
+mem_heap_extra_B=2394093
+mem_stacks_B=0
+heap_tree=detailed
+n6: 6356291 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 3125743 0x4851663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1296517 0x4853069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n2: 1295919 0x485348E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 1295919 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n3: 1295919 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 1156000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+       n0: 1156000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n1: 133549 0x564B376: ???
+       n1: 133549 0x564C4F8: ???
+        n1: 133549 0x564D000: ???
+         n1: 133549 0x59B3CCF: ???
+          n1: 133549 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n2: 133549 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+            n0: 133549 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+            n0: 0 in 1 place, below massif's threshold (0.10%)
+      n0: 6370 in 84 places, all below massif's threshold (0.10%)
+    n0: 0 in 9 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 1116350 0x485349B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1116350 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 1116350 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 996000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 996000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 115229 0x564B376: ???
+      n1: 115229 0x564C4F8: ???
+       n1: 115229 0x564D000: ???
+        n1: 115229 0x59B3CCF: ???
+         n1: 115229 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n2: 115229 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n0: 115229 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+           n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 5121 in 84 places, all below massif's threshold (0.10%)
+   n0: 0 in 9 places, all below massif's threshold (0.10%)
+  n2: 711952 0x4854DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n3: 711952 0x4854F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x10B37B: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 640016 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n1: 65536 0x564B3BD: ???
+     n1: 65536 0x564C4F8: ???
+      n1: 65536 0x564D000: ???
+       n1: 65536 0x59B3CCF: ???
+        n1: 65536 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+         n2: 65536 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n0: 65536 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+          n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 6400 in 5 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 924 in 12 places, all below massif's threshold (0.10%)
+ n1: 2875264 0x485211D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n4: 2875264 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2560000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 2560000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 293120 0x564B376: ???
+    n1: 293120 0x564C4F8: ???
+     n1: 293120 0x564D000: ???
+      n1: 293120 0x59B3CCF: ???
+       n1: 293120 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+        n2: 293120 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+         n0: 293120 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+         n0: 0 in 1 place, below massif's threshold (0.10%)
+   n1: 12800 0x10B30A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 12800 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 9344 in 83 places, all below massif's threshold (0.10%)
+ n2: 225283 0x4856F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 224250 0x4856FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 224250 0x4852402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 224250 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 200000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 200000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n1: 22900 0x564B376: ???
+      n1: 22900 0x564C4F8: ???
+       n1: 22900 0x564D000: ???
+        n1: 22900 0x59B3CCF: ???
+         n1: 22900 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n2: 22900 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n0: 22900 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+           n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 1350 in 23 places, all below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 1033 in 8 places, all below massif's threshold (0.10%)
+ n1: 72704 0x56FA545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x499AAEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A3C257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x499AB4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A3CA64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A3C2E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x48581D9: elektraModulesLoad (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+               n1: 72704 0x4845B71: elektraPluginOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                n1: 72704 0x4841B19: addElektraMountpoint (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                 n1: 72704 0x48447C2: kdbOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                  n0: 72704 0x10A460: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+ n0: 40440 in 41 places, all below massif's threshold (0.10%)
+ n1: 16857 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 16857 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n2: 16857 0x4009274: _dl_map_object (dl-load.c:2236)
+    n1: 9617 0x400DDC0: openaux (dl-deps.c:64)
+     n1: 9617 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+      n1: 9617 0x400E138: _dl_map_object_deps (dl-deps.c:248)
+       n1: 9617 0x4013DAA: dl_open_worker (dl-open.c:571)
+        n1: 9617 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 9617 0x40138F9: _dl_open (dl-open.c:837)
+          n1: 9617 0x4A3C257: dlopen_doit (dlopen.c:66)
+           n1: 9617 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+            n1: 9617 0x499AB4E: _dl_catch_error (dl-error-skeleton.c:227)
+             n1: 9617 0x4A3CA64: _dlerror_run (dlerror.c:170)
+              n1: 9617 0x4A3C2E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 9617 0x48581D9: elektraModulesLoad (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+                n1: 9617 0x4845B71: elektraPluginOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                 n0: 9617 in 3 places, all below massif's threshold (0.10%)
+    n0: 7240 in 1 place, below massif's threshold (0.10%)
+#-----------
+snapshot=116
+#-----------
+time=567773248
+mem_heap_B=7055327
+mem_heap_extra_B=2662737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=117
+#-----------
+time=569970688
+mem_heap_B=7708745
+mem_heap_extra_B=2939079
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=118
+#-----------
+time=572168136
+mem_heap_B=8454171
+mem_heap_extra_B=3199101
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=119
+#-----------
+time=574365584
+mem_heap_B=9101915
+mem_heap_extra_B=3481605
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=120
+#-----------
+time=576563048
+mem_heap_B=9745192
+mem_heap_extra_B=3769232
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=121
+#-----------
+time=578760496
+mem_heap_B=10573695
+mem_heap_extra_B=4022657
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=122
+#-----------
+time=581380464
+mem_heap_B=11699865
+mem_heap_extra_B=4295543
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=123
+#-----------
+time=583577904
+mem_heap_B=12021920
+mem_heap_extra_B=4295680
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=124
+#-----------
+time=585775344
+mem_heap_B=12021920
+mem_heap_extra_B=4295680
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=125
+#-----------
+time=587972784
+mem_heap_B=12021918
+mem_heap_extra_B=4295682
+mem_stacks_B=0
+heap_tree=detailed
+n7: 12021918 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 6020206 0x4851663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 2323460 0x4853069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n2: 2322862 0x485348E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 2322862 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n3: 2322862 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 1160490 0x564B376: ???
+       n1: 1160490 0x564C4F8: ???
+        n1: 1160490 0x564D000: ???
+         n1: 1160490 0x59B3CCF: ???
+          n1: 1160490 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n2: 1160490 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+            n0: 1160490 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+            n0: 0 in 1 place, below massif's threshold (0.10%)
+      n1: 1156000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+       n0: 1156000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 6372 in 84 places, all below massif's threshold (0.10%)
+    n0: 0 in 9 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 2000814 0x485349B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2000814 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 2000814 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 999690 0x564B376: ???
+      n1: 999690 0x564C4F8: ???
+       n1: 999690 0x564D000: ???
+        n1: 999690 0x59B3CCF: ???
+         n1: 999690 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n2: 999690 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n0: 999690 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+           n0: 0 in 1 place, below massif's threshold (0.10%)
+     n1: 996000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 996000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 5124 in 84 places, all below massif's threshold (0.10%)
+   n0: 0 in 9 places, all below massif's threshold (0.10%)
+  n2: 1694992 0x4854DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n3: 1170704 0x4854F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x10B37B: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 640016 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n1: 524288 0x564B3BD: ???
+     n1: 524288 0x564C4F8: ???
+      n1: 524288 0x564D000: ???
+       n1: 524288 0x59B3CCF: ???
+        n1: 524288 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+         n2: 524288 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n0: 524288 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+          n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 6400 in 5 places, all below massif's threshold (0.10%)
+   n2: 524288 0x4855B25: ksAppend (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 524288 0x4840AA6: backendsMerge (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n2: 524288 0x48441C1: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 524288 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 940 in 12 places, all below massif's threshold (0.10%)
+ n1: 5155008 0x485211D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n3: 5155008 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2572800 0x564B376: ???
+    n1: 2572800 0x564C4F8: ???
+     n1: 2572800 0x564D000: ???
+      n1: 2572800 0x59B3CCF: ???
+       n1: 2572800 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+        n2: 2572800 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+         n0: 2572800 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+         n0: 0 in 1 place, below massif's threshold (0.10%)
+   n1: 2560000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 2560000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 22208 in 84 places, all below massif's threshold (0.10%)
+ n2: 403383 0x4856F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 402350 0x4856FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 402350 0x4852402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 402350 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 201000 0x564B376: ???
+      n1: 201000 0x564C4F8: ???
+       n1: 201000 0x564D000: ???
+        n1: 201000 0x59B3CCF: ???
+         n1: 201000 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n2: 201000 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n0: 201000 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+           n0: 0 in 1 place, below massif's threshold (0.10%)
+     n1: 200000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 200000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 1350 in 23 places, all below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 1033 in 8 places, all below massif's threshold (0.10%)
+ n1: 325336 0x4855CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 325336 0x4855DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 321608 0x4856360: ksCut (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 321608 0x59BC819: ???
+     n2: 321608 0x484427C: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 321608 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 3728 in 12 places, all below massif's threshold (0.10%)
+ n1: 72704 0x56FA545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x499AAEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A3C257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x499AB4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A3CA64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A3C2E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x48581D9: elektraModulesLoad (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+               n1: 72704 0x4845B71: elektraPluginOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                n1: 72704 0x4841B19: addElektraMountpoint (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                 n1: 72704 0x48447C2: kdbOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                  n0: 72704 0x10A460: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+ n0: 28424 in 40 places, all below massif's threshold (0.10%)
+ n1: 16857 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 16857 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n1: 16857 0x4009274: _dl_map_object (dl-load.c:2236)
+    n0: 16857 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=126
+#-----------
+time=590170224
+mem_heap_B=12021918
+mem_heap_extra_B=4295682
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=127
+#-----------
+time=592367664
+mem_heap_B=12021920
+mem_heap_extra_B=4295680
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=128
+#-----------
+time=594565104
+mem_heap_B=12021918
+mem_heap_extra_B=4295682
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=129
+#-----------
+time=596762544
+mem_heap_B=12021916
+mem_heap_extra_B=4295684
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=130
+#-----------
+time=598959984
+mem_heap_B=12021914
+mem_heap_extra_B=4295686
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=131
+#-----------
+time=601320928
+mem_heap_B=11700187
+mem_heap_extra_B=4295589
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=132
+#-----------
+time=603518408
+mem_heap_B=11886041
+mem_heap_extra_B=4571279
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=133
+#-----------
+time=605715856
+mem_heap_B=12818804
+mem_heap_extra_B=4938300
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=134
+#-----------
+time=607913288
+mem_heap_B=13790485
+mem_heap_extra_B=5294035
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=135
+#-----------
+time=610110744
+mem_heap_B=14676918
+mem_heap_extra_B=5679874
+mem_stacks_B=0
+heap_tree=detailed
+n6: 14676918 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 6836160 0x485211D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n4: 6836160 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2572800 0x564B376: ???
+    n1: 2572800 0x564C4F8: ???
+     n1: 2572800 0x564D000: ???
+      n1: 2572800 0x59B3CCF: ???
+       n1: 2572800 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+        n2: 2572800 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+         n0: 2572800 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+         n0: 0 in 1 place, below massif's threshold (0.10%)
+   n1: 2560000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 2560000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 1681152 0x4840683: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n2: 1681152 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n2: 1681152 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 1681152 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 22208 in 83 places, all below massif's threshold (0.10%)
+ n4: 5758075 0x4851663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 2323470 0x4853069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n2: 2322872 0x485348E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 2322872 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n3: 2322872 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 1160490 0x564B376: ???
+       n1: 1160490 0x564C4F8: ???
+        n1: 1160490 0x564D000: ???
+         n1: 1160490 0x59B3CCF: ???
+          n1: 1160490 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n2: 1160490 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+            n0: 1160490 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+            n0: 0 in 1 place, below massif's threshold (0.10%)
+      n1: 1156000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+       n0: 1156000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 6382 in 84 places, all below massif's threshold (0.10%)
+    n0: 0 in 9 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 2000817 0x485349B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2000817 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 2000817 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 999690 0x564B376: ???
+      n1: 999690 0x564C4F8: ???
+       n1: 999690 0x564D000: ???
+        n1: 999690 0x59B3CCF: ???
+         n1: 999690 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n2: 999690 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n0: 999690 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+           n0: 0 in 1 place, below massif's threshold (0.10%)
+     n1: 996000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 996000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 5127 in 84 places, all below massif's threshold (0.10%)
+   n0: 0 in 9 places, all below massif's threshold (0.10%)
+  n2: 1432848 0x4854DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n3: 908560 0x4854F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x10B37B: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 640016 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n1: 262144 0x48406B7: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n2: 262144 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n2: 262144 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+       n0: 262144 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+       n0: 0 in 1 place, below massif's threshold (0.10%)
+      n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 6400 in 5 places, all below massif's threshold (0.10%)
+   n2: 524288 0x4855B25: ksAppend (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 524288 0x4840AA6: backendsMerge (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n2: 524288 0x48441C1: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 524288 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 940 in 12 places, all below massif's threshold (0.10%)
+ n4: 1558459 0x48516D4: elektraMemDup (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 766054 0x4851AF3: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 765809 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n2: 765809 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n2: 765809 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 765809 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 245 in 19 places, all below massif's threshold (0.10%)
+  n2: 660948 0x4851B15: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 660737 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n2: 660737 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n2: 660737 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 660737 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 211 in 19 places, all below massif's threshold (0.10%)
+  n2: 131335 0x4851B92: keyCopy (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 131335 0x4840693: backendsDivideInternal (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+    n2: 131335 0x4840A33: backendsDivide (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+     n2: 131335 0x48442BC: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+      n0: 131335 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 0 in 6 places, all below massif's threshold (0.10%)
+  n0: 122 in 2 places, all below massif's threshold (0.10%)
+ n2: 403383 0x4856F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 402350 0x4856FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 402350 0x4852402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n3: 402350 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 201000 0x564B376: ???
+      n1: 201000 0x564C4F8: ???
+       n1: 201000 0x564D000: ???
+        n1: 201000 0x59B3CCF: ???
+         n1: 201000 0x48423CF: runGetPhase (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+          n2: 201000 0x4844164: kdbGet (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+           n0: 201000 0x10A59C: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+           n0: 0 in 1 place, below massif's threshold (0.10%)
+     n1: 200000 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 200000 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 1350 in 23 places, all below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 1033 in 8 places, all below massif's threshold (0.10%)
+ n1: 72704 0x56FA545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x499AAEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A3C257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x499AB4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A3CA64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A3C2E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x48581D9: elektraModulesLoad (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+               n1: 72704 0x4845B71: elektraPluginOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                n1: 72704 0x4841B19: addElektraMountpoint (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                 n1: 72704 0x48447C2: kdbOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                  n0: 72704 0x10A460: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+ n0: 48137 in 41 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=136
+#-----------
+time=612348976
+mem_heap_B=15729708
+mem_heap_extra_B=6033188
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=137
+#-----------
+time=614546424
+mem_heap_B=16609221
+mem_heap_extra_B=6425939
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=138
+#-----------
+time=616743872
+mem_heap_B=16031874
+mem_heap_extra_B=5958014
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=139
+#-----------
+time=618941328
+mem_heap_B=14488173
+mem_heap_extra_B=5304259
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=140
+#-----------
+time=621138776
+mem_heap_B=12968202
+mem_heap_extra_B=4626782
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=141
+#-----------
+time=623336232
+mem_heap_B=11117537
+mem_heap_extra_B=4282375
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=142
+#-----------
+time=625533672
+mem_heap_B=9575404
+mem_heap_extra_B=3627068
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=143
+#-----------
+time=627731128
+mem_heap_B=8036570
+mem_heap_extra_B=2968446
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=144
+#-----------
+time=629928568
+mem_heap_B=6517383
+mem_heap_extra_B=2290193
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=145
+#-----------
+time=632126024
+mem_heap_B=4824452
+mem_heap_extra_B=1785668
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4824452 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 2431708 0x4851663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 962706 0x4853069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n2: 962706 0x485348E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 962706 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 962706 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 958991 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+       n0: 958991 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 3715 in 85 places, all below massif's threshold (0.10%)
+    n0: 0 in 9 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n2: 828986 0x485349B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 828986 0x48521B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 828986 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 825935 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 825935 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 3051 in 85 places, all below massif's threshold (0.10%)
+   n0: 0 in 9 places, all below massif's threshold (0.10%)
+  n2: 640016 0x4854DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n2: 640016 0x4854F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x10B37B: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 640016 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 0 in 6 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 12 places, all below massif's threshold (0.10%)
+ n1: 2139584 0x485211D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n3: 2139584 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2128960 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 2128960 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n1: 10624 0x10B30A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+    n0: 10624 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+   n0: 0 in 84 places, all below massif's threshold (0.10%)
+ n2: 167155 0x4856F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 167155 0x4856FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 167155 0x4852402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 167155 0x48524E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 166325 0x10B36C: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+      n0: 166325 0x10A406: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+     n0: 830 in 24 places, all below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 0 in 8 places, all below massif's threshold (0.10%)
+ n1: 72704 0x56FA545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x499AAEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A3C257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x499AA8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x499AB4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A3CA64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A3C2E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x48581D9: elektraModulesLoad (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+               n1: 72704 0x4845B71: elektraPluginOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                n1: 72704 0x4841B19: addElektraMountpoint (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                 n1: 72704 0x48447C2: kdbOpen (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-kdb.so.0.9.11)
+                  n0: 72704 0x10A460: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_kdb)
+ n0: 13301 in 42 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=146
+#-----------
+time=634323480
+mem_heap_B=3280728
+mem_heap_extra_B=1131936
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=147
+#-----------
+time=636520920
+mem_heap_B=1755477
+mem_heap_extra_B=459747
+mem_stacks_B=0
+heap_tree=empty

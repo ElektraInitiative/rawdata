@@ -1,0 +1,2312 @@
+desc: --time-unit=B --max-snapshots=200 --threshold=0.1 --massif-out-file=benchmark_createkeys_200_200.release.master.massif.out
+cmd: src/libelektra-master/cmake-build-release/bin/benchmark_createkeys 200 200
+time_unit: B
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=1104
+mem_heap_B=1088
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=321128
+mem_heap_B=321096
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=504832
+mem_heap_B=446117
+mem_heap_extra_B=58715
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=651264
+mem_heap_B=545797
+mem_heap_extra_B=105467
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=809136
+mem_heap_B=654854
+mem_heap_extra_B=154282
+mem_stacks_B=0
+heap_tree=detailed
+n6: 654854 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 177472 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 177472 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 176576 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 176576 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 896 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 896 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 142421 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 76740 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 76740 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 76740 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 76740 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 76442 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 76442 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 298 in 1 place, below massif's threshold (0.10%)
+  n1: 65652 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 65652 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 65652 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 65410 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 65410 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 242 in 1 place, below massif's threshold (0.10%)
+  n0: 29 in 1 place, below massif's threshold (0.10%)
+ n1: 13865 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 13865 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 13865 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 13865 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 13795 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 13795 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 70 in 1 place, below massif's threshold (0.10%)
+ n1: 1024 0x48C813B: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 1024 0x48D6A4F: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x48D6A4F: _IO_doallocbuf (genops.c:342)
+    n1: 1024 0x48D5BF7: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+     n1: 1024 0x48D4CDD: _IO_new_file_xsputn (fileops.c:1244)
+      n1: 1024 0x48D4CDD: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+       n1: 1024 0x48BDD7F: __vfprintf_internal (vfprintf-internal.c:1373)
+        n1: 1024 0x48AAD9A: printf (printf.c:33)
+         n0: 1024 0x10921F: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n0: 64 in 1 place, below massif's threshold (0.10%)
+#-----------
+snapshot=6
+#-----------
+time=955568
+mem_heap_B=756254
+mem_heap_extra_B=199314
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=1102000
+mem_heap_B=857593
+mem_heap_extra_B=244407
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=1248432
+mem_heap_B=958937
+mem_heap_extra_B=289495
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=1381136
+mem_heap_B=1050860
+mem_heap_extra_B=330276
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1050860 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 385472 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 385472 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 383552 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 383552 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 1920 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 1920 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 314177 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 169118 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 169118 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 169118 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 169118 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 168468 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 168468 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 650 in 1 place, below massif's threshold (0.10%)
+  n1: 145030 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 145030 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 145030 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 144500 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 144500 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 530 in 1 place, below massif's threshold (0.10%)
+  n0: 29 in 1 place, below massif's threshold (0.10%)
+ n1: 30115 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 30115 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 30115 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 30115 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 29965 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 29965 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 150 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=10
+#-----------
+time=1609936
+mem_heap_B=1209151
+mem_heap_extra_B=400785
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1209151 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 468672 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 468672 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 466304 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 466304 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 2368 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 2368 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 382768 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 206014 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 206014 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 206014 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 206014 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 205210 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 205210 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 804 in 1 place, below massif's threshold (0.10%)
+  n1: 176726 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 176726 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 176726 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 176070 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 176070 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 656 in 1 place, below massif's threshold (0.10%)
+  n0: 28 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 36615 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 36615 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 36615 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 36615 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 36430 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 36430 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 185 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=11
+#-----------
+time=1838736
+mem_heap_B=1367618
+mem_heap_extra_B=471118
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1367618 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 551872 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 551872 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 549120 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 549120 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 2752 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 2752 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 451535 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 242997 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 242997 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 242997 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 242997 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 242061 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 242061 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 936 in 1 place, below massif's threshold (0.10%)
+  n1: 208509 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 208509 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 208509 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 207745 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 207745 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 764 in 1 place, below massif's threshold (0.10%)
+  n0: 29 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 43115 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 43115 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 43115 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 43115 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 42900 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 42900 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 215 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=12
+#-----------
+time=2067536
+mem_heap_B=1525935
+mem_heap_extra_B=541601
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1525935 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 635072 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 635072 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 631872 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 631872 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 3200 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 3200 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 520152 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 279906 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 279906 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 279906 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 279906 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 278816 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 278816 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 1090 in 1 place, below massif's threshold (0.10%)
+  n1: 240218 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 240218 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 240218 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 239328 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 239328 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 890 in 1 place, below massif's threshold (0.10%)
+  n0: 28 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 49615 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 49615 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 49615 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 49615 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 49365 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 49365 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 250 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=13
+#-----------
+time=2296336
+mem_heap_B=1684376
+mem_heap_extra_B=611960
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1684376 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 718272 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 718272 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 714688 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 714688 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 3584 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 3584 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 588893 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 316876 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 316876 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 316876 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 316876 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 315654 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 315654 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 1222 in 1 place, below massif's threshold (0.10%)
+  n1: 271988 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 271988 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 271988 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 270990 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 270990 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 998 in 1 place, below massif's threshold (0.10%)
+  n0: 29 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 56115 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 56115 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 56115 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 56115 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 55835 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 55835 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 280 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=14
+#-----------
+time=2525136
+mem_heap_B=1842719
+mem_heap_extra_B=682417
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1842719 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 801472 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 801472 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 797440 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 797440 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 4032 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 4032 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 657536 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 353798 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 353798 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 353798 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 353798 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 352422 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 352422 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 1376 in 1 place, below massif's threshold (0.10%)
+  n1: 303710 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 303710 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 303710 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 302586 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 302586 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 1124 in 1 place, below massif's threshold (0.10%)
+  n0: 28 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 62615 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 62615 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 62615 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 62615 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 62300 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 62300 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 315 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=15
+#-----------
+time=2639536
+mem_heap_B=1921886
+mem_heap_extra_B=717650
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1921886 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 843072 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 843072 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 838848 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 838848 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 4224 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 4224 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 691853 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 372256 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 372256 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 372256 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 372256 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 370814 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 370814 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 1442 in 1 place, below massif's threshold (0.10%)
+  n1: 319568 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 319568 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 319568 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 318390 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 318390 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 1178 in 1 place, below massif's threshold (0.10%)
+  n0: 29 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 65865 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 65865 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 65865 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 65865 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 65535 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 65535 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 330 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=16
+#-----------
+time=2846528
+mem_heap_B=2065177
+mem_heap_extra_B=781351
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=2982688
+mem_heap_B=2159470
+mem_heap_extra_B=823218
+mem_stacks_B=0
+heap_tree=detailed
+n5: 2159470 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 967872 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 967872 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 963008 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 963008 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 4864 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 4864 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 794892 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 427690 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 427690 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 427690 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 427690 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 426028 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 426028 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 1662 in 1 place, below massif's threshold (0.10%)
+  n1: 367202 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 367202 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 367202 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 365844 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 365844 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 1358 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 75610 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 75610 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 75610 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 75610 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 75230 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 75230 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 380 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=18
+#-----------
+time=3211488
+mem_heap_B=2317858
+mem_heap_extra_B=893630
+mem_stacks_B=0
+heap_tree=detailed
+n5: 2317858 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1051072 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1051072 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1045824 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 1045824 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 5248 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 5248 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 863580 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 464634 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 464634 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 464634 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 464634 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 462840 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 462840 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 1794 in 1 place, below massif's threshold (0.10%)
+  n1: 398946 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 398946 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 398946 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 397480 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 397480 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 1466 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 82110 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 82110 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 82110 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 82110 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 81700 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 81700 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 410 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=19
+#-----------
+time=3440288
+mem_heap_B=2476254
+mem_heap_extra_B=964034
+mem_stacks_B=0
+heap_tree=detailed
+n5: 2476254 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1134272 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1134272 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1128576 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 1128576 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 5696 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 5696 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 932276 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 501582 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 501582 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 501582 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 501582 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 499634 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 499634 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 1948 in 1 place, below massif's threshold (0.10%)
+  n1: 430694 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 430694 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 430694 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 429102 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 429102 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 1592 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 88610 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 88610 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 88610 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 88610 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 88165 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 88165 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 445 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=20
+#-----------
+time=3669088
+mem_heap_B=2634616
+mem_heap_extra_B=1034472
+mem_stacks_B=0
+heap_tree=detailed
+n5: 2634616 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1217472 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1217472 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1211392 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 1211392 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 6080 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 6080 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 1000938 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 538513 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 538513 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 538513 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 538513 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 536433 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 536433 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 2080 in 1 place, below massif's threshold (0.10%)
+  n1: 462425 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 462425 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 462425 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 460725 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 460725 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 1700 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 95110 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 95110 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 95110 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 95110 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 94635 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 94635 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 475 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=21
+#-----------
+time=3897888
+mem_heap_B=2793482
+mem_heap_extra_B=1104406
+mem_stacks_B=0
+heap_tree=detailed
+n5: 2793482 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1300672 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1300672 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1294144 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 1294144 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 6528 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 6528 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 1070104 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 575696 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 575696 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 575696 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 575696 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 573460 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 573460 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 2236 in 1 place, below massif's threshold (0.10%)
+  n1: 494408 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 494408 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 494408 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 492580 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 492580 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 1828 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 101610 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 101610 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 101610 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 101610 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 101100 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 101100 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 510 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=22
+#-----------
+time=4126688
+mem_heap_B=2954418
+mem_heap_extra_B=1172270
+mem_stacks_B=0
+heap_tree=detailed
+n5: 2954418 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1383872 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1383872 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1376960 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 1376960 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 6912 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 6912 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 1141340 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 613914 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 613914 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 613914 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 613914 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 611540 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 611540 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 2374 in 1 place, below massif's threshold (0.10%)
+  n1: 527426 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 527426 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 527426 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 525484 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 525484 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 1942 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 108110 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 108110 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 108110 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 108110 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 107570 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 107570 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 540 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=23
+#-----------
+time=4355488
+mem_heap_B=3115472
+mem_heap_extra_B=1240016
+mem_stacks_B=0
+heap_tree=detailed
+n5: 3115472 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1467072 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1467072 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1459712 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 1459712 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 7360 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 7360 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 1212694 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 652191 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 652191 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 652191 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 652191 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 649656 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 649656 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 2535 in 1 place, below massif's threshold (0.10%)
+  n1: 560503 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 560503 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 560503 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 558428 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 558428 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 2075 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 114610 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 114610 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 114610 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 114610 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 114035 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 114035 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 575 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=24
+#-----------
+time=4584288
+mem_heap_B=3276376
+mem_heap_extra_B=1307912
+mem_stacks_B=0
+heap_tree=detailed
+n5: 3276376 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1550272 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1550272 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1542528 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 1542528 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 7744 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 7744 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 1283898 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 690393 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 690393 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 690393 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 690393 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 687720 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 687720 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 2673 in 1 place, below massif's threshold (0.10%)
+  n1: 593505 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 593505 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 593505 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 591316 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 591316 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 2189 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 121110 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 121110 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 121110 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 121110 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 120505 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 120505 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 605 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=25
+#-----------
+time=4813088
+mem_heap_B=3437472
+mem_heap_extra_B=1375616
+mem_stacks_B=0
+heap_tree=detailed
+n5: 3437472 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1633472 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1633472 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1625344 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 1625344 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 8128 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 8128 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 1355294 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 728691 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 728691 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 728691 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 728691 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 725880 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 725880 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 2811 in 1 place, below massif's threshold (0.10%)
+  n1: 626603 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 626603 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 626603 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 624300 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 624300 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 2303 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 127610 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 127610 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 127610 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 127610 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 126975 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 126975 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 635 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=26
+#-----------
+time=5041888
+mem_heap_B=3598358
+mem_heap_extra_B=1443530
+mem_stacks_B=0
+heap_tree=detailed
+n5: 3598358 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1716672 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1716672 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1708096 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 1708096 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 8576 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 8576 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 1426480 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 766884 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 766884 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 766884 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 766884 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 763912 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 763912 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 2972 in 1 place, below massif's threshold (0.10%)
+  n1: 659596 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 659596 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 659596 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 657160 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 657160 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 2436 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 134110 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 134110 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 134110 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 134110 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 133440 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 133440 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 670 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=27
+#-----------
+time=5270688
+mem_heap_B=3759430
+mem_heap_extra_B=1511258
+mem_stacks_B=0
+heap_tree=detailed
+n5: 3759430 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1799872 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1799872 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1790912 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 1790912 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 8960 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 8960 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 1497852 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 805170 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 805170 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 805170 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 805170 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 802060 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 802060 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 3110 in 1 place, below massif's threshold (0.10%)
+  n1: 692682 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 692682 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 692682 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 690132 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 690132 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 2550 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 140610 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 140610 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 140610 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 140610 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 139910 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 139910 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 700 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=28
+#-----------
+time=5499488
+mem_heap_B=3920342
+mem_heap_extra_B=1579146
+mem_stacks_B=0
+heap_tree=detailed
+n5: 3920342 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1883072 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1883072 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1873664 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 1873664 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 9408 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 9408 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 1569064 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 843376 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 843376 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 843376 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 843376 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 840105 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 840105 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 3271 in 1 place, below massif's threshold (0.10%)
+  n1: 725688 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 725688 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 725688 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 723005 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 723005 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 2683 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 147110 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 147110 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 147110 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 147110 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 146375 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 146375 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 735 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=29
+#-----------
+time=5728288
+mem_heap_B=4081388
+mem_heap_extra_B=1646900
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4081388 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1966272 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1966272 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1956480 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 1956480 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 9792 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 9792 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 1640410 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 881649 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 881649 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 881649 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 881649 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 878240 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 878240 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 3409 in 1 place, below massif's threshold (0.10%)
+  n1: 758761 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 758761 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 758761 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 755964 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 755964 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 2797 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 153610 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 153610 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 153610 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 153610 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 152845 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 152845 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 765 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=30
+#-----------
+time=5957088
+mem_heap_B=4242326
+mem_heap_extra_B=1714762
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4242326 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2049472 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 2049472 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2039232 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 2039232 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 10240 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 10240 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 1711648 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 919868 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 919868 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 919868 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 919868 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 916298 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 916298 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 3570 in 1 place, below massif's threshold (0.10%)
+  n1: 791780 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 791780 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 791780 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 788850 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 788850 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 2930 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 160110 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 160110 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 160110 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 160110 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 159310 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 159310 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 800 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=31
+#-----------
+time=6185888
+mem_heap_B=4403346
+mem_heap_extra_B=1782542
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4403346 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2132672 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 2132672 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2122048 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 2122048 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 10624 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 10624 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 1782968 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 958128 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 958128 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 958128 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 958128 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 954420 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 954420 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 3708 in 1 place, below massif's threshold (0.10%)
+  n1: 824840 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 824840 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 824840 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 821796 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 821796 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 3044 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 166610 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 166610 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 166610 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 166610 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 165780 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 165780 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 830 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=32
+#-----------
+time=6414688
+mem_heap_B=4564310
+mem_heap_extra_B=1850378
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4564310 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2215872 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 2215872 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2204800 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 2204800 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 11072 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 11072 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 1854232 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 996360 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 996360 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 996360 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 996360 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 992491 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 992491 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 3869 in 1 place, below massif's threshold (0.10%)
+  n1: 857872 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 857872 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 857872 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 854695 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 854695 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 3177 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 173110 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 173110 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 173110 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 173110 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 172245 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 172245 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 865 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=33
+#-----------
+time=6643488
+mem_heap_B=4725304
+mem_heap_extra_B=1918184
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4725304 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2299072 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 2299072 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2287616 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 2287616 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 11456 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 11456 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 1925526 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 1034607 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1034607 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 1034607 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 1034607 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 1030600 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 1030600 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 4007 in 1 place, below massif's threshold (0.10%)
+  n1: 890919 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 890919 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 890919 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 887628 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 887628 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 3291 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 179610 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 179610 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 179610 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 179610 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 178715 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 178715 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 895 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=34
+#-----------
+time=6872288
+mem_heap_B=4886294
+mem_heap_extra_B=1985994
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4886294 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2382272 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 2382272 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2370368 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 2370368 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 11904 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 11904 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 1996816 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 1072852 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1072852 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 1072852 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 1072852 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 1068684 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 1068684 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 4168 in 1 place, below massif's threshold (0.10%)
+  n1: 923964 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 923964 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 923964 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 920540 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 920540 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 3424 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 186110 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 186110 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 186110 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 186110 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 185180 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 185180 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 930 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=35
+#-----------
+time=7101088
+mem_heap_B=5047262
+mem_heap_extra_B=2053826
+mem_stacks_B=0
+heap_tree=detailed
+n5: 5047262 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2465472 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 2465472 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2453184 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 2453184 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 12288 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 12288 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 2068084 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 1111086 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1111086 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 1111086 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 1111086 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 1106780 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 1106780 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 4306 in 1 place, below massif's threshold (0.10%)
+  n1: 956998 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 956998 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 956998 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 953460 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 953460 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 3538 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 192610 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 192610 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 192610 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 192610 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 191650 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 191650 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 960 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=36
+#-----------
+time=7215488
+mem_heap_B=5127810
+mem_heap_extra_B=2087678
+mem_stacks_B=0
+heap_tree=detailed
+n5: 5127810 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2507072 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 2507072 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2494592 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 2494592 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 12480 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 12480 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n3: 2103782 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 1130235 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1130235 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 1130235 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 1130235 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 1125860 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 1125860 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 4375 in 1 place, below massif's threshold (0.10%)
+  n1: 973547 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 973547 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 973547 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 969952 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 969952 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 3595 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 320008 0x4848CBB: ksVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 320008 0x4848DFB: ksNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 320008 0x109EFC: benchmarkCreate (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 320008 0x109229: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 195860 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 195860 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 195860 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 195860 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 194885 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 194885 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 975 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=37
+#-----------
+time=7360752
+mem_heap_B=5230034
+mem_heap_extra_B=2130718
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=7681320
+mem_heap_B=5550425
+mem_heap_extra_B=2130895
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=7716344
+mem_heap_B=5575084
+mem_heap_extra_B=2141260
+mem_stacks_B=0
+heap_tree=peak
+n4: 5575084 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 2800196 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 1160490 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1160490 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 1160490 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 1160490 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 1156000 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 1156000 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 4490 in 1 place, below massif's threshold (0.10%)
+  n1: 999690 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 999690 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 999690 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 996000 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 996000 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 3690 in 1 place, below massif's threshold (0.10%)
+  n1: 640016 0x4847DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 640016 0x4847F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x109FFB: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 640016 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 2572800 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 2572800 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2560000 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 2560000 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n1: 12800 0x109F8A: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 12800 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 201000 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 201000 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 201000 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 201000 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 200000 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 200000 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 1000 in 1 place, below massif's threshold (0.10%)
+ n0: 1088 in 3 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=40
+#-----------
+time=7877640
+mem_heap_B=5463516
+mem_heap_extra_B=2091532
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=8106440
+mem_heap_B=5302636
+mem_heap_extra_B=2023612
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=8220840
+mem_heap_B=5222498
+mem_heap_extra_B=1989350
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=8335240
+mem_heap_B=5141958
+mem_heap_extra_B=1955490
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=8449640
+mem_heap_B=5061488
+mem_heap_extra_B=1921560
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=8564040
+mem_heap_B=4981042
+mem_heap_extra_B=1887606
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=8678440
+mem_heap_B=4900940
+mem_heap_extra_B=1853308
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=8792840
+mem_heap_B=4820400
+mem_heap_extra_B=1819448
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=8907240
+mem_heap_B=4739902
+mem_heap_extra_B=1785546
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=9021640
+mem_heap_B=4659860
+mem_heap_extra_B=1751188
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=9136040
+mem_heap_B=4579382
+mem_heap_extra_B=1717266
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=9250440
+mem_heap_B=4498842
+mem_heap_extra_B=1683406
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=9364840
+mem_heap_B=4418560
+mem_heap_extra_B=1649288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=9479240
+mem_heap_B=4338274
+mem_heap_extra_B=1615174
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=9593640
+mem_heap_B=4257822
+mem_heap_extra_B=1581226
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=9708040
+mem_heap_B=4177284
+mem_heap_extra_B=1547364
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=9822440
+mem_heap_B=4097146
+mem_heap_extra_B=1513102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=9936840
+mem_heap_B=4016690
+mem_heap_extra_B=1479158
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=10051240
+mem_heap_B=3936256
+mem_heap_extra_B=1445192
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=10165640
+mem_heap_B=3856128
+mem_heap_extra_B=1410920
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=10280040
+mem_heap_B=3775588
+mem_heap_extra_B=1377060
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=10394440
+mem_heap_B=3695106
+mem_heap_extra_B=1343142
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=10508840
+mem_heap_B=3614660
+mem_heap_extra_B=1309188
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=10623240
+mem_heap_B=3534568
+mem_heap_extra_B=1274880
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=10737640
+mem_heap_B=3454030
+mem_heap_extra_B=1241018
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=10852040
+mem_heap_B=3373522
+mem_heap_extra_B=1207126
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=10966440
+mem_heap_B=3293478
+mem_heap_extra_B=1172770
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=11080840
+mem_heap_B=3213010
+mem_heap_extra_B=1138838
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=11195240
+mem_heap_B=3132470
+mem_heap_extra_B=1104978
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=11309640
+mem_heap_B=3052170
+mem_heap_extra_B=1070878
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=11424040
+mem_heap_B=2971894
+mem_heap_extra_B=1036754
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=11538440
+mem_heap_B=2891452
+mem_heap_extra_B=1002796
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=11652840
+mem_heap_B=2810912
+mem_heap_extra_B=968936
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=11767240
+mem_heap_B=2731786
+mem_heap_extra_B=933662
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=11881640
+mem_heap_B=2652620
+mem_heap_extra_B=898428
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=11996040
+mem_heap_B=2573474
+mem_heap_extra_B=863174
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=12110440
+mem_heap_B=2494666
+mem_heap_extra_B=827582
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=12224840
+mem_heap_B=2415426
+mem_heap_extra_B=792422
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=12339240
+mem_heap_B=2336236
+mem_heap_extra_B=757212
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=12453640
+mem_heap_B=2257090
+mem_heap_extra_B=721958
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=12568040
+mem_heap_B=2178308
+mem_heap_extra_B=686340
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=12682440
+mem_heap_B=2099068
+mem_heap_extra_B=651180
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=12796840
+mem_heap_B=2019850
+mem_heap_extra_B=615998
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=12911240
+mem_heap_B=1941108
+mem_heap_extra_B=580340
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=13025640
+mem_heap_B=1861950
+mem_heap_extra_B=545098
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=13140040
+mem_heap_B=1782710
+mem_heap_extra_B=509938
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=13254440
+mem_heap_B=1703692
+mem_heap_extra_B=474556
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=87
+#-----------
+time=13368840
+mem_heap_B=1624724
+mem_heap_extra_B=439124
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=88
+#-----------
+time=13483240
+mem_heap_B=1545592
+mem_heap_extra_B=403856
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=89
+#-----------
+time=13597640
+mem_heap_B=1466352
+mem_heap_extra_B=368696
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=90
+#-----------
+time=13712056
+mem_heap_B=1387514
+mem_heap_extra_B=333118
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=91
+#-----------
+time=13826456
+mem_heap_B=1308338
+mem_heap_extra_B=297894
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=92
+#-----------
+time=13940856
+mem_heap_B=1229194
+mem_heap_extra_B=262638
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=93
+#-----------
+time=14055256
+mem_heap_B=1150396
+mem_heap_extra_B=227036
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=94
+#-----------
+time=14169656
+mem_heap_B=1071156
+mem_heap_extra_B=191876
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=95
+#-----------
+time=14284056
+mem_heap_B=991954
+mem_heap_extra_B=156678
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=96
+#-----------
+time=14398456
+mem_heap_B=912808
+mem_heap_extra_B=121424
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=97
+#-----------
+time=14512856
+mem_heap_B=834036
+mem_heap_extra_B=85796
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=98
+#-----------
+time=14627256
+mem_heap_B=754798
+mem_heap_extra_B=50634
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=99
+#-----------
+time=14741656
+mem_heap_B=675570
+mem_heap_extra_B=15462
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=100
+#-----------
+time=14742808
+mem_heap_B=674777
+mem_heap_extra_B=15103
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=101
+#-----------
+time=14743944
+mem_heap_B=673999
+mem_heap_extra_B=14745
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=102
+#-----------
+time=14745096
+mem_heap_B=673206
+mem_heap_extra_B=14386
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=103
+#-----------
+time=14746232
+mem_heap_B=672428
+mem_heap_extra_B=14028
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=104
+#-----------
+time=14747384
+mem_heap_B=671635
+mem_heap_extra_B=13669
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=105
+#-----------
+time=14748520
+mem_heap_B=670859
+mem_heap_extra_B=13309
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=106
+#-----------
+time=14749672
+mem_heap_B=670064
+mem_heap_extra_B=12952
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=107
+#-----------
+time=14750808
+mem_heap_B=669288
+mem_heap_extra_B=12592
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=108
+#-----------
+time=14751960
+mem_heap_B=668493
+mem_heap_extra_B=12235
+mem_stacks_B=0
+heap_tree=detailed
+n5: 668493 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 651880 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 640016 0x4847DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 640016 0x4847F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x109FFB: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 640016 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+  n1: 6382 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 6382 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 6382 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 6382 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 6360 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 6360 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 22 in 1 place, below massif's threshold (0.10%)
+  n1: 5482 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 5482 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 5482 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 5464 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 5464 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 18 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 14400 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 14400 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 14336 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 14336 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n0: 64 in 1 place, below massif's threshold (0.10%)
+ n1: 1125 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 1125 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1125 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 1125 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 1120 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 1120 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 5 in 1 place, below massif's threshold (0.10%)
+ n1: 1024 0x48C813B: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 1024 0x48D6A4F: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x48D6A4F: _IO_doallocbuf (genops.c:342)
+    n1: 1024 0x48D5BF7: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+     n1: 1024 0x48D4CDD: _IO_new_file_xsputn (fileops.c:1244)
+      n1: 1024 0x48D4CDD: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+       n1: 1024 0x48BDD7F: __vfprintf_internal (vfprintf-internal.c:1373)
+        n1: 1024 0x48AAD9A: printf (printf.c:33)
+         n0: 1024 0x10921F: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n0: 64 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=109
+#-----------
+time=14753096
+mem_heap_B=667717
+mem_heap_extra_B=11875
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=110
+#-----------
+time=14754248
+mem_heap_B=666922
+mem_heap_extra_B=11518
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=111
+#-----------
+time=14755384
+mem_heap_B=666146
+mem_heap_extra_B=11158
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=112
+#-----------
+time=14756536
+mem_heap_B=665365
+mem_heap_extra_B=10787
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=113
+#-----------
+time=14757672
+mem_heap_B=664579
+mem_heap_extra_B=10437
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=114
+#-----------
+time=14758824
+mem_heap_B=663774
+mem_heap_extra_B=10090
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=115
+#-----------
+time=14759960
+mem_heap_B=662982
+mem_heap_extra_B=9746
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=116
+#-----------
+time=14761112
+mem_heap_B=662177
+mem_heap_extra_B=9399
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=117
+#-----------
+time=14762248
+mem_heap_B=661385
+mem_heap_extra_B=9055
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=118
+#-----------
+time=14763400
+mem_heap_B=660580
+mem_heap_extra_B=8708
+mem_stacks_B=0
+heap_tree=detailed
+n5: 660580 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 648452 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 640016 0x4847DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 640016 0x4847F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x109FFB: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 640016 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+  n1: 4538 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 4538 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 4538 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 4538 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 4538 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 4538 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+  n1: 3898 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 3898 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 3898 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 3898 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 3898 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 10240 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 10240 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 10240 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 10240 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 1024 0x48C813B: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 1024 0x48D6A4F: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x48D6A4F: _IO_doallocbuf (genops.c:342)
+    n1: 1024 0x48D5BF7: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+     n1: 1024 0x48D4CDD: _IO_new_file_xsputn (fileops.c:1244)
+      n1: 1024 0x48D4CDD: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+       n1: 1024 0x48BDD7F: __vfprintf_internal (vfprintf-internal.c:1373)
+        n1: 1024 0x48AAD9A: printf (printf.c:33)
+         n0: 1024 0x10921F: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n1: 800 0x4849F0F: keySetRaw (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 800 0x4849FA5: keySetString (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 800 0x4845402: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 800 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 800 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 800 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+ n0: 64 in 2 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=119
+#-----------
+time=14764536
+mem_heap_B=659790
+mem_heap_extra_B=8362
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=120
+#-----------
+time=14765688
+mem_heap_B=658983
+mem_heap_extra_B=8017
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=121
+#-----------
+time=14766824
+mem_heap_B=658193
+mem_heap_extra_B=7671
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=122
+#-----------
+time=14767976
+mem_heap_B=657386
+mem_heap_extra_B=7326
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=123
+#-----------
+time=14769112
+mem_heap_B=656596
+mem_heap_extra_B=6980
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=124
+#-----------
+time=14770264
+mem_heap_B=655789
+mem_heap_extra_B=6635
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=125
+#-----------
+time=14771400
+mem_heap_B=654999
+mem_heap_extra_B=6289
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=126
+#-----------
+time=14772552
+mem_heap_B=654194
+mem_heap_extra_B=5942
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=127
+#-----------
+time=14773688
+mem_heap_B=653402
+mem_heap_extra_B=5598
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=128
+#-----------
+time=14774840
+mem_heap_B=652597
+mem_heap_extra_B=5251
+mem_stacks_B=0
+heap_tree=detailed
+n4: 652597 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 644954 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 640016 0x4847DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 640016 0x4847F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x109FFB: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 640016 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+  n1: 2659 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2659 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 2659 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 2659 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 2659 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 2659 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+  n1: 2279 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 2279 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 2279 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 2279 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 2279 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 6080 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 6080 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 6080 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 6080 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 1024 0x48C813B: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 1024 0x48D6A4F: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x48D6A4F: _IO_doallocbuf (genops.c:342)
+    n1: 1024 0x48D5BF7: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+     n1: 1024 0x48D4CDD: _IO_new_file_xsputn (fileops.c:1244)
+      n1: 1024 0x48D4CDD: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+       n1: 1024 0x48BDD7F: __vfprintf_internal (vfprintf-internal.c:1373)
+        n1: 1024 0x48AAD9A: printf (printf.c:33)
+         n0: 1024 0x10921F: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n0: 539 in 3 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=129
+#-----------
+time=14775976
+mem_heap_B=651805
+mem_heap_extra_B=4907
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=130
+#-----------
+time=14777128
+mem_heap_B=651012
+mem_heap_extra_B=4548
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=131
+#-----------
+time=14778264
+mem_heap_B=650236
+mem_heap_extra_B=4188
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=132
+#-----------
+time=14779416
+mem_heap_B=649441
+mem_heap_extra_B=3831
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=133
+#-----------
+time=14780552
+mem_heap_B=648665
+mem_heap_extra_B=3471
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=134
+#-----------
+time=14781704
+mem_heap_B=647870
+mem_heap_extra_B=3114
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=135
+#-----------
+time=14782840
+mem_heap_B=647094
+mem_heap_extra_B=2754
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=136
+#-----------
+time=14783992
+mem_heap_B=646301
+mem_heap_extra_B=2395
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=137
+#-----------
+time=14785128
+mem_heap_B=645523
+mem_heap_extra_B=2037
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=138
+#-----------
+time=14786280
+mem_heap_B=644730
+mem_heap_extra_B=1678
+mem_stacks_B=0
+heap_tree=detailed
+n4: 644730 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 641572 0x4844663: elektraRealloc (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n1: 640016 0x4847DD6: ksResize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 640016 0x4847F3F: ksAppendKey (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 640016 0x109FFB: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 640016 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+  n1: 838 0x4846069: elektraKeyNameCanonicalize (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 838 0x484648E: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n1: 838 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n2: 838 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+      n1: 838 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+       n0: 838 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+  n1: 718 0x484649B: keySetName (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 718 0x48451B0: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+    n2: 718 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+     n1: 718 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+      n0: 718 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 1920 0x484511D: keyVNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+  n2: 1920 0x48454E0: keyNew (in /home/maximilian/src/libelektra-master/cmake-build-release/lib/libelektra-core.so.0.9.11)
+   n1: 1920 0x109FEC: benchmarkFillup (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+    n0: 1920 0x10923A: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+ n1: 1024 0x48C813B: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 1024 0x48D6A4F: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x48D6A4F: _IO_doallocbuf (genops.c:342)
+    n1: 1024 0x48D5BF7: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+     n1: 1024 0x48D4CDD: _IO_new_file_xsputn (fileops.c:1244)
+      n1: 1024 0x48D4CDD: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+       n1: 1024 0x48BDD7F: __vfprintf_internal (vfprintf-internal.c:1373)
+        n1: 1024 0x48AAD9A: printf (printf.c:33)
+         n0: 1024 0x10921F: main (in /home/maximilian/src/libelektra-master/cmake-build-release/bin/benchmark_createkeys)
+ n0: 214 in 3 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=139
+#-----------
+time=14787416
+mem_heap_B=643952
+mem_heap_extra_B=1320
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=140
+#-----------
+time=14788568
+mem_heap_B=643159
+mem_heap_extra_B=961
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=141
+#-----------
+time=14789704
+mem_heap_B=642383
+mem_heap_extra_B=601
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=142
+#-----------
+time=14790856
+mem_heap_B=641588
+mem_heap_extra_B=244
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=143
+#-----------
+time=15431584
+mem_heap_B=1088
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=144
+#-----------
+time=15432688
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty

@@ -1,0 +1,19 @@
+# started on Thu Dec  1 18:04:09 2022
+
+
+ Performance counter stats for 'src/libelektra-fbcow/cmake-build-release/bin/benchmark_createkeys 200 200' (13 runs):
+
+            217,48 msec task-clock                #    0,989 CPUs utilized            ( +-  0,31% )
+                 1      context-switches          #    0,005 K/sec                    ( +- 29,96% )
+                 0      cpu-migrations            #    0,000 K/sec                  
+             2.614      page-faults               #    0,012 M/sec                    ( +-  0,01% )
+       250.748.608      cycles                    #    1,153 GHz                      ( +- 29,82% )
+       346.986.298      stalled-cycles-frontend   #  138,38% frontend cycles idle     ( +-  0,52% )
+        56.974.202      stalled-cycles-backend    #   22,72% backend cycles idle      ( +-  1,08% )
+       914.468.146      instructions              #    3,65  insn per cycle         
+                                                  #    0,38  stalled cycles per insn  ( +-  0,00% )
+       114.337.160      branches                  #  525,738 M/sec                    ( +-  0,00% )
+           557.790      branch-misses             #    0,49% of all branches          ( +- 14,44% )
+
+           0,21987 +- 0,00169 seconds time elapsed  ( +-  0,77% )
+

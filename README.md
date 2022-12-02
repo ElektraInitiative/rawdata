@@ -9,6 +9,7 @@ Currently it contains the raw data of:
 - the [Alteration Predictive Hybrid Search](/OPMPHM) thesis
 - a [YAML benchmark](YAML/documentation/ReadMe.md)
 - a [specification evaluation](injection-evaluation/README.md)
+- a [copy-on-write benchmark](copy-on-write/README.md)
 
 ## License
 

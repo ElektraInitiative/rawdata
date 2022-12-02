@@ -1,0 +1,19 @@
+# started on Thu Dec  1 18:02:11 2022
+
+
+ Performance counter stats for 'src/libelektra-master/cmake-build-release/bin/benchmark_deepdup' (13 runs):
+
+            229,40 msec task-clock                #    0,996 CPUs utilized            ( +-  0,48% )
+                 1      context-switches          #    0,005 K/sec                    ( +- 27,49% )
+                 0      cpu-migrations            #    0,000 K/sec                  
+             4.214      page-faults               #    0,018 M/sec                    ( +-  0,00% )
+       374.632.187      cycles                    #    1,633 GHz                      ( +- 24,32% )
+       355.212.043      stalled-cycles-frontend   #   94,82% frontend cycles idle     ( +-  1,02% )
+        67.127.696      stalled-cycles-backend    #   17,92% backend cycles idle      ( +-  1,54% )
+       990.741.076      instructions              #    2,64  insn per cycle         
+                                                  #    0,36  stalled cycles per insn  ( +-  0,02% )
+       132.438.560      branches                  #  577,321 M/sec                    ( +-  0,01% )
+           521.682      branch-misses             #    0,39% of all branches          ( +- 18,46% )
+
+           0,23025 +- 0,00109 seconds time elapsed  ( +-  0,47% )
+

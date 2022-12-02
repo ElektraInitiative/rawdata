@@ -1,0 +1,19 @@
+# started on Thu Dec  1 18:04:03 2022
+
+
+ Performance counter stats for 'src/libelektra-master/cmake-build-release/bin/benchmark_createkeys 200 200' (13 runs):
+
+            208,68 msec task-clock                #    0,996 CPUs utilized            ( +-  0,36% )
+                 1      context-switches          #    0,007 K/sec                    ( +- 14,73% )
+                 0      cpu-migrations            #    0,000 K/sec                  
+             2.143      page-faults               #    0,010 M/sec                    ( +-  0,01% )
+       489.656.629      cycles                    #    2,346 GHz                      ( +-  9,73% )
+       335.672.620      stalled-cycles-frontend   #   68,55% frontend cycles idle     ( +-  0,72% )
+        51.225.734      stalled-cycles-backend    #   10,46% backend cycles idle      ( +-  1,24% )
+       879.594.691      instructions              #    1,80  insn per cycle         
+                                                  #    0,38  stalled cycles per insn  ( +-  0,00% )
+       105.883.731      branches                  #  507,404 M/sec                    ( +-  0,00% )
+           384.546      branch-misses             #    0,36% of all branches          ( +- 14,46% )
+
+          0,209572 +- 0,000749 seconds time elapsed  ( +-  0,36% )
+
