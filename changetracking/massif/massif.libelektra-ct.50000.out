@@ -1,0 +1,11 @@
+desc: --time-unit=B --max-snapshots=200 --threshold=0.1 --xtree-memory=full --massif-out-file=massif.libelektra-ct.50000.out
+cmd: ./benchmark_changetracking --key-count 50000
+time_unit: B
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
