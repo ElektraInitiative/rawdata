@@ -1,0 +1,4184 @@
+desc: --time-unit=B --max-snapshots=200 --threshold=0.1 --xtree-memory=full --massif-out-file=massif.libelektra-master.50000.out
+cmd: ./benchmark_changetracking --key-count 50000
+time_unit: B
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=807304
+mem_heap_B=488421
+mem_heap_extra_B=132531
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=1349000
+mem_heap_B=895333
+mem_heap_extra_B=267315
+mem_stacks_B=0
+heap_tree=detailed
+n9: 895333 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 422439 0x486609D: elektraRealloc (internal.c:240)
+  n2: 198172 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 197587 0x486988C: keySetName (keyname.c:697)
+    n1: 197587 0x4866FB2: keyVNew (key.c:222)
+     n2: 197587 0x4866904: keyNew (key.c:150)
+      n1: 195802 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 195802 0x10CB3C: main (changetracking.c:157)
+      n0: 1785 in 66 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 184440 0x48698C1: keySetName (keyname.c:699)
+   n1: 184440 0x4866FB2: keyVNew (key.c:222)
+    n2: 184440 0x4866904: keyNew (key.c:150)
+     n1: 183098 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 183098 0x10CB3C: main (changetracking.c:157)
+     n0: 1342 in 66 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 38912 0x4872B49: ksResize (keyset.c:2864)
+   n3: 38912 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 32768 0x10C6FB: buildLinearTree (changetracking.c:91)
+     n0: 32768 0x10CB3C: main (changetracking.c:157)
+    n3: 5888 0x48688B0: keySetMeta (keymeta.c:510)
+     n2: 2944 0x4873F0B: keySetBinary (keyvalue.c:524)
+      n1: 1920 0x4845AD5: addMountpoint (kdb.c:312)
+       n0: 1920 in 5 places, all below massif's threshold (0.10%)
+      n0: 1024 in 2 places, all below massif's threshold (0.10%)
+     n1: 2816 0x4866F0E: keyVNew (key.c:210)
+      n1: 2816 0x4866904: keyNew (key.c:150)
+       n0: 2816 in 9 places, all below massif's threshold (0.10%)
+     n0: 128 in 1 place, below massif's threshold (0.10%)
+    n0: 256 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n8: 333912 0x4866141: elektraCalloc (internal.c:292)
+  n2: 132440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 132440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 132440 0x4869843: keySetName (keyname.c:695)
+     n1: 132440 0x4866FB2: keyVNew (key.c:222)
+      n3: 132440 0x4866904: keyNew (key.c:150)
+       n1: 127040 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 127040 0x10CB3C: main (changetracking.c:157)
+       n0: 3600 in 65 places, all below massif's threshold (0.10%)
+       n2: 1800 0x4868676: keySetMeta (keymeta.c:464)
+        n1: 1800 0x4873F0B: keySetBinary (keyvalue.c:524)
+         n0: 1800 in 4 places, all below massif's threshold (0.10%)
+        n0: 0 in 3 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 106176 0x4866975: keyVNew (key.c:166)
+   n3: 106176 0x4866904: keyNew (key.c:150)
+    n1: 101632 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 101632 0x10CB3C: main (changetracking.c:157)
+    n0: 3104 in 65 places, all below massif's threshold (0.10%)
+    n2: 1440 0x4868676: keySetMeta (keymeta.c:464)
+     n1: 1440 0x4873F0B: keySetBinary (keyvalue.c:524)
+      n0: 1440 in 4 places, all below massif's threshold (0.10%)
+     n0: 0 in 3 places, all below massif's threshold (0.10%)
+  n1: 79416 0x4862D75: keyDataNew (cow.c:158)
+   n1: 79416 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 79416 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 77232 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 77232 0x4866C6E: keyVNew (key.c:192)
+       n2: 77232 0x4866904: keyNew (key.c:150)
+        n1: 76224 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 76224 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 4224 0x486CF3C: ksVNew (keyset.c:306)
+   n2: 4224 0x486CEE5: ksNew (keyset.c:288)
+    n0: 2784 in 38 places, all below massif's threshold (0.10%)
+    n1: 1440 0x486880F: keySetMeta (keymeta.c:498)
+     n0: 1440 in 2 places, all below massif's threshold (0.10%)
+  n3: 3648 0x4863048: keySetDataNew (cow.c:289)
+   n2: 2352 0x486CAC5: keySetDetachData (keyset.c:88)
+    n2: 2352 0x486DF6E: ksAppendKey (keyset.c:984)
+     n1: 2208 0x48688B0: keySetMeta (keymeta.c:510)
+      n0: 2208 in 3 places, all below massif's threshold (0.10%)
+     n0: 144 in 4 places, all below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n1: 1296 0x486CFBA: ksVNew (keyset.c:317)
+    n1: 1296 0x486CEE5: ksNew (keyset.c:288)
+     n0: 1296 in 9 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n1: 3640 0x4E903D9: elektraPluginExport (plugin.c:63)
+   n0: 3640 in 6 places, all below massif's threshold (0.10%)
+  n1: 3456 0x486D050: ksVNew (keyset.c:326)
+   n1: 3456 0x486CEE5: ksNew (keyset.c:288)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 912 in 6 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n2: 32670 0x4866108: elektraMalloc (internal.c:277)
+  n2: 32108 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 31000 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 31000 0x4866C6E: keyVNew (key.c:192)
+     n2: 31000 0x4866904: keyNew (key.c:150)
+      n1: 30650 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 30650 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 18059 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 18059 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n2: 18059 0x4009274: _dl_map_object (dl-load.c:2236)
+    n1: 9617 0x400DDC0: openaux (dl-deps.c:64)
+     n1: 9617 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+      n1: 9617 0x400E138: _dl_map_object_deps (dl-deps.c:248)
+       n1: 9617 0x4013DAA: dl_open_worker (dl-open.c:571)
+        n1: 9617 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 9617 0x40138F9: _dl_open (dl-open.c:837)
+          n1: 9617 0x4A66257: dlopen_doit (dlopen.c:66)
+           n1: 9617 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+            n1: 9617 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+             n1: 9617 0x4A66A64: _dlerror_run (dlerror.c:170)
+              n1: 9617 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 9617 0x4876CB7: elektraModulesLoad (dl.c:80)
+                n3: 9617 0x484DE04: elektraPluginOpen (plugin.c:76)
+                 n1: 4798 0x4845B88: addElektraMountpoint (kdb.c:320)
+                  n1: 4798 0x4848EEA: kdbOpen (kdb.c:945)
+                   n0: 4798 0x10CACA: main (changetracking.c:152)
+                 n1: 3619 0x4844A04: loadPlugin (hooks.c:279)
+                  n1: 3619 0x4844DD7: initHooks (hooks.c:363)
+                   n1: 3619 0x4848F83: kdbOpen (kdb.c:960)
+                    n0: 3619 0x10CACA: main (changetracking.c:152)
+                 n1: 1200 0x4845C5B: addElektraMountpoint (kdb.c:329)
+                  n1: 1200 0x4848EEA: kdbOpen (kdb.c:945)
+                   n0: 1200 0x10CACA: main (changetracking.c:152)
+    n1: 8442 0x4013D41: dl_open_worker (dl-open.c:513)
+     n1: 8442 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+      n2: 8442 0x40138F9: _dl_open (dl-open.c:837)
+       n1: 7240 0x4A66257: dlopen_doit (dlopen.c:66)
+        n1: 7240 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 7240 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+          n1: 7240 0x4A66A64: _dlerror_run (dlerror.c:170)
+           n1: 7240 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 7240 0x4876CB7: elektraModulesLoad (dl.c:80)
+             n6: 7240 0x484DE04: elektraPluginOpen (plugin.c:76)
+              n1: 1216 0x4845C5B: addElektraMountpoint (kdb.c:329)
+               n1: 1216 0x4848EEA: kdbOpen (kdb.c:945)
+                n0: 1216 0x10CACA: main (changetracking.c:152)
+              n1: 1206 0x4845D57: addElektraMountpoint (kdb.c:339)
+               n1: 1206 0x4848EEA: kdbOpen (kdb.c:945)
+                n0: 1206 0x10CACA: main (changetracking.c:152)
+              n1: 1206 0x4848A5B: addHardcodedMountpoints (kdb.c:845)
+               n1: 1206 0x48491A7: kdbOpen (kdb.c:993)
+                n0: 1206 0x10CACA: main (changetracking.c:152)
+              n1: 1206 0x4848CD2: addHardcodedMountpoints (kdb.c:868)
+               n1: 1206 0x48491A7: kdbOpen (kdb.c:993)
+                n0: 1206 0x10CACA: main (changetracking.c:152)
+              n1: 1203 0x4844A04: loadPlugin (hooks.c:279)
+               n1: 1203 0x4844DD7: initHooks (hooks.c:363)
+                n1: 1203 0x4848F83: kdbOpen (kdb.c:960)
+                 n0: 1203 0x10CACA: main (changetracking.c:152)
+              n1: 1203 0x4845B88: addElektraMountpoint (kdb.c:320)
+               n1: 1203 0x4848EEA: kdbOpen (kdb.c:945)
+                n0: 1203 0x10CACA: main (changetracking.c:152)
+       n1: 1202 0x49C3F0C: do_dlopen (dl-libc.c:96)
+        n1: 1202 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 1202 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+          n1: 1202 0x49C3FE6: dlerror_run (dl-libc.c:46)
+           n1: 1202 0x49C4075: __libc_dlopen_mode (dl-libc.c:195)
+            n1: 1202 0x49AC295: nss_load_library (nsswitch.c:359)
+             n1: 1202 0x49ACB28: __nss_lookup_function (nsswitch.c:467)
+              n1: 1202 0x49ACC7B: __nss_lookup (nsswitch.c:198)
+               n1: 1202 0x49563AA: getpwuid_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+                n1: 1202 0x51C9F55: elektraResolvePasswd (filename.c:141)
+                 n1: 1202 0x51CA155: elektraResolveSystemPasswd (filename.c:168)
+                  n1: 1202 0x51CAD15: elektraResolveSystemBuildin (filename.c:333)
+                   n1: 1202 0x51CB427: elektraResolveSystem (filename.c:446)
+                    n1: 1202 0x51CB4B0: elektraResolveMapperSystem (filename.c:457)
+                     n1: 1202 0x51CC129: libelektra_resolver_fm_hpu_b_fm_hpu_b_LTX_elektraPluginfilename (filename.c:648)
+                      n1: 1202 0x51C6756: mapFilesForNamespaces (resolver.c:386)
+                       n1: 1202 0x51C6B44: initHandles (resolver.c:488)
+                        n1: 1202 0x51C75A5: libelektra_resolver_fm_hpu_b_fm_hpu_b_LTX_elektraPluginget (resolver.c:536)
+                         n1: 1202 0x51FE345: runPluginGet (backend.c:393)
+                          n1: 1202 0x51FEB9B: libelektra_backend_LTX_elektraPluginget (backend.c:460)
+                           n1: 1202 0x4849FE0: resolveBackendsForGet (kdb.c:1437)
+                            n1: 1202 0x484AE97: kdbGet (kdb.c:1784)
+                             n1: 1202 0x48461B3: elektraBoostrap (kdb.c:378)
+                              n0: 1202 0x4848F2D: kdbOpen (kdb.c:951)
+ n1: 5496 0x40116B6: _dl_check_map_versions (dl-version.c:274)
+  n1: 5496 0x4013DF5: dl_open_worker (dl-open.c:577)
+   n1: 5496 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+    n2: 5496 0x40138F9: _dl_open (dl-open.c:837)
+     n1: 5304 0x4A66257: dlopen_doit (dlopen.c:66)
+      n1: 5304 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+       n1: 5304 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+        n1: 5304 0x4A66A64: _dlerror_run (dlerror.c:170)
+         n1: 5304 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 5304 0x4876CB7: elektraModulesLoad (dl.c:80)
+           n2: 5304 0x484DE04: elektraPluginOpen (plugin.c:76)
+            n1: 2808 0x4845B88: addElektraMountpoint (kdb.c:320)
+             n1: 2808 0x4848EEA: kdbOpen (kdb.c:945)
+              n0: 2808 0x10CACA: main (changetracking.c:152)
+            n0: 2496 in 5 places, all below massif's threshold (0.10%)
+     n0: 192 in 1 place, below massif's threshold (0.10%)
+ n1: 4064 0x400A974: do_lookup_unique (dl-lookup.c:276)
+  n1: 4064 0x400A974: do_lookup_x (dl-lookup.c:557)
+   n1: 4064 0x400ACE0: _dl_lookup_symbol_x (dl-lookup.c:861)
+    n1: 4064 0x400C843: elf_machine_rela (dl-machine.h:308)
+     n1: 4064 0x400C843: elf_dynamic_do_Rela (do-rel.h:137)
+      n1: 4064 0x400C843: _dl_relocate_object (dl-reloc.c:274)
+       n1: 4064 0x4013F04: dl_open_worker (dl-open.c:688)
+        n1: 4064 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 4064 0x40138F9: _dl_open (dl-open.c:837)
+          n1: 4064 0x4A66257: dlopen_doit (dlopen.c:66)
+           n1: 4064 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+            n1: 4064 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+             n1: 4064 0x4A66A64: _dlerror_run (dlerror.c:170)
+              n1: 4064 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 4064 0x4876CB7: elektraModulesLoad (dl.c:80)
+                n1: 4064 0x484DE04: elektraPluginOpen (plugin.c:76)
+                 n1: 4064 0x4845B88: addElektraMountpoint (kdb.c:320)
+                  n1: 4064 0x4848EEA: kdbOpen (kdb.c:945)
+                   n0: 4064 0x10CACA: main (changetracking.c:152)
+ n0: 3933 in 18 places, all below massif's threshold (0.10%)
+ n1: 2056 0x400BEC1: _dl_new_object (dl-object.c:215)
+  n1: 2056 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n2: 2056 0x4009274: _dl_map_object (dl-load.c:2236)
+    n1: 1234 0x4013D41: dl_open_worker (dl-open.c:513)
+     n1: 1234 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+      n1: 1234 0x40138F9: _dl_open (dl-open.c:837)
+       n1: 1234 0x4A66257: dlopen_doit (dlopen.c:66)
+        n1: 1234 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 1234 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+          n1: 1234 0x4A66A64: _dlerror_run (dlerror.c:170)
+           n1: 1234 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 1234 0x4876CB7: elektraModulesLoad (dl.c:80)
+             n1: 1234 0x484DE04: elektraPluginOpen (plugin.c:76)
+              n0: 1234 in 6 places, all below massif's threshold (0.10%)
+    n0: 822 in 1 place, below massif's threshold (0.10%)
+#-----------
+snapshot=3
+#-----------
+time=2018952
+mem_heap_B=1401797
+mem_heap_extra_B=430803
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=2573448
+mem_heap_B=1814021
+mem_heap_extra_B=573075
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=3022024
+mem_heap_B=2164317
+mem_heap_extra_B=671355
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=3408424
+mem_heap_B=2451563
+mem_heap_extra_B=770509
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=3875672
+mem_heap_B=2802417
+mem_heap_extra_B=886903
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=4396120
+mem_heap_B=3194465
+mem_heap_extra_B=1015303
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=4916568
+mem_heap_B=3586513
+mem_heap_extra_B=1143703
+mem_stacks_B=0
+heap_tree=detailed
+n7: 3586513 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 1899359 0x486609D: elektraRealloc (internal.c:240)
+  n2: 910304 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 909719 0x486988C: keySetName (keyname.c:697)
+    n1: 909719 0x4866FB2: keyVNew (key.c:222)
+     n2: 909719 0x4866904: keyNew (key.c:150)
+      n1: 907934 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 907934 0x10CB3C: main (changetracking.c:157)
+      n0: 1785 in 66 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 850924 0x48698C1: keySetName (keyname.c:699)
+   n1: 850924 0x4866FB2: keyVNew (key.c:222)
+    n2: 850924 0x4866904: keyNew (key.c:150)
+     n1: 849582 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 849582 0x10CB3C: main (changetracking.c:157)
+     n0: 1342 in 66 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 137216 0x4872B49: ksResize (keyset.c:2864)
+   n3: 137216 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 131072 0x10C6FB: buildLinearTree (changetracking.c:91)
+     n0: 131072 0x10CB3C: main (changetracking.c:157)
+    n1: 5888 0x48688B0: keySetMeta (keymeta.c:510)
+     n0: 5888 in 3 places, all below massif's threshold (0.10%)
+    n0: 256 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n4: 1429464 0x4866141: elektraCalloc (internal.c:292)
+  n2: 588920 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 588920 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 588920 0x4869843: keySetName (keyname.c:695)
+     n1: 588920 0x4866FB2: keyVNew (key.c:222)
+      n2: 588920 0x4866904: keyNew (key.c:150)
+       n1: 583520 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 583520 0x10CB3C: main (changetracking.c:157)
+       n0: 5400 in 66 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 471360 0x4866975: keyVNew (key.c:166)
+   n2: 471360 0x4866904: keyNew (key.c:150)
+    n1: 466816 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 466816 0x10CB3C: main (changetracking.c:157)
+    n0: 4544 in 66 places, all below massif's threshold (0.10%)
+  n1: 353304 0x4862D75: keyDataNew (cow.c:158)
+   n1: 353304 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 353304 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 351120 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 351120 0x4866C6E: keyVNew (key.c:192)
+       n2: 351120 0x4866904: keyNew (key.c:150)
+        n1: 350112 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 350112 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n0: 15880 in 10 places, all below massif's threshold (0.10%)
+ n2: 151378 0x4866108: elektraMalloc (internal.c:277)
+  n2: 150816 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 149708 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 149708 0x4866C6E: keyVNew (key.c:192)
+     n2: 149708 0x4866904: keyNew (key.c:150)
+      n1: 149358 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 149358 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n1: 18059 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 18059 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n2: 18059 0x4009274: _dl_map_object (dl-load.c:2236)
+    n1: 9617 0x400DDC0: openaux (dl-deps.c:64)
+     n1: 9617 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+      n1: 9617 0x400E138: _dl_map_object_deps (dl-deps.c:248)
+       n1: 9617 0x4013DAA: dl_open_worker (dl-open.c:571)
+        n1: 9617 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 9617 0x40138F9: _dl_open (dl-open.c:837)
+          n1: 9617 0x4A66257: dlopen_doit (dlopen.c:66)
+           n1: 9617 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+            n1: 9617 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+             n1: 9617 0x4A66A64: _dlerror_run (dlerror.c:170)
+              n1: 9617 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 9617 0x4876CB7: elektraModulesLoad (dl.c:80)
+                n2: 9617 0x484DE04: elektraPluginOpen (plugin.c:76)
+                 n0: 4819 in 2 places, all below massif's threshold (0.10%)
+                 n1: 4798 0x4845B88: addElektraMountpoint (kdb.c:320)
+                  n1: 4798 0x4848EEA: kdbOpen (kdb.c:945)
+                   n0: 4798 0x10CACA: main (changetracking.c:152)
+    n1: 8442 0x4013D41: dl_open_worker (dl-open.c:513)
+     n1: 8442 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+      n2: 8442 0x40138F9: _dl_open (dl-open.c:837)
+       n1: 7240 0x4A66257: dlopen_doit (dlopen.c:66)
+        n1: 7240 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 7240 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+          n1: 7240 0x4A66A64: _dlerror_run (dlerror.c:170)
+           n1: 7240 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+            n1: 7240 0x4876CB7: elektraModulesLoad (dl.c:80)
+             n1: 7240 0x484DE04: elektraPluginOpen (plugin.c:76)
+              n0: 7240 in 6 places, all below massif's threshold (0.10%)
+       n0: 1202 in 1 place, below massif's threshold (0.10%)
+ n0: 10053 in 20 places, all below massif's threshold (0.10%)
+ n1: 5496 0x40116B6: _dl_check_map_versions (dl-version.c:274)
+  n1: 5496 0x4013DF5: dl_open_worker (dl-open.c:577)
+   n1: 5496 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+    n2: 5496 0x40138F9: _dl_open (dl-open.c:837)
+     n1: 5304 0x4A66257: dlopen_doit (dlopen.c:66)
+      n1: 5304 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+       n1: 5304 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+        n1: 5304 0x4A66A64: _dlerror_run (dlerror.c:170)
+         n1: 5304 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+          n1: 5304 0x4876CB7: elektraModulesLoad (dl.c:80)
+           n1: 5304 0x484DE04: elektraPluginOpen (plugin.c:76)
+            n0: 5304 in 6 places, all below massif's threshold (0.10%)
+     n0: 192 in 1 place, below massif's threshold (0.10%)
+#-----------
+snapshot=10
+#-----------
+time=5593624
+mem_heap_B=4128869
+mem_heap_extra_B=1278403
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=6160280
+mem_heap_B=4555725
+mem_heap_extra_B=1418203
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=6726936
+mem_heap_B=4982581
+mem_heap_extra_B=1558003
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=7293592
+mem_heap_B=5409437
+mem_heap_extra_B=1697803
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=7694976
+mem_heap_B=5711784
+mem_heap_extra_B=1796840
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=8492672
+mem_heap_B=6312680
+mem_heap_extra_B=1993640
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=9290368
+mem_heap_B=6913576
+mem_heap_extra_B=2190440
+mem_stacks_B=0
+heap_tree=detailed
+n6: 6913576 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 3733063 0x486609D: elektraRealloc (internal.c:240)
+  n2: 1789532 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 1788947 0x486988C: keySetName (keyname.c:697)
+    n1: 1788947 0x4866FB2: keyVNew (key.c:222)
+     n2: 1788947 0x4866904: keyNew (key.c:150)
+      n1: 1787162 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 1787162 0x10CB3C: main (changetracking.c:157)
+      n0: 1785 in 66 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 1674328 0x48698C1: keySetName (keyname.c:699)
+   n1: 1674328 0x4866FB2: keyVNew (key.c:222)
+    n2: 1674328 0x4866904: keyNew (key.c:150)
+     n1: 1672986 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 1672986 0x10CB3C: main (changetracking.c:157)
+     n0: 1342 in 66 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 268288 0x4872B49: ksResize (keyset.c:2864)
+   n2: 268288 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 262144 0x10C6FB: buildLinearTree (changetracking.c:91)
+     n0: 262144 0x10CB3C: main (changetracking.c:157)
+    n0: 6144 in 4 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n4: 2769296 0x4866141: elektraCalloc (internal.c:292)
+  n2: 1147160 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 1147160 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 1147160 0x4869843: keySetName (keyname.c:695)
+     n1: 1147160 0x4866FB2: keyVNew (key.c:222)
+      n2: 1147160 0x4866904: keyNew (key.c:150)
+       n1: 1141760 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 1141760 0x10CB3C: main (changetracking.c:157)
+       n0: 5400 in 66 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 917984 0x4866975: keyVNew (key.c:166)
+   n2: 917984 0x4866904: keyNew (key.c:150)
+    n1: 913440 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 913440 0x10CB3C: main (changetracking.c:157)
+    n0: 4544 in 66 places, all below massif's threshold (0.10%)
+  n1: 688272 0x4862D75: keyDataNew (cow.c:158)
+   n1: 688272 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 688272 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 686088 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 686088 0x4866C6E: keyVNew (key.c:192)
+       n2: 686088 0x4866904: keyNew (key.c:150)
+        n1: 685080 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 685080 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n0: 15880 in 10 places, all below massif's threshold (0.10%)
+ n2: 304905 0x4866108: elektraMalloc (internal.c:277)
+  n2: 304343 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 303235 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 303235 0x4866C6E: keyVNew (key.c:192)
+     n2: 303235 0x4866904: keyNew (key.c:150)
+      n1: 302885 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 302885 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n1: 18059 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 18059 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n2: 18059 0x4009274: _dl_map_object (dl-load.c:2236)
+    n1: 9617 0x400DDC0: openaux (dl-deps.c:64)
+     n1: 9617 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+      n1: 9617 0x400E138: _dl_map_object_deps (dl-deps.c:248)
+       n1: 9617 0x4013DAA: dl_open_worker (dl-open.c:571)
+        n1: 9617 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 9617 0x40138F9: _dl_open (dl-open.c:837)
+          n1: 9617 0x4A66257: dlopen_doit (dlopen.c:66)
+           n1: 9617 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+            n1: 9617 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+             n1: 9617 0x4A66A64: _dlerror_run (dlerror.c:170)
+              n1: 9617 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+               n1: 9617 0x4876CB7: elektraModulesLoad (dl.c:80)
+                n1: 9617 0x484DE04: elektraPluginOpen (plugin.c:76)
+                 n0: 9617 in 3 places, all below massif's threshold (0.10%)
+    n0: 8442 in 1 place, below massif's threshold (0.10%)
+ n0: 15549 in 21 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=17
+#-----------
+time=10088064
+mem_heap_B=7514472
+mem_heap_extra_B=2387240
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=10536768
+mem_heap_B=7852476
+mem_heap_extra_B=2497940
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=11235352
+mem_heap_B=8443397
+mem_heap_extra_B=2605603
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=12033048
+mem_heap_B=9044293
+mem_heap_extra_B=2802403
+mem_stacks_B=0
+heap_tree=detailed
+n6: 9044293 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 4990727 0x486609D: elektraRealloc (internal.c:240)
+  n2: 2303612 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 2303027 0x486988C: keySetName (keyname.c:697)
+    n1: 2303027 0x4866FB2: keyVNew (key.c:222)
+     n2: 2303027 0x4866904: keyNew (key.c:150)
+      n1: 2301242 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 2301242 0x10CB3C: main (changetracking.c:157)
+      n0: 1785 in 66 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2155768 0x48698C1: keySetName (keyname.c:699)
+   n1: 2155768 0x4866FB2: keyVNew (key.c:222)
+    n2: 2155768 0x4866904: keyNew (key.c:150)
+     n1: 2154426 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2154426 0x10CB3C: main (changetracking.c:157)
+     n0: 1342 in 66 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 530432 0x4872B49: ksResize (keyset.c:2864)
+   n2: 530432 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 524288 0x10C6FB: buildLinearTree (changetracking.c:91)
+     n0: 524288 0x10CB3C: main (changetracking.c:157)
+    n0: 6144 in 4 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n4: 3552600 0x4866141: elektraCalloc (internal.c:292)
+  n2: 1473560 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 1473560 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 1473560 0x4869843: keySetName (keyname.c:695)
+     n1: 1473560 0x4866FB2: keyVNew (key.c:222)
+      n2: 1473560 0x4866904: keyNew (key.c:150)
+       n1: 1468160 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 1468160 0x10CB3C: main (changetracking.c:157)
+       n0: 5400 in 66 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1179072 0x4866975: keyVNew (key.c:166)
+   n2: 1179072 0x4866904: keyNew (key.c:150)
+    n1: 1174528 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1174528 0x10CB3C: main (changetracking.c:157)
+    n0: 4544 in 66 places, all below massif's threshold (0.10%)
+  n1: 884088 0x4862D75: keyDataNew (cow.c:158)
+   n1: 884088 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 884088 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 881904 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 881904 0x4866C6E: keyVNew (key.c:192)
+       n2: 881904 0x4866904: keyNew (key.c:150)
+        n1: 880896 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 880896 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n0: 15880 in 10 places, all below massif's threshold (0.10%)
+ n2: 394654 0x4866108: elektraMalloc (internal.c:277)
+  n2: 394092 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 392984 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 392984 0x4866C6E: keyVNew (key.c:192)
+     n2: 392984 0x4866904: keyNew (key.c:150)
+      n1: 392634 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 392634 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n1: 18059 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 18059 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n1: 18059 0x4009274: _dl_map_object (dl-load.c:2236)
+    n0: 18059 in 2 places, all below massif's threshold (0.10%)
+ n0: 15549 in 21 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=21
+#-----------
+time=12830744
+mem_heap_B=9645189
+mem_heap_extra_B=2999203
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=13355448
+mem_heap_B=10040443
+mem_heap_extra_B=3128653
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=13922104
+mem_heap_B=10467299
+mem_heap_extra_B=3268453
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=14488760
+mem_heap_B=10894155
+mem_heap_extra_B=3408253
+mem_stacks_B=0
+heap_tree=detailed
+n6: 10894155 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 5976243 0x486609D: elektraRealloc (internal.c:240)
+  n2: 2812526 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 2811941 0x486988C: keySetName (keyname.c:697)
+    n1: 2811941 0x4866FB2: keyVNew (key.c:222)
+     n2: 2811941 0x4866904: keyNew (key.c:150)
+      n1: 2810156 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 2810156 0x10CB3C: main (changetracking.c:157)
+      n0: 1785 in 66 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2632370 0x48698C1: keySetName (keyname.c:699)
+   n1: 2632370 0x4866FB2: keyVNew (key.c:222)
+    n2: 2632370 0x4866904: keyNew (key.c:150)
+     n1: 2631028 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2631028 0x10CB3C: main (changetracking.c:157)
+     n0: 1342 in 66 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 530432 0x4872B49: ksResize (keyset.c:2864)
+   n2: 530432 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 524288 0x10C6FB: buildLinearTree (changetracking.c:91)
+     n0: 524288 0x10CB3C: main (changetracking.c:157)
+    n0: 6144 in 4 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n4: 4328088 0x4866141: elektraCalloc (internal.c:292)
+  n2: 1796680 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 1796680 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 1796680 0x4869843: keySetName (keyname.c:695)
+     n1: 1796680 0x4866FB2: keyVNew (key.c:222)
+      n2: 1796680 0x4866904: keyNew (key.c:150)
+       n1: 1791280 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 1791280 0x10CB3C: main (changetracking.c:157)
+       n0: 5400 in 66 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1437568 0x4866975: keyVNew (key.c:166)
+   n2: 1437568 0x4866904: keyNew (key.c:150)
+    n1: 1433024 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1433024 0x10CB3C: main (changetracking.c:157)
+    n0: 4544 in 66 places, all below massif's threshold (0.10%)
+  n1: 1077960 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1077960 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1077960 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1075776 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1075776 0x4866C6E: keyVNew (key.c:192)
+       n2: 1075776 0x4866904: keyNew (key.c:150)
+        n1: 1074768 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1074768 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n0: 15880 in 10 places, all below massif's threshold (0.10%)
+ n2: 483512 0x4866108: elektraMalloc (internal.c:277)
+  n2: 482950 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 481842 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 481842 0x4866C6E: keyVNew (key.c:192)
+     n2: 481842 0x4866904: keyNew (key.c:150)
+      n1: 481492 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 481492 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n1: 18059 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 18059 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n1: 18059 0x4009274: _dl_map_object (dl-load.c:2236)
+    n0: 18059 in 2 places, all below massif's threshold (0.10%)
+ n0: 15549 in 21 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=25
+#-----------
+time=15055416
+mem_heap_B=11321011
+mem_heap_extra_B=3548053
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=15622072
+mem_heap_B=11747867
+mem_heap_extra_B=3687853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=16047064
+mem_heap_B=12068009
+mem_heap_extra_B=3792703
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=16599384
+mem_heap_B=12613413
+mem_heap_extra_B=3799619
+mem_stacks_B=0
+heap_tree=detailed
+n6: 12613413 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 7137127 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141260 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140675 0x486988C: keySetName (keyname.c:697)
+    n1: 3140675 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140675 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1785 in 66 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940232 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940232 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940232 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1342 in 66 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 1054720 0x4872B49: ksResize (keyset.c:2864)
+   n2: 530432 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 524288 0x10C6FB: buildLinearTree (changetracking.c:91)
+     n0: 524288 0x10CB3C: main (changetracking.c:157)
+    n0: 6144 in 4 places, all below massif's threshold (0.10%)
+   n2: 524288 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n4: 4829064 0x4866141: elektraCalloc (internal.c:292)
+  n2: 2005400 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005400 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005400 0x4869843: keySetName (keyname.c:695)
+     n1: 2005400 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005400 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5400 in 66 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1604544 0x4866975: keyVNew (key.c:166)
+   n2: 1604544 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n0: 4544 in 66 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n0: 15928 in 10 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n1: 18059 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 18059 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n1: 18059 0x4009274: _dl_map_object (dl-load.c:2236)
+    n0: 18059 in 2 places, all below massif's threshold (0.10%)
+ n0: 15549 in 21 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=29
+#-----------
+time=17123680
+mem_heap_B=12089125
+mem_heap_extra_B=3799611
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=17526448
+mem_heap_B=12489469
+mem_heap_extra_B=3799699
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=18022520
+mem_heap_B=12489776
+mem_heap_extra_B=3799752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=18589432
+mem_heap_B=12489776
+mem_heap_extra_B=3799752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=19156344
+mem_heap_B=12489776
+mem_heap_extra_B=3799752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=19723256
+mem_heap_B=12489776
+mem_heap_extra_B=3799752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=20290168
+mem_heap_B=12489776
+mem_heap_extra_B=3799752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=20857080
+mem_heap_B=12489776
+mem_heap_extra_B=3799752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=21280200
+mem_heap_B=12489776
+mem_heap_extra_B=3799752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=21839808
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=22399248
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=22679168
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=23238608
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=23839560
+mem_heap_B=12489776
+mem_heap_extra_B=3799752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=24477008
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=25183488
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=25958600
+mem_heap_B=12489776
+mem_heap_extra_B=3799752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=26747408
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=27141960
+mem_heap_B=12489776
+mem_heap_extra_B=3799752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=27930768
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=28325320
+mem_heap_B=12489776
+mem_heap_extra_B=3799752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=29114128
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=29508680
+mem_heap_B=12489776
+mem_heap_extra_B=3799752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=30297488
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=30696528
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=31118600
+mem_heap_B=12489776
+mem_heap_extra_B=3799752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=31540608
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=31985480
+mem_heap_B=12489776
+mem_heap_extra_B=3799752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=32430288
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=32893640
+mem_heap_B=12489776
+mem_heap_extra_B=3799752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=33375240
+mem_heap_B=12489776
+mem_heap_extra_B=3799752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=33870600
+mem_heap_B=12489776
+mem_heap_extra_B=3799752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=34388928
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=34907088
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=35429968
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=35971328
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=36521728
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=36984960
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=37802304
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=38619648
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=39436992
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=40254336
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=detailed
+n6: 12489717 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 6612967 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141260 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140675 0x486988C: keySetName (keyname.c:697)
+    n1: 3140675 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140675 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1785 in 68 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940232 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940232 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940232 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1342 in 68 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 530560 0x4872B49: ksResize (keyset.c:2864)
+   n2: 524288 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n5: 5229528 0x4866141: elektraCalloc (internal.c:292)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005400 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005400 0x4869843: keySetName (keyname.c:695)
+     n1: 2005400 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005400 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5400 in 68 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 40 in 2 places, all below massif's threshold (0.10%)
+  n1: 1604608 0x4866975: keyVNew (key.c:166)
+   n2: 1604608 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n0: 4608 in 68 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 403464 0x486D050: ksVNew (keyset.c:326)
+   n2: 403464 0x486CEE5: ksNew (keyset.c:288)
+    n1: 400008 0x486FD4F: ksCut (keyset.c:1682)
+     n1: 400008 0x52236DA: elektraSpecCopy (spec.c:937)
+      n1: 400008 0x484D19D: kdbSet (kdb.c:2386)
+       n0: 400008 0x10CBC3: main (changetracking.c:162)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12824 in 11 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n1: 18059 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 18059 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n1: 18059 0x4009274: _dl_map_object (dl-load.c:2236)
+    n0: 18059 in 2 places, all below massif's threshold (0.10%)
+ n0: 15549 in 21 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=71
+#-----------
+time=41071680
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=41889024
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=42706368
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=43523712
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=44341056
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=detailed
+n6: 12489717 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 6612967 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141260 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140675 0x486988C: keySetName (keyname.c:697)
+    n1: 3140675 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140675 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1785 in 68 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940232 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940232 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940232 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1342 in 68 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 530560 0x4872B49: ksResize (keyset.c:2864)
+   n2: 524288 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n5: 5229528 0x4866141: elektraCalloc (internal.c:292)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005400 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005400 0x4869843: keySetName (keyname.c:695)
+     n1: 2005400 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005400 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5400 in 68 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 40 in 2 places, all below massif's threshold (0.10%)
+  n1: 1604608 0x4866975: keyVNew (key.c:166)
+   n2: 1604608 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n0: 4608 in 68 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 403464 0x486D050: ksVNew (keyset.c:326)
+   n2: 403464 0x486CEE5: ksNew (keyset.c:288)
+    n1: 400008 0x486FD4F: ksCut (keyset.c:1682)
+     n1: 400008 0x52236DA: elektraSpecCopy (spec.c:937)
+      n1: 400008 0x484D19D: kdbSet (kdb.c:2386)
+       n0: 400008 0x10CBC3: main (changetracking.c:162)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12824 in 11 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n1: 18059 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 18059 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n1: 18059 0x4009274: _dl_map_object (dl-load.c:2236)
+    n0: 18059 in 2 places, all below massif's threshold (0.10%)
+ n0: 15549 in 21 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=76
+#-----------
+time=45158400
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=45975744
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=46793088
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=47610432
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=48019104
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=48427776
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=detailed
+n6: 12489717 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 6612967 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141260 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140675 0x486988C: keySetName (keyname.c:697)
+    n1: 3140675 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140675 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1785 in 68 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940232 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940232 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940232 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1342 in 68 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 530560 0x4872B49: ksResize (keyset.c:2864)
+   n2: 524288 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n5: 5229528 0x4866141: elektraCalloc (internal.c:292)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005400 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005400 0x4869843: keySetName (keyname.c:695)
+     n1: 2005400 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005400 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5400 in 68 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 40 in 2 places, all below massif's threshold (0.10%)
+  n1: 1604608 0x4866975: keyVNew (key.c:166)
+   n2: 1604608 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n0: 4608 in 68 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 403464 0x486D050: ksVNew (keyset.c:326)
+   n2: 403464 0x486CEE5: ksNew (keyset.c:288)
+    n1: 400008 0x486FD4F: ksCut (keyset.c:1682)
+     n1: 400008 0x52236DA: elektraSpecCopy (spec.c:937)
+      n1: 400008 0x484D19D: kdbSet (kdb.c:2386)
+       n0: 400008 0x10CBC3: main (changetracking.c:162)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12824 in 11 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n1: 18059 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 18059 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n1: 18059 0x4009274: _dl_map_object (dl-load.c:2236)
+    n0: 18059 in 2 places, all below massif's threshold (0.10%)
+ n0: 15549 in 21 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=82
+#-----------
+time=48836448
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=49245120
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=49653792
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=50062464
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=50471136
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=detailed
+n6: 12489717 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 6612967 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141260 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140675 0x486988C: keySetName (keyname.c:697)
+    n1: 3140675 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140675 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1785 in 68 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940232 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940232 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940232 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1342 in 68 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 530560 0x4872B49: ksResize (keyset.c:2864)
+   n2: 524288 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n5: 5229528 0x4866141: elektraCalloc (internal.c:292)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005400 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005400 0x4869843: keySetName (keyname.c:695)
+     n1: 2005400 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005400 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5400 in 68 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 40 in 2 places, all below massif's threshold (0.10%)
+  n1: 1604608 0x4866975: keyVNew (key.c:166)
+   n2: 1604608 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n0: 4608 in 68 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 403464 0x486D050: ksVNew (keyset.c:326)
+   n2: 403464 0x486CEE5: ksNew (keyset.c:288)
+    n1: 400008 0x486FD4F: ksCut (keyset.c:1682)
+     n1: 400008 0x52236DA: elektraSpecCopy (spec.c:937)
+      n1: 400008 0x484D19D: kdbSet (kdb.c:2386)
+       n0: 400008 0x10CBC3: main (changetracking.c:162)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12824 in 11 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n1: 18059 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 18059 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n1: 18059 0x4009274: _dl_map_object (dl-load.c:2236)
+    n0: 18059 in 2 places, all below massif's threshold (0.10%)
+ n0: 15549 in 21 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=87
+#-----------
+time=50879808
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=88
+#-----------
+time=51288480
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=89
+#-----------
+time=51901488
+mem_heap_B=12489717
+mem_heap_extra_B=3799739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=90
+#-----------
+time=52326664
+mem_heap_B=12089637
+mem_heap_extra_B=3799699
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=91
+#-----------
+time=52727464
+mem_heap_B=12489437
+mem_heap_extra_B=3799691
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=92
+#-----------
+time=53332032
+mem_heap_B=12915973
+mem_heap_extra_B=3806331
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=93
+#-----------
+time=53740632
+mem_heap_B=12968677
+mem_heap_extra_B=3819523
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=94
+#-----------
+time=54162432
+mem_heap_B=13023114
+mem_heap_extra_B=3833174
+mem_stacks_B=0
+heap_tree=detailed
+n6: 13023114 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 6612972 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140677 0x486988C: keySetName (keyname.c:697)
+    n1: 3140677 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140677 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940235 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940235 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940235 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 530560 0x4872B49: ksResize (keyset.c:2864)
+   n2: 524288 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n5: 5762920 0x4866141: elektraCalloc (internal.c:292)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005440 0x4869843: keySetName (keyname.c:695)
+     n1: 2005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005440 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1738112 0x4866975: keyVNew (key.c:166)
+   n3: 1738112 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n1: 133536 0x486C87E: keyDup (kdb.h:214)
+     n1: 133536 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 133536 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 133536 0x10CBC3: main (changetracking.c:162)
+    n0: 4576 in 68 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 803480 0x486D050: ksVNew (keyset.c:326)
+   n3: 803480 0x486CEE5: ksNew (keyset.c:288)
+    n1: 400016 0x486D37E: ksDeepDup (keyset.c:412)
+     n1: 400016 0x484D25D: kdbSet (kdb.c:2399)
+      n0: 400016 0x10CBC3: main (changetracking.c:162)
+    n2: 400008 0x486F5BE: ksBelow (keyset.c:1468)
+     n1: 400008 0x484D23B: kdbSet (kdb.c:2398)
+      n0: 400008 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12696 in 11 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n1: 18059 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 18059 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n1: 18059 0x4009274: _dl_map_object (dl-load.c:2236)
+    n0: 18059 in 2 places, all below massif's threshold (0.10%)
+ n0: 15549 in 21 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=95
+#-----------
+time=54979640
+mem_heap_B=13128549
+mem_heap_extra_B=3859491
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=96
+#-----------
+time=55616352
+mem_heap_B=13210685
+mem_heap_extra_B=3880019
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=97
+#-----------
+time=56263488
+mem_heap_B=13294218
+mem_heap_extra_B=3900950
+mem_stacks_B=0
+heap_tree=detailed
+n6: 13294218 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 6612972 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140677 0x486988C: keySetName (keyname.c:697)
+    n1: 3140677 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140677 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940235 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940235 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940235 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 530560 0x4872B49: ksResize (keyset.c:2864)
+   n2: 524288 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n5: 6034024 0x4866141: elektraCalloc (internal.c:292)
+  n1: 2009216 0x4866975: keyVNew (key.c:166)
+   n3: 2009216 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n1: 404640 0x486C87E: keyDup (kdb.h:214)
+     n1: 404640 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 404640 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 404640 0x10CBC3: main (changetracking.c:162)
+    n0: 4576 in 68 places, all below massif's threshold (0.10%)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005440 0x4869843: keySetName (keyname.c:695)
+     n1: 2005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005440 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 803480 0x486D050: ksVNew (keyset.c:326)
+   n3: 803480 0x486CEE5: ksNew (keyset.c:288)
+    n1: 400016 0x486D37E: ksDeepDup (keyset.c:412)
+     n1: 400016 0x484D25D: kdbSet (kdb.c:2399)
+      n0: 400016 0x10CBC3: main (changetracking.c:162)
+    n2: 400008 0x486F5BE: ksBelow (keyset.c:1468)
+     n1: 400008 0x484D23B: kdbSet (kdb.c:2398)
+      n0: 400008 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12696 in 11 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n1: 18059 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 18059 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n1: 18059 0x4009274: _dl_map_object (dl-load.c:2236)
+    n0: 18059 in 2 places, all below massif's threshold (0.10%)
+ n0: 15549 in 21 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=98
+#-----------
+time=56876400
+mem_heap_B=13373245
+mem_heap_extra_B=3920659
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=99
+#-----------
+time=57285000
+mem_heap_B=13426026
+mem_heap_extra_B=3933902
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=100
+#-----------
+time=57329640
+mem_heap_B=13431786
+mem_heap_extra_B=3935342
+mem_stacks_B=0
+heap_tree=detailed
+n6: 13431786 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 6612972 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140677 0x486988C: keySetName (keyname.c:697)
+    n1: 3140677 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140677 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940235 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940235 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940235 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 530560 0x4872B49: ksResize (keyset.c:2864)
+   n2: 524288 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n5: 6171592 0x4866141: elektraCalloc (internal.c:292)
+  n1: 2146784 0x4866975: keyVNew (key.c:166)
+   n3: 2146784 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n1: 542208 0x486C87E: keyDup (kdb.h:214)
+     n1: 542208 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 542208 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 542208 0x10CBC3: main (changetracking.c:162)
+    n0: 4576 in 68 places, all below massif's threshold (0.10%)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005440 0x4869843: keySetName (keyname.c:695)
+     n1: 2005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005440 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 803480 0x486D050: ksVNew (keyset.c:326)
+   n3: 803480 0x486CEE5: ksNew (keyset.c:288)
+    n1: 400016 0x486D37E: ksDeepDup (keyset.c:412)
+     n1: 400016 0x484D25D: kdbSet (kdb.c:2399)
+      n0: 400016 0x10CBC3: main (changetracking.c:162)
+    n2: 400008 0x486F5BE: ksBelow (keyset.c:1468)
+     n1: 400008 0x484D23B: kdbSet (kdb.c:2398)
+      n0: 400008 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12696 in 11 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n1: 18059 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 18059 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n1: 18059 0x4009274: _dl_map_object (dl-load.c:2236)
+    n0: 18059 in 2 places, all below massif's threshold (0.10%)
+ n0: 15549 in 21 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=101
+#-----------
+time=57609584
+mem_heap_B=13467909
+mem_heap_extra_B=3944331
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=102
+#-----------
+time=57889520
+mem_heap_B=13503997
+mem_heap_extra_B=3953347
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=103
+#-----------
+time=58169448
+mem_heap_B=13540133
+mem_heap_extra_B=3962387
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=104
+#-----------
+time=58406488
+mem_heap_B=13570730
+mem_heap_extra_B=3970078
+mem_stacks_B=0
+heap_tree=detailed
+n6: 13570730 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 6612972 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140677 0x486988C: keySetName (keyname.c:697)
+    n1: 3140677 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140677 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940235 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940235 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940235 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 530560 0x4872B49: ksResize (keyset.c:2864)
+   n2: 524288 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n5: 6310536 0x4866141: elektraCalloc (internal.c:292)
+  n1: 2285728 0x4866975: keyVNew (key.c:166)
+   n3: 2285728 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n1: 681152 0x486C87E: keyDup (kdb.h:214)
+     n1: 681152 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 681152 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 681152 0x10CBC3: main (changetracking.c:162)
+    n0: 4576 in 68 places, all below massif's threshold (0.10%)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005440 0x4869843: keySetName (keyname.c:695)
+     n1: 2005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005440 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 803480 0x486D050: ksVNew (keyset.c:326)
+   n3: 803480 0x486CEE5: ksNew (keyset.c:288)
+    n1: 400016 0x486D37E: ksDeepDup (keyset.c:412)
+     n1: 400016 0x484D25D: kdbSet (kdb.c:2399)
+      n0: 400016 0x10CBC3: main (changetracking.c:162)
+    n2: 400008 0x486F5BE: ksBelow (keyset.c:1468)
+     n1: 400008 0x484D23B: kdbSet (kdb.c:2398)
+      n0: 400008 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12696 in 11 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n1: 18059 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 18059 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n1: 18059 0x4009274: _dl_map_object (dl-load.c:2236)
+    n0: 18059 in 2 places, all below massif's threshold (0.10%)
+ n0: 15549 in 21 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=105
+#-----------
+time=58686432
+mem_heap_B=13606853
+mem_heap_extra_B=3979067
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=106
+#-----------
+time=58966368
+mem_heap_B=13642941
+mem_heap_extra_B=3988083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=107
+#-----------
+time=59246320
+mem_heap_B=13679037
+mem_heap_extra_B=3997107
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=108
+#-----------
+time=59494216
+mem_heap_B=13711082
+mem_heap_extra_B=4005166
+mem_stacks_B=0
+heap_tree=detailed
+n6: 13711082 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 6612972 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140677 0x486988C: keySetName (keyname.c:697)
+    n1: 3140677 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140677 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940235 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940235 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940235 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 530560 0x4872B49: ksResize (keyset.c:2864)
+   n2: 524288 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n5: 6450888 0x4866141: elektraCalloc (internal.c:292)
+  n1: 2426080 0x4866975: keyVNew (key.c:166)
+   n3: 2426080 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n1: 821504 0x486C87E: keyDup (kdb.h:214)
+     n1: 821504 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 821504 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 821504 0x10CBC3: main (changetracking.c:162)
+    n0: 4576 in 68 places, all below massif's threshold (0.10%)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005440 0x4869843: keySetName (keyname.c:695)
+     n1: 2005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005440 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 803480 0x486D050: ksVNew (keyset.c:326)
+   n3: 803480 0x486CEE5: ksNew (keyset.c:288)
+    n1: 400016 0x486D37E: ksDeepDup (keyset.c:412)
+     n1: 400016 0x484D25D: kdbSet (kdb.c:2399)
+      n0: 400016 0x10CBC3: main (changetracking.c:162)
+    n2: 400008 0x486F5BE: ksBelow (keyset.c:1468)
+     n1: 400008 0x484D23B: kdbSet (kdb.c:2398)
+      n0: 400008 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12696 in 11 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n1: 18059 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 18059 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n1: 18059 0x4009274: _dl_map_object (dl-load.c:2236)
+    n0: 18059 in 2 places, all below massif's threshold (0.10%)
+ n0: 15549 in 21 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=109
+#-----------
+time=59774160
+mem_heap_B=13747205
+mem_heap_extra_B=4014155
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=110
+#-----------
+time=60054096
+mem_heap_B=13783293
+mem_heap_extra_B=4023171
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=111
+#-----------
+time=60334048
+mem_heap_B=13819389
+mem_heap_extra_B=4032195
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=112
+#-----------
+time=60592856
+mem_heap_B=13852842
+mem_heap_extra_B=4040606
+mem_stacks_B=0
+heap_tree=detailed
+n6: 13852842 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 6612972 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140677 0x486988C: keySetName (keyname.c:697)
+    n1: 3140677 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140677 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940235 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940235 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940235 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 530560 0x4872B49: ksResize (keyset.c:2864)
+   n2: 524288 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n5: 6592648 0x4866141: elektraCalloc (internal.c:292)
+  n1: 2567840 0x4866975: keyVNew (key.c:166)
+   n3: 2567840 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n1: 963264 0x486C87E: keyDup (kdb.h:214)
+     n1: 963264 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 963264 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 963264 0x10CBC3: main (changetracking.c:162)
+    n0: 4576 in 68 places, all below massif's threshold (0.10%)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005440 0x4869843: keySetName (keyname.c:695)
+     n1: 2005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005440 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 803480 0x486D050: ksVNew (keyset.c:326)
+   n3: 803480 0x486CEE5: ksNew (keyset.c:288)
+    n1: 400016 0x486D37E: ksDeepDup (keyset.c:412)
+     n1: 400016 0x484D25D: kdbSet (kdb.c:2399)
+      n0: 400016 0x10CBC3: main (changetracking.c:162)
+    n2: 400008 0x486F5BE: ksBelow (keyset.c:1468)
+     n1: 400008 0x484D23B: kdbSet (kdb.c:2398)
+      n0: 400008 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12696 in 11 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n1: 18059 0x400BCDF: _dl_new_object (dl-object.c:89)
+  n1: 18059 0x4007255: _dl_map_object_from_fd (dl-load.c:997)
+   n1: 18059 0x4009274: _dl_map_object (dl-load.c:2236)
+    n0: 18059 in 2 places, all below massif's threshold (0.10%)
+ n0: 15549 in 21 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=113
+#-----------
+time=60872800
+mem_heap_B=13888965
+mem_heap_extra_B=4049595
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=114
+#-----------
+time=61152736
+mem_heap_B=13925053
+mem_heap_extra_B=4058611
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=115
+#-----------
+time=61432688
+mem_heap_B=13961149
+mem_heap_extra_B=4067635
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=116
+#-----------
+time=61702408
+mem_heap_B=13996010
+mem_heap_extra_B=4076398
+mem_stacks_B=0
+heap_tree=detailed
+n5: 13996010 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 6735816 0x4866141: elektraCalloc (internal.c:292)
+  n1: 2711008 0x4866975: keyVNew (key.c:166)
+   n3: 2711008 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n1: 1106432 0x486C87E: keyDup (kdb.h:214)
+     n1: 1106432 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 1106432 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 1106432 0x10CBC3: main (changetracking.c:162)
+    n0: 4576 in 68 places, all below massif's threshold (0.10%)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005440 0x4869843: keySetName (keyname.c:695)
+     n1: 2005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005440 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 803480 0x486D050: ksVNew (keyset.c:326)
+   n3: 803480 0x486CEE5: ksNew (keyset.c:288)
+    n1: 400016 0x486D37E: ksDeepDup (keyset.c:412)
+     n1: 400016 0x484D25D: kdbSet (kdb.c:2399)
+      n0: 400016 0x10CBC3: main (changetracking.c:162)
+    n2: 400008 0x486F5BE: ksBelow (keyset.c:1468)
+     n1: 400008 0x484D23B: kdbSet (kdb.c:2398)
+      n0: 400008 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12696 in 11 places, all below massif's threshold (0.10%)
+ n4: 6612972 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140677 0x486988C: keySetName (keyname.c:697)
+    n1: 3140677 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140677 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940235 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940235 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940235 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 530560 0x4872B49: ksResize (keyset.c:2864)
+   n2: 524288 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n0: 33608 in 22 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=117
+#-----------
+time=61982352
+mem_heap_B=14032133
+mem_heap_extra_B=4085387
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=118
+#-----------
+time=62262288
+mem_heap_B=14068221
+mem_heap_extra_B=4094403
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=119
+#-----------
+time=62542240
+mem_heap_B=14104317
+mem_heap_extra_B=4103427
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=120
+#-----------
+time=62822176
+mem_heap_B=14140485
+mem_heap_extra_B=4112475
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=121
+#-----------
+time=62823120
+mem_heap_B=14140618
+mem_heap_extra_B=4112550
+mem_stacks_B=0
+heap_tree=detailed
+n5: 14140618 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 6880424 0x4866141: elektraCalloc (internal.c:292)
+  n1: 2855616 0x4866975: keyVNew (key.c:166)
+   n3: 2855616 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n1: 1251040 0x486C87E: keyDup (kdb.h:214)
+     n1: 1251040 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 1251040 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 1251040 0x10CBC3: main (changetracking.c:162)
+    n0: 4576 in 68 places, all below massif's threshold (0.10%)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005440 0x4869843: keySetName (keyname.c:695)
+     n1: 2005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005440 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 803480 0x486D050: ksVNew (keyset.c:326)
+   n3: 803480 0x486CEE5: ksNew (keyset.c:288)
+    n1: 400016 0x486D37E: ksDeepDup (keyset.c:412)
+     n1: 400016 0x484D25D: kdbSet (kdb.c:2399)
+      n0: 400016 0x10CBC3: main (changetracking.c:162)
+    n2: 400008 0x486F5BE: ksBelow (keyset.c:1468)
+     n1: 400008 0x484D23B: kdbSet (kdb.c:2398)
+      n0: 400008 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12696 in 11 places, all below massif's threshold (0.10%)
+ n4: 6612972 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140677 0x486988C: keySetName (keyname.c:697)
+    n1: 3140677 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140677 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940235 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940235 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940235 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 530560 0x4872B49: ksResize (keyset.c:2864)
+   n2: 524288 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n0: 33608 in 22 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=122
+#-----------
+time=63103064
+mem_heap_B=14176741
+mem_heap_extra_B=4121539
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=123
+#-----------
+time=63383000
+mem_heap_B=14212829
+mem_heap_extra_B=4130555
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=124
+#-----------
+time=63662952
+mem_heap_B=14248925
+mem_heap_extra_B=4139579
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=125
+#-----------
+time=63942888
+mem_heap_B=14285093
+mem_heap_extra_B=4148627
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=126
+#-----------
+time=63954992
+mem_heap_B=14286666
+mem_heap_extra_B=4149062
+mem_stacks_B=0
+heap_tree=detailed
+n5: 14286666 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 7026472 0x4866141: elektraCalloc (internal.c:292)
+  n1: 3001664 0x4866975: keyVNew (key.c:166)
+   n3: 3001664 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n1: 1397088 0x486C87E: keyDup (kdb.h:214)
+     n1: 1397088 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 1397088 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 1397088 0x10CBC3: main (changetracking.c:162)
+    n0: 4576 in 68 places, all below massif's threshold (0.10%)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005440 0x4869843: keySetName (keyname.c:695)
+     n1: 2005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005440 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 803480 0x486D050: ksVNew (keyset.c:326)
+   n3: 803480 0x486CEE5: ksNew (keyset.c:288)
+    n1: 400016 0x486D37E: ksDeepDup (keyset.c:412)
+     n1: 400016 0x484D25D: kdbSet (kdb.c:2399)
+      n0: 400016 0x10CBC3: main (changetracking.c:162)
+    n2: 400008 0x486F5BE: ksBelow (keyset.c:1468)
+     n1: 400008 0x484D23B: kdbSet (kdb.c:2398)
+      n0: 400008 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12696 in 11 places, all below massif's threshold (0.10%)
+ n4: 6612972 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140677 0x486988C: keySetName (keyname.c:697)
+    n1: 3140677 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140677 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940235 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940235 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940235 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 530560 0x4872B49: ksResize (keyset.c:2864)
+   n2: 524288 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n0: 33608 in 22 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=127
+#-----------
+time=64234936
+mem_heap_B=14322789
+mem_heap_extra_B=4158051
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=128
+#-----------
+time=64514872
+mem_heap_B=14358877
+mem_heap_extra_B=4167067
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=129
+#-----------
+time=64794824
+mem_heap_B=14394973
+mem_heap_extra_B=4176091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=130
+#-----------
+time=65074760
+mem_heap_B=14431141
+mem_heap_extra_B=4185139
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=131
+#-----------
+time=65098024
+mem_heap_B=14434154
+mem_heap_extra_B=4185934
+mem_stacks_B=0
+heap_tree=detailed
+n5: 14434154 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 7173960 0x4866141: elektraCalloc (internal.c:292)
+  n1: 3149152 0x4866975: keyVNew (key.c:166)
+   n3: 3149152 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n1: 1544576 0x486C87E: keyDup (kdb.h:214)
+     n1: 1544576 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 1544576 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 1544576 0x10CBC3: main (changetracking.c:162)
+    n0: 4576 in 68 places, all below massif's threshold (0.10%)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005440 0x4869843: keySetName (keyname.c:695)
+     n1: 2005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005440 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 803480 0x486D050: ksVNew (keyset.c:326)
+   n3: 803480 0x486CEE5: ksNew (keyset.c:288)
+    n1: 400016 0x486D37E: ksDeepDup (keyset.c:412)
+     n1: 400016 0x484D25D: kdbSet (kdb.c:2399)
+      n0: 400016 0x10CBC3: main (changetracking.c:162)
+    n2: 400008 0x486F5BE: ksBelow (keyset.c:1468)
+     n1: 400008 0x484D23B: kdbSet (kdb.c:2398)
+      n0: 400008 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12696 in 11 places, all below massif's threshold (0.10%)
+ n4: 6612972 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140677 0x486988C: keySetName (keyname.c:697)
+    n1: 3140677 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140677 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940235 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940235 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940235 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 530560 0x4872B49: ksResize (keyset.c:2864)
+   n2: 524288 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n0: 33608 in 22 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=132
+#-----------
+time=65377968
+mem_heap_B=14470277
+mem_heap_extra_B=4194923
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=133
+#-----------
+time=66052016
+mem_heap_B=15013869
+mem_heap_extra_B=4199747
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=134
+#-----------
+time=66052016
+mem_heap_B=15013869
+mem_heap_extra_B=4199747
+mem_stacks_B=0
+heap_tree=detailed
+n5: 15013869 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 7229392 0x4866141: elektraCalloc (internal.c:292)
+  n1: 3204576 0x4866975: keyVNew (key.c:166)
+   n3: 3204576 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n1: 1600000 0x486C87E: keyDup (kdb.h:214)
+     n1: 1600000 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 1600000 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 1600000 0x10CBC3: main (changetracking.c:162)
+    n0: 4576 in 68 places, all below massif's threshold (0.10%)
+  n2: 2005400 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005400 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005400 0x4869843: keySetName (keyname.c:695)
+     n1: 2005400 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005400 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5400 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 803480 0x486D050: ksVNew (keyset.c:326)
+   n3: 803480 0x486CEE5: ksNew (keyset.c:288)
+    n1: 400016 0x486D37E: ksDeepDup (keyset.c:412)
+     n1: 400016 0x484D25D: kdbSet (kdb.c:2399)
+      n0: 400016 0x10CBC3: main (changetracking.c:162)
+    n2: 400008 0x486F5BE: ksBelow (keyset.c:1468)
+     n1: 400008 0x484D23B: kdbSet (kdb.c:2398)
+      n0: 400008 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12744 in 11 places, all below massif's threshold (0.10%)
+ n4: 7137255 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141260 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140675 0x486988C: keySetName (keyname.c:697)
+    n1: 3140675 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140675 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1785 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940232 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940232 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940232 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1342 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 1054848 0x4872B49: ksResize (keyset.c:2864)
+   n3: 1048576 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n1: 524288 0x484D28C: kdbSet (kdb.c:2400)
+     n0: 524288 0x10CBC3: main (changetracking.c:162)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n0: 33608 in 22 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=135
+#-----------
+time=66452040
+mem_heap_B=14613861
+mem_heap_extra_B=4199731
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=136
+#-----------
+time=66852160
+mem_heap_B=14213765
+mem_heap_extra_B=4199707
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=137
+#-----------
+time=67132080
+mem_heap_B=14264109
+mem_heap_extra_B=4208211
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=138
+#-----------
+time=67412024
+mem_heap_B=14314509
+mem_heap_extra_B=4216715
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=139
+#-----------
+time=67691960
+mem_heap_B=14350597
+mem_heap_extra_B=4225731
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=140
+#-----------
+time=67971888
+mem_heap_B=14415277
+mem_heap_extra_B=4233715
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=141
+#-----------
+time=68251816
+mem_heap_B=14451405
+mem_heap_extra_B=4242747
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=142
+#-----------
+time=68531744
+mem_heap_B=14487461
+mem_heap_extra_B=4251755
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=143
+#-----------
+time=68811680
+mem_heap_B=14523629
+mem_heap_extra_B=4260803
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=144
+#-----------
+time=69091640
+mem_heap_B=14616845
+mem_heap_extra_B=4267723
+mem_stacks_B=0
+heap_tree=detailed
+n5: 14616845 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 7268327 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141260 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140675 0x486988C: keySetName (keyname.c:697)
+    n1: 3140675 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140675 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1785 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940232 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940232 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940232 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1342 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 1185920 0x4872B49: ksResize (keyset.c:2864)
+   n3: 1048576 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n1: 524288 0x484D28C: kdbSet (kdb.c:2400)
+     n0: 524288 0x10CBC3: main (changetracking.c:162)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n2: 137344 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 131072 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n1: 131072 0x484311F: backendsDivide (backends.c:142)
+      n1: 131072 0x484D31D: kdbSet (kdb.c:2406)
+       n0: 131072 0x10CBC3: main (changetracking.c:162)
+    n0: 6272 in 5 places, all below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n4: 6701296 0x4866141: elektraCalloc (internal.c:292)
+  n1: 3476576 0x4866975: keyVNew (key.c:166)
+   n4: 3476576 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n1: 1600000 0x486C87E: keyDup (kdb.h:214)
+     n1: 1600000 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 1600000 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 1600000 0x10CBC3: main (changetracking.c:162)
+    n2: 272000 0x484275B: keyDup (kdb.h:214)
+     n1: 272000 0x4842F78: backendsDivideInternal (backends.c:113)
+      n1: 272000 0x484311F: backendsDivide (backends.c:142)
+       n1: 272000 0x484D31D: kdbSet (kdb.c:2406)
+        n0: 272000 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 4576 in 67 places, all below massif's threshold (0.10%)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005440 0x4869843: keySetName (keyname.c:695)
+     n1: 2005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005440 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n0: 16088 in 13 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n0: 33608 in 22 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=145
+#-----------
+time=69371568
+mem_heap_B=14652901
+mem_heap_extra_B=4276731
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=146
+#-----------
+time=69651504
+mem_heap_B=14689074
+mem_heap_extra_B=4285838
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=147
+#-----------
+time=69931448
+mem_heap_B=14725197
+mem_heap_extra_B=4294827
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=148
+#-----------
+time=70211384
+mem_heap_B=14761285
+mem_heap_extra_B=4303843
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=149
+#-----------
+time=70491336
+mem_heap_B=14797381
+mem_heap_extra_B=4312867
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=150
+#-----------
+time=70771272
+mem_heap_B=14833549
+mem_heap_extra_B=4321915
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=151
+#-----------
+time=71178176
+mem_heap_B=15000165
+mem_heap_extra_B=4330795
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=152
+#-----------
+time=71458112
+mem_heap_B=15036333
+mem_heap_extra_B=4339843
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=153
+#-----------
+time=71641336
+mem_heap_B=15059986
+mem_heap_extra_B=4345798
+mem_stacks_B=0
+heap_tree=detailed
+n5: 15059986 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 7399404 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140677 0x486988C: keySetName (keyname.c:697)
+    n1: 3140677 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140677 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940235 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940235 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940235 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 1316992 0x4872B49: ksResize (keyset.c:2864)
+   n3: 1048576 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n1: 524288 0x484D28C: kdbSet (kdb.c:2400)
+     n0: 524288 0x10CBC3: main (changetracking.c:162)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n2: 268416 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 262144 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n1: 262144 0x484311F: backendsDivide (backends.c:142)
+      n1: 262144 0x484D31D: kdbSet (kdb.c:2406)
+       n0: 262144 0x10CBC3: main (changetracking.c:162)
+    n0: 6272 in 5 places, all below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n4: 7013360 0x4866141: elektraCalloc (internal.c:292)
+  n1: 3788640 0x4866975: keyVNew (key.c:166)
+   n4: 3788640 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n1: 1600000 0x486C87E: keyDup (kdb.h:214)
+     n1: 1600000 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 1600000 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 1600000 0x10CBC3: main (changetracking.c:162)
+    n2: 584064 0x484275B: keyDup (kdb.h:214)
+     n1: 584064 0x4842F78: backendsDivideInternal (backends.c:113)
+      n1: 584064 0x484311F: backendsDivide (backends.c:142)
+       n1: 584064 0x484D31D: kdbSet (kdb.c:2406)
+        n0: 584064 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 4576 in 67 places, all below massif's threshold (0.10%)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005440 0x4869843: keySetName (keyname.c:695)
+     n1: 2005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005440 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n0: 16088 in 13 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n0: 33608 in 22 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=154
+#-----------
+time=71921256
+mem_heap_B=15096069
+mem_heap_extra_B=4354771
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=155
+#-----------
+time=72201208
+mem_heap_B=15132165
+mem_heap_extra_B=4363795
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=156
+#-----------
+time=72481144
+mem_heap_B=15168333
+mem_heap_extra_B=4372843
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=157
+#-----------
+time=72761064
+mem_heap_B=15204463
+mem_heap_extra_B=4381897
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=158
+#-----------
+time=72844664
+mem_heap_B=15215250
+mem_heap_extra_B=4384614
+mem_stacks_B=0
+heap_tree=detailed
+n5: 15215250 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 7399404 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140677 0x486988C: keySetName (keyname.c:697)
+    n1: 3140677 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140677 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940235 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940235 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940235 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 1316992 0x4872B49: ksResize (keyset.c:2864)
+   n3: 1048576 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n1: 524288 0x484D28C: kdbSet (kdb.c:2400)
+     n0: 524288 0x10CBC3: main (changetracking.c:162)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n2: 268416 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 262144 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n1: 262144 0x484311F: backendsDivide (backends.c:142)
+      n1: 262144 0x484D31D: kdbSet (kdb.c:2406)
+       n0: 262144 0x10CBC3: main (changetracking.c:162)
+    n0: 6272 in 5 places, all below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n4: 7168624 0x4866141: elektraCalloc (internal.c:292)
+  n1: 3943904 0x4866975: keyVNew (key.c:166)
+   n4: 3943904 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n1: 1600000 0x486C87E: keyDup (kdb.h:214)
+     n1: 1600000 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 1600000 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 1600000 0x10CBC3: main (changetracking.c:162)
+    n2: 739328 0x484275B: keyDup (kdb.h:214)
+     n1: 739328 0x4842F78: backendsDivideInternal (backends.c:113)
+      n1: 739328 0x484311F: backendsDivide (backends.c:142)
+       n1: 739328 0x484D31D: kdbSet (kdb.c:2406)
+        n0: 739328 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 4576 in 67 places, all below massif's threshold (0.10%)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005440 0x4869843: keySetName (keyname.c:695)
+     n1: 2005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005440 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n0: 16088 in 13 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n0: 33608 in 22 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=159
+#-----------
+time=73124608
+mem_heap_B=15251373
+mem_heap_extra_B=4393603
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=160
+#-----------
+time=73404544
+mem_heap_B=15287461
+mem_heap_extra_B=4402619
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=161
+#-----------
+time=73684496
+mem_heap_B=15323557
+mem_heap_extra_B=4411643
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=162
+#-----------
+time=73964432
+mem_heap_B=15359725
+mem_heap_extra_B=4420691
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=163
+#-----------
+time=74059864
+mem_heap_B=15372050
+mem_heap_extra_B=4423814
+mem_stacks_B=0
+heap_tree=detailed
+n5: 15372050 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 7399404 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140677 0x486988C: keySetName (keyname.c:697)
+    n1: 3140677 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140677 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940235 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940235 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940235 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 1316992 0x4872B49: ksResize (keyset.c:2864)
+   n3: 1048576 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n1: 524288 0x484D28C: kdbSet (kdb.c:2400)
+     n0: 524288 0x10CBC3: main (changetracking.c:162)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n2: 268416 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 262144 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n1: 262144 0x484311F: backendsDivide (backends.c:142)
+      n1: 262144 0x484D31D: kdbSet (kdb.c:2406)
+       n0: 262144 0x10CBC3: main (changetracking.c:162)
+    n0: 6272 in 5 places, all below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n4: 7325424 0x4866141: elektraCalloc (internal.c:292)
+  n1: 4100704 0x4866975: keyVNew (key.c:166)
+   n4: 4100704 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n1: 1600000 0x486C87E: keyDup (kdb.h:214)
+     n1: 1600000 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 1600000 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 1600000 0x10CBC3: main (changetracking.c:162)
+    n2: 896128 0x484275B: keyDup (kdb.h:214)
+     n1: 896128 0x4842F78: backendsDivideInternal (backends.c:113)
+      n1: 896128 0x484311F: backendsDivide (backends.c:142)
+       n1: 896128 0x484D31D: kdbSet (kdb.c:2406)
+        n0: 896128 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 4576 in 67 places, all below massif's threshold (0.10%)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005440 0x4869843: keySetName (keyname.c:695)
+     n1: 2005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005440 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n0: 16088 in 13 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n0: 33608 in 22 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=164
+#-----------
+time=74339808
+mem_heap_B=15408173
+mem_heap_extra_B=4432803
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=165
+#-----------
+time=74619744
+mem_heap_B=15444261
+mem_heap_extra_B=4441819
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=166
+#-----------
+time=74899696
+mem_heap_B=15480357
+mem_heap_extra_B=4450843
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=167
+#-----------
+time=75179632
+mem_heap_B=15516525
+mem_heap_extra_B=4459891
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=168
+#-----------
+time=75503584
+mem_heap_B=15786597
+mem_heap_extra_B=4461867
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=169
+#-----------
+time=75503728
+mem_heap_B=15786674
+mem_heap_extra_B=4461934
+mem_stacks_B=0
+heap_tree=detailed
+n5: 15786674 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 7661548 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140677 0x486988C: keySetName (keyname.c:697)
+    n1: 3140677 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140677 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940235 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940235 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940235 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 1579136 0x4872B49: ksResize (keyset.c:2864)
+   n3: 1048576 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n1: 524288 0x484D28C: kdbSet (kdb.c:2400)
+     n0: 524288 0x10CBC3: main (changetracking.c:162)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n2: 530560 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 524288 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n1: 524288 0x484311F: backendsDivide (backends.c:142)
+      n1: 524288 0x484D31D: kdbSet (kdb.c:2406)
+       n0: 524288 0x10CBC3: main (changetracking.c:162)
+    n0: 6272 in 5 places, all below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n4: 7477904 0x4866141: elektraCalloc (internal.c:292)
+  n1: 4253184 0x4866975: keyVNew (key.c:166)
+   n4: 4253184 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n1: 1600000 0x486C87E: keyDup (kdb.h:214)
+     n1: 1600000 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 1600000 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 1600000 0x10CBC3: main (changetracking.c:162)
+    n2: 1048608 0x484275B: keyDup (kdb.h:214)
+     n1: 1048608 0x4842F78: backendsDivideInternal (backends.c:113)
+      n1: 1048608 0x484311F: backendsDivide (backends.c:142)
+       n1: 1048608 0x484D31D: kdbSet (kdb.c:2406)
+        n0: 1048608 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 4576 in 67 places, all below massif's threshold (0.10%)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005440 0x4869843: keySetName (keyname.c:695)
+     n1: 2005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005440 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n0: 16088 in 13 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n0: 33608 in 22 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=170
+#-----------
+time=75783672
+mem_heap_B=15822797
+mem_heap_extra_B=4470923
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=171
+#-----------
+time=76063608
+mem_heap_B=15858885
+mem_heap_extra_B=4479939
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=172
+#-----------
+time=76343528
+mem_heap_B=15895024
+mem_heap_extra_B=4489016
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=173
+#-----------
+time=76623448
+mem_heap_B=15931149
+mem_heap_extra_B=4498027
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=174
+#-----------
+time=76759152
+mem_heap_B=15948658
+mem_heap_extra_B=4502446
+mem_stacks_B=0
+heap_tree=peak
+n5: 15948658 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 7661548 0x486609D: elektraRealloc (internal.c:240)
+  n2: 3141262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 3140677 0x486988C: keySetName (keyname.c:697)
+    n1: 3140677 0x4866FB2: keyVNew (key.c:222)
+     n2: 3140677 0x4866904: keyNew (key.c:150)
+      n1: 3138890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3138890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 2940235 0x48698C1: keySetName (keyname.c:699)
+   n1: 2940235 0x4866FB2: keyVNew (key.c:222)
+    n2: 2940235 0x4866904: keyNew (key.c:150)
+     n1: 2938890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 2938890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 1579136 0x4872B49: ksResize (keyset.c:2864)
+   n3: 1048576 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 524288 0x10CB65: main (changetracking.c:158)
+    n1: 524288 0x484D28C: kdbSet (kdb.c:2400)
+     n0: 524288 0x10CBC3: main (changetracking.c:162)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n2: 530560 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 524288 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n1: 524288 0x484311F: backendsDivide (backends.c:142)
+      n1: 524288 0x484D31D: kdbSet (kdb.c:2406)
+       n0: 524288 0x10CBC3: main (changetracking.c:162)
+    n0: 6272 in 5 places, all below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n4: 7639888 0x4866141: elektraCalloc (internal.c:292)
+  n1: 4415168 0x4866975: keyVNew (key.c:166)
+   n4: 4415168 0x4866904: keyNew (key.c:150)
+    n1: 1600000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 1600000 0x10CB3C: main (changetracking.c:157)
+    n1: 1600000 0x486C87E: keyDup (kdb.h:214)
+     n1: 1600000 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 1600000 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 1600000 0x10CBC3: main (changetracking.c:162)
+    n2: 1210592 0x484275B: keyDup (kdb.h:214)
+     n1: 1210592 0x4842F78: backendsDivideInternal (backends.c:113)
+      n1: 1210592 0x484311F: backendsDivide (backends.c:142)
+       n1: 1210592 0x484D31D: kdbSet (kdb.c:2406)
+        n0: 1210592 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 4576 in 67 places, all below massif's threshold (0.10%)
+  n2: 2005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 2005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 2005440 0x4869843: keySetName (keyname.c:695)
+     n1: 2005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 2005440 0x4866904: keyNew (key.c:150)
+       n1: 2000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 2000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 1203192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 1203192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 1203192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 1201008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 1201008 0x4866C6E: keyVNew (key.c:192)
+       n2: 1201008 0x4866904: keyNew (key.c:150)
+        n1: 1200000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 1200000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n0: 16088 in 13 places, all below massif's threshold (0.10%)
+ n2: 540910 0x4866108: elektraMalloc (internal.c:277)
+  n2: 540348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 539240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 539240 0x4866C6E: keyVNew (key.c:192)
+     n2: 539240 0x4866904: keyNew (key.c:150)
+      n1: 538890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 538890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 562 in 13 places, all below massif's threshold (0.10%)
+ n1: 72704 0x4F39545: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x400FFE1: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40100E8: call_init (dl-init.c:30)
+    n1: 72704 0x40100E8: _dl_init (dl-init.c:119)
+     n1: 72704 0x49C4AEC: _dl_catch_exception (dl-error-skeleton.c:182)
+      n1: 72704 0x4014057: dl_open_worker (dl-open.c:758)
+       n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 72704 0x40138F9: _dl_open (dl-open.c:837)
+         n1: 72704 0x4A66257: dlopen_doit (dlopen.c:66)
+          n1: 72704 0x49C4A8F: _dl_catch_exception (dl-error-skeleton.c:208)
+           n1: 72704 0x49C4B4E: _dl_catch_error (dl-error-skeleton.c:227)
+            n1: 72704 0x4A66A64: _dlerror_run (dlerror.c:170)
+             n1: 72704 0x4A662E3: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+              n1: 72704 0x4876CB7: elektraModulesLoad (dl.c:80)
+               n1: 72704 0x484DE04: elektraPluginOpen (plugin.c:76)
+                n1: 72704 0x4845B88: addElektraMountpoint (kdb.c:320)
+                 n1: 72704 0x4848EEA: kdbOpen (kdb.c:945)
+                  n0: 72704 0x10CACA: main (changetracking.c:152)
+ n0: 33608 in 22 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=175
+#-----------
+time=77039096
+mem_heap_B=15984781
+mem_heap_extra_B=4511435
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=176
+#-----------
+time=77319032
+mem_heap_B=16020869
+mem_heap_extra_B=4520451
+mem_stacks_B=0
+heap_tree=empty
