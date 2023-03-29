@@ -1,0 +1,3095 @@
+desc: --time-unit=B --max-snapshots=200 --threshold=0.1 --xtree-memory=full --massif-out-file=massif.libelektra-master.500000.out
+cmd: ./benchmark_changetracking --key-count 500000
+time_unit: B
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=19588664
+mem_heap_B=14735857
+mem_heap_extra_B=4666455
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=48831000
+mem_heap_B=37309571
+mem_heap_extra_B=11335077
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=73397776
+mem_heap_B=56057895
+mem_heap_extra_B=17153529
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=95025880
+mem_heap_B=73057163
+mem_heap_extra_B=21782365
+mem_stacks_B=0
+heap_tree=detailed
+n4: 73057163 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 40887859 0x486609D: elektraRealloc (internal.c:240)
+  n2: 18939004 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 18938419 0x486988C: keySetName (keyname.c:697)
+    n1: 18938419 0x4866FB2: keyVNew (key.c:222)
+     n2: 18938419 0x4866904: keyNew (key.c:150)
+      n1: 18936634 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 18936634 0x10CB3C: main (changetracking.c:157)
+      n0: 1785 in 66 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 17747492 0x48698C1: keySetName (keyname.c:699)
+   n1: 17747492 0x4866FB2: keyVNew (key.c:222)
+    n2: 17747492 0x4866904: keyNew (key.c:150)
+     n1: 17746150 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 17746150 0x10CB3C: main (changetracking.c:157)
+     n0: 1342 in 66 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 4200448 0x4872B49: ksResize (keyset.c:2864)
+   n2: 4200448 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 4194304 0x10C6FB: buildLinearTree (changetracking.c:91)
+     n0: 4194304 0x10CB3C: main (changetracking.c:157)
+    n0: 6144 in 4 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n4: 28600632 0x4866141: elektraCalloc (internal.c:292)
+  n2: 11910240 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 11910240 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 11910240 0x4869843: keySetName (keyname.c:695)
+     n1: 11910240 0x4866FB2: keyVNew (key.c:222)
+      n2: 11910240 0x4866904: keyNew (key.c:150)
+       n1: 11904840 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 11904840 0x10CB3C: main (changetracking.c:157)
+       n0: 5400 in 66 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 9528416 0x4866975: keyVNew (key.c:166)
+   n2: 9528416 0x4866904: keyNew (key.c:150)
+    n1: 9523872 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 9523872 0x10CB3C: main (changetracking.c:157)
+    n0: 4544 in 66 places, all below massif's threshold (0.10%)
+  n1: 7146096 0x4862D75: keyDataNew (cow.c:158)
+   n1: 7146096 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 7146096 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 7143912 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 7143912 0x4866C6E: keyVNew (key.c:192)
+       n2: 7143912 0x4866904: keyNew (key.c:150)
+        n1: 7142904 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 7142904 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n0: 15880 in 10 places, all below massif's threshold (0.10%)
+ n2: 3462360 0x4866108: elektraMalloc (internal.c:277)
+  n2: 3461800 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 3460692 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 3460692 0x4866C6E: keyVNew (key.c:192)
+     n2: 3460692 0x4866904: keyNew (key.c:150)
+      n1: 3460342 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 3460342 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 560 in 13 places, all below massif's threshold (0.10%)
+ n0: 106312 in 23 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=5
+#-----------
+time=124483296
+mem_heap_B=95537799
+mem_heap_extra_B=28759145
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=139589664
+mem_heap_B=107066343
+mem_heap_extra_B=32336969
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=168948640
+mem_heap_B=124009483
+mem_heap_extra_B=36353781
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=185767088
+mem_heap_B=124009731
+mem_heap_extra_B=36353821
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=210081008
+mem_heap_B=124009731
+mem_heap_extra_B=36353821
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=232445560
+mem_heap_B=124009791
+mem_heap_extra_B=36353833
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=254856048
+mem_heap_B=124009731
+mem_heap_extra_B=36353821
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=277505008
+mem_heap_B=124009731
+mem_heap_extra_B=36353821
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=308538360
+mem_heap_B=124009789
+mem_heap_extra_B=36353835
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=328236656
+mem_heap_B=124009659
+mem_heap_extra_B=36353797
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=358871920
+mem_heap_B=124009659
+mem_heap_extra_B=36353797
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=393019424
+mem_heap_B=124009659
+mem_heap_extra_B=36353797
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=429274272
+mem_heap_B=124009659
+mem_heap_extra_B=36353797
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=447401696
+mem_heap_B=124009659
+mem_heap_extra_B=36353797
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=465529120
+mem_heap_B=124009659
+mem_heap_extra_B=36353797
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=483656544
+mem_heap_B=124009659
+mem_heap_extra_B=36353797
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=501783968
+mem_heap_B=124009659
+mem_heap_extra_B=36353797
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=535140536
+mem_heap_B=129324536
+mem_heap_extra_B=36682608
+mem_stacks_B=0
+heap_tree=detailed
+n4: 129324536 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 65982988 0x486609D: elektraRealloc (internal.c:240)
+  n2: 31891262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 31890677 0x486988C: keySetName (keyname.c:697)
+    n1: 31890677 0x4866FB2: keyVNew (key.c:222)
+     n2: 31890677 0x4866904: keyNew (key.c:150)
+      n1: 31888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 31888890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 29890235 0x48698C1: keySetName (keyname.c:699)
+   n1: 29890235 0x4866FB2: keyVNew (key.c:222)
+    n2: 29890235 0x4866904: keyNew (key.c:150)
+     n1: 29888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 29888890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 4200576 0x4872B49: ksResize (keyset.c:2864)
+   n2: 4194304 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 4194304 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n5: 57344328 0x4866141: elektraCalloc (internal.c:292)
+  n2: 20005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 20005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 20005440 0x4869843: keySetName (keyname.c:695)
+     n1: 20005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 20005440 0x4866904: keyNew (key.c:150)
+       n1: 20000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 20000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 17319520 0x4866975: keyVNew (key.c:166)
+   n3: 17319520 0x4866904: keyNew (key.c:150)
+    n1: 16000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 16000000 0x10CB3C: main (changetracking.c:157)
+    n1: 1314944 0x486C87E: keyDup (kdb.h:214)
+     n1: 1314944 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 1314944 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 1314944 0x10CBC3: main (changetracking.c:162)
+    n0: 4576 in 68 places, all below massif's threshold (0.10%)
+  n1: 12003192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 12003192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 12003192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 12001008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 12001008 0x4866C6E: keyVNew (key.c:192)
+       n2: 12001008 0x4866904: keyNew (key.c:150)
+        n1: 12000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 12000000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 8003480 0x486D050: ksVNew (keyset.c:326)
+   n3: 8003480 0x486CEE5: ksNew (keyset.c:288)
+    n1: 4000016 0x486D37E: ksDeepDup (keyset.c:412)
+     n1: 4000016 0x484D25D: kdbSet (kdb.c:2399)
+      n0: 4000016 0x10CBC3: main (changetracking.c:162)
+    n2: 4000008 0x486F5BE: ksBelow (keyset.c:1468)
+     n1: 4000008 0x484D23B: kdbSet (kdb.c:2398)
+      n0: 4000008 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12696 in 11 places, all below massif's threshold (0.10%)
+ n2: 5890908 0x4866108: elektraMalloc (internal.c:277)
+  n2: 5890348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 5889240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 5889240 0x4866C6E: keyVNew (key.c:192)
+     n2: 5889240 0x4866904: keyNew (key.c:150)
+      n1: 5888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 5888890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 560 in 13 places, all below massif's threshold (0.10%)
+ n0: 106312 in 23 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=23
+#-----------
+time=555828480
+mem_heap_B=131993944
+mem_heap_extra_B=37349960
+mem_stacks_B=0
+heap_tree=detailed
+n4: 131993944 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 65982988 0x486609D: elektraRealloc (internal.c:240)
+  n2: 31891262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 31890677 0x486988C: keySetName (keyname.c:697)
+    n1: 31890677 0x4866FB2: keyVNew (key.c:222)
+     n2: 31890677 0x4866904: keyNew (key.c:150)
+      n1: 31888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 31888890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 29890235 0x48698C1: keySetName (keyname.c:699)
+   n1: 29890235 0x4866FB2: keyVNew (key.c:222)
+    n2: 29890235 0x4866904: keyNew (key.c:150)
+     n1: 29888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 29888890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 4200576 0x4872B49: ksResize (keyset.c:2864)
+   n2: 4194304 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 4194304 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n5: 60013736 0x4866141: elektraCalloc (internal.c:292)
+  n2: 20005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 20005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 20005440 0x4869843: keySetName (keyname.c:695)
+     n1: 20005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 20005440 0x4866904: keyNew (key.c:150)
+       n1: 20000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 20000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 19988928 0x4866975: keyVNew (key.c:166)
+   n3: 19988928 0x4866904: keyNew (key.c:150)
+    n1: 16000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 16000000 0x10CB3C: main (changetracking.c:157)
+    n1: 3984352 0x486C87E: keyDup (kdb.h:214)
+     n1: 3984352 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 3984352 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 3984352 0x10CBC3: main (changetracking.c:162)
+    n0: 4576 in 68 places, all below massif's threshold (0.10%)
+  n1: 12003192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 12003192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 12003192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 12001008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 12001008 0x4866C6E: keyVNew (key.c:192)
+       n2: 12001008 0x4866904: keyNew (key.c:150)
+        n1: 12000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 12000000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 8003480 0x486D050: ksVNew (keyset.c:326)
+   n3: 8003480 0x486CEE5: ksNew (keyset.c:288)
+    n1: 4000016 0x486D37E: ksDeepDup (keyset.c:412)
+     n1: 4000016 0x484D25D: kdbSet (kdb.c:2399)
+      n0: 4000016 0x10CBC3: main (changetracking.c:162)
+    n2: 4000008 0x486F5BE: ksBelow (keyset.c:1468)
+     n1: 4000008 0x484D23B: kdbSet (kdb.c:2398)
+      n0: 4000008 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12696 in 11 places, all below massif's threshold (0.10%)
+ n2: 5890908 0x4866108: elektraMalloc (internal.c:277)
+  n2: 5890348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 5889240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 5889240 0x4866C6E: keyVNew (key.c:192)
+     n2: 5889240 0x4866904: keyNew (key.c:150)
+      n1: 5888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 5888890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 560 in 13 places, all below massif's threshold (0.10%)
+ n0: 106312 in 23 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=24
+#-----------
+time=587642728
+mem_heap_B=136099000
+mem_heap_extra_B=38376224
+mem_stacks_B=0
+heap_tree=detailed
+n4: 136099000 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 65982988 0x486609D: elektraRealloc (internal.c:240)
+  n2: 31891262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 31890677 0x486988C: keySetName (keyname.c:697)
+    n1: 31890677 0x4866FB2: keyVNew (key.c:222)
+     n2: 31890677 0x4866904: keyNew (key.c:150)
+      n1: 31888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 31888890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 29890235 0x48698C1: keySetName (keyname.c:699)
+   n1: 29890235 0x4866FB2: keyVNew (key.c:222)
+    n2: 29890235 0x4866904: keyNew (key.c:150)
+     n1: 29888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 29888890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 4200576 0x4872B49: ksResize (keyset.c:2864)
+   n2: 4194304 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 4194304 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n5: 64118792 0x4866141: elektraCalloc (internal.c:292)
+  n1: 24093984 0x4866975: keyVNew (key.c:166)
+   n3: 24093984 0x4866904: keyNew (key.c:150)
+    n1: 16000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 16000000 0x10CB3C: main (changetracking.c:157)
+    n1: 8089408 0x486C87E: keyDup (kdb.h:214)
+     n1: 8089408 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 8089408 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 8089408 0x10CBC3: main (changetracking.c:162)
+    n0: 4576 in 68 places, all below massif's threshold (0.10%)
+  n2: 20005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 20005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 20005440 0x4869843: keySetName (keyname.c:695)
+     n1: 20005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 20005440 0x4866904: keyNew (key.c:150)
+       n1: 20000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 20000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 12003192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 12003192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 12003192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 12001008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 12001008 0x4866C6E: keyVNew (key.c:192)
+       n2: 12001008 0x4866904: keyNew (key.c:150)
+        n1: 12000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 12000000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 8003480 0x486D050: ksVNew (keyset.c:326)
+   n3: 8003480 0x486CEE5: ksNew (keyset.c:288)
+    n1: 4000016 0x486D37E: ksDeepDup (keyset.c:412)
+     n1: 4000016 0x484D25D: kdbSet (kdb.c:2399)
+      n0: 4000016 0x10CBC3: main (changetracking.c:162)
+    n2: 4000008 0x486F5BE: ksBelow (keyset.c:1468)
+     n1: 4000008 0x484D23B: kdbSet (kdb.c:2398)
+      n0: 4000008 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12696 in 11 places, all below massif's threshold (0.10%)
+ n2: 5890908 0x4866108: elektraMalloc (internal.c:277)
+  n2: 5890348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 5889240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 5889240 0x4866C6E: keyVNew (key.c:192)
+     n2: 5889240 0x4866904: keyNew (key.c:150)
+      n1: 5888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 5888890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 560 in 13 places, all below massif's threshold (0.10%)
+ n0: 106312 in 23 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=25
+#-----------
+time=609385912
+mem_heap_B=138904568
+mem_heap_extra_B=39077616
+mem_stacks_B=0
+heap_tree=detailed
+n4: 138904568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 66924360 0x4866141: elektraCalloc (internal.c:292)
+  n1: 26899552 0x4866975: keyVNew (key.c:166)
+   n3: 26899552 0x4866904: keyNew (key.c:150)
+    n1: 16000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 16000000 0x10CB3C: main (changetracking.c:157)
+    n1: 10894976 0x486C87E: keyDup (kdb.h:214)
+     n1: 10894976 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 10894976 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 10894976 0x10CBC3: main (changetracking.c:162)
+    n0: 4576 in 68 places, all below massif's threshold (0.10%)
+  n2: 20005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 20005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 20005440 0x4869843: keySetName (keyname.c:695)
+     n1: 20005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 20005440 0x4866904: keyNew (key.c:150)
+       n1: 20000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 20000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 12003192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 12003192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 12003192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 12001008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 12001008 0x4866C6E: keyVNew (key.c:192)
+       n2: 12001008 0x4866904: keyNew (key.c:150)
+        n1: 12000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 12000000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n1: 8003480 0x486D050: ksVNew (keyset.c:326)
+   n3: 8003480 0x486CEE5: ksNew (keyset.c:288)
+    n1: 4000016 0x486D37E: ksDeepDup (keyset.c:412)
+     n1: 4000016 0x484D25D: kdbSet (kdb.c:2399)
+      n0: 4000016 0x10CBC3: main (changetracking.c:162)
+    n2: 4000008 0x486F5BE: ksBelow (keyset.c:1468)
+     n1: 4000008 0x484D23B: kdbSet (kdb.c:2398)
+      n0: 4000008 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12696 in 11 places, all below massif's threshold (0.10%)
+ n4: 65982988 0x486609D: elektraRealloc (internal.c:240)
+  n2: 31891262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 31890677 0x486988C: keySetName (keyname.c:697)
+    n1: 31890677 0x4866FB2: keyVNew (key.c:222)
+     n2: 31890677 0x4866904: keyNew (key.c:150)
+      n1: 31888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 31888890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 29890235 0x48698C1: keySetName (keyname.c:699)
+   n1: 29890235 0x4866FB2: keyVNew (key.c:222)
+    n2: 29890235 0x4866904: keyNew (key.c:150)
+     n1: 29888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 29888890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 4200576 0x4872B49: ksResize (keyset.c:2864)
+   n2: 4194304 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 4194304 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 6272 in 1 place, below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n2: 5890908 0x4866108: elektraMalloc (internal.c:277)
+  n2: 5890348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 5889240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 5889240 0x4866C6E: keyVNew (key.c:192)
+     n2: 5889240 0x4866904: keyNew (key.c:150)
+      n1: 5888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 5888890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 560 in 13 places, all below massif's threshold (0.10%)
+ n0: 106312 in 23 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=26
+#-----------
+time=638098032
+mem_heap_B=142609291
+mem_heap_extra_B=40003749
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=674211968
+mem_heap_B=142345907
+mem_heap_extra_B=40762301
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=700338848
+mem_heap_B=147087027
+mem_heap_extra_B=41554365
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=723343288
+mem_heap_B=150055392
+mem_heap_extra_B=42296504
+mem_stacks_B=0
+heap_tree=detailed
+n4: 150055392 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 72274444 0x486609D: elektraRealloc (internal.c:240)
+  n2: 31891262 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 31890677 0x486988C: keySetName (keyname.c:697)
+    n1: 31890677 0x4866FB2: keyVNew (key.c:222)
+     n2: 31890677 0x4866904: keyNew (key.c:150)
+      n1: 31888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 31888890 0x10CB3C: main (changetracking.c:157)
+      n0: 1787 in 69 places, all below massif's threshold (0.10%)
+    n0: 0 in 7 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 29890235 0x48698C1: keySetName (keyname.c:699)
+   n1: 29890235 0x4866FB2: keyVNew (key.c:222)
+    n2: 29890235 0x4866904: keyNew (key.c:150)
+     n1: 29888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 29888890 0x10CB3C: main (changetracking.c:157)
+     n0: 1345 in 69 places, all below massif's threshold (0.10%)
+   n0: 0 in 7 places, all below massif's threshold (0.10%)
+  n2: 10492032 0x4872B49: ksResize (keyset.c:2864)
+   n3: 8388608 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 4194304 0x10CB65: main (changetracking.c:158)
+    n1: 4194304 0x484D28C: kdbSet (kdb.c:2400)
+     n0: 4194304 0x10CBC3: main (changetracking.c:162)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n2: 2103424 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 2097152 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n1: 2097152 0x484311F: backendsDivide (backends.c:142)
+      n1: 2097152 0x484D31D: kdbSet (kdb.c:2406)
+       n0: 2097152 0x10CBC3: main (changetracking.c:162)
+    n0: 6272 in 5 places, all below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n4: 71783728 0x4866141: elektraCalloc (internal.c:292)
+  n1: 39759008 0x4866975: keyVNew (key.c:166)
+   n4: 39759008 0x4866904: keyNew (key.c:150)
+    n1: 16000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 16000000 0x10CB3C: main (changetracking.c:157)
+    n1: 16000000 0x486C87E: keyDup (kdb.h:214)
+     n1: 16000000 0x486D3E0: ksDeepDup (keyset.c:416)
+      n1: 16000000 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 16000000 0x10CBC3: main (changetracking.c:162)
+    n2: 7754432 0x484275B: keyDup (kdb.h:214)
+     n1: 7754432 0x4842F78: backendsDivideInternal (backends.c:113)
+      n1: 7754432 0x484311F: backendsDivide (backends.c:142)
+       n1: 7754432 0x484D31D: kdbSet (kdb.c:2406)
+        n0: 7754432 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 4576 in 67 places, all below massif's threshold (0.10%)
+  n2: 20005440 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 20005440 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 20005440 0x4869843: keySetName (keyname.c:695)
+     n1: 20005440 0x4866FB2: keyVNew (key.c:222)
+      n2: 20005440 0x4866904: keyNew (key.c:150)
+       n1: 20000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 20000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5440 in 69 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 12003192 0x4862D75: keyDataNew (cow.c:158)
+   n1: 12003192 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 12003192 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 12001008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 12001008 0x4866C6E: keyVNew (key.c:192)
+       n2: 12001008 0x4866904: keyNew (key.c:150)
+        n1: 12000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 12000000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2184 in 3 places, all below massif's threshold (0.10%)
+  n0: 16088 in 13 places, all below massif's threshold (0.10%)
+ n2: 5890908 0x4866108: elektraMalloc (internal.c:277)
+  n2: 5890348 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 5889240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 5889240 0x4866C6E: keyVNew (key.c:192)
+     n2: 5889240 0x4866904: keyNew (key.c:150)
+      n1: 5888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 5888890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 560 in 13 places, all below massif's threshold (0.10%)
+ n0: 106312 in 23 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=30
+#-----------
+time=740157152
+mem_heap_B=154050939
+mem_heap_extra_B=42775093
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=761223144
+mem_heap_B=156769107
+mem_heap_extra_B=43454629
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=792575784
+mem_heap_B=157826931
+mem_heap_extra_B=43718997
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=821957944
+mem_heap_B=140204035
+mem_heap_extra_B=40357781
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=851350624
+mem_heap_B=144909869
+mem_heap_extra_B=41272163
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=887275080
+mem_heap_B=150458539
+mem_heap_extra_B=42397165
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=910764000
+mem_heap_B=155315403
+mem_heap_extra_B=43091125
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=943457808
+mem_heap_B=159533891
+mem_heap_extra_B=44145741
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=970171512
+mem_heap_B=176407035
+mem_heap_extra_B=48361869
+mem_stacks_B=0
+heap_tree=detailed
+n4: 176407035 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 96029488 0x4866141: elektraCalloc (internal.c:292)
+  n1: 48004576 0x4866975: keyVNew (key.c:166)
+   n3: 48004576 0x4866904: keyNew (key.c:150)
+    n2: 32000000 0x484275B: keyDup (kdb.h:214)
+     n1: 32000000 0x4842F78: backendsDivideInternal (backends.c:113)
+      n2: 32000000 0x484311F: backendsDivide (backends.c:142)
+       n1: 16000000 0x484D31D: kdbSet (kdb.c:2406)
+        n0: 16000000 0x10CBC3: main (changetracking.c:162)
+       n1: 16000000 0x484D7FA: kdbSet (kdb.c:2474)
+        n0: 16000000 0x10CBC3: main (changetracking.c:162)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n1: 16000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 16000000 0x10CB3C: main (changetracking.c:157)
+    n0: 4576 in 71 places, all below massif's threshold (0.10%)
+  n2: 20005400 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 20005400 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 20005400 0x4869843: keySetName (keyname.c:695)
+     n1: 20005400 0x4866FB2: keyVNew (key.c:222)
+      n2: 20005400 0x4866904: keyNew (key.c:150)
+       n1: 20000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 20000000 0x10CB3C: main (changetracking.c:157)
+       n0: 5400 in 72 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 16004288 0x486CF3C: ksVNew (keyset.c:306)
+   n2: 16004288 0x486CEE5: ksNew (keyset.c:288)
+    n2: 16000032 0x4868947: keyMeta (keymeta.c:552)
+     n1: 16000000 0x4E7510B: ???
+      n1: 16000000 0x4E7B905: ???
+       n1: 16000000 0x51FED52: ???
+        n1: 16000000 0x51FF0E0: ???
+         n1: 16000000 0x484C829: runSetPhase (kdb.c:2131)
+          n1: 16000000 0x484D88F: kdbSet (kdb.c:2483)
+           n0: 16000000 0x10CBC3: main (changetracking.c:162)
+     n0: 32 in 2 places, all below massif's threshold (0.10%)
+    n0: 4256 in 43 places, all below massif's threshold (0.10%)
+  n2: 12003216 0x4862D75: keyDataNew (cow.c:158)
+   n1: 12003216 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 12003216 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 12001008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 12001008 0x4866C6E: keyVNew (key.c:192)
+       n2: 12001008 0x4866904: keyNew (key.c:150)
+        n1: 12000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 12000000 0x10CB3C: main (changetracking.c:157)
+        n0: 1008 in 24 places, all below massif's threshold (0.10%)
+     n0: 2208 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 12008 in 12 places, all below massif's threshold (0.10%)
+ n4: 74371591 0x486609D: elektraRealloc (internal.c:240)
+  n2: 31891260 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 31890675 0x486988C: keySetName (keyname.c:697)
+    n1: 31890675 0x4866FB2: keyVNew (key.c:222)
+     n2: 31890675 0x4866904: keyNew (key.c:150)
+      n1: 31888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 31888890 0x10CB3C: main (changetracking.c:157)
+      n0: 1785 in 72 places, all below massif's threshold (0.10%)
+    n0: 0 in 8 places, all below massif's threshold (0.10%)
+   n0: 585 in 1 place, below massif's threshold (0.10%)
+  n2: 29890232 0x48698C1: keySetName (keyname.c:699)
+   n1: 29890232 0x4866FB2: keyVNew (key.c:222)
+    n2: 29890232 0x4866904: keyNew (key.c:150)
+     n1: 29888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 29888890 0x10CB3C: main (changetracking.c:157)
+     n0: 1342 in 72 places, all below massif's threshold (0.10%)
+   n0: 0 in 8 places, all below massif's threshold (0.10%)
+  n2: 12589184 0x4872B49: ksResize (keyset.c:2864)
+   n3: 8388608 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 4194304 0x10CB65: main (changetracking.c:158)
+    n1: 4194304 0x4843268: backendsMerge (backends.c:157)
+     n1: 4194304 0x484D75B: kdbSet (kdb.c:2465)
+      n0: 4194304 0x10CBC3: main (changetracking.c:162)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n2: 4200576 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 4194304 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n2: 4194304 0x484311F: backendsDivide (backends.c:142)
+      n1: 4194304 0x484D7FA: kdbSet (kdb.c:2474)
+       n0: 4194304 0x10CBC3: main (changetracking.c:162)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 6272 in 5 places, all below massif's threshold (0.10%)
+  n0: 915 in 8 places, all below massif's threshold (0.10%)
+ n2: 5890980 0x4866108: elektraMalloc (internal.c:277)
+  n2: 5890420 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 5889240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 5889240 0x4866C6E: keyVNew (key.c:192)
+     n2: 5889240 0x4866904: keyNew (key.c:150)
+      n1: 5888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 5888890 0x10CB3C: main (changetracking.c:157)
+      n0: 350 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 1180 in 2 places, all below massif's threshold (0.10%)
+  n0: 560 in 13 places, all below massif's threshold (0.10%)
+ n0: 114976 in 24 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=39
+#-----------
+time=994467096
+mem_heap_B=156203971
+mem_heap_extra_B=44357749
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=1027160880
+mem_heap_B=130050159
+mem_heap_extra_B=37818177
+mem_stacks_B=0
+heap_tree=detailed
+n4: 130050159 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 70174571 0x486609D: elektraRealloc (internal.c:240)
+  n2: 31890439 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 31889958 0x486988C: keySetName (keyname.c:697)
+    n1: 31889958 0x4866FB2: keyVNew (key.c:222)
+     n2: 31889958 0x4866904: keyNew (key.c:150)
+      n1: 31888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 31888890 0x10CB3C: main (changetracking.c:157)
+      n0: 1068 in 72 places, all below massif's threshold (0.10%)
+    n0: 0 in 8 places, all below massif's threshold (0.10%)
+   n0: 481 in 1 place, below massif's threshold (0.10%)
+  n2: 29889689 0x48698C1: keySetName (keyname.c:699)
+   n1: 29889689 0x4866FB2: keyVNew (key.c:222)
+    n2: 29889689 0x4866904: keyNew (key.c:150)
+     n1: 29888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 29888890 0x10CB3C: main (changetracking.c:157)
+     n0: 799 in 72 places, all below massif's threshold (0.10%)
+   n0: 0 in 8 places, all below massif's threshold (0.10%)
+  n2: 8393600 0x4872B49: ksResize (keyset.c:2864)
+   n2: 4199296 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 4194304 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n2: 4194304 0x484311F: backendsDivide (backends.c:142)
+      n1: 4194304 0x484D7FA: kdbSet (kdb.c:2474)
+       n0: 4194304 0x10CBC3: main (changetracking.c:162)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 4992 in 5 places, all below massif's threshold (0.10%)
+   n2: 4194304 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 4194304 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 3 places, all below massif's threshold (0.10%)
+  n0: 843 in 8 places, all below massif's threshold (0.10%)
+ n5: 53878992 0x4866141: elektraCalloc (internal.c:292)
+  n2: 20003920 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 20003920 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 20003920 0x4869843: keySetName (keyname.c:695)
+     n1: 20003920 0x4866FB2: keyVNew (key.c:222)
+      n2: 20003920 0x4866904: keyNew (key.c:150)
+       n1: 20000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 20000000 0x10CB3C: main (changetracking.c:157)
+       n0: 3920 in 72 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 18932256 0x4866975: keyVNew (key.c:166)
+   n3: 18932256 0x4866904: keyNew (key.c:150)
+    n1: 16000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 16000000 0x10CB3C: main (changetracking.c:157)
+    n2: 2928864 0x484275B: keyDup (kdb.h:214)
+     n1: 2928864 0x4842F78: backendsDivideInternal (backends.c:113)
+      n2: 2928864 0x484311F: backendsDivide (backends.c:142)
+       n1: 2928864 0x484D7FA: kdbSet (kdb.c:2474)
+        n0: 2928864 0x10CBC3: main (changetracking.c:162)
+       n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3392 in 71 places, all below massif's threshold (0.10%)
+  n2: 12002328 0x4862D75: keyDataNew (cow.c:158)
+   n1: 12002328 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 12002328 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 12000504 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 12000504 0x4866C6E: keyVNew (key.c:192)
+       n2: 12000504 0x4866904: keyNew (key.c:150)
+        n1: 12000000 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 12000000 0x10CB3C: main (changetracking.c:157)
+        n0: 504 in 24 places, all below massif's threshold (0.10%)
+     n0: 1824 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n1: 2932096 0x486CF3C: ksVNew (keyset.c:306)
+   n2: 2932096 0x486CEE5: ksNew (keyset.c:288)
+    n2: 2928896 0x4868947: keyMeta (keymeta.c:552)
+     n1: 2928864 0x4E7510B: ???
+      n1: 2928864 0x4E7B905: ???
+       n1: 2928864 0x51FED52: ???
+        n1: 2928864 0x51FF0E0: ???
+         n1: 2928864 0x484C829: runSetPhase (kdb.c:2131)
+          n1: 2928864 0x484D88F: kdbSet (kdb.c:2483)
+           n0: 2928864 0x10CBC3: main (changetracking.c:162)
+     n0: 32 in 2 places, all below massif's threshold (0.10%)
+    n0: 3200 in 43 places, all below massif's threshold (0.10%)
+  n0: 8392 in 12 places, all below massif's threshold (0.10%)
+ n2: 5890284 0x4866108: elektraMalloc (internal.c:277)
+  n2: 5890156 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 5889048 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 5889048 0x4866C6E: keyVNew (key.c:192)
+     n2: 5889048 0x4866904: keyNew (key.c:150)
+      n1: 5888890 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 5888890 0x10CB3C: main (changetracking.c:157)
+      n0: 158 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 1108 in 2 places, all below massif's threshold (0.10%)
+  n0: 128 in 13 places, all below massif's threshold (0.10%)
+ n0: 106312 in 25 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=41
+#-----------
+time=1055028336
+mem_heap_B=107555595
+mem_heap_extra_B=32468837
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=1082273192
+mem_heap_B=86793334
+mem_heap_extra_B=25986242
+mem_stacks_B=0
+heap_tree=detailed
+n4: 86793334 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 48257048 0x486609D: elektraRealloc (internal.c:240)
+  n2: 22745134 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 22745134 0x486988C: keySetName (keyname.c:697)
+    n1: 22745134 0x4866FB2: keyVNew (key.c:222)
+     n2: 22745134 0x4866904: keyNew (key.c:150)
+      n1: 22745123 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 22745123 0x10CB3C: main (changetracking.c:157)
+      n0: 11 in 72 places, all below massif's threshold (0.10%)
+    n0: 0 in 8 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n2: 21317610 0x48698C1: keySetName (keyname.c:699)
+   n1: 21317610 0x4866FB2: keyVNew (key.c:222)
+    n2: 21317610 0x4866904: keyNew (key.c:150)
+     n1: 21317603 0x10C6D7: buildLinearTree (changetracking.c:91)
+      n0: 21317603 0x10CB3C: main (changetracking.c:157)
+     n0: 7 in 72 places, all below massif's threshold (0.10%)
+   n0: 0 in 8 places, all below massif's threshold (0.10%)
+  n2: 4194304 0x4872B49: ksResize (keyset.c:2864)
+   n2: 4194304 0x486E55E: ksAppend (keyset.c:1104)
+    n0: 4194304 0x10CB65: main (changetracking.c:158)
+    n0: 0 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 8 places, all below massif's threshold (0.10%)
+ n4: 34260864 0x4866141: elektraCalloc (internal.c:292)
+  n2: 14275280 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 14275280 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 14275280 0x4869843: keySetName (keyname.c:695)
+     n1: 14275280 0x4866FB2: keyVNew (key.c:222)
+      n2: 14275280 0x4866904: keyNew (key.c:150)
+       n1: 14275240 0x10C6D7: buildLinearTree (changetracking.c:91)
+        n0: 14275240 0x10CB3C: main (changetracking.c:157)
+       n0: 40 in 72 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 11420224 0x4866975: keyVNew (key.c:166)
+   n2: 11420224 0x4866904: keyNew (key.c:150)
+    n1: 11420192 0x10C6D7: buildLinearTree (changetracking.c:91)
+     n0: 11420192 0x10CB3C: main (changetracking.c:157)
+    n0: 32 in 72 places, all below massif's threshold (0.10%)
+  n2: 8565168 0x4862D75: keyDataNew (cow.c:158)
+   n1: 8565168 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 8565168 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 8565144 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 8565144 0x4866C6E: keyVNew (key.c:192)
+       n2: 8565144 0x4866904: keyNew (key.c:150)
+        n1: 8565144 0x10C6D7: buildLinearTree (changetracking.c:91)
+         n0: 8565144 0x10CB3C: main (changetracking.c:157)
+        n0: 0 in 24 places, all below massif's threshold (0.10%)
+     n0: 24 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 192 in 13 places, all below massif's threshold (0.10%)
+ n2: 4187549 0x4866108: elektraMalloc (internal.c:277)
+  n2: 4187421 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 4187375 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 4187375 0x4866C6E: keyVNew (key.c:192)
+     n2: 4187375 0x4866904: keyNew (key.c:150)
+      n1: 4187375 0x10C6D7: buildLinearTree (changetracking.c:91)
+       n0: 4187375 0x10CB3C: main (changetracking.c:157)
+      n0: 0 in 24 places, all below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 46 in 2 places, all below massif's threshold (0.10%)
+  n0: 128 in 13 places, all below massif's threshold (0.10%)
+ n0: 87873 in 37 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=43
+#-----------
+time=1104069096
+mem_heap_B=70183528
+mem_heap_extra_B=20800144
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=1120416032
+mem_heap_B=57726180
+mem_heap_extra_B=16910556
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=1147660888
+mem_heap_B=36963922
+mem_heap_extra_B=10427958
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=1174905752
+mem_heap_B=16211824
+mem_heap_extra_B=3935192
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=1200412304
+mem_heap_B=1867933
+mem_heap_extra_B=632419
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=1222208288
+mem_heap_B=9207411
+mem_heap_extra_B=3208525
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=1254902232
+mem_heap_B=20105632
+mem_heap_extra_B=7092424
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=1276698152
+mem_heap_B=27134208
+mem_heap_extra_B=9723848
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=1293045096
+mem_heap_B=33116147
+mem_heap_extra_B=11570853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=1314841048
+mem_heap_B=40144907
+mem_heap_extra_B=14202365
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=1342085960
+mem_heap_B=48930631
+mem_heap_extra_B=17491633
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=1369330904
+mem_heap_B=57716536
+mem_heap_extra_B=20780992
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=1398668288
+mem_heap_B=68596761
+mem_heap_extra_B=24073351
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=1420464192
+mem_heap_B=75625297
+mem_heap_extra_B=26704751
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=1442260192
+mem_heap_B=82654042
+mem_heap_extra_B=29336230
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=1464056136
+mem_heap_B=89682705
+mem_heap_extra_B=31967687
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=1482605104
+mem_heap_B=95664223
+mem_heap_extra_B=34207137
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=1501154000
+mem_heap_B=101645868
+mem_heap_extra_B=36446612
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=1528977320
+mem_heap_B=110642024
+mem_heap_extra_B=39665232
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=1547526312
+mem_heap_B=116666944
+mem_heap_extra_B=41650104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=1575349728
+mem_heap_B=128205214
+mem_heap_extra_B=42758594
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=1603173064
+mem_heap_B=128205150
+mem_heap_extra_B=42758586
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=1630996416
+mem_heap_B=128205110
+mem_heap_extra_B=42758570
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=1649545296
+mem_heap_B=128205110
+mem_heap_extra_B=42758570
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=1668094192
+mem_heap_B=128205214
+mem_heap_extra_B=42758594
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=1695917528
+mem_heap_B=128205150
+mem_heap_extra_B=42758586
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=1723740880
+mem_heap_B=128205110
+mem_heap_extra_B=42758570
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=1742289760
+mem_heap_B=128205110
+mem_heap_extra_B=42758570
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=1760838656
+mem_heap_B=128205213
+mem_heap_extra_B=42758595
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=1788661992
+mem_heap_B=128205150
+mem_heap_extra_B=42758586
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=1816485344
+mem_heap_B=128205110
+mem_heap_extra_B=42758570
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=1835034224
+mem_heap_B=128205110
+mem_heap_extra_B=42758570
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=1853583120
+mem_heap_B=128205214
+mem_heap_extra_B=42758594
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=1881406456
+mem_heap_B=128205150
+mem_heap_extra_B=42758586
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=1909229808
+mem_heap_B=128205110
+mem_heap_extra_B=42758570
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=1937053160
+mem_heap_B=123349315
+mem_heap_extra_B=43327093
+mem_stacks_B=0
+heap_tree=detailed
+n4: 123349315 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 67031825 0x486609D: elektraRealloc (internal.c:240)
+  n2: 31891398 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 31890800 0x486988C: keySetName (keyname.c:697)
+    n1: 31890800 0x4866FB2: keyVNew (key.c:222)
+     n2: 31890800 0x4866904: keyNew (key.c:150)
+      n1: 31888890 0x4E78490: ???
+       n1: 31888890 0x4E7A118: ???
+        n1: 31888890 0x4E7B3CE: ???
+         n1: 31888890 0x51FE345: ???
+          n1: 31888890 0x51FEC3F: ???
+           n1: 31888890 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 31888890 0x484B344: kdbGet (kdb.c:1847)
+             n0: 31888890 0x10CC9C: main (changetracking.c:170)
+      n0: 1910 in 78 places, all below massif's threshold (0.10%)
+    n0: 0 in 8 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 29890340 0x48698C1: keySetName (keyname.c:699)
+   n1: 29890340 0x4866FB2: keyVNew (key.c:222)
+    n2: 29890340 0x4866904: keyNew (key.c:150)
+     n1: 29888890 0x4E78490: ???
+      n1: 29888890 0x4E7A118: ???
+       n1: 29888890 0x4E7B3CE: ???
+        n1: 29888890 0x51FE345: ???
+         n1: 29888890 0x51FEC3F: ???
+          n1: 29888890 0x484A6F7: runGetPhase (kdb.c:1547)
+           n1: 29888890 0x484B344: kdbGet (kdb.c:1847)
+            n0: 29888890 0x10CC9C: main (changetracking.c:170)
+     n0: 1450 in 78 places, all below massif's threshold (0.10%)
+   n0: 0 in 8 places, all below massif's threshold (0.10%)
+  n2: 5249152 0x4872B49: ksResize (keyset.c:2864)
+   n2: 4194304 0x486E55E: ksAppend (keyset.c:1104)
+    n2: 4194304 0x4843268: backendsMerge (backends.c:157)
+     n1: 4194304 0x484B486: kdbGet (kdb.c:1863)
+      n0: 4194304 0x10CC9C: main (changetracking.c:170)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 0 in 3 places, all below massif's threshold (0.10%)
+   n2: 1054848 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 1048576 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n2: 1048576 0x484311F: backendsDivide (backends.c:142)
+      n1: 1048576 0x484B81B: kdbGet (kdb.c:1912)
+       n0: 1048576 0x10CC9C: main (changetracking.c:170)
+      n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 6272 in 6 places, all below massif's threshold (0.10%)
+  n0: 935 in 9 places, all below massif's threshold (0.10%)
+ n4: 50319944 0x4866141: elektraCalloc (internal.c:292)
+  n2: 20005600 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 20005560 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 20005560 0x4869843: keySetName (keyname.c:695)
+     n1: 20005560 0x4866FB2: keyVNew (key.c:222)
+      n2: 20005560 0x4866904: keyNew (key.c:150)
+       n1: 20000000 0x4E78490: ???
+        n1: 20000000 0x4E7A118: ???
+         n1: 20000000 0x4E7B3CE: ???
+          n1: 20000000 0x51FE345: ???
+           n1: 20000000 0x51FEC3F: ???
+            n1: 20000000 0x484A6F7: runGetPhase (kdb.c:1547)
+             n1: 20000000 0x484B344: kdbGet (kdb.c:1847)
+              n0: 20000000 0x10CC9C: main (changetracking.c:170)
+       n0: 5560 in 78 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 40 in 2 places, all below massif's threshold (0.10%)
+  n1: 18294848 0x4866975: keyVNew (key.c:166)
+   n3: 18294848 0x4866904: keyNew (key.c:150)
+    n1: 16000000 0x4E78490: ???
+     n1: 16000000 0x4E7A118: ???
+      n1: 16000000 0x4E7B3CE: ???
+       n1: 16000000 0x51FE345: ???
+        n1: 16000000 0x51FEC3F: ???
+         n1: 16000000 0x484A6F7: runGetPhase (kdb.c:1547)
+          n1: 16000000 0x484B344: kdbGet (kdb.c:1847)
+           n0: 16000000 0x10CC9C: main (changetracking.c:170)
+    n2: 2290144 0x484275B: keyDup (kdb.h:214)
+     n1: 2290144 0x4842F78: backendsDivideInternal (backends.c:113)
+      n2: 2290144 0x484311F: backendsDivide (backends.c:142)
+       n1: 2290144 0x484B81B: kdbGet (kdb.c:1912)
+        n0: 2290144 0x10CC9C: main (changetracking.c:170)
+       n0: 0 in 2 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 4704 in 77 places, all below massif's threshold (0.10%)
+  n2: 12003312 0x4862D75: keyDataNew (cow.c:158)
+   n1: 12003312 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 12003312 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 12001008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 12001008 0x4866C6E: keyVNew (key.c:192)
+       n2: 12001008 0x4866904: keyNew (key.c:150)
+        n1: 12000000 0x4E78490: ???
+         n1: 12000000 0x4E7A118: ???
+          n1: 12000000 0x4E7B3CE: ???
+           n1: 12000000 0x51FE345: ???
+            n1: 12000000 0x51FEC3F: ???
+             n1: 12000000 0x484A6F7: runGetPhase (kdb.c:1547)
+              n1: 12000000 0x484B344: kdbGet (kdb.c:1847)
+               n0: 12000000 0x10CC9C: main (changetracking.c:170)
+        n0: 1008 in 25 places, all below massif's threshold (0.10%)
+     n0: 2304 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 16184 in 13 places, all below massif's threshold (0.10%)
+ n2: 5891154 0x4866108: elektraMalloc (internal.c:277)
+  n2: 5890459 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 5889240 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 5889240 0x4866C6E: keyVNew (key.c:192)
+     n2: 5889240 0x4866904: keyNew (key.c:150)
+      n1: 5888890 0x4E78490: ???
+       n1: 5888890 0x4E7A118: ???
+        n1: 5888890 0x4E7B3CE: ???
+         n1: 5888890 0x51FE345: ???
+          n1: 5888890 0x51FEC3F: ???
+           n1: 5888890 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 5888890 0x484B344: kdbGet (kdb.c:1847)
+             n0: 5888890 0x10CC9C: main (changetracking.c:170)
+      n0: 350 in 25 places, all below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 1219 in 2 places, all below massif's threshold (0.10%)
+  n0: 695 in 14 places, all below massif's threshold (0.10%)
+ n0: 106392 in 40 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=79
+#-----------
+time=1955602048
+mem_heap_B=126656043
+mem_heap_extra_B=43891637
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=1974150960
+mem_heap_B=129049379
+mem_heap_extra_B=44489965
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=2001974272
+mem_heap_B=134465507
+mem_heap_extra_B=45323741
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=2020523144
+mem_heap_B=136858960
+mem_heap_extra_B=45922152
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=2039072040
+mem_heap_B=139252363
+mem_heap_extra_B=46520461
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=2059933584
+mem_heap_B=136980712
+mem_heap_extra_B=44907864
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=2087756952
+mem_heap_B=130538243
+mem_heap_extra_B=44425045
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=2106305856
+mem_heap_B=130538303
+mem_heap_extra_B=44425057
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=87
+#-----------
+time=2124854752
+mem_heap_B=130538203
+mem_heap_extra_B=44425029
+mem_stacks_B=0
+heap_tree=detailed
+n4: 130538203 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 75427529 0x486609D: elektraRealloc (internal.c:240)
+  n2: 31891388 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 31890790 0x486988C: keySetName (keyname.c:697)
+    n1: 31890790 0x4866FB2: keyVNew (key.c:222)
+     n2: 31890790 0x4866904: keyNew (key.c:150)
+      n1: 31888890 0x4E78490: ???
+       n1: 31888890 0x4E7A118: ???
+        n1: 31888890 0x4E7B3CE: ???
+         n1: 31888890 0x51FE345: ???
+          n1: 31888890 0x51FEC3F: ???
+           n1: 31888890 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 31888890 0x484B344: kdbGet (kdb.c:1847)
+             n0: 31888890 0x10CC9C: main (changetracking.c:170)
+      n0: 1900 in 78 places, all below massif's threshold (0.10%)
+    n0: 0 in 8 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 29890337 0x48698C1: keySetName (keyname.c:699)
+   n1: 29890337 0x4866FB2: keyVNew (key.c:222)
+    n2: 29890337 0x4866904: keyNew (key.c:150)
+     n1: 29888890 0x4E78490: ???
+      n1: 29888890 0x4E7A118: ???
+       n1: 29888890 0x4E7B3CE: ???
+        n1: 29888890 0x51FE345: ???
+         n1: 29888890 0x51FEC3F: ???
+          n1: 29888890 0x484A6F7: runGetPhase (kdb.c:1547)
+           n1: 29888890 0x484B344: kdbGet (kdb.c:1847)
+            n0: 29888890 0x10CC9C: main (changetracking.c:170)
+     n0: 1447 in 78 places, all below massif's threshold (0.10%)
+   n0: 0 in 8 places, all below massif's threshold (0.10%)
+  n2: 8394880 0x4872B49: ksResize (keyset.c:2864)
+   n2: 4200576 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 4194304 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n2: 4194304 0x484311F: backendsDivide (backends.c:142)
+      n1: 4194304 0x484B81B: kdbGet (kdb.c:1912)
+       n0: 4194304 0x10CC9C: main (changetracking.c:170)
+      n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 6272 in 6 places, all below massif's threshold (0.10%)
+   n2: 4194304 0x486E55E: ksAppend (keyset.c:1104)
+    n2: 4194304 0x4843268: backendsMerge (backends.c:157)
+     n1: 4194304 0x484B9DC: kdbGet (kdb.c:1937)
+      n0: 4194304 0x10CC9C: main (changetracking.c:170)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 0 in 3 places, all below massif's threshold (0.10%)
+  n1: 5250000 0x487428D: keySetRaw (keyvalue.c:595)
+   n2: 5250000 0x4873C2A: keySetString (keyvalue.c:392)
+    n0: 5250000 0x10CD6B: main (changetracking.c:178)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 924 in 8 places, all below massif's threshold (0.10%)
+ n5: 52029904 0x4866141: elektraCalloc (internal.c:292)
+  n2: 20005520 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 20005520 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 20005520 0x4869843: keySetName (keyname.c:695)
+     n1: 20005520 0x4866FB2: keyVNew (key.c:222)
+      n2: 20005520 0x4866904: keyNew (key.c:150)
+       n1: 20000000 0x4E78490: ???
+        n1: 20000000 0x4E7A118: ???
+         n1: 20000000 0x4E7B3CE: ???
+          n1: 20000000 0x51FE345: ???
+           n1: 20000000 0x51FEC3F: ???
+            n1: 20000000 0x484A6F7: runGetPhase (kdb.c:1547)
+             n1: 20000000 0x484B344: kdbGet (kdb.c:1847)
+              n0: 20000000 0x10CC9C: main (changetracking.c:170)
+       n0: 5520 in 78 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 16004704 0x4866975: keyVNew (key.c:166)
+   n2: 16004704 0x4866904: keyNew (key.c:150)
+    n2: 16000000 0x484275B: keyDup (kdb.h:214)
+     n1: 16000000 0x4842F78: backendsDivideInternal (backends.c:113)
+      n2: 16000000 0x484311F: backendsDivide (backends.c:142)
+       n1: 16000000 0x484B81B: kdbGet (kdb.c:1912)
+        n0: 16000000 0x10CC9C: main (changetracking.c:170)
+       n0: 0 in 2 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 4704 in 78 places, all below massif's threshold (0.10%)
+  n2: 12003264 0x4862D75: keyDataNew (cow.c:158)
+   n1: 12003264 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 12003264 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 12001008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 12001008 0x4866C6E: keyVNew (key.c:192)
+       n2: 12001008 0x4866904: keyNew (key.c:150)
+        n1: 12000000 0x4E78490: ???
+         n1: 12000000 0x4E7A118: ???
+          n1: 12000000 0x4E7B3CE: ???
+           n1: 12000000 0x51FE345: ???
+            n1: 12000000 0x51FEC3F: ???
+             n1: 12000000 0x484A6F7: runGetPhase (kdb.c:1547)
+              n1: 12000000 0x484B344: kdbGet (kdb.c:1847)
+               n0: 12000000 0x10CC9C: main (changetracking.c:170)
+        n0: 1008 in 25 places, all below massif's threshold (0.10%)
+     n0: 2256 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n1: 4003464 0x486D050: ksVNew (keyset.c:326)
+   n2: 4003464 0x486CEE5: ksNew (keyset.c:288)
+    n1: 4000008 0x486FD4F: ksCut (keyset.c:1682)
+     n2: 4000008 0x52236DA: ???
+      n2: 4000008 0x484D19D: kdbSet (kdb.c:2386)
+       n0: 4000008 0x10CDC6: main (changetracking.c:183)
+       n0: 0 in 1 place, below massif's threshold (0.10%)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 10 places, all below massif's threshold (0.10%)
+  n0: 12952 in 12 places, all below massif's threshold (0.10%)
+ n2: 2974378 0x4866108: elektraMalloc (internal.c:277)
+  n2: 2973690 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 2972563 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 2972563 0x4866C6E: keyVNew (key.c:192)
+     n2: 2972563 0x4866904: keyNew (key.c:150)
+      n1: 2972213 0x4E78490: ???
+       n1: 2972213 0x4E7A118: ???
+        n1: 2972213 0x4E7B3CE: ???
+         n1: 2972213 0x51FE345: ???
+          n1: 2972213 0x51FEC3F: ???
+           n1: 2972213 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 2972213 0x484B344: kdbGet (kdb.c:1847)
+             n0: 2972213 0x10CC9C: main (changetracking.c:170)
+      n0: 350 in 25 places, all below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 1127 in 2 places, all below massif's threshold (0.10%)
+  n0: 688 in 14 places, all below massif's threshold (0.10%)
+ n0: 106392 in 40 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=88
+#-----------
+time=2143403632
+mem_heap_B=130538203
+mem_heap_extra_B=44425029
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=89
+#-----------
+time=2161952528
+mem_heap_B=130538307
+mem_heap_extra_B=44425053
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=90
+#-----------
+time=2189775864
+mem_heap_B=130538243
+mem_heap_extra_B=44425045
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=91
+#-----------
+time=2217599216
+mem_heap_B=130538203
+mem_heap_extra_B=44425029
+mem_stacks_B=0
+heap_tree=detailed
+n4: 130538203 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 75427529 0x486609D: elektraRealloc (internal.c:240)
+  n2: 31891388 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 31890790 0x486988C: keySetName (keyname.c:697)
+    n1: 31890790 0x4866FB2: keyVNew (key.c:222)
+     n2: 31890790 0x4866904: keyNew (key.c:150)
+      n1: 31888890 0x4E78490: ???
+       n1: 31888890 0x4E7A118: ???
+        n1: 31888890 0x4E7B3CE: ???
+         n1: 31888890 0x51FE345: ???
+          n1: 31888890 0x51FEC3F: ???
+           n1: 31888890 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 31888890 0x484B344: kdbGet (kdb.c:1847)
+             n0: 31888890 0x10CC9C: main (changetracking.c:170)
+      n0: 1900 in 78 places, all below massif's threshold (0.10%)
+    n0: 0 in 8 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 29890337 0x48698C1: keySetName (keyname.c:699)
+   n1: 29890337 0x4866FB2: keyVNew (key.c:222)
+    n2: 29890337 0x4866904: keyNew (key.c:150)
+     n1: 29888890 0x4E78490: ???
+      n1: 29888890 0x4E7A118: ???
+       n1: 29888890 0x4E7B3CE: ???
+        n1: 29888890 0x51FE345: ???
+         n1: 29888890 0x51FEC3F: ???
+          n1: 29888890 0x484A6F7: runGetPhase (kdb.c:1547)
+           n1: 29888890 0x484B344: kdbGet (kdb.c:1847)
+            n0: 29888890 0x10CC9C: main (changetracking.c:170)
+     n0: 1447 in 78 places, all below massif's threshold (0.10%)
+   n0: 0 in 8 places, all below massif's threshold (0.10%)
+  n2: 8394880 0x4872B49: ksResize (keyset.c:2864)
+   n2: 4200576 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 4194304 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n2: 4194304 0x484311F: backendsDivide (backends.c:142)
+      n1: 4194304 0x484B81B: kdbGet (kdb.c:1912)
+       n0: 4194304 0x10CC9C: main (changetracking.c:170)
+      n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 6272 in 6 places, all below massif's threshold (0.10%)
+   n2: 4194304 0x486E55E: ksAppend (keyset.c:1104)
+    n2: 4194304 0x4843268: backendsMerge (backends.c:157)
+     n1: 4194304 0x484B9DC: kdbGet (kdb.c:1937)
+      n0: 4194304 0x10CC9C: main (changetracking.c:170)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 0 in 3 places, all below massif's threshold (0.10%)
+  n1: 5250000 0x487428D: keySetRaw (keyvalue.c:595)
+   n2: 5250000 0x4873C2A: keySetString (keyvalue.c:392)
+    n0: 5250000 0x10CD6B: main (changetracking.c:178)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 924 in 8 places, all below massif's threshold (0.10%)
+ n5: 52029904 0x4866141: elektraCalloc (internal.c:292)
+  n2: 20005520 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 20005520 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 20005520 0x4869843: keySetName (keyname.c:695)
+     n1: 20005520 0x4866FB2: keyVNew (key.c:222)
+      n2: 20005520 0x4866904: keyNew (key.c:150)
+       n1: 20000000 0x4E78490: ???
+        n1: 20000000 0x4E7A118: ???
+         n1: 20000000 0x4E7B3CE: ???
+          n1: 20000000 0x51FE345: ???
+           n1: 20000000 0x51FEC3F: ???
+            n1: 20000000 0x484A6F7: runGetPhase (kdb.c:1547)
+             n1: 20000000 0x484B344: kdbGet (kdb.c:1847)
+              n0: 20000000 0x10CC9C: main (changetracking.c:170)
+       n0: 5520 in 78 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 16004704 0x4866975: keyVNew (key.c:166)
+   n2: 16004704 0x4866904: keyNew (key.c:150)
+    n2: 16000000 0x484275B: keyDup (kdb.h:214)
+     n1: 16000000 0x4842F78: backendsDivideInternal (backends.c:113)
+      n2: 16000000 0x484311F: backendsDivide (backends.c:142)
+       n1: 16000000 0x484B81B: kdbGet (kdb.c:1912)
+        n0: 16000000 0x10CC9C: main (changetracking.c:170)
+       n0: 0 in 2 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 4704 in 78 places, all below massif's threshold (0.10%)
+  n2: 12003264 0x4862D75: keyDataNew (cow.c:158)
+   n1: 12003264 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 12003264 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 12001008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 12001008 0x4866C6E: keyVNew (key.c:192)
+       n2: 12001008 0x4866904: keyNew (key.c:150)
+        n1: 12000000 0x4E78490: ???
+         n1: 12000000 0x4E7A118: ???
+          n1: 12000000 0x4E7B3CE: ???
+           n1: 12000000 0x51FE345: ???
+            n1: 12000000 0x51FEC3F: ???
+             n1: 12000000 0x484A6F7: runGetPhase (kdb.c:1547)
+              n1: 12000000 0x484B344: kdbGet (kdb.c:1847)
+               n0: 12000000 0x10CC9C: main (changetracking.c:170)
+        n0: 1008 in 25 places, all below massif's threshold (0.10%)
+     n0: 2256 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n1: 4003464 0x486D050: ksVNew (keyset.c:326)
+   n2: 4003464 0x486CEE5: ksNew (keyset.c:288)
+    n1: 4000008 0x486FD4F: ksCut (keyset.c:1682)
+     n2: 4000008 0x52236DA: ???
+      n2: 4000008 0x484D19D: kdbSet (kdb.c:2386)
+       n0: 4000008 0x10CDC6: main (changetracking.c:183)
+       n0: 0 in 1 place, below massif's threshold (0.10%)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 10 places, all below massif's threshold (0.10%)
+  n0: 12952 in 12 places, all below massif's threshold (0.10%)
+ n2: 2974378 0x4866108: elektraMalloc (internal.c:277)
+  n2: 2973690 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 2972563 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 2972563 0x4866C6E: keyVNew (key.c:192)
+     n2: 2972563 0x4866904: keyNew (key.c:150)
+      n1: 2972213 0x4E78490: ???
+       n1: 2972213 0x4E7A118: ???
+        n1: 2972213 0x4E7B3CE: ???
+         n1: 2972213 0x51FE345: ???
+          n1: 2972213 0x51FEC3F: ???
+           n1: 2972213 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 2972213 0x484B344: kdbGet (kdb.c:1847)
+             n0: 2972213 0x10CC9C: main (changetracking.c:170)
+      n0: 350 in 25 places, all below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 1127 in 2 places, all below massif's threshold (0.10%)
+  n0: 688 in 14 places, all below massif's threshold (0.10%)
+ n0: 106392 in 40 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=92
+#-----------
+time=2236148096
+mem_heap_B=130538203
+mem_heap_extra_B=44425029
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=93
+#-----------
+time=2254696992
+mem_heap_B=130538307
+mem_heap_extra_B=44425053
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=94
+#-----------
+time=2282520328
+mem_heap_B=130538243
+mem_heap_extra_B=44425045
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=95
+#-----------
+time=2310343680
+mem_heap_B=130538203
+mem_heap_extra_B=44425029
+mem_stacks_B=0
+heap_tree=detailed
+n4: 130538203 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 75427529 0x486609D: elektraRealloc (internal.c:240)
+  n2: 31891388 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 31890790 0x486988C: keySetName (keyname.c:697)
+    n1: 31890790 0x4866FB2: keyVNew (key.c:222)
+     n2: 31890790 0x4866904: keyNew (key.c:150)
+      n1: 31888890 0x4E78490: ???
+       n1: 31888890 0x4E7A118: ???
+        n1: 31888890 0x4E7B3CE: ???
+         n1: 31888890 0x51FE345: ???
+          n1: 31888890 0x51FEC3F: ???
+           n1: 31888890 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 31888890 0x484B344: kdbGet (kdb.c:1847)
+             n0: 31888890 0x10CC9C: main (changetracking.c:170)
+      n0: 1900 in 78 places, all below massif's threshold (0.10%)
+    n0: 0 in 8 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 29890337 0x48698C1: keySetName (keyname.c:699)
+   n1: 29890337 0x4866FB2: keyVNew (key.c:222)
+    n2: 29890337 0x4866904: keyNew (key.c:150)
+     n1: 29888890 0x4E78490: ???
+      n1: 29888890 0x4E7A118: ???
+       n1: 29888890 0x4E7B3CE: ???
+        n1: 29888890 0x51FE345: ???
+         n1: 29888890 0x51FEC3F: ???
+          n1: 29888890 0x484A6F7: runGetPhase (kdb.c:1547)
+           n1: 29888890 0x484B344: kdbGet (kdb.c:1847)
+            n0: 29888890 0x10CC9C: main (changetracking.c:170)
+     n0: 1447 in 78 places, all below massif's threshold (0.10%)
+   n0: 0 in 8 places, all below massif's threshold (0.10%)
+  n2: 8394880 0x4872B49: ksResize (keyset.c:2864)
+   n2: 4200576 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 4194304 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n2: 4194304 0x484311F: backendsDivide (backends.c:142)
+      n1: 4194304 0x484B81B: kdbGet (kdb.c:1912)
+       n0: 4194304 0x10CC9C: main (changetracking.c:170)
+      n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 6272 in 6 places, all below massif's threshold (0.10%)
+   n2: 4194304 0x486E55E: ksAppend (keyset.c:1104)
+    n2: 4194304 0x4843268: backendsMerge (backends.c:157)
+     n1: 4194304 0x484B9DC: kdbGet (kdb.c:1937)
+      n0: 4194304 0x10CC9C: main (changetracking.c:170)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 0 in 3 places, all below massif's threshold (0.10%)
+  n1: 5250000 0x487428D: keySetRaw (keyvalue.c:595)
+   n2: 5250000 0x4873C2A: keySetString (keyvalue.c:392)
+    n0: 5250000 0x10CD6B: main (changetracking.c:178)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 924 in 8 places, all below massif's threshold (0.10%)
+ n5: 52029904 0x4866141: elektraCalloc (internal.c:292)
+  n2: 20005520 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 20005520 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 20005520 0x4869843: keySetName (keyname.c:695)
+     n1: 20005520 0x4866FB2: keyVNew (key.c:222)
+      n2: 20005520 0x4866904: keyNew (key.c:150)
+       n1: 20000000 0x4E78490: ???
+        n1: 20000000 0x4E7A118: ???
+         n1: 20000000 0x4E7B3CE: ???
+          n1: 20000000 0x51FE345: ???
+           n1: 20000000 0x51FEC3F: ???
+            n1: 20000000 0x484A6F7: runGetPhase (kdb.c:1547)
+             n1: 20000000 0x484B344: kdbGet (kdb.c:1847)
+              n0: 20000000 0x10CC9C: main (changetracking.c:170)
+       n0: 5520 in 78 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 16004704 0x4866975: keyVNew (key.c:166)
+   n2: 16004704 0x4866904: keyNew (key.c:150)
+    n2: 16000000 0x484275B: keyDup (kdb.h:214)
+     n1: 16000000 0x4842F78: backendsDivideInternal (backends.c:113)
+      n2: 16000000 0x484311F: backendsDivide (backends.c:142)
+       n1: 16000000 0x484B81B: kdbGet (kdb.c:1912)
+        n0: 16000000 0x10CC9C: main (changetracking.c:170)
+       n0: 0 in 2 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 4704 in 78 places, all below massif's threshold (0.10%)
+  n2: 12003264 0x4862D75: keyDataNew (cow.c:158)
+   n1: 12003264 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 12003264 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 12001008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 12001008 0x4866C6E: keyVNew (key.c:192)
+       n2: 12001008 0x4866904: keyNew (key.c:150)
+        n1: 12000000 0x4E78490: ???
+         n1: 12000000 0x4E7A118: ???
+          n1: 12000000 0x4E7B3CE: ???
+           n1: 12000000 0x51FE345: ???
+            n1: 12000000 0x51FEC3F: ???
+             n1: 12000000 0x484A6F7: runGetPhase (kdb.c:1547)
+              n1: 12000000 0x484B344: kdbGet (kdb.c:1847)
+               n0: 12000000 0x10CC9C: main (changetracking.c:170)
+        n0: 1008 in 25 places, all below massif's threshold (0.10%)
+     n0: 2256 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n1: 4003464 0x486D050: ksVNew (keyset.c:326)
+   n2: 4003464 0x486CEE5: ksNew (keyset.c:288)
+    n1: 4000008 0x486FD4F: ksCut (keyset.c:1682)
+     n2: 4000008 0x52236DA: ???
+      n2: 4000008 0x484D19D: kdbSet (kdb.c:2386)
+       n0: 4000008 0x10CDC6: main (changetracking.c:183)
+       n0: 0 in 1 place, below massif's threshold (0.10%)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 10 places, all below massif's threshold (0.10%)
+  n0: 12952 in 12 places, all below massif's threshold (0.10%)
+ n2: 2974378 0x4866108: elektraMalloc (internal.c:277)
+  n2: 2973690 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 2972563 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 2972563 0x4866C6E: keyVNew (key.c:192)
+     n2: 2972563 0x4866904: keyNew (key.c:150)
+      n1: 2972213 0x4E78490: ???
+       n1: 2972213 0x4E7A118: ???
+        n1: 2972213 0x4E7B3CE: ???
+         n1: 2972213 0x51FE345: ???
+          n1: 2972213 0x51FEC3F: ???
+           n1: 2972213 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 2972213 0x484B344: kdbGet (kdb.c:1847)
+             n0: 2972213 0x10CC9C: main (changetracking.c:170)
+      n0: 350 in 25 places, all below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 1127 in 2 places, all below massif's threshold (0.10%)
+  n0: 688 in 14 places, all below massif's threshold (0.10%)
+ n0: 106392 in 40 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=96
+#-----------
+time=2328892560
+mem_heap_B=130538203
+mem_heap_extra_B=44425029
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=97
+#-----------
+time=2347441456
+mem_heap_B=130538307
+mem_heap_extra_B=44425053
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=98
+#-----------
+time=2375264792
+mem_heap_B=130538243
+mem_heap_extra_B=44425045
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=99
+#-----------
+time=2393813696
+mem_heap_B=130538203
+mem_heap_extra_B=44425029
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=100
+#-----------
+time=2408920072
+mem_heap_B=130538171
+mem_heap_extra_B=44425021
+mem_stacks_B=0
+heap_tree=detailed
+n4: 130538171 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 75427529 0x486609D: elektraRealloc (internal.c:240)
+  n2: 31891388 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 31890790 0x486988C: keySetName (keyname.c:697)
+    n1: 31890790 0x4866FB2: keyVNew (key.c:222)
+     n2: 31890790 0x4866904: keyNew (key.c:150)
+      n1: 31888890 0x4E78490: ???
+       n1: 31888890 0x4E7A118: ???
+        n1: 31888890 0x4E7B3CE: ???
+         n1: 31888890 0x51FE345: ???
+          n1: 31888890 0x51FEC3F: ???
+           n1: 31888890 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 31888890 0x484B344: kdbGet (kdb.c:1847)
+             n0: 31888890 0x10CC9C: main (changetracking.c:170)
+      n0: 1900 in 78 places, all below massif's threshold (0.10%)
+    n0: 0 in 8 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 29890337 0x48698C1: keySetName (keyname.c:699)
+   n1: 29890337 0x4866FB2: keyVNew (key.c:222)
+    n2: 29890337 0x4866904: keyNew (key.c:150)
+     n1: 29888890 0x4E78490: ???
+      n1: 29888890 0x4E7A118: ???
+       n1: 29888890 0x4E7B3CE: ???
+        n1: 29888890 0x51FE345: ???
+         n1: 29888890 0x51FEC3F: ???
+          n1: 29888890 0x484A6F7: runGetPhase (kdb.c:1547)
+           n1: 29888890 0x484B344: kdbGet (kdb.c:1847)
+            n0: 29888890 0x10CC9C: main (changetracking.c:170)
+     n0: 1447 in 78 places, all below massif's threshold (0.10%)
+   n0: 0 in 8 places, all below massif's threshold (0.10%)
+  n2: 8394880 0x4872B49: ksResize (keyset.c:2864)
+   n2: 4200576 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 4194304 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n2: 4194304 0x484311F: backendsDivide (backends.c:142)
+      n1: 4194304 0x484B81B: kdbGet (kdb.c:1912)
+       n0: 4194304 0x10CC9C: main (changetracking.c:170)
+      n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 6272 in 6 places, all below massif's threshold (0.10%)
+   n2: 4194304 0x486E55E: ksAppend (keyset.c:1104)
+    n2: 4194304 0x4843268: backendsMerge (backends.c:157)
+     n1: 4194304 0x484B9DC: kdbGet (kdb.c:1937)
+      n0: 4194304 0x10CC9C: main (changetracking.c:170)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 0 in 3 places, all below massif's threshold (0.10%)
+  n1: 5250000 0x487428D: keySetRaw (keyvalue.c:595)
+   n2: 5250000 0x4873C2A: keySetString (keyvalue.c:392)
+    n0: 5250000 0x10CD6B: main (changetracking.c:178)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 924 in 8 places, all below massif's threshold (0.10%)
+ n5: 52029872 0x4866141: elektraCalloc (internal.c:292)
+  n2: 20005520 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 20005520 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 20005520 0x4869843: keySetName (keyname.c:695)
+     n1: 20005520 0x4866FB2: keyVNew (key.c:222)
+      n2: 20005520 0x4866904: keyNew (key.c:150)
+       n1: 20000000 0x4E78490: ???
+        n1: 20000000 0x4E7A118: ???
+         n1: 20000000 0x4E7B3CE: ???
+          n1: 20000000 0x51FE345: ???
+           n1: 20000000 0x51FEC3F: ???
+            n1: 20000000 0x484A6F7: runGetPhase (kdb.c:1547)
+             n1: 20000000 0x484B344: kdbGet (kdb.c:1847)
+              n0: 20000000 0x10CC9C: main (changetracking.c:170)
+       n0: 5520 in 78 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 16004672 0x4866975: keyVNew (key.c:166)
+   n2: 16004672 0x4866904: keyNew (key.c:150)
+    n2: 16000000 0x484275B: keyDup (kdb.h:214)
+     n1: 16000000 0x4842F78: backendsDivideInternal (backends.c:113)
+      n2: 16000000 0x484311F: backendsDivide (backends.c:142)
+       n1: 16000000 0x484B81B: kdbGet (kdb.c:1912)
+        n0: 16000000 0x10CC9C: main (changetracking.c:170)
+       n0: 0 in 2 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 4672 in 78 places, all below massif's threshold (0.10%)
+  n2: 12003264 0x4862D75: keyDataNew (cow.c:158)
+   n1: 12003264 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 12003264 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 12001008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 12001008 0x4866C6E: keyVNew (key.c:192)
+       n2: 12001008 0x4866904: keyNew (key.c:150)
+        n1: 12000000 0x4E78490: ???
+         n1: 12000000 0x4E7A118: ???
+          n1: 12000000 0x4E7B3CE: ???
+           n1: 12000000 0x51FE345: ???
+            n1: 12000000 0x51FEC3F: ???
+             n1: 12000000 0x484A6F7: runGetPhase (kdb.c:1547)
+              n1: 12000000 0x484B344: kdbGet (kdb.c:1847)
+               n0: 12000000 0x10CC9C: main (changetracking.c:170)
+        n0: 1008 in 25 places, all below massif's threshold (0.10%)
+     n0: 2256 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n1: 4003464 0x486D050: ksVNew (keyset.c:326)
+   n2: 4003464 0x486CEE5: ksNew (keyset.c:288)
+    n1: 4000008 0x486FD4F: ksCut (keyset.c:1682)
+     n2: 4000008 0x52236DA: ???
+      n2: 4000008 0x484D19D: kdbSet (kdb.c:2386)
+       n0: 4000008 0x10CDC6: main (changetracking.c:183)
+       n0: 0 in 1 place, below massif's threshold (0.10%)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 10 places, all below massif's threshold (0.10%)
+  n0: 12952 in 12 places, all below massif's threshold (0.10%)
+ n2: 2974378 0x4866108: elektraMalloc (internal.c:277)
+  n2: 2973690 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 2972563 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 2972563 0x4866C6E: keyVNew (key.c:192)
+     n2: 2972563 0x4866904: keyNew (key.c:150)
+      n1: 2972213 0x4E78490: ???
+       n1: 2972213 0x4E7A118: ???
+        n1: 2972213 0x4E7B3CE: ???
+         n1: 2972213 0x51FE345: ???
+          n1: 2972213 0x51FEC3F: ???
+           n1: 2972213 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 2972213 0x484B344: kdbGet (kdb.c:1847)
+             n0: 2972213 0x10CC9C: main (changetracking.c:170)
+      n0: 350 in 25 places, all below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 1127 in 2 places, all below massif's threshold (0.10%)
+  n0: 688 in 14 places, all below massif's threshold (0.10%)
+ n0: 106392 in 40 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=101
+#-----------
+time=2424026448
+mem_heap_B=130538203
+mem_heap_extra_B=44425029
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=102
+#-----------
+time=2439132816
+mem_heap_B=134572885
+mem_heap_extra_B=44433755
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=103
+#-----------
+time=2454239216
+mem_heap_B=136522099
+mem_heap_extra_B=44921037
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=104
+#-----------
+time=2469345584
+mem_heap_B=138471275
+mem_heap_extra_B=45408325
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=105
+#-----------
+time=2484451968
+mem_heap_B=140420459
+mem_heap_extra_B=45895621
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=106
+#-----------
+time=2499558352
+mem_heap_B=142369686
+mem_heap_extra_B=46383018
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=107
+#-----------
+time=2514664736
+mem_heap_B=144318827
+mem_heap_extra_B=46870309
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=108
+#-----------
+time=2529771112
+mem_heap_B=146268086
+mem_heap_extra_B=47357650
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=109
+#-----------
+time=2544877496
+mem_heap_B=148217299
+mem_heap_extra_B=47844933
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=110
+#-----------
+time=2559983896
+mem_heap_B=150166475
+mem_heap_extra_B=48332221
+mem_stacks_B=0
+heap_tree=detailed
+n4: 150166475 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 75427529 0x486609D: elektraRealloc (internal.c:240)
+  n2: 31891388 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 31890790 0x486988C: keySetName (keyname.c:697)
+    n1: 31890790 0x4866FB2: keyVNew (key.c:222)
+     n2: 31890790 0x4866904: keyNew (key.c:150)
+      n1: 31888890 0x4E78490: ???
+       n1: 31888890 0x4E7A118: ???
+        n1: 31888890 0x4E7B3CE: ???
+         n1: 31888890 0x51FE345: ???
+          n1: 31888890 0x51FEC3F: ???
+           n1: 31888890 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 31888890 0x484B344: kdbGet (kdb.c:1847)
+             n0: 31888890 0x10CC9C: main (changetracking.c:170)
+      n0: 1900 in 78 places, all below massif's threshold (0.10%)
+    n0: 0 in 8 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 29890337 0x48698C1: keySetName (keyname.c:699)
+   n1: 29890337 0x4866FB2: keyVNew (key.c:222)
+    n2: 29890337 0x4866904: keyNew (key.c:150)
+     n1: 29888890 0x4E78490: ???
+      n1: 29888890 0x4E7A118: ???
+       n1: 29888890 0x4E7B3CE: ???
+        n1: 29888890 0x51FE345: ???
+         n1: 29888890 0x51FEC3F: ???
+          n1: 29888890 0x484A6F7: runGetPhase (kdb.c:1547)
+           n1: 29888890 0x484B344: kdbGet (kdb.c:1847)
+            n0: 29888890 0x10CC9C: main (changetracking.c:170)
+     n0: 1447 in 78 places, all below massif's threshold (0.10%)
+   n0: 0 in 8 places, all below massif's threshold (0.10%)
+  n2: 8394880 0x4872B49: ksResize (keyset.c:2864)
+   n2: 4200576 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 4194304 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n2: 4194304 0x484311F: backendsDivide (backends.c:142)
+      n1: 4194304 0x484B81B: kdbGet (kdb.c:1912)
+       n0: 4194304 0x10CC9C: main (changetracking.c:170)
+      n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 6272 in 6 places, all below massif's threshold (0.10%)
+   n2: 4194304 0x486E55E: ksAppend (keyset.c:1104)
+    n2: 4194304 0x4843268: backendsMerge (backends.c:157)
+     n1: 4194304 0x484B9DC: kdbGet (kdb.c:1937)
+      n0: 4194304 0x10CC9C: main (changetracking.c:170)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 0 in 3 places, all below massif's threshold (0.10%)
+  n1: 5250000 0x487428D: keySetRaw (keyvalue.c:595)
+   n2: 5250000 0x4873C2A: keySetString (keyvalue.c:392)
+    n0: 5250000 0x10CD6B: main (changetracking.c:178)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 924 in 8 places, all below massif's threshold (0.10%)
+ n5: 71658176 0x4866141: elektraCalloc (internal.c:292)
+  n1: 31633088 0x4866975: keyVNew (key.c:166)
+   n3: 31633088 0x4866904: keyNew (key.c:150)
+    n2: 16000000 0x484275B: keyDup (kdb.h:214)
+     n1: 16000000 0x4842F78: backendsDivideInternal (backends.c:113)
+      n2: 16000000 0x484311F: backendsDivide (backends.c:142)
+       n1: 16000000 0x484B81B: kdbGet (kdb.c:1912)
+        n0: 16000000 0x10CC9C: main (changetracking.c:170)
+       n0: 0 in 2 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n1: 15628416 0x486C87E: keyDup (kdb.h:214)
+     n1: 15628416 0x486D3E0: ksDeepDup (keyset.c:416)
+      n2: 15628416 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 15628416 0x10CDC6: main (changetracking.c:183)
+       n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 4672 in 77 places, all below massif's threshold (0.10%)
+  n2: 20005520 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 20005520 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 20005520 0x4869843: keySetName (keyname.c:695)
+     n1: 20005520 0x4866FB2: keyVNew (key.c:222)
+      n2: 20005520 0x4866904: keyNew (key.c:150)
+       n1: 20000000 0x4E78490: ???
+        n1: 20000000 0x4E7A118: ???
+         n1: 20000000 0x4E7B3CE: ???
+          n1: 20000000 0x51FE345: ???
+           n1: 20000000 0x51FEC3F: ???
+            n1: 20000000 0x484A6F7: runGetPhase (kdb.c:1547)
+             n1: 20000000 0x484B344: kdbGet (kdb.c:1847)
+              n0: 20000000 0x10CC9C: main (changetracking.c:170)
+       n0: 5520 in 78 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n2: 12003264 0x4862D75: keyDataNew (cow.c:158)
+   n1: 12003264 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 12003264 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 12001008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 12001008 0x4866C6E: keyVNew (key.c:192)
+       n2: 12001008 0x4866904: keyNew (key.c:150)
+        n1: 12000000 0x4E78490: ???
+         n1: 12000000 0x4E7A118: ???
+          n1: 12000000 0x4E7B3CE: ???
+           n1: 12000000 0x51FE345: ???
+            n1: 12000000 0x51FEC3F: ???
+             n1: 12000000 0x484A6F7: runGetPhase (kdb.c:1547)
+              n1: 12000000 0x484B344: kdbGet (kdb.c:1847)
+               n0: 12000000 0x10CC9C: main (changetracking.c:170)
+        n0: 1008 in 25 places, all below massif's threshold (0.10%)
+     n0: 2256 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n1: 8003480 0x486D050: ksVNew (keyset.c:326)
+   n3: 8003480 0x486CEE5: ksNew (keyset.c:288)
+    n1: 4000016 0x486D37E: ksDeepDup (keyset.c:412)
+     n2: 4000016 0x484D25D: kdbSet (kdb.c:2399)
+      n0: 4000016 0x10CDC6: main (changetracking.c:183)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+    n2: 4000008 0x486F5BE: ksBelow (keyset.c:1468)
+     n2: 4000008 0x484D23B: kdbSet (kdb.c:2398)
+      n0: 4000008 0x10CDC6: main (changetracking.c:183)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 3456 in 9 places, all below massif's threshold (0.10%)
+  n0: 12824 in 12 places, all below massif's threshold (0.10%)
+ n2: 2974378 0x4866108: elektraMalloc (internal.c:277)
+  n2: 2973690 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 2972563 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 2972563 0x4866C6E: keyVNew (key.c:192)
+     n2: 2972563 0x4866904: keyNew (key.c:150)
+      n1: 2972213 0x4E78490: ???
+       n1: 2972213 0x4E7A118: ???
+        n1: 2972213 0x4E7B3CE: ???
+         n1: 2972213 0x51FE345: ???
+          n1: 2972213 0x51FEC3F: ???
+           n1: 2972213 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 2972213 0x484B344: kdbGet (kdb.c:1847)
+             n0: 2972213 0x10CC9C: main (changetracking.c:170)
+      n0: 350 in 25 places, all below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 1127 in 2 places, all below massif's threshold (0.10%)
+  n0: 688 in 14 places, all below massif's threshold (0.10%)
+ n0: 106392 in 40 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=111
+#-----------
+time=2579260864
+mem_heap_B=142537923
+mem_heap_extra_B=48425069
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=112
+#-----------
+time=2594367248
+mem_heap_B=144943715
+mem_heap_extra_B=48895485
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=113
+#-----------
+time=2609473616
+mem_heap_B=147349582
+mem_heap_extra_B=49365922
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=114
+#-----------
+time=2624579984
+mem_heap_B=150212003
+mem_heap_extra_B=49819373
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=115
+#-----------
+time=2639686352
+mem_heap_B=152161259
+mem_heap_extra_B=50306693
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=116
+#-----------
+time=2654792744
+mem_heap_B=155936451
+mem_heap_extra_B=50730229
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=117
+#-----------
+time=2669899120
+mem_heap_B=157885710
+mem_heap_extra_B=51217570
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=118
+#-----------
+time=2685005504
+mem_heap_B=159834923
+mem_heap_extra_B=51704853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=119
+#-----------
+time=2700111904
+mem_heap_B=161784099
+mem_heap_extra_B=52192141
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=120
+#-----------
+time=2715218296
+mem_heap_B=156536867
+mem_heap_extra_B=50880325
+mem_stacks_B=0
+heap_tree=detailed
+n4: 156536867 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 79621833 0x486609D: elektraRealloc (internal.c:240)
+  n2: 31891388 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 31890790 0x486988C: keySetName (keyname.c:697)
+    n1: 31890790 0x4866FB2: keyVNew (key.c:222)
+     n2: 31890790 0x4866904: keyNew (key.c:150)
+      n1: 31888890 0x4E78490: ???
+       n1: 31888890 0x4E7A118: ???
+        n1: 31888890 0x4E7B3CE: ???
+         n1: 31888890 0x51FE345: ???
+          n1: 31888890 0x51FEC3F: ???
+           n1: 31888890 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 31888890 0x484B344: kdbGet (kdb.c:1847)
+             n0: 31888890 0x10CC9C: main (changetracking.c:170)
+      n0: 1900 in 78 places, all below massif's threshold (0.10%)
+    n0: 0 in 8 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 29890337 0x48698C1: keySetName (keyname.c:699)
+   n1: 29890337 0x4866FB2: keyVNew (key.c:222)
+    n2: 29890337 0x4866904: keyNew (key.c:150)
+     n1: 29888890 0x4E78490: ???
+      n1: 29888890 0x4E7A118: ???
+       n1: 29888890 0x4E7B3CE: ???
+        n1: 29888890 0x51FE345: ???
+         n1: 29888890 0x51FEC3F: ???
+          n1: 29888890 0x484A6F7: runGetPhase (kdb.c:1547)
+           n1: 29888890 0x484B344: kdbGet (kdb.c:1847)
+            n0: 29888890 0x10CC9C: main (changetracking.c:170)
+     n0: 1447 in 78 places, all below massif's threshold (0.10%)
+   n0: 0 in 8 places, all below massif's threshold (0.10%)
+  n2: 12589184 0x4872B49: ksResize (keyset.c:2864)
+   n3: 8388608 0x486E55E: ksAppend (keyset.c:1104)
+    n2: 4194304 0x4843268: backendsMerge (backends.c:157)
+     n1: 4194304 0x484B9DC: kdbGet (kdb.c:1937)
+      n0: 4194304 0x10CC9C: main (changetracking.c:170)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n2: 4194304 0x484D28C: kdbSet (kdb.c:2400)
+     n0: 4194304 0x10CDC6: main (changetracking.c:183)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n2: 4200576 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 4194304 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n2: 4194304 0x484311F: backendsDivide (backends.c:142)
+      n2: 4194304 0x484D31D: kdbSet (kdb.c:2406)
+       n0: 4194304 0x10CDC6: main (changetracking.c:183)
+       n0: 0 in 1 place, below massif's threshold (0.10%)
+      n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 6272 in 6 places, all below massif's threshold (0.10%)
+  n1: 5250000 0x487428D: keySetRaw (keyvalue.c:595)
+   n2: 5250000 0x4873C2A: keySetString (keyvalue.c:392)
+    n0: 5250000 0x10CD6B: main (changetracking.c:178)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 924 in 8 places, all below massif's threshold (0.10%)
+ n4: 73834192 0x4866141: elektraCalloc (internal.c:292)
+  n1: 41809216 0x4866975: keyVNew (key.c:166)
+   n3: 41809216 0x4866904: keyNew (key.c:150)
+    n2: 32000000 0x484275B: keyDup (kdb.h:214)
+     n1: 32000000 0x4842F78: backendsDivideInternal (backends.c:113)
+      n3: 32000000 0x484311F: backendsDivide (backends.c:142)
+       n1: 16000000 0x484B81B: kdbGet (kdb.c:1912)
+        n0: 16000000 0x10CC9C: main (changetracking.c:170)
+       n2: 16000000 0x484D31D: kdbSet (kdb.c:2406)
+        n0: 16000000 0x10CDC6: main (changetracking.c:183)
+        n0: 0 in 1 place, below massif's threshold (0.10%)
+       n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n1: 9804544 0x486C87E: keyDup (kdb.h:214)
+     n1: 9804544 0x486D3E0: ksDeepDup (keyset.c:416)
+      n2: 9804544 0x484D25D: kdbSet (kdb.c:2399)
+       n0: 9804544 0x10CDC6: main (changetracking.c:183)
+       n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 4672 in 77 places, all below massif's threshold (0.10%)
+  n2: 20005520 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 20005520 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 20005520 0x4869843: keySetName (keyname.c:695)
+     n1: 20005520 0x4866FB2: keyVNew (key.c:222)
+      n2: 20005520 0x4866904: keyNew (key.c:150)
+       n1: 20000000 0x4E78490: ???
+        n1: 20000000 0x4E7A118: ???
+         n1: 20000000 0x4E7B3CE: ???
+          n1: 20000000 0x51FE345: ???
+           n1: 20000000 0x51FEC3F: ???
+            n1: 20000000 0x484A6F7: runGetPhase (kdb.c:1547)
+             n1: 20000000 0x484B344: kdbGet (kdb.c:1847)
+              n0: 20000000 0x10CC9C: main (changetracking.c:170)
+       n0: 5520 in 78 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n2: 12003288 0x4862D75: keyDataNew (cow.c:158)
+   n1: 12003288 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 12003288 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 12001008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 12001008 0x4866C6E: keyVNew (key.c:192)
+       n2: 12001008 0x4866904: keyNew (key.c:150)
+        n1: 12000000 0x4E78490: ???
+         n1: 12000000 0x4E7A118: ???
+          n1: 12000000 0x4E7B3CE: ???
+           n1: 12000000 0x51FE345: ???
+            n1: 12000000 0x51FEC3F: ???
+             n1: 12000000 0x484A6F7: runGetPhase (kdb.c:1547)
+              n1: 12000000 0x484B344: kdbGet (kdb.c:1847)
+               n0: 12000000 0x10CC9C: main (changetracking.c:170)
+        n0: 1008 in 25 places, all below massif's threshold (0.10%)
+     n0: 2280 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 16168 in 13 places, all below massif's threshold (0.10%)
+ n2: 2974450 0x4866108: elektraMalloc (internal.c:277)
+  n2: 2973762 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 2972563 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 2972563 0x4866C6E: keyVNew (key.c:192)
+     n2: 2972563 0x4866904: keyNew (key.c:150)
+      n1: 2972213 0x4E78490: ???
+       n1: 2972213 0x4E7A118: ???
+        n1: 2972213 0x4E7B3CE: ???
+         n1: 2972213 0x51FE345: ???
+          n1: 2972213 0x51FEC3F: ???
+           n1: 2972213 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 2972213 0x484B344: kdbGet (kdb.c:1847)
+             n0: 2972213 0x10CC9C: main (changetracking.c:170)
+      n0: 350 in 25 places, all below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 1199 in 2 places, all below massif's threshold (0.10%)
+  n0: 688 in 14 places, all below massif's threshold (0.10%)
+ n0: 106392 in 40 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=121
+#-----------
+time=2731672416
+mem_heap_B=142538019
+mem_heap_extra_B=48425053
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=122
+#-----------
+time=2746778800
+mem_heap_B=143632115
+mem_heap_extra_B=48633021
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=123
+#-----------
+time=2761885208
+mem_heap_B=146266259
+mem_heap_extra_B=49094949
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=124
+#-----------
+time=2776991584
+mem_heap_B=149128798
+mem_heap_extra_B=49548466
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=125
+#-----------
+time=2792097960
+mem_heap_B=151078013
+mem_heap_extra_B=50035771
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=126
+#-----------
+time=2809281016
+mem_heap_B=155121107
+mem_heap_extra_B=50526373
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=127
+#-----------
+time=2824387400
+mem_heap_B=157070363
+mem_heap_extra_B=51013709
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=128
+#-----------
+time=2839493776
+mem_heap_B=159019584
+mem_heap_extra_B=51501056
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=129
+#-----------
+time=2854600184
+mem_heap_B=160968795
+mem_heap_extra_B=51988317
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=130
+#-----------
+time=2869706552
+mem_heap_B=163879531
+mem_heap_extra_B=52713917
+mem_stacks_B=0
+heap_tree=detailed
+n4: 163879531 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 81168192 0x4866141: elektraCalloc (internal.c:292)
+  n1: 48004672 0x4866975: keyVNew (key.c:166)
+   n2: 48004672 0x4866904: keyNew (key.c:150)
+    n2: 48000000 0x484275B: keyDup (kdb.h:214)
+     n1: 48000000 0x4842F78: backendsDivideInternal (backends.c:113)
+      n3: 48000000 0x484311F: backendsDivide (backends.c:142)
+       n1: 16000000 0x484B81B: kdbGet (kdb.c:1912)
+        n0: 16000000 0x10CC9C: main (changetracking.c:170)
+       n2: 16000000 0x484D31D: kdbSet (kdb.c:2406)
+        n0: 16000000 0x10CDC6: main (changetracking.c:183)
+        n0: 0 in 1 place, below massif's threshold (0.10%)
+       n2: 16000000 0x484D7FA: kdbSet (kdb.c:2474)
+        n0: 16000000 0x10CDC6: main (changetracking.c:183)
+        n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 4672 in 78 places, all below massif's threshold (0.10%)
+  n2: 20005520 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 20005520 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 20005520 0x4869843: keySetName (keyname.c:695)
+     n1: 20005520 0x4866FB2: keyVNew (key.c:222)
+      n2: 20005520 0x4866904: keyNew (key.c:150)
+       n1: 20000000 0x4E78490: ???
+        n1: 20000000 0x4E7A118: ???
+         n1: 20000000 0x4E7B3CE: ???
+          n1: 20000000 0x51FE345: ???
+           n1: 20000000 0x51FEC3F: ???
+            n1: 20000000 0x484A6F7: runGetPhase (kdb.c:1547)
+             n1: 20000000 0x484B344: kdbGet (kdb.c:1847)
+              n0: 20000000 0x10CC9C: main (changetracking.c:170)
+       n0: 5520 in 78 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n2: 12003288 0x4862D75: keyDataNew (cow.c:158)
+   n1: 12003288 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 12003288 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 12001008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 12001008 0x4866C6E: keyVNew (key.c:192)
+       n2: 12001008 0x4866904: keyNew (key.c:150)
+        n1: 12000000 0x4E78490: ???
+         n1: 12000000 0x4E7A118: ???
+          n1: 12000000 0x4E7B3CE: ???
+           n1: 12000000 0x51FE345: ???
+            n1: 12000000 0x51FEC3F: ???
+             n1: 12000000 0x484A6F7: runGetPhase (kdb.c:1547)
+              n1: 12000000 0x484B344: kdbGet (kdb.c:1847)
+               n0: 12000000 0x10CC9C: main (changetracking.c:170)
+        n0: 1008 in 25 places, all below massif's threshold (0.10%)
+     n0: 2280 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n1: 1142656 0x486CF3C: ksVNew (keyset.c:306)
+   n2: 1142656 0x486CEE5: ksNew (keyset.c:288)
+    n2: 1138368 0x4868947: keyMeta (keymeta.c:552)
+     n1: 1138336 0x4E7510B: ???
+      n1: 1138336 0x4E7B905: ???
+       n1: 1138336 0x51FED52: ???
+        n1: 1138336 0x51FF0E0: ???
+         n1: 1138336 0x484C829: runSetPhase (kdb.c:2131)
+          n2: 1138336 0x484D88F: kdbSet (kdb.c:2483)
+           n0: 1138336 0x10CDC6: main (changetracking.c:183)
+           n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 32 in 2 places, all below massif's threshold (0.10%)
+    n0: 4288 in 45 places, all below massif's threshold (0.10%)
+  n0: 12056 in 12 places, all below massif's threshold (0.10%)
+ n5: 79621833 0x486609D: elektraRealloc (internal.c:240)
+  n2: 31891388 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 31890790 0x486988C: keySetName (keyname.c:697)
+    n1: 31890790 0x4866FB2: keyVNew (key.c:222)
+     n2: 31890790 0x4866904: keyNew (key.c:150)
+      n1: 31888890 0x4E78490: ???
+       n1: 31888890 0x4E7A118: ???
+        n1: 31888890 0x4E7B3CE: ???
+         n1: 31888890 0x51FE345: ???
+          n1: 31888890 0x51FEC3F: ???
+           n1: 31888890 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 31888890 0x484B344: kdbGet (kdb.c:1847)
+             n0: 31888890 0x10CC9C: main (changetracking.c:170)
+      n0: 1900 in 78 places, all below massif's threshold (0.10%)
+    n0: 0 in 8 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 29890337 0x48698C1: keySetName (keyname.c:699)
+   n1: 29890337 0x4866FB2: keyVNew (key.c:222)
+    n2: 29890337 0x4866904: keyNew (key.c:150)
+     n1: 29888890 0x4E78490: ???
+      n1: 29888890 0x4E7A118: ???
+       n1: 29888890 0x4E7B3CE: ???
+        n1: 29888890 0x51FE345: ???
+         n1: 29888890 0x51FEC3F: ???
+          n1: 29888890 0x484A6F7: runGetPhase (kdb.c:1547)
+           n1: 29888890 0x484B344: kdbGet (kdb.c:1847)
+            n0: 29888890 0x10CC9C: main (changetracking.c:170)
+     n0: 1447 in 78 places, all below massif's threshold (0.10%)
+   n0: 0 in 8 places, all below massif's threshold (0.10%)
+  n2: 12589184 0x4872B49: ksResize (keyset.c:2864)
+   n2: 8388608 0x486E55E: ksAppend (keyset.c:1104)
+    n3: 8388608 0x4843268: backendsMerge (backends.c:157)
+     n1: 4194304 0x484B9DC: kdbGet (kdb.c:1937)
+      n0: 4194304 0x10CC9C: main (changetracking.c:170)
+     n2: 4194304 0x484D75B: kdbSet (kdb.c:2465)
+      n0: 4194304 0x10CDC6: main (changetracking.c:183)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 0 in 3 places, all below massif's threshold (0.10%)
+   n2: 4200576 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 4194304 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n2: 4194304 0x484311F: backendsDivide (backends.c:142)
+      n2: 4194304 0x484D7FA: kdbSet (kdb.c:2474)
+       n0: 4194304 0x10CDC6: main (changetracking.c:183)
+       n0: 0 in 1 place, below massif's threshold (0.10%)
+      n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 6272 in 6 places, all below massif's threshold (0.10%)
+  n1: 5250000 0x487428D: keySetRaw (keyvalue.c:595)
+   n2: 5250000 0x4873C2A: keySetString (keyvalue.c:392)
+    n0: 5250000 0x10CD6B: main (changetracking.c:178)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 924 in 8 places, all below massif's threshold (0.10%)
+ n2: 2974450 0x4866108: elektraMalloc (internal.c:277)
+  n2: 2973762 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 2972563 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 2972563 0x4866C6E: keyVNew (key.c:192)
+     n2: 2972563 0x4866904: keyNew (key.c:150)
+      n1: 2972213 0x4E78490: ???
+       n1: 2972213 0x4E7A118: ???
+        n1: 2972213 0x4E7B3CE: ???
+         n1: 2972213 0x51FE345: ???
+          n1: 2972213 0x51FEC3F: ???
+           n1: 2972213 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 2972213 0x484B344: kdbGet (kdb.c:1847)
+             n0: 2972213 0x10CC9C: main (changetracking.c:170)
+      n0: 350 in 25 places, all below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 1199 in 2 places, all below massif's threshold (0.10%)
+  n0: 688 in 14 places, all below massif's threshold (0.10%)
+ n0: 115056 in 40 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=131
+#-----------
+time=2884812952
+mem_heap_B=175964651
+mem_heap_extra_B=55735197
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=132
+#-----------
+time=2888283632
+mem_heap_B=178741195
+mem_heap_extra_B=56429333
+mem_stacks_B=0
+heap_tree=peak
+n4: 178741195 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 96029856 0x4866141: elektraCalloc (internal.c:292)
+  n1: 48004672 0x4866975: keyVNew (key.c:166)
+   n2: 48004672 0x4866904: keyNew (key.c:150)
+    n2: 48000000 0x484275B: keyDup (kdb.h:214)
+     n1: 48000000 0x4842F78: backendsDivideInternal (backends.c:113)
+      n3: 48000000 0x484311F: backendsDivide (backends.c:142)
+       n1: 16000000 0x484B81B: kdbGet (kdb.c:1912)
+        n0: 16000000 0x10CC9C: main (changetracking.c:170)
+       n2: 16000000 0x484D31D: kdbSet (kdb.c:2406)
+        n0: 16000000 0x10CDC6: main (changetracking.c:183)
+        n0: 0 in 1 place, below massif's threshold (0.10%)
+       n2: 16000000 0x484D7FA: kdbSet (kdb.c:2474)
+        n0: 16000000 0x10CDC6: main (changetracking.c:183)
+        n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 4672 in 78 places, all below massif's threshold (0.10%)
+  n2: 20005520 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 20005520 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 20005520 0x4869843: keySetName (keyname.c:695)
+     n1: 20005520 0x4866FB2: keyVNew (key.c:222)
+      n2: 20005520 0x4866904: keyNew (key.c:150)
+       n1: 20000000 0x4E78490: ???
+        n1: 20000000 0x4E7A118: ???
+         n1: 20000000 0x4E7B3CE: ???
+          n1: 20000000 0x51FE345: ???
+           n1: 20000000 0x51FEC3F: ???
+            n1: 20000000 0x484A6F7: runGetPhase (kdb.c:1547)
+             n1: 20000000 0x484B344: kdbGet (kdb.c:1847)
+              n0: 20000000 0x10CC9C: main (changetracking.c:170)
+       n0: 5520 in 78 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 16004320 0x486CF3C: ksVNew (keyset.c:306)
+   n2: 16004320 0x486CEE5: ksNew (keyset.c:288)
+    n2: 16000032 0x4868947: keyMeta (keymeta.c:552)
+     n1: 16000000 0x4E7510B: ???
+      n1: 16000000 0x4E7B905: ???
+       n1: 16000000 0x51FED52: ???
+        n1: 16000000 0x51FF0E0: ???
+         n1: 16000000 0x484C829: runSetPhase (kdb.c:2131)
+          n2: 16000000 0x484D88F: kdbSet (kdb.c:2483)
+           n0: 16000000 0x10CDC6: main (changetracking.c:183)
+           n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 32 in 2 places, all below massif's threshold (0.10%)
+    n0: 4288 in 45 places, all below massif's threshold (0.10%)
+  n2: 12003288 0x4862D75: keyDataNew (cow.c:158)
+   n1: 12003288 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 12003288 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 12001008 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 12001008 0x4866C6E: keyVNew (key.c:192)
+       n2: 12001008 0x4866904: keyNew (key.c:150)
+        n1: 12000000 0x4E78490: ???
+         n1: 12000000 0x4E7A118: ???
+          n1: 12000000 0x4E7B3CE: ???
+           n1: 12000000 0x51FE345: ???
+            n1: 12000000 0x51FEC3F: ???
+             n1: 12000000 0x484A6F7: runGetPhase (kdb.c:1547)
+              n1: 12000000 0x484B344: kdbGet (kdb.c:1847)
+               n0: 12000000 0x10CC9C: main (changetracking.c:170)
+        n0: 1008 in 25 places, all below massif's threshold (0.10%)
+     n0: 2280 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 12056 in 12 places, all below massif's threshold (0.10%)
+ n5: 79621833 0x486609D: elektraRealloc (internal.c:240)
+  n2: 31891388 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 31890790 0x486988C: keySetName (keyname.c:697)
+    n1: 31890790 0x4866FB2: keyVNew (key.c:222)
+     n2: 31890790 0x4866904: keyNew (key.c:150)
+      n1: 31888890 0x4E78490: ???
+       n1: 31888890 0x4E7A118: ???
+        n1: 31888890 0x4E7B3CE: ???
+         n1: 31888890 0x51FE345: ???
+          n1: 31888890 0x51FEC3F: ???
+           n1: 31888890 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 31888890 0x484B344: kdbGet (kdb.c:1847)
+             n0: 31888890 0x10CC9C: main (changetracking.c:170)
+      n0: 1900 in 78 places, all below massif's threshold (0.10%)
+    n0: 0 in 8 places, all below massif's threshold (0.10%)
+   n0: 598 in 1 place, below massif's threshold (0.10%)
+  n2: 29890337 0x48698C1: keySetName (keyname.c:699)
+   n1: 29890337 0x4866FB2: keyVNew (key.c:222)
+    n2: 29890337 0x4866904: keyNew (key.c:150)
+     n1: 29888890 0x4E78490: ???
+      n1: 29888890 0x4E7A118: ???
+       n1: 29888890 0x4E7B3CE: ???
+        n1: 29888890 0x51FE345: ???
+         n1: 29888890 0x51FEC3F: ???
+          n1: 29888890 0x484A6F7: runGetPhase (kdb.c:1547)
+           n1: 29888890 0x484B344: kdbGet (kdb.c:1847)
+            n0: 29888890 0x10CC9C: main (changetracking.c:170)
+     n0: 1447 in 78 places, all below massif's threshold (0.10%)
+   n0: 0 in 8 places, all below massif's threshold (0.10%)
+  n2: 12589184 0x4872B49: ksResize (keyset.c:2864)
+   n2: 8388608 0x486E55E: ksAppend (keyset.c:1104)
+    n3: 8388608 0x4843268: backendsMerge (backends.c:157)
+     n1: 4194304 0x484B9DC: kdbGet (kdb.c:1937)
+      n0: 4194304 0x10CC9C: main (changetracking.c:170)
+     n2: 4194304 0x484D75B: kdbSet (kdb.c:2465)
+      n0: 4194304 0x10CDC6: main (changetracking.c:183)
+      n0: 0 in 1 place, below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 0 in 3 places, all below massif's threshold (0.10%)
+   n2: 4200576 0x486E181: ksAppendKey (keyset.c:1021)
+    n1: 4194304 0x4842FC8: backendsDivideInternal (backends.c:118)
+     n2: 4194304 0x484311F: backendsDivide (backends.c:142)
+      n2: 4194304 0x484D7FA: kdbSet (kdb.c:2474)
+       n0: 4194304 0x10CDC6: main (changetracking.c:183)
+       n0: 0 in 1 place, below massif's threshold (0.10%)
+      n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 6272 in 6 places, all below massif's threshold (0.10%)
+  n1: 5250000 0x487428D: keySetRaw (keyvalue.c:595)
+   n2: 5250000 0x4873C2A: keySetString (keyvalue.c:392)
+    n0: 5250000 0x10CD6B: main (changetracking.c:178)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n0: 924 in 8 places, all below massif's threshold (0.10%)
+ n2: 2974450 0x4866108: elektraMalloc (internal.c:277)
+  n2: 2973762 0x4874346: keySetRaw (keyvalue.c:608)
+   n2: 2972563 0x4873C2A: keySetString (keyvalue.c:392)
+    n1: 2972563 0x4866C6E: keyVNew (key.c:192)
+     n2: 2972563 0x4866904: keyNew (key.c:150)
+      n1: 2972213 0x4E78490: ???
+       n1: 2972213 0x4E7A118: ???
+        n1: 2972213 0x4E7B3CE: ???
+         n1: 2972213 0x51FE345: ???
+          n1: 2972213 0x51FEC3F: ???
+           n1: 2972213 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 2972213 0x484B344: kdbGet (kdb.c:1847)
+             n0: 2972213 0x10CC9C: main (changetracking.c:170)
+      n0: 350 in 25 places, all below massif's threshold (0.10%)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+   n0: 1199 in 2 places, all below massif's threshold (0.10%)
+  n0: 688 in 14 places, all below massif's threshold (0.10%)
+ n0: 115056 in 40 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=133
+#-----------
+time=2903390008
+mem_heap_B=166725267
+mem_heap_extra_B=53427413
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=134
+#-----------
+time=2918496408
+mem_heap_B=153813087
+mem_heap_extra_B=51241769
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=135
+#-----------
+time=2933602800
+mem_heap_B=141728063
+mem_heap_extra_B=48220401
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=136
+#-----------
+time=2948709176
+mem_heap_B=129642975
+mem_heap_extra_B=45199113
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=137
+#-----------
+time=2963815560
+mem_heap_B=117242132
+mem_heap_extra_B=42516772
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=138
+#-----------
+time=2978921992
+mem_heap_B=106250763
+mem_heap_extra_B=38401709
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=139
+#-----------
+time=2994028416
+mem_heap_B=95259396
+mem_heap_extra_B=34286652
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=140
+#-----------
+time=3009134816
+mem_heap_B=84268059
+mem_heap_extra_B=30171589
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=141
+#-----------
+time=3024241232
+mem_heap_B=73276674
+mem_heap_extra_B=26056558
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=142
+#-----------
+time=3039347600
+mem_heap_B=62307046
+mem_heap_extra_B=21919818
+mem_stacks_B=0
+heap_tree=detailed
+n3: 62307046 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 39037247 0x486609D: elektraRealloc (internal.c:240)
+  n2: 15369291 0x486B0AA: elektraKeyNameCanonicalize (keyname.c:1292)
+   n2: 15369291 0x486988C: keySetName (keyname.c:697)
+    n1: 15369291 0x4866FB2: keyVNew (key.c:222)
+     n2: 15369291 0x4866904: keyNew (key.c:150)
+      n1: 15369280 0x4E78490: ???
+       n1: 15369280 0x4E7A118: ???
+        n1: 15369280 0x4E7B3CE: ???
+         n1: 15369280 0x51FE345: ???
+          n1: 15369280 0x51FEC3F: ???
+           n1: 15369280 0x484A6F7: runGetPhase (kdb.c:1547)
+            n1: 15369280 0x484B344: kdbGet (kdb.c:1847)
+             n0: 15369280 0x10CC9C: main (changetracking.c:170)
+      n0: 11 in 78 places, all below massif's threshold (0.10%)
+    n0: 0 in 8 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n2: 14403559 0x48698C1: keySetName (keyname.c:699)
+   n1: 14403559 0x4866FB2: keyVNew (key.c:222)
+    n2: 14403559 0x4866904: keyNew (key.c:150)
+     n1: 14403552 0x4E78490: ???
+      n1: 14403552 0x4E7A118: ???
+       n1: 14403552 0x4E7B3CE: ???
+        n1: 14403552 0x51FE345: ???
+         n1: 14403552 0x51FEC3F: ???
+          n1: 14403552 0x484A6F7: runGetPhase (kdb.c:1547)
+           n1: 14403552 0x484B344: kdbGet (kdb.c:1847)
+            n0: 14403552 0x10CC9C: main (changetracking.c:170)
+     n0: 7 in 78 places, all below massif's threshold (0.10%)
+   n0: 0 in 8 places, all below massif's threshold (0.10%)
+  n1: 5070093 0x487428D: keySetRaw (keyvalue.c:595)
+   n2: 5070093 0x4873C2A: keySetString (keyvalue.c:392)
+    n0: 5070093 0x10CD6B: main (changetracking.c:178)
+    n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n2: 4194304 0x4872B49: ksResize (keyset.c:2864)
+   n2: 4194304 0x486E55E: ksAppend (keyset.c:1104)
+    n2: 4194304 0x4843268: backendsMerge (backends.c:157)
+     n1: 4194304 0x484B9DC: kdbGet (kdb.c:1937)
+      n0: 4194304 0x10CC9C: main (changetracking.c:170)
+     n0: 0 in 2 places, all below massif's threshold (0.10%)
+    n0: 0 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 0 in 8 places, all below massif's threshold (0.10%)
+ n4: 23177784 0x4866141: elektraCalloc (internal.c:292)
+  n2: 9657320 0x4862A5D: keyNameNew (cow.c:20)
+   n1: 9657320 0x486900A: keyDetachKeyNameWithoutCopy (keyname.c:333)
+    n2: 9657320 0x4869843: keySetName (keyname.c:695)
+     n1: 9657320 0x4866FB2: keyVNew (key.c:222)
+      n2: 9657320 0x4866904: keyNew (key.c:150)
+       n1: 9657280 0x4E78490: ???
+        n1: 9657280 0x4E7A118: ???
+         n1: 9657280 0x4E7B3CE: ???
+          n1: 9657280 0x51FE345: ???
+           n1: 9657280 0x51FEC3F: ???
+            n1: 9657280 0x484A6F7: runGetPhase (kdb.c:1547)
+             n1: 9657280 0x484B344: kdbGet (kdb.c:1847)
+              n0: 9657280 0x10CC9C: main (changetracking.c:170)
+       n0: 40 in 78 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+   n0: 0 in 2 places, all below massif's threshold (0.10%)
+  n1: 7725888 0x4866975: keyVNew (key.c:166)
+   n2: 7725888 0x4866904: keyNew (key.c:150)
+    n2: 7725856 0x484275B: keyDup (kdb.h:214)
+     n1: 7725856 0x4842F78: backendsDivideInternal (backends.c:113)
+      n2: 7725856 0x484311F: backendsDivide (backends.c:142)
+       n1: 7725856 0x484B81B: kdbGet (kdb.c:1912)
+        n0: 7725856 0x10CC9C: main (changetracking.c:170)
+       n0: 0 in 2 places, all below massif's threshold (0.10%)
+     n0: 0 in 1 place, below massif's threshold (0.10%)
+    n0: 32 in 78 places, all below massif's threshold (0.10%)
+  n2: 5794416 0x4862D75: keyDataNew (cow.c:158)
+   n1: 5794416 0x4873FAF: keyDetachKeyDataWithoutCopy (keyvalue.c:541)
+    n2: 5794416 0x487412E: keySetRaw (keyvalue.c:575)
+     n1: 5794392 0x4873C2A: keySetString (keyvalue.c:392)
+      n1: 5794392 0x4866C6E: keyVNew (key.c:192)
+       n2: 5794392 0x4866904: keyNew (key.c:150)
+        n1: 5794392 0x4E78490: ???
+         n1: 5794392 0x4E7A118: ???
+          n1: 5794392 0x4E7B3CE: ???
+           n1: 5794392 0x51FE345: ???
+            n1: 5794392 0x51FEC3F: ???
+             n1: 5794392 0x484A6F7: runGetPhase (kdb.c:1547)
+              n1: 5794392 0x484B344: kdbGet (kdb.c:1847)
+               n0: 5794392 0x10CC9C: main (changetracking.c:170)
+        n0: 0 in 25 places, all below massif's threshold (0.10%)
+     n0: 24 in 3 places, all below massif's threshold (0.10%)
+   n0: 0 in 1 place, below massif's threshold (0.10%)
+  n0: 160 in 13 places, all below massif's threshold (0.10%)
+ n0: 92015 in 41 places, all below massif's threshold (0.10%)
+#-----------
+snapshot=143
+#-----------
+time=3054454016
+mem_heap_B=51430005
+mem_heap_extra_B=17690443
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=144
+#-----------
+time=3069560384
+mem_heap_B=40552974
+mem_heap_extra_B=13461106
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=145
+#-----------
+time=3084666752
+mem_heap_B=29675971
+mem_heap_extra_B=9231741
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=146
+#-----------
+time=3099773144
+mem_heap_B=18798953
+mem_heap_extra_B=5002367
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=147
+#-----------
+time=3114879512
+mem_heap_B=7572185
+mem_heap_extra_B=1122767
+mem_stacks_B=0
+heap_tree=empty
